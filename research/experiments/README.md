@@ -1061,3 +1061,19 @@ Gate for the round-4 paper revision.
   the exported REVIEW.md says so, as for `v9_release/`. The review's `.log` files are committed with `git add -f`
   (the `*.log` rule of .gitignore), as for `v9_release/`.
 - Response appended to `independent_review.md`.
+
+## Run 049 — 2026-11-10 — audit of the clean release repository d-dim-shift-symmetry-in-ca; release fixes
+
+- Audited `github.com/peterbanda/d-dim-shift-symmetry-in-ca` (single commit fcb0613, 657 files) against internal d58c4f3:
+  byte-identical to a fresh export except 11 `release_lean_split/` evidence files (compile logs with local paths, build
+  trees) that had been left out by hand; no home paths, follow-up material or CA86.pdf. Its Lean tree built from scratch
+  (only the pinned mathlib reused; from-scratch parallel builds need more than 10 GB): 89 modules, paper audit 370/370
+  (group 13: 17), frozen_deps 373 statements / 0 unrecorded, kernel replay modules=89 theorems 3036 defs 804 errors=0, no
+  axiom or sorry; check_frozen and placeholders pass. Audit: 27/27 approved and current; T. Lehman's re-check of
+  Theorem 4.7 (session 2026-11-10T00-28-31-841Z, links Gp, Fp, dp marked) in c73bb7b. Paper rebuilds to the committed text.
+- Fixes: the erratum's repository link now names d-dim-shift-symmetry-in-ca (PDF rebuilt, 2 pp.); export.py excludes the
+  11 `release_lean_split/` files, so the release is reproducible from HEAD; the release-check comment under the abstract
+  removed (two comment lines blanked, no line moved); CLAUDE.md points to the new repository and checkout.
+- Docker image `shiftsym-tex:jammy` had disappeared from this machine; rebuilt from the recipe in
+  `correspondence_audit/README.md` (image 3fe202ca1060, pdfTeX 1.40.22); `tools/build.py` with it: 27 files, 529 mappings,
+  0 errors, layout identical to the official PDF; carry-forward 0, nothing stale; report audit_report_20261110T155655Z.md (efb7e9dc…).
