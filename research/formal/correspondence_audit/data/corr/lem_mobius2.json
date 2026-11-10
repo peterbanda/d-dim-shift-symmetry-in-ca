@@ -140,8 +140,8 @@
       "text": "where $\\rk J$ is the dimension of the span of the corresponding lines",
       "scope": {
        "lines": [
-        412,
-        413
+        410,
+        411
        ]
       }
      }
@@ -188,8 +188,8 @@
       "text": "$\\gaussbinom dr_p=\\prod_{i=0}^{r-1} \\frac{p^{d-i}-1}{p^{i+1}-1}$",
       "scope": {
        "lines": [
-        354,
-        355
+        352,
+        353
        ]
       }
      }

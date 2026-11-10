@@ -97,8 +97,8 @@
       "text": "Fix integers $n\\ge2$, $d\\ge1$",
       "scope": {
        "lines": [
-        282,
-        287
+        280,
+        285
        ]
       }
      }
@@ -124,8 +124,8 @@
       "text": "(for counting statements, $\\sigma=1$ is also allowed)",
       "scope": {
        "lines": [
-        284,
-        284
+        282,
+        282
        ]
       }
      }
@@ -147,8 +147,8 @@
       "text": "a finite alphabet $\\Sigma$ with $\\sigma=|\\Sigma|\\ge2$",
       "scope": {
        "lines": [
-        282,
-        287
+        280,
+        285
        ]
       }
      }
@@ -344,8 +344,8 @@
       "text": "S_{n^d}(\\vv)=\\{\\ssb:\\tau_\\vv\\ssb=\\ssb\\}",
       "scope": {
        "lines": [
-        295,
-        302
+        293,
+        300
        ]
       }
      }

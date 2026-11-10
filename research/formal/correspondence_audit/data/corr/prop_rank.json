@@ -131,8 +131,8 @@
       "text": "$\\A[p]=\\{\\mathbf x:p\\mathbf x=\\mathbf 0\\}$",
       "scope": {
        "lines": [
-        396,
-        396
+        394,
+        394
        ]
       }
      }
@@ -162,8 +162,8 @@
       "text": "$\\mathbf x=\\tfrac np\\,\\mathbf y\\mapsto\\mathbf y\\bmod p$ is an isomorphism $\\A[p]\\cong\\FF_p^d$",
       "scope": {
        "lines": [
-        399,
-        400
+        397,
+        398
        ]
       }
      }
@@ -340,8 +340,8 @@
       "text": "Fix integers $n\\ge2$, $d\\ge1$",
       "scope": {
        "lines": [
-        282,
-        287
+        280,
+        285
        ]
       }
      }

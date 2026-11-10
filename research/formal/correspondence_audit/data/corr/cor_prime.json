@@ -134,8 +134,8 @@
       "text": "a finite alphabet $\\Sigma$ with\n$\\sigma=|\\Sigma|\\ge2$ (for counting statements, $\\sigma=1$ is also allowed)",
       "scope": {
        "lines": [
-        283,
-        284
+        281,
+        282
        ]
       }
      }

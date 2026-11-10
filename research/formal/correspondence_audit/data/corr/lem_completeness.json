@@ -58,8 +58,8 @@
       "text": "S_{n^d} \\;=\\; \\bigcup_{\\mathbf 0\\neq\\vv\\in\\A} S_{n^d}(\\vv)",
       "scope": {
        "lines": [
-        295,
-        302
+        293,
+        300
        ]
       }
      }
@@ -198,8 +198,8 @@
       "text": "\\Fix(H)=\\{\\ssb:\\tau_{\\mathbf h}\\ssb=\\ssb\\text{ for all }\\mathbf h\\in H\\}",
       "scope": {
        "lines": [
-        292,
-        292
+        290,
+        290
        ]
       }
      }
@@ -226,8 +226,8 @@
       "text": "Fix integers $n\\ge2$, $d\\ge1$ and a finite alphabet $\\Sigma$ with $\\sigma=|\\Sigma|\\ge2$",
       "scope": {
        "lines": [
-        282,
-        287
+        280,
+        285
        ]
       }
      }
@@ -249,8 +249,8 @@
       "text": "a finite alphabet $\\Sigma$",
       "scope": {
        "lines": [
-        282,
-        287
+        280,
+        285
        ]
       }
      }

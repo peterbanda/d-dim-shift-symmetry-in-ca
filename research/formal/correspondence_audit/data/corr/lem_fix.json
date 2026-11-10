@@ -90,8 +90,8 @@
       "text": "\\Fix(H)=\\{\\ssb:\\tau_{\\mathbf h}\\ssb=\\ssb\\text{ for all }\\mathbf h\\in H\\}",
       "scope": {
        "lines": [
-        292,
-        292
+        290,
+        290
        ]
       }
      }
@@ -147,8 +147,8 @@
       "text": "Fix integers $n\\ge2$, $d\\ge1$",
       "scope": {
        "lines": [
-        277,
-        288
+        275,
+        286
        ]
       }
      }

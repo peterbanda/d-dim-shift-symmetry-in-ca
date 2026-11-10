@@ -103,8 +103,8 @@
       "text": "$p_1<\\dots<p_k$ prime",
       "scope": {
        "lines": [
-        354,
-        354
+        352,
+        352
        ]
       }
      }
@@ -197,8 +197,8 @@
       "text": "S_{n^d} \\;=\\; \\bigcup_{\\mathbf 0\\neq\\vv\\in\\A} S_{n^d}(\\vv)\n\\;=\\; \\{\\ssb : \\Stab(\\ssb)\\neq\\{\\mathbf 0\\}\\}",
       "scope": {
        "lines": [
-        295,
-        302
+        293,
+        300
        ]
       }
      }
@@ -316,8 +316,8 @@
       "text": "$P^{\\mathrm{unif}}_{n^d}=|S_{n^d}|/\\sigma^{n^d}$",
       "scope": {
        "lines": [
-        882,
-        885
+        880,
+        883
        ]
       }
      }

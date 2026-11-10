@@ -143,8 +143,8 @@
       "text": "Fix integers $n\\ge2$, $d\\ge1$",
       "scope": {
        "lines": [
-        282,
-        287
+        280,
+        285
        ]
       }
      }
@@ -265,8 +265,8 @@
       "text": "$P^{\\mathrm{unif}}_{n^d}=|S_{n^d}|/\\sigma^{n^d}$",
       "scope": {
        "lines": [
-        882,
-        885
+        880,
+        883
        ]
       }
      }

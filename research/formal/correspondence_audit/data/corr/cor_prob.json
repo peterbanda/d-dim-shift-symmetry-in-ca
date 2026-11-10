@@ -95,8 +95,8 @@
       "text": "Fix integers $n\\ge2$, $d\\ge1$",
       "scope": {
        "lines": [
-        282,
-        287
+        280,
+        285
        ]
       }
      },
@@ -104,8 +104,8 @@
       "text": "$\\sigma=|\\Sigma|\\ge2$",
       "scope": {
        "lines": [
-        282,
-        287
+        280,
+        285
        ]
       }
      }
@@ -210,8 +210,8 @@
       "text": "F_d(n,\\sigma)\\;:=\\; \\sum_{r=1}^{d}(-1)^{r+1}\\,n^{\\binom r2}\\gaussbinom dr_n\\, \\sigma^{\\,n^{d-r}}",
       "scope": {
        "lines": [
-        768,
-        778
+        766,
+        776
        ]
       }
      }

@@ -96,8 +96,8 @@
       "text": "let $\\mathcal L_p$ be the set of cyclic subgroups of order $p$ of $\\A$",
       "scope": {
        "lines": [
-        424,
-        424
+        422,
+        422
        ]
       }
      }
@@ -234,8 +234,8 @@
       "text": "$\\rk J$ is the dimension of the span of the corresponding lines",
       "scope": {
        "lines": [
-        413,
-        413
+        411,
+        411
        ]
       }
      }
@@ -262,8 +262,8 @@
       "text": "Fix integers $n\\ge2$, $d\\ge1$",
       "scope": {
        "lines": [
-        282,
-        287
+        280,
+        285
        ]
       }
      }

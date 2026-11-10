@@ -98,8 +98,8 @@
       "text": "Fix integers $n\\ge2$, $d\\ge1$ and a finite alphabet $\\Sigma$ with\n$\\sigma=|\\Sigma|\\ge2$",
       "scope": {
        "lines": [
-        282,
-        287
+        280,
+        285
        ]
       }
      }
@@ -156,8 +156,8 @@
       "text": "S_{n^d} \\;=\\; \\bigcup_{\\mathbf 0\\neq\\vv\\in\\A} S_{n^d}(\\vv)\n    \\;=\\; \\{\\ssb : \\Stab(\\ssb)\\neq\\{\\mathbf 0\\}\\}",
       "scope": {
        "lines": [
-        295,
-        302
+        293,
+        300
        ]
       }
      }
@@ -184,8 +184,8 @@
       "text": "A {\\bf configuration} is any function $\\ssb:\\A\\to\\Sigma$",
       "scope": {
        "lines": [
-        286,
-        286
+        284,
+        284
        ]
       }
      },
@@ -193,8 +193,8 @@
       "text": "$\\A=(\\ZZ/n\\ZZ)^d$",
       "scope": {
        "lines": [
-        282,
-        287
+        280,
+        285
        ]
       }
      }
@@ -225,8 +225,8 @@
       "text": "$(\\tau_\\vv\\ssb)(\\uu)=\\ssb(\\uu+\\vv)$",
       "scope": {
        "lines": [
-        291,
-        291
+        289,
+        289
        ]
       }
      }
@@ -375,8 +375,8 @@
       "text": "\\gaussbinom dr_p=\\prod_{i=0}^{r-1}\n\\frac{p^{d-i}-1}{p^{i+1}-1}",
       "scope": {
        "lines": [
-        354,
-        355
+        352,
+        353
        ]
       }
      },
@@ -384,8 +384,8 @@
       "text": "we will evaluate Gaussian binomials at the (possibly\ncomposite) integer argument $q=n$",
       "scope": {
        "lines": [
-        766,
-        767
+        764,
+        765
        ]
       }
      }

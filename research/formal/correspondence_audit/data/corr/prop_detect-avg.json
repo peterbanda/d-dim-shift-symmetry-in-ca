@@ -415,8 +415,8 @@
       "text": "Fix integers $n\\ge2$, $d\\ge1$",
       "scope": {
        "lines": [
-        282,
-        287
+        280,
+        285
        ]
       }
      }
@@ -438,8 +438,8 @@
       "text": "a finite alphabet $\\Sigma$ with $\\sigma=|\\Sigma|\\ge2$",
       "scope": {
        "lines": [
-        282,
-        287
+        280,
+        285
        ]
       }
      }
@@ -479,8 +479,8 @@
       "text": "\\textbf{Algorithm.} For each prime $p\\mid n$ and each of the $\\gaussbinom d1_p$ order-$p$ cyclic subgroups $C=\\langle\\ww\\rangle$ (enumerated via one representative line each, Lemma~\\ref{lem:torsion}): traverse the cells in a fixed order (which may depend on the subgroup); for each yet-unvisited cell, walk its $C$-orbit ($p$ cells) checking equality; abort the subgroup at the first failing orbit. Report ``symmetric'' at the first subgroup all of whose orbits pass; report ``asymmetric'' if all subgroups fail.",
       "scope": {
        "lines": [
-        1032,
-        1064
+        1029,
+        1061
        ]
       }
      }

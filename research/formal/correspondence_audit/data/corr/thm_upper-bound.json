@@ -90,8 +90,8 @@
       "text": "a finite alphabet $\\Sigma$ with $\\sigma=|\\Sigma|\\ge2$",
       "scope": {
        "lines": [
-        282,
-        287
+        280,
+        285
        ]
       }
      }
@@ -134,8 +134,8 @@
       "text": "\\{\\ssb : \\Stab(\\ssb)\\neq\\{\\mathbf 0\\}\\}",
       "scope": {
        "lines": [
-        295,
-        302
+        293,
+        300
        ]
       }
      }
@@ -209,8 +209,8 @@
       "text": "\\gaussbinom dr_p=\\prod_{i=0}^{r-1} \\frac{p^{d-i}-1}{p^{i+1}-1}",
       "scope": {
        "lines": [
-        354,
-        355
+        352,
+        353
        ]
       }
      }

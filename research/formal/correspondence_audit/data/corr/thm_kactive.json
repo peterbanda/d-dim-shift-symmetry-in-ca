@@ -141,8 +141,8 @@
       "text": "(for counting statements, $\\sigma=1$ is also allowed)",
       "scope": {
        "lines": [
-        284,
-        284
+        282,
+        282
        ]
       }
      }
@@ -182,8 +182,8 @@
       "text": "fix any state $a\\in\\Sigma$",
       "scope": {
        "lines": [
-        707,
-        707
+        705,
+        705
        ]
       }
      },
@@ -191,8 +191,8 @@
       "text": "a finite alphabet $\\Sigma$ with\n$\\sigma=|\\Sigma|\\ge2$",
       "scope": {
        "lines": [
-        282,
-        287
+        280,
+        285
        ]
       }
      }
@@ -232,8 +232,8 @@
       "text": "let $S^a_{n^d,k}$ be the set of\nshift-symmetric configurations with exactly $k$ cells in state $a$",
       "scope": {
        "lines": [
-        707,
-        708
+        705,
+        706
        ]
       }
      }
@@ -255,8 +255,8 @@
       "text": "\\{\\ssb : \\Stab(\\ssb)\\neq\\{\\mathbf 0\\}\\}",
       "scope": {
        "lines": [
-        295,
-        301
+        293,
+        299
        ]
       }
      }
@@ -282,8 +282,8 @@
       "text": "exactly $k$ cells in state $a$",
       "scope": {
        "lines": [
-        707,
-        708
+        705,
+        706
        ]
       }
      }
@@ -359,8 +359,8 @@
       "text": "$n=\\prod_{i=1}^{k}p_i^{\\alpha_i}$, with $p_1<\\dots<p_k$ prime",
       "scope": {
        "lines": [
-        354,
-        354
+        352,
+        352
        ]
       }
      },
@@ -368,8 +368,8 @@
       "text": "the number of distinct prime factors of $n$ is $k=\\omega(n)$",
       "scope": {
        "lines": [
-        354,
-        354
+        352,
+        352
        ]
       }
      }
@@ -425,8 +425,8 @@
       "text": "$|\\vv|=\\sum_i v_i$",
       "scope": {
        "lines": [
-        529,
-        529
+        527,
+        527
        ]
       }
      }
@@ -465,8 +465,8 @@
       "text": "r_d(p,v)=p^{\\binom v2}\\gaussbinom dv_p",
       "scope": {
        "lines": [
-        513,
-        516
+        511,
+        514
        ]
       }
      }
@@ -488,8 +488,8 @@
       "text": "all other binomial coefficients are the ordinary ones",
       "scope": {
        "lines": [
-        716,
-        716
+        714,
+        714
        ]
       }
      }
@@ -511,8 +511,8 @@
       "text": "$\\gaussbinom dr_p=\\prod_{i=0}^{r-1}\n\\frac{p^{d-i}-1}{p^{i+1}-1}$",
       "scope": {
        "lines": [
-        354,
-        355
+        352,
+        353
        ]
       }
      }
@@ -610,8 +610,8 @@
       "text": "$0^0:=1$ (relevant only at $\\sigma=1$, $k=N$)",
       "scope": {
        "lines": [
-        717,
-        717
+        715,
+        715
        ]
       }
      }
@@ -667,8 +667,8 @@
       "text": "$h=h(\\vv)$ in Theorem",
       "scope": {
        "lines": [
-        709,
-        711
+        707,
+        709
        ]
       }
      },
@@ -676,8 +676,8 @@
       "text": "$\\binom{N/h}{k/h}:=0$ whenever\n$k/h$ is not an integer in $\\{0,\\dots,N/h\\}$, and such a vanishing\nbinomial annihilates its\nwhole summand",
       "scope": {
        "lines": [
-        712,
-        715
+        710,
+        713
        ]
       }
      }
@@ -703,8 +703,8 @@
       "text": "$k/h$ is not an integer in $\\{0,\\dots,N/h\\}$",
       "scope": {
        "lines": [
-        712,
-        715
+        710,
+        713
        ]
       }
      }

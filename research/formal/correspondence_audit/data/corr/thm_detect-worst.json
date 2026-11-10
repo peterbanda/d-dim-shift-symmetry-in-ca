@@ -145,8 +145,8 @@
       "text": "$N=n^d$",
       "scope": {
        "lines": [
-        282,
-        287
+        280,
+        285
        ]
       }
      }
@@ -173,8 +173,8 @@
       "text": "\\mathrm{sopf}_d(n)=\\sum_{p\\mid n}\\gaussbinom d1_p",
       "scope": {
        "lines": [
-        1060,
-        1060
+        1057,
+        1057
        ]
       }
      }
@@ -213,8 +213,8 @@
       "text": "Fix integers $n\\ge2$, $d\\ge1$",
       "scope": {
        "lines": [
-        282,
-        287
+        280,
+        285
        ]
       }
      }
@@ -236,8 +236,8 @@
       "text": "\\textbf{Algorithm.} For each prime $p\\mid n$ and each of the $\\gaussbinom d1_p$ order-$p$ cyclic subgroups $C=\\langle\\ww\\rangle$ (enumerated via one representative line each, Lemma~\\ref{lem:torsion}): traverse the cells in a fixed order (which may depend on the subgroup); for each yet-unvisited cell, walk its $C$-orbit ($p$ cells) checking equality; abort the subgroup at the first failing orbit. Report ``symmetric'' at the first subgroup all of whose orbits pass; report ``asymmetric'' if all subgroups fail.",
       "scope": {
        "lines": [
-        1032,
-        1064
+        1029,
+        1061
        ]
       }
      }
@@ -259,8 +259,8 @@
       "text": "$p\\mid n$ and each of the $\\gaussbinom d1_p$ order-$p$ cyclic subgroups $C=\\langle\\ww\\rangle$",
       "scope": {
        "lines": [
-        1032,
-        1064
+        1029,
+        1061
        ]
       }
      }
@@ -286,8 +286,8 @@
       "text": "enumerated via one representative line each",
       "scope": {
        "lines": [
-        1032,
-        1064
+        1029,
+        1061
        ]
       }
      }
@@ -309,8 +309,8 @@
       "text": "Assume the prime factorization of $n$ is given",
       "scope": {
        "lines": [
-        1032,
-        1064
+        1029,
+        1061
        ]
       }
      }
@@ -332,8 +332,8 @@
       "text": "traverse the cells in a fixed order (which may depend on the subgroup)",
       "scope": {
        "lines": [
-        1032,
-        1064
+        1029,
+        1061
        ]
       }
      }
@@ -359,8 +359,8 @@
       "text": "for each yet-unvisited cell, walk its $C$-orbit ($p$ cells) checking equality",
       "scope": {
        "lines": [
-        1032,
-        1064
+        1029,
+        1061
        ]
       }
      }
@@ -386,8 +386,8 @@
       "text": "yet-unvisited cell",
       "scope": {
        "lines": [
-        1032,
-        1064
+        1029,
+        1061
        ]
       }
      }
@@ -413,8 +413,8 @@
       "text": "abort the subgroup at the first failing orbit",
       "scope": {
        "lines": [
-        1032,
-        1064
+        1029,
+        1061
        ]
       }
      }
@@ -436,8 +436,8 @@
       "text": "Report ``symmetric'' at the first subgroup all of whose orbits pass; report ``asymmetric'' if all subgroups fail",
       "scope": {
        "lines": [
-        1032,
-        1064
+        1029,
+        1061
        ]
       }
      }
@@ -463,8 +463,8 @@
       "text": "we charge one read per visited cell: the first cell of an orbit walk (the \\emph{anchor}) is read once and its value cached, and each subsequent cell of the orbit is read once and compared to the cached value",
       "scope": {
        "lines": [
-        1032,
-        1064
+        1029,
+        1061
        ]
       }
      }
@@ -490,8 +490,8 @@
       "text": "A failing orbit walk may stop at its first mismatch or be completed",
       "scope": {
        "lines": [
-        1032,
-        1064
+        1029,
+        1061
        ]
       }
      }
@@ -518,8 +518,8 @@
       "text": "a configuration is shift-symmetric iff it is fixed by some order-$p$ cyclic subgroup with $p\\mid n$",
       "scope": {
        "lines": [
-        1048,
-        1050
+        1045,
+        1047
        ]
       }
      }
@@ -545,8 +545,8 @@
       "text": "Correctness is",
       "scope": {
        "lines": [
-        1048,
-        1050
+        1045,
+        1047
        ]
       }
      }

@@ -95,8 +95,8 @@
       "text": "Fix integers $n\\ge2$, $d\\ge1$",
       "scope": {
        "lines": [
-        282,
-        287
+        280,
+        285
        ]
       }
      }
@@ -122,8 +122,8 @@
       "text": "fix any state $a\\in\\Sigma$",
       "scope": {
        "lines": [
-        707,
-        707
+        705,
+        705
        ]
       }
      }
@@ -309,8 +309,8 @@
       "text": "let $S^a_{n^d,k}$ be the set of shift-symmetric configurations with exactly $k$ cells in state $a$",
       "scope": {
        "lines": [
-        707,
-        708
+        705,
+        706
        ]
       }
      }
@@ -387,8 +387,8 @@
       "text": "$N=n^d$",
       "scope": {
        "lines": [
-        282,
-        287
+        280,
+        285
        ]
       }
      }
@@ -431,8 +431,8 @@
       "text": "a finite alphabet $\\Sigma$ with $\\sigma=|\\Sigma|\\ge2$",
       "scope": {
        "lines": [
-        282,
-        287
+        280,
+        285
        ]
       }
      }

@@ -116,8 +116,8 @@
       "text": "For a finite abelian group $G$ of order $N$,\nwritten additively,",
       "scope": {
        "lines": [
-        661,
-        662
+        659,
+        660
        ]
       }
      }
@@ -177,8 +177,8 @@
       "text": "a finite alphabet $\\Sigma$ with\n$\\sigma=|\\Sigma|\\ge2$ (for counting statements, $\\sigma=1$ is also allowed)",
       "scope": {
        "lines": [
-        283,
-        284
+        281,
+        282
        ]
       }
      }
@@ -203,8 +203,8 @@
       "text": "Configurations\n$G\\to\\Sigma$, translations, stabilizers, and $S_G$ are defined as in\nSection~\\ref{sec:model} with $\\A$ replaced by $G$",
       "scope": {
        "lines": [
-        663,
-        665
+        661,
+        663
        ]
       }
      },
@@ -212,8 +212,8 @@
       "text": "$(\\tau_\\vv\\ssb)(\\uu)=\\ssb(\\uu+\\vv)$",
       "scope": {
        "lines": [
-        291,
-        291
+        289,
+        289
        ]
       }
      },
@@ -221,8 +221,8 @@
       "text": "\\{\\ssb : \\Stab(\\ssb)\\neq\\{\\mathbf 0\\}\\}",
       "scope": {
        "lines": [
-        298,
-        301
+        296,
+        299
        ]
       }
      }
@@ -310,8 +310,8 @@
       "text": "$|\\vv|=\\sum_i v_i$",
       "scope": {
        "lines": [
-        529,
-        529
+        527,
+        527
        ]
       }
      }
@@ -357,8 +357,8 @@
       "text": "r_d(p,v)=p^{\\binom v2}\\gaussbinom dv_p",
       "scope": {
        "lines": [
-        515,
-        515
+        513,
+        513
        ]
       }
      }
@@ -425,8 +425,8 @@
       "text": "enters the proof of Theorem~\\ref{thm:main-enum} only through its order\nand its $p$-torsion, which is $\\FF_p^d$ for every prime $p\\mid n$",
       "scope": {
        "lines": [
-        659,
-        660
+        657,
+        658
        ]
       }
      }
@@ -443,8 +443,8 @@
       "text": "$G[p]=\\{g\\in G: pg=0\\}$",
       "scope": {
        "lines": [
-        662,
-        662
+        660,
+        660
        ]
       }
      }
@@ -474,8 +474,8 @@
       "text": "an $\\FF_p$-vector space",
       "scope": {
        "lines": [
-        662,
-        662
+        660,
+        660
        ]
       }
      }
@@ -497,8 +497,8 @@
       "text": "let $d_p=\\dim_{\\FF_p}G[p]$ be the \\emph{$p$-rank} of $G$",
       "scope": {
        "lines": [
-        663,
-        663
+        661,
+        661
        ]
       }
      }
@@ -528,8 +528,8 @@
       "text": "a rectangular torus\n$\\ZZ_{n_1}\\times\\dots\\times\\ZZ_{n_m}$",
       "scope": {
        "lines": [
-        665,
-        666
+        663,
+        664
        ]
       }
      }
@@ -555,8 +555,8 @@
       "text": "\\ZZ_{n_1}\\times\\dots\\times\\ZZ_{n_m}",
       "scope": {
        "lines": [
-        666,
-        666
+        664,
+        664
        ]
       }
      }
@@ -586,8 +586,8 @@
       "text": "$N=\\prod_i n_i$",
       "scope": {
        "lines": [
-        666,
-        666
+        664,
+        664
        ]
       }
      }
@@ -609,8 +609,8 @@
       "text": "$d_p=|\\{i:p\\mid n_i\\}|$",
       "scope": {
        "lines": [
-        667,
-        667
+        665,
+        665
        ]
       }
      }

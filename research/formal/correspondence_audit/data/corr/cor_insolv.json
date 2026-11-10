@@ -195,8 +195,8 @@
       "text": "\\Phi(\\ssb)(\\uu)\\;=\\;\\phi\\bigl(\\ssb(\\uu+\\mathbf o_1),\\dots, \\ssb(\\uu+\\mathbf o_b)\\bigr)",
       "scope": {
        "lines": [
-        304,
-        317
+        302,
+        315
        ]
       }
      }
@@ -235,8 +235,8 @@
       "text": "Fix integers $n\\ge2$, $d\\ge1$",
       "scope": {
        "lines": [
-        282,
-        287
+        280,
+        285
        ]
       }
      }

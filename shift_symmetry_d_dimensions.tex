@@ -42,12 +42,10 @@
 \title{Shift-Symmetric Configurations in $d$-Dimensional Cellular Automata:\\
 Enumeration, Bounds, Irreversibility, and Detection}
 
-% Author list confirmed by P.B. 2026-08-04 (J. Caughman added from the
-% 2019 source paper); T. Lehman added by P.B. 2026-10-13 (v3.1).
 % Venue still to be finalized.
 % Revision history and verification results are recorded in the supplementary material.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          %
 \author{Peter Banda\\{\normalsize Cequence} \and John Caughman\\{\normalsize Portland State University} \and Tobi Lehman\\{\normalsize Functorial, Inc.}}
-\date{November 2026 --- revised draft (v11, post-audit, formally verified in Lean~4)}
+\date{November 2026}
 
 \begin{document}
 \maketitle
@@ -1012,9 +1010,8 @@ By Theorem~\ref{thm:irrev}, $\Stab(\Phi(\ssb))\cap\A[p]\supseteq
 \Stab(\ssb)\cap\A[p]$, and both are $\FF_p$-subspaces.
 \end{proof}
 
-This replaces the informal ``symmetry rank (for the dominant prime)'' of
-earlier drafts: for composite $n$ there is one rank per prime factor, and
-all of them are monotone. Geometrically, $\rk_p=1$ configurations are
+For composite $n$ there is one rank per prime factor, and all of them are
+monotone. Geometrically, $\rk_p=1$ configurations are
 periodic along one direction of the $p$-torsion (``stripes''/``slabs''),
 $\rk_p=d$ configurations are exactly those fixed by the whole $p$-torsion
 $\A[p]=(\tfrac np\ZZ/n\ZZ)^d$; each superlevel set $\{\rk_p\ge r\}$ is
@@ -1366,7 +1363,7 @@ constant $C$ of Observation~\ref{obs:dstar}), vague, bibliographic, and
 record-keeping sentences, comparisons of operation counts that rest on
 cited results (after Remark~\ref{rem:reads}), and the summary table of the
 concluding section are not formalized. Where the verification found
-a mathematical claim of an earlier version ambiguous or false, the text
+a mathematical claim ambiguous or false, the text
 above states the corrected claim, and that is the claim certified. The
 illustrative Figures~\ref{fig:examples} and~\ref{fig:pipeline} and the
 applications discussed in Section~\ref{sec:conclusion} are not formalized;
@@ -1589,7 +1586,7 @@ detector tests only these subgroups (Section~\ref{sec:detection}),
 translation-equivariant dynamics never lower $\dim_{\FF_p}(\Stab(\ssb)\cap\A[p])$
 (Proposition~\ref{prop:rank}), and on a finite abelian group the count depends only on
 its order and the dimensions of its $p$-torsion (Corollary~\ref{cor:abelian-ranks}). Two
-cautionary findings of the audit that produced this revision deserve
+cautionary findings of the verification deserve
 emphasis: naive dimensional lifting of true 2D statements can fail
 outright (Remark~\ref{rem:oldbound-false},
 Observation~\ref{obs:extrema}), and the enumeration principle itself,
@@ -1685,17 +1682,15 @@ the official PDF; every action of the auditor is recorded, with timestamps,
 in a log kept under version control; and when the viewer data are rebuilt,
 a verdict is flagged as stale if the item's \TeX{} source, the Lean source of
 its declarations, or its link data differ from those it was given against.
-All $27$ items were approved. Each verdict was given against the version of
-the paper current at the time, those on Theorem~\ref{thm:abelian} and
-Corollary~\ref{cor:abelian-ranks} (both added in version~10, the latter as Corollary~4.8) against version~10
-or later; when the paper changes, a script carries a verdict over only if the
-item's \TeX{} source, the Lean source of its declarations, and its links are
-unchanged apart from line numbers, and otherwise the item is judged again.
+All $27$ items were approved. A verdict given on an earlier draft was carried
+over by a script only where the item's \TeX{} source, the Lean source of its
+declarations, and its links were unchanged apart from line numbers; otherwise
+the item was judged again.
 A separate check of the link data, made during the audit, found
 that one clause, the symmetry-breaking sentence of
 Corollary~\ref{cor:insolv}, which the links had classified as having no Lean
 counterpart, was not covered by any frozen statement; it was reworded and
-frozen before this version, and its new links were then audited. Tools of this kind make the
+frozen, and its new links were then audited. Tools of this kind make the
 alignment between informal and formal statements inspectable item by item,
 and we regard them as a natural companion to proof assistants for papers
 like this one.
