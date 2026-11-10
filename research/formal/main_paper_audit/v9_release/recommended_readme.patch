@@ -1,0 +1,5 @@
+--- a/research/public_release/overlay/README.md
++++ b/research/public_release/overlay/README.md
+@@ -52,1 +52,1 @@
+-**2. Bounds: primes minimize shift symmetry in every dimension** (Theorems 6.1, 6.3, Corollary 7.1). For $`\sigma \ge 2`$:
++**2. Bounds: a prime-tight lower bound and a probability upper bound** (Theorems 6.1, 6.3, Corollary 7.1). For $`\sigma \ge 2`$:

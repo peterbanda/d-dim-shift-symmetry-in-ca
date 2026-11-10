@@ -1,0 +1,5 @@
+'PR1Review.criteria_as_printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PR1Review.actual_cardinality_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PR1Review.upper_without_extra_dimension_hypothesis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PR1Review.first_lower_window_instance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PR1Review.exact_upper_boundary_instance' depends on axioms: [propext, Classical.choice, Quot.sound]

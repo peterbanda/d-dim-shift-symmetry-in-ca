@@ -1,0 +1,31 @@
+{
+  "result": "PASS",
+  "checks": {
+    "groups": 86,
+    "lattice_enumerations": 258,
+    "fixed_k_checks": 5973,
+    "brute_configurations": 127588,
+    "brute_cases": 128,
+    "one_defects": 1905,
+    "strict_rank_steps": 958
+  },
+  "paper_examples": [
+    {
+      "cyclic_factors": [
+        2,
+        24
+      ],
+      "binary_symmetric": 50388256,
+      "subgroups": 22
+    },
+    {
+      "cyclic_factors": [
+        4,
+        12
+      ],
+      "binary_symmetric": 50388256,
+      "subgroups": 30
+    }
+  ],
+  "scope": "Independent subgroup-poset inversion and small exhaustive configurations; ranks up to six, trivial groups, singleton factors, several primes, all fixed-k boundaries."
+}

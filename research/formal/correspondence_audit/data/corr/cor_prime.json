@@ -1,0 +1,388 @@
+{
+ "label": "cor:prime",
+ "statement": {
+  "summary": "Corollary 4.5 is frozen in Paper/S04_EnumerationCorollaries.lean as `cor44Statement`, the conjunction of `cor44GeneralStatement` (the prime-n formula, right side `cor44RHS`) and the three special cases `cor44d1/d2/d3Statement`. The citation of [banda2019, Cor. E.20] for d = 2 is checked by `banda2019CorE20Statement` (the 2019 corollary transcribed as stated there). The paper gives no proof; the certificate is `cor44_proved`.",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P04.cor44GeneralStatement",
+    "role": "statement (general formula)"
+   },
+   {
+    "decl": "ShiftSym.P04.cor44d1Statement",
+    "role": "statement (d = 1)"
+   },
+   {
+    "decl": "ShiftSym.P04.cor44d2Statement",
+    "role": "statement (d = 2)"
+   },
+   {
+    "decl": "ShiftSym.P04.cor44d3Statement",
+    "role": "statement (d = 3)"
+   },
+   {
+    "decl": "ShiftSym.P04.cor44Statement",
+    "role": "statement (whole)"
+   },
+   {
+    "decl": "ShiftSym.P04.banda2019CorE20Statement",
+    "role": "statement (cited 2019 corollary)"
+   },
+   {
+    "decl": "ShiftSym.P04.cor44RHS",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.numSS",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.gaussBinom",
+    "role": "definition"
+   }
+  ],
+  "deltas": [
+   "Hypotheses d ≥ 1, σ ≥ 1 are stated in the corollary (since paper v8; up to v7 they were inherited from the main theorem).",
+   "Alphabet `Fin σ`; |S_{p^d}| = `numSS p d σ`; equations in ℤ except d = 1 (ℕ).",
+   "[d r]_p = `gaussBinom p d r` (q-Pascal); d − r is ℕ-subtraction, exact for 1 ≤ r ≤ d.",
+   "The cited [banda2019, Cor. E.20] is transcribed with σ ≥ 1 (the 2019 paper puts no hypothesis on Σ)."
+  ],
+  "maps": [
+   {
+    "id": "whole",
+    "kind": "same",
+    "label": "Corollary 4.5 = general formula ∧ d = 1 ∧ d = 2 ∧ d = 3",
+    "tex": [
+     {
+      "text": "|S_{p^d}| = \\sum_{r=1}^{d}(-1)^{r+1}\\,p^{\\binom r2}\\gaussbinom dr_p\\, \\sigma^{\\,p^{d-r}}"
+     },
+     {
+      "text": "In particular"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.cor44Statement",
+      "text": "cor44GeneralStatement ∧ cor44d1Statement ∧ cor44d2Statement ∧ cor44d3Statement"
+     }
+    ],
+    "note": "One Prop per displayed formula; the corollary is their conjunction."
+   },
+   {
+    "id": "prime",
+    "kind": "hypothesis",
+    "label": "prime n = p",
+    "tex": [
+     {
+      "text": "Fix any prime $n=p$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.cor44GeneralStatement",
+      "text": "p.Prime"
+     },
+     {
+      "decl": "ShiftSym.P04.cor44d1Statement",
+      "text": "p.Prime"
+     },
+     {
+      "decl": "ShiftSym.P04.cor44d2Statement",
+      "text": "p.Prime"
+     },
+     {
+      "decl": "ShiftSym.P04.cor44d3Statement",
+      "text": "p.Prime"
+     }
+    ],
+    "note": "n is replaced by a prime p throughout (|S_{p^d}| = `numSS p d σ`); n ≥ 2 is then automatic."
+   },
+   {
+    "id": "hyp",
+    "kind": "hypothesis",
+    "label": "d ≥ 1, σ ≥ 1",
+    "tex": [
+     {
+      "text": "integers $d\\ge1$ and $\\sigma\\ge1$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.cor44GeneralStatement",
+      "text": "1 ≤ d → 1 ≤ σ →"
+     },
+     {
+      "decl": "ShiftSym.P04.cor44d1Statement",
+      "text": "1 ≤ σ →"
+     },
+     {
+      "decl": "ShiftSym.P04.cor44d2Statement",
+      "text": "1 ≤ σ →"
+     },
+     {
+      "decl": "ShiftSym.P04.cor44d3Statement",
+      "text": "1 ≤ σ →"
+     }
+    ],
+    "note": "Stated in the corollary since paper v8; up to v7 they were inherited from the main theorem. They are those of Theorem 4.4; d is fixed in the special cases."
+   },
+   {
+    "id": "alphabet",
+    "kind": "representation",
+    "label": "alphabet Fin σ",
+    "tex": [
+     {
+      "text": "a finite alphabet $\\Sigma$ with\n$\\sigma=|\\Sigma|\\ge2$ (for counting statements, $\\sigma=1$ is also allowed)",
+      "scope": {
+       "lines": [
+        283,
+        284
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.numSS",
+      "text": "(Fin σ)"
+     }
+    ],
+    "note": "Only |Σ| enters; the alphabet is Fin σ inside `numSS`."
+   },
+   {
+    "id": "gen",
+    "kind": "same",
+    "label": "|S_{p^d}| = Σ_{r=1}^d (−1)^{r+1} p^{C(r,2)} [d r]_p σ^{p^{d−r}}",
+    "tex": [
+     {
+      "text": "|S_{p^d}| = \\sum_{r=1}^{d}(-1)^{r+1}\\,p^{\\binom r2}\\gaussbinom dr_p\\, \\sigma^{\\,p^{d-r}}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.cor44GeneralStatement",
+      "text": "(numSS p d σ : ℤ) = cor44RHS p d σ"
+     }
+    ],
+    "note": "Equation in ℤ (the right side is alternating)."
+   },
+   {
+    "id": "lhs",
+    "kind": "definition",
+    "label": "|S_{p^d}|",
+    "tex": [
+     {
+      "text": "|S_{p^d}|"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.cor44GeneralStatement",
+      "text": "(numSS p d σ : ℤ)"
+     },
+     {
+      "decl": "ShiftSym.numSS",
+      "text": "Nat.card {s : Config n d (Fin σ) // IsShiftSymmetric s}"
+     }
+    ],
+    "note": "`numSS` is literally the count inside `enumerationStatement`; cast ℕ → ℤ."
+   },
+   {
+    "id": "rhs",
+    "kind": "same",
+    "label": "the alternating sum",
+    "tex": [
+     {
+      "text": "\\sum_{r=1}^{d}(-1)^{r+1}\\,p^{\\binom r2}\\gaussbinom dr_p\\, \\sigma^{\\,p^{d-r}}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.cor44GeneralStatement",
+      "text": "cor44RHS p d σ"
+     },
+     {
+      "decl": "ShiftSym.P04.cor44RHS",
+      "text": "∑ r ∈ Icc 1 d,\n    (-1 : ℤ) ^ (r + 1) * (p : ℤ) ^ (r.choose 2) * (gaussBinom p d r : ℤ) *\n      (σ : ℤ) ^ (p ^ (d - r))"
+     }
+    ],
+    "note": "`cor44RHS` transcribes the sum term by term."
+   },
+   {
+    "id": "rhs.idx",
+    "kind": "same",
+    "label": "r = 1, …, d",
+    "tex": [
+     {
+      "text": "\\sum_{r=1}^{d}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.cor44RHS",
+      "text": "∑ r ∈ Icc 1 d,"
+     }
+    ],
+    "note": "Icc 1 d = {1,…,d}."
+   },
+   {
+    "id": "rhs.sign",
+    "kind": "same",
+    "label": "(−1)^{r+1}",
+    "tex": [
+     {
+      "text": "(-1)^{r+1}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.cor44RHS",
+      "text": "(-1 : ℤ) ^ (r + 1)"
+     }
+    ],
+    "note": "In ℤ."
+   },
+   {
+    "id": "rhs.pow",
+    "kind": "same",
+    "label": "p^{C(r,2)}",
+    "tex": [
+     {
+      "text": "p^{\\binom r2}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.cor44RHS",
+      "text": "(p : ℤ) ^ (r.choose 2)"
+     }
+    ],
+    "note": "C(r,2) = `r.choose 2`."
+   },
+   {
+    "id": "rhs.gauss",
+    "kind": "definition",
+    "label": "[d r]_p",
+    "tex": [
+     {
+      "text": "\\gaussbinom dr_p"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.cor44RHS",
+      "text": "(gaussBinom p d r : ℤ)"
+     },
+     {
+      "decl": "ShiftSym.gaussBinom",
+      "text": "| dd + 1, r + 1 => gaussBinom q dd r + q ^ (r + 1) * gaussBinom q dd (r + 1)"
+     },
+     {
+      "decl": "ShiftSym.P01.gaussBinomProductFidelityStatement"
+     }
+    ],
+    "note": "q-Pascal definition; fidelity to the paper's product formula is the separately proved P01 Prop."
+   },
+   {
+    "id": "rhs.exp",
+    "kind": "representation",
+    "label": "σ^{p^{d−r}}",
+    "tex": [
+     {
+      "text": "\\sigma^{\\,p^{d-r}}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.cor44RHS",
+      "text": "(σ : ℤ) ^ (p ^ (d - r))"
+     }
+    ],
+    "note": "d − r is ℕ-subtraction, exact since r ≤ d on Icc 1 d."
+   },
+   {
+    "id": "d1",
+    "kind": "same",
+    "label": "|S_p| = σ  (d = 1)",
+    "tex": [
+     {
+      "text": "|S_p|=\\sigma"
+     },
+     {
+      "text": "$d=1$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.cor44d1Statement",
+      "text": "numSS p 1 σ = σ"
+     }
+    ],
+    "note": "Equation in ℕ (no subtraction occurs)."
+   },
+   {
+    "id": "d2",
+    "kind": "same",
+    "label": "|S_{p^2}| = (p+1)σ^p − pσ  (d = 2)",
+    "tex": [
+     {
+      "text": "|S_{p^2}|=(p{+}1)\\sigma^p-p\\sigma"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.cor44d2Statement",
+      "text": "(numSS p 2 σ : ℤ) = ((p : ℤ) + 1) * (σ : ℤ) ^ p - (p : ℤ) * σ"
+     }
+    ],
+    "note": "Equation in ℤ."
+   },
+   {
+    "id": "e20",
+    "kind": "citation",
+    "label": "= [banda2019, Cor. E.20] for d = 2",
+    "tex": [
+     {
+      "text": "$d=2$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.banda2019CorE20Statement",
+      "text": "(numSS n 2 σ : ℤ) = (σ : ℤ) ^ n * ((n : ℤ) + 1) - (σ : ℤ) * n"
+     }
+    ],
+    "note": "The cited 2019 corollary is transcribed as stated there (|Σ|^n (n+1) − |Σ| n, with σ ≥ 1) and proved from the d = 2 case — the citation claim checks out up to commutativity."
+   },
+   {
+    "id": "d3",
+    "kind": "same",
+    "label": "|S_{p^3}| = (p²+p+1)σ^{p²} − p(p²+p+1)σ^p + p³σ",
+    "tex": [
+     {
+      "text": "|S_{p^3}|=(p^2{+}p{+}1)\\sigma^{p^2}-p(p^2{+}p{+}1)\\sigma^{p} +p^3\\sigma"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.cor44d3Statement",
+      "text": "(numSS p 3 σ : ℤ)\n      = ((p : ℤ) ^ 2 + p + 1) * (σ : ℤ) ^ (p ^ 2)\n        - (p : ℤ) * ((p : ℤ) ^ 2 + p + 1) * (σ : ℤ) ^ p + (p : ℤ) ^ 3 * σ"
+     }
+    ],
+    "note": "Equation in ℤ."
+   },
+   {
+    "id": "dup",
+    "kind": "lean-only",
+    "label": "the same formula is frozen again for Remark 6.2",
+    "tex": [],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.primeCountFullSumStatement",
+      "text": "(numSS p d σ : ℤ) = lowerEnvelope p d σ"
+     }
+    ],
+    "note": "Group 06 freezes the general formula a second time (as the envelope F_d(p,σ)); both copies are proved from `enumeration_proved` + `enumerationRHS_prime`. Not part of cor44Statement."
+   }
+  ]
+ }
+}

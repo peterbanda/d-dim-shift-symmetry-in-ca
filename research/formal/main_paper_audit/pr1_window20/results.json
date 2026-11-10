@@ -1,0 +1,22 @@
+[
+  {
+    "step": "build",
+    "exit_code": 0,
+    "seconds": 4.12
+  },
+  {
+    "step": "paper_audit",
+    "exit_code": 0,
+    "seconds": 9.56
+  },
+  {
+    "step": "frozen_deps",
+    "exit_code": 0,
+    "seconds": 4.78
+  },
+  {
+    "step": "kernel_replay",
+    "exit_code": 0,
+    "seconds": 2014.61
+  }
+]

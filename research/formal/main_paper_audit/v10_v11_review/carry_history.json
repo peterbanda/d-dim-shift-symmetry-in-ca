@@ -1,0 +1,226 @@
+{
+  "result": "PASS",
+  "carry_events_checked": 36,
+  "edges": [
+    {
+      "item": "lem:order",
+      "from": "baea4fa",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "lem:fix",
+      "from": "baea4fa",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "lem:torsion",
+      "from": "baea4fa",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "lem:completeness",
+      "from": "baea4fa",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "lem:joins",
+      "from": "baea4fa",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "thm:main-enum",
+      "from": "baea4fa",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "cor:prime",
+      "from": "baea4fa",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "thm:kactive",
+      "from": "baea4fa",
+      "to": "099e022",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "thm:lower-bound",
+      "from": "baea4fa",
+      "to": "099e022",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "thm:upper-bound",
+      "from": "baea4fa",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "cor:prob",
+      "from": "baea4fa",
+      "to": "099e022",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "cor:dens",
+      "from": "baea4fa",
+      "to": "099e022",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "thm:irrev",
+      "from": "baea4fa",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "cor:insolv",
+      "from": "baea4fa",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "prop:rank",
+      "from": "977f823",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "thm:detect-worst",
+      "from": "977f823",
+      "to": "099e022",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "prop:detect-avg",
+      "from": "baea4fa",
+      "to": "099e022",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "prop:rate",
+      "from": "baea4fa",
+      "to": "099e022",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "prop:inversion",
+      "from": "977f823",
+      "to": "099e022",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "lem:dtorus",
+      "from": "baea4fa",
+      "to": "099e022",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "lem:chain",
+      "from": "977f823",
+      "to": "099e022",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "lem:base",
+      "from": "977f823",
+      "to": "099e022",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "lem:mobius2",
+      "from": "baea4fa",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "lem:coef",
+      "from": "baea4fa",
+      "to": "099e022",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "thm:kactive",
+      "from": "099e022",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "thm:lower-bound",
+      "from": "099e022",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "cor:prob",
+      "from": "099e022",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "cor:dens",
+      "from": "099e022",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "thm:detect-worst",
+      "from": "099e022",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "prop:detect-avg",
+      "from": "099e022",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "prop:rate",
+      "from": "099e022",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "prop:inversion",
+      "from": "099e022",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "lem:dtorus",
+      "from": "099e022",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "lem:chain",
+      "from": "099e022",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "lem:base",
+      "from": "099e022",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    },
+    {
+      "item": "lem:coef",
+      "from": "099e022",
+      "to": "dde222d",
+      "same_tex_declarations_links": true
+    }
+  ],
+  "existing_nonextension_frozen_dependency_changes": {
+    "baea4fa..099e022": [],
+    "099e022..dde222d": []
+  }
+}

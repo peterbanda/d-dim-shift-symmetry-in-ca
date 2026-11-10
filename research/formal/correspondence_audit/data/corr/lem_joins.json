@@ -1,0 +1,281 @@
+{
+ "label": "lem:joins",
+ "statement": {
+  "summary": "Lemma 3.5 is frozen as `multiPrimeJoinStatement`: for every family Jf : ℕ → Set of subgroups with Jf p ⊆ 𝓛_p for each prime p ∣ n, |⟨⋃_{p∣n} ⋃_{C∈Jf p} C⟩| = ∏_{p∣n} p^{rk_p(Jf p)}. The disjoint union ⨆ is rendered as a plain union of the family; that nothing is lost (the 𝓛_p for distinct p are disjoint) is recorded as the separate frozen Prop `orderPCycDisjointStatement`.",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P02.multiPrimeJoinStatement",
+    "role": "statement"
+   },
+   {
+    "decl": "ShiftSym.P02.orderPCycDisjointStatement",
+    "role": "statement (disjointness justification, not a paper claim)"
+   },
+   {
+    "decl": "ShiftSym.P02.orderPCyc",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P02.rk",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P02.lineOf",
+    "role": "definition"
+   }
+  ],
+  "deltas": [
+   "J = ⨆_{p∣n} J_p is the plain union ⋃_{p∈primeFactors n} Jf p of a family `Jf : ℕ → Set (AddSubgroup (Lat n d))`; the 𝓛_p for distinct primes are disjoint (`orderPCycDisjointStatement`), so the union is automatically disjoint and every J ⊆ 𝓛 arises with J_p = J ∩ 𝓛_p. Values of Jf at non-prime-divisors are ignored.",
+   "'p ∣ n' ranges over `n.primeFactors` (the prime divisors of n); empty J_p are allowed (factor p^0 = 1).",
+   "⟨⋃J⟩ = `AddSubgroup.closure` of the union of the carriers; |·| = `Nat.card`.",
+   "rk J_p = `rk n d p (Jf p)`: the rank of Lemma 3.3, computed in 𝔽_p^d for the prime p of the factor (the paper leaves the dependence on p implicit).",
+   "Standing hypotheses n ≥ 2, d ≥ 1; no alphabet appears."
+  ],
+  "maps": [
+   {
+    "id": "whole",
+    "kind": "same",
+    "label": "|⟨⋃J⟩| = ∏_{p∣n} p^{rk J_p}",
+    "tex": [
+     {
+      "text": "\\bigl|\\langle\\bigcup J\\rangle\\bigr|=\\prod_{p\\mid n}p^{\\,\\rk J_p}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.multiPrimeJoinStatement",
+      "text": "Nat.card (AddSubgroup.closure\n            (⋃ p ∈ n.primeFactors, ⋃ C ∈ Jf p, (C : Set (Lat n d))))\n          = ∏ p ∈ n.primeFactors, p ^ rk n d p (Jf p)"
+     }
+    ],
+    "note": "Equality of natural numbers."
+   },
+   {
+    "id": "J",
+    "kind": "representation",
+    "label": "J = ⨆_{p∣n} J_p with J_p ⊆ 𝓛_p",
+    "tex": [
+     {
+      "text": "$J=\\bigsqcup_{p\\mid n}J_p$ with $J_p\\subseteq\\mathcal L_p$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.multiPrimeJoinStatement",
+      "text": "∀ Jf : ℕ → Set (AddSubgroup (Lat n d)),\n      (∀ p ∈ n.primeFactors, Jf p ⊆ orderPCyc n d p) →"
+     }
+    ],
+    "note": "The pieces J_p are a family indexed by ℕ, constrained only at the prime divisors of n; J itself is not a separate variable but the union inside the closure."
+   },
+   {
+    "id": "Jp",
+    "kind": "same",
+    "label": "J_p ⊆ 𝓛_p",
+    "tex": [
+     {
+      "text": "J_p\\subseteq\\mathcal L_p"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.multiPrimeJoinStatement",
+      "text": "Jf p ⊆ orderPCyc n d p"
+     }
+    ],
+    "note": "For every prime p ∣ n."
+   },
+   {
+    "id": "Lp",
+    "kind": "definition",
+    "label": "𝓛_p (Lemma 3.4)",
+    "tex": [
+     {
+      "text": "\\mathcal L_p",
+      "occ": 1
+     },
+     {
+      "text": "let $\\mathcal L_p$ be the set of cyclic subgroups of order $p$ of $\\A$",
+      "scope": {
+       "lines": [
+        424,
+        424
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.multiPrimeJoinStatement",
+      "text": "orderPCyc n d p"
+     },
+     {
+      "decl": "ShiftSym.P02.orderPCyc",
+      "text": "{C | (∃ g : Lat n d, C = AddSubgroup.zmultiples g) ∧ Nat.card C = p}"
+     }
+    ],
+    "note": "The same 𝓛_p as in Lemmas 3.3 and 3.4."
+   },
+   {
+    "id": "sqcup",
+    "kind": "representation",
+    "label": "disjoint union ⨆_{p∣n} J_p",
+    "tex": [
+     {
+      "text": "\\bigsqcup_{p\\mid n}J_p"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.multiPrimeJoinStatement",
+      "text": "⋃ p ∈ n.primeFactors, ⋃ C ∈ Jf p, (C : Set (Lat n d))"
+     },
+     {
+      "decl": "ShiftSym.P02.orderPCycDisjointStatement",
+      "text": "∀ n d p q : ℕ, p ≠ q → Disjoint (orderPCyc n d p) (orderPCyc n d q)"
+     }
+    ],
+    "note": "Plain union (of carriers, inside the closure); disjointness of the pieces is automatic and certified separately (`orderPCycDisjoint_proved`), it is not a hypothesis."
+   },
+   {
+    "id": "lhs",
+    "kind": "same",
+    "label": "|⟨⋃J⟩|",
+    "tex": [
+     {
+      "text": "\\bigl|\\langle\\bigcup J\\rangle\\bigr|"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.multiPrimeJoinStatement",
+      "text": "Nat.card (AddSubgroup.closure\n            (⋃ p ∈ n.primeFactors, ⋃ C ∈ Jf p, (C : Set (Lat n d))))"
+     }
+    ],
+    "note": "Cardinality of the generated subgroup."
+   },
+   {
+    "id": "gen",
+    "kind": "representation",
+    "label": "⟨⋃J⟩",
+    "tex": [
+     {
+      "text": "\\langle\\bigcup J\\rangle"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.multiPrimeJoinStatement",
+      "text": "AddSubgroup.closure\n            (⋃ p ∈ n.primeFactors, ⋃ C ∈ Jf p, (C : Set (Lat n d)))"
+     }
+    ],
+    "note": "⋃J (union of the carriers of all C ∈ J) is written as the iterated union over p and C ∈ Jf p."
+   },
+   {
+    "id": "rhs",
+    "kind": "same",
+    "label": "∏_{p∣n} p^{rk J_p}",
+    "tex": [
+     {
+      "text": "\\prod_{p\\mid n}p^{\\,\\rk J_p}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.multiPrimeJoinStatement",
+      "text": "∏ p ∈ n.primeFactors, p ^ rk n d p (Jf p)"
+     }
+    ],
+    "note": "Finite product over the prime divisors of n."
+   },
+   {
+    "id": "pn",
+    "kind": "representation",
+    "label": "index p ∣ n",
+    "tex": [
+     {
+      "text": "p\\mid n",
+      "occ": 2
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.multiPrimeJoinStatement",
+      "text": "p ∈ n.primeFactors",
+      "occ": 3
+     }
+    ],
+    "note": "p ranges over the primes dividing n (§3 convention); `n.primeFactors` = {p prime : p ∣ n} for n ≠ 0."
+   },
+   {
+    "id": "fac",
+    "kind": "same",
+    "label": "p^{rk J_p}",
+    "tex": [
+     {
+      "text": "p^{\\,\\rk J_p}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.multiPrimeJoinStatement",
+      "text": "p ^ rk n d p (Jf p)"
+     }
+    ],
+    "note": "Natural-number power."
+   },
+   {
+    "id": "rk",
+    "kind": "definition",
+    "label": "rk J_p (Lemma 3.3)",
+    "tex": [
+     {
+      "text": "\\rk J_p"
+     },
+     {
+      "text": "$\\rk J$ is the dimension of the span of the corresponding lines",
+      "scope": {
+       "lines": [
+        413,
+        413
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.multiPrimeJoinStatement",
+      "text": "rk n d p (Jf p)",
+      "occ": 2
+     },
+     {
+      "decl": "ShiftSym.P02.rk",
+      "text": "Module.finrank (ZMod p) ↥(⨆ C ∈ J, lineOf n d p C)"
+     }
+    ],
+    "note": "Dimension of the join (= span) of the lines lineOf C ⊆ 𝔽_p^d, C ∈ J_p, at the prime p of the factor."
+   },
+   {
+    "id": "hyp",
+    "kind": "hypothesis",
+    "label": "standing hypotheses n ≥ 2, d ≥ 1",
+    "tex": [
+     {
+      "text": "Fix integers $n\\ge2$, $d\\ge1$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.multiPrimeJoinStatement",
+      "text": "2 ≤ n → 1 ≤ d →"
+     }
+    ],
+    "note": "From Definition 2.1; no alphabet involved."
+   }
+  ]
+ }
+}

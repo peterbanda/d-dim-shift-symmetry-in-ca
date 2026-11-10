@@ -1,0 +1,230 @@
+{
+ "label": "lem:fix",
+ "statement": {
+  "summary": "Lemma 3.1 is frozen as two Props: part (i) is `fixCountStatement` (Lagrange divisibility made explicit, then the count), part (ii) is `fixJoinStatement` (an equality of sets of configurations, for a family indexed by `Fin ℓ`). `fixLemmaStatement` is their conjunction.",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P02.fixCountStatement",
+    "role": "statement (i)"
+   },
+   {
+    "decl": "ShiftSym.P02.fixJoinStatement",
+    "role": "statement (ii)"
+   },
+   {
+    "decl": "ShiftSym.P02.fixLemmaStatement",
+    "role": "statement (whole)"
+   },
+   {
+    "decl": "ShiftSym.fixedBy",
+    "role": "definition"
+   }
+  ],
+  "deltas": [
+   "Alphabet Σ is `Fin σ` (only |Σ| enters).",
+   "N/|H| is ℕ-division; its exactness (|H| divides n^d) is an explicit extra conjunct, so no truncation can hide.",
+   "Standing hypotheses n ≥ 2, d ≥ 1 from Definition 2.1; (i) allows σ ≥ 1 (counting statement), (ii) keeps σ ≥ 2.",
+   "The family H_1,…,H_ℓ is `H : Fin ℓ → AddSubgroup (Lat n d)`; ℓ = 0 is allowed (a true extension)."
+  ],
+  "maps": [
+   {
+    "id": "H",
+    "kind": "same",
+    "label": "a subgroup H ≤ 𝒜",
+    "tex": [
+     {
+      "text": "$H\\le\\A$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.fixCountStatement",
+      "text": "H : AddSubgroup (Lat n d)"
+     }
+    ],
+    "note": "𝒜 = ℤ_n^d is `Lat n d := Fin d → ZMod n`; a subgroup of the additive group is an `AddSubgroup`."
+   },
+   {
+    "id": "fam",
+    "kind": "representation",
+    "label": "finite family H_1,…,H_ℓ",
+    "tex": [
+     {
+      "text": "H_1,\\dots,H_\\ell\\le\\A"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.fixJoinStatement",
+      "text": "(ℓ : ℕ) (H : Fin ℓ → AddSubgroup (Lat n d))"
+     }
+    ],
+    "note": "A finite family is a function from `Fin ℓ`; ℓ = 0 (empty family) is included."
+   },
+   {
+    "id": "i",
+    "kind": "same",
+    "label": "(i) |Fix(H)| = σ^{|𝒜|/|H|}",
+    "tex": [
+     {
+      "text": "|\\Fix(H)|=\\sigma^{|\\A|/|H|}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.fixCountStatement",
+      "text": "Nat.card (fixedBy (Fin σ) H) = σ ^ (n ^ d / Nat.card H)"
+     }
+    ],
+    "note": "Equality of natural numbers."
+   },
+   {
+    "id": "i.lhs",
+    "kind": "definition",
+    "label": "|Fix(H)|",
+    "tex": [
+     {
+      "text": "|\\Fix(H)|"
+     },
+     {
+      "text": "\\Fix(H)=\\{\\ssb:\\tau_{\\mathbf h}\\ssb=\\ssb\\text{ for all }\\mathbf h\\in H\\}",
+      "scope": {
+       "lines": [
+        292,
+        292
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.fixCountStatement",
+      "text": "Nat.card (fixedBy (Fin σ) H)"
+     },
+     {
+      "decl": "ShiftSym.fixedBy",
+      "text": "{s | ∀ h ∈ H, shift h s = s}"
+     }
+    ],
+    "note": "Fix(H) = configurations fixed by every element of H (`fixedBy`, Definitions.lean); |·| = `Nat.card`."
+   },
+   {
+    "id": "i.rhs",
+    "kind": "representation",
+    "label": "σ^{|𝒜|/|H|}",
+    "tex": [
+     {
+      "text": "\\sigma^{|\\A|/|H|}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.fixCountStatement",
+      "text": "σ ^ (n ^ d / Nat.card H)"
+     }
+    ],
+    "note": "|𝒜| = N = n^d written out; `/` is ℕ-division, exact by the divisibility conjunct."
+   },
+   {
+    "id": "i.div",
+    "kind": "lean-only",
+    "label": "|H| divides N (Lagrange)",
+    "tex": [],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.fixCountStatement",
+      "text": "Nat.card H ∣ n ^ d"
+     }
+    ],
+    "note": "Implicit in the paper (the exponent must be an integer); made explicit so the ℕ-division cannot truncate."
+   },
+   {
+    "id": "hyp",
+    "kind": "hypothesis",
+    "label": "standing hypotheses n ≥ 2, d ≥ 1, σ ≥ 1",
+    "tex": [
+     {
+      "text": "Fix integers $n\\ge2$, $d\\ge1$",
+      "scope": {
+       "lines": [
+        277,
+        288
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.fixCountStatement",
+      "text": "2 ≤ n → 1 ≤ d → 1 ≤ σ"
+     }
+    ],
+    "note": "From Definition 2.1; counting statements allow σ = 1."
+   },
+   {
+    "id": "ii",
+    "kind": "same",
+    "label": "(ii) ⋂ Fix(H_a) = Fix(⟨H_1 ∪ ⋯ ∪ H_ℓ⟩)",
+    "tex": [
+     {
+      "text": "\\bigcap_{a=1}^{\\ell}\\Fix(H_a)\n      =\\Fix\\bigl(\\langle H_1\\cup\\dots\\cup H_\\ell\\rangle\\bigr)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.fixJoinStatement",
+      "text": "(⋂ a, fixedBy (Fin σ) (H a))\n        = fixedBy (Fin σ) (AddSubgroup.closure (⋃ a, (H a : Set (Lat n d))))"
+     }
+    ],
+    "note": "Equality of sets of configurations."
+   },
+   {
+    "id": "ii.lhs",
+    "kind": "same",
+    "label": "⋂_{a=1}^ℓ Fix(H_a)",
+    "tex": [
+     {
+      "text": "\\bigcap_{a=1}^{\\ell}\\Fix(H_a)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.fixJoinStatement",
+      "text": "(⋂ a, fixedBy (Fin σ) (H a))"
+     }
+    ],
+    "note": "Indexed intersection over a : Fin ℓ."
+   },
+   {
+    "id": "ii.join",
+    "kind": "same",
+    "label": "⟨H_1 ∪ ⋯ ∪ H_ℓ⟩",
+    "tex": [
+     {
+      "text": "\\langle H_1\\cup\\dots\\cup H_\\ell\\rangle"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.fixJoinStatement",
+      "text": "AddSubgroup.closure (⋃ a, (H a : Set (Lat n d)))"
+     }
+    ],
+    "note": "The generated subgroup is literally the closure of the union of carriers."
+   },
+   {
+    "id": "ii.hyp",
+    "kind": "hypothesis",
+    "label": "σ ≥ 2 kept in (ii)",
+    "tex": [],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.fixJoinStatement",
+      "text": "2 ≤ σ"
+     }
+    ],
+    "note": "Not a counting statement, so the standing σ ≥ 2 is kept; the identity holds for every alphabet."
+   }
+  ]
+ }
+}

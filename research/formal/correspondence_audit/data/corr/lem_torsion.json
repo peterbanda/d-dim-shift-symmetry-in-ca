@@ -1,0 +1,625 @@
+{
+ "label": "lem:torsion",
+ "statement": {
+  "summary": "Lemma 3.3 is one paper sentence with six claims, frozen as six Props: `torsionEqStatement` (𝒜[p] = ((n/p)ℤ/nℤ)^d as sets), `torsionIsoStatement` (the formula x = (n/p)y ↦ y mod p determines `torsionCoord`, and `torsionCoord` restricted to 𝒜[p] is an additive isomorphism onto 𝔽_p^d), `torsionOrderStatement` (order-p elements ↔ nonzero vectors), `torsionLinesStatement` (C ↦ lineOf C is a bijection 𝓛_p → lines, compatible with the isomorphism), `torsionCountStatement` (|𝓛_p| = [d 1]_p and = (p^d−1)/(p−1), in ℚ) and `torsionJoinStatement` (|⟨⋃J⟩| = p^{rk J}). `torsionLemmaStatement` is their conjunction.",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P02.torsionEqStatement",
+    "role": "statement (torsion equality)"
+   },
+   {
+    "decl": "ShiftSym.P02.torsionIsoStatement",
+    "role": "statement (isomorphism)"
+   },
+   {
+    "decl": "ShiftSym.P02.torsionOrderStatement",
+    "role": "statement (order-p elements)"
+   },
+   {
+    "decl": "ShiftSym.P02.torsionLinesStatement",
+    "role": "statement (cyclic subgroups ↔ lines)"
+   },
+   {
+    "decl": "ShiftSym.P02.torsionCountStatement",
+    "role": "statement (line count)"
+   },
+   {
+    "decl": "ShiftSym.P02.torsionJoinStatement",
+    "role": "statement (joins, rk)"
+   },
+   {
+    "decl": "ShiftSym.P02.torsionLemmaStatement",
+    "role": "statement (whole)"
+   },
+   {
+    "decl": "ShiftSym.latTorsion",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P02.torsionCoord",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P02.orderPCyc",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P02.lineOf",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P02.rk",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P02.gaussProd",
+    "role": "definition"
+   }
+  ],
+  "deltas": [
+   "Standing hypotheses n ≥ 2, d ≥ 1 (Definition 2.1); 'Let p ∣ n be prime' = `p.Prime → p ∣ n`. No alphabet appears.",
+   "p𝐱 = `p • x` (ℕ-scalar multiplication on `Fin d → ZMod n`); 𝒜[p] = `latTorsion n d p`, whose carrier is literally `{v | p • v = 0}`.",
+   "((n/p)ℤ/nℤ)^d is rendered as the set of x whose every coordinate is the residue of some integer (n/p)·y; n/p is ℕ-division, exact since p ∣ n.",
+   "The paper's map 𝐱 = (n/p)𝐲 ↦ 𝐲 mod p is realised by `torsionCoord` (canonical representative val(x_i)/(n/p)); that it agrees with y mod p for EVERY integer representation x = (n/p)y is the first conjunct of `torsionIsoStatement`.",
+   "'Isomorphism of 𝔽_p-vector spaces' is an `AddEquiv` 𝒜[p] ≃+ (Fin d → ZMod p): 𝒜[p] has no ZMod p-module instance; additive maps between 𝔽_p-spaces are automatically 𝔽_p-linear, so nothing is lost.",
+   "'Correspond' is made concrete: order-p elements lie in 𝒜[p] and have order p iff their image is nonzero; C ↦ lineOf C (𝔽_p-span of the image of C ∩ 𝒜[p]) is a `Set.BijOn` from 𝓛_p onto the finrank-1 submodules, and x ∈ C ↔ torsionCoord x ∈ lineOf C on 𝒜[p].",
+   "𝓛_p = `orderPCyc n d p` (cyclic: C = zmultiples g for some g; order p: Nat.card C = p).",
+   "The count is stated in ℚ, against the paper's product definition `gaussProd` of [d 1]_p and against (p^d−1)/(p−1) separately (chain a = b = c as a = b ∧ a = c).",
+   "rk J = finrank of ⨆_{C∈J} lineOf C (the span of the lines = their join); J is any subset of 𝓛_p, J = ∅ included."
+  ],
+  "maps": [
+   {
+    "id": "hyp.p",
+    "kind": "hypothesis",
+    "label": "p ∣ n prime",
+    "tex": [
+     {
+      "text": "Let $p\\mid n$ be prime"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionEqStatement",
+      "text": "p.Prime → p ∣ n"
+     },
+     {
+      "decl": "ShiftSym.P02.torsionIsoStatement",
+      "text": "p.Prime → p ∣ n"
+     },
+     {
+      "decl": "ShiftSym.P02.torsionOrderStatement",
+      "text": "p.Prime → p ∣ n"
+     },
+     {
+      "decl": "ShiftSym.P02.torsionLinesStatement",
+      "text": "p.Prime → p ∣ n"
+     },
+     {
+      "decl": "ShiftSym.P02.torsionCountStatement",
+      "text": "p.Prime → p ∣ n"
+     },
+     {
+      "decl": "ShiftSym.P02.torsionJoinStatement",
+      "text": "p.Prime → p ∣ n"
+     }
+    ],
+    "note": "Every one of the six Props carries both hypotheses."
+   },
+   {
+    "id": "hyp",
+    "kind": "hypothesis",
+    "label": "standing hypotheses n ≥ 2, d ≥ 1",
+    "tex": [
+     {
+      "text": "Fix integers $n\\ge2$, $d\\ge1$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionEqStatement",
+      "text": "2 ≤ n → 1 ≤ d"
+     },
+     {
+      "decl": "ShiftSym.P02.torsionIsoStatement",
+      "text": "2 ≤ n → 1 ≤ d"
+     },
+     {
+      "decl": "ShiftSym.P02.torsionOrderStatement",
+      "text": "2 ≤ n → 1 ≤ d"
+     },
+     {
+      "decl": "ShiftSym.P02.torsionLinesStatement",
+      "text": "2 ≤ n → 1 ≤ d"
+     },
+     {
+      "decl": "ShiftSym.P02.torsionCountStatement",
+      "text": "2 ≤ n → 1 ≤ d"
+     },
+     {
+      "decl": "ShiftSym.P02.torsionJoinStatement",
+      "text": "2 ≤ n → 1 ≤ d"
+     }
+    ],
+    "note": "From Definition 2.1; the lemma involves no alphabet, so no σ hypothesis."
+   },
+   {
+    "id": "eq",
+    "kind": "same",
+    "label": "𝒜[p] = ((n/p)ℤ/nℤ)^d",
+    "tex": [
+     {
+      "text": "$\\A[p]=\\{\\mathbf x:p\\mathbf x=\\mathbf 0\\}$ is given by"
+     },
+     {
+      "text": "\\A[p]=\\bigl(\\tfrac np\\ZZ/n\\ZZ\\bigr)^d"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionEqStatement",
+      "text": "{x : Lat n d | p • x = 0}\n      = {x : Lat n d | ∀ i, ∃ y : ℤ, x i = ((((n / p : ℕ) : ℤ) * y : ℤ) : ZMod n)}"
+     }
+    ],
+    "note": "Equality of subsets of 𝒜 = `Lat n d`."
+   },
+   {
+    "id": "tors",
+    "kind": "definition",
+    "label": "𝒜[p] = {x : px = 0}",
+    "tex": [
+     {
+      "text": "\\A[p]=\\{\\mathbf x:p\\mathbf x=\\mathbf 0\\}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionEqStatement",
+      "text": "{x : Lat n d | p • x = 0}"
+     },
+     {
+      "decl": "ShiftSym.latTorsion",
+      "text": "{v | p • v = 0}"
+     }
+    ],
+    "note": "In the equality Prop the torsion is written as the set itself; the other Props use the subgroup `latTorsion n d p` with this carrier (or the hypothesis `p • x = 0`)."
+   },
+   {
+    "id": "eq.rhs",
+    "kind": "representation",
+    "label": "((n/p)ℤ/nℤ)^d",
+    "tex": [
+     {
+      "text": "\\bigl(\\tfrac np\\ZZ/n\\ZZ\\bigr)^d"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionEqStatement",
+      "text": "{x : Lat n d | ∀ i, ∃ y : ℤ, x i = ((((n / p : ℕ) : ℤ) * y : ℤ) : ZMod n)}"
+     }
+    ],
+    "note": "(n/p)ℤ/nℤ ≤ ℤ/nℤ as the residues of the integers (n/p)·y; the d-th power is 'for every coordinate i'."
+   },
+   {
+    "id": "np",
+    "kind": "representation",
+    "label": "n/p",
+    "tex": [
+     {
+      "text": "\\tfrac np",
+      "occ": 1
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionEqStatement",
+      "text": "(n / p : ℕ)"
+     }
+    ],
+    "note": "ℕ-division, exact because p ∣ n is a hypothesis; then cast to ℤ."
+   },
+   {
+    "id": "map",
+    "kind": "representation",
+    "label": "the map 𝐱 = (n/p)𝐲 ↦ 𝐲 mod p",
+    "tex": [
+     {
+      "text": "\\mathbf x=\\tfrac np\\,\\mathbf y\\mapsto\\mathbf y\\bmod p"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionIsoStatement",
+      "text": "(∀ (x : Lat n d) (y : Fin d → ℤ),\n        (∀ i, x i = ((((n / p : ℕ) : ℤ) * y i : ℤ) : ZMod n)) →\n          torsionCoord n p d x = fun i => ((y i : ℤ) : ZMod p))"
+     },
+     {
+      "decl": "ShiftSym.P02.torsionCoord",
+      "text": "fun i => (((x i).val / (n / p) : ℕ) : ZMod p)"
+     }
+    ],
+    "note": "`torsionCoord` uses the canonical representative y_i = val(x_i)/(n/p); the first conjunct says it equals y mod p for every integer y with x = (n/p)·y, i.e. the paper's formula is well defined and is this map."
+   },
+   {
+    "id": "iso",
+    "kind": "representation",
+    "label": "isomorphism 𝒜[p] ≅ 𝔽_p^d of 𝔽_p-vector spaces",
+    "tex": [
+     {
+      "text": "is an isomorphism $\\A[p]\\cong\\FF_p^d$ of $\\FF_p$-vector spaces"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionIsoStatement",
+      "text": "∃ e : latTorsion n d p ≃+ (Fin d → ZMod p),\n      ∀ x : latTorsion n d p, e x = torsionCoord n p d (x : Lat n d)"
+     }
+    ],
+    "note": "An additive isomorphism whose underlying function is the paper's map (not merely some isomorphism). ≃+ instead of ≃ₗ: every additive map between 𝔽_p-vector spaces is 𝔽_p-linear."
+   },
+   {
+    "id": "Fpd",
+    "kind": "definition",
+    "label": "𝔽_p^d",
+    "tex": [
+     {
+      "text": "\\FF_p^d",
+      "occ": 1
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionIsoStatement",
+      "text": "(Fin d → ZMod p)",
+      "occ": 2
+     }
+    ],
+    "note": "𝔽_p = `ZMod p` (a field since p is prime); 𝔽_p^d = functions Fin d → ZMod p."
+   },
+   {
+    "id": "ord",
+    "kind": "representation",
+    "label": "elements of order p ↔ nonzero vectors",
+    "tex": [
+     {
+      "text": "elements of order $p$ correspond to nonzero vectors"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionOrderStatement",
+      "text": "(∀ x : Lat n d, addOrderOf x = p → p • x = 0) ∧\n    (∀ x : Lat n d, p • x = 0 → (addOrderOf x = p ↔ torsionCoord n p d x ≠ 0))"
+     }
+    ],
+    "note": "Every order-p element lies in 𝒜[p], and on 𝒜[p] order p ⟺ nonzero image; together with the bijection of (b) this is the correspondence."
+   },
+   {
+    "id": "ord.l",
+    "kind": "same",
+    "label": "elements of order p",
+    "tex": [
+     {
+      "text": "elements of order $p$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionOrderStatement",
+      "text": "addOrderOf x = p",
+      "occ": 3
+     }
+    ],
+    "note": "Order = `addOrderOf` in 𝒜 (equal to the order in the subgroup 𝒜[p])."
+   },
+   {
+    "id": "ord.r",
+    "kind": "same",
+    "label": "nonzero vectors",
+    "tex": [
+     {
+      "text": "nonzero vectors"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionOrderStatement",
+      "text": "torsionCoord n p d x ≠ 0"
+     }
+    ],
+    "note": "Image under the map of (b) is nonzero."
+   },
+   {
+    "id": "under",
+    "kind": "representation",
+    "label": "'Under it' (correspondence via the isomorphism)",
+    "tex": [
+     {
+      "text": "Under this isomorphism,"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionLinesStatement",
+      "text": "∀ C ∈ orderPCyc n d p,\n      (∀ x ∈ C, p • x = 0) ∧\n      ∀ x : Lat n d, p • x = 0 → (x ∈ C ↔ torsionCoord n p d x ∈ lineOf n d p C)"
+     }
+    ],
+    "note": "Makes the line correspondence 'under' the isomorphism: each C ∈ 𝓛_p lies in 𝒜[p] and its image under torsionCoord is exactly lineOf C (no abstract equinumerosity)."
+   },
+   {
+    "id": "lines",
+    "kind": "representation",
+    "label": "cyclic subgroups of order p ↔ lines",
+    "tex": [
+     {
+      "text": "cyclic subgroups of order $p$ correspond to lines"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionLinesStatement",
+      "text": "Set.BijOn (lineOf n d p) (orderPCyc n d p)\n        {W : Submodule (ZMod p) (Fin d → ZMod p) | Module.finrank (ZMod p) W = 1}"
+     }
+    ],
+    "note": "Bijection = `Set.BijOn` (maps 𝓛_p into lines, injective on 𝓛_p, onto all lines)."
+   },
+   {
+    "id": "Lp",
+    "kind": "definition",
+    "label": "cyclic subgroups of order p (𝓛_p)",
+    "tex": [
+     {
+      "text": "cyclic subgroups of order $p$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionLinesStatement",
+      "text": "orderPCyc n d p",
+      "occ": 1
+     },
+     {
+      "decl": "ShiftSym.P02.orderPCyc",
+      "text": "{C | (∃ g : Lat n d, C = AddSubgroup.zmultiples g) ∧ Nat.card C = p}"
+     }
+    ],
+    "note": "'Cyclic' literally as C = ⟨g⟩, 'order p' as |C| = p. (Named 𝓛_p only in Lemma 3.4.)"
+   },
+   {
+    "id": "line",
+    "kind": "definition",
+    "label": "lines of 𝔽_p^d",
+    "tex": [
+     {
+      "text": "lines",
+      "occ": 1
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionLinesStatement",
+      "text": "{W : Submodule (ZMod p) (Fin d → ZMod p) | Module.finrank (ZMod p) W = 1}"
+     }
+    ],
+    "note": "Lines = 1-dimensional 𝔽_p-subspaces (finrank 1)."
+   },
+   {
+    "id": "lineOf",
+    "kind": "definition",
+    "label": "the line corresponding to C",
+    "tex": [
+     {
+      "text": "correspond to lines"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionLinesStatement",
+      "text": "lineOf n d p",
+      "occ": 1
+     },
+     {
+      "decl": "ShiftSym.P02.lineOf",
+      "text": "Submodule.span (ZMod p) (torsionCoord n p d '' {x : Lat n d | p • x = 0 ∧ x ∈ C})"
+     }
+    ],
+    "note": "𝔽_p-span of the image of C ∩ 𝒜[p] under the map of (b); that this image already is the line is the 'under it' conjunct."
+   },
+   {
+    "id": "cnt",
+    "kind": "representation",
+    "label": "their number is [d 1]_p = (p^d−1)/(p−1)",
+    "tex": [
+     {
+      "text": "their number is $\\gaussbinom d1_p=(p^d-1)/(p-1)$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionCountStatement",
+      "text": "(Nat.card (orderPCyc n d p) : ℚ) = gaussProd p d 1 ∧\n    (Nat.card (orderPCyc n d p) : ℚ) = ((p : ℚ) ^ d - 1) / ((p : ℚ) - 1)"
+     }
+    ],
+    "note": "The chain |𝓛_p| = [d 1]_p = (p^d−1)/(p−1) as two equalities with common left side, in ℚ."
+   },
+   {
+    "id": "cnt.l",
+    "kind": "representation",
+    "label": "their number |𝓛_p|",
+    "tex": [
+     {
+      "text": "their number"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionCountStatement",
+      "text": "(Nat.card (orderPCyc n d p) : ℚ)",
+      "occ": 1
+     }
+    ],
+    "note": "`Nat.card` of the (finite) set 𝓛_p, cast to ℚ."
+   },
+   {
+    "id": "gb",
+    "kind": "definition",
+    "label": "[d 1]_p (paper's product formula)",
+    "tex": [
+     {
+      "text": "\\gaussbinom d1_p"
+     },
+     {
+      "text": "\\gaussbinom dr_p=\\prod_{i=0}^{r-1} \\frac{p^{d-i}-1}{p^{i+1}-1}",
+      "scope": {
+       "lines": [
+        354,
+        355
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionCountStatement",
+      "text": "gaussProd p d 1"
+     },
+     {
+      "decl": "ShiftSym.P02.gaussProd",
+      "text": "∏ i ∈ Finset.range r,\n    (((q : ℚ) ^ ((d : ℤ) - (i : ℤ)) - 1) / ((q : ℚ) ^ (i + 1) - 1))"
+     }
+    ],
+    "note": "The Gaussian binomial exactly as the §3 preamble defines it (product over i < r, integer exponent d − i via zpow, in ℚ) — not the project's recursive `gaussBinom`."
+   },
+   {
+    "id": "geom",
+    "kind": "representation",
+    "label": "(p^d−1)/(p−1)",
+    "tex": [
+     {
+      "text": "(p^d-1)/(p-1)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionCountStatement",
+      "text": "((p : ℚ) ^ d - 1) / ((p : ℚ) - 1)"
+     }
+    ],
+    "note": "Rational division, so no ℕ truncation is possible."
+   },
+   {
+    "id": "join",
+    "kind": "same",
+    "label": "|⟨⋃J⟩| = p^{rk J} for J ⊆ 𝓛_p",
+    "tex": [
+     {
+      "text": "for a set $J$ of\norder-$p$ cyclic subgroups"
+     },
+     {
+      "text": "|\\langle\\bigcup J\\rangle|=p^{\\rk J}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionJoinStatement",
+      "text": "∀ J : Set (AddSubgroup (Lat n d)), J ⊆ orderPCyc n d p →\n      Nat.card (AddSubgroup.closure (⋃ C ∈ J, (C : Set (Lat n d)))) = p ^ rk n d p J"
+     }
+    ],
+    "note": "J an arbitrary set of order-p cyclic subgroups (automatically finite); J = ∅ included (1 = p^0)."
+   },
+   {
+    "id": "J",
+    "kind": "same",
+    "label": "a set J of order-p cyclic subgroups",
+    "tex": [
+     {
+      "text": "for a set $J$ of order-$p$ cyclic subgroups"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionJoinStatement",
+      "text": "∀ J : Set (AddSubgroup (Lat n d)), J ⊆ orderPCyc n d p →"
+     }
+    ],
+    "note": "J ⊆ 𝓛_p."
+   },
+   {
+    "id": "join.l",
+    "kind": "same",
+    "label": "|⟨⋃J⟩|",
+    "tex": [
+     {
+      "text": "|\\langle\\bigcup J\\rangle|"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionJoinStatement",
+      "text": "Nat.card (AddSubgroup.closure (⋃ C ∈ J, (C : Set (Lat n d))))"
+     }
+    ],
+    "note": "Cardinality of the generated subgroup."
+   },
+   {
+    "id": "gen",
+    "kind": "same",
+    "label": "⟨⋃J⟩",
+    "tex": [
+     {
+      "text": "\\langle\\bigcup J\\rangle"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionJoinStatement",
+      "text": "AddSubgroup.closure (⋃ C ∈ J, (C : Set (Lat n d)))"
+     }
+    ],
+    "note": "The subgroup generated by the union of the carriers."
+   },
+   {
+    "id": "join.r",
+    "kind": "same",
+    "label": "p^{rk J}",
+    "tex": [
+     {
+      "text": "p^{\\rk J}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionJoinStatement",
+      "text": "p ^ rk n d p J"
+     }
+    ],
+    "note": "Natural-number power."
+   },
+   {
+    "id": "rk",
+    "kind": "definition",
+    "label": "rk J = dim of the span of the corresponding lines",
+    "tex": [
+     {
+      "text": "$\\rk J$ is the dimension of the span of the corresponding lines"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.torsionJoinStatement",
+      "text": "rk n d p J"
+     },
+     {
+      "decl": "ShiftSym.P02.rk",
+      "text": "Module.finrank (ZMod p) ↥(⨆ C ∈ J, lineOf n d p C)"
+     }
+    ],
+    "note": "The span of a family of subspaces is their join ⨆; dimension = `Module.finrank`; the lines are `lineOf C` as in (d)."
+   }
+  ]
+ }
+}

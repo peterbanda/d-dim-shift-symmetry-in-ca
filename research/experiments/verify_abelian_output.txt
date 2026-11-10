@@ -1,0 +1,48 @@
+[1] closed formula: divisor coding = vector coding; Gaussian binomials: product = q-Pascal
+  ok   8440 (group, sigma) pairs agree; Gaussian binomials agree for q<=7, d<=7
+[2] brute force (B) = lattice (L) = formula (F)
+  ok   Z(12,) sigma=2: brute 76, lattice 76 (6 subgroups), formula 76
+  ok   Z(16,) sigma=2: brute 256, lattice 256 (5 subgroups), formula 256
+  ok   Z(18,) sigma=2: brute 568, lattice 568 (6 subgroups), formula 568
+  ok   Z(20,) sigma=2: brute 1036, lattice 1036 (6 subgroups), formula 1036
+  ok   Z(2, 6) sigma=2: brute 184, lattice 184 (10 subgroups), formula 184
+  ok   Z(2, 8) sigma=2: brute 736, lattice 736 (11 subgroups), formula 736
+  ok   Z(2, 9) sigma=2: brute 568, lattice 568 (6 subgroups), formula 568
+  ok   Z(2, 10) sigma=2: brute 3016, lattice 3016 (10 subgroups), formula 3016
+  ok   Z(3, 4) sigma=2: brute 76, lattice 76 (6 subgroups), formula 76
+  ok   Z(3, 6) sigma=2: brute 730, lattice 730 (12 subgroups), formula 730
+  ok   Z(4, 4) sigma=2: brute 736, lattice 736 (15 subgroups), formula 736
+  ok   Z(4, 5) sigma=2: brute 1036, lattice 1036 (6 subgroups), formula 1036
+  ok   Z(2, 2, 3) sigma=2: brute 184, lattice 184 (10 subgroups), formula 184
+  ok   Z(2, 2, 4) sigma=2: brute 1600, lattice 1600 (27 subgroups), formula 1600
+  ok   Z(2, 2, 5) sigma=2: brute 3016, lattice 3016 (10 subgroups), formula 3016
+  ok   Z(2, 3, 3) sigma=2: brute 730, lattice 730 (12 subgroups), formula 730
+  ok   Z(2, 2, 2, 2) sigma=2: brute 3072, lattice 3072 (67 subgroups), formula 3072
+  ok   84 groups x alphabets checked by brute force (all rectangular groups with n_i >= 2, at most 4 factors, sigma^N <= 2^20)
+[3] lattice (L) = formula (F) beyond brute force
+  ok   1605 (group, sigma) pairs, N up to 343
+[4] square tori: formula (F) = paper Theorem 4.4; reference values
+  ok   square tori n<=30, d<=4, sigma<=3 agree with Theorem 4.4; reference values 8, 26, 182, 72, 6398, 801064
+[5] dependence on N and the p-ranks only (non-isomorphic groups)
+  ok   Z(2, 8) vs Z(4, 4): N 16/16, ranks {2: 2}/{2: 2}: lattice 736 / 736 (equal, as predicted)
+  ok   Z(2, 2, 4) vs Z(2, 8): N 16/16, ranks {2: 3}/{2: 2}: lattice 1600 / 736 (different ranks)
+  ok   Z(2, 16) vs Z(4, 8): N 32/32, ranks {2: 2}/{2: 2}: lattice 196096 / 196096 (equal, as predicted)
+  ok   Z(3, 27) vs Z(9, 9): N 81/81, ranks {3: 2}/{3: 2}: lattice 536869376 / 536869376 (equal, as predicted)
+  ok   Z(2, 2, 8) vs Z(2, 4, 4): N 32/32, ranks {2: 3}/{2: 3}: lattice 455296 / 455296 (equal, as predicted)
+  ok   Z(4, 12) vs Z(2, 24): N 48/48, ranks {2: 2, 3: 1}/{2: 2, 3: 1}: lattice 50388256 / 50388256 (equal, as predicted)
+  ok   Z(6, 36) vs Z(12, 18): N 216/216, ranks {2: 2, 3: 2}/{2: 2, 3: 2}: lattice 973555660994169610251324941700736 / 973555660994169610251324941700736 (equal, as predicted)
+[6] N | sigma^N - |S_G|
+  ok   all rectangular groups with N <= 60, sigma in 2..5 (0 failures)
+[7] k-active counts (Corollary (d)): brute force per k = formula, every k
+  ok   525 (group, sigma, k) triples; the k-active counts sum to |S_G|
+[8] fixed N: |S_G| strictly increasing in the rank profile (Corollary 4.8(ii); formula only)
+  ok   3858 comparable (profile, profile', sigma) pairs, N <= 1024, sigma in (2, 3): the cyclic group is the minimizer at fixed N
+[9] Corollary 4.8(ii) identity: raising d_p by one at fixed N adds exactly p^(d_p) * ac(G''), |G''| = N/p, ranks of G
+  ok   6069 single rank steps (N <= 2000, sigma in 2, 3, 5): identity exact and the increment positive
+[10] Remark 4.9(i): k-active counts by the full subgroup lattice (weights |Fix_k(H)|) = formula, every k
+  ok   15278 (group, sigma, k) triples, N <= 64 (and four larger groups): lattice = formula
+[11] Corollary 4.8(i) example: Z2 x Z24 and Z4 x Z12 (non-isomorphic; N = 48, d_2 = 2, d_3 = 1)
+  ok   non-isomorphic: largest element orders 24 and 12
+  ok   sigma=2: union (U) = lattice (L) = formula (F) = 50388256 for both groups (15 / 19 nontrivial cyclic subgroups, 22 / 30 subgroups)
+  ok   sigma=3: union (U) = lattice (L) = formula (F) = 847330573761 for both groups (15 / 19 nontrivial cyclic subgroups, 22 / 30 subgroups)
+ALL PASSED

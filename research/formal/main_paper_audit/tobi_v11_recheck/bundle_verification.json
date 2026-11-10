@@ -1,0 +1,19 @@
+{
+  "result": "PASS",
+  "head": "c73bb7b42ee55d590557f4301393cb0f288d6e1e",
+  "fingerprints_checked": 189,
+  "items": 27,
+  "mappings": 529,
+  "tex_anchors_and_rectangles_reproduced": 577,
+  "pages": 28,
+  "glyph_boxes_reproduced": 68268,
+  "word_layout_identical": true,
+  "aux_labels_identical": true,
+  "all_item_hashes_reproduced": true,
+  "stale_verdicts": [],
+  "unjudged": [],
+  "warnings": [
+    "lem_fix.json:statement:ii.hyp: no TeX anchor (kind hypothesis)"
+  ],
+  "temporary_build_directory": "/tmp/v11-final-audit-recheck-wbkm8s92"
+}

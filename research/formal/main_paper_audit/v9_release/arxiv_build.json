@@ -1,0 +1,22 @@
+{
+  "files": [
+    "shift_symmetry_d_dimensions.tex",
+    "charts/chart17_example_configs.pdf",
+    "charts/chart14_pattern_flip.png",
+    "charts/chart13_decay_rate_classes.png",
+    "charts/chart15_inversion_dimension.png"
+  ],
+  "text_matches_committed": true,
+  "warnings": [
+    "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+    "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+    "Underfull \\hbox (badness 3568) in paragraph at lines 1437--1437",
+    "Underfull \\hbox (badness 1622) in paragraph at lines 1441--1441",
+    "Underfull \\hbox (badness 2119) in paragraph at lines 1445--1447",
+    "Underfull \\hbox (badness 1052) in paragraph at lines 1448--1448",
+    "Underfull \\hbox (badness 3780) in paragraph at lines 1451--1453",
+    "Overfull \\hbox (0.69986pt too wide) in paragraph at lines 1646--1648",
+    "Underfull \\hbox (badness 3601) in paragraph at lines 1828--1831",
+    "Output written on shift_symmetry_d_dimensions.pdf (25 pages, 1162538 bytes)."
+  ]
+}

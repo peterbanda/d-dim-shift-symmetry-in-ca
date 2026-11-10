@@ -1,0 +1,14 @@
+{
+  "head": "baea4fa182aa30ebca8b5a54119701c1c02a2a97",
+  "pymupdf": "2.1",
+  "pdflatex": "pdfTeX 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian)",
+  "previous_review_snapshot_files_unchanged": 281,
+  "sha256": {
+    "research/formal/correspondence_audit/data/audit_data.json": "6dc50324f6b393e41e27a6c68e8b725b2d6f8acf17863d78e18cb799c9aeb458",
+    "research/formal/correspondence_audit/data/paper.aux.json": "85769167dc72e7efe08d5c2588ef2a06e354d7c3171c86e54152c16058015070",
+    "research/formal/correspondence_audit/data/pdf_chars.json": "9ad8c729e1ada4bc208c07c0a8e43aa9616034a4764f97dd0b4ec69bd22eb816",
+    "research/formal/correspondence_audit/README.md": "d06af8ceac0b209d18c9e08ecfe0fafe4d1ab5b69a9674e0938fd00944dd7643",
+    "research/experiments/README.md": "842e655def90204092e7b02c43eb0c7c924b304c1ef93906fa34b58ab5daa4d0"
+  },
+  "script_sha256": "556a3f4b288cc51a9e66d78adbac1965e92ec691f6c41829b008d7c50832cb4a"
+}

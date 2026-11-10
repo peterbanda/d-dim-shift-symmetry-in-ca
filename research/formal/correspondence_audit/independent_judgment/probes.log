@@ -1,0 +1,7 @@
+2026-10-27T13:37:46+01:00
+977f8236d3c4ae520971e35103e16654b0e378b9
+lemA2_proved : lemA2Statement
+'IndependentJudgment.lemA2Part1_all_j' depends on axioms: [propext, Classical.choice, Quot.sound]
+insolv_proved : insolvStatement
+'IndependentJudgment.insolv_breaksSymmetry' depends on axioms: [propext, Quot.sound]
+exit 0

@@ -1,0 +1,3 @@
+Shiftsym/Paper/Proofs/P08_Detection_Algo.lean:45:32: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`

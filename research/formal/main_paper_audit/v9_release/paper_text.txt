@@ -1,0 +1,1498 @@
+   Shift-Symmetric Configurations in d-Dimensional Cellular
+                         Automata:
+      Enumeration, Bounds, Irreversibility, and Detection
+             Peter Banda                John Caughman                    Tobi Lehman
+               Cequence             Portland State University                Perforce
+
+     November 2026 — revised draft (v9, post-audit, formally verified in Lean 4)
+
+
+                                              Abstract
+        A configuration of a cellular automaton on the d-dimensional torus Zdn is said to be shift-
+    symmetric if it is fixed by some nonzero translation. For the two-dimensional case, Banda,
+    Caughman, Cenek, and Teuscher (Chaos 29, 063120, 2019) enumerated these configurations,
+    bounded their number, and offered several dynamical and algorithmic consequences, leaving
+    the d-dimensional case open. In this article, we generalize the results to arbitrary dimension.
+    Specifically, we obtain an explicit closed-form enumeration of shift-symmetric configurations
+    on Zdn for arbitrary side length n, dimension d, and alphabet Σ of size σ. In comparison
+    with the two-dimensional case, several key coefficients, namely 1, p+1, and p, are replaced
+                      v  
+    by rd (p, v) = p(2) vd p , which are the Möbius numbers of the subspace lattice of Fdp weighted
+    by Gaussian binomials. We also extend the enumeration to configurations with a prescribed
+    number of active cells. The case where n is prime recovers, in complement form, a result of
+    Castillo-Ramirez and Gadouleau on aperiodic configurations; the multi-prime closed form,
+    and all dynamical consequences, are new. We further prove a lower bound that is attained
+    exactly when n is prime, extending the two-dimensional tightness characterization of Banda
+    et al. to arbitrary dimension, and upper bounds whose union form sharpens, on tori with
+    side n ≥ 7 and at matching exponent, the prefactor of the known general-group bounds, with
+                                          d
+    closed form (2d − 1 + 2 log2 n) σ n /2 . Two crossover laws follow: the symmetry probability
+                     d
+    decays as σ −c n with rate c → 1−1/p1 (n) governed solely by the smallest prime factor of n,
+    and the composite-versus-prime symmetry advantage familiar from two dimensions inverts
+    within an explicit window around a pair-dependent dimension dc (p) = ln(2 − 2/p)/ ln(1 +
+    1/p) ≈ p ln 2. Under the necessary hypothesis of translation-equivariant neighborhoods (a
+    counterexample shows uniformity of the local rule alone does not suffice), shift-symmetry is
+    irreversible, the per-prime symmetry ranks are non-decreasing along every trajectory, and
+    non-symmetric tasks are unsolvable from symmetric inputs. Finally we give a detection
+    algorithm for shift-symmetry with worst-case cost O(sopf d (n) · nd ) cell operations and an
+    exact average-case analysis. All enumerative claims have been verified against definition-level
+    exhaustive computation on small lattices and against independent subgroup-level evaluators
+    throughout. The mathematical content of every numbered statement is, moreover, formally
+    verified in the Lean 4 proof assistant, and the correspondence between each theorem, lemma,
+    proposition, and corollary and its formal statement was audited by hand with a purpose-built
+    paper–Lean viewer.
+
+
+Contents
+1 Introduction                                                                                        3
+
+2 Model                                                                                               5
+
+3 Preliminaries                                                                                       5
+
+                                                  1
+4 Enumeration                                                                                     7
+  4.1 The signed spanning-set count . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     7
+  4.2 Main theorem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    8
+  4.3 Alternative derivation via the subgroup lattice . . . . . . . . . . . . . . . . . . . .     9
+  4.4 Computational verification . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    9
+
+5 Configurations with k active cells                                                             10
+
+6 Bounds                                                                                      10
+  6.1 Lower bound, attained exactly at primes . . . . . . . . . . . . . . . . . . . . . . . 11
+  6.2 Upper bound . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+
+7 Probability of shift-symmetry                                                                  12
+
+8 Dynamics: irreversibility, insolvability, rank monotonicity                                    13
+
+9 Detection                                                                                      14
+
+10 Crossover laws and empirical observations in higher dimensions                                15
+
+11 Formal verification                                                                           18
+
+12 Summary and conclusion                                                                        20
+
+A Proof of Theorem 6.1                                                                           22
+
+
+
+
+                                                2
+1       Introduction
+A configuration of a cellular automaton on the d-dimensional torus Zdn is said to be shift-
+symmetric if it is fixed by some nonzero translation (Figure 1). For the two-dimensional case,
+Banda, Caughman, Cenek, and Teuscher (Chaos 29, 063120, 2019) studied shift-symmetry for
+configurations of two-dimensional cellular automata (CA) on toroidal lattices Zn × Zn . Such
+symmetry is noteworthy since, once a configuration is fixed by a nonzero translation, no uniform
+synchronous update can ever cause the symmetry to be lost. As a result, symmetric configura-
+tions effectively function as irreversible traps that can make non-symmetric tasks (leader elec-
+tion, pattern recognition) unsolvable in the worst case. Quantifying this obstruction requires
+counting the shift-symmetric configurations, which Banda et al. [1] accomplished for d = 2,
+leaving higher-dimensional extensions for future consideration. In this paper, we provide the
+d-dimensional extension and, in the process, sharpen and correct several statements whose naive
+generalizations to higher dimensions fail.
+
+Contributions. The primary contributions of this paper are the following:
+
+    (i) An explicit closed-form enumeration of the set Snd of shift-symmetric configurations on Zdn
+        for arbitrary n, d, and alphabet size σ (Theorem 4.4), with two independent derivations,
+        and a refinement to configurations with exactly k active cells (Theorem 5.1).
+
+ (ii) A lower bound for |Snd | attained exactly when n is prime (Theorem 6.1). We show that a
+      naive generalization of the two-dimensional bound of [1] is false for d ≥ 3 (Remark 6.2).
+      We also give an upper bound with an explicit prefactor 2d − 1 + 2 log2 n (Theorem 6.3).
+
+ (iii) Proofs of irreversibility, insolvability, and per-prime symmetry-rank monotonicity in d
+       dimensions (Section 8), under a translation-equivariance hypothesis that we show is neces-
+       sary: a two-cell counterexample (Remark 2.5) demonstrates that a shared local rule with
+       cell-dependent neighborhoods does not preserve symmetry.
+
+ (iv) A detection algorithm for shift-symmetry with worst-case bound O(sopf d (n) · nd ) and an
+      exact average-case expectation analysis (Section 9), with the average-case “polylogarith-
+      mic” claims of the two-dimensional literature restated under appropriate hypotheses.
+
+ (v) A number of computational observations regarding higher dimensions (Section 10): the
+     prime/composite extremal pattern of d = 2 breaks for d ≥ 3, and the multi-term correction
+     regime collapses rapidly with growing p and d.
+
+
+Comments on verification. Every enumerative formula below has been checked, with exact
+integer arithmetic, against definition-level exhaustive enumeration and against an independent
+subgroup-level inclusion–exclusion evaluator; the two main theorems additionally passed inde-
+pendent adversarial review. The supplementary material, namely the scripts that reproduce
+every enumeration, scan, and figure (with their domains, outputs, and checksums),1 the Lean
+development (Section 11), and the correspondence audit (Section 12), is in the project repository,
+github.com/peterbanda/d-dim-shift-symmetry. Beyond testing and review, the numbered
+results are machine-checked : Theorems 4.4 and 6.1, in the generality stated here, and the math-
+ematical content of the other numbered statements of Sections 2–10 and Appendix A (statistical
+summaries aside) have been formally verified in the Lean 4 proof assistant (Section 11).
+    1
+   Catalogued in research/experiments/; see the reproducibility paragraph in Section 10. A companion erra-
+tum note repairing two small-n gaps in the proofs of the 2D bounds of [1] is in research/fix_note/.
+
+
+
+
+                                                    3
+             ­       ®                 ­       ®                   © ª                       ­          ®
+   (a) Stab = (3; 0)         (b) Stab = (2; 2)           (c) Stab = 0              (d) Stab = (0; 2; 2)
+
+
+
+
+Figure 1: Shift-symmetric and asymmetric configurations (σ = 2: filled and empty cells). A cell
+u = (u1 , u2 ) is drawn in column u1 and row u2 , counted from the bottom left, and s is fixed by
+v when s(u + v) = s(u) for all u; each arrow runs from a cell u to u + v for a generator v of the
+stabilizer. (a) A configuration on Z26 with stabilizer ⟨(3, 0)⟩: the translation by (3, 0) maps every
+cell to a cell in the same state (outlined: one orbit). (b) Stabilizer ⟨(2, 2)⟩, a diagonal translation
+of order 3. (c) Trivial stabilizer: this configuration is not shift-symmetric. (d) A configuration
+on Z34 , its six filled cells drawn, with stabilizer ⟨(0, 2, 2)⟩; the arrow runs from (0, 0, 0) to (0, 2, 2).
+Of the 236 configurations on Z26 , exactly 801 064 (about 1.2 · 10−5 of them) are shift-symmetric
+(Theorem 4.4; a reference value of Section 4.4).
+
+
+Related work. For the two-dimensional torus, Banda et al. [1] enumerated shift-symmetric
+configurations, bounded their number, and analyzed detection; to our knowledge no extension
+has appeared since. From the group-theoretic side, Castillo-Ramirez and Gadouleau [2] counted
+configurations with a given stabilizer class over an arbitrary finite group via the Möbius func-
+tion of the subgroup lattice. When combined with Hall’s evaluation of the Möbius function
+of a p-group ([6]; see Hawkes, Isaacs, and Özaydin [5, Cor. 3.5]), their Lemma 7 yields, in
+complement form, the prime-lattice case of our enumeration theorem, and Section 4.3 shows
+how the general case can alternatively be derived from their framework. What appears neither
+there nor in the least-period counts of Castillo-Ramirez and Sánchez-Álvarez [3], whose worked
+examples stop at rank two, is the explicit multi-prime closed form for Zdn , the prime-tightness
+characterization, or any cellular-automata consequences. On the combinatorial side, Ethier [8]
+and Ethier and Lee [9] count two-dimensional toroidal arrays up to symmetry (orbits, not sym-
+metric configurations), and Adamson, Deligkas, Gusev, and Potapov [7] study multidimensional
+necklaces algorithmically, counting the “atranslational” ones — the orbit-level complement of
+our shift-symmetric configurations — by a recursion across dimensions; no closed form, prime
+structure, or dynamical consequence is derived there. In symbolic dynamics, points fixed by
+a given finite-index subgroup of Zd are classical and are packaged by Lind’s zeta function for
+Zd -actions [10]; our object is, instead, the union over all nontrivial translations on a fixed finite
+torus. Lower bounds on the number of aperiodic configurations of a general finite group were
+given by Gao, Jackson, and Seward [4, Cor. 1.7.2] and sharpened in [2, Thm. 5]; specialized
+to Zdn , the former is exponentially weaker in the exponent and the latter polynomially weaker
+in the prefactor (for n ≥ 7) than the bounds proved here. For d = 1 our formulas reduce
+to classical aperiodic-word counts going back to Moreau and Witt [17, 18]; see also [16]. The
+prime-lattice, binary, two-dimensional case of our count also appears, without proof, as a for-
+mula line in OEIS entry A323863 [11] (orbit-level companion entries: A323872, A184271). On
+the dynamical side, Kornyak [12] observed that deterministic discrete dynamics cannot decrease
+symmetry; Theorem 8.1 makes the translation-stabilizer version of this precise for equivariant
+CA on Zdn .
+
+
+
+
+                                                     4
+2    Model
+In this section we introduce some of the basic definitions and notation we will use in our study
+of cellular automata and their configurations.
+Definition 2.1 (Lattice and configurations). Fix integers n ≥ 2, d ≥ 1 and a finite alphabet Σ
+with σ = |Σ| ≥ 2 (for counting statements, σ = 1 is also allowed). We define the lattice A to
+be the finite abelian group A = (Z/nZ)d , and we refer to the N = nd elements of A as the cells
+of A. A configuration is any function s : A → Σ.
+Definition 2.2 (Translations acting on configurations). For v ∈ A, the translation τv acts on
+the set of configurations by (τv s)(u) = s(u + v), for any u, v ∈ A. For any configuration s, the
+corresponding stabilizer, denoted Stab(s) = {v ∈ A : τv s = s}, is a subgroup of A. For any
+subgroup H ≤ A, its fixed set is given by Fix(H) = {s : τh s = s for all h ∈ H}.
+Definition 2.3 (Shift-symmetry). For 0 ̸= v ∈ A, we define
+
+                                 Snd (v) = {s : τv s = s} = Fix(⟨v⟩).
+
+The set of shift-symmetric configurations is
+                               [
+                      Snd =        Snd (v) = {s : Stab(s) ̸= {0}}.
+                                    0̸=v∈A
+
+Definition 2.4 (Equivariant cellular automaton). A cellular automaton on A over Σ is
+given by a finite list of offsets o1 , . . . , ob ∈ A and a local rule ϕ : Σb → Σ; the global map
+Φ : ΣA → ΣA updates all cells synchronously:
+                                                                        
+                              Φ(s)(u) = ϕ s(u + o1 ), . . . , s(u + ob ) .
+
+Equivalently, Φ is translation-equivariant: Φ(τv s) = τv Φ(s) for all v ∈ A.
+Remark 2.5 (Equivariance is necessary, not cosmetic). We note that the property of translation-
+equivariance is used extensively in our discussion of dynamical results. Indeed, definitions in
+the style of “a neighborhood function η : A × ΣA → Σb together with a shared local rule ϕ” do
+not imply equivariance and do not support the irreversibility theorem, because η may depend
+on the cell arbitrarily.
+     Here is a counterexample for state-valued η (d = 1, n = 2, Σ = {0, 1}, b = 1): let η0 (s) = (s0 ),
+η1 (s) = (0), and ϕ = id. All cells share ϕ, yet the shift-symmetric configuration (1, 1) maps to
+(1, 0), which is not shift-symmetric.
+     If one insists that η only select locations (each cell reads actual cells, just not translation-
+uniform ones), equivariance can still fail on every A, and some location-selecting map breaks
+irreversibility exactly when |A| = nd is not prime (on Zp , p prime, every shift-symmetric config-
+uration is constant and is mapped to a constant one). In d = 1 the smallest case is n = 4: with
+ϕ = id, let every cell read itself except that cell 2 reads cell 1; then (0, 1, 0, 1), fixed by the shift
+2, maps to (0, 1, 1, 1), which is not.
+     The original paper by Banda et al. [1] considers the two-dimensional case and avoids this
+pitfall only inside its proofs, where the neighborhood is explicitly assumed to be given by shared
+relative offsets [1, Lemma A.5]. Our Definition 2.4 in this paper makes the hypothesis explicit
+from the start.
+
+
+3    Preliminaries
+In this section, we review some preliminary results about how groups of translations act on the
+set of configurations.
+
+                                                   5
+    Throughout, we refer to the prime factorization n = ki=1 pαi i , with p1 < · · · < pk prime and
+                                                          Q
+integers α1 , . . . , αk ≥ 1. We note that the number of distinct prime factors of n is k = ω(n).
+                                                                        pd−i −1
+Also recall that, for any prime p, the Gaussian binomial dr p = r−1 i=0 pi+1 −1 gives the number of
+                                                               Q
+
+r-dimensional subspaces of Fdp , which is the d-dimensional vector space over Fp , the finite field
+with p elements.
+Lemma 3.1 (Fixed sets and generated subgroups). For any given subgroup H ≤ A and any
+given finite family of subgroups H1 , . . . , Hℓ ≤ A:
+  (i) | Fix(H)| = σ |A|/|H| ;
+
+ (ii) ℓa=1 Fix(Ha ) = Fix ⟨H1 ∪ · · · ∪ Hℓ ⟩ .
+      T                                     
+
+Proof. (i) A configuration s ∈ Fix(H) iff s is constant on the cosets of H. Translation by H on
+A is a free action, so its orbits are the |A|/|H| cosets, giving a bijection Fix(H) ∼
+                                                                                    = ΣA/H .
+   (ii) A configuration s lies in the left side iff H1 ∪ · · · ∪ Hℓ ⊆ Stab(s). This happens iff the
+generated subgroup is contained in Stab(s), since Stab(s) is a subgroup.
+
+Lemma 3.2 (Order of a translation). For 0 ̸= v = (l1 , . . . , ld ) ∈ A, the order of v as an element
+of the additive group A is given by
+                                                  
+                       |⟨v⟩| = lcmi n/ gcd(li , n) = n/ gcd(l1 , . . . , ld , n),
+
+and
+                                              d           d−1 gcd(l ,...,l ,n)
+                              |Snd (v)| = σ n /|⟨v⟩| = σ n         1      d
+                                                                                 .
+Proof. The order of v is the least integer t ≥ 1 with t · li ≡ 0 (mod n) for all i. So |⟨v⟩|
+must equal lcmi (n/ gcd(li , n)). Comparing p-adic valuations, vp (lcmi n/ gcd(li , n)) = vp (n) −
+mini min(vp (li ), vp (n)) = vp (n/ gcd(l1 , . . . , ld , n)) for every prime p | n. The count is the case
+H = ⟨v⟩ of Lemma 3.1(i) above.
+
+Lemma 3.3 (Torsion and lines). Let p | n be prime. The following hold.
+
+  (i) The p-torsion A[p] = {x : px = 0} is given by
+                                                        n      d
+                                                               
+                                              A[p] =    p Z/nZ .
+
+
+ (ii) The map x = np y 7→ y mod p is an isomorphism A[p] ∼
+                                                         = Fdp of Fp -vector spaces.
+(iii) Under this isomorphism,
+      • elements of order p correspond to nonzero vectors;
+      • cyclic subgroups of order p correspond to lines, and their number is d1 p = (pd −1)/(p−1);
+                                                                            
+
+      • for a set J of order-p cyclic subgroups,
+                                              [
+                                            |⟨ J⟩| = prk J ,
+
+      where rk J is the dimension of the span of the corresponding lines.
+
+Proof. Componentwise, px = 0 in Z/nZ iff x ∈ np Z/nZ. The group A[p] is an elementary abelian
+p-group, and therefore it is an Fp -vector space. The subgroups of A[p] are its subspaces, and a
+subgroup generated by a union of lines is their span.
+
+Lemma 3.4 (Completeness).
+                S            For any prime p, let Lp be the set of cyclic subgroups of order p
+of A and let L = p|n Lp . Then
+                                          [
+                                    Snd =      Fix(C).
+                                                  C∈L
+
+
+                                                    6
+Proof. Since Snd contains Fix(H) for all nontrivial cyclic subgroups H of A, the direction ⊇
+is clear. For the other direction ⊆, we argue as follows. If a configuration s has a nonzero
+w ∈ Stab(s), let o > 1 be its order. Then o divides the exponent n of A, so any prime divisor
+p of o must also divide n, and (o/p)w has order exactly p. It follows that the cyclic subgroup
+C := ⟨(o/p)w⟩ ∈ Lp satisfies C ≤ Stab(s), and so s ∈ Fix(C).
+
+Lemma 3.5 (Multi-prime generated subgroups). Let J = p|n Jp with Jp ⊆ Lp . Then
+                                                          F
+
+                                           [     Y
+                                          ⟨ J⟩ =   p rk Jp .
+                                                          p|n
+
+Proof. Write A =   p|n Ap (primary decomposition). Each C ∈ Lp lies in A[p] ⊆ Ap , so
+                 L
+
+⟨ J⟩ = p ⟨ Jp ⟩, and each factor has order prk Jp by Lemma 3.3.
+ S      L S
+
+
+4     Enumeration
+In this section, we apply the results above to count the number of shift-symmetric configurations
+in Snd for arbitrary finite dimension d.
+
+4.1    The signed spanning-set count
+We begin by introducing a function to denote an alternating sum that will help us to study the
+various sets of lines that span a finite vector space.
+
+Lemma 4.1. Let p be prime, d ≥ 1, and V ≤ Fdp a subspace of dimension r, with lines(V ) its
+set of 1-dimensional subspaces. Define
+                                              X
+                                    f (V ) :=   (−1)|J|
+                                                   J⊆lines(V )
+                                                   span J=V
+
+Then                                                           r
+                                   f (V ) = µ(0, V ) = (−1)r p(2) ,
+where µ is the Möbius function of the subspace lattice [19, Ex. 3.10.2].
+
+Proof. Every J ⊆ lines(V ) spans exactly one W ≤ V , so
+                    X               X
+                         f (W ) =         (−1)|J| = (1 − 1)|lines(V )| = δV,0 ,
+                     W ≤V            J⊆lines(V )
+
+since lines(V ) ̸= ∅ exactly when V ̸= 0. By Möbius inversion on the finite subspace lattice, we
+have f (V ) = µ(0, V ). (For more on inversion, see [19, Prop. 3.7.1] and [20, §4.1.2]).
+    Alternatively, an argument using the q-binomial theorem [19, Eq. (1.87)] can be given as
+                                                                 dim V
+follows. The function mapping a vector space V to (−1)dim V p( 2 ) satisfies the same recursion
+as f above, because, by the q-binomial theorem at x = −1, we have
+                            R                           R−1
+                               R                r
+                                         (−1) p(2) =
+                            X                             Y
+                                             r
+                                                                (1 − pi ) = δR,0 .
+                                   r p
+                             r=0                          i=0
+
+This recursion determines f uniquely by induction on dim V .
+
+    Using the lemma above, we can readily evaluate a similar sum that is taken over all of the
+sets of lines in Fdp whose span has a given rank r.
+
+
+                                                      7
+Lemma 4.2. Let p be prime, d ≥ 1, and define
+                                           X
+                                cr (p) :=    (−1)|J|
+                                                             J⊆lines(Fdp )
+                                                               rk J=r
+
+Then                                                        
+                                                     (r
+                                                         )  d
+                                     cr (p) = (−1) p   2
+                                                         r
+                                                                ,              0 ≤ r ≤ d.                           (1)
+                                                            r p
+Proof. Grouping the sets J with rk J = r by their span, an r-dimensional subspace W , and
+                         r
+summing f (W ) = (−1)r p(2) (Lemma 4.1) over the dr p subspaces of dimension r gives (1).
+                                                
+
+
+4.2    Main theorem
+We are now ready to prove our main result. We begin by defining the coefficient function that
+appears in our expression for the number of shift-symmetric configurations in Snd for arbitrary
+finite dimension d.
+Definition 4.3 (Coefficient function). For a prime p and integers 0 ≤ v ≤ d, let
+                                                         
+                                                  ( v
+                                                      )  d
+                                     rd (p, v) = p  2        ,
+                                                         v p
+
+with rd (p, 0) = 1.
+Remark. In the case when d = 2, we observe that r2 (p, v) = 1, p + 1, p for v = 0, 1, 2, which
+matches the coefficients given in [1, Thm. E.19].
+Theorem 4.4 (Enumeration in d dimensions). For all n ≥ 2, d ≥ 1, and σ ≥ 1:
+
+                                                                             k
+                                             X                               Y                     d
+                                                                                                       Q      −vi
+                      |Snd | =                                (−1)1+|v|            rd (pi , vi ) σ n       i pi     (2)
+                                               )∈{0,...,d}k
+                                   v=(v1 ,...,vk                             i=1
+                                              v̸=0
+
+              P
+where |v| =     i vi . All exponents are integers.
+
+Proof. By Lemma 3.4 and inclusion–exclusion, using Lemma 3.1 and then Lemma 3.5,
+                     X                                                  Q rk Jpi
+                         (−1)|J|+1 Fix(⟨ J⟩) =                |J|+1 σ N/ i pi
+                                        S          P
+            |Snd | =                                 ∅̸=J (−1)                   .
+                          ∅̸=J⊆L
+
+The exponent of σ depends only on the rank vector v(J) = (rk Jp1 , . . . , rk Jpk ); the sign is
+handled by the factorization below. Adding and subtracting a term σ N for the empty set, we
+obtain                              hX              Q vi (J)     i
+                          |Snd | = −    (−1)|J| σ N/ pi      − σN .
+                                                     all J
+
+Since (−1)|J| =              and the parts Jpi vary independently, the sum factors over rank
+                                |Jpi |
+                  Q
+                       i (−1)
+vectors, with per-prime factors cvi (pi ) computed inside Fdpi via Lemma 3.3 and Lemma 4.2 (note
+c0 = 1):
+                     X                Q vi        X       k
+                                                          Y                 Q vi
+                        (−1)|J| σ N/ pi =                     cvi (pi ) σ N/ i pi .
+                        all J                                v∈{0,...,d}k i=1
+
+The v = 0 term is σ N and cancels, and − i cvi (pi ) = (−1)1+|v| Q  i rd (pi , vi ), giving (2). As for
+                                           Q                      Q
+the integrality of the exponents, note that vi ≤ d and pi | n imply i pvi i | nd .
+
+                                                                 8
+Corollary 4.5 (Prime lattices). Fix any prime n = p and integers d ≥ 1 and σ ≥ 1. Then
+                                            d              
+                                                  r+1 (r2) d     d−r
+                                            X
+                                   |Spd | =   (−1)   p         σp .
+                                                           r p
+                                           r=1
+
+In particular,
+                                            |Sp | = σ       (d = 1),
+                                   |Sp2 | = (p+1)σ p − pσ       (d = 2), and
+                                             p2
+                       |Sp3 | = (p2 +p+1)σ        − p(p2 +p+1)σ p + p3 σ       (d = 3).
+Remark 4.6. We observe the following attributions and boundary checks.
+     (i) In complement form (ac = σ N − |S|), Corollary 4.5 is Lemma 7(iv) of Castillo-Ramirez
+and Gadouleau [2]; our multi-prime formula (2) of Theorem 4.4 does not appear there, but we
+will demonstrate how it can be derived from their framework in Section 4.3 below.
+     (ii) In a boundary Pcase where n = 1, both sides vanish. In a boundary case where σ = 1,
+the per-prime identity dr=0 cr (p) = 0 correctly makes the right side equal to 1.
+     (iii) The case for d = 1 recovers the classical count of non-primitive words (proper powers
+uj , j ≥ 2; equivalently, words,
+                               Pi.e. configurations  on Zn , fixed by a nontrivial cyclic rotation).
+This is the complement σ − m|n µ(m) σ
+                           n                 n/m  (µ the number-theoretic Möbius function) of the
+number of primitive words; the latter number is n times the Moreau–Witt count of primitive
+necklaces [17, 18].
+     (iv) The case for d = 2 recovers [1, Thm. E.19] exactly; for prime n it is [1, Cor. E.20].
+     (v) For d = 2, σ = 2, prime n, the complement of Corollary 4.5 appears as an unproved
+formula line in OEIS A323863 [11].
+
+4.3   Alternative derivation via the subgroup lattice
+Now we describe how an enumeration matching the above result can also be derived using an
+alternative line of reasoning.
+    In [2, Lemma 7(i)], Castillo-Ramirez and Gadouleau show that, for any finite group G of
+order N ≥ 2 (for N = 1 the     Pformula is trivial) and |A| = q ≥ 2, the number of aperiodic
+configurations is ac(G; A) = K≤G µ({e}, K) q N/|K| , where µ denotes the Möbius function of
+the subgroup    lattice. For G = A, every subgroup splits along the primary decomposition
+(K =              Ap ): the primary components of any x ∈ K are integer multiples of x by
+        L
+           p (K ∩
+CRT, hence lie in K), the subgroup lattice is the direct product of the primary lattices, and
+µ is multiplicative across it [19, Prop. 3.8.2]. On each p-group factor Ap ∼ = (Z/pα Z)d , by the
+theorem of Hall [6] (see [5, Cor. 3.5]), µ({e}, Kp ) vanishes unless Kp is elementary abelian —
+                                                                               r
+hence contained in the p-torsion ∼ = Fdp — in which case µ({e}, Kp ) = (−1)r p(2) for rank r, and
+there are dr p such subgroups. Summing |Snd | = σ N − ac(A; Σ) by rank vectors reproduces (2).
+           
+
+This second derivation is logically independent of Lemmas 3.4–4.2.
+
+4.4   Computational verification
+Formula (2) was verified by exact integer computation against (L1) definition-level brute force
+            d
+over all σ n configurations and all nonzero shifts, on 29 parameter triples (all with nd ≤ 16), and
+(L2) an independent inclusion–exclusion over all subsets of brute-force-discovered prime-order
+subgroups with BFS subgroup closures, on these and 15 further triples (44 in all), covering d ≤ 4,
+n ≤ 60 (including the multi-prime n = 6, 10, 12, 15, 30, 60 and prime powers 4, 8, 9), and σ ≤ 4;
+reference values (σ = 2) include
+
+      |S22 | = 8,   |S32 | = 26,    |S52 | = 182,    |S23 | = 72,      |S33 | = 6398,   |S62 | = 801064.
+
+
+                                                        9
+                                                                 v  
+                             Table 1: Coefficients rd (p, v) = p(2) vd p for small d.
+              d        v=0           v=1                    v=2                           v=3               v=4
+              1         1             1
+              2         1          p+1                           p
+              3         1         p2 +p+1                p(p2 +p+1)                          p3
+              4         1       p +p2 +p+1
+                                 3                   p(p2 +1)(p2 +p+1)               p3 (p3 +p2 +p+1)         p6
+
+
+5    Configurations with k active cells
+In this section we describe how to refine the enumeration above to account for the number of
+active cells.
+    To this end, fix any state a ∈ Σ and let Snad ,k be the set of shift-symmetric configurations
+with exactly k cells in state a. In Theorem 5.1, its proof, and Corollary 7.2 (with h = h(v) in
+Theorem 5.1, h = |H| in its proof, and h = 1 in Corollary 7.2), N/h        := 0 whenever k/h is not
+                                                                         
+                                                                     k/h
+an integer in {0, . . . , N/h}, and such a vanishing binomial annihilates its whole summand (so
+the accompanying factor with fractional exponent never occurs); all other binomial coefficients
+are the ordinary ones, and 00 := 1 (relevant only at σ = 1, k = N ).
+    In reference [1], this convention is also implicitly required by Eqs. (30)–(33) (Eq. (29) needs
+it only at σ = 1); in Eqs. (32)–(33) there, the factors r(i) must be built from the primes ri of
+gcd(k, n) rather than from the primes pi of n (as printed, with the primes in increasing order,
+both equations give 36 at n = 6, k = 3, σ = 2, whereas |S6a2 ,3 | = 48).
+
+Theorem 5.1Q (k-active
+               vi
+                       enumeration). For all integers n ≥ 2, d, σ ≥ 1, and 0 ≤ k ≤ N = nd ,
+with h(v) = i pi , we have:
+
+                                                         ω(n)                               
+                                 X                       Y                          N/h(v)
+          |Snad ,k |   =                         1+|v|
+                                              (−1)              rd (pi , vi )                    (σ − 1) (N −k)/h(v) .
+                                                                                    k/h(v)
+                            v∈{0,...,d}ω(n)              i=1
+                                v̸=0
+
+Note: To avoid a notational conflict with the active-cell count k, the rank vectors here run over
+v ∈ {0, . . . , d}ω(n) , with one coordinate per distinct prime factor.
+
+Proof. For a subgroup H ≤ A with |H| = h, a configuration in Fix(H) is a free labeling of
+the N/h cosets; it has exactly k cells in state a iff exactly k/h cosets carry the label a —
+possible only when h divides k — and the remaining (N − k)/h cosets carry labels from Σ \ {a}.
+Hence | Fixk (H)| = N/h    (σ − 1)(N −k)/h , which is 0 under the stated convention unless h | k.
+                         
+                     k/h
+The inclusion–exclusion and rank-vector grouping       of Theorem 4.4 apply verbatim, since the
+summand again depends on J only through |⟨ J⟩| = h(v(J)).
+                                                S
+
+   The theorem was verified exactly against definition-level brute force (n = 2, d ∈ {3, 4},
+σ ≤ 3, all k) and against the independent subgroup-level     evaluator (n ≤ 6 at d = 3; n ≤ 12 at
+d = 2; all k), including the consistency check k |Snad ,k | = |Snd |.
+                                              P
+
+
+6    Bounds
+We now turn our attention to lower bounds and upper bounds for the number of shift-symmetric
+configurations, with particular care regarding cases of equality.
+
+
+
+
+                                                                10
+6.1    Lower bound, attained exactly at primes
+For the statement of our lower bound, we will
+                                             evaluate Gaussian binomials at the (possibly
+                                           d
+composite) integer argument q = n; since r q is a polynomial in q with nonnegative integer
+coefficients, all quantities are integers.
+Theorem 6.1 (Lower bound; tight iff n prime). For all integers n ≥ 2, d ≥ 1, σ ≥ 2:
+                                               d              
+                                                     r+1 (r2) d     d−r
+                                               X
+                         |Snd | ≥ Fd (n, σ) :=   (−1)   n         σn ,
+                                                              r n
+                                                   r=1
+
+with equality if and only if n is prime.
+    The proof of Theorem 6.1, involving a monotone truncation chain q 1 ≤ q 2 ≤ · · · ≤ q k = |Snd |
+over the prime factors, is given in Appendix A. The argument makes use of an interpretation
+of the truncated sums as counts of unions of fixed-point sets on rectangular tori, plus a strict
+base-case inequality.
+    For d = 2, the statement exactly matches [1, Lemma E.21], and our chain lemma re-proves
+the corresponding step of their argument uniformly in n and σ.2 A machine-checked proof of
+the theorem, taking a different and shorter route that bypasses the truncation chain altogether,
+is described in Section 11.
+Remark 6.2 (The naive generalization is false). A direct generalization of the two-term 2D bound,
+                                              d−1 d −1         d −1
+which would naively predict that |Snd | ≥ σ n nn−1      − σ nn−1    − 1 with equality iff n prime, is
+                                                                        
+
+false for every d ≥ 3. Indeed, at (n, d, σ) = (2, 3, 2) it claims |S23 | ≥ 100, while |S23 | = 72. For
+prime n, the true count is the full d-term alternating sum of Corollary 4.5, which agrees with
+the naive two-term expression only for d ≤ 2 (when σ ≥ 2).
+    Theorem 6.1 makes precise, and proves, the sense in which primes minimize shift-symmetry
+in every dimension: the count |Snd | meets the universal lower envelope Fd (n, σ) exactly at the
+primes and exceeds it strictly at every composite n.
+
+6.2    Upper bound
+We now derive two upper bounds on the number of shift-symmetric configurations.
+Theorem 6.3 (Upper bounds). For all integers n ≥ 2, d ≥ 1, σ ≥ 2:
+                           X d     d
+ (i) (union form) |Snd | ≤        σ n /p ;
+                              1 p
+                                   p|n
+                                                     d
+ (ii) (closed form)     |Snd | ≤   2d − 1 + 2 log2 n σ n /2 .
+
+Proof. (i). This is the union bound over Lemma 3.4, using | Fix(C)| = σ N/p for C ∈ Lp .
+(ii). If 2 | n, the p = 2 term of (i) is (2d − 1)σ N/2 (if n is odd, there is no such term and
+only the bound below is needed). We claim every odd prime p | n contributes at most 2σ N/2 ;
+since n has at most log2 n prime factors, (ii) follows. The claim, term by term: we must show
+d         N ( 12 − p1 )
+                          , and since σ ≥ 2 and 21 − p1 ≥ 16 it suffices that d1 p ≤ 21+N/6 . For d = 1:
+                                                                             
+ 1 p ≤ 2σ
+1
+ 1 p = 1. For d = 2: any odd prime p | n satisfies p ≤ n, so 1 p = p + 1 ≤ n + 1, and
+                                                                            2
+               2
+n + 1 ≤ 21+n /6 for every n ≥ 3: directly for n ∈ {3, 4, 5} (4 ≤ 22.5 , 5 ≤ 23.67 , 6 ≤ 25.17 ),
+and for n ≥ 6 from n2 /6 ≥ n and 2 n ≥ n + 1. For d ≥ 3: d1 p ≤ 2pd−1 ≤ 2nd−1 and
+                                                                   d−1 /2
+N/6 ≥ nd−1 · n/6 ≥ nd−1 /2, so it suffices to show that 2 n                 ≥ nd−1 , which is true because
+x = nd−1 ≥ 9 and 2x/2 ≥ x for x ≥ 4.
+  2
+    The published inequality chains behind the 2D bounds have small-n gaps (at n ∈ {6, 10, 14}); a companion
+erratum note repairs them uniformly. The d-dimensional chain of Appendix A has no exceptional lattice sizes.
+
+
+                                                    11
+    Both parts were verified exactly for n ≤ 60 and d, σ ≤ 4. For comparison, on G = Zdn the
+general-group bounds give |S| ≤ σ N −1 [4, Cor. 1.7.2] and |S| ≤ (N − 1)σ N/p1 [2, Thm. 5(ii)],
+p1 the smallest prime factor. Bound (i) implies |S| ≤ 2 log2 (n) nd−1 σ N/p1 (Proposition 10.1),
+sharpening the prefactor N − 1 = nd − 1 of [2] at the same exponent for every n ≥ 7 (and for
+n ≥ 5 when d ≥ 2; at n = 2 the union prefactor 2d − 1 exactly ties N − 1, and for n ∈ {3, 4}
+the two are comparable); for even n ≥ 4 and d ≥ 2, the closed form (ii) improves the prefactor
+2 log2 (n) nd−1 further to 2d − 1 + 2 log2 n. (For odd n the exponent N/p1 ≤ N/3 of (i) is stronger
+than the N/2 of (ii); the two forms serve different purposes.) For d = 2 and n ≥ 4, (ii) also
+                                    2
+slightly sharpens the 6 log2 (n)σ n /2 of [1, Lemma E.22].
+
+
+7    Probability of shift-symmetry
+In this section, we turn from questions of enumeration to the closely-related questions of proba-
+bility. How likely is it for randomly selected configurations to possess non-trivial shift-symmetry?
+                                                                                           d
+Corollary 7.1 (Uniform distribution). For a configuration drawn uniformly from Σn , the prob-
+                           d
+ability Pnunif
+           d   = |Snd |/σ n satisfies
+                                    d                                        d
+                      Fd (n, σ) σ −n ≤ Pnunif          2d − 1 + 2 log2 n σ −n /2 ,
+                                                                        
+                                          d   ≤
+
+where Fd (n, σ) denotes the lower bound on |Snd | given in Theorem 6.1. So Pnunifd   decays as
+σ −cN              d                              unif        1            1
+       with N = n and decay rate c = logσ (1/Pnd )/N ∈ [ 2 − o(1), 1 − p1 ], where p1 is the
+smallest prime factor of n. The lower end is given by Theorem 6.3(ii), and the upper end is
+the single-subgroup inclusion Fix(C) ⊆ Snd for one order-p1 cyclic subgroup C, which gives
+Pnunif
+   d   ≥ σ N/p1 −N (this is also the lower bound of Proposition 10.1). Here o(1) refers to any
+regime with N = nd → ∞.
+Corollary 7.2 (Density-uniform distribution). Let σ ≥ 2. Under the density-uniform distribu-
+tion (first draw k ∈ {0, . . . , N } uniformly, then a configuration with exactly k cells in state a
+uniformly), the probability that the drawn configuration lies in Snd is
+
+                                             1 X
+                                                   N           |Snad ,k |
+                                Pndens
+                                   d   =                 N
+                                                                            ,
+                                           N +1          k     (σ − 1)N −k
+                                                  k=0
+
+with |Snad ,k | given by Theorem 5.1.
+
+Computational Observation 7.3 (Extremal pattern in n: true for d = 2, false for d ≥ 3). For
+d = 2, σ = 2, exact computation for n ≤ 41 confirms the pattern of [1, Figs. 6, 8]: P unif has local
+minima at every prime 5 ≤ n ≤ 40 and local maxima at every even 4 < n ≤ 40 (the boundary is
+a genuine exception: P (3) = 26/29 > 736/216 = P (4), so 3 is not a local minimum). For d ≥ 3
+the pattern breaks: at d = 3, σ = 2,
+
+                           log10 P (5) = −28.61 > log10 P (6) = −31.67,
+
+so the prime 5 is not a local minimum and the composite 6 is not a local maximum; likewise the
+even n = 10 is not a local maximum (P9unif3  > P10 unif ), and all three failures persist at d = 4. See
+                                                     3
+Figure 2. This is consistent with the inversion law (Proposition 10.2): for the pair (5, 6) of the
+pattern, dc (5) ≈ 2.58, and indeed P5unif
+                                      d   > P6unif
+                                               d    for every d ≥ 3 (σ = 2), which already breaks
+the pattern (as does P93 > P103 ), while at d = 3 (σ = 2) no pair (p, p ± 1) with 7 ≤ p ≤ 23
+                        unif    unif
+
+is inverted. Apart from two statements that hold for all d ≥ 3 (σ = 2), resp. for all primes
+p ≥ 5 and all σ ≥ 2 — the inequality P5unif d    > P6unifd   above, and, at d = 2, Ppunif 2
+                                                                                                  unif
+                                                                                             < P(p±1)  2
+
+(Observation 10.5) — these are exact finite computations (all machine-checked, Section 11), not
+asymptotic claims; we know of no proof of the even-peak pattern as a theorem for general n.
+
+
+                                                  12
+Figure 2: The prime/composite extremal pattern of Observation 7.3 (σ = 2; the exact formula,
+evaluated numerically). Left, d = 2: log10 P unif has local dips at every prime 5 ≤ n ≤ 40 (shown
+here for n ≤ 30); the boundary case n = 3 is the audited exception. Right, d = 3: the pattern
+breaks — already P (53 ) > P (63 ), so the prime 5 is no longer a local minimum.
+
+
+8    Dynamics: irreversibility, insolvability, rank monotonicity
+In this section we establish the dynamical consequences of shift-symmetry in configurations.
+
+Theorem 8.1 (Irreversibility). Let Φ be translation-equivariant (Definition 2.4). Then, for
+every configuration s, Stab(Φ(s)) ⊇ Stab(s); in particular, s ∈ Snd (v) implies Φ(s) ∈ Snd (v),
+and Φ(Snd ) ⊆ Snd .
+
+Proof. If τv s = s, then τv Φ(s) = Φ(τv s) = Φ(s).
+
+   By Remark 2.5, the equivariance hypothesis cannot be weakened to the assumption “all cells
+share the local rule.”
+
+Corollary 8.2 (Insolvability). Let σ ≥ 2 and N > 1. Any task requiring, on some input, an
+output configuration outside Snd reachable from an input inside Snd is unsolvable by translation-
+equivariant CA on Zdn . Indeed, symmetric inputs exist (all constants lie in Snd ), and by The-
+orem 8.1 no trajectory leaves Snd . This covers leader election (the target configuration with a
+unique distinguished cell is asymmetric for N > 1); d-dimensional leader-election algorithms as
+in [13, 14] therefore necessarily break one of the hypotheses (uniformity, determinism, synchrony)
+or restrict the admissible inputs, e.g. to asymmetric configurations. More generally, since Stab
+can only grow along a trajectory (Theorem 8.1), every pattern-recognition or image-processing
+task whose required output breaks a symmetry of some admissible input is unsolvable, as in the
+two-dimensional discussion of [1].
+
+Proposition 8.3 (Per-primerank monotonicity). For a prime p | n define the p-rank of s as
+rkp (s) = dimFp Stab(s)∩A[p] ∈ {0, . . . , d} (via Lemma 3.3). Under any translation-equivariant
+Φ, every p-rank is non-decreasing along every trajectory: rkp (Φ(s)) ≥ rkp (s) for all p | n simul-
+taneously.
+
+Proof. By Theorem 8.1, Stab(Φ(s)) ∩ A[p] ⊇ Stab(s) ∩ A[p], and both are Fp -subspaces.
+
+    This replaces the informal “symmetry rank (for the dominant prime)” of earlier drafts: for
+composite n there is one rank per prime factor, and all of them are monotone. Geometrically,
+rkp = 1 configurations are periodic along one direction of the p-torsion (“stripes”/“slabs”), rkp = d
+
+                                                 13
+configurations are exactly those fixed by the whole p-torsion A[p] = ( np Z/nZ)d ; each superlevel
+set {rkp ≥ r} is absorbing (no trajectory leaves it) by Proposition 8.3. Kornyak’s observation that
+deterministic dynamics cannot decrease symmetry [12] is the general heuristic; the proposition
+is its exact translation-stabilizer form.
+
+
+9    Detection
+In this section, we discuss how to determine whether configurations possess shift-symmetry.
+    The detector given here generalizes that given in an earlier paper [1, Sec. V]. Assume the
+prime factorization of n is given (otherwise add one factorization of an integer of log2 n bits),
+and count cell-read operations; d is part of the input.
+
+      Algorithm. For each prime p | n and each of the d1 p order-p cyclic subgroups
+                                                            
+
+      C = ⟨w⟩ (enumerated via one representative line each, Lemma 3.3): traverse the
+      cells in a fixed order (which may depend on the subgroup); for each yet-unvisited
+      cell, walk its C-orbit (p cells) checking equality; abort the subgroup at the first
+      failing orbit. Report “symmetric” at the first subgroup all of whose orbits pass;
+      report “asymmetric” if all subgroups fail.
+
+    Correctness is validated by Lemma 3.4: a configuration is shift-symmetric iff it is fixed by
+some order-p cyclic subgroup with p | n.
+    Throughout this section we charge one read per visited cell: the first cell of an orbit walk
+(the anchor ) is read once and its value cached, and each subsequent cell of the orbit is read once
+and compared to the cached value. A failing orbit walk may stop at its first mismatch or be
+completed; all results of this section hold in both variants, except the exact factor in Remark 9.3,
+which refers to completed walks.
+                                                           d −1
+    In what follows, let sopf d (n) = p|n d1 p = p|n pp−1       denote the total number of order-p
+                                       P          P
+
+cyclic subgroups over all primes p | n (the d-dimensional analogue of the integer logarithm).
+
+Theorem 9.1 (Worst case). The algorithm reads at most N · sopf d (n) = O(sopf d (n) · nd ) cells.
+
+Proof. Per subgroup, an orbit walk of length p performs p reads, and the walked orbits are
+disjoint, so one subgroup costs at most N reads; there are sopf d (n) subgroups.
+                                                                                    d
+Proposition 9.2 (Average case, uniform random input). For s uniform on Σn , the test of any
+                                                                           m
+single order-p subgroup, run on its own, visits in expectation exactly 1−Q
+                                                                        1−Q orbits, with Q = σ
+                                                                                               1−p
+
+and m = N/p. Consequently, the expected total number of cells read by the full algorithm is at
+most
+                       X d         p           X d            X 
+                                            ≤  2     p       =  O      pd .
+                            1 p 1 − σ 1−p               1 p
+                        p|n                       p|n                p|n
+
+Proof. Orbits of a fixed subgroup partition the cells, so under the product measure the events
+“orbit is monochromatic” are independent, each of probabilityP    σ 1−p ; the walk visits i orbits iff
+the first i − 1 pass, giving the truncated geometric expectation m−1i=0 Q . Summing p · (1 − Q)
+                                                                           i                       −1
+
+over all subgroups bounds the total; (1 − σ 1−p )−1 ≤ 2 for σ, p ≥ 2.
+
+    The per-generator expectation was confirmed to match full-enumeration averages exactly for
+(n, d, σ) ∈ {(2, 3, 2), (2, 3, 3), (2, 4, 2)} and, in two dimensions, for n ≤ 4 with σ = 2 and for
+(n, σ) = (3, 3).
+Remark 9.3 (On “polylogarithmic” average cases). p|n pd is not polylogarithmic in N in general:
+                                                        P
+
+for prime n it equals nd = N . The polylogarithmic P        figures quoted
+                                                                       P in [1, Sec. V–VI] for d = 2
+are stated there for randomly chosen n and rest on p|n p and p|n p2 being polylogarithmic;
+
+
+                                                 14
+but for each fixed dimension d, p|n pd is polylogarithmic in N (with a degree depending on d)
+                                P
+when allPprime factors of n are polylogarithmically small, whereas for any fixed C and j, the
+n with p|n pd ≤ C logj N have natural density zero, so this bound is not polylogarithmic for
+almost all n. Note also that, for prime n, the average case O(N ) still improves the worst case,
+which is of exact order N · nd−1 , by a factor of at least order nd−1 (of exact order nd−1 when
+every failing orbit walk is completed, as in the proofs of Theorem 9.1 and Proposition 9.2).
+    Related decision problems on toroidal arrays — shift-equivalence of tilings and recognition of
+toroidal codes, including undecidability results — were recently analyzed by Anselmo, Cavallaro,
+Madonia, and Selmi [15]; detecting a nontrivial translation stabilizer, as here, is the tractable
+member of that family.
+
+
+10      Crossover laws and empirical observations in higher dimen-
+        sions
+We first prove two crossover laws that organize all the observations made in this section; the
+observations after them are computational findings with exact arithmetic, labeled as such. Where
+an item after the two laws states an exact claim for all parameters (such as the composite
+advantage at d = 2 and the deepening of the inversion in Observation 10.5), that claim is a
+theorem, machine-checked in Section 11.
+Proposition 10.1 (Decay-rate law: only the smallest prime factor survives). Let p1 = p1 (n) be
+the smallest prime factor of n and N = nd . For all n ≥ 2, d ≥ 1, σ ≥ 2:
+
+                               σ N/p1 ≤ |Snd | ≤ 2 log2 (n) nd−1 σ N/p1 .
+
+Consequently the decay rate c(n, d) := − logσ Pnunif
+                                                 d /N satisfies
+
+
+                                               logσ 2 nd−1 log2 n
+                                                                      
+                               1
+                   0 ≤       1−    − c(n, d) ≤                              −−−→ 0,
+                                p1                     N                    d→∞
+
+so c(n, d) → 1 − 1/p1 (n). Asymptotically in d, lattice sides fall into universality classes deter-
+mined solely by their smallest prime factor, with even n on the extremal class c = 1/2 (the floor
+permitted by Theorem 6.3) and primes p on c = 1 − 1/p.
+Proof. Lower bound: Fix(C) ⊆ Snd for any single order-p1 cyclic subgroup C, and | Fix(C)| =
+     1 (Lemma 3.1). Upper bound: in Theorem 6.3(i), every exponent satisfies N/p ≤ N/p ,
+σ N/pP                                                                                    1
+and p|n d1 p ≤ p|n 2pd−1 ≤ 2 ω(n) nd−1 ≤ 2 log2 (n) nd−1 .
+             P
+
+     Figure 3 shows the convergence in numerical evaluations of the exact formula.
+Proposition 10.2 (Inversion law). Let p ≥ 3 be prime, σ ≥ 2, and set φ(d) = (1 − p1 ) pd −
+1         d
+2 (p + 1) . Then:
+
+   (i) if φ(d) > logσ 2 log2 (p) pd−1 , then P(p+1)
+                                              unif      unif (composite advantage);
+                                     
+                                                   d > Ppd
+
+
+  (ii) if φ(d) < − logσ 2 log2 (p+1) (p+1)d−1 , then P(p+1)
+                                                        unif      unif (prime advantage).
+                                               
+                                                             d < Ppd
+
+
+The function φ, regarded as a function of real d, is positive below and negative above its unique
+zero
+                                ln 2 − p2
+                                          
+                      dc (p) =             = p ln 2 + O(1)       (p → ∞),
+                                ln 1 + p1
+so the two-dimensional “composite advantage” inverts within an explicitly bounded window around
+dc (p), a dimension that grows linearly in the prime: (i) applies to every integer d ≥ 1 with
+d ≤ dc (p) − 20, and (ii) to every integer d ≥ dc (p) + 20.
+
+                                                  15
+Figure 3: Decay-rate universality classes (Proposition 10.1): the measured rate c(n, d) =
+− logσ Pnunif  d at σ = 2 for 2 ≤ n ≤ 13, plotted against d (the exact formula, evaluated
+          d /n
+numerically). Every lattice side converges to the level 1 − 1/p1 (n) set by its smallest prime
+factor alone; all even n collapse onto the extremal class c = 1/2, the floor permitted by Theo-
+rem 6.3 (shaded region excluded asymptotically).
+
+
+Proof. (i) By Proposition 10.1 applied to n = p + 1 (whose smallest prime factor is 2) and to
+                            d                              d
+n = p: P(p+1)d ≥ σ −(p+1) /2 and Ppd ≤ 2 log2 (p) pd−1 σ −p (1−1/p) , so logσ P(p+1)d /Ppd ≥ φ(d) −
+                                                                                          
+
+logσ (2 log2 (p)pd−1 ) > 0. (ii) is symmetric. Monotonicity of d 7→ φ(d)/pd = (1 − p1 ) − 21 (1 + p1 )d
+gives the unique sign change at dc (p), and ln(2 − 2/p)/ ln(1 + 1/p) = p ln 2 + O(1) by expanding
+both logarithms. The window bound follows by elementary estimates of φ and of the thresholds
+in (i) and (ii); it is machine-checked (Section 11), and the constant 20 is not optimized.
+
+Remark 10.3 (Measured inversion points). Linearly interpolated zeros of d 7→ log10 [P(p+1)d /Ppd ]
+between the consecutive integer dimensions at its first sign change, in exact data (σ = 2), against
+dc (p):
+
+                            p              3      5      7     11      13
+                            measured     1.00   2.10   4.00   6.37    8.03
+                            dc (p)       1.00   2.58   4.04   6.87    8.27
+
+Measured values sit at or below dc , mainly because of the interpolation itself: interpolating the
+bare exponent φ (without coefficient corrections) linearly between ⌊dc ⌋ and ⌊dc ⌋ + 1 already
+gives a zero below dc (p) for p = 5, 7, 11, 13 (at p = 3 both equal 1); the coefficient corrections
+(the factors |Snd |/σ N/p1 , which Proposition 10.1 bounds on both sides) favor the prime side but
+account for at most a quarter of the gap (at most 10−3 of it for p = 11, 13). At p = 3 the
+boundary case is exact and alphabet-independent: P3unif = P4unif = σ −2 at d = 1, since |S3 | = σ
+and |S4 | = σ 2 . Figure 4 displays both the sign flips and the measured-versus-predicted inversion
+dimensions.
+
+
+                                                  16
+Figure 4: The inversion law (Proposition 10.2, unifRemark   10.3; σ = 2; the exact formula, eval-
+uated numerically). Left: the ratio log10 P(p+1)         unif for the prime–even pairs (p, p+1),
+                                                             
+                                                     d /Ppd
+
+p ∈ {3, 5, 7, 11, 13}, flips sign at a pair-dependent inversion dimension (symlog scale; dotted
+verticals mark the interpolated zeros). Right: the measured inversion dimensions against the
+prediction dc (p) = ln(2 − 2/p)/ ln(1 + 1/p) and the line p ln 2 (dc (p) = p ln 2 + O(1); the linear
+asymptote itself is p ln 2 + 21 ln 2 − 1).
+
+
+   The remaining observations are computational, except for exact claims stated for all pa-
+rameters (such as the composite advantage at d = 2 and the deepening of the inversion in
+Observation 10.5), which are theorems (machine-checked, Section 11).
+Computational Observation 10.4 (Single-term crossover dimension). For prime n = p, define
+d∗ (p; θ) as the least d ≥ 2 at which the second term of Corollary 4.5 falls below a fraction θ of
+                                                    −1      d−2
+the first, i.e. |T2 /T1 | < θ where |T2 /T1 | = p d2 p d1 p σ −p (p−1) . Computing d∗ for all 95 primes
+up to 499 (σ = 2): only p ∈ {2, 3, 5} have d∗ > 2 at θ = 0.05; a fit d∗ ≈ 1 + C/ ln p to a fractional
+version of d∗ (interpolating log |T2 /T1 | linearly between consecutive integer dimensions) gives
+C ≈ 2.2–2.65 depending on θ (about 2.5 ± 0.3), but with only two to four unclamped data points
+per threshold (for the integer d∗ : four, three, and two at θ = 0.01, 0.05, 0.10) and systematic
+residuals this is an indicative, threshold-dependent summary, not an estimate of a universal
+                                                                        d−2
+constant. The driver is the doubly-exponential suppression σ −p (p−1) .
+Computational Observation 10.5 (Prime–composite gap inversion). At d = 2, for every σ ≥ 2,
+every prime p ≥ 5 has smaller P unif than both adjacent integers p ± 1 (a theorem, machine-
+checked in Section 11; the pair (3, 4) is the exception: P4unif2   < P3unif
+                                                                        2   ; cf. Observation 7.3);
+by d = 3 (σ = 2) this inverts for the pair (5, 6) (Observation 7.3), but for no pair (p, p ± 1)
+with 7 ≤ p ≤ 23, and the inversion deepens with d: for every prime p ≥ 3 and every σ ≥ 2,
+once P(p+1)
+       unif
+            d < Ppd , the ratio P(p+1)d /Ppd
+                  unif            unif    unif decreases strictly with every further dimension (a
+
+theorem, machine-checked in Section 11; e.g., P (6)/P (5) falls from ∼100.33 at d = 2 to 10−419.2
+at d = 5, σ = 2).
+Remark 10.6 (Duality). dr p = d−r
+                                  d 
+                                         for 0 ≤ r ≤ d, so Fdp has equally many subspaces of
+                         
+                                       p
+dimensions r and d − r (equivalently, for a prime p | n, A[p] has equally many subgroups of
+orders pr and pd−r ). We state this purely as the standard symmetry of Gaussian binomials; we
+do not attach further structural claims to it.
+
+Reproducibility. All counts and verification computations use exact integers; the figures
+evaluate the exact formula numerically in log space (cross-checked against exact integers where
+feasible). The verification suite (definition-level brute force; independent subgroup-level eval-
+
+                                                  17
+     Computation
+ exhaustive enumeration
+   and an independent
+     evaluator; runs
+  logged with SHA-256
+
+                                   Frozen Props
+           Paper                                                                        Lean kernel
+                     formalize    347 statements,   prove       Proofs        check
+         statements                                                                      build audit
+                                    each tied to              X_proved of
+         in the TEX                                                                    347/347; three
+                                    its passage;            type XStatement
+      source and PDF                                                                  standard axioms
+                                   fingerprinted
+
+                   Fidelity checks
+             independent reviews of each
+                group; hand audit of 25
+             items, 476 links (Section 12)
+
+
+Figure 5: The verification pipeline. Statements of the paper are frozen as Lean Props (all but
+five before their proofs were written); each proof X_proved must have exactly the frozen type;
+the Lean kernel checks the proofs, and an audit module in the build fails unless every frozen
+statement (currently 347) is proved from the three standard axioms. Whether a frozen statement
+says what the paper says is checked separately (dashed), by independent fidelity reviews and,
+for the 25 theorems, lemmas, propositions, and corollaries, by the hand audit described in
+Section 12; formulas and numbers are, in addition, checked by exact computation.
+
+
+uators for |S| and |Ska |; bound and extremal-pattern scans; the detection-expectation enu-
+meration) and the chart-generation scripts (compute_charts.py, compute_criticality.py,
+compute_C_exploration.py, compute_dimension_insights.py, which produces Figures 2–4,
+and compute_example_configs.py, which produces Figure 1 and checks its stabilizers and
+count) are in the project repository. Commands, environments, outputs, and SHA-256 check-
+sums are recorded in research/experiments/README.md.
+
+
+11      Formal verification
+The mathematical content of every numbered statement of Sections 2–10 and Appendix A has
+been formally verified in the Lean 4 proof assistant (v4.33.0-rc1) on top of the mathlib library:
+that of all definitions, lemmas, theorems, propositions, corollaries, remarks, and computational
+observations there, of Table 1, of the table of Remark 10.3, and of the captions of Figures 2–4,
+together with every mathematical claim in the surrounding (non-proof) prose that is precise
+enough to be stated formally. Statistical summaries (such as the fitted constant C of Obser-
+vation 10.4), vague, bibliographic, and record-keeping sentences, and the summary table of the
+concluding section are not formalized. Where the verification found a mathematical claim of
+an earlier version ambiguous or false, the text above states the corrected claim, and that is the
+claim certified. The illustrative Figures 1 and 5 and the applications discussed in Section 12 are
+not formalized; the stabilizers in the caption of Figure 1 were checked by exact computation,
+and its count is one of the machine-checked reference values of Section 4.4. Figure 5 summarizes
+the verification.
+    The development has two layers. The core layer (≈3200 lines: 15 lemma modules plus
+definition, statement, experiment, and audit files) defines the model from first principles —
+lattice, configurations, shifts, stabilizers, fixed sets, equivariant maps — and proves the two
+main theorems:
+
+     • enumeration_proved: Theorem 4.4 for all n ≥ 2, d ≥ 1, σ ≥ 1, exactly as stated (σ ≥ 1
+       being weaker than the standing alphabet assumption σ ≥ 2 of Section 2);
+
+                                                    18
+   • lowerBound_proved: Theorem 6.1 verbatim (n ≥ 2, d ≥ 1, σ ≥ 2), including both
+     directions of the equality-iff-prime characterization.
+
+The paper-wide layer (≈24 000 lines in 54 modules) states and proves everything else: 347
+Prop-valued statements (including selected proof-internal claims, representation bridges, a few
+disclosed strengthenings, and machine-checked evidence for the corrections), organized by part
+of the paper — Section 2 with the convention sentence opening Section 3 (31), the rest of
+Section 3 (20), Lemmas 4.1–4.2, Definition 4.3, Table 1 and the Duality remark (22), the rest
+of Section 4 (48, and 5 more for the necklace identification in Remark 4.6(iii)), Section 5 with
+Corollary 7.2 (31), Section 6 with Corollary 7.1 (41), Section 8 with the caption of Figure 2 (33),
+Section 9 (25), Propositions 10.1–10.2 with the caption of Figure 3 (24), Appendix A (33), and
+Observation 7.3, Remark 10.3 with the caption of Figure 4, and Observations 10.4–10.5 (34).
+Some of its proofs also use certified results of a companion development (two further modules,
+≈510 lines): the proof of Theorem 5.1 uses the relative enumeration theorem, which extends the
+inclusion–exclusion behind Theorem 4.4 from the set of all configurations to an arbitrary set of
+configurations, and proofs in Appendix A use its weight-generic regrouping lemma. Multi-part
+results are stated part by part and as a whole; asymptotic claims carry explicit quantifiers;
+a rounded decimal is stated as the interval its rounding asserts; the detection algorithm of
+Section 9 is a Lean function with explicit read counting, and its statements are quantified
+over every enumeration of the subgroups, every traversal order, and both variants of a failing
+orbit walk (except the exact factor of Remark 9.3, which is stated for completed walks only); the
+density-uniform distribution of Corollary 7.2 is a probability mass function in mathlib. Numerical
+claims are proved with exact integer certificates checked by the Lean kernel, combined, for large
+lattices (up to 149 cells in Remark 10.3), with proved analytic bounds such as the one-fixed-set
+and union bounds; no compiled code or floating-point arithmetic is trusted. Several of the 347
+statements record, as machine-checked facts, why an earlier wording or a cited formula fails in
+its literal reading.
+     All formal statements were frozen as Prop-valued definitions — all but five of them before
+their proofs were written — each with a documentation string that locates the passage it formal-
+izes, in most cases quoting it verbatim, and records its representation choices (e.g. the alphabet
+is realized as {0, . . . , σ −1}, harmless since only |Σ| enters; rank vectors are reindexed by divisors
+of (p1 · · · pk )d ; quotients are exact), and each group of statements passed independent reviews
+of its fidelity to the paper. In addition, the correspondence of every theorem, lemma, proposi-
+tion, and corollary with its frozen statement was audited by hand (Section 12). Every frozen
+statement XStatement of the core and paper-wide layers has a theorem X_proved whose type
+is literally XStatement or, for a statement with parameters, ∀ params, XStatement params. A
+few details of the corrected text are certified by auxiliary theorems of the formal proofs, which
+are kernel-checked but were not frozen in advance. One of these details, the constant 20 in
+Proposition 10.2, is also stated in three of the five exceptions above; the other two state the
+symmetry-breaking sentence of Corollary 8.2. All five were frozen after a proof of their con-
+tent existed, and passed three independent reviews of their fidelity to the paper before their
+X_proved theorems were written. Two audit modules are part of the default build: one prints
+the axiom set of every declaration it lists from the core layer and from companion developments,
+and one discovers all frozen statements of the paper-wide layer from the environment and fails
+the build unless each has such a theorem depending only on the three standard axioms of the
+Lean/mathlib foundation (propositional extensionality, choice, quotient soundness). The devel-
+opment contains no unproved placeholder and no further axiom, and every theorem and every
+safe definition in the 76 modules reachable from the library’s root module, the root included
+(2746 theorems and 716 definitions), was additionally re-checked by the Lean kernel.
+     Three features of the formalization deserve mention. First, it is self-contained precisely where
+the prose leans on the literature: the signed spanning-set count (Lemmas 4.1–4.2), the Grass-
+mannian subspace count, and the p-group Möbius evaluation (in its subspace-lattice instance)
+
+                                                  19
+are proved from first principles; so are the ingredients of the second derivation of Section 4.3 —
+Lemma 7(i) of [2] for every finite group, the product rule for the Möbius function of the subgroup
+lattice, and Hall’s evaluation on the primary components of A — as well as the bounds of [4]
+and [2] specialized to Zdn and [1, Lemmas E.21, E.22]. No verified step rests on the cited results
+of Stanley, Hall, or Hawkes–Isaacs–Özaydin. Second, the certified proof of Theorem 6.1 takes a
+shorter route than Appendix A: with the enumeration theorem available as a verified identity,
+the prime case reduces to a reindexing of divisors of pd , and the composite case follows from
+                                        d
+the single fixed-set bound |Snd| ≥ σ n /p1 (p1 the least prime factor) together with elementary
+coefficient estimates (chiefly dr q ≤ 2d q r(d−r) ). In particular the certified chain nowhere invokes
+[1, Lemma E.21] or its erratum, so the verified results are independent of the published 2D
+bounds and their repairs. Third, and more generally, the prose proofs are not replayed line by
+line: the formal proofs follow their own routes, and proof-internal claims of the prose proofs are
+formalized only selectively.
+    The Lean sources reside in research/formal/shiftsym/ in the project repository (the paper-
+wide layer in Shiftsym/Paper/ and Shiftsym/AuditPaper.lean), together with the formaliza-
+tion plan and the statement-preservation table.
+
+
+12     Summary and conclusion
+
+
+                     Table 2: 2D ([1]) vs. the d-dimensional generalization.
+   Component                     2D                           d-dimensional (this paper)
+   Lattice, cells                Z2n , N = n2                 Zdn , N = nd
+   Order-p subgroups per         p+1                          (pd − 1)/(p − 1)
+   prime
+                                                                            v  
+   Coefficients                  1, p+1, p                    rd (p, v) = p(2) vd p
+   Enumeration                   Thm. E.19                    Theorem 4.4
+   k-active counts               Thm. E.32                    Theorem 5.1
+   Lower bound (tight iff        (n+1)σ n −nσ                 Fd (n, σ), Theorem 6.1
+   prime)
+                                             2                                    d
+   Upper bound                   6 log2 (n)σ n /2             (2d −1+2 log2 n)σ n /2
+   Irreversibility               Thm. E.5                     Theorem 8.1 (equivariance ex-
+                                                              plicit) + Proposition 8.3
+   Detection, worst case         O(n3 )                           P d (n) · N )
+                                                              O(sopf
+   Detection, average case       O(n2 ); polylog claimed      O( p|n pd ); this bound is polylog
+                                 for random n                 (fixed d) only on a set of n of den-
+                                                              sity 0 (e.g. polylog-smooth n)
+   Decay rate of P = σ −cN       —                            c → 1 − 1/p1 (n) (Proposi-
+                                                              tion 10.1)
+   Prime local minima of P       yes for p ≥ 5 (empiri-       fails for d ≥ 3 (at p = 5, σ =
+                                 cal there; a theorem here,   2); inversion of (p, p+1) around
+                                 Observation 10.5)            dc (p) ≈ p ln 2 (Proposition 10.2,
+                                                              Observation 7.3)
+
+    The structure of shift-symmetry on Zdn is governed by the prime factorization of n through
+the subspace lattices of Fdp : the Gaussian binomial coefficients replace the ad hoc 2D coeffi-
+                                   r
+cients, the Möbius values (−1)r p(2) supply the signs, and every dynamical statement flows from
+translation equivariance alone. Two cautionary findings of the audit that produced this revision
+deserve emphasis: naive dimensional lifting of true 2D statements can fail outright (Remark 6.2,
+
+
+                                                    20
+Observation 7.3), and the enumeration principle itself, though not the closed form, was already
+available in the general group-theoretic literature [2] — both are reminders that the value added
+here lies in the explicit formulas, the tightness characterization, and the cellular-automata con-
+sequences, each verified computationally at the definition level.
+
+Applications. The counts use only a finite alphabet and a torus, and the dynamical results
+use only translation equivariance (their proofs do not need a finite alphabet), so they apply
+wherever these ingredients occur.
+
+• Distributed computing. A CA on Zdn is a synchronous anonymous network (a torus), a special
+  case of the networks for which Angluin proved the classical impossibility of symmetry breaking
+  [21]; Yamashita and Kameda characterized when leader election and related problems are
+  solvable on anonymous networks [22]. Corollary 8.2 is the corresponding statement for CA,
+  and the counts make it quantitative: for N > 1, every translation-equivariant CA fails at
+  leader election on all inputs in Snd , a fraction Pnunif
+                                                       d   of all inputs, bounded in Corollary 7.1.
+
+• Machine learning. A stride-one convolutional layer with circular padding, shared weights, and
+  pointwise nonlinearities is a translation-equivariant map of feature maps on Zdn [23]. Since the
+  proof of Theorem 8.1 uses equivariance alone, no stack of such layers can remove a translation
+  symmetry of its input, an instance of the limitation of equivariant networks discussed by
+  Kaba and Ravanbakhsh [24]. Neural cellular automata [25] grow patterns from a single seed
+  cell, which is an asymmetric configuration, and update their cells at random; in the terms of
+  Corollary 8.2, they restrict the inputs and drop determinism and synchrony.
+
+• Materials science. Enumerations of the derivative superstructures of an alloy discard the
+  “super-periodic” labelings, whose period is shorter than the supercell [26]. For a Bravais parent
+  lattice, σ atomic species, and the supercell spanned by n times the parent basis vectors, these
+  are exactly the configurations of Snd (d = 3 for bulk crystals), so Theorem 4.4 counts them,
+  and for binary alloys Theorem 5.1 counts them at fixed composition. A general supercell has
+  a quotient of the form Za × Zb × Zc (Smith normal form), a rectangular torus as in open
+  problem (2) below.
+
+• Physics. In exact diagonalization of quantum lattice models with translation symmetry, basis
+  states whose period is shorter than the lattice need a modified normalization and are compat-
+  ible with only some momenta [27, §§4.1.3, 4.4.1]; on Zdn with σ local states, these are exactly
+  the configurations of Snd . More generally, by the argument of Theorem 8.1, any determinis-
+  tic update map on a periodic grid that commutes with the grid translations (for example, a
+  synchronous update applying the same rule at every site, as in a lattice gas or an explicit dis-
+  cretization of a reaction–diffusion equation) preserves, in exact arithmetic, every translation
+  symmetry of its initial data; symmetric initial data must therefore be perturbed (round-off
+  can act as such a perturbation) for symmetry breaking to be observed in such simulations.
+
+• Random initial states. In cellular-automaton pseudorandom generators [28] and in simulations
+  started from random configurations, a seed in Snd confines the whole trajectory to Snd (The-
+                                                                                               d
+  orem 8.1). For a uniform seed this happens with probability at most (2d − 1 + 2 log2 n) σ −n /2
+  (Corollary 7.1), which is negligible except on very small lattices. Structured or sparse seeds
+  are another matter (the all-zero seed lies in Snd ). For a uniform seed witha prescribed num-
+  ber k of active cells, Theorem 5.1 gives the exact probability |Snad ,k |/ Nk (σ − 1)N −k , and
+  Corollary 7.2 gives it when k is itself uniform; the algorithm of Section 9 tests a seed in
+  O(sopf d (n) · nd ) cell reads.
+
+Verification and its audit. A formal proof certifies a paper only as far as its formal state-
+ments say what the paper says: the kernel checks the proofs, not the reading. Besides the
+
+                                                21
+fidelity reviews of Section 11, the correspondence between every theorem, lemma, proposition,
+and corollary of this paper and its frozen Lean statements was therefore audited by hand by one
+of us (T.L.), with a viewer built for the purpose.3 The viewer shows the official PDF beside the
+Lean declarations and links sub-expressions of the paper to the Lean sub-expressions claimed
+to express them (476 links for the 25 items), each link classified by kind: identical, a change of
+representation, a definition, a hypothesis, or a generalization (a few links point to a citation or
+have a counterpart on one side only). No link is of the kind “weaker”, which would mark a part
+of the paper not covered by a frozen statement. The highlighted regions are computed from an
+instrumented copy of the paper whose words must typeset at exactly the positions they have in
+the official PDF; every action of the auditor is recorded, with timestamps, in a log kept under
+version control; and when the viewer data are rebuilt, a verdict is flagged as stale if the item’s
+TEX source, the Lean source of its declarations, or its link data differ from those it was given
+against. All 25 items were approved, and their statements are unchanged in this version. A
+separate check of the link data, made during the audit, found that one clause, the symmetry-
+breaking sentence of Corollary 8.2, which the links had classified as having no Lean counterpart,
+was not covered by any frozen statement; it was reworded and frozen before this version, and
+its new links were then audited. Tools of this kind make the alignment between informal and
+formal statements inspectable item by item, and we regard them as a natural companion to
+proof assistants for papers like this one.
+
+Open problems. (1) A theorem (not only computation) delimiting for which (n, d) the prime-
+dip/even-peak pattern of P unif holds. (2) Extension to rectangular tori Zn1 × · · · × Znd (the
+preliminary lemmas hold; the subspace-lattice step requires per-prime ranks over possibly un-
+equal torsion ranks).
+
+
+A     Proof of Theorem 6.1
+Throughout, q m (c) denotes the truncation of (2) to the first m primes with exponents scaled by
+c:
+                         X                m
+                                          Y                    Q −vi
+          q m (c) =             (−1)1+|v|    rd (pi , vi ) σ cN i pi ,  q m := q m (1),
+                        v∈{0,...,d}m         i=1
+                           v̸=0
+
+so q k = |Snd | by Theorem 4.4. We write p := pm+1 , Nj := nd /pj , t := n/p, D := d(d − 1)/2.
+    If n is prime, Theorem 6.1 holds with equality by Corollary 4.5. For composite n we prove
+q ≤ q 2 ≤ · · · ≤ q k (Lemma A.3) and q 1 > Fd (n, σ) (Lemma A.4 for d ≥ 3; d ≤ 2 below), which
+ 1
+
+give strict inequality at every composite n.
+
+Lemma A.1 (Union interpretation on rectangular tori). Let 1 ≤ m < k and 1 ≤ j ≤ d. Then
+                                                            X d
+           0 ≤ q m (p−j ) ≤ σ Nj ,    and     q m (p−1 ) ≤           σ N1 /pi .
+                                                                1 pi
+                                                                     i≤m
+
+Proof. Consider Tj = (Z/nZ)d−j × (Z/ np Z)j with Nj cells. For i ≤ m, pi divides both n and
+n/p (as pi ̸= p), so the pi -torsion of Tj is again ∼= Fdpi and Lemmas 3.1, 3.3–3.5, 4.1 and 4.2
+apply verbatim on Tj . By the computation in the proof of Theorem 4.4, restricted to p1 , . . . , pm ,
+q m (p−j ) equals the number of configurations of Tj fixed by some order-pi cyclic subgroup, i ≤ m
+— a union of fixed-point sets. Nonnegativity, the trivial bound σ Nj , and Boole’s inequality (at
+j = 1) follow. Exponent integrality: vpi (Nj ) = d αpi ≥ d ≥ vi .
+   3
+     The viewer and the audit log are in research/formal/correspondence_audit/ of the project repository;
+T.L. is developing a product version of the viewer (https://functorial.inc/).
+
+
+
+                                                   22
+                                                                                   j  
+Lemma A.2 (Coefficient estimates). Let q ≥ 2 be real, with dj and rd (q, j) = q (2) dj defined
+                                                              
+                                                                q                        q
+by the product formula. Then dj ≤ 4q j(d−j) , d1 q ≤ 2q d−1 , and dj=2 rd (q, j) ≤ 4(d − 1) q D .
+                                                              P
+                                       q
+         d             Qj    1−q −(d−j+i)
+                  j(d−j)                ≤ q j(d−j) i≥1 (1 − 2−i )−1 , and i≥1 (1 − 2−i ) ≥ 21 · 34 ·
+                                                  Q                       Q
+Proof.  j q = q         i=1    1−q −i
+7              −i = 147 > 1 ; also d       d              d−1 . Hence r (q, j) ≤ 4q j(2d−j−1)/2 ; the
+      P                           
+8 1 −    i≥4 2      512    4        1 q ≤ q /(q − 1) ≤ 2q               d
+exponent is a concave parabola in j with vertex d − 2 , so over 2 ≤ j ≤ d its maximum is D,
+                                                        1
+
+attained at j = d (and j = d − 1 for d ≥ 3); the tail sum is at most 4(d − 1)q D .
+
+Lemma A.3 (Monotone chain). For composite n with k ≥ 2, d ≥ 1, σ ≥ 2, and 1 ≤ m < k:
+q m ≤ q m+1 .
+Proof. Splitting q m+1 by the value j of vm+1 and isolating, for j ≥ 1, the term with (v1 , . . . , vm ) =
+0:
+                           Xd
+          q m+1
+                −q =m
+                              (−1)j+1 rd (p, j) Bj ,   Bj := σ Nj − q m (p−j ) ∈ [0, σ Nj ]            (3)
+                              j=1
+by Lemma A.1. For Qd = 1 the sum is the single term B1 ≥ 0; assume d ≥ 2. Since m ≥ 1:
+p = pm+1 ≥ 3, and p i≤m pi | n gives p ≤ n/2 and t ≥ 2. We use:
+  (I) σ N1 /2 ≥ 4 t d−1 ;
+ (II) σ N1 −N2 ≥ 8(d − 1) pD .
+                                                           P d−1         Q d−1
+Given (I): by Lemma A.1 and i≤m d1 p ≤ i 2pd−1                                   ≤ 2t d−1
+                                P           P
+                                                    i  ≤2    i pi    ≤ 2 i pi
+                                         i
+(superadditivity of xd−1 ;   pi ≤ pi for distinct primes; i≤m pi ≤ n/p = t),
+                           P     Q                       Q
+
+                                    B1 ≥ σ N1 − 2t d−1 σ N1 /2 ≥ 21 σ N1 .
+Given (II): dropping the positive j ≥ 3 odd terms of (3), bounding Bj ≤ σ N2 for j ≥ 2, and
+using Lemma A.2 with rd (p, 1) ≥ 1: q m+1 − q m ≥ 12 σ N1 − 4(d − 1)pD σ N2 ≥ 0.
+    It remains to prove (I), (II) for composite n ≥ 6, d ≥ 2. (I): N1 /2 = 2t nd−1 ≥ nd−1 and
+t ≤ n/3, so it suffices that nd−1 ≥ 2 + (d − 1) log2 (n/3); since log2 n ≤ n/2 for n ≥ 4, it suffices
+that nd−1 ≥ 2 + (d − 1)n/2 — for d = 2 this is n ≥ 4; for d ≥ 3, nd−1 ≥ 6d−2 n ≥ ( d−1       2 )n + 2
+since 6 d−2 ≥ 2 + 1 (at d = 3: 6 ≥ 2; per increment of d the left side sextuples while the right
+               d−1
+
+grows by 12 ). (II): N1 − N2 = N1 (1 − p1 ) ≥ 23 N1 ≥ 43 nd−1 and pD ≤ (n/2)D , so it suffices that
+4 d−1
+3n      ≥ 3 + log2 (d − 1) + D log2 (n/2). For d = 2: 43 n ≥ 3 + log2 (n/2) holds for n ≥ 6. For
+d ≥ 3, using log2 (d − 1) ≤ d − 1 and log2 (n/2) ≤ n/2, it suffices that 34 6d−2 n ≥ 2 + d + d(d−1)
+                                                                                                4   n,
+                                            d(d−1)
+which holds for n ≥ 6 because 3 6 4 d−2
+                                        ≥ 4 + 6 : at d = 3 this reads 8 ≥ 2 + 6 , and the
+                                                      2+d                             3    5
+                   d(d−1)        (d+1)d 3+d
+induction step 6      4   + 6 ≥ 4 + 6 reduces to 5d ≥ 7.
+                            2+d
+
+
+Lemma A.4 (Base case, d ≥ 3). For composite n, σ ≥ 2, d ≥ 3: q 1 > Fd (n, σ).
+Proof. Let p1 be the smallest prime factor; p1 ≤ n/2 and p21 ≤ n (for n = pα1 , α ≥ 2; otherwise
+p21 < p1 q ≤ n for the second prime q). Dropping positive r ≥ 3 terms of q 1 and negative terms
+of Fd , and using Lemma A.2 at q = p1 and at the composite argument q = n together with
+    d r      d  2                   d−r      d−3
+σ n /p1 ≤ σ n /p1 (r ≥ 2) and σ n       ≤ σn     (r ≥ 3 odd):
+                                                             
+           1     d      nd /p1            D nd /p21            d     d−1                 d−3
+          q ≥         σ        − 4(d − 1)p1 σ       ,   Fd ≤       σn    + 4(d − 1)nD σ n .
+                 1 p1                                          1 n
+                                                    d     d      d                d
+All three exponent gaps are at least nd−1 : np1 − np2 ≥ 2pn
+                                                            1
+                                                              ≥ nd−1 and np1 − nd−1 ≥ nd−1 (as
+                                                     1
+n/p1 ≥ 2), a fortiori for nd−3 . With d1 p1 ≥ 3, d1 n ≤ 2nd−1 , p1 ≤ n:
+                                              
+
+                             d
+                                 h                               d−1
+                                                                     i      d
+              q 1 − Fd ≥ σ n /p1 3 − 8(d − 1)nD + 2nd−1 2−n            ≥ σ n /p1 > 0,
+                                                           
+
+
+                                                     23
+            d−1
+provided 2n     ≥ 12d nD (using 8(d − 1)nD + 2nd−1 ≤ 12dnD , as nd−1 ≤ nD for d ≥ 2). Taking
+logarithms it suffices that nd−1 ≥ 4 + d + d(d−1)
+                                              2   log2 n for n ≥ 4, d ≥ 3: at (4, 3) it reads 16 ≥ 13;
+for fixed d the margin increases in n (derivative (d − 1)nd−2 − d(d−1)
+                                                                 2n ln 2 > 0), and the step d → d+1
+adds 1 + d log2 n ≤ 1 + nd−1 ≤ (n − 1)nd−1 to the right side while multiplying the left by n.
+
+Proof of Theorem 6.1. d = 1: F1 = σ; primes give |Sn | = σ, composites |Sn | ≥ σ n/p1 ≥ σ 2 > σ.
+d = 2: F2 (n, σ) = (n+1)σ n − nσ and the claim is [1, Lemma E.21]; we import its base step
+(q 1 > (n+1)σ n − nσ at composite n, final display of the source proof; the inequality holds at
+every composite n, including the prime powers pα , α ≥ 2, which the case split of the source (“If
+k = 1, i.e., n is a prime”) does not treat, and it is machine-checked, Section 11), while the chain
+step is re-proved uniformly by Lemma A.3 with d = 2 (the published chain, Lemma A.21 of [1],
+has three exceptional lattice sizes, repaired in the companion erratum). d ≥ 3: prime n gives
+equality (Corollary 4.5); composite n with k = 1 gives |S| = q 1 > Fd (Lemma A.4); composite
+n with k ≥ 2 gives |S| = q k ≥ · · · ≥ q 1 > Fd (Lemmas A.3, A.4).
+
+    Every inequality in this appendix was verified exactly on parameter grids before submission
+(decomposition identity, torus sandwich, union bound, coefficient estimates, conditions (I)/(II),
+the chain, and the base case; see the reproducibility paragraph of Section 10), and the argument
+passed independent adversarial review.
+
+
+References
+ [1] P. Banda, J. Caughman, M. Cenek, and C. Teuscher, “Shift-symmetric configurations in
+     two-dimensional cellular automata: Irreversibility, insolvability, and enumeration,” Chaos
+     29, 063120 (2019); arXiv:1703.09030v2.
+
+ [2] A. Castillo-Ramirez and M. Gadouleau, “Cellular automata and finite groups,” Natural
+     Computing 18 (2019), 445–458; arXiv:1610.00532.
+
+ [3] A. Castillo-Ramirez and M. Sánchez-Álvarez, “The number of configurations in the full shift
+     with a given least period,” Bull. Iranian Math. Soc. 48 (2022), 1859–1868; arXiv:2102.09524.
+
+ [4] S. Gao, S. Jackson, and B. Seward, Group Colorings and Bernoulli Subflows, Mem. Amer.
+     Math. Soc. 241, no. 1141 (2016); arXiv:1201.0513.
+
+ [5] T. Hawkes, I. M. Isaacs, and M. Özaydin, “On the Möbius function of a finite group,” Rocky
+     Mountain J. Math. 19 (1989), no. 4, 1003–1034.
+
+ [6] P. Hall, “A contribution to the theory of groups of prime-power order,” Proc. London Math.
+     Soc. (2) 36 (1933), 29–95.
+
+ [7] D. Adamson, A. Deligkas, V. V. Gusev, and I. Potapov, “Combinatorial algorithms for
+     multidimensional necklaces,” arXiv:2108.01990 (2021).
+
+ [8] S. N. Ethier, “Counting toroidal binary arrays,” J. Integer Seq. 16 (2013), Article 13.4.7.
+
+ [9] S. N. Ethier and J. Lee, “Counting toroidal binary arrays, II,” J. Integer Seq. 18 (2015),
+     Article 15.8.3.
+
+[10] D. Lind, “A zeta function for Zd -actions,” in Ergodic Theory and Zd -Actions, LMS Lecture
+     Note Ser. 228, Cambridge Univ. Press (1996), 433–450.
+
+[11] OEIS Foundation Inc., Entry A323863: Number of n × n aperiodic binary arrays; formula
+     line for prime n by R. Israel (2019). https://oeis.org/A323863.
+
+
+
+                                                 24
+[12] V. V. Kornyak, “Symmetries and dynamics of discrete systems,” arXiv:0706.3646 (2007);
+     see also arXiv:1006.1754 (2010).
+
+[13] C. Nichitiu and E. Rémila, “Leader election by d-dimensional cellular automata,” in ICALP
+     1999, LNCS 1644, Springer (1999), 565–574.
+
+[14] M. Stratmann and T. Worsch, “Leader election in d-dimensional CA in time
+     diam · log(diam),” Future Generation Computer Systems 18 (2002), 939–950.
+
+[15] M. Anselmo, M. Cavallaro, M. Madonia, and C. Selmi, “Tiling of toroidal arrays with
+     pictures: uniqueness, shift-equivalence and undecidability,” Theoretical Computer Science
+     (2025).
+
+[16] N. Metropolis and G.-C. Rota, “Witt vectors and the algebra of necklaces,” Advances in
+     Mathematics 50 (1983), 95–125.
+
+[17] C. Moreau, “Sur les permutations circulaires distinctes,” Nouvelles Annales de Mathéma-
+     tiques (2) 11 (1872), 309–314.
+
+[18] E. Witt, “Treue Darstellung Liescher Ringe,” J. Reine Angew. Math. 177 (1937), 152–160.
+
+[19] R. P. Stanley, Enumerative Combinatorics, Volume 1, 2nd edition, Cambridge University
+     Press, 2012. Cited: Prop. 3.7.1 (Möbius inversion), Prop. 3.8.2 (product theorem), Ex. 3.10.2
+     (subspace-lattice Möbius function), eq. (1.87) (q-binomial theorem).
+
+[20] A. Kerber, Applied Finite Group Actions, 2nd ed., Algorithms and Combinatorics 19,
+     Springer, 1999. Cited: §4.1.2.
+
+[21] D. Angluin, “Local and global properties in networks of processors (extended abstract),” in
+     Proc. 12th ACM Symposium on Theory of Computing (STOC 1980), ACM (1980), 82–93.
+
+[22] M. Yamashita and T. Kameda, “Computing on anonymous networks: Part I — character-
+     izing the solvable cases,” IEEE Trans. Parallel Distrib. Syst. 7 (1996), 69–89.
+
+[23] T. S. Cohen and M. Welling, “Group equivariant convolutional networks,” in Proc. 33rd Int.
+     Conf. on Machine Learning (ICML 2016), PMLR 48 (2016), 2990–2999.
+
+[24] S.-O. Kaba and S. Ravanbakhsh, “Symmetry breaking and equivariant neural net-
+     works,” NeurIPS 2023 Workshop on Symmetry and Geometry in Neural Representations;
+     arXiv:2312.09016.
+
+[25] A. Mordvintsev, E. Randazzo, E. Niklasson, and M. Levin, “Growing neural cellular au-
+     tomata,” Distill (2020), doi:10.23915/distill.00023.
+
+[26] G. L. W. Hart and R. W. Forcade, “Algorithm for generating derivative structures,” Phys.
+     Rev. B 77 (2008), 224115.
+
+[27] A. W. Sandvik, “Computational studies of quantum spin systems,” AIP Conf. Proc. 1297
+     (2010), 135–338; arXiv:1101.3281.
+
+[28] S. Wolfram, “Random sequence generation by cellular automata,” Adv. Appl. Math. 7 (1986),
+     123–169.
+
+
+
+
+                                               25
+

@@ -1,0 +1,750 @@
+{
+ "label": "thm:abelian",
+ "statement": {
+  "summary": "Theorem 4.7 is frozen in Paper/S13_AbelianGroups.lean (group 13) as `abelianEnumStatement`: for a finite abelian group G (a type with `[AddCommGroup G] [Finite G]`) and σ ≥ 1, |S_G| cast to ℤ equals `abelianRHS (Nat.card G) (pRank G) σ`, the paper's sum re-indexed by the divisors h ≠ 1 of R = ∏_{p∣N} p^{d_p} (`rankRad`), as the core's `enumerationRHS` is for Theorem 4.4. Unlike Theorem 4.4 (bridge `P04.rankVectorReindexStatement`), no frozen Prop transcribes the vector-indexed sum for general G: the re-indexing v ↦ h = ∏ p^{v_p} has to be checked by reading `abelianRHS` and `coeffA`. The setting paragraph is covered by `pRank` + `pRankPowStatement` (the p-rank), `pTorsionVectorSpaceStatement` (G[p] is an F_p-vector space of dimension d_p), `rectCardStatement` and `rectRankStatement` (rectangular tori; the instance of the theorem is `rectEnumStatement`). The last sentence ('this is Theorem 4.4') is `squareStatement` (right sides agree) with `bridgeStatement` (the shift-symmetry predicates agree). Proofs: Paper/Proofs/P13_AbelianGroups*.lean, checked by AuditPaper (group 13).",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P13.abelianEnumStatement",
+    "role": "statement (Theorem 4.7, divisor-indexed)"
+   },
+   {
+    "decl": "ShiftSym.P13.squareStatement",
+    "role": "statement (last sentence: right sides on ℤ_n^d)"
+   },
+   {
+    "decl": "ShiftSym.P13.bridgeStatement",
+    "role": "statement (last sentence: predicates on ℤ_n^d)"
+   },
+   {
+    "decl": "ShiftSym.P13.rectEnumStatement",
+    "role": "statement (Theorem 4.7 on rectangular tori)"
+   },
+   {
+    "decl": "ShiftSym.P13.rectCardStatement",
+    "role": "statement (setting: N = ∏ n_i)"
+   },
+   {
+    "decl": "ShiftSym.P13.rectRankStatement",
+    "role": "statement (setting: d_p = |{i : p ∣ n_i}|)"
+   },
+   {
+    "decl": "ShiftSym.P13.pRankPowStatement",
+    "role": "statement (p-rank encoding: |G[p]| = p^{d_p})"
+   },
+   {
+    "decl": "ShiftSym.P13.pTorsionVectorSpaceStatement",
+    "role": "statement (setting: G[p] is an F_p-vector space of dimension d_p)"
+   },
+   {
+    "decl": "ShiftSym.P13.pTorsion",
+    "role": "definition (G[p] as an additive subgroup)"
+   },
+   {
+    "decl": "ShiftSym.P13.abelianRHS",
+    "role": "definition (right side, divisor form)"
+   },
+   {
+    "decl": "ShiftSym.P13.coeffA",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P13.rankRad",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P13.pRank",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P13.rectRank",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P13.IsShiftSymmetricG",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.rdCoeff",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.bigOmega",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.enumerationRHS",
+    "role": "definition (Theorem 4.4's right side)"
+   }
+  ],
+  "deltas": [
+   "Alphabet Σ = `Fin σ`; a finite abelian group is a type with `[AddCommGroup G] [Finite G]` (any universe), N = `Nat.card G`; |S_G| = `Nat.card` of the subtype of `IsShiftSymmetricG` configurations G → Fin σ, cast to ℤ (the right side has signs).",
+   "Shift-symmetric: `IsShiftSymmetricG s` := ∃ v ≠ 0, ∀ u, s (u + v) = s u (the paper's (τ_v s)(u) = s(u+v), i.e. Stab(s) ≠ {0}); stabilizers are not formalized separately. On ℤ_n^d it is the core's `IsShiftSymmetric` (`bridgeStatement`).",
+   "p-rank: `pRank G p` is the exponent of p in |G[p]|; `pRankPowStatement` certifies |G[p]| = p^{pRank G p} for prime p, and `pTorsionVectorSpaceStatement` (group-13 supplement, 2026-11-08) certifies that G[p] is an F_p-vector space (ZMod p acting naturally) of dimension pRank G p.",
+   "The vector-indexed sum is re-indexed by the divisors h ≠ 1 of R = ∏_{p∣N} p^{d_p} (`rankRad`): v_p = v_p(h), |v| = Ω(h) (`bigOmega`), product over the primes of h only (r_{d_p}(p,0) = 1), as in the core's `enumerationRHS`. No frozen bridge to the vector-indexed form exists for general G (Theorem 4.4 has `P04.rankVectorReindexStatement`); on ℤ_n^d, `squareStatement` reduces it to `enumerationRHS`.",
+   "Exponents are ℕ-quotients N / h. Exact because h ∣ R ∣ N (p^{d_p} = |G[p]| divides N by Lagrange; helper `pRank_pow_dvd` in the proofs); unlike Theorem 4.4 (`exponentEncodingStatement`) no frozen Prop records the exactness.",
+   "Rectangular tori are `∀ i : Fin d, ZMod (n i)` with all n i ≥ 1 (ZMod 0 = ℤ); the paper's number of factors m is `d` here.",
+   "'this is Theorem 4.4' = the right sides agree (`squareStatement`, for n ≥ 1 and every d, σ) and the predicates agree (`bridgeStatement`, for every n, d, σ): both are stated more generally than Theorem 4.4's n ≥ 2, d ≥ 1, σ ≥ 1.",
+   "Not frozen: the opening sentence (a remark on the structure of a proof; its torsion fact is Lemma 3.3, `P02.torsionLemmaStatement`) and the proof. 'An F_p-vector space', listed as not frozen in the S13 docstring, is frozen in the group-13 supplement (`pTorsionVectorSpaceStatement`, Run 046)."
+  ],
+  "maps": [
+   {
+    "id": "whole",
+    "kind": "representation",
+    "label": "|S_G| = Σ_{v ≠ 0, 0 ≤ v_p ≤ d_p} (−1)^{1+|v|} ∏ r_{d_p}(p,v_p) σ^{N/∏ p^{v_p}}",
+    "tex": [
+     {
+      "text": "|S_G| \\;=\\; \\sum_{\\substack{\\vv=(v_p)_{p\\mid N},\\ 0\\le v_p\\le d_p\\\\\n  \\vv\\neq\\mathbf 0}} (-1)^{1+|\\vv|}\\,\\prod_{p\\mid N} r_{d_p}(p,v_p)\\;\n  \\sigma^{\\,N/\\prod_p p^{v_p}}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.abelianEnumStatement",
+      "text": "(Nat.card {s : G → Fin σ // IsShiftSymmetricG s} : ℤ)\n      = abelianRHS (Nat.card G) (pRank G) σ"
+     }
+    ],
+    "note": "Equation in ℤ. The right side is the DIVISOR-indexed `abelianRHS` (see the maps rhs, idx, v0, sign, prod, exp); no frozen Prop states the vector-indexed form for general G."
+   },
+   {
+    "id": "G",
+    "kind": "same",
+    "label": "every finite abelian group G (written additively)",
+    "tex": [
+     {
+      "text": "every finite abelian group $G$"
+     },
+     {
+      "text": "For a finite abelian group $G$ of order $N$,\nwritten additively,",
+      "scope": {
+       "lines": [
+        661,
+        662
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.abelianEnumStatement",
+      "text": "(G : Type*) [AddCommGroup G] [Finite G]"
+     }
+    ],
+    "note": "A finite abelian group, written additively, is a type with `AddCommGroup` and `Finite` instances. 'For every' G and σ: the Prop takes them as parameters and its `_proved` theorem quantifies over them."
+   },
+   {
+    "id": "N",
+    "kind": "definition",
+    "label": "N = order of G",
+    "tex": [
+     {
+      "text": "of order $N$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.abelianEnumStatement",
+      "text": "Nat.card G"
+     }
+    ],
+    "note": "N is `Nat.card G`, passed to `abelianRHS` as its first argument."
+   },
+   {
+    "id": "hyp.s",
+    "kind": "hypothesis",
+    "label": "σ ≥ 1",
+    "tex": [
+     {
+      "text": "$\\sigma\\ge1$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.abelianEnumStatement",
+      "text": "1 ≤ σ"
+     },
+     {
+      "decl": "ShiftSym.P13.rectEnumStatement",
+      "text": "1 ≤ σ"
+     }
+    ],
+    "note": "Verbatim antecedent; σ = 1 allowed, as for counting statements."
+   },
+   {
+    "id": "alphabet",
+    "kind": "representation",
+    "label": "alphabet Σ with |Σ| = σ ↦ Fin σ",
+    "tex": [
+     {
+      "text": "a finite alphabet $\\Sigma$ with\n$\\sigma=|\\Sigma|\\ge2$ (for counting statements, $\\sigma=1$ is also allowed)",
+      "scope": {
+       "lines": [
+        283,
+        284
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.abelianEnumStatement",
+      "text": "Fin σ"
+     }
+    ],
+    "note": "Only |Σ| enters; configurations are functions G → Fin σ."
+   },
+   {
+    "id": "lhs",
+    "kind": "definition",
+    "label": "|S_G|: configurations G → Σ fixed by some nonzero translation",
+    "tex": [
+     {
+      "text": "|S_G|"
+     },
+     {
+      "text": "Configurations\n$G\\to\\Sigma$, translations, stabilizers, and $S_G$ are defined as in\nSection~\\ref{sec:model} with $\\A$ replaced by $G$",
+      "scope": {
+       "lines": [
+        663,
+        665
+       ]
+      }
+     },
+     {
+      "text": "$(\\tau_\\vv\\ssb)(\\uu)=\\ssb(\\uu+\\vv)$",
+      "scope": {
+       "lines": [
+        291,
+        291
+       ]
+      }
+     },
+     {
+      "text": "\\{\\ssb : \\Stab(\\ssb)\\neq\\{\\mathbf 0\\}\\}",
+      "scope": {
+       "lines": [
+        298,
+        301
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.abelianEnumStatement",
+      "text": "Nat.card {s : G → Fin σ // IsShiftSymmetricG s}"
+     },
+     {
+      "decl": "ShiftSym.P13.IsShiftSymmetricG",
+      "text": "∃ v : G, v ≠ 0 ∧ ∀ u : G, s (u + v) = s u"
+     }
+    ],
+    "note": "S_G = {s : Stab(s) ≠ {0}} with 𝒜 replaced by G: some v ≠ 0 has (τ_v s)(u) = s(u+v) = s(u) for all u. Stabilizers are not a Lean object here; only this predicate is used. |·| = `Nat.card` of the subtype."
+   },
+   {
+    "id": "rhs",
+    "kind": "representation",
+    "label": "the right side ↦ abelianRHS N d_• σ",
+    "tex": [
+     {
+      "text": "\\sum_{\\substack{\\vv=(v_p)_{p\\mid N},\\ 0\\le v_p\\le d_p\\\\\n  \\vv\\neq\\mathbf 0}} (-1)^{1+|\\vv|}\\,\\prod_{p\\mid N} r_{d_p}(p,v_p)\\;\n  \\sigma^{\\,N/\\prod_p p^{v_p}}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.abelianEnumStatement",
+      "text": "abelianRHS (Nat.card G) (pRank G) σ"
+     },
+     {
+      "decl": "ShiftSym.P13.abelianRHS",
+      "text": "∑ h ∈ (rankRad N dp).divisors.erase 1, coeffA dp h * (σ : ℤ) ^ (N / h)"
+     }
+    ],
+    "note": "Bijection v ↦ h = ∏_{p∣N} p^{v_p} between the paper's index set and the divisors h ≠ 1 of R = ∏_{p∣N} p^{d_p}, with v_p = v_p(h); term by term: sign, coefficient product, exponent (maps below). The bijection itself is not a frozen Prop; check it by reading."
+   },
+   {
+    "id": "idx",
+    "kind": "representation",
+    "label": "v = (v_p)_{p∣N}, 0 ≤ v_p ≤ d_p ↔ h ∣ R = ∏_{p∣N} p^{d_p}",
+    "tex": [
+     {
+      "text": "\\vv=(v_p)_{p\\mid N},\\ 0\\le v_p\\le d_p"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.abelianRHS",
+      "text": "(rankRad N dp).divisors"
+     },
+     {
+      "decl": "ShiftSym.P13.rankRad",
+      "text": "∏ p ∈ N.primeFactors, p ^ dp p"
+     }
+    ],
+    "note": "h ∣ R iff h has only prime factors p ∣ N and v_p(h) ≤ d_p for each; so h ↔ v is a bijection (also for N = 1: R = 1 and both index sets are empty after removing 0). d_p is `dp p` = `pRank G p`."
+   },
+   {
+    "id": "v0",
+    "kind": "representation",
+    "label": "v ≠ 0 ↔ h ≠ 1",
+    "tex": [
+     {
+      "text": "\\vv\\neq\\mathbf 0"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.abelianRHS",
+      "text": "(rankRad N dp).divisors.erase 1"
+     }
+    ],
+    "note": "v = 0 corresponds to h = ∏ p^0 = 1, which is erased."
+   },
+   {
+    "id": "sign",
+    "kind": "representation",
+    "label": "(−1)^{1+|v|} ↔ (−1)^{1+Ω(h)}",
+    "tex": [
+     {
+      "text": "(-1)^{1+|\\vv|}"
+     },
+     {
+      "text": "$|\\vv|=\\sum_i v_i$",
+      "scope": {
+       "lines": [
+        529,
+        529
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.coeffA",
+      "text": "(-1 : ℤ) ^ (1 + bigOmega h)"
+     },
+     {
+      "decl": "ShiftSym.bigOmega",
+      "text": "h.factorization.sum fun _ e => e"
+     }
+    ],
+    "note": "|v| is defined in Theorem 4.4 (Σ_i v_i), here Σ_p v_p = Ω(h), the number of prime factors of h with multiplicity. Sign in ℤ."
+   },
+   {
+    "id": "prod",
+    "kind": "representation",
+    "label": "∏_{p∣N} r_{d_p}(p,v_p) ↔ ∏_{p∣h} r_{d_p}(p, v_p(h))",
+    "tex": [
+     {
+      "text": "\\prod_{p\\mid N} r_{d_p}(p,v_p)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.coeffA",
+      "text": "∏ p ∈ h.primeFactors, (rdCoeff p (h.factorization p) (dp p) : ℤ)"
+     }
+    ],
+    "note": "The Lean product runs over the primes of h only; the primes p ∣ N with v_p = 0 contribute r_{d_p}(p,0) = 1 (`gaussBinom q dd 0 = 1`, `0.choose 2 = 0`), so nothing is lost. v_p = `h.factorization p`. Cast ℕ → ℤ."
+   },
+   {
+    "id": "rd",
+    "kind": "definition",
+    "label": "r_{d_p}(p,v) = p^{C(v,2)} [d_p v]_p",
+    "tex": [
+     {
+      "text": "r_{d_p}(p,v_p)"
+     },
+     {
+      "text": "r_d(p,v)=p^{\\binom v2}\\gaussbinom dv_p",
+      "scope": {
+       "lines": [
+        515,
+        515
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.coeffA",
+      "text": "(rdCoeff p (h.factorization p) (dp p) : ℤ)"
+     },
+     {
+      "decl": "ShiftSym.rdCoeff",
+      "text": "q ^ (v.choose 2) * gaussBinom q dd v"
+     },
+     {
+      "decl": "ShiftSym.gaussBinom",
+      "text": "| dd + 1, r + 1 => gaussBinom q dd r + q ^ (r + 1) * gaussBinom q dd (r + 1)"
+     },
+     {
+      "decl": "ShiftSym.P01.gaussBinomProductFidelityStatement"
+     }
+    ],
+    "note": "Definition 4.3's r_d with d replaced by d_p: the third argument of `rdCoeff p v dd` is `dp p`. Gaussian binomial by q-Pascal; agreement with the paper's product formula is the P01 fidelity Prop."
+   },
+   {
+    "id": "exp",
+    "kind": "representation",
+    "label": "σ^{N/∏_p p^{v_p}} ↔ σ^{N / h}",
+    "tex": [
+     {
+      "text": "\\sigma^{\\,N/\\prod_p p^{v_p}}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.abelianRHS",
+      "text": "(σ : ℤ) ^ (N / h)"
+     }
+    ],
+    "note": "Power in ℤ with a natural-number exponent."
+   },
+   {
+    "id": "exp.in",
+    "kind": "representation",
+    "label": "N/∏_p p^{v_p} as ℕ-division N / h (exact)",
+    "tex": [
+     {
+      "text": "N/\\prod_p p^{v_p}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.abelianRHS",
+      "text": "N / h"
+     }
+    ],
+    "note": "h = ∏ p^{v_p}. ℕ-division, exact because h ∣ R ∣ N (each p^{d_p} = |G[p]| divides N). The exactness is not a frozen Prop here (Theorem 4.4 has `P04.exponentEncodingStatement`); it is a fact to check by reading (proved as the helper `pRank_pow_dvd`)."
+   },
+   {
+    "id": "torsion",
+    "kind": "paper-only",
+    "label": "opening sentence: ℤ_n^d enters the proof only through its order and p-torsion",
+    "tex": [
+     {
+      "text": "enters the proof of Theorem~\\ref{thm:main-enum} only through its order\nand its $p$-torsion, which is $\\FF_p^d$ for every prime $p\\mid n$",
+      "scope": {
+       "lines": [
+        659,
+        660
+       ]
+      }
+     }
+    ],
+    "lean": [],
+    "note": "A remark on the structure of the proof of Theorem 4.4, not frozen (S13 docstring). Its mathematical fact, the p-torsion of ℤ_n^d is F_p^d, is Lemma 3.3 (`P02.torsionLemmaStatement`, group 02)."
+   },
+   {
+    "id": "Gp",
+    "kind": "same",
+    "label": "G[p] = {g ∈ G : pg = 0}",
+    "tex": [
+     {
+      "text": "$G[p]=\\{g\\in G: pg=0\\}$",
+      "scope": {
+       "lines": [
+        662,
+        662
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.pRank",
+      "text": "{g : G // p • g = 0}"
+     },
+     {
+      "decl": "ShiftSym.P13.pRankPowStatement",
+      "text": "{g : G // p • g = 0}"
+     },
+     {
+      "decl": "ShiftSym.P13.pTorsion",
+      "text": "carrier := {g | p • g = 0}"
+     }
+    ],
+    "note": "pg is the ℕ-scalar multiple `p • g`; G[p] is the subtype in `pRank`/`pRankPowStatement` and the subgroup `pTorsion` (same carrier) in `pTorsionVectorSpaceStatement`."
+   },
+   {
+    "id": "Fp",
+    "kind": "same",
+    "label": "G[p] is an F_p-vector space",
+    "tex": [
+     {
+      "text": "an $\\FF_p$-vector space",
+      "scope": {
+       "lines": [
+        662,
+        662
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.pTorsionVectorSpaceStatement",
+      "text": "∃ _ : Module (ZMod p) (pTorsion G p),\n      (∀ (c : ZMod p) (g : pTorsion G p), ((c • g : pTorsion G p) : G) = c.val • (g : G))"
+     }
+    ],
+    "note": "Frozen in the group-13 supplement (2026-11-08): for prime p, G[p] carries a ZMod p-module structure (ZMod p = F_p) whose action is the natural one, c • g = c.val • g. The structure is asserted to exist; the action clause makes it the paper's."
+   },
+   {
+    "id": "dp",
+    "kind": "representation",
+    "label": "d_p = dim_{F_p} G[p] ↔ exponent of p in |G[p]|",
+    "tex": [
+     {
+      "text": "let $d_p=\\dim_{\\FF_p}G[p]$ be the \\emph{$p$-rank} of $G$",
+      "scope": {
+       "lines": [
+        663,
+        663
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.pTorsionVectorSpaceStatement",
+      "text": "Module.finrank (ZMod p) (pTorsion G p) = pRank G p"
+     },
+     {
+      "decl": "ShiftSym.P13.pRank",
+      "text": "(Nat.card {g : G // p • g = 0}).factorization p"
+     },
+     {
+      "decl": "ShiftSym.P13.abelianEnumStatement",
+      "text": "pRank G"
+     }
+    ],
+    "note": "The formal p-rank `pRank G p` is v_p(|G[p]|); `pTorsionVectorSpaceStatement` certifies that for prime p it equals dim_{F_p} G[p] (`Module.finrank (ZMod p)` of the structure above), so the paper's definition of d_p and the one Theorem 4.7 uses agree. For non-prime p the Lean value is 0 and the paper does not use it."
+   },
+   {
+    "id": "rect.G",
+    "kind": "representation",
+    "label": "rectangular torus ℤ_{n_1} × ⋯ × ℤ_{n_m}",
+    "tex": [
+     {
+      "text": "a rectangular torus\n$\\ZZ_{n_1}\\times\\dots\\times\\ZZ_{n_m}$",
+      "scope": {
+       "lines": [
+        665,
+        666
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.rectEnumStatement",
+      "text": "(d : ℕ) (n : Fin d → ℕ)"
+     },
+     {
+      "decl": "ShiftSym.P13.rectEnumStatement",
+      "text": "(∀ i, ZMod (n i))"
+     }
+    ],
+    "note": "The product is the Π-type `∀ i : Fin d, ZMod (n i)`; the number of factors m is called `d` here (it is not the dimension of the theorem)."
+   },
+   {
+    "id": "rect.hyp",
+    "kind": "hypothesis",
+    "label": "n_i ≥ 1 (implicit in ℤ_{n_i})",
+    "tex": [
+     {
+      "text": "\\ZZ_{n_1}\\times\\dots\\times\\ZZ_{n_m}",
+      "scope": {
+       "lines": [
+        666,
+        666
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.rectEnumStatement",
+      "text": "(∀ i, 1 ≤ n i)"
+     },
+     {
+      "decl": "ShiftSym.P13.rectCardStatement",
+      "text": "(∀ i, 1 ≤ n i)"
+     },
+     {
+      "decl": "ShiftSym.P13.rectRankStatement",
+      "text": "(∀ i, 1 ≤ n i)"
+     }
+    ],
+    "note": "`ZMod 0 = ℤ` is infinite, so n_i = 0 is excluded; n_i = 1 (a trivial factor) is allowed."
+   },
+   {
+    "id": "rect.N",
+    "kind": "same",
+    "label": "N = ∏_i n_i",
+    "tex": [
+     {
+      "text": "$N=\\prod_i n_i$",
+      "scope": {
+       "lines": [
+        666,
+        666
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.rectCardStatement",
+      "text": "Nat.card (∀ i, ZMod (n i)) = ∏ i, n i"
+     }
+    ],
+    "note": "Equality in ℕ."
+   },
+   {
+    "id": "rect.dp",
+    "kind": "same",
+    "label": "d_p = |{i : p ∣ n_i}|",
+    "tex": [
+     {
+      "text": "$d_p=|\\{i:p\\mid n_i\\}|$",
+      "scope": {
+       "lines": [
+        667,
+        667
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.rectRankStatement",
+      "text": "p.Prime → pRank (∀ i, ZMod (n i)) p = rectRank n p"
+     },
+     {
+      "decl": "ShiftSym.P13.rectRank",
+      "text": "(Finset.univ.filter fun i => p ∣ n i).card"
+     }
+    ],
+    "note": "For every prime p (the p-rank is defined for primes)."
+   },
+   {
+    "id": "rect.enum",
+    "kind": "lean-only",
+    "label": "Theorem 4.7 instantiated on rectangular tori",
+    "tex": [],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.rectEnumStatement",
+      "text": "(Nat.card {s : (∀ i, ZMod (n i)) → Fin σ // IsShiftSymmetricG s} : ℤ)\n      = abelianRHS (∏ i, n i) (rectRank n) σ"
+     }
+    ],
+    "note": "Not a separate sentence of the paper: the theorem with N and d_p replaced by the setting's formulas for rectangular tori (rect.N, rect.dp). Frozen so that this instance is certified directly; the example of Corollary B.1(i) (Corollary 4.8(i) in v10) is proved from it."
+   },
+   {
+    "id": "sq",
+    "kind": "representation",
+    "label": "for G = ℤ_n^d (d_p = d for p ∣ n) this is Theorem 4.4",
+    "tex": [
+     {
+      "text": "$G=\\ZZ_n^d$, where $d_p=d$ for every $p\\mid n$, this is\nTheorem~\\ref{thm:main-enum}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.squareStatement",
+      "text": "abelianRHS (n ^ d) (rectRank (fun _ : Fin d => n)) σ = enumerationRHS n d σ"
+     },
+     {
+      "decl": "ShiftSym.P13.bridgeStatement",
+      "text": "∀ s : Config n d (Fin σ), IsShiftSymmetricG s ↔ IsShiftSymmetric s"
+     }
+    ],
+    "note": "Two Props: on ℤ_n^d the right side of Theorem 4.7 is Theorem 4.4's (divisor-indexed) `enumerationRHS` (`squareStatement`), and the shift-symmetry predicate is the core's (`bridgeStatement`), so both sides of Theorem 4.4 (`enumerationStatement`) are recovered."
+   },
+   {
+    "id": "sq.G",
+    "kind": "representation",
+    "label": "G = ℤ_n^d ↦ Lat n d, N = n^d",
+    "tex": [
+     {
+      "text": "$G=\\ZZ_n^d$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.bridgeStatement",
+      "text": "∀ s : Config n d (Fin σ), IsShiftSymmetricG s ↔ IsShiftSymmetric s"
+     },
+     {
+      "decl": "ShiftSym.IsShiftSymmetric",
+      "text": "∃ v : Lat n d, v ≠ 0 ∧ shift v s = s"
+     },
+     {
+      "decl": "ShiftSym.P13.squareStatement",
+      "text": "n ^ d"
+     }
+    ],
+    "note": "ℤ_n^d is `Lat n d = Fin d → ZMod n` (`Config n d (Fin σ)` = its configurations); on it `IsShiftSymmetricG` is the core's `IsShiftSymmetric`, so |S_G| is Theorem 4.4's left side. N = n^d (rectCardStatement with n_i = n)."
+   },
+   {
+    "id": "sq.dp",
+    "kind": "representation",
+    "label": "d_p = d for every p ∣ n",
+    "tex": [
+     {
+      "text": "$d_p=d$ for every $p\\mid n$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.squareStatement",
+      "text": "rectRank (fun _ : Fin d => n)"
+     },
+     {
+      "decl": "ShiftSym.P13.rectRank",
+      "text": "(Finset.univ.filter fun i => p ∣ n i).card"
+     }
+    ],
+    "note": "The ranks of ℤ_n^d enter as `rectRank` of the constant family: d if p ∣ n, 0 otherwise (such p do not divide N = n^d and do not occur). That these are the p-ranks of `Lat n d` is `rectRankStatement` with n_i = n."
+   },
+   {
+    "id": "sq.thm",
+    "kind": "same",
+    "label": "Theorem 4.4 (its right side)",
+    "tex": [
+     {
+      "text": "Theorem~\\ref{thm:main-enum}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.squareStatement",
+      "text": "enumerationRHS n d σ"
+     },
+     {
+      "decl": "ShiftSym.enumerationStatement",
+      "text": "(Nat.card {s : Config n dd (Fin σ) // IsShiftSymmetric s} : ℤ)\n      = enumerationRHS n dd σ"
+     }
+    ],
+    "note": "Theorem 4.4 is the frozen `enumerationStatement` (divisor form); its link to the paper's rank-vector form is `P04.rankVectorReindexStatement` (see the item of Theorem 4.4)."
+   },
+   {
+    "id": "sq.n",
+    "kind": "generalization",
+    "label": "hypotheses of the last sentence: n ≥ 1, any d and σ",
+    "tex": [
+     {
+      "text": "\\ZZ_n^d"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P13.squareStatement",
+      "text": "1 ≤ n"
+     }
+    ],
+    "note": "Theorem 4.4 assumes n ≥ 2, d ≥ 1, σ ≥ 1; `squareStatement` holds for n ≥ 1 and all d, σ, and `bridgeStatement` for all n, d, σ. Harmless strengthening."
+   }
+  ]
+ }
+}

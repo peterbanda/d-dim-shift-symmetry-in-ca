@@ -1,0 +1,18 @@
+python 3.10.12 on Linux-6.8.0-124-generic-x86_64-with-glibc2.35
+
+[1] Failure sets of the original chain conditions (n <= 5000, all m)
+    A.21 chain fails exactly at: [(6, 1), (10, 1), (14, 1)]
+    A.22 chain fails exactly at: [(6, 1)]
+    A.21 failure set == {(6,1),(10,1),(14,1)}: OK
+    A.22 failure set == {(6,1)}: OK
+    A = n^2/p_{m+1} >= 2n for every composite multi-prime n (p_{m+1} <= n/2): OK
+
+[2] Union-bound lemma for q^m(1/p) and q^m(1/p^2)
+    0 <= q^m(1/p) <= union bound and q^m(1/p^2) >= 0 on 288 cases: OK
+
+[3] Repaired inequalities R2 and R3
+    driver s^(A/2) >= 2n/p+1, y1+x1+y2 >= 0, 0 <= x2 <= y1 on 288 cases: OK
+
+======================================================================
+RESULT: all repair-note inequalities corroborated exactly;
+original-chain failure sets confirmed complete.

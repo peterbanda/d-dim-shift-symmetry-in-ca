@@ -1,0 +1,1 @@
+Shiftsym/Paper/Proofs/P11_Numerics.lean:1009:2: warning: exponent 4651 exceeds the threshold 256, exponentiation operation was not evaluated, use `set_option exponentiation.threshold <num>` to set a new threshold

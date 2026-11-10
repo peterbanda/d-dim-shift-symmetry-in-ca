@@ -1,0 +1,103 @@
+python 3.10.12 on Linux-6.8.0-124-generic-x86_64-with-glibc2.35
+Auditing arXiv:1703.09030v2 (v2 confirmed latest on arxiv.org, 2026-07-24)
+
+[1] Eq. 17 / Eq. 18 / Eq. 19 literal forms vs independent evaluators
+    n=2 s=2: E17=True E18=True E19=True OK
+    n=2 s=3: E17=True E18=True E19=True OK
+    n=3 s=2: E17=True E18=True E19=True OK
+    n=3 s=3: E17=True E18=True E19=True OK
+    n=4 s=2: E17=True E18=True E19=True OK
+    n=4 s=3: E17=True E18=True E19=True OK
+    n=5 s=2: E17=True E18=True E19=True OK
+    n=5 s=3: E17=True E18=True E19=True OK
+    n=6 s=2: E17=True E18=True E19=True OK
+    n=6 s=3: E17=True E18=True E19=True OK
+    n=7 s=2: E17=True E18=True E19=True OK
+    n=7 s=3: E17=True E18=True E19=True OK
+    n=8 s=2: E17=True E18=True E19=True OK
+    n=8 s=3: E17=True E18=True E19=True OK
+    n=9 s=2: E17=True E18=True E19=True OK
+    n=9 s=3: E17=True E18=True E19=True OK
+    n=10 s=2: E17=True E18=True E19=True OK
+    n=10 s=3: E17=True E18=True E19=True OK
+    n=11 s=2: E17=True E18=True E19=True OK
+    n=11 s=3: E17=True E18=True E19=True OK
+    n=12 s=2: E17=True E18=True E19=True OK
+    n=12 s=3: E17=True E18=True E19=True OK
+    E17(6,2) equals independent subgroup-IE: OK
+    E19(4,2) equals definition-level brute force: OK
+    E19(3,3) equals definition-level brute force: OK
+
+[2] Cor E.20 and Lemma E.21 (n <= 200, s in {2,3})
+    E.20 exact at all primes n <= 200: OK
+    E.21 lower bound holds, tight iff prime, n <= 200: OK
+    E.21 proof's q^1 > (n+1)s^n - ns strict at composites: OK
+
+[3] Lemma A.21: statement, decomposition, and chain validity
+    A.21 statement q^m <= q^(m+1) on all composite n <= 100: OK
+    A.21 five-part decomposition identity: OK
+    A.21 target inequalities y1+x1+y2 >= 0 and x2 >= 0: OK
+    A.21 PROOF-CHAIN GAP: final step 'A/2 >= 4 log2(n)+1' FAILS for (n,m,p) = [(6, 1, 3), (10, 1, 5), (14, 1, 7)]
+    (statement true in every such case per the exact checks above -> proof gap, not a false lemma)
+
+[4] Lemmas A.22, A.23, Cor A.24
+    A.22 statement |S| <= 2 sum s^(n^2/p)(p+1), n <= 100: OK
+    A.22 chain final step '(5/6)A >= 4 log2 n' fails or is borderline for: [(6, 1, 3)]
+    A.23 on all prime divisors, n <= 100: OK
+    A.24 on all prime divisors, n <= 100: OK
+
+[5] Lemma E.22 upper bound and Eq. 23/24 probability bounds
+    E.22 and Eq.24 hold for n <= 100, s in {2,3,4}: OK
+
+[6] k-active-cell formulas E.29/E.30/E.32 and Cor A.34
+    E.29 vs brute force, n=4 s=2, all v and k: OK
+    E.29 vs brute force, n=3 s=3, all v and k: OK
+    E.30 vs brute force, n=2 s=2, all k: OK
+    E.32 vs brute force, n=2 s=2, all k: OK
+    E.30 vs brute force, n=3 s=2, all k: OK
+    E.32 vs brute force, n=3 s=2, all k: OK
+    E.30 vs brute force, n=4 s=2, all k: OK
+    E.32 vs brute force, n=4 s=2, all k: OK
+    E.30 vs brute force, n=2 s=3, all k: OK
+    E.32 vs brute force, n=2 s=3, all k: OK
+    E.30 vs brute force, n=3 s=3, all k: OK
+    E.32 vs brute force, n=3 s=3, all k: OK
+    k-active counts independent of the chosen state a (n=3, s=3): OK
+    E.32 vs independent subgroup-IE, n=6 s=2, all k: OK
+    sum_k |S^a_k| == |S|, n=6 s=2: OK
+    E.32 vs independent subgroup-IE, n=6 s=3, all k: OK
+    sum_k |S^a_k| == |S|, n=6 s=3: OK
+    E.32 vs independent subgroup-IE, n=10 s=2, all k: OK
+    sum_k |S^a_k| == |S|, n=10 s=2: OK
+    E.32 vs independent subgroup-IE, n=12 s=2, all k: OK
+    sum_k |S^a_k| == |S|, n=12 s=2: OK
+    A.34: E.32(k=0) == |S| over s-1 states, n=6 s=3: OK
+    A.34: E.32(k=0) == |S| over s-1 states, n=10 s=3: OK
+    A.34: E.32(k=0) == |S| over s-1 states, n=12 s=4: OK
+
+[7] Thm E.36 expectation model (exact, all configs enumerated)
+    E[#orbits visited] == (1-Q^m)/(1-Q) exactly, n=2 s=2, every generator: OK
+    E[total cells] = 9.000 <= paper bound 12.000, n=2 s=2: OK
+    E[#orbits visited] == (1-Q^m)/(1-Q) exactly, n=3 s=2, every generator: OK
+    E[total cells] = 15.750 <= paper bound 16.000, n=3 s=2: OK
+    E[#orbits visited] == (1-Q^m)/(1-Q) exactly, n=3 s=3, every generator: OK
+    E[total cells] = 13.481 <= paper bound 13.500, n=3 s=3: OK
+    E[#orbits visited] == (1-Q^m)/(1-Q) exactly, n=4 s=2, every generator: OK
+    E[total cells] = 11.953 <= paper bound 12.000, n=4 s=2: OK
+
+[8] Spot claims from the main text
+    P(2x2) = 8/16 = 0.5  (paper: 0.5)
+    P(2x2) = 0.5: OK
+    P(10x10) = 2.665e-15  (paper: ~2.7e-15)
+    P(10x10) ~ 2.7e-15: OK
+    log10 P_unif(100x100) = -1504.7  (paper: ~ -1505)
+    P_unif(100^2) ~ 10^-1505: OK
+    P_dens(45x45) = 9.872e-04  (paper: ~0.001)
+    P_dens(45^2) ~0.001: OK
+    P_dens(100x100) = 2.000e-04  (paper: ~2e-4)
+    P_dens(100^2) ~2e-4: OK
+
+======================================================================
+RESULT: every numbered STATEMENT checked is exactly correct on the
+tested domains. The only defects found are PROOF-chain gaps in
+A.21/A.22 at small composite n (listed inline in section [3]/[4]).

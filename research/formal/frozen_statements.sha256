@@ -1,0 +1,67 @@
+# SHA-256 fingerprints of the frozen statement files (Phase H), recorded when
+# each file passed its triple fidelity review and BEFORE any proof was written.
+# Paths are relative to research/formal/shiftsym. Checked by ../check_frozen.py.
+adcef1275fd41a1863e1cbafbe26c13219c61eeb0a008cf278410d2c2887b3ec  Shiftsym/Paper/Common.lean
+8f683f5a4b768e5cc0646013ad1c7bc31a12216791c760b655e170db95834d37  Shiftsym/Paper/S01_Model.lean
+480e75ec57ff39358d942b7092d9e7bc1b0f3d8c8396c62490dd938b4c8953d7  Shiftsym/Paper/S02_LatticeLemmas.lean
+808b40609e6a0a6ce6d8885774bec49e7b6bf2f43c566f32f0919270841fcf63  Shiftsym/Paper/S03_MobiusCoefficients.lean
+55a37b4eeba14168b8b270edc4e03d8fe2d8078ef70614701f6f4c1491a4a94f  Shiftsym/Paper/S04_EnumerationCorollaries.lean
+7e2e7ae6b2ecfcc1f50f773175f2309f0454ab91fe6dfa977a702dfade61eb48  Shiftsym/Paper/S05_KActive.lean
+e23b7c874a56cec941159ef0ca98150971aee79686dba47af10f249ce0e6d044  Shiftsym/Paper/S06_BoundsProbability.lean
+6d1568f755141b8c64327ab224c9ef37525873871c397b442b2bc2bbe6c8af6b  Shiftsym/Paper/S07_Dynamics.lean
+783d73b653d1895a1c4c848a51178547f20d6d2bd07fc7317cf1859eed116525  Shiftsym/Paper/S08_Detection.lean
+eb9baf4b5dcfbf9c09f938216664f8fef470d73eab4068321a06e97159bfa2fa  Shiftsym/Paper/S09_CrossoverLaws.lean
+a429dd9180d2f30fc111f3c62be09f8c86d1cf284675bbb324fa10141d7326c6  Shiftsym/Paper/S10_AppendixLemmas.lean
+013352e47245e74076abe01f77ef5fbfe06a256d75895592fd71a1d9244a6962  Shiftsym/Paper/S11_Numerics.lean
+c040114d9783fc50868ed7619619e99657bbdf2ac2c61694836bd6cce2e66f06  Shiftsym/Paper/S12_Necklaces.lean
+# 2026-11-06: group 13 (Section 4.5, paper v10), recorded after two fidelity rounds (Run 036); eleven of its
+# statements were frozen, reviewed and proved first in the extension layer (see the file's provenance note).
+# Re-recorded the same day (Run 039): card736Statement replaced by cardTwoPrimeStatement (the paper's example of
+# Corollary 4.8(i) is now Z2 x Z24 vs Z4 x Z12), docstring line numbers corrected; three fidelity reviews PASS;
+# recorded before its proof was written.
+aa1bac1375e407f617ed590ecb5500a8a9e9a01e4749aa37b6d193b5a9f8b0e0  Shiftsym/Paper/S13_AbelianGroups.lean
+# 2026-11-08: group-13 supplement (the setting sentence of Section 4.5: G[p] is an F_p-vector space of dimension d_p),
+# the only "weaker" link of the v10 correspondence audit; owner decision: freeze and prove. Recorded before its proof,
+# before the fidelity reviews (Run 046).
+# Docstring-only re-record after the three pre-proof fidelity reviews (PASS x3), before the proof: comment-stripped text
+# unchanged (first record 88f75c873b54b4a393c4372555742371901a1696ece1318049228039aeb35aa1).
+7b575efa1854caca0ac7a1f224a728c6a163da16f923ae04aa348d5f26dd0028  Shiftsym/Paper/S13_AbelianGroups_Torsion.lean
+# Group 09 supplement (added 2026-10-22): the explicit window constant 20 of Proposition 10.2.
+# Unlike the files above, this one was frozen AFTER a proof of its content existed (the helper
+# theorems window_i / window_ii, which supplied the paper's 20). It passed three fresh-context
+# fidelity reviews (all PASS) before its _proved theorems were written; S09_CrossoverLaws.lean is
+# unchanged. See research/experiments/README.md, Run 025.
+a5f160ec350eb02796df645ef1bbdcdb7ab247a17e11eadd7aa8b16576427351  Shiftsym/Paper/S09_CrossoverLaws_Window20.lean
+# 2026-11-06: group-08 supplement (Remark 9.4, paper v10), recorded after three fidelity rounds and re-recorded
+# after a re-review (literal, exploit: PASS) once the text was aligned with the statements as first frozen and the
+# two statements added later were removed; every statement was frozen before its proof (Run 036).
+885f2096ac6ae828a3503916abe885bb006bbb6a3b5b216dc770492594565e4a  Shiftsym/Paper/S08_Detection_Reads.lean
+# Group 07 supplement (added 2026-10-27): the symmetry-breaking clause of Corollary 8.2 (paper v5/v6
+# "every ... task whose required output breaks a symmetry of some admissible input"), which no frozen
+# statement certified. Frozen AFTER a proof of its content existed (a probe of the correspondence-audit
+# judgment, correspondence_audit/independent_judgment/). It passed three fresh-context fidelity reviews
+# (all PASS; docstring corrections only afterwards) before its _proved theorems were written;
+# S07_Dynamics.lean is unchanged. See research/experiments/README.md, Run 027.
+936975cebac8504c309cae3849c01519bacf647aefab8e96fa6a49035f9c8690  Shiftsym/Paper/S07_Dynamics_SymmetryBreaking.lean
+# Definition dependencies (added 2026-10-19, after the verification of the response in
+# main_paper_audit/independent_review.md): every other Shiftsym file whose definitions a
+# frozen statement unfolds to, as computed by ../frozen_deps.lean (the core statements of
+# Statement*.lean, the lattice/configuration definitions, and the definitions kept in six
+# lemma files). Each hash equals the one in main_paper_audit/source_manifest.json, i.e. the
+# state reviewed on 2026-10-16.
+# Re-recorded 2026-10-23 (Run 026): commit c909527 replaced the deprecated alias Set.mem_setOf_eq by its
+# target Set.mem_ofPred_eq (mathlib: `alias mem_setOf_eq := mem_ofPred_eq`) in the two proof fields of `stab`;
+# no definition, type or statement changed. Hash of the 2026-10-16 review state: a57c24036d54df0b….
+475dd73a9ed771d32ab5342b69b6633065632fb5d85b190d9320cadf4dc4df07  Shiftsym/Definitions.lean
+4bc9e89d9b4e00b68d923146a7dafc268c236e66bcecb4929a8041e93602088e  Shiftsym/Statement.lean
+# Release extraction of relative enumeration only; original mixed-module hash: 0df3207231c7c2eff65a861a9c876d9401bc433ef0f92eabecf97a233412e31f
+1dd735f62494ff9993e55e71e584be019199b4513fdc63134277482b91f1e679  Shiftsym/StatementE1.lean
+0774a801dfe467fa3d56e2a0eb20c0aeca04781de330bcab53484cd2211ce205  Shiftsym/Lemmas/Assembly.lean
+046b481a22e802023263ce951f56cff5a4cf6f689f1dde878807dbf6b5837c40  Shiftsym/Lemmas/Bridge.lean
+bb3a54882f3f3a2df72023aed0739afc1c079f0307ddab0b1ae69d0aa3969c13  Shiftsym/Lemmas/Evaluate.lean
+eeee1c12606bb726af33d3aa3c8be24ea834c4a3283b6c4eb0b9070076976e8d  Shiftsym/Lemmas/MobiusSum.lean
+77bea49af2910e9e04076cff22fd784d9db273df7ca73786c3d6ce079eebae3c  Shiftsym/Lemmas/Torsion.lean
+# Environment pins: the Lean toolchain and the mathlib revision whose definitions
+# (Nat.card, moebius, ZMod, ...) the statements use; also unchanged since 2026-10-16.
+550bff0b0a6226c2eccae5a5830f02d6672a04136c02110cee692418c7f48a8d  lake-manifest.json
+62c2d9c0fc1ec4c67e151c11eff41ca004ef38e179cf9476c230406e6defedef  lean-toolchain

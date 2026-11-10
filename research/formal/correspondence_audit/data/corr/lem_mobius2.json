@@ -1,0 +1,231 @@
+{
+ "label": "lem:mobius2",
+ "statement": {
+  "summary": "Lemma 4.2 (eq. (cr)) is frozen as `lemMobiusCrStatement` in Paper/S03_MobiusCoefficients.lean. Up to paper v7 it was the last part of Lemma 4.1, and the frozen conjunction `lemMobiusStatement` (frozen against v3.1) still joins it to the two Props of Lemma 4.1. c_r(p), lines, span J and rk J are literal project definitions in the same file.",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P03.lemMobiusCrStatement",
+    "role": "statement"
+   },
+   {
+    "decl": "ShiftSym.P03.lines",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P03.spanJ",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P03.rkJ",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P03.cr",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.gaussBinom",
+    "role": "definition"
+   }
+  ],
+  "deltas": [
+   "span J = `Submodule.span` of the union of the lines in J; rk J = finrank (span J) (the paper defines rk J in Lemma 3.3 for order-p subgroups of 𝒜; the evident meaning is used for lines of 𝔽_p^d).",
+   "c_r(p) is `cr p d r` (explicit d); all sums and signs in ℤ.",
+   "[d r]_p = `gaussBinom p d r` (q-Pascal recurrence); agreement with the paper's product formula is `P01.gaussBinomProductFidelityStatement`.",
+   "0 ≤ r ≤ d: r : ℕ, `r ≤ d` kept as hypothesis. p prime and d ≥ 1 as in the paper (NeZero p derived from primality)."
+  ],
+  "maps": [
+   {
+    "id": "hyp.p",
+    "kind": "hypothesis",
+    "label": "p prime",
+    "tex": [
+     {
+      "text": "Let $p$ be prime"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.lemMobiusCrStatement",
+      "text": "(hp : p.Prime)"
+     }
+    ],
+    "note": "Prime p in all three Props. `NeZero p` (needed for the finiteness instances) is derived from hp by `haveI`, so it adds no hypothesis."
+   },
+   {
+    "id": "hyp.d",
+    "kind": "hypothesis",
+    "label": "d ≥ 1",
+    "tex": [
+     {
+      "text": "$d\\ge1$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.lemMobiusCrStatement",
+      "text": "1 ≤ d →"
+     }
+    ],
+    "note": "Kept verbatim although not needed (the claims hold for d = 0 too)."
+   },
+   {
+    "id": "cr",
+    "kind": "same",
+    "label": "eq. (cr): c_r(p) = (−1)^r p^{C(r,2)} [d r]_p",
+    "tex": [
+     {
+      "text": "c_r(p) \n  \\;=\\;(-1)^r p^{\\binom r2}\\gaussbinom dr_p"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.lemMobiusCrStatement",
+      "text": "cr p d r = (-1 : ℤ) ^ r * (p : ℤ) ^ (r.choose 2) * (gaussBinom p d r : ℤ)"
+     }
+    ],
+    "note": "Equality in ℤ."
+   },
+   {
+    "id": "cr.lhs",
+    "kind": "definition",
+    "label": "c_r(p) := Σ_{J ⊆ lines(𝔽_p^d), rk J = r} (−1)^{|J|}",
+    "tex": [
+     {
+      "text": "c_r(p)",
+      "occ": 1
+     },
+     {
+      "text": "\\sum_{\\substack{J\\subseteq\\mathrm{lines}(\\FF_p^d)\\\\\n  \\rk J=r}}\\!\\!(-1)^{|J|}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.lemMobiusCrStatement",
+      "text": "cr p d r"
+     },
+     {
+      "decl": "ShiftSym.P03.cr",
+      "text": "∑ J ∈ (lines (⊤ : Submodule (ZMod p) (Fin d → ZMod p))).powerset.filter\n      (fun J => rkJ J = r), (-1 : ℤ) ^ J.card"
+     }
+    ],
+    "note": "`cr p d r` makes explicit the dependence on d that the paper's notation c_r(p) suppresses."
+   },
+   {
+    "id": "cr.idx",
+    "kind": "representation",
+    "label": "J ⊆ lines(𝔽_p^d)",
+    "tex": [
+     {
+      "text": "J\\subseteq\\mathrm{lines}(\\FF_p^d)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.cr",
+      "text": "(lines (⊤ : Submodule (ZMod p) (Fin d → ZMod p))).powerset"
+     }
+    ],
+    "note": "lines(𝔽_p^d) = lines of the top subspace ⊤."
+   },
+   {
+    "id": "rk",
+    "kind": "definition",
+    "label": "rk J = dim span J",
+    "tex": [
+     {
+      "text": "\\rk J=r"
+     },
+     {
+      "text": "where $\\rk J$ is the dimension of the span of the corresponding lines",
+      "scope": {
+       "lines": [
+        412,
+        413
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.cr",
+      "text": "rkJ J = r"
+     },
+     {
+      "decl": "ShiftSym.P03.rkJ",
+      "text": "finrank (ZMod p) (spanJ J)"
+     }
+    ],
+    "note": "rk J is defined in Lemma 3.3 for sets of order-p subgroups of 𝒜; for a set of lines of 𝔽_p^d the evident meaning dim span J is used (noted as a minor notation point in the S03 docstring)."
+   },
+   {
+    "id": "cr.rhs",
+    "kind": "same",
+    "label": "(−1)^r p^{C(r,2)} [d r]_p",
+    "tex": [
+     {
+      "text": "(-1)^r p^{\\binom r2}\\gaussbinom dr_p"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.lemMobiusCrStatement",
+      "text": "(-1 : ℤ) ^ r * (p : ℤ) ^ (r.choose 2) * (gaussBinom p d r : ℤ)"
+     }
+    ],
+    "note": "Product in ℤ; the Gaussian binomial is cast from ℕ."
+   },
+   {
+    "id": "gauss",
+    "kind": "definition",
+    "label": "[d r]_p (Gaussian binomial)",
+    "tex": [
+     {
+      "text": "\\gaussbinom dr_p",
+      "occ": 1
+     },
+     {
+      "text": "$\\gaussbinom dr_p=\\prod_{i=0}^{r-1} \\frac{p^{d-i}-1}{p^{i+1}-1}$",
+      "scope": {
+       "lines": [
+        354,
+        355
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.lemMobiusCrStatement",
+      "text": "(gaussBinom p d r : ℤ)"
+     },
+     {
+      "decl": "ShiftSym.gaussBinom",
+      "text": "| dd + 1, r + 1 => gaussBinom q dd r + q ^ (r + 1) * gaussBinom q dd (r + 1)"
+     },
+     {
+      "decl": "ShiftSym.P01.gaussBinomProductFidelityStatement"
+     }
+    ],
+    "note": "Lean defines [d r]_q by the q-Pascal recurrence, the paper by the product formula (§3 preamble); their agreement for prime p, 0 ≤ r ≤ d is the separately frozen and proved fidelity Prop of group 01."
+   },
+   {
+    "id": "cr.range",
+    "kind": "hypothesis",
+    "label": "0 ≤ r ≤ d",
+    "tex": [
+     {
+      "text": "0\\le r\\le d"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.lemMobiusCrStatement",
+      "text": "∀ r : ℕ, r ≤ d →"
+     }
+    ],
+    "note": "0 ≤ r is automatic for r : ℕ; r ≤ d is kept (for r > d both sides are 0, which the paper does not claim)."
+   }
+  ]
+ }
+}

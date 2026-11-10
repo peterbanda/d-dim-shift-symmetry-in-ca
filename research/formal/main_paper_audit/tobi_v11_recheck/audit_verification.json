@@ -1,0 +1,95 @@
+{
+  "result": "PASS",
+  "head": "c73bb7b42ee55d590557f4301393cb0f288d6e1e",
+  "pulled_from": "8ddf7d6",
+  "bundle_changes": [
+    "built",
+    "git_head",
+    "repo_abs"
+  ],
+  "previous_log_preserved_byte_for_byte": true,
+  "previous_event_count": 3524,
+  "new_events": 126,
+  "total_events": 3650,
+  "new_event_types": {
+    "session_start": 3,
+    "mapping_mark": 24,
+    "verdict": 6,
+    "item_open": 19,
+    "item_close": 23,
+    "mapping_select": 31,
+    "idle_start": 5,
+    "idle_end": 5,
+    "visibility": 6,
+    "finish": 2,
+    "session_pause": 2
+  },
+  "current_approvals": 27,
+  "stale": 0,
+  "unjudged": 0,
+  "current_positive_mapping_marks": 529,
+  "cleared_then_reapproved_links": [
+    [
+      "thm:abelian",
+      "Gp"
+    ],
+    [
+      "thm:abelian",
+      "Fp"
+    ],
+    [
+      "thm:abelian",
+      "dp"
+    ],
+    [
+      "thm:abelian",
+      "rect.enum"
+    ],
+    [
+      "prop:inversion",
+      "whole"
+    ],
+    [
+      "prop:inversion",
+      "hyp"
+    ],
+    [
+      "prop:inversion",
+      "hyp.d"
+    ],
+    [
+      "prop:inversion",
+      "crit.d"
+    ],
+    [
+      "prop:inversion",
+      "ii.hyp"
+    ],
+    [
+      "prop:inversion",
+      "names"
+    ]
+  ],
+  "renewed_verdicts": {
+    "thm:abelian": {
+      "t": "2026-11-10T00:36:03.537Z",
+      "item_hash": "c0b974e8af56c9b50e8f0e8d7a1d7b227e7ba9e2e2a4ba3aa75862a38b3eb05a",
+      "auto": true,
+      "session": "2026-11-10T00-28-31-841Z-gyeow"
+    },
+    "prop:inversion": {
+      "t": "2026-11-10T00:54:52.237Z",
+      "item_hash": "fc648154251670c28a0d50eeed79840c0802a8f09d3dbe20efed19408af6c52a",
+      "auto": true,
+      "session": "2026-11-10T00-28-31-841Z-gyeow"
+    }
+  },
+  "report_replayed": true,
+  "report_metadata_only_differences": [
+    "generated",
+    "git_head_at_build",
+    "data_built"
+  ],
+  "production_lean_changes_since_deep_review": [],
+  "events_sha256": "87c0380e3914ef120d02847e74d42549a36c504e7d70e8a0d1f142977610f850"
+}

@@ -1,0 +1,463 @@
+{
+ "label": "cor:dens",
+ "statement": {
+  "summary": "Corollary 7.2 is frozen as `corDensStatement` = `densityStatement` ∧ `densityClosedStatement`. The density-uniform distribution is the literal two-stage mathlib PMF `densPMF` (uniform k ∈ Fin (N+1), then uniform on C^a_k, composed by `PMF.bind`). P^dens is `probDens`, the PMF's measure of S_{n^d} as a real. The first Prop is the displayed formula with |S^a_{n^d,k}| = `numKActive`; the second substitutes Theorem 5.1's `kActiveRHS`.",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P05.corDensStatement",
+    "role": "statement (whole)"
+   },
+   {
+    "decl": "ShiftSym.P05.densityStatement",
+    "role": "statement (displayed formula)"
+   },
+   {
+    "decl": "ShiftSym.P05.densityClosedStatement",
+    "role": "statement (with Theorem 5.1)"
+   },
+   {
+    "decl": "ShiftSym.P05.densPMF",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P05.probDens",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P05.configsWithK",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P05.numKActive",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P05.kActiveRHS",
+    "role": "definition"
+   }
+  ],
+  "deltas": [
+   "Alphabet Σ = `Fin σ`; the fixed state a is universally quantified (a : Fin σ).",
+   "The distribution is the mathlib PMF `densPMF` (uniform on Fin (N+1), then `PMF.uniformOfFinset` on C^a_k, by `PMF.bind`); its nonemptiness proof `configsWithK_nonempty` uses σ ≥ 2.",
+   "P^dens = `probDens` = (outer measure of {s | IsShiftSymmetric s} under `densPMF`).toReal.",
+   "Standing hypotheses n ≥ 2, d ≥ 1 from Definition 2.1 are explicit (d ≥ 1 is unused by the proof); `NeZero n` is built from n ≥ 2 inside the statement.",
+   "All arithmetic in ℝ; C(N,k) is `Nat.choose` cast to ℝ; σ − 1 in ℝ; N − k is ℕ-subtraction, exact for k ≤ N; Σ_{k=0}^N is `Finset.range (N+1)`.",
+   "'with |S^a_{n^d,k}| given by Theorem 5.1' is a separate Prop with `kActiveRHS` (Theorem 5.1's right side, ℤ cast to ℝ) in place of `numKActive`."
+  ],
+  "maps": [
+   {
+    "id": "whole",
+    "kind": "same",
+    "label": "Corollary 7.2 = displayed formula ∧ closed form",
+    "tex": [
+     {
+      "text": "P^{\\mathrm{dens}}_{n^d} \\;=\\; \\frac{1}{N+1}\\sum_{k=0}^{N} \\frac{|S^a_{n^d,k}|}{\\binom Nk(\\sigma-1)^{N-k}}"
+     },
+     {
+      "text": "with $|S^a_{n^d,k}|$ given by Theorem"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.corDensStatement",
+      "text": "densityStatement ∧ densityClosedStatement"
+     }
+    ],
+    "note": "The corollary is split into the displayed formula (`densityStatement`) and the same formula with Theorem 5.1's right side substituted (`densityClosedStatement`)."
+   },
+   {
+    "id": "hyp.s",
+    "kind": "same",
+    "label": "σ ≥ 2",
+    "tex": [
+     {
+      "text": "Let $\\sigma\\ge2$."
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.densityStatement",
+      "text": "(hσ : 2 ≤ σ)"
+     },
+     {
+      "decl": "ShiftSym.P05.densityClosedStatement",
+      "text": "(hσ : 2 ≤ σ)"
+     }
+    ],
+    "note": "The corollary's own hypothesis. It is a named binder because the distribution needs it to be well defined: every set C^a_k is nonempty (`configsWithK_nonempty`)."
+   },
+   {
+    "id": "hyp.nd",
+    "kind": "hypothesis",
+    "label": "standing n ≥ 2, d ≥ 1",
+    "tex": [
+     {
+      "text": "Fix integers $n\\ge2$, $d\\ge1$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.densityStatement",
+      "text": "∀ hn : 2 ≤ n, 1 ≤ d →"
+     },
+     {
+      "decl": "ShiftSym.P05.densityClosedStatement",
+      "text": "∀ hn : 2 ≤ n, 1 ≤ d →"
+     }
+    ],
+    "note": "From Definition 2.1. `hn` is named because it builds the `NeZero n` instance (finite configuration space). `1 ≤ d` is not used by the proof."
+   },
+   {
+    "id": "a",
+    "kind": "representation",
+    "label": "the fixed state a (∀ a)",
+    "tex": [
+     {
+      "text": "fix any state $a\\in\\Sigma$",
+      "scope": {
+       "lines": [
+        707,
+        707
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.densityStatement",
+      "text": "(a : Fin σ)"
+     },
+     {
+      "decl": "ShiftSym.P05.densityClosedStatement",
+      "text": "(a : Fin σ)"
+     }
+    ],
+    "note": "The paper fixes a ∈ Σ in the §5 preamble, and P^dens depends on a only through the notation. Lean quantifies over every a : Fin σ, so the claim holds for each a."
+   },
+   {
+    "id": "dist",
+    "kind": "definition",
+    "label": "the density-uniform distribution (two stages)",
+    "tex": [
+     {
+      "text": "density-uniform distribution"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.densPMF"
+     }
+    ],
+    "note": "A mathlib `PMF` on configurations, built as a `PMF.bind` of the two stages below."
+   },
+   {
+    "id": "dist.k",
+    "kind": "same",
+    "label": "first draw k ∈ {0,…,N} uniformly",
+    "tex": [
+     {
+      "text": "first draw $k\\in\\{0,\\dots,N\\}$ uniformly"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.densPMF",
+      "text": "(PMF.uniformOfFintype (Fin (n ^ d + 1)))"
+     }
+    ],
+    "note": "Uniform on `Fin (N+1)` = {0,…,N}."
+   },
+   {
+    "id": "dist.s",
+    "kind": "same",
+    "label": "then a configuration with exactly k cells in state a, uniformly",
+    "tex": [
+     {
+      "text": "then a configuration with exactly $k$ cells in state $a$ uniformly"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.densPMF",
+      "text": "PMF.uniformOfFinset (configsWithK n d σ a k)"
+     },
+     {
+      "decl": "ShiftSym.P05.configsWithK",
+      "text": "Finset.univ.filter fun s => cellsInState s a = k"
+     },
+     {
+      "decl": "ShiftSym.P05.cellsInState",
+      "text": "Nat.card {u : Lat n d // s u = a}"
+     }
+    ],
+    "note": "Uniform on the finset C^a_k of configurations with exactly k cells in state a, composed with the first stage by `.bind`."
+   },
+   {
+    "id": "dist.nonempty",
+    "kind": "lean-only",
+    "label": "C^a_k ≠ ∅ for σ ≥ 2 (well-definedness)",
+    "tex": [],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.densPMF",
+      "text": "(configsWithK_nonempty hσ a (Nat.lt_succ_iff.mp k.isLt))"
+     }
+    ],
+    "note": "`PMF.uniformOfFinset` needs a nonempty finset, and this proof is part of the definition. It is where σ ≥ 2 enters the definition."
+   },
+   {
+    "id": "prob",
+    "kind": "definition",
+    "label": "probability that the drawn configuration lies in S_{n^d}",
+    "tex": [
+     {
+      "text": "the probability that the drawn configuration lies in $S_{n^d}$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.probDens",
+      "text": "((densPMF n d σ hσ a).toOuterMeasure {s | IsShiftSymmetric s}).toReal"
+     }
+    ],
+    "note": "P^dens = the PMF's (outer) measure of S_{n^d} = {s | IsShiftSymmetric s}, converted to ℝ by `toReal`. The conversion is faithful because a PMF's mass is ≤ 1."
+   },
+   {
+    "id": "eq",
+    "kind": "same",
+    "label": "P^dens = (1/(N+1)) Σ_k |S^a_{n^d,k}| / (C(N,k)(σ−1)^{N−k})",
+    "tex": [
+     {
+      "text": "P^{\\mathrm{dens}}_{n^d} \\;=\\; \\frac{1}{N+1}\\sum_{k=0}^{N} \\frac{|S^a_{n^d,k}|}{\\binom Nk(\\sigma-1)^{N-k}}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.densityStatement",
+      "text": "probDens n d σ hσ a = (1 / ((n ^ d : ℕ) + 1 : ℝ)) * ∑ k ∈ Finset.range (n ^ d + 1), (numKActive n d σ a k : ℝ) / (((n ^ d).choose k : ℝ) * ((σ : ℝ) - 1) ^ (n ^ d - k))"
+     }
+    ],
+    "note": "Equality of real numbers."
+   },
+   {
+    "id": "eq.lhs",
+    "kind": "definition",
+    "label": "P^dens_{n^d}",
+    "tex": [
+     {
+      "text": "P^{\\mathrm{dens}}_{n^d}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.densityStatement",
+      "text": "probDens n d σ hσ a"
+     }
+    ],
+    "note": "`probDens`, the probability defined above; it also depends on a and on the proof hσ."
+   },
+   {
+    "id": "eq.1N",
+    "kind": "representation",
+    "label": "1/(N+1)",
+    "tex": [
+     {
+      "text": "\\frac{1}{N+1}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.densityStatement",
+      "text": "1 / ((n ^ d : ℕ) + 1 : ℝ)"
+     }
+    ],
+    "note": "Real division, N = n^d."
+   },
+   {
+    "id": "eq.sum",
+    "kind": "representation",
+    "label": "Σ_{k=0}^{N}",
+    "tex": [
+     {
+      "text": "\\sum_{k=0}^{N}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.densityStatement",
+      "text": "∑ k ∈ Finset.range (n ^ d + 1),"
+     }
+    ],
+    "note": "`Finset.range (N+1)` = {0,…,N}."
+   },
+   {
+    "id": "eq.num",
+    "kind": "definition",
+    "label": "|S^a_{n^d,k}|",
+    "tex": [
+     {
+      "text": "|S^a_{n^d,k}|",
+      "occ": 1
+     },
+     {
+      "text": "let $S^a_{n^d,k}$ be the set of shift-symmetric configurations with exactly $k$ cells in state $a$",
+      "scope": {
+       "lines": [
+        707,
+        708
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.densityStatement",
+      "text": "(numKActive n d σ a k : ℝ)"
+     },
+     {
+      "decl": "ShiftSym.P05.numKActive",
+      "text": "Nat.card {s : Config n d (Fin σ) // IsShiftSymmetric s ∧ cellsInState s a = k}"
+     }
+    ],
+    "note": "`numKActive`: `Nat.card` of the shift-symmetric configurations with exactly k cells in state a, cast to ℝ."
+   },
+   {
+    "id": "eq.den",
+    "kind": "representation",
+    "label": "C(N,k)(σ−1)^{N−k}",
+    "tex": [
+     {
+      "text": "\\binom Nk(\\sigma-1)^{N-k}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.densityStatement",
+      "text": "((n ^ d).choose k : ℝ) * ((σ : ℝ) - 1) ^ (n ^ d - k)"
+     }
+    ],
+    "note": "= |C^a_k| (proved in the certificate). It is a positive integer for σ ≥ 2 and 0 ≤ k ≤ N, so the real division never meets x/0 = 0."
+   },
+   {
+    "id": "eq.binom",
+    "kind": "representation",
+    "label": "C(N,k)",
+    "tex": [
+     {
+      "text": "\\binom Nk"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.densityStatement",
+      "text": "((n ^ d).choose k : ℝ)"
+     }
+    ],
+    "note": "The ordinary `Nat.choose` (k ≤ N on the summation range, so the §5 convention with h = 1 is never invoked), cast to ℝ."
+   },
+   {
+    "id": "eq.pow",
+    "kind": "representation",
+    "label": "(σ−1)^{N−k}",
+    "tex": [
+     {
+      "text": "(\\sigma-1)^{N-k}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.densityStatement",
+      "text": "((σ : ℝ) - 1) ^ (n ^ d - k)"
+     }
+    ],
+    "note": "σ − 1 is computed in ℝ (no truncated subtraction). N − k is ℕ-subtraction, exact since k ≤ N."
+   },
+   {
+    "id": "N",
+    "kind": "definition",
+    "label": "N = n^d",
+    "tex": [
+     {
+      "text": "$N=n^d$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.densityStatement",
+      "text": "1 / ((n ^ d : ℕ) + 1 : ℝ)"
+     }
+    ],
+    "note": "N is written out as n^d everywhere."
+   },
+   {
+    "id": "closed",
+    "kind": "same",
+    "label": "with |S^a_{n^d,k}| given by Theorem 5.1",
+    "tex": [
+     {
+      "text": "with $|S^a_{n^d,k}|$ given by Theorem"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.densityClosedStatement",
+      "text": "(kActiveRHS n d σ k : ℝ)"
+     },
+     {
+      "decl": "ShiftSym.P05.kActiveRHS",
+      "text": "∑ v ∈ (rankVectors n d).erase 0, kActiveSummand n d σ k v"
+     }
+    ],
+    "note": "The same formula with |S^a_{n^d,k}| replaced by Theorem 5.1's right side `kActiveRHS` (the ℤ-valued alternating sum, cast to ℝ). The certificate substitutes the core Theorem 5.1 (`numKActive_eq_rhs`)."
+   },
+   {
+    "id": "alph",
+    "kind": "representation",
+    "label": "alphabet Σ = Fin σ",
+    "tex": [
+     {
+      "text": "a finite alphabet $\\Sigma$ with $\\sigma=|\\Sigma|\\ge2$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.numKActive",
+      "text": "Config n d (Fin σ)"
+     }
+    ],
+    "note": "Only |Σ| = σ enters."
+   },
+   {
+    "id": "neZero",
+    "kind": "lean-only",
+    "label": "NeZero n built inside the statement",
+    "tex": [],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.densityStatement",
+      "text": "haveI : NeZero n := ⟨by omega⟩"
+     }
+    ],
+    "note": "Technical: makes `Lat n d` a `Fintype`, so the uniform distributions exist. It is derived from n ≥ 2, so nothing is assumed."
+   }
+  ]
+ }
+}

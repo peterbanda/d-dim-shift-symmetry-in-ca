@@ -1,0 +1,405 @@
+--- automatic-three-way-merge
++++ v8
+@@ -43,9 +43,9 @@
+ % Author list confirmed by P.B. 2026-08-04 (J. Caughman added from the
+ % 2019 source paper); T. Lehman added by P.B. 2026-10-13 (v3.1).
+ % Venue and affiliations still to be finalized.
+-% v5 (2026-10-19): fixes from the independent review of v4 (research/formal/main_paper_audit/). v6 (2026-10-22): Section 11 updated for the frozen constant 20 of Prop 10.2 (research/experiments/README.md, Runs 025-026). v7 (2026-10-27): symmetry-breaking sentence of Cor 8.2 reworded and frozen in Lean, Section 11 updated (Run 027).
++% v5 (2026-10-19): fixes from the independent review of v4 (research/formal/main_paper_audit/). v6 (2026-10-22): Section 11 updated for the frozen constant 20 of Prop 10.2 (research/experiments/README.md, Runs 025-026). v7 (2026-10-27): symmetry-breaking sentence of Cor 8.2 reworded and frozen in Lean, Section 11 updated (Run 027). v8 (2026-11-02): John Caughman's readability edits of v5 merged, with editorial fixes (research/paper_edits/V8_EDITS.md); Definition 2.3 to Corollary 4.4 renumbered.
+ \author{Peter Banda \and John Caughman \and Tobi Lehman}
+-\date{October 2026 --- revised draft (v7, post-audit, formally verified in Lean~4)}
++\date{November 2026 --- revised draft (v8, post-audit, formally verified in Lean~4)}
+ 
+ \begin{document}
+ \maketitle
+@@ -64,7 +64,7 @@
+ $r_d(p,v)=p^{\binom v2}\gaussbinom dv_p$, which are the M\"obius numbers of the
+ subspace lattice of $\FF_p^d$ weighted by Gaussian binomials. We also extend
+ the enumeration to configurations with a prescribed number of active cells. The
+-when $n$ is prime recovers, in complement form, a result of Castillo-Ramirez and
++case where $n$ is prime recovers, in complement form, a result of Castillo-Ramirez and
+ Gadouleau on aperiodic configurations; the multi-prime closed form, and all
+ dynamical consequences, are new. We further prove a lower bound that is attained
+ \emph{exactly} when $n$ is prime, extending the two-dimensional tightness
+@@ -98,15 +98,16 @@
+ A configuration of a cellular automaton on the $d$-dimensional torus
+ $\ZZ_n^d$ is said to be \emph{shift-symmetric} if it is fixed by some nonzero translation.
+ For the two-dimensional case, Banda, Caughman, Cenek, and Teuscher
+-(\emph{Chaos} 29, 063120, 2019) studied shift-symmetry for configurations
++(\emph{Chaos} 29, 063120, 2019) studied shift-symmetry for configurations of
+ two-dimensional cellular automata (CA) on toroidal lattices
+ $\ZZ_n\times\ZZ_n$. Such symmetry is noteworthy since,  once a configuration is fixed by a nonzero translation, no uniform synchronous update can ever cause the symmetry to be lost. As a result, symmetric
+ configurations effectively function as irreversible traps that can make non-symmetric tasks
+ (leader election, pattern recognition) unsolvable in the worst case.
+ Quantifying this obstruction requires counting the shift-symmetric
+-configurations, which Banda et al. \cite{banda2019} accomplished for $d=2$, leaving the $n$-dimensional extensions for
++configurations, which Banda et al.~\cite{banda2019} accomplished for $d=2$, leaving higher-dimensional extensions for
+ future consideration. In this paper, we provide the $d$-dimensional extension
+-and, in the process, sharpen and correct several conjectures regarding the generalization to higher-dimensions.
++and, in the process, sharpen and correct several statements whose naive
++generalizations to higher dimensions fail.
+ 
+ \paragraph{Contributions.} The primary contributions of this paper are the following:
+ \begin{enumerate}[label=(\roman*)]
+@@ -137,7 +138,7 @@
+     correction regime collapses rapidly with growing $p$ and $d$.
+ \end{enumerate}
+ 
+-\paragraph{Comments on Verification.} Every enumerative formula below has been checked, with exact integer
++\paragraph{Comments on verification.} Every enumerative formula below has been checked, with exact integer
+ arithmetic, against definition-level exhaustive enumeration and against an
+ independent subgroup-level inclusion--exclusion evaluator; the two main
+ theorems additionally passed independent adversarial review. The scripts,
+@@ -154,7 +155,7 @@
+ verified in the Lean~4 proof assistant (Section~\ref{sec:formal}).
+ 
+ \paragraph{Related work.}
+-For the two-dimensional torus, Banda et al. \cite{banda2019} enumerated shift-symmetric
++For the two-dimensional torus, Banda et al.~\cite{banda2019} enumerated shift-symmetric
+ configurations, bounded their number, and analyzed detection; to our
+ knowledge no extension has appeared since. From the group-theoretic side,
+ Castillo-Ramirez and Gadouleau \cite{cg2017} counted configurations with a
+@@ -204,7 +205,7 @@
+ 
+ \begin{definition}[Lattice and configurations]
+ Fix integers $n\ge2$, $d\ge1$ and a finite alphabet $\Sigma$ with
+-$\sigma=|\Sigma|\ge2$ (occasionally $\sigma=1$ is also allowed where noted).
++$\sigma=|\Sigma|\ge2$ (for counting statements, $\sigma=1$ is also allowed).
+ We define the {\bf lattice} $\A$ to be the finite abelian group $\A=(\ZZ/n\ZZ)^d$, and we refer to the $N=n^d$ elements of $\A$ as the {\bf cells} of $\A$.
+ A {\bf configuration} is any function $\ssb:\A\to\Sigma$. 
+ \end{definition}
+@@ -212,11 +213,11 @@
+ \begin{definition}[Translations acting on configurations] For
+ $\vv\in\A$, the {\bf translation} $\tau_\vv$ acts on the set of configurations by
+ $(\tau_\vv\ssb)(\uu)=\ssb(\uu+\vv)$, for any $\uu, \vv \in \A$. For any configuration $\ssb$, the corresponding {\bf stabilizer}, denoted
+-$\Stab(\ssb)=\{\vv\in\A:\tau_\vv\ssb=\ssb\}$, is a subgroup of $\A$. For any subgroup $H\le\A$, its {\bf fixed set} is given by $\Fix(H)=\{\ssb:\forall \mathbf h\in H (\tau_{\mathbf h} \ssb=\ssb) \}.$
++$\Stab(\ssb)=\{\vv\in\A:\tau_\vv\ssb=\ssb\}$, is a subgroup of $\A$. For any subgroup $H\le\A$, its {\bf fixed set} is given by $\Fix(H)=\{\ssb:\tau_{\mathbf h}\ssb=\ssb\text{ for all }\mathbf h\in H\}$.
+ \end{definition}
+ 
+ \begin{definition}[Shift-symmetry] For ${\mathbf 0} \neq \vv \in \A$, we define
+-$$S_{n^d}(\vv)=\{\ssb:\tau_\vv\ssb=\ssb\}=\Fix(\langle\vv\rangle).$$ 
++\[S_{n^d}(\vv)=\{\ssb:\tau_\vv\ssb=\ssb\}=\Fix(\langle\vv\rangle).\] 
+ The set of {\bf shift-symmetric configurations} is
+ \[
+     S_{n^d} \;=\; \bigcup_{\mathbf 0\neq\vv\in\A} S_{n^d}(\vv)
+@@ -260,7 +261,7 @@
+ read itself except that cell $2$ reads cell $1$; then $(0,1,0,1)$, fixed
+ by the shift $2$, maps to $(0,1,1,1)$, which is not. 
+ 
+-The original paper by Banda et al. \cite{banda2019} considers the two-dimensional
++The original paper by Banda et al.~\cite{banda2019} considers the two-dimensional
+ case and avoids this pitfall only inside its proofs, where the neighborhood is explicitly
+ assumed to be given by shared relative offsets \cite[Lemma~A.5]{banda2019}. Our
+ Definition~\ref{def:ca} in this paper makes the hypothesis explicit from the start.
+@@ -274,11 +275,11 @@
+ 
+ In this section, we review some preliminary results about how groups of translations act on the set of configurations.
+ 
+-Throughout, we refer to the prime factorization $n=\prod_{i=1}^{k}p_i^{\alpha_i}$, with $p_1<\dots<p_k$ prime and $\alpha_1, ..., \alpha_k \in \ZZ^{\geq 0}$. We note that the number of distinct prime factors of $n$ is $k=\omega(n)$. Also recall that, for any prime $p$, the Gaussian binomial $\gaussbinom dr_p=\prod_{i=0}^{r-1}
++Throughout, we refer to the prime factorization $n=\prod_{i=1}^{k}p_i^{\alpha_i}$, with $p_1<\dots<p_k$ prime and integers $\alpha_1,\dots,\alpha_k\ge1$. We note that the number of distinct prime factors of $n$ is $k=\omega(n)$. Also recall that, for any prime $p$, the Gaussian binomial $\gaussbinom dr_p=\prod_{i=0}^{r-1}
+ \frac{p^{d-i}-1}{p^{i+1}-1}$ gives the number of
+ $r$-dimensional subspaces of $\FF_p^d$, which is the $d$-dimensional vector space over $\FF_p$, the finite field with $p$ elements.
+ 
+-\begin{lemma}[Fixed sets and unions]\label{lem:fix}
++\begin{lemma}[Fixed sets and generated subgroups]\label{lem:fix}
+ For any given subgroup $H\le\A$ and any given finite family of subgroups $H_1,\dots,H_\ell\le\A$:
+ \begin{enumerate}[label=(\roman*)]
+ \item $|\Fix(H)|=\sigma^{|\A|/|H|}$;
+@@ -298,10 +299,10 @@
+ 
+ \begin{lemma}[Order of a translation]\label{lem:order}
+ For $\mathbf 0\neq\vv=(l_1,\dots,l_d)\in\A$, the order of $\vv$ as an element of the additive group $\A$ is given by
+-$$|\langle\vv\rangle| = \lcm_i\bigl(n/\gcd(l_i,n)\bigr) =
+-n/\gcd(l_1,\dots,l_d,n),$$ and
+-$$|S_{n^d}(\vv)|=\sigma^{\,n^d/|\langle\vv\rangle|}
+-=\sigma^{\,n^{d-1}\gcd(l_1,\dots,l_d,n)}.$$
++\[|\langle\vv\rangle| = \lcm_i\bigl(n/\gcd(l_i,n)\bigr) =
++n/\gcd(l_1,\dots,l_d,n),\] and
++\[|S_{n^d}(\vv)|=\sigma^{\,n^d/|\langle\vv\rangle|}
++=\sigma^{\,n^{d-1}\gcd(l_1,\dots,l_d,n)}.\]
+ \end{lemma}
+ 
+ \begin{proof}
+@@ -317,7 +318,7 @@
+ 
+ \begin{enumerate}[label=(\roman*)]
+ \item The $p$-torsion $\A[p]=\{\mathbf x:p\mathbf x=\mathbf 0\}$ is given by
+-$$\A[p]=\bigl(\tfrac np\ZZ/n\ZZ\bigr)^d,$$
++\[\A[p]=\bigl(\tfrac np\ZZ/n\ZZ\bigr)^d.\]
+ 
+ \item The map $\mathbf x=\tfrac np\,\mathbf
+ y\mapsto\mathbf y\bmod p$ is an isomorphism $\A[p]\cong\FF_p^d$ of
+@@ -332,7 +333,7 @@
+ their number is $\gaussbinom d1_p=(p^d-1)/(p-1)$; 
+ 
+ $\bullet \;$ for a set $J$ of
+-order-$p$ cyclic subgroups, $$|\langle\bigcup J\rangle|=p^{\rk J},$$ where
++order-$p$ cyclic subgroups, \[|\langle\bigcup J\rangle|=p^{\rk J},\] where
+ $\rk J$ is the dimension of the span of the corresponding lines.
+ \end{enumerate}
+ \end{lemma}
+@@ -346,19 +347,19 @@
+ 
+ \begin{lemma}[Completeness]\label{lem:completeness} For any prime $p$, let $\mathcal L_p$ be the set of cyclic subgroups of order $p$ of $\A$ and let
+ $\mathcal L=\bigcup_{p\mid n}\mathcal L_p$. Then
+-$$S_{n^d}=\bigcup_{C\in\mathcal L}\Fix(C).$$
++\[S_{n^d}=\bigcup_{C\in\mathcal L}\Fix(C).\]
+ \end{lemma}
+ 
+ \begin{proof}
+-Since $S_{n^d}$ contains $\Fix(H)$ for \emph{all} cyclic subgroups of $\A$, the direction $\supseteq$ is clear. For the other direction $\subseteq$, we argue as follows. If a configuration $\ssb$ has a nonzero $\ww \in \Stab(\ssb)$, assume $\ww$ has order $o>1$. Then $o$ divides the
++Since $S_{n^d}$ contains $\Fix(H)$ for \emph{all} nontrivial cyclic subgroups $H$ of $\A$, the direction $\supseteq$ is clear. For the other direction $\subseteq$, we argue as follows. If a configuration $\ssb$ has a nonzero $\ww \in \Stab(\ssb)$, let $o>1$ be its order. Then $o$ divides the
+ exponent $n$ of $\A$, so any prime divisor $p$ of $o$ must also divide $n$, and
+ $(o/p)\ww$ has order exactly $p$. It follows that the cyclic subgroup
+ $C:=\langle(o/p)\ww\rangle\in\mathcal L_p$ satisfies $C\le\Stab(\ssb)$, and so $\ssb\in\Fix(C)$.
+ \end{proof}
+ 
+-\begin{lemma}[Multi-prime unions]\label{lem:joins}
++\begin{lemma}[Multi-prime generated subgroups]\label{lem:joins}
+ Let $J=\bigsqcup_{p\mid n}J_p$ with $J_p\subseteq\mathcal L_p$. Then
+-$$\bigl|\langle\bigcup J\rangle\bigr|=\prod_{p\mid n}p^{\,\rk J_p}.$$
++\[\bigl|\langle\bigcup J\rangle\bigr|=\prod_{p\mid n}p^{\,\rk J_p}.\]
+ \end{lemma}
+ 
+ \begin{proof}
+@@ -382,36 +383,29 @@
+ \begin{lemma}\label{lem:mobius}
+ Let $p$ be prime, $d\ge1$, and $V\le\FF_p^d$ a subspace of dimension $r$,
+ with $\mathrm{lines}(V)$ its set of $1$-dimensional subspaces. Define 
+-$$f(V)\;:=\!\!\sum_{\substack{J\subseteq\mathrm{lines}(V)\\
++\[f(V)\;:=\!\!\sum_{\substack{J\subseteq\mathrm{lines}(V)\\
+   \operatorname{span}J=V}}\!\!(-1)^{|J|}
+-$$
++\]
+ Then
+ \[
+   f(V)\;=\;\mu(0,V)\;=\;(-1)^r p^{\binom r2},
+ \]
+ where $\mu$ is the M\"obius function of the subspace lattice
+-\cite[Ex.~3.10.2]{stanley2012}. 
+-% Consequently, classifying subsets of
+-% $\mathrm{lines}(\FF_p^d)$ by their span,
+-% \begin{equation}\label{eq:cr}
+-%   c_r(p)\;:=\!\!\sum_{\substack{J\subseteq\mathrm{lines}(\FF_p^d)\\
+-%   \rk J=r}}\!\!(-1)^{|J|}
+-%   \;=\;(-1)^r p^{\binom r2}\gaussbinom dr_p ,\qquad 0\le r\le d .
+-% \end{equation}
++\cite[Ex.~3.10.2]{stanley2012}.
+ \end{lemma}
+ 
+ \begin{proof}
+ Every $J\subseteq\mathrm{lines}(V)$ spans exactly one $W\le V$, so
+-$$\sum_{W\le V}f(W)=\sum_{J\subseteq\mathrm{lines}(V)}(-1)^{|J|}
+-=(1-1)^{|\mathrm{lines}(V)|}=\delta_{V,0},$$ since
++\[\sum_{W\le V}f(W)=\sum_{J\subseteq\mathrm{lines}(V)}(-1)^{|J|}
++=(1-1)^{|\mathrm{lines}(V)|}=\delta_{V,0},\] since
+ $\mathrm{lines}(V)\neq\emptyset$ exactly when $V\neq0$. By M\"obius inversion
+ on the finite subspace lattice, we have $f(V)=\mu(0,V)$. (For more on inversion, see \cite[Prop.~3.7.1]{stanley2012} and \cite[\S4.1.2]{kerber1999}). 
+ 
+ Alternatively, an argument using the $q$-binomial theorem \cite[Eq.~(1.87)]{stanley2012} can be given as follows.  The function mapping a vector space $V$ to
+ $(-1)^{\dim V}p^{\binom{\dim V}2}$ satisfies the same recursion as $f$ above,
+ because, by the $q$-binomial theorem  at $x=-1$, we have
+-$$\sum_{r=0}^{R}\gaussbinom Rr_p(-1)^r p^{\binom r2}
+-=\prod_{i=0}^{R-1}(1-p^i)=\delta_{R,0}.$$
++\[\sum_{r=0}^{R}\gaussbinom Rr_p(-1)^r p^{\binom r2}
++=\prod_{i=0}^{R-1}(1-p^i)=\delta_{R,0}.\]
+  This recursion determines $f$ uniquely by induction on $\dim V$. 
+ \end{proof}
+ 
+@@ -419,20 +413,20 @@
+ 
+ \begin{lemma}\label{lem:mobius2}
+ Let $p$ be prime, $d\ge1$, and define 
+-$$
++\[
+   c_r(p)\;:=\!\!\sum_{\substack{J\subseteq\mathrm{lines}(\FF_p^d)\\
+   \rk J=r}}\!\!(-1)^{|J|}
+-$$
++\]
+ Then
+ \begin{equation}\label{eq:cr}
+   c_r(p) 
+-  \;=\;(-1)^r p^{\binom r2}\mbox{$\gaussbinom dr_p$} ,\qquad 0\le r\le d .
++  \;=\;(-1)^r p^{\binom r2}\gaussbinom dr_p ,\qquad 0\le r\le d .
+ \end{equation}
+ \end{lemma}
+ 
+ \begin{proof}
+-Summing
+-$f$ over the $\gaussbinom dr_p$ subspaces of dimension $r$ gives
++Grouping the sets $J$ with $\rk J=r$ by their span, an $r$-dimensional subspace $W$, and
++summing $f(W)=(-1)^r p^{\binom r2}$ (Lemma~\ref{lem:mobius}) over the $\gaussbinom dr_p$ subspaces of dimension $r$ gives
+ \eqref{eq:cr}.
+ \end{proof}
+ 
+@@ -440,14 +434,13 @@
+ 
+ We are now ready to prove our main result. We begin by defining the coefficient function that appears in our expression for the number of shift-symmetric configurations in $S_{n^d}$ for arbitrary finite dimension $d$.
+ 
+-\begin{definition}[Coefficient function]
++\begin{definition}[Coefficient function]\label{def:coef}
+ For a prime $p$ and integers $0\le v\le d$, let
+-$$\mbox{$r_d(p,v)=p^{\binom v2}\gaussbinom dv_p,$}$$ with $r_d(p,0)=1$. 
++\[r_d(p,v)=p^{\binom v2}\gaussbinom dv_p,\] with $r_d(p,0)=1$. 
+ \end{definition}
+ 
+ \noindent{\bf Remark.}
+     In the case when $d=2$, we observe that $r_2(p,v)=1, p+1, p$ for $v=0,1,2$, which matches the coefficients given in \cite[Thm.~E.19]{banda2019}.
+-\end{remark}
+ 
+ \begin{theorem}[Enumeration in $d$ dimensions]\label{thm:main-enum}
+ For all $n\ge2$, $d\ge1$, and $\sigma\ge1$:
+@@ -479,7 +472,7 @@
+ Since $(-1)^{|J|}=\prod_i(-1)^{|J_{p_i}|}$ and the parts $J_{p_i}$ vary
+ independently, the sum factors over rank vectors, with per-prime factors
+ $c_{v_i}(p_i)$ computed inside $\FF_{p_i}^d$ via Lemma~\ref{lem:torsion}
+-and Lemma~\ref{lem:mobius} (note $c_0=1$):
++and Lemma~\ref{lem:mobius2} (note $c_0=1$):
+ \[
+   \sum_{\text{all }J}(-1)^{|J|}\,\sigma^{N/\prod p_i^{v_i}}
+   \;=\;\sum_{\vv\in\{0,\dots,d\}^k}\;\prod_{i=1}^k c_{v_i}(p_i)\;
+@@ -492,24 +485,22 @@
+ \end{proof}
+ 
+ \begin{corollary}[Prime lattices]\label{cor:prime}
+-Fix any prime $n=p$ and integers $d\ge1$, and $\sigma\ge1$. Then
+-$$|S_{p^d}| = \sum_{r=1}^{d}(-1)^{r+1}\,p^{\binom r2}\gaussbinom dr_p\,
+-\sigma^{\,p^{d-r}}.$$ In particular, 
+-$$|S_p|=\sigma \quad \mbox{($d=1$),}$$
+-$$|S_{p^2}|=(p{+}1)\sigma^p-p\sigma \quad \mbox{($d=2$), and}$$
+-$$|S_{p^3}|=(p^2{+}p{+}1)\sigma^{p^2}-p(p^2{+}p{+}1)\sigma^{p}
+-+p^3\sigma \quad \mbox{($d=3$).}$$
++Fix any prime $n=p$ and integers $d\ge1$ and $\sigma\ge1$. Then
++\[|S_{p^d}| = \sum_{r=1}^{d}(-1)^{r+1}\,p^{\binom r2}\gaussbinom dr_p\,
++\sigma^{\,p^{d-r}}.\] In particular, 
++\[|S_p|=\sigma \quad \mbox{($d=1$),}\]
++\[|S_{p^2}|=(p{+}1)\sigma^p-p\sigma \quad \mbox{($d=2$), and}\]
++\[|S_{p^3}|=(p^2{+}p{+}1)\sigma^{p^2}-p(p^2{+}p{+}1)\sigma^{p}
+++p^3\sigma \quad \mbox{($d=3$).}\]
+ \end{corollary}
+-
+-% ($d=2$, \cite[Cor.~E.20]{banda2019}),
+ 
+ \begin{remark}\label{rem:boundary} We observe the following attributions and boundary checks.
+ 
+ (i) In complement form ($\mathrm{ac}=\sigma^N-|S|$),
+ Corollary~\ref{cor:prime} is Lemma~7(iv) of Castillo-Ramirez and Gadouleau
+ \cite{cg2017}; our multi-prime formula \eqref{eq:main-formula} of Theorem~\ref{thm:main-enum} does not
+-appear there, but we will demonstrate how it can be derived from their framework in the next section
+-(Section~\ref{sec:second-derivation}).
++appear there, but we will demonstrate how it can be derived from their framework in
++Section~\ref{sec:second-derivation} below.
+ 
+ (ii) In a boundary case where $n=1$, both sides vanish. In a boundary case where $\sigma=1$, the per-prime identity $\sum_{r=0}^d c_r(p)=0$ correctly makes the right side equal to $1$. 
+ 
+@@ -522,7 +513,8 @@
+ primitive necklaces \cite{moreau1872,witt1937}.
+ 
+ (iv) The case for $d=2$
+-recovers \cite[Thm.~E.19]{banda2019} exactly.
++recovers \cite[Thm.~E.19]{banda2019} exactly; for prime $n$ it is
++\cite[Cor.~E.20]{banda2019}.
+ 
+ (v) For $d=2$, $\sigma=2$, prime $n$, the complement of
+ Corollary~\ref{cor:prime} appears as an unproved formula line in OEIS
+@@ -532,7 +524,7 @@
+ \subsection{Alternative derivation via the subgroup lattice}
+ \label{sec:second-derivation}
+ 
+-Now we describe how an enumeration matching the above result could also be derived using an alternative line of reasoning.
++Now we describe how an enumeration matching the above result can also be derived using an alternative line of reasoning.
+ 
+ In \cite[Lemma~7(i)]{cg2017}, Castillo-Ramirez and Gadouleau show that, for any
+ finite group $G$ of order $N\ge2$ (for $N=1$ the formula is trivial) and $|A|=q\ge2$, the number of aperiodic
+@@ -552,7 +544,7 @@
+ $\gaussbinom dr_p$ such subgroups. Summing
+ $|S_{n^d}|=\sigma^N-\mathrm{ac}(\A;\Sigma)$ by rank vectors reproduces
+ \eqref{eq:main-formula}. This second derivation is logically independent
+-of Lemmas \ref{lem:completeness}--\ref{lem:mobius}.
++of Lemmas \ref{lem:completeness}--\ref{lem:mobius2}.
+ 
+ \subsection{Computational verification}
+ 
+@@ -572,7 +564,7 @@
+ 
+ \begin{table}[ht]
+ \centering
+-\caption{Coefficients $r_d(p,v)=p^{\binom v2}\gaussbinom dv_p$ for small $d$.}
++\caption{Coefficients $r_d(p,v)=p^{\binom v2}\gaussbinom dv_p$ for small $d$.}\label{tab:coef}
+ \begin{tabular}{c|c|cccc}
+ \toprule
+ $d$ & $v=0$ & $v=1$ & $v=2$ & $v=3$ & $v=4$ \\
+@@ -699,7 +691,7 @@
+ 
+ \subsection{Upper bound}
+ 
+-We now derive an upper bound on the number of shift-symmetric configurations.
++We now derive two upper bounds on the number of shift-symmetric configurations.
+ 
+ % Let $\mathrm{sopf}_d(n)=\sum_{p\mid n}\gaussbinom d1_p
+ % =\sum_{p\mid n}\frac{p^d-1}{p-1}$ denote the total number of order-$p$
+@@ -774,7 +766,7 @@
+     \;\le\; P^{\mathrm{unif}}_{n^d} \;\le\;
+     \bigl(2^d-1+2\log_2 n\bigr)\,\sigma^{-n^d/2},
+ \]
+-where $F_d(n, \sigma)$ denotes the lower bound for $S_{n^d}$ given in Thm~\ref{thm:lower-bound}.
++where $F_d(n, \sigma)$ denotes the lower bound on $|S_{n^d}|$ given in Theorem~\ref{thm:lower-bound}.
+ So $P^{\mathrm{unif}}_{n^d}$ decays as $\sigma^{-cN}$ with
+ $N=n^d$ and decay rate
+ $c=\log_\sigma(1/P^{\mathrm{unif}}_{n^d})/N\in
+@@ -848,11 +840,11 @@
+ \label{sec:dynamics}
+ %======================================================================
+ 
+-In this section we remark on the dynamical consequences of shift-symmetry in configurations.
++In this section we establish the dynamical consequences of shift-symmetry in configurations.
+ 
+ \begin{theorem}[Irreversibility]\label{thm:irrev}
+-Let $\Phi$ be translation-equivariant (Def.~\ref{def:ca}). Then
+-$\Stab(\Phi(\ssb))\supseteq\Stab(\ssb)$ for every configuration $\ssb$;
++Let $\Phi$ be translation-equivariant (Definition~\ref{def:ca}). Then, for every configuration $\ssb$,
++$\Stab(\Phi(\ssb))\supseteq\Stab(\ssb)$;
+ in particular, $\ssb\in S_{n^d}(\vv)$ implies
+ $\Phi(\ssb)\in S_{n^d}(\vv)$, and $\Phi(S_{n^d})\subseteq S_{n^d}$.
+ \end{theorem}
+@@ -868,7 +860,7 @@
+ \begin{corollary}[Insolvability]\label{cor:insolv}
+ Let $\sigma\ge2$ and $N>1$. Any task requiring, on some input, an output
+ configuration outside $S_{n^d}$ reachable from an input inside $S_{n^d}$
+-is unsolvable by translation-equivariant CA on $\ZZ_n^d$. In particular, symmetric inputs
++is unsolvable by translation-equivariant CA on $\ZZ_n^d$. Indeed, symmetric inputs
+ exist (all constants lie in $S_{n^d}$), and by Theorem~\ref{thm:irrev} no
+ trajectory leaves $S_{n^d}$. This covers leader election
+ (the target configuration with a unique distinguished cell is asymmetric
+@@ -1249,10 +1241,10 @@
+ corrections), organized by part of the paper ---
+ Section~\ref{sec:model} with the convention sentence opening
+ Section~\ref{sec:prelim} (31), the rest of
+-Section~\ref{sec:prelim} (20), Lemma~\ref{lem:mobius},
+-Definition~4.2, Table~1 and the Duality remark (22), the rest of
++Section~\ref{sec:prelim} (20), Lemmas~\ref{lem:mobius}--\ref{lem:mobius2},
++Definition~\ref{def:coef}, Table~\ref{tab:coef} and the Duality remark (22), the rest of
+ Section~\ref{sec:enumeration} (48, and 5 more for the necklace
+-identification in Remark~\ref{rem:boundary}(ii)), Section~\ref{sec:kactive} with
++identification in Remark~\ref{rem:boundary}(iii)), Section~\ref{sec:kactive} with
+ Corollary~\ref{cor:dens} (31), Section~\ref{sec:bounds} with
+ Corollary~\ref{cor:prob} (41), Section~\ref{sec:dynamics} with the
+ caption of Figure~\ref{fig:pattern-flip} (33),
+@@ -1317,7 +1309,7 @@
+ 
+ Three features of the formalization deserve mention. First, it is
+ self-contained precisely where the prose leans on the literature: the
+-signed spanning-set count (Lemma~\ref{lem:mobius}), the Grassmannian
++signed spanning-set count (Lemmas~\ref{lem:mobius}--\ref{lem:mobius2}), the Grassmannian
+ subspace count, and the $p$-group M\"obius evaluation (in its
+ subspace-lattice instance) are proved from first principles; so are the
+ ingredients of the second derivation of Section~\ref{sec:second-derivation}
+@@ -1439,7 +1431,7 @@
+ Consider $T_j=(\ZZ/n\ZZ)^{d-j}\times(\ZZ/\tfrac np\ZZ)^{j}$ with
+ $N_j$ cells. For $i\le m$, $p_i$ divides both $n$ and $n/p$ (as
+ $p_i\neq p$), so the $p_i$-torsion of $T_j$ is again $\cong\FF_{p_i}^d$
+-and Lemmas \ref{lem:fix}--\ref{lem:joins} and \ref{lem:mobius} apply
++and Lemmas \ref{lem:fix}, \ref{lem:torsion}--\ref{lem:joins}, \ref{lem:mobius} and \ref{lem:mobius2} apply
+ verbatim on $T_j$. By the computation in the proof of
+ Theorem~\ref{thm:main-enum}, restricted to $p_1,\dots,p_m$,
+ $q^m(p^{-j})$ equals the number of configurations of $T_j$ fixed by some

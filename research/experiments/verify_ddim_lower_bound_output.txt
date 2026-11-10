@@ -1,0 +1,21 @@
+python 3.10.12 on Linux-6.8.0-124-generic-x86_64-with-glibc2.35
+
+[1] Five-part-style decomposition in d dims (84 cases)
+    q^(m+1) - q^m == sum_j (-1)^(j+1) r_d(p,j) B_j exactly: OK
+
+[2] Union-interpretation bounds (84 cases x j)
+    0 <= q^m(p^-j) <= sigma^(N_j) and union bound at j=1: OK
+
+[3] Coefficient estimates
+    [d j]_p <= 4 p^(j(d-j)) and tail sum <= 4(d-1) p^(d(d-1)/2), d <= 8: OK
+
+[4] Chain sufficient conditions and the chain itself (84 cases)
+    conditions (I) and (II) hold on the whole grid (d >= 2): OK
+    q^m <= q^(m+1) holds exactly on the whole grid: OK
+
+[5] Base case and C009 statement
+    condition (M) and q^1 > F_d at composites, d in {3,4}, n <= 30: OK
+    C009: F_d <= |S|, equality iff prime (n <= 12, d <= 5): OK
+
+======================================================================
+RESULT: all round-3 proof estimates corroborated exactly.

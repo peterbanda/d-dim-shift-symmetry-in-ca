@@ -1,0 +1,554 @@
+{
+ "label": "cor:insolv",
+ "statement": {
+  "summary": "Corollary 8.2 is split into eight frozen Props, conjoined in `insolvStatement`: the general unsolvability claim (for equivariant maps, `insolvGeneralStatement`, and for offset CA, `insolvGeneralCAStatement`), the two justifications inside the corollary (constants are symmetric; no trajectory leaves S), the leader-election claims (targets asymmetric, never reached, the task unsolvable) and the closing sentence's mathematical core (`leaderRestrictStatement`: an equivariant solver must avoid every symmetric input). The paper does not define 'task' or 'solvable'; Lean introduces `Task`, `Solves`, `RequiresLeavingS`, `leaderTask`, `leaderTaskOn` for this. The paper has no proof environment; `insolv_proved` certifies the frozen type. Since 2026-10-27 the symmetry-breaking sentence (added in v5, reworded in v7) is frozen in the group-07 supplement `S07_Dynamics_SymmetryBreaking.lean`: `insolvSymBreakStatement`, with the hypothesis `RequiresSymmetryBreaking` (on some admissible input every acceptable output breaks a symmetry of it), and `insolvFullStatement` = `insolvStatement` ∧ `insolvSymBreakStatement`.",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P07.insolvGeneralStatement",
+    "role": "statement (general)"
+   },
+   {
+    "decl": "ShiftSym.P07.insolvGeneralCAStatement",
+    "role": "statement (general, offset-CA form)"
+   },
+   {
+    "decl": "ShiftSym.P07.insolvConstStatement",
+    "role": "statement (symmetric inputs exist)"
+   },
+   {
+    "decl": "ShiftSym.P07.insolvTrajStatement",
+    "role": "statement (no trajectory leaves S)"
+   },
+   {
+    "decl": "ShiftSym.P07.leaderAsymStatement",
+    "role": "statement (leader targets asymmetric)"
+   },
+   {
+    "decl": "ShiftSym.P07.leaderNeverReachedStatement",
+    "role": "statement (leader targets never reached)"
+   },
+   {
+    "decl": "ShiftSym.P07.leaderElectionStatement",
+    "role": "statement (leader election unsolvable)"
+   },
+   {
+    "decl": "ShiftSym.P07.leaderRestrictStatement",
+    "role": "statement (solvers must restrict inputs)"
+   },
+   {
+    "decl": "ShiftSym.P07.insolvStatement",
+    "role": "statement (whole)"
+   },
+   {
+    "decl": "ShiftSym.P07.Task",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P07.Solves",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P07.RequiresLeavingS",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P07.HasUniqueDistinguishedCell",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P07.leaderTask",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P07.leaderTaskOn",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P07.insolvSymBreakStatement",
+    "role": "statement (symmetry-breaking clause, supplement 2026-10-27)"
+   },
+   {
+    "decl": "ShiftSym.P07.RequiresSymmetryBreaking",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P07.insolvFullStatement",
+    "role": "statement (whole, as stated since v5)"
+   }
+  ],
+  "deltas": [
+   "The paper does not define 'task': a `Task` is a set of admissible inputs plus, for each input, a set of acceptable outputs (the most general input/output specification).",
+   "'Solvable' = `Solves`: from every admissible input the trajectory reaches an acceptable output at SOME step k ≥ 0 (no halting, no stay requirement) — the weakest success notion, so its negation is the strongest unsolvability.",
+   "'Requiring, on some input, an output outside S reachable from an input inside S' = `RequiresLeavingS`: some admissible input x ∈ S ALL of whose acceptable outputs lie outside S.",
+   "'Translation-equivariant CA' = any map with `Equivariant Φ` (general form), and separately the offset CA `caMap offs φ` of Definition 2.4 (any b, including b = 0).",
+   "N > 1 is written `1 < n ^ d`; σ ≥ 2 and N > 1 are kept as stated but are not used by the implications (they make the situation non-degenerate).",
+   "'Unique distinguished cell' = some state occupies exactly one cell (the leader state is not fixed in advance).",
+   "Leader election (as a task) = all inputs admissible, acceptable outputs = exactly one cell in the leader state ℓ, others arbitrary.",
+   "The closing sentence is formalized in its contrapositive: an equivariant (uniform, deterministic, synchronous) solver of leader election on inputs X must have X ∩ S = ∅ — the paper's own example ('restrict ... to asymmetric configurations'), a disclosed strengthening of the literal 'restrict the admissible inputs'.",
+   "'Every pattern-recognition or image-processing task whose required output breaks a symmetry of some admissible input' = `RequiresSymmetryBreaking` for EVERY task (the informal task names are not formalized: a generalization). 'Breaks a symmetry' = some translation fixing the input does not fix the output (¬ stab x ≤ stab y), the largest true reading; it is strictly more than `RequiresLeavingS`."
+  ],
+  "maps": [
+   {
+    "id": "gen",
+    "kind": "representation",
+    "label": "symmetric-to-asymmetric tasks are unsolvable",
+    "tex": [
+     {
+      "text": "Any task requiring, on some input, an output configuration outside $S_{n^d}$ reachable from an input inside $S_{n^d}$ is unsolvable by translation-equivariant CA on $\\ZZ_n^d$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.insolvGeneralStatement",
+      "text": "∀ T : Task n d σ, RequiresLeavingS T →\n      ∀ Φ : Config n d (Fin σ) → Config n d (Fin σ), Equivariant Φ →\n        ¬ Solves Φ T"
+     }
+    ],
+    "note": "The general claim, with 'task', 'requiring' and 'solvable' made precise by the three definitions below."
+   },
+   {
+    "id": "gen.task",
+    "kind": "representation",
+    "label": "task",
+    "tex": [
+     {
+      "text": "Any task"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.Task",
+      "text": "admissible : Set (Config n d (Fin σ))"
+     },
+     {
+      "decl": "ShiftSym.P07.Task",
+      "text": "accept : Config n d (Fin σ) → Set (Config n d (Fin σ))"
+     }
+    ],
+    "note": "Not defined in the paper; modelled as admissible inputs + acceptable outputs per input."
+   },
+   {
+    "id": "gen.req",
+    "kind": "representation",
+    "label": "requires leaving S on some input in S",
+    "tex": [
+     {
+      "text": "requiring, on some input, an output configuration outside $S_{n^d}$ reachable from an input inside $S_{n^d}$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.RequiresLeavingS",
+      "text": "∃ x ∈ T.admissible, x ∈ SS n d σ ∧ T.accept x ⊆ (SS n d σ)ᶜ"
+     }
+    ],
+    "note": "One admissible symmetric input whose every acceptable output is asymmetric. If some acceptable output were symmetric the task would not 'require' leaving S."
+   },
+   {
+    "id": "gen.unsolv",
+    "kind": "representation",
+    "label": "unsolvable",
+    "tex": [
+     {
+      "text": "is unsolvable",
+      "occ": 1
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.insolvGeneralStatement",
+      "text": "¬ Solves Φ T"
+     },
+     {
+      "decl": "ShiftSym.P07.Solves",
+      "text": "∀ x ∈ T.admissible, ∃ k : ℕ, Φ^[k] x ∈ T.accept x"
+     }
+    ],
+    "note": "Solving = reaching an acceptable output at some time step of the synchronous trajectory; the weakest notion, hence the strongest unsolvability."
+   },
+   {
+    "id": "gen.ca",
+    "kind": "representation",
+    "label": "translation-equivariant CA on ℤ_n^d",
+    "tex": [
+     {
+      "text": "translation-equivariant CA on $\\ZZ_n^d$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.insolvGeneralStatement",
+      "text": "Equivariant Φ →\n        ¬ Solves Φ T"
+     },
+     {
+      "decl": "ShiftSym.P07.insolvGeneralCAStatement",
+      "text": "∀ (b : ℕ) (offs : Fin b → Lat n d) (φ : (Fin b → Fin σ) → Fin σ),\n        ¬ Solves (caMap offs φ) T"
+     }
+    ],
+    "note": "Frozen twice: for every equivariant map, and for the literal offset CA of Definition 2.4."
+   },
+   {
+    "id": "defCA",
+    "kind": "definition",
+    "label": "offset CA Φ(s)(u) = φ(s(u+o_1),…,s(u+o_b))",
+    "tex": [
+     {
+      "text": "\\Phi(\\ssb)(\\uu)\\;=\\;\\phi\\bigl(\\ssb(\\uu+\\mathbf o_1),\\dots, \\ssb(\\uu+\\mathbf o_b)\\bigr)",
+      "scope": {
+       "lines": [
+        304,
+        317
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.caMap",
+      "text": "fun s u => φ (fun i => s (u + offs i))"
+     }
+    ],
+    "note": "The global map of Definition 2.4; `caMap_equivariant` proves it is equivariant."
+   },
+   {
+    "id": "hypN",
+    "kind": "hypothesis",
+    "label": "σ ≥ 2 and N > 1",
+    "tex": [
+     {
+      "text": "Let $\\sigma\\ge2$ and $N>1$."
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.insolvGeneralStatement",
+      "text": "2 ≤ σ → 1 < n ^ d →"
+     }
+    ],
+    "note": "Kept as stated (N = n^d). Neither is used by the implication: N > 1 makes S nonempty, σ ≥ 2 makes asymmetric outputs exist."
+   },
+   {
+    "id": "hypStd",
+    "kind": "hypothesis",
+    "label": "standing hypotheses n ≥ 2, d ≥ 1",
+    "tex": [
+     {
+      "text": "Fix integers $n\\ge2$, $d\\ge1$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.insolvGeneralStatement",
+      "text": "2 ≤ n → 1 ≤ d →"
+     }
+    ],
+    "note": "From Definition 2.1 (they already imply N > 1)."
+   },
+   {
+    "id": "const",
+    "kind": "same",
+    "label": "symmetric inputs exist (all constants lie in S)",
+    "tex": [
+     {
+      "text": "symmetric inputs exist (all constants lie in $S_{n^d}$)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.insolvConstStatement",
+      "text": "(∃ x : Config n d (Fin σ), x ∈ SS n d σ) ∧\n      ∀ a : Fin σ, (fun _ : Lat n d => a) ∈ SS n d σ"
+     }
+    ],
+    "note": "Both halves of the parenthetical justification."
+   },
+   {
+    "id": "const.ex",
+    "kind": "same",
+    "label": "symmetric inputs exist",
+    "tex": [
+     {
+      "text": "symmetric inputs exist"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.insolvConstStatement",
+      "text": "∃ x : Config n d (Fin σ), x ∈ SS n d σ"
+     }
+    ],
+    "note": "S_{n^d} is nonempty."
+   },
+   {
+    "id": "const.all",
+    "kind": "same",
+    "label": "all constants lie in S",
+    "tex": [
+     {
+      "text": "all constants lie in $S_{n^d}$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.insolvConstStatement",
+      "text": "∀ a : Fin σ, (fun _ : Lat n d => a) ∈ SS n d σ"
+     }
+    ],
+    "note": "Every constant configuration is fixed by every translation, in particular by a nonzero one."
+   },
+   {
+    "id": "traj",
+    "kind": "same",
+    "label": "no trajectory leaves S",
+    "tex": [
+     {
+      "text": "no trajectory leaves $S_{n^d}$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.insolvTrajStatement",
+      "text": "∀ s ∈ SS n d σ, ∀ k : ℕ, Φ^[k] s ∈ SS n d σ"
+     }
+    ],
+    "note": "Trajectory = the iterates Φ^[k] s; the paper derives it from Theorem 8.1 (the certificate uses `isShiftSymmetric_iterate`)."
+   },
+   {
+    "id": "leader",
+    "kind": "representation",
+    "label": "this covers leader election",
+    "tex": [
+     {
+      "text": "This covers leader election"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.leaderElectionStatement",
+      "text": "¬ Solves Φ (leaderTask n d σ ℓ)"
+     },
+     {
+      "decl": "ShiftSym.P07.leaderTask",
+      "text": "accept := fun _ => {t | ∃! u : Lat n d, t u = ℓ}"
+     }
+    ],
+    "note": "Leader election as a task: all inputs admissible, outputs with exactly one cell in state ℓ; unsolvable for every ℓ and every equivariant Φ."
+   },
+   {
+    "id": "leader.asym",
+    "kind": "same",
+    "label": "unique-distinguished-cell targets are asymmetric",
+    "tex": [
+     {
+      "text": "the target configuration with a unique distinguished cell is asymmetric for $N>1$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.leaderAsymStatement",
+      "text": "HasUniqueDistinguishedCell t → t ∉ SS n d σ"
+     }
+    ],
+    "note": "Every configuration in which some state occupies exactly one cell lies outside S (the hypothesis N > 1 is kept but not needed)."
+   },
+   {
+    "id": "leader.uniq",
+    "kind": "representation",
+    "label": "unique distinguished cell",
+    "tex": [
+     {
+      "text": "a unique distinguished cell"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.HasUniqueDistinguishedCell",
+      "text": "∃ a : Fin σ, ∃! u : Lat n d, t u = a"
+     }
+    ],
+    "note": "'Distinguished' = carrying a state no other cell carries; the state is existentially quantified (largest class of targets)."
+   },
+   {
+    "id": "leader.never",
+    "kind": "lean-only",
+    "label": "leader targets are never reached from symmetric inputs",
+    "tex": [],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.leaderNeverReachedStatement",
+      "text": "∀ x ∈ SS n d σ, ∀ k : ℕ, ¬ HasUniqueDistinguishedCell (Φ^[k] x)"
+     }
+    ],
+    "note": "An intermediate conjunct combining 'symmetric inputs exist', 'no trajectory leaves S' and 'targets asymmetric' — what 'This covers leader election' asserts, frozen separately."
+   },
+   {
+    "id": "restrict",
+    "kind": "representation",
+    "label": "leader-election algorithms must break a hypothesis or restrict inputs",
+    "tex": [
+     {
+      "text": "therefore necessarily break one of the hypotheses (uniformity, determinism, synchrony) or restrict the admissible inputs, e.g.\\ to asymmetric configurations"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.leaderRestrictStatement",
+      "text": "∀ Φ : Config n d (Fin σ) → Config n d (Fin σ), Equivariant Φ →\n        Solves Φ (leaderTaskOn n d σ ℓ X) → X ∩ SS n d σ = ∅"
+     }
+    ],
+    "note": "Contrapositive form: a solver keeping all three hypotheses (= an equivariant global map iterated synchronously) solves leader election on X only if X contains no symmetric input. Stronger than the literal 'restrict' (X ≠ univ)."
+   },
+   {
+    "id": "restrict.hyp",
+    "kind": "representation",
+    "label": "uniformity, determinism, synchrony",
+    "tex": [
+     {
+      "text": "(uniformity, determinism, synchrony)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.leaderRestrictStatement",
+      "text": "Equivariant Φ →"
+     },
+     {
+      "decl": "ShiftSym.P07.Solves",
+      "text": "Φ^[k] x"
+     }
+    ],
+    "note": "Uniform local rule with translation-invariant neighbourhood = `Equivariant Φ`; determinism and synchrony = iteration of one global map."
+   },
+   {
+    "id": "restrict.X",
+    "kind": "representation",
+    "label": "restrict the admissible inputs (to asymmetric ones)",
+    "tex": [
+     {
+      "text": "restrict the admissible inputs, e.g.\\ to asymmetric configurations"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.leaderRestrictStatement",
+      "text": "X ∩ SS n d σ = ∅"
+     },
+     {
+      "decl": "ShiftSym.P07.leaderTaskOn",
+      "text": "admissible := X"
+     }
+    ],
+    "note": "The admissible set X is a parameter of the task; the conclusion says X avoids S entirely."
+   },
+   {
+    "id": "algs",
+    "kind": "paper-only",
+    "label": "the cited d-dimensional algorithms",
+    "tex": [
+     {
+      "text": "$d$-dimensional leader-election algorithms as in"
+     }
+    ],
+    "lean": [],
+    "note": "The reference to the specific algorithms of Nichitiu 1999 / Stratmann 2002 is not mathematical; their content is covered by the 'restrict' map for every algorithm."
+   },
+   {
+    "id": "pattern",
+    "kind": "generalization",
+    "label": "symmetry-breaking tasks are unsolvable",
+    "tex": [
+     {
+      "text": "every pattern-recognition or image-processing\ntask whose required output breaks a symmetry of some admissible input is\nunsolvable"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.insolvSymBreakStatement"
+     }
+    ],
+    "note": "Frozen in the supplement of 2026-10-27, for every task (the task names 'pattern-recognition or image-processing' are informal, so the Lean statement covers more). Strictly more than `insolvGeneralStatement`: on Z_4, 0000 → 0101 breaks a symmetry of the input although 0101 is shift-symmetric (`stripeTask_requiresSymmetryBreaking_not_requiresLeavingS`)."
+   },
+   {
+    "id": "pattern.hyp",
+    "kind": "representation",
+    "label": "required output breaks a symmetry of some admissible input",
+    "tex": [
+     {
+      "text": "whose required output breaks a symmetry of some admissible input"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.RequiresSymmetryBreaking"
+     }
+    ],
+    "note": "Some admissible x such that every acceptable output y lacks a translation fixing x (¬ stab x ≤ stab y); the broken translation may depend on y. The notion of [2019] (p. 2: 'a source configuration has a symmetry not contained in the target')."
+   },
+   {
+    "id": "pattern.why",
+    "kind": "citation",
+    "label": "inline argument: Stab only grows (Theorem 8.1)",
+    "tex": [
+     {
+      "text": "since $\\Stab$ can only grow along a trajectory\n(Theorem~\\ref{thm:irrev})"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.irrevStabStatement"
+     }
+    ],
+    "note": "The stabilizer form of Theorem 8.1, Stab(s) ≤ Stab(Φ s); iterated along the trajectory it gives the clause (proof of `insolvSymBreak_proved`)."
+   },
+   {
+    "id": "cite2d",
+    "kind": "citation",
+    "label": "as in the 2D discussion of [2019]",
+    "tex": [
+     {
+      "text": "as in the two-dimensional discussion of"
+     }
+    ],
+    "lean": [],
+    "note": "Pointer to the 2019 paper; nothing to formalize."
+   },
+   {
+    "id": "whole",
+    "kind": "same",
+    "label": "Corollary 8.2, all mathematical parts",
+    "tex": [
+     {
+      "text": "Let $\\sigma\\ge2$ and $N>1$. Any task requiring, on some input, an output configuration outside $S_{n^d}$ reachable from an input inside $S_{n^d}$ is unsolvable by translation-equivariant CA on $\\ZZ_n^d$. Indeed, symmetric inputs exist (all constants lie in $S_{n^d}$), and by Theorem~\\ref{thm:irrev} no trajectory leaves $S_{n^d}$."
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.insolvStatement",
+      "text": "insolvGeneralStatement ∧ insolvGeneralCAStatement ∧ insolvConstStatement ∧\n    insolvTrajStatement ∧ leaderAsymStatement ∧\n    leaderNeverReachedStatement ∧ leaderElectionStatement ∧\n    leaderRestrictStatement"
+     }
+    ],
+    "note": "The conjunction of the eight frozen parts (the leader-election sentences are covered by further conjuncts, mapped separately)."
+   },
+   {
+    "id": "full",
+    "kind": "same",
+    "label": "Corollary 8.2 as stated since v5",
+    "tex": [
+     {
+      "text": "is\nunsolvable, as in the two-dimensional discussion of"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.insolvFullStatement"
+     }
+    ],
+    "note": "`insolvStatement` (the eight parts frozen in 2026-10) and the symmetry-breaking clause."
+   }
+  ]
+ }
+}

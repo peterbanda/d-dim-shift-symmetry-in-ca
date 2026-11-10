@@ -1,0 +1,2 @@
+KERNEL REPLAY: modules=68 theorems ok=2718 defs ok=705 errors=0 []
+KERNEL REPLAY: other=[nonsafe def ShiftSym.gaussBinom._unsafe_rec, nonsafe def ShiftSym.P08.allCells._unsafe_rec, nonsafe def ShiftSym.P08.compareTail._unsafe_rec, nonsafe def ShiftSym.P08.subgroupTestAux._unsafe_rec, nonsafe def ShiftSym.P08.detect._unsafe_rec]

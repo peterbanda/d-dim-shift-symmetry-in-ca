@@ -1,0 +1,28 @@
+Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Words.lean:67:51: warning: This simp argument is unused:
+  Int.cast_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ArithmeticFunction.moebius_apply_one, one_mul, Nat.div_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Words.lean:107:18: warning: This simp argument is unused:
+  ZMod.natCast_zmod_val
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [ofZ, toZ]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Words.lean:123:0: warning: automatically included section variable(s) unused in theorem `ShiftSym.P04.lat1_eq`:
+  [NeZero n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Words.lean:208:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`

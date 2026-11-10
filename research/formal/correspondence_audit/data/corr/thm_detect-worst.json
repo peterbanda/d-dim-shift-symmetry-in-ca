@@ -1,0 +1,564 @@
+{
+ "label": "thm:detect-worst",
+ "statement": {
+  "summary": "Theorem 9.1 is `detectWorstStatement`: for every schedule of the order-p subgroups, every family of traversal orders, both readings of a failing walk and every configuration, the read count returned by the Lean function `detect` is ≤ n^d · sopf_d(n). The 'algorithm' is modelled literally (`orbitWalk`, `compareTail`, `walkOrbit`, `subgroupTestAux`, `subgroupTest`, `detect`); the `O(·)` clause is not stated separately. `thmDetectWorstStatement` additionally bundles the correctness sentence that precedes the theorem (Lemma 3.4 restated, and correctness of `detect`).",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P08.detectWorstStatement",
+    "role": "statement (the bound)"
+   },
+   {
+    "decl": "ShiftSym.P08.thmDetectWorstStatement",
+    "role": "statement (whole, with correctness)"
+   },
+   {
+    "decl": "ShiftSym.P08.completenessIffStatement",
+    "role": "statement (correctness sentence, Lemma 3.4)"
+   },
+   {
+    "decl": "ShiftSym.P08.detectCorrectStatement",
+    "role": "statement (correctness of the algorithm)"
+   },
+   {
+    "decl": "ShiftSym.P08.detect",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P08.subgroupTestAux",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P08.walkOrbit",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P08.compareTail",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P08.orbitWalk",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P08.IsSchedule",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P08.IsTraversalOrder",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.sopfD",
+    "role": "definition"
+   }
+  ],
+  "deltas": [
+   "N = n^d written out; sopf_d(n) = `sopfD n d = Σ_{p ∈ n.primeFactors} gaussBinom p d 1` (Common.lean).",
+   "The algorithm is a Lean function returning (verdict, reads); 'reads at most' is a bound on its second component.",
+   "The subgroup enumeration is an input `sched` (IsSchedule): every order-p cyclic subgroup (p | n prime) exactly once, in any order, with any generator. Computing it from representative lines is not modelled (no cell reads either way).",
+   "Traversal order: one per schedule entry, a duplicate-free list of all cells, fixed in advance (covers 'one shared order').",
+   "The orbit of u under ⟨w⟩ is walked as u, u+w, …, u+(p−1)w (order inside an orbit fixed by the generator; the paper leaves it open).",
+   "Both readings of a failing walk (stop at first mismatch / complete it) via `stopEarly : Bool`.",
+   "The O(sopf_d(n)·n^d) clause is the same quantity and is not frozen separately.",
+   "Standing hypotheses n ≥ 2, d ≥ 1, σ ≥ 2 explicit; alphabet Fin σ (the core bound `detect_reads_le_worst` holds for any alphabet)."
+  ],
+  "maps": [
+   {
+    "id": "whole",
+    "kind": "same",
+    "label": "reads ≤ N · sopf_d(n)",
+    "tex": [
+     {
+      "text": "The algorithm reads at most $N\\cdot\\mathrm{sopf}_d(n)=O(\\mathrm{sopf}_d(n)\\cdot n^d)$ cells."
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectWorstStatement",
+      "text": "(detect stopEarly s ord sched).2 ≤ n ^ d * sopfD n d"
+     }
+    ],
+    "note": "The explicit bound, for every input of the algorithm."
+   },
+   {
+    "id": "reads",
+    "kind": "representation",
+    "label": "number of cells the algorithm reads",
+    "tex": [
+     {
+      "text": "The algorithm reads"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectWorstStatement",
+      "text": "(detect stopEarly s ord sched).2"
+     }
+    ],
+    "note": "Second component of `detect`'s result = total cells read over all processed subgroups."
+   },
+   {
+    "id": "worst",
+    "kind": "representation",
+    "label": "worst case: for every input",
+    "tex": [
+     {
+      "text": "at most"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectWorstStatement",
+      "text": "∀ (stopEarly : Bool) (s : Config n d (Fin σ)),"
+     }
+    ],
+    "note": "Worst case = a bound uniform over all configurations (and all schedules, orders and both readings)."
+   },
+   {
+    "id": "rhs",
+    "kind": "same",
+    "label": "N · sopf_d(n)",
+    "tex": [
+     {
+      "text": "N\\cdot\\mathrm{sopf}_d(n)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectWorstStatement",
+      "text": "n ^ d * sopfD n d",
+      "occ": 2
+     }
+    ],
+    "note": "ℕ multiplication."
+   },
+   {
+    "id": "N",
+    "kind": "definition",
+    "label": "N = n^d",
+    "tex": [
+     {
+      "text": "N",
+      "occ": 1
+     },
+     {
+      "text": "$N=n^d$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectWorstStatement",
+      "text": "n ^ d",
+      "occ": 3
+     }
+    ],
+    "note": "N is written out as n ^ d."
+   },
+   {
+    "id": "sopf",
+    "kind": "definition",
+    "label": "sopf_d(n) = Σ_{p|n} [d 1]_p",
+    "tex": [
+     {
+      "text": "\\mathrm{sopf}_d(n)",
+      "occ": 1
+     },
+     {
+      "text": "\\mathrm{sopf}_d(n)=\\sum_{p\\mid n}\\gaussbinom d1_p",
+      "scope": {
+       "lines": [
+        1060,
+        1060
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectWorstStatement",
+      "text": "sopfD n d",
+      "occ": 3
+     },
+     {
+      "decl": "ShiftSym.sopfD",
+      "text": "∑ p ∈ n.primeFactors, gaussBinom p d 1"
+     }
+    ],
+    "note": "Sum over the prime factors of n of the q-Pascal Gaussian binomial [d 1]_p."
+   },
+   {
+    "id": "O",
+    "kind": "paper-only",
+    "label": "= O(sopf_d(n) · n^d)",
+    "tex": [
+     {
+      "text": "O(\\mathrm{sopf}_d(n)\\cdot n^d)"
+     }
+    ],
+    "lean": [],
+    "note": "Literally the same quantity as N · sopf_d(n) (N = n^d), so it is implied by the explicit bound and not frozen separately."
+   },
+   {
+    "id": "hyp",
+    "kind": "hypothesis",
+    "label": "standing hypotheses n ≥ 2, d ≥ 1, σ ≥ 2",
+    "tex": [
+     {
+      "text": "Fix integers $n\\ge2$, $d\\ge1$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectWorstStatement",
+      "text": "2 ≤ n → 1 ≤ d → 2 ≤ σ →"
+     }
+    ],
+    "note": "From Definition 2.1; not needed by the bound."
+   },
+   {
+    "id": "alg",
+    "kind": "definition",
+    "label": "the algorithm of §9 = `detect`",
+    "tex": [
+     {
+      "text": "\\textbf{Algorithm.} For each prime $p\\mid n$ and each of the $\\gaussbinom d1_p$ order-$p$ cyclic subgroups $C=\\langle\\ww\\rangle$ (enumerated via one representative line each, Lemma~\\ref{lem:torsion}): traverse the cells in a fixed order (which may depend on the subgroup); for each yet-unvisited cell, walk its $C$-orbit ($p$ cells) checking equality; abort the subgroup at the first failing orbit. Report ``symmetric'' at the first subgroup all of whose orbits pass; report ``asymmetric'' if all subgroups fail.",
+      "scope": {
+       "lines": [
+        1032,
+        1064
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detect",
+      "text": "| e :: rest =>\n      let t := subgroupTest stopEarly s (ord e) e.1 e.2\n      if t.1 then (true, t.2.2)\n      else\n        let r := detect stopEarly s ord rest\n        (r.1, t.2.2 + r.2)"
+     }
+    ],
+    "note": "`detect stopEarly s ord sched` runs the subgroup tests in schedule order and returns (verdict, total cells read). It is a Lean function, so the read count is computed, not postulated."
+   },
+   {
+    "id": "alg.sub",
+    "kind": "representation",
+    "label": "for each prime p | n and each of the [d 1]_p order-p subgroups C = ⟨w⟩",
+    "tex": [
+     {
+      "text": "$p\\mid n$ and each of the $\\gaussbinom d1_p$ order-$p$ cyclic subgroups $C=\\langle\\ww\\rangle$",
+      "scope": {
+       "lines": [
+        1032,
+        1064
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectWorstStatement",
+      "text": "∀ sched : List (ℕ × Lat n d), IsSchedule sched →"
+     },
+     {
+      "decl": "ShiftSym.P08.IsSchedule",
+      "text": "(∀ e ∈ sched, e.1.Prime ∧ e.1 ∣ n ∧ addOrderOf e.2 = e.1) ∧\n  (sched.map fun e => AddSubgroup.zmultiples e.2).Nodup ∧\n  ∀ C : AddSubgroup (Lat n d), IsPrimeOrderCyclic C →\n    ∃ e ∈ sched, AddSubgroup.zmultiples e.2 = C"
+     }
+    ],
+    "note": "The subgroups are an INPUT list of pairs (p, w), each order-p cyclic subgroup (p | n prime) generated by exactly one entry. Statements quantify over all such lists: any order (primes may even interleave — the paper's nesting is a special case) and any generator w of each subgroup."
+   },
+   {
+    "id": "alg.lines",
+    "kind": "representation",
+    "label": "enumerated via one representative line each (Lemma 3.3)",
+    "tex": [
+     {
+      "text": "enumerated via one representative line each",
+      "scope": {
+       "lines": [
+        1032,
+        1064
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.IsSchedule",
+      "text": "addOrderOf e.2 = e.1"
+     }
+    ],
+    "note": "Not modelled as a computation: the schedule is assumed given, with a generator of order p per subgroup. Every such generator is (n/p)·y for a representative y of the line, so the choice of 'representative line' is covered; producing the list costs no cell reads in either model."
+   },
+   {
+    "id": "alg.fact",
+    "kind": "representation",
+    "label": "prime factorization of n given",
+    "tex": [
+     {
+      "text": "Assume the prime factorization of $n$ is given",
+      "scope": {
+       "lines": [
+        1032,
+        1064
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.IsSchedule",
+      "text": "e.1.Prime ∧ e.1 ∣ n"
+     }
+    ],
+    "note": "The primes p | n enter only through the schedule; no factorization cost is modelled (the paper also counts only cell reads)."
+   },
+   {
+    "id": "alg.ord",
+    "kind": "representation",
+    "label": "traverse the cells in a fixed order (may depend on the subgroup)",
+    "tex": [
+     {
+      "text": "traverse the cells in a fixed order (which may depend on the subgroup)",
+      "scope": {
+       "lines": [
+        1032,
+        1064
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectWorstStatement",
+      "text": "∀ ord : ℕ × Lat n d → List (Lat n d), (∀ e ∈ sched, IsTraversalOrder (ord e)) →"
+     },
+     {
+      "decl": "ShiftSym.P08.IsTraversalOrder",
+      "text": "ord.Nodup ∧ ∀ u : Lat n d, u ∈ ord"
+     }
+    ],
+    "note": "One order per schedule entry, each listing every cell exactly once and fixed in advance (independent of the configuration); one shared order is the special case `fun _ => o`."
+   },
+   {
+    "id": "alg.walk",
+    "kind": "representation",
+    "label": "for each yet-unvisited cell, walk its C-orbit (p cells)",
+    "tex": [
+     {
+      "text": "for each yet-unvisited cell, walk its $C$-orbit ($p$ cells) checking equality",
+      "scope": {
+       "lines": [
+        1032,
+        1064
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.subgroupTestAux",
+      "text": "if u ∈ visited then subgroupTestAux stopEarly s p w us visited"
+     },
+     {
+      "decl": "ShiftSym.P08.orbitWalk",
+      "text": "(List.range p).map fun k => u + k • w"
+     }
+    ],
+    "note": "Visited cells are skipped at no cost; the orbit is walked as u, u+w, …, u+(p−1)w. The paper does not fix the order inside an orbit; Lean fixes it to powers of the chosen generator w (with w ranging over all generators). This only affects early-stop read counts, and all bounds hold for it."
+   },
+   {
+    "id": "alg.visited",
+    "kind": "representation",
+    "label": "visited = cells of orbits already walked in this subgroup",
+    "tex": [
+     {
+      "text": "yet-unvisited cell",
+      "scope": {
+       "lines": [
+        1032,
+        1064
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.subgroupTestAux",
+      "text": "let t := subgroupTestAux stopEarly s p w us (visited ++ cells)"
+     },
+     {
+      "decl": "ShiftSym.P08.subgroupTest",
+      "text": "subgroupTestAux stopEarly s p w ord []"
+     }
+    ],
+    "note": "The visited set starts empty for every subgroup and grows by each passed orbit; the failing orbit is not marked (the subgroup is aborted anyway)."
+   },
+   {
+    "id": "alg.abort",
+    "kind": "same",
+    "label": "abort the subgroup at the first failing orbit",
+    "tex": [
+     {
+      "text": "abort the subgroup at the first failing orbit",
+      "scope": {
+       "lines": [
+        1032,
+        1064
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.subgroupTestAux",
+      "text": "else (false, 1, r.2)"
+     }
+    ],
+    "note": "A failing orbit ends the subgroup's traversal; it counts as one visited orbit and its reads are charged."
+   },
+   {
+    "id": "alg.report",
+    "kind": "same",
+    "label": "report symmetric at the first passing subgroup; asymmetric if all fail",
+    "tex": [
+     {
+      "text": "Report ``symmetric'' at the first subgroup all of whose orbits pass; report ``asymmetric'' if all subgroups fail",
+      "scope": {
+       "lines": [
+        1032,
+        1064
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detect",
+      "text": "if t.1 then (true, t.2.2)"
+     },
+     {
+      "decl": "ShiftSym.P08.detect",
+      "text": "| [] => (false, 0)"
+     }
+    ],
+    "note": "`true` = 'symmetric'. The reads of all processed subgroups are added; later subgroups are not run."
+   },
+   {
+    "id": "cost",
+    "kind": "same",
+    "label": "one read per visited cell; anchor cached",
+    "tex": [
+     {
+      "text": "we charge one read per visited cell: the first cell of an orbit walk (the \\emph{anchor}) is read once and its value cached, and each subsequent cell of the orbit is read once and compared to the cached value",
+      "scope": {
+       "lines": [
+        1032,
+        1064
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.walkOrbit",
+      "text": "| a :: rest =>\n      let r := compareTail stopEarly s (s a) rest\n      (r.1, r.2 + 1)"
+     },
+     {
+      "decl": "ShiftSym.P08.compareTail",
+      "text": "if s x = a then\n        let r := compareTail stopEarly s a xs\n        (r.1, r.2 + 1)"
+     }
+    ],
+    "note": "The anchor costs 1 and its value `s a` is passed on; each compared cell costs 1."
+   },
+   {
+    "id": "cost.stop",
+    "kind": "same",
+    "label": "a failing walk may stop at the first mismatch or be completed",
+    "tex": [
+     {
+      "text": "A failing orbit walk may stop at its first mismatch or be completed",
+      "scope": {
+       "lines": [
+        1032,
+        1064
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.compareTail",
+      "text": "else if stopEarly then (false, 1)"
+     },
+     {
+      "decl": "ShiftSym.P08.detectWorstStatement",
+      "text": "∀ (stopEarly : Bool)",
+      "occ": 1
+     }
+    ],
+    "note": "Both variants are one Boolean parameter; every statement here is quantified over it."
+   },
+   {
+    "id": "corr",
+    "kind": "same",
+    "label": "correctness sentence (Lemma 3.4)",
+    "tex": [
+     {
+      "text": "a configuration is shift-symmetric iff it is fixed by some order-$p$ cyclic subgroup with $p\\mid n$",
+      "scope": {
+       "lines": [
+        1048,
+        1050
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.completenessIffStatement",
+      "text": "(IsShiftSymmetric s ↔\n      ∃ C : AddSubgroup (Lat n d), IsPrimeOrderCyclic C ∧ s ∈ fixedBy (Fin σ) C)"
+     },
+     {
+      "decl": "ShiftSym.P08.IsPrimeOrderCyclic",
+      "text": "∃ p : ℕ, p.Prime ∧ p ∣ n ∧ IsAddCyclic C ∧ Nat.card C = p"
+     }
+    ],
+    "note": "Prose before the theorem, bundled into `thmDetectWorstStatement`; not part of the theorem environment."
+   },
+   {
+    "id": "corr.alg",
+    "kind": "same",
+    "label": "the algorithm is correct",
+    "tex": [
+     {
+      "text": "Correctness is",
+      "scope": {
+       "lines": [
+        1048,
+        1050
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectCorrectStatement",
+      "text": "((detect stopEarly s ord sched).1 = true ↔ IsShiftSymmetric s)"
+     }
+    ],
+    "note": "The paper attributes correctness to Lemma 3.4; Lean states and proves correctness of `detect` itself (all schedules, orders, readings). Bundled into the whole statement, so the Lean whole is stronger than Theorem 9.1 alone."
+   }
+  ]
+ }
+}

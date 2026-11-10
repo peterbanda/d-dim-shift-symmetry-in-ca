@@ -1,0 +1,20 @@
+[1] FFT stabilizer = stabilizer by definition
+  ok   1044 configurations on 58 tori (d = 1..4), sigma in (2, 3, 5), half planted-symmetric
+[2] one defect => trivial stabilizer
+  ok   2696 one-defect configurations (N <= 64)
+[3] every proper read set U leaves the answer open on a constant configuration
+  ok   7091 (torus, proper subset U) pairs, sigma = 2
+[4] minimax over all adaptive algorithms = N
+  ok   Z_2^1, sigma=2: least worst-case reads = 2 (N = 2)
+  ok   Z_3^1, sigma=2: least worst-case reads = 3 (N = 3)
+  ok   Z_4^1, sigma=2: least worst-case reads = 4 (N = 4)
+  ok   Z_5^1, sigma=2: least worst-case reads = 5 (N = 5)
+  ok   Z_2^2, sigma=2: least worst-case reads = 4 (N = 4)
+  ok   Z_6^1, sigma=2: least worst-case reads = 6 (N = 6)
+  ok   Z_3^1, sigma=3: least worst-case reads = 3 (N = 3)
+  ok   Z_2^2, sigma=3: least worst-case reads = 4 (N = 4)
+  ok   Z_7^1, sigma=2: least worst-case reads = 7 (N = 7)
+  ok   Z_8^1, sigma=2: least worst-case reads = 8 (N = 8)
+  ok   Z_2^3, sigma=2: least worst-case reads = 8 (N = 8)
+  ok   Z_3^2, sigma=2: least worst-case reads = 9 (N = 9)
+ALL PASSED

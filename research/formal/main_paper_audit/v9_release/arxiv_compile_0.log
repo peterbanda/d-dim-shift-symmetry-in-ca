@@ -1,0 +1,1259 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./shift_symmetry_d_dimensions.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
+ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex)) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex))
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypositioning.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.
+code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarycalc.code.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+No file shift_symmetry_d_dimensions.aux.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd) [1{/var/lib/texmf/fo
+nts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Reference `fig:examples' on page 2 undefined on input line 106.
+
+
+LaTeX Warning: Citation `banda2019' on page 2 undefined on input line 114.
+
+
+LaTeX Warning: Reference `thm:main-enum' on page 2 undefined on input line 123.
+
+
+
+LaTeX Warning: Reference `thm:kactive' on page 2 undefined on input line 125.
+
+
+LaTeX Warning: Reference `thm:lower-bound' on page 2 undefined on input line 12
+7.
+
+
+LaTeX Warning: Citation `banda2019' on page 2 undefined on input line 128.
+
+
+LaTeX Warning: Reference `rem:oldbound-false' on page 2 undefined on input line
+ 129.
+
+
+LaTeX Warning: Reference `thm:upper-bound' on page 2 undefined on input line 13
+0.
+
+
+LaTeX Warning: Reference `sec:dynamics' on page 2 undefined on input line 132.
+
+
+LaTeX Warning: Reference `rem:equivariance-needed' on page 2 undefined on input
+ line 134.
+
+
+LaTeX Warning: Reference `sec:detection' on page 2 undefined on input line 139.
+
+
+
+LaTeX Warning: Reference `sec:empirical' on page 2 undefined on input line 143.
+
+
+
+LaTeX Warning: Reference `thm:main-enum' on page 2 undefined on input line 164.
+
+
+
+LaTeX Warning: Reference `sec:compver' on page 2 undefined on input line 164.
+
+
+LaTeX Warning: Reference `thm:main-enum' on page 2 undefined on input line 164.
+
+
+
+LaTeX Warning: Reference `sec:compver' on page 2 undefined on input line 164.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd)
+
+LaTeX Warning: Reference `sec:empirical' on page 2 undefined on input line 177.
+
+
+
+LaTeX Warning: Citation `banda2019' on page 2 undefined on input line 177.
+
+
+LaTeX Warning: Reference `sec:formal' on page 2 undefined on input line 178.
+
+
+LaTeX Warning: Reference `sec:conclusion' on page 2 undefined on input line 179
+.
+
+
+LaTeX Warning: Reference `thm:main-enum' on page 2 undefined on input line 183.
+
+
+
+LaTeX Warning: Reference `thm:lower-bound' on page 2 undefined on input line 18
+3.
+
+
+LaTeX Warning: Reference `sec:model' on page 2 undefined on input line 185.
+
+
+LaTeX Warning: Reference `sec:empirical' on page 2 undefined on input line 185.
+
+
+
+LaTeX Warning: Reference `app:lower' on page 2 undefined on input line 186.
+
+
+LaTeX Warning: Reference `sec:formal' on page 2 undefined on input line 187.
+
+
+LaTeX Warning: Citation `banda2019' on page 2 undefined on input line 190.
+
+
+LaTeX Warning: Citation `cg2017' on page 2 undefined on input line 193.
+
+
+LaTeX Warning: Citation `hall1933' on page 2 undefined on input line 196.
+
+
+LaTeX Warning: Citation `hio1989' on page 2 undefined on input line 197.
+
+
+LaTeX Warning: Reference `sec:second-derivation' on page 2 undefined on input l
+ine 199.
+
+
+LaTeX Warning: Citation `cs2022' on page 2 undefined on input line 202.
+
+
+LaTeX Warning: Citation `ethier2013' on page 2 undefined on input line 205.
+
+
+LaTeX Warning: Citation `ethierlee2015' on page 2 undefined on input line 206.
+
+
+LaTeX Warning: Citation `adamson2021' on page 2 undefined on input line 208.
+
+
+LaTeX Warning: Citation `lind1996' on page 2 undefined on input line 214.
+
+
+LaTeX Warning: Citation `gjs2016' on page 2 undefined on input line 217.
+
+
+LaTeX Warning: Citation `cg2017' on page 2 undefined on input line 218.
+
+
+LaTeX Warning: Citation `moreau1872' on page 2 undefined on input line 222.
+
+
+LaTeX Warning: Citation `witt1937' on page 2 undefined on input line 222.
+
+
+LaTeX Warning: Citation `metropolisrota1983' on page 2 undefined on input line 
+223.
+
+
+LaTeX Warning: Citation `oeisA323863' on page 2 undefined on input line 225.
+
+
+LaTeX Warning: Citation `kornyak2010' on page 2 undefined on input line 227.
+
+
+LaTeX Warning: Reference `thm:irrev' on page 2 undefined on input line 228.
+
+[2] [3 <./charts/chart17_example_configs.pdf>]
+
+LaTeX Warning: Citation `banda2019' on page 4 undefined on input line 296.
+
+
+LaTeX Warning: Citation `banda2019' on page 4 undefined on input line 298.
+
+
+LaTeX Warning: Reference `def:ca' on page 4 undefined on input line 299.
+
+[4]
+
+LaTeX Warning: Reference `lem:fix' on page 5 undefined on input line 345.
+
+[5]
+
+LaTeX Warning: Reference `lem:torsion' on page 6 undefined on input line 401.
+
+
+LaTeX Warning: Citation `stanley2012' on page 6 undefined on input line 426.
+
+
+LaTeX Warning: Citation `stanley2012' on page 6 undefined on input line 434.
+
+
+LaTeX Warning: Citation `kerber1999' on page 6 undefined on input line 434.
+
+
+LaTeX Warning: Citation `stanley2012' on page 6 undefined on input line 436.
+
+[6]
+
+LaTeX Warning: Reference `lem:mobius' on page 7 undefined on input line 461.
+
+
+LaTeX Warning: Reference `eq:cr' on page 7 undefined on input line 462.
+
+
+LaTeX Warning: Citation `banda2019' on page 7 undefined on input line 475.
+
+
+LaTeX Warning: Reference `lem:completeness' on page 7 undefined on input line 4
+89.
+
+
+LaTeX Warning: Reference `lem:fix' on page 7 undefined on input line 490.
+
+
+LaTeX Warning: Reference `lem:joins' on page 7 undefined on input line 490.
+
+
+LaTeX Warning: Reference `lem:torsion' on page 7 undefined on input line 506.
+
+
+LaTeX Warning: Reference `lem:mobius2' on page 7 undefined on input line 507.
+
+
+LaTeX Warning: Reference `eq:main-formula' on page 7 undefined on input line 51
+5.
+
+[7]
+
+LaTeX Warning: Reference `cor:prime' on page 8 undefined on input line 532.
+
+
+LaTeX Warning: Citation `cg2017' on page 8 undefined on input line 533.
+
+
+LaTeX Warning: Reference `eq:main-formula' on page 8 undefined on input line 53
+3.
+
+
+LaTeX Warning: Reference `thm:main-enum' on page 8 undefined on input line 533.
+
+
+
+LaTeX Warning: Reference `sec:second-derivation' on page 8 undefined on input l
+ine 535.
+
+
+LaTeX Warning: Citation `moreau1872' on page 8 undefined on input line 545.
+
+
+LaTeX Warning: Citation `witt1937' on page 8 undefined on input line 545.
+
+
+LaTeX Warning: Citation `banda2019' on page 8 undefined on input line 548.
+
+
+LaTeX Warning: Citation `banda2019' on page 8 undefined on input line 549.
+
+
+LaTeX Warning: Reference `cor:prime' on page 8 undefined on input line 552.
+
+
+LaTeX Warning: Citation `oeisA323863' on page 8 undefined on input line 553.
+
+
+LaTeX Warning: Citation `cg2017' on page 8 undefined on input line 561.
+
+
+LaTeX Warning: Citation `stanley2012' on page 8 undefined on input line 570.
+
+
+LaTeX Warning: Citation `hall1933' on page 8 undefined on input line 572.
+
+
+LaTeX Warning: Citation `hio1989' on page 8 undefined on input line 572.
+
+
+LaTeX Warning: Reference `eq:main-formula' on page 8 undefined on input line 57
+8.
+
+
+LaTeX Warning: Reference `lem:completeness' on page 8 undefined on input line 5
+79.
+
+
+LaTeX Warning: Reference `lem:mobius2' on page 8 undefined on input line 579.
+
+
+LaTeX Warning: Reference `eq:main-formula' on page 8 undefined on input line 58
+3.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 614.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 614.
+
+[8]
+
+LaTeX Warning: Reference `thm:kactive' on page 9 undefined on input line 621.
+
+
+LaTeX Warning: Reference `cor:dens' on page 9 undefined on input line 622.
+
+
+LaTeX Warning: Reference `thm:kactive' on page 9 undefined on input line 622.
+
+
+LaTeX Warning: Reference `cor:dens' on page 9 undefined on input line 623.
+
+
+LaTeX Warning: Citation `banda2019' on page 9 undefined on input line 631.
+
+
+LaTeX Warning: Reference `thm:main-enum' on page 9 undefined on input line 660.
+
+
+[9]
+
+LaTeX Warning: Reference `thm:lower-bound' on page 10 undefined on input line 6
+92.
+
+
+LaTeX Warning: Reference `app:lower' on page 10 undefined on input line 694.
+
+
+LaTeX Warning: Citation `banda2019' on page 10 undefined on input line 699.
+
+
+LaTeX Warning: Reference `app:lower' on page 10 undefined on input line 704.
+
+
+LaTeX Warning: Reference `sec:formal' on page 10 undefined on input line 707.
+
+
+LaTeX Warning: Reference `cor:prime' on page 10 undefined on input line 715.
+
+
+LaTeX Warning: Reference `thm:lower-bound' on page 10 undefined on input line 7
+19.
+
+
+LaTeX Warning: Reference `lem:completeness' on page 10 undefined on input line 
+746.
+
+
+LaTeX Warning: Citation `gjs2016' on page 10 undefined on input line 771.
+
+
+LaTeX Warning: Citation `cg2017' on page 10 undefined on input line 772.
+
+
+LaTeX Warning: Reference `prop:rate' on page 10 undefined on input line 775.
+
+
+LaTeX Warning: Citation `cg2017' on page 10 undefined on input line 776.
+
+
+LaTeX Warning: Citation `banda2019' on page 10 undefined on input line 784.
+
+[10]
+
+LaTeX Warning: Reference `thm:lower-bound' on page 11 undefined on input line 8
+01.
+
+
+LaTeX Warning: Reference `thm:upper-bound' on page 11 undefined on input line 8
+06.
+
+
+LaTeX Warning: Reference `prop:rate' on page 11 undefined on input line 810.
+
+
+LaTeX Warning: Reference `thm:kactive' on page 11 undefined on input line 822.
+
+
+LaTeX Warning: Citation `banda2019' on page 11 undefined on input line 828.
+
+
+LaTeX Warning: Reference `fig:pattern-flip' on page 11 undefined on input line 
+841.
+
+
+LaTeX Warning: Reference `prop:inversion' on page 11 undefined on input line 84
+3.
+
+
+LaTeX Warning: Reference `obs:inversion' on page 11 undefined on input line 853
+.
+
+
+LaTeX Warning: Reference `sec:formal' on page 11 undefined on input line 854.
+
+
+LaTeX Warning: Reference `obs:extrema' on page 11 undefined on input line 866.
+
+
+LaTeX Warning: Reference `obs:extrema' on page 11 undefined on input line 866.
+
+[11]
+
+LaTeX Warning: Reference `def:ca' on page 12 undefined on input line 878.
+
+
+LaTeX Warning: Reference `rem:equivariance-needed' on page 12 undefined on inpu
+t line 889.
+
+
+LaTeX Warning: Reference `thm:irrev' on page 12 undefined on input line 896.
+
+
+LaTeX Warning: Citation `nichitiu1999' on page 12 undefined on input line 900.
+
+
+LaTeX Warning: Citation `stratmann2002' on page 12 undefined on input line 900.
+
+
+
+LaTeX Warning: Reference `thm:irrev' on page 12 undefined on input line 905.
+
+
+LaTeX Warning: Citation `banda2019' on page 12 undefined on input line 907.
+
+
+LaTeX Warning: Reference `lem:torsion' on page 12 undefined on input line 913.
+
+
+LaTeX Warning: Reference `thm:irrev' on page 12 undefined on input line 919.
+
+
+LaTeX Warning: Reference `prop:rank' on page 12 undefined on input line 929.
+
+
+LaTeX Warning: Citation `kornyak2010' on page 12 undefined on input line 931.
+
+[12 <./charts/chart14_pattern_flip.png>]
+
+LaTeX Warning: Citation `banda2019' on page 13 undefined on input line 940.
+
+
+LaTeX Warning: Reference `lem:torsion' on page 13 undefined on input line 949.
+
+
+LaTeX Warning: Reference `lem:completeness' on page 13 undefined on input line 
+956.
+
+
+LaTeX Warning: Reference `rem:polylog' on page 13 undefined on input line 965.
+
+
+LaTeX Warning: Citation `banda2019' on page 13 undefined on input line 1013.
+
+
+LaTeX Warning: Reference `thm:detect-worst' on page 13 undefined on input line 
+1023.
+
+
+LaTeX Warning: Reference `prop:detect-avg' on page 13 undefined on input line 1
+023.
+
+[13]
+
+LaTeX Warning: Citation `anselmo2025' on page 14 undefined on input line 1029.
+
+
+LaTeX Warning: Reference `obs:inversion' on page 14 undefined on input line 104
+1.
+
+
+LaTeX Warning: Reference `sec:formal' on page 14 undefined on input line 1042.
+
+
+LaTeX Warning: Reference `thm:upper-bound' on page 14 undefined on input line 1
+062.
+
+
+LaTeX Warning: Reference `lem:fix' on page 14 undefined on input line 1067.
+
+
+LaTeX Warning: Reference `thm:upper-bound' on page 14 undefined on input line 1
+068.
+
+
+LaTeX Warning: Reference `fig:rate-classes' on page 14 undefined on input line 
+1074.
+
+
+LaTeX Warning: Reference `prop:rate' on page 14 undefined on input line 1087.
+
+
+LaTeX Warning: Reference `thm:upper-bound' on page 14 undefined on input line 1
+087.
+
+
+LaTeX Warning: Reference `prop:rate' on page 14 undefined on input line 1087.
+
+
+LaTeX Warning: Reference `thm:upper-bound' on page 14 undefined on input line 1
+087.
+
+
+LaTeX Warning: Reference `prop:rate' on page 14 undefined on input line 1115.
+
+
+LaTeX Warning: Reference `sec:formal' on page 14 undefined on input line 1123.
+
+[14]
+
+LaTeX Warning: Reference `prop:rate' on page 15 undefined on input line 1145.
+
+
+LaTeX Warning: Reference `fig:inversion' on page 15 undefined on input line 115
+0.
+
+
+LaTeX Warning: Reference `prop:inversion' on page 15 undefined on input line 11
+66.
+
+
+LaTeX Warning: Reference `rem:dc-measured' on page 15 undefined on input line 1
+166.
+
+
+LaTeX Warning: Reference `prop:inversion' on page 15 undefined on input line 11
+66.
+
+
+LaTeX Warning: Reference `rem:dc-measured' on page 15 undefined on input line 1
+166.
+
+
+LaTeX Warning: Reference `obs:inversion' on page 15 undefined on input line 117
+2.
+
+
+LaTeX Warning: Reference `sec:formal' on page 15 undefined on input line 1173.
+
+[15 <./charts/chart13_decay_rate_classes.png>]
+
+LaTeX Warning: Reference `cor:prime' on page 16 undefined on input line 1177.
+
+
+LaTeX Warning: Reference `sec:formal' on page 16 undefined on input line 1196.
+
+
+LaTeX Warning: Reference `obs:extrema' on page 16 undefined on input line 1198.
+
+
+
+LaTeX Warning: Reference `obs:extrema' on page 16 undefined on input line 1199.
+
+
+
+LaTeX Warning: Reference `sec:formal' on page 16 undefined on input line 1204.
+
+
+LaTeX Warning: Reference `fig:pattern-flip' on page 16 undefined on input line 
+1227.
+
+
+LaTeX Warning: Reference `fig:inversion' on page 16 undefined on input line 122
+7.
+
+
+LaTeX Warning: Reference `fig:examples' on page 16 undefined on input line 1228
+.
+
+[16 <./charts/chart15_inversion_dimension.png>]
+
+LaTeX Warning: Reference `sec:model' on page 17 undefined on input line 1240.
+
+
+LaTeX Warning: Reference `sec:empirical' on page 17 undefined on input line 124
+0.
+
+
+LaTeX Warning: Reference `app:lower' on page 17 undefined on input line 1241.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd)
+
+LaTeX Warning: Reference `rem:dc-measured' on page 17 undefined on input line 1
+245.
+
+
+LaTeX Warning: Reference `fig:pattern-flip' on page 17 undefined on input line 
+1246.
+
+
+LaTeX Warning: Reference `fig:inversion' on page 17 undefined on input line 124
+6.
+
+
+LaTeX Warning: Reference `obs:dstar' on page 17 undefined on input line 1249.
+
+
+LaTeX Warning: Reference `fig:examples' on page 17 undefined on input line 1254
+.
+
+
+LaTeX Warning: Reference `fig:pipeline' on page 17 undefined on input line 1254
+.
+
+
+LaTeX Warning: Reference `sec:conclusion' on page 17 undefined on input line 12
+55.
+
+
+LaTeX Warning: Reference `fig:examples' on page 17 undefined on input line 1256
+.
+
+
+LaTeX Warning: Reference `sec:compver' on page 17 undefined on input line 1258.
+
+
+
+LaTeX Warning: Reference `fig:pipeline' on page 17 undefined on input line 1259
+.
+
+
+LaTeX Warning: Reference `sec:conclusion' on page 17 undefined on input line 12
+88.
+
+
+LaTeX Warning: Reference `sec:conclusion' on page 17 undefined on input line 13
+01.
+
+
+LaTeX Warning: Reference `sec:conclusion' on page 17 undefined on input line 13
+01.
+
+
+LaTeX Warning: Reference `thm:main-enum' on page 17 undefined on input line 131
+1.
+
+
+LaTeX Warning: Reference `sec:model' on page 17 undefined on input line 1314.
+
+
+LaTeX Warning: Reference `thm:lower-bound' on page 17 undefined on input line 1
+315.
+
+[17]
+
+LaTeX Warning: Reference `sec:model' on page 18 undefined on input line 1324.
+
+
+LaTeX Warning: Reference `sec:prelim' on page 18 undefined on input line 1325.
+
+
+LaTeX Warning: Reference `sec:prelim' on page 18 undefined on input line 1326.
+
+
+LaTeX Warning: Reference `lem:mobius' on page 18 undefined on input line 1326.
+
+
+LaTeX Warning: Reference `lem:mobius2' on page 18 undefined on input line 1326.
+
+
+
+LaTeX Warning: Reference `def:coef' on page 18 undefined on input line 1327.
+
+
+LaTeX Warning: Reference `tab:coef' on page 18 undefined on input line 1327.
+
+
+LaTeX Warning: Reference `sec:enumeration' on page 18 undefined on input line 1
+328.
+
+
+LaTeX Warning: Reference `rem:boundary' on page 18 undefined on input line 1329
+.
+
+
+LaTeX Warning: Reference `sec:kactive' on page 18 undefined on input line 1329.
+
+
+
+LaTeX Warning: Reference `cor:dens' on page 18 undefined on input line 1330.
+
+
+LaTeX Warning: Reference `sec:bounds' on page 18 undefined on input line 1330.
+
+
+LaTeX Warning: Reference `cor:prob' on page 18 undefined on input line 1331.
+
+
+LaTeX Warning: Reference `sec:dynamics' on page 18 undefined on input line 1331
+.
+
+
+LaTeX Warning: Reference `fig:pattern-flip' on page 18 undefined on input line 
+1332.
+
+
+LaTeX Warning: Reference `sec:detection' on page 18 undefined on input line 133
+3.
+
+
+LaTeX Warning: Reference `prop:rate' on page 18 undefined on input line 1334.
+
+
+LaTeX Warning: Reference `prop:inversion' on page 18 undefined on input line 13
+34.
+
+
+LaTeX Warning: Reference `fig:rate-classes' on page 18 undefined on input line 
+1335.
+
+
+LaTeX Warning: Reference `app:lower' on page 18 undefined on input line 1336.
+
+
+LaTeX Warning: Reference `obs:extrema' on page 18 undefined on input line 1337.
+
+
+
+LaTeX Warning: Reference `rem:dc-measured' on page 18 undefined on input line 1
+337.
+
+
+LaTeX Warning: Reference `fig:inversion' on page 18 undefined on input line 133
+8.
+
+
+LaTeX Warning: Reference `obs:dstar' on page 18 undefined on input line 1339.
+
+
+LaTeX Warning: Reference `obs:inversion' on page 18 undefined on input line 133
+9.
+
+
+LaTeX Warning: Reference `thm:kactive' on page 18 undefined on input line 1341.
+
+
+
+LaTeX Warning: Reference `thm:main-enum' on page 18 undefined on input line 134
+3.
+
+
+LaTeX Warning: Reference `app:lower' on page 18 undefined on input line 1345.
+
+
+LaTeX Warning: Reference `sec:detection' on page 18 undefined on input line 134
+9.
+
+
+LaTeX Warning: Reference `rem:polylog' on page 18 undefined on input line 1353.
+
+
+
+LaTeX Warning: Reference `cor:dens' on page 18 undefined on input line 1355.
+
+
+LaTeX Warning: Reference `rem:dc-measured' on page 18 undefined on input line 1
+358.
+
+
+LaTeX Warning: Reference `sec:conclusion' on page 18 undefined on input line 13
+73.
+
+
+LaTeX Warning: Reference `prop:inversion' on page 18 undefined on input line 13
+79.
+
+
+LaTeX Warning: Reference `cor:insolv' on page 18 undefined on input line 1380.
+
+
+LaTeX Warning: Reference `lem:mobius' on page 18 undefined on input line 1396.
+
+
+LaTeX Warning: Reference `lem:mobius2' on page 18 undefined on input line 1396.
+
+
+
+LaTeX Warning: Reference `sec:second-derivation' on page 18 undefined on input 
+line 1399.
+
+
+LaTeX Warning: Citation `cg2017' on page 18 undefined on input line 1400.
+
+
+LaTeX Warning: Citation `gjs2016' on page 18 undefined on input line 1403.
+
+
+LaTeX Warning: Citation `cg2017' on page 18 undefined on input line 1403.
+
+
+LaTeX Warning: Citation `banda2019' on page 18 undefined on input line 1404.
+
+
+LaTeX Warning: Reference `thm:lower-bound' on page 18 undefined on input line 1
+406.
+
+
+LaTeX Warning: Reference `app:lower' on page 18 undefined on input line 1407.
+
+
+LaTeX Warning: Citation `banda2019' on page 18 undefined on input line 1413.
+
+[18]
+
+LaTeX Warning: Citation `banda2019' on page 19 undefined on input line 1431.
+
+
+Underfull \hbox (badness 3568) in paragraph at lines 1437--1437
+[]|\T1/cmr/m/n/10.95 Order-$\OML/cmm/m/it/10.95 p$ \T1/cmr/m/n/10.95 sub-groups
+ per
+
+LaTeX Warning: Reference `thm:main-enum' on page 19 undefined on input line 143
+9.
+
+
+LaTeX Warning: Reference `thm:kactive' on page 19 undefined on input line 1440.
+
+
+
+Underfull \hbox (badness 1622) in paragraph at lines 1441--1441
+[]|\T1/cmr/m/n/10.95 Lower bound (tight iff
+
+LaTeX Warning: Reference `thm:lower-bound' on page 19 undefined on input line 1
+442.
+
+
+LaTeX Warning: Reference `thm:irrev' on page 19 undefined on input line 1445.
+
+
+LaTeX Warning: Reference `prop:rank' on page 19 undefined on input line 1446.
+
+
+Underfull \hbox (badness 3128) in paragraph at lines 1445--1447
+[]|\T1/cmr/m/n/10.95 Theorem [] (equiv-ari-ance ex-
+
+Underfull \hbox (badness 1052) in paragraph at lines 1448--1448
+[]|$\OML/cmm/m/it/10.95 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 n[]\OT1/cmr/m/
+n/10.95 )$\T1/cmr/m/n/10.95 ; poly-log claimed
+
+LaTeX Warning: Reference `prop:rate' on page 19 undefined on input line 1452.
+
+
+LaTeX Warning: Reference `obs:inversion' on page 19 undefined on input line 145
+4.
+
+
+LaTeX Warning: Reference `prop:inversion' on page 19 undefined on input line 14
+57.
+
+
+LaTeX Warning: Reference `obs:extrema' on page 19 undefined on input line 1457.
+
+
+
+LaTeX Warning: Reference `rem:oldbound-false' on page 19 undefined on input lin
+e 1469.
+
+
+LaTeX Warning: Reference `obs:extrema' on page 19 undefined on input line 1470.
+
+
+
+LaTeX Warning: Citation `cg2017' on page 19 undefined on input line 1472.
+
+[19]
+
+LaTeX Warning: Citation `angluin1980' on page 20 undefined on input line 1484.
+
+
+LaTeX Warning: Citation `yamashita1996' on page 20 undefined on input line 1486
+.
+
+
+LaTeX Warning: Reference `cor:insolv' on page 20 undefined on input line 1487.
+
+
+LaTeX Warning: Reference `cor:prob' on page 20 undefined on input line 1491.
+
+
+LaTeX Warning: Citation `cohen2016' on page 20 undefined on input line 1494.
+
+
+LaTeX Warning: Reference `thm:irrev' on page 20 undefined on input line 1495.
+
+
+LaTeX Warning: Citation `kaba2023' on page 20 undefined on input line 1498.
+
+
+LaTeX Warning: Citation `mordvintsev2020' on page 20 undefined on input line 14
+98.
+
+
+LaTeX Warning: Reference `cor:insolv' on page 20 undefined on input line 1500.
+
+
+LaTeX Warning: Citation `hartforcade2008' on page 20 undefined on input line 15
+04.
+
+
+LaTeX Warning: Reference `thm:main-enum' on page 20 undefined on input line 150
+7.
+
+
+LaTeX Warning: Reference `thm:kactive' on page 20 undefined on input line 1508.
+
+
+
+LaTeX Warning: Citation `sandvik2010' on page 20 undefined on input line 1514.
+
+
+LaTeX Warning: Reference `thm:irrev' on page 20 undefined on input line 1516.
+
+
+LaTeX Warning: Citation `wolfram1986' on page 20 undefined on input line 1524.
+
+
+LaTeX Warning: Reference `thm:irrev' on page 20 undefined on input line 1526.
+
+
+LaTeX Warning: Reference `cor:prob' on page 20 undefined on input line 1527.
+
+
+LaTeX Warning: Reference `thm:kactive' on page 20 undefined on input line 1531.
+
+
+
+LaTeX Warning: Reference `cor:dens' on page 20 undefined on input line 1533.
+
+
+LaTeX Warning: Reference `sec:detection' on page 20 undefined on input line 153
+4.
+
+
+LaTeX Warning: Reference `sec:formal' on page 20 undefined on input line 1541.
+
+
+LaTeX Warning: Reference `cor:insolv' on page 20 undefined on input line 1561.
+
+[20]
+
+LaTeX Warning: Reference `thm:lower-bound' on page 21 undefined on input line 1
+577.
+
+
+LaTeX Warning: Reference `eq:main-formula' on page 21 undefined on input line 1
+580.
+
+
+LaTeX Warning: Reference `thm:main-enum' on page 21 undefined on input line 158
+7.
+
+
+LaTeX Warning: Reference `thm:lower-bound' on page 21 undefined on input line 1
+590.
+
+
+LaTeX Warning: Reference `cor:prime' on page 21 undefined on input line 1591.
+
+
+LaTeX Warning: Reference `lem:chain' on page 21 undefined on input line 1592.
+
+
+LaTeX Warning: Reference `lem:base' on page 21 undefined on input line 1593.
+
+
+LaTeX Warning: Reference `lem:fix' on page 21 undefined on input line 1609.
+
+
+LaTeX Warning: Reference `lem:torsion' on page 21 undefined on input line 1609.
+
+
+
+LaTeX Warning: Reference `lem:joins' on page 21 undefined on input line 1609.
+
+
+LaTeX Warning: Reference `lem:mobius' on page 21 undefined on input line 1609.
+
+
+LaTeX Warning: Reference `lem:mobius2' on page 21 undefined on input line 1609.
+
+
+
+LaTeX Warning: Reference `thm:main-enum' on page 21 undefined on input line 161
+1.
+
+[21]
+Overfull \hbox (0.69986pt too wide) in paragraph at lines 1646--1648
+[]\T1/cmr/m/n/10.95 Splitting $\OML/cmm/m/it/10.95 q[]$ \T1/cmr/m/n/10.95 by th
+e value $\OML/cmm/m/it/10.95 j$ \T1/cmr/m/n/10.95 of $\OML/cmm/m/it/10.95 v[]$ 
+\T1/cmr/m/n/10.95 and iso-lat-ing, for $\OML/cmm/m/it/10.95 j \OMS/cmsy/m/n/10.
+95 ^^U \OT1/cmr/m/n/10.95 1$\T1/cmr/m/n/10.95 , the term with $\OT1/cmr/m/n/10.
+95 (\OML/cmm/m/it/10.95 v[]; [] ; v[]\OT1/cmr/m/n/10.95 ) =
+
+LaTeX Warning: Reference `lem:dtorus' on page 22 undefined on input line 1652.
+
+
+LaTeX Warning: Reference `lem:dtorus' on page 22 undefined on input line 1659.
+
+
+LaTeX Warning: Reference `eq:decomp' on page 22 undefined on input line 1668.
+
+
+LaTeX Warning: Reference `lem:coef' on page 22 undefined on input line 1670.
+
+
+LaTeX Warning: Reference `lem:coef' on page 22 undefined on input line 1700.
+
+[22]
+
+LaTeX Warning: Reference `thm:lower-bound' on page 23 undefined on input line 1
+729.
+
+
+LaTeX Warning: Citation `banda2019' on page 23 undefined on input line 1733.
+
+
+LaTeX Warning: Reference `sec:formal' on page 23 undefined on input line 1738.
+
+
+LaTeX Warning: Reference `lem:chain' on page 23 undefined on input line 1739.
+
+
+LaTeX Warning: Citation `banda2019' on page 23 undefined on input line 1740.
+
+
+LaTeX Warning: Reference `cor:prime' on page 23 undefined on input line 1742.
+
+
+LaTeX Warning: Reference `lem:base' on page 23 undefined on input line 1743.
+
+
+LaTeX Warning: Reference `lem:chain' on page 23 undefined on input line 1745.
+
+
+LaTeX Warning: Reference `lem:base' on page 23 undefined on input line 1745.
+
+
+LaTeX Warning: Reference `sec:empirical' on page 23 undefined on input line 175
+1.
+
+[23]
+Underfull \hbox (badness 3601) in paragraph at lines 1828--1831
+[]\T1/cmr/m/n/10.95 M. Strat-mann and T. Worsch, ``Leader elec-tion in $\OML/cm
+m/m/it/10.95 d$\T1/cmr/m/n/10.95 -dimensional CA in time
+[24] (./shift_symmetry_d_dimensions.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `shift_symmetry_d_dimensions.out' has chan
+ged.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information){/usr/share/texmf/fonts/enc
+/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-
+super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb
+></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/f
+onts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm
+-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fo
+nts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-
+super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb><
+/usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fon
+ts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-s
+uper/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1095.pfb></
+usr/share/texmf/fonts/type1/public/cm-super/sfti0800.pfb></usr/share/texmf/font
+s/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-su
+per/sfti1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb></u
+sr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on shift_symmetry_d_dimensions.pdf (24 pages, 1149510 bytes).
+Transcript written on shift_symmetry_d_dimensions.log.

@@ -1,0 +1,1919 @@
+⚠ [8703/8942] Replayed Shiftsym.Lemmas.Torsion
+warning: Shiftsym/Lemmas/Torsion.lean:21:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Shiftsym/Lemmas/Torsion.lean:25:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Shiftsym/Lemmas/Torsion.lean:37:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Shiftsym/Lemmas/Torsion.lean:41:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Shiftsym/Lemmas/Torsion.lean:57:8: automatically included section variable(s) unused in theorem `_private.Shiftsym.Lemmas.Torsion.0.ShiftSym.cast_mod_mul`:
+  [NeZero n]
+  [NeZero p]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] [NeZero p] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Lemmas/Torsion.lean:122:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [8704/8942] Replayed Shiftsym.Lemmas.Crt
+warning: Shiftsym/Lemmas/Crt.lean:18:8: `Nat.factorization_prod_pow_eq_self` has been deprecated: Use `Nat.prod_factorization_pow_eq_self` instead
+warning: Shiftsym/Lemmas/Crt.lean:53:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Lemmas/Crt.lean:55:8: This simp argument is unused:
+  Nat.card_pi
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Nat.card_zmod]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Shiftsym/Lemmas/Crt.lean:55:21: This simp argument is unused:
+  Nat.card_zmod
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Nat.card_pi]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8705/8942] Replayed Shiftsym.Lemmas.Lines
+warning: Shiftsym/Lemmas/Lines.lean:21:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Lemmas/Lines.lean:88:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Lemmas/Lines.lean:89:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8706/8942] Replayed Shiftsym.Lemmas.GaussCount
+warning: Shiftsym/Lemmas/GaussCount.lean:139:8: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Lemmas/GaussCount.lean:153:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Lemmas/GaussCount.lean:155:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Lemmas/GaussCount.lean:198:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8707/8942] Replayed Shiftsym.Lemmas.MobiusSum
+warning: Shiftsym/Lemmas/MobiusSum.lean:144:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Lemmas/MobiusSum.lean:184:0: automatically included section variable(s) unused in theorem `ShiftSym.mem_linesF`:
+  [Fintype K]
+  [Finite V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype K] [Finite V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Lemmas/MobiusSum.lean:262:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Lemmas/MobiusSum.lean:277:8: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Lemmas/MobiusSum.lean:304:8: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Lemmas/MobiusSum.lean:297:14: This simp argument is unused:
+  lt_irrefl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Shiftsym/Lemmas/MobiusSum.lean:339:2: 'push_cast' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8709/8942] Replayed Shiftsym.Lemmas.Primary
+warning: Shiftsym/Lemmas/Primary.lean:100:4: Try this: intro i _ x hx
+⚠ [8710/8942] Replayed Shiftsym.Lemmas.Bridge
+warning: Shiftsym/Lemmas/Bridge.lean:69:8: automatically included section variable(s) unused in theorem `_private.Shiftsym.Lemmas.Bridge.0.ShiftSym.addSubgroupOf_map_subtype`:
+  [NeZero n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Lemmas/Bridge.lean:177:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8711/8942] Replayed Shiftsym.Lemmas.Evaluate
+warning: Shiftsym/Lemmas/Evaluate.lean:55:20: Variable name `C` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _C
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Shiftsym/Lemmas/Evaluate.lean:94:38: Variable name `hd` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hd
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Shiftsym/Lemmas/Evaluate.lean:487:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8714/8942] Replayed Shiftsym.Lemmas.LowerBound
+warning: Shiftsym/Lemmas/LowerBound.lean:219:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+ℹ [8720/8942] Replayed Shiftsym.Experiments
+info: Shiftsym/Experiments.lean:12:0: 8
+info: Shiftsym/Experiments.lean:13:0: 26
+info: Shiftsym/Experiments.lean:14:0: 182
+info: Shiftsym/Experiments.lean:15:0: 72
+info: Shiftsym/Experiments.lean:16:0: 6398
+info: Shiftsym/Experiments.lean:17:0: 801064
+info: Shiftsym/Experiments.lean:18:0: 2954937483568
+ℹ [8721/8942] Replayed Shiftsym.Audit
+info: Shiftsym/Audit.lean:29:0: @ShiftSym.stab_le_stab_apply : ∀ {n d : ℕ} {A : Type u_1} {Φ : ShiftSym.Config n d A → ShiftSym.Config n d A},
+  ShiftSym.Equivariant Φ → ∀ (s : ShiftSym.Config n d A), ShiftSym.stab s ≤ ShiftSym.stab (Φ s)
+info: Shiftsym/Audit.lean:30:0: @ShiftSym.isShiftSymmetric_apply : ∀ {n d : ℕ} {A : Type u_1} {Φ : ShiftSym.Config n d A → ShiftSym.Config n d A},
+  ShiftSym.Equivariant Φ → ∀ {s : ShiftSym.Config n d A}, ShiftSym.IsShiftSymmetric s → ShiftSym.IsShiftSymmetric (Φ s)
+info: Shiftsym/Audit.lean:31:0: @ShiftSym.stab_inf_mono : ∀ {n d : ℕ} {A : Type u_1} {Φ : ShiftSym.Config n d A → ShiftSym.Config n d A},
+  ShiftSym.Equivariant Φ →
+    ∀ (s : ShiftSym.Config n d A) (T : AddSubgroup (ShiftSym.Lat n d)), ShiftSym.stab s ⊓ T ≤ ShiftSym.stab (Φ s) ⊓ T
+info: Shiftsym/Audit.lean:32:0: @ShiftSym.caMap_equivariant : ∀ {n d : ℕ} {A : Type u_1} {b : ℕ} (offs : Fin b → ShiftSym.Lat n d)
+  (φ : (Fin b → A) → A), ShiftSym.Equivariant (ShiftSym.caMap offs φ)
+info: Shiftsym/Audit.lean:33:0: @ShiftSym.card_fixedBy : ∀ {n d : ℕ} {A : Type u_1} [Finite A] [NeZero n] (H : AddSubgroup (ShiftSym.Lat n d)),
+  Nat.card ↑(ShiftSym.fixedBy A H) = Nat.card A ^ H.index
+info: Shiftsym/Audit.lean:34:0: @ShiftSym.card_fixedBy_div : ∀ {n d : ℕ} {A : Type u_1} [Finite A] [NeZero n] (H : AddSubgroup (ShiftSym.Lat n d)),
+  Nat.card ↑(ShiftSym.fixedBy A H) = Nat.card A ^ (n ^ d / Nat.card ↥H)
+info: Shiftsym/Audit.lean:35:0: @ShiftSym.isShiftSymmetric_iff_prime_order : ∀ {n d : ℕ} {A : Type u_1} [NeZero n] (s : ShiftSym.Config n d A),
+  ShiftSym.IsShiftSymmetric s ↔ ∃ v, Nat.Prime (addOrderOf v) ∧ addOrderOf v ∣ n ∧ ShiftSym.shift v s = s
+info: Shiftsym/Audit.lean:36:0: @ShiftSym.isShiftSymmetric_iterate : ∀ {n d : ℕ} {A : Type u_1} {Φ : ShiftSym.Config n d A → ShiftSym.Config n d A},
+  ShiftSym.Equivariant Φ →
+    ∀ {s : ShiftSym.Config n d A}, ShiftSym.IsShiftSymmetric s → ∀ (k : ℕ), ShiftSym.IsShiftSymmetric (Φ^[k] s)
+info: Shiftsym/Audit.lean:37:0: @ShiftSym.iterate_ne_of_not_isShiftSymmetric : ∀ {n d : ℕ} {A : Type u_1}
+  {Φ : ShiftSym.Config n d A → ShiftSym.Config n d A},
+  ShiftSym.Equivariant Φ →
+    ∀ {s t : ShiftSym.Config n d A}, ShiftSym.IsShiftSymmetric s → ¬ShiftSym.IsShiftSymmetric t → ∀ (k : ℕ), Φ^[k] s ≠ t
+info: Shiftsym/Audit.lean:38:0: @ShiftSym.dvd_pow_of_mem_divisors_rad : ∀ {n dd h : ℕ}, h ∈ (ShiftSym.rad n ^ dd).divisors → h ∣ n ^ dd
+info: Shiftsym/Audit.lean:39:0: @ShiftSym.latTorsionEquiv : {n d p : ℕ} →
+  [NeZero n] → [NeZero p] → p ∣ n → ↥(ShiftSym.latTorsion n d p) ≃+ (Fin d → ZMod p)
+info: Shiftsym/Audit.lean:40:0: @ShiftSym.card_latTorsion : ∀ {n d p : ℕ} [NeZero n] [NeZero p], p ∣ n → Nat.card ↥(ShiftSym.latTorsion n d p) = p ^ d
+info: Shiftsym/Audit.lean:41:0: @ShiftSym.card_addOrderOf_eq_prime : ∀ {n d p : ℕ} [NeZero n] [NeZero p],
+  Nat.Prime p → p ∣ n → Nat.card { v // addOrderOf v = p } = p ^ d - 1
+info: Shiftsym/Audit.lean:42:0: @ShiftSym.latPrimarySplit : {n d : ℕ} →
+  n ≠ 0 → ShiftSym.Lat n d ≃+ ((p : ↥n.primeFactors) → ShiftSym.Lat (↑p ^ n.factorization ↑p) d)
+info: Shiftsym/Audit.lean:43:0: @ShiftSym.card_orderP_subgroups : ∀ {n d p : ℕ} [NeZero n],
+  Nat.Prime p → p ∣ n → Nat.card { C // Nat.card ↥C = p } = ShiftSym.gaussBinom p d 1
+info: Shiftsym/Audit.lean:44:0: ShiftSym.gaussBinom_geom : ∀ (a d : ℕ), a * ShiftSym.gaussBinom (a + 1) d 1 + 1 = (a + 1) ^ d
+info: Shiftsym/Audit.lean:45:0: @ShiftSym.gaussBinom_mul_prod : ∀ {q : ℕ},
+  1 ≤ q → ∀ {d r : ℕ}, r ≤ d → ShiftSym.gaussBinom q d r * ∏ i, (q ^ r - q ^ ↑i) = ∏ i, (q ^ d - q ^ ↑i)
+info: Shiftsym/Audit.lean:46:0: @ShiftSym.card_submodule_finrank : ∀ {p d r : ℕ},
+  Nat.Prime p → r ≤ d → Nat.card { W // Module.finrank (ZMod p) ↥W = r } = ShiftSym.gaussBinom p d r
+info: Shiftsym/Audit.lean:47:0: ShiftSym.gaussBinom_alt_sum : ∀ (q R : ℕ),
+  ∑ r ∈ Finset.range (R + 1), (-1) ^ r * ↑q ^ r.choose 2 * ↑(ShiftSym.gaussBinom q R r) = if R = 0 then 1 else 0
+info: Shiftsym/Audit.lean:48:0: @ShiftSym.spanSum_eq_mobius : ∀ {K : Type u_1} {V : Type u_2} [inst : Field K] [inst_1 : Fintype K]
+  [inst_2 : AddCommGroup V] [inst_3 : Module K V] [Finite V] [inst_5 : Fintype (Submodule K V)] (W : Submodule K V),
+  ShiftSym.spanSum W = (-1) ^ Module.finrank K ↥W * ↑(Fintype.card K) ^ (Module.finrank K ↥W).choose 2
+info: Shiftsym/Audit.lean:49:0: @ShiftSym.sum_spanSum_le : ∀ {K : Type u_1} {V : Type u_2} [inst : Field K] [Fintype K] [inst_2 : AddCommGroup V]
+  [inst_3 : Module K V] [Finite V] [inst_5 : Fintype (Submodule K V)] (W : Submodule K V),
+  ∑ U with U ≤ W, ShiftSym.spanSum U = if W = ⊥ then 1 else 0
+info: Shiftsym/Audit.lean:50:0: @ShiftSym.spanSum_rank_classified : ∀ {K : Type u_1} {V : Type u_2} [inst : Field K] [inst_1 : Fintype K]
+  [inst_2 : AddCommGroup V] [inst_3 : Module K V] [Finite V] [inst_5 : Fintype (Submodule K V)] {r : ℕ},
+  r ≤ Module.finrank K V →
+    ∑ W with Module.finrank K ↥W = r, ShiftSym.spanSum W =
+      (-1) ^ r * ↑(Fintype.card K) ^ r.choose 2 * ↑(ShiftSym.gaussBinom (Fintype.card K) (Module.finrank K V) r)
+info: Shiftsym/Audit.lean:51:0: @ShiftSym.card_shiftSymmetric_IE : ∀ {n d : ℕ} (σ : ℕ) [inst : NeZero n],
+  ↑{s | ShiftSym.IsShiftSymmetric s}.card = ∑ t, (-1) ^ ((↑t).card + 1) * ↑σ ^ (n ^ d / Nat.card ↥((↑t).sup id))
+info: Shiftsym/Audit.lean:52:0: @ShiftSym.isShiftSymmetric_iff_mem_biUnion : ∀ {n d : ℕ} (σ : ℕ) [inst : NeZero n] (s : ShiftSym.Config n d (Fin σ)),
+  ShiftSym.IsShiftSymmetric s ↔ s ∈ (ShiftSym.primeOrderSubs n d).biUnion fun C ↦ ShiftSym.fixedByF σ C
+info: Shiftsym/Audit.lean:53:0: @ShiftSym.latTorsion_inf_coprime : ∀ {n d a b : ℕ},
+  a.Coprime b → ShiftSym.latTorsion n d a ⊓ ShiftSym.latTorsion n d b = ⊥
+info: Shiftsym/Audit.lean:54:0: @ShiftSym.card_univ_sup_of_torsion : ∀ {n d : ℕ} {ι : Type u_1} [inst : Fintype ι] (m : ι → ℕ)
+  (L : ι → AddSubgroup (ShiftSym.Lat n d)),
+  (∀ (i : ι), L i ≤ ShiftSym.latTorsion n d (m i)) →
+    Pairwise (Function.onFun Nat.Coprime m) → Nat.card ↥(Finset.univ.sup L) = ∏ i, Nat.card ↥(L i)
+info: Shiftsym/Audit.lean:55:0: @ShiftSym.toMod_ofMod : ∀ {n d p : ℕ} [inst : NeZero n] [inst_1 : NeZero p] (hpn : p ∣ n)
+  (U : Submodule (ZMod p) (Fin d → ZMod p)), ShiftSym.toMod hpn (ShiftSym.ofMod hpn U) = U
+info: Shiftsym/Audit.lean:56:0: @ShiftSym.ofMod_toMod : ∀ {n d p : ℕ} [inst : NeZero n] [inst_1 : NeZero p] (hpn : p ∣ n)
+  {H : AddSubgroup (ShiftSym.Lat n d)}, H ≤ ShiftSym.latTorsion n d p → ShiftSym.ofMod hpn (ShiftSym.toMod hpn H) = H
+info: Shiftsym/Audit.lean:57:0: @ShiftSym.card_ofMod : ∀ {n d p : ℕ} [inst : NeZero n] [inst_1 : NeZero p] (hpn : p ∣ n)
+  (U : Submodule (ZMod p) (Fin d → ZMod p)), Nat.card ↥(ShiftSym.ofMod hpn U) = Nat.card ↥U
+info: Shiftsym/Audit.lean:58:0: @ShiftSym.spanSum_transport : ∀ {n d p : ℕ} [inst : NeZero n] [inst_1 : Fact (Nat.Prime p)] (hpn : p ∣ n)
+  (U : Submodule (ZMod p) (Fin d → ZMod p)),
+  ∑ t ∈ (ShiftSym.linesP n d p).powerset with t.sup id = ShiftSym.ofMod hpn U, (-1) ^ t.card = ShiftSym.spanSum U
+info: Shiftsym/Audit.lean:59:0: ShiftSym.enumeration_proved : ∀ (n dd σ : ℕ), ShiftSym.enumerationStatement n dd σ
+info: Shiftsym/Audit.lean:60:0: @ShiftSym.gaussBinom_le_pow : ∀ {q : ℕ}, 1 ≤ q → ∀ (d r : ℕ), ShiftSym.gaussBinom q d r ≤ 2 ^ d * q ^ (r * (d - r))
+info: Shiftsym/Audit.lean:61:0: @ShiftSym.envelope_coeff_lt_two_pow : ∀ {n d : ℕ},
+  4 ≤ n → 1 ≤ d → ShiftSym.gaussBinom n d 1 + (d - 2) * 2 ^ d * n ^ d.choose 2 < 2 ^ n ^ (d - 1)
+info: Shiftsym/Audit.lean:62:0: @ShiftSym.enumerationRHS_prime : ∀ {p : ℕ},
+  Nat.Prime p → ∀ (d σ : ℕ), ShiftSym.enumerationRHS p d σ = ShiftSym.lowerEnvelope p d σ
+info: Shiftsym/Audit.lean:63:0: @ShiftSym.card_SS_ge_fix : ∀ {n d : ℕ} (σ : ℕ) [inst : NeZero n] {p : ℕ},
+  Nat.Prime p → p ∣ n → 1 ≤ d → σ ^ (n ^ d / p) ≤ {s | ShiftSym.IsShiftSymmetric s}.card
+info: Shiftsym/Audit.lean:64:0: ShiftSym.lowerBound_proved : ∀ (n dd σ : ℕ), ShiftSym.lowerBoundStatement n dd σ
+info: Shiftsym/Audit.lean:65:0: ShiftSym.enumerationStatement : ℕ → ℕ → ℕ → Prop
+info: Shiftsym/Audit.lean:66:0: ShiftSym.lowerBoundStatement : ℕ → ℕ → ℕ → Prop
+info: Shiftsym/Audit.lean:68:0: @ShiftSym.card_filter_shiftSymmetric_IE : ∀ {n d : ℕ} {A : Type u_1} [inst : Fintype A] [inst_1 : NeZero n]
+  (X : Finset (ShiftSym.Config n d A)),
+  ↑(Finset.filter ShiftSym.IsShiftSymmetric X).card =
+    ∑ t, (-1) ^ ((↑t).card + 1) * ↑(X ∩ ShiftSym.fixedByA A ((↑t).sup id)).card
+info: Shiftsym/Audit.lean:69:0: @ShiftSym.relative_regroup : ∀ {n d : ℕ} [inst : NeZero n] (w : AddSubgroup (ShiftSym.Lat n d) → ℤ),
+  ∑ t, (-1) ^ ((↑t).card + 1) * w ((↑t).sup id) = ∑ U, ShiftSym.mobiusCoeff U * w (ShiftSym.socSub U) + w ⊥
+info: Shiftsym/Audit.lean:70:0: @ShiftSym.relativeEnumeration_proved : ∀ {n d : ℕ} {A : Type u_1} [inst : Fintype A] [inst_1 : NeZero n]
+  (X : Finset (ShiftSym.Config n d A)), ShiftSym.relativeEnumerationStatement n d A X
+info: Shiftsym/Audit.lean:71:0: @ShiftSym.mobiusCoeff_eq : ∀ {n d : ℕ} (U : ShiftSym.ModTuple n d),
+  ShiftSym.mobiusCoeff U =
+    (-1) ^ (1 + ∑ p, Module.finrank (ZMod ↑p) ↥(U p)) * ∏ p, ↑↑p ^ (Module.finrank (ZMod ↑p) ↥(U p)).choose 2
+info: Shiftsym/Audit.lean:72:0: @ShiftSym.card_shiftSymmetric_eq_tuple_sum : ∀ {n d : ℕ} [inst : NeZero n] (σ : ℕ),
+  ↑{s | ShiftSym.IsShiftSymmetric s}.card =
+    ∑ U, ShiftSym.mobiusCoeff U * ↑σ ^ (n ^ d / Nat.card ↥(ShiftSym.socSub U)) + ↑σ ^ n ^ d
+info: Shiftsym/Audit.lean:73:0: @ShiftSym.linCA_equivariant : ∀ {n d : ℕ} [inst : NeZero n] {F : Type u_1} [inst_1 : Field F]
+  (a : ShiftSym.Lat n d → F), ShiftSym.Equivariant ⇑(ShiftSym.linCA a)
+info: Shiftsym/Audit.lean:74:0: @ShiftSym.kernelEnumeration_proved : ∀ {n d : ℕ} [inst : NeZero n] {F : Type u_1} [inst_1 : Field F]
+  [inst_2 : Fintype F] (a : ShiftSym.Lat n d → F), ShiftSym.kernelEnumerationStatement n d F a
+info: Shiftsym/Audit.lean:75:0: @ShiftSym.imageDomination_proved : ∀ {n d : ℕ} [inst : NeZero n] {F : Type u_1} [inst_1 : Field F] [inst_2 : Fintype F]
+  (a : ShiftSym.Lat n d → F), ShiftSym.imageDominationStatement n d F a
+info: Shiftsym/Audit.lean:76:0: @ShiftSym.range_pullQ : ∀ {n d : ℕ} {F : Type u_1} [inst : Field F] (H : AddSubgroup (ShiftSym.Lat n d)),
+  (ShiftSym.pullQ H).range = ShiftSym.fixSub F H
+info: Shiftsym/Audit.lean:77:0: @ShiftSym.linCA_pullQ : ∀ {n d : ℕ} [inst : NeZero n] {F : Type u_1} [inst_1 : Field F]
+  (H : AddSubgroup (ShiftSym.Lat n d)) (a : ShiftSym.Lat n d → F) (t : ShiftSym.Lat n d ⧸ H → F),
+  (ShiftSym.linCA a) ((ShiftSym.pullQ H) t) = (ShiftSym.pullQ H) ((ShiftSym.linCAG (ShiftSym.quotRule H a)) t)
+info: Shiftsym/Audit.lean:78:0: @ShiftSym.finrank_ker_inf_fixSub : ∀ {n d : ℕ} [inst : NeZero n] {F : Type u_1} [inst_1 : Field F]
+  (H : AddSubgroup (ShiftSym.Lat n d)) (a : ShiftSym.Lat n d → F),
+  Module.finrank F ↥((ShiftSym.linCA a).ker ⊓ ShiftSym.fixSub F H) =
+    Module.finrank F ↥(ShiftSym.linCAG (ShiftSym.quotRule H a)).ker
+info: Shiftsym/Audit.lean:79:0: @ShiftSym.kernelEnumeration_quotient : ∀ {n d : ℕ} [inst : NeZero n] {F : Type u_1} [inst_1 : Field F]
+  [inst_2 : Fintype F] (a : ShiftSym.Lat n d → F),
+  ↑(Nat.card { s // s ∈ (ShiftSym.linCA a).ker ∧ ShiftSym.IsShiftSymmetric s }) =
+    ∑ U,
+        ShiftSym.mobiusCoeff U *
+          ↑(Fintype.card F) ^ Module.finrank F ↥(ShiftSym.linCAG (ShiftSym.quotRule (ShiftSym.socSub U) a)).ker +
+      ↑(Fintype.card F) ^ Module.finrank F ↥(ShiftSym.linCA a).ker
+info: Shiftsym/Audit.lean:80:0: ShiftSym.relativeEnumerationStatement : (n d : ℕ) →
+  [NeZero n] → (A : Type u_1) → [Fintype A] → Finset (ShiftSym.Config n d A) → Prop
+info: Shiftsym/Audit.lean:81:0: ShiftSym.kernelEnumerationStatement : (n d : ℕ) →
+  [NeZero n] → (F : Type u_1) → [Field F] → [Fintype F] → (ShiftSym.Lat n d → F) → Prop
+info: Shiftsym/Audit.lean:82:0: ShiftSym.imageDominationStatement : (n d : ℕ) →
+  [NeZero n] → (F : Type u_1) → [Field F] → [Fintype F] → (ShiftSym.Lat n d → F) → Prop
+info: Shiftsym/Audit.lean:84:0: @ShiftSym.sumRule_proved : ∀ {n d : ℕ} [inst : NeZero n] (A : Type u_1) [inst_1 : Fintype A],
+  ShiftSym.sumRuleStatement n d A
+info: Shiftsym/Audit.lean:85:0: @ShiftSym.parity_proved : ∀ {n d : ℕ} [inst : NeZero n], ShiftSym.parityStatement n d
+info: Shiftsym/Audit.lean:86:0: @ShiftSym.fourClasses_proved : ∀ {n d : ℕ} [inst : NeZero n], ShiftSym.fourClassesStatement n d
+info: Shiftsym/Audit.lean:87:0: @ShiftSym.sandwich_proved : ∀ {n d : ℕ} [inst : NeZero n] (A : Type u_1) [inst_1 : Fintype A],
+  ShiftSym.sandwichStatement n d A
+info: Shiftsym/Audit.lean:88:0: @ShiftSym.mismatch_neg : ∀ {n d : ℕ} {A : Type u_1} [inst : NeZero n] (s : ShiftSym.Config n d A)
+  (v : ShiftSym.Lat n d), ShiftSym.mismatch s (-v) = ShiftSym.mismatch s v
+info: Shiftsym/Audit.lean:89:0: @ShiftSym.pow_apply_eq_sum_paths : ∀ {ι : Type u_1} {R : Type u_2} [inst : CommRing R] [inst_1 : Fintype ι]
+  [inst_2 : DecidableEq ι] (M : Matrix ι ι R) (k : ℕ) (i j : ι),
+  (M ^ k) i j = ∑ p, if p 0 = i ∧ p (Fin.last k) = j then ShiftSym.pathProd M p else 0
+info: Shiftsym/Audit.lean:90:0: @ShiftSym.trace_pow_eq_sum_cycles : ∀ {ι : Type u_1} {R : Type u_2} [inst : CommRing R] [inst_1 : Fintype ι]
+  [inst_2 : DecidableEq ι] (M : Matrix ι ι R) (m : ℕ), (M ^ (m + 1)).trace = ∑ f, ∏ t, M (f t) (f (t + 1))
+info: Shiftsym/Audit.lean:91:0: @ShiftSym.trace_transfer_pow : ∀ {ι : Type u_1} {R : Type u_2} [inst : CommRing R] [inst_1 : Fintype ι]
+  [inst_2 : DecidableEq ι] (a b : R) (k : ℕ),
+  (ShiftSym.transfer ι a b ^ k).trace = (↑(Fintype.card ι) - 1) * a ^ k + (a + b * ↑(Fintype.card ι)) ^ k
+info: Shiftsym/Audit.lean:92:0: ShiftSym.cycleGenFun_proved : ∀ (m σ : ℕ), ShiftSym.cycleGenFunStatement m σ
+info: Shiftsym/Audit.lean:93:0: ShiftSym.sumRuleStatement : (n : ℕ) → ℕ → [NeZero n] → (A : Type u_1) → [Fintype A] → Prop
+info: Shiftsym/Audit.lean:94:0: ShiftSym.parityStatement : (n : ℕ) → ℕ → [NeZero n] → Prop
+info: Shiftsym/Audit.lean:95:0: ShiftSym.fourClassesStatement : (n : ℕ) → ℕ → [NeZero n] → Prop
+info: Shiftsym/Audit.lean:96:0: ShiftSym.sandwichStatement : (n : ℕ) → ℕ → [NeZero n] → (A : Type u_1) → [Fintype A] → Prop
+info: Shiftsym/Audit.lean:97:0: ShiftSym.cycleGenFunStatement : ℕ → ℕ → Prop
+info: Shiftsym/Audit.lean:99:0: 'ShiftSym.stab_le_stab_apply' depends on axioms: [propext, Quot.sound]
+info: Shiftsym/Audit.lean:100:0: 'ShiftSym.isShiftSymmetric_apply' depends on axioms: [propext, Quot.sound]
+info: Shiftsym/Audit.lean:101:0: 'ShiftSym.stab_inf_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:102:0: 'ShiftSym.caMap_equivariant' depends on axioms: [propext, Quot.sound]
+info: Shiftsym/Audit.lean:103:0: 'ShiftSym.card_fixedBy' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:104:0: 'ShiftSym.card_fixedBy_div' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:105:0: 'ShiftSym.isShiftSymmetric_iff_prime_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:106:0: 'ShiftSym.isShiftSymmetric_iterate' depends on axioms: [propext, Quot.sound]
+info: Shiftsym/Audit.lean:107:0: 'ShiftSym.iterate_ne_of_not_isShiftSymmetric' depends on axioms: [propext, Quot.sound]
+info: Shiftsym/Audit.lean:108:0: 'ShiftSym.dvd_pow_of_mem_divisors_rad' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:109:0: 'ShiftSym.card_latTorsion' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:110:0: 'ShiftSym.card_addOrderOf_eq_prime' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:111:0: 'ShiftSym.latPrimarySplit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:112:0: 'ShiftSym.card_latPrimarySplit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:113:0: 'ShiftSym.card_orderP_subgroups' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:114:0: 'ShiftSym.sub_one_mul_gaussBinom' depends on axioms: [propext, Quot.sound]
+info: Shiftsym/Audit.lean:115:0: 'ShiftSym.gaussBinom_mul_prod' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:116:0: 'ShiftSym.card_submodule_finrank' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:117:0: 'ShiftSym.gaussBinom_alt_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:118:0: 'ShiftSym.spanSum_eq_mobius' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:119:0: 'ShiftSym.spanSum_rank_classified' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:120:0: 'ShiftSym.card_shiftSymmetric_IE' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:121:0: 'ShiftSym.latTorsion_inf_coprime' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:122:0: 'ShiftSym.card_univ_sup_of_torsion' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:123:0: 'ShiftSym.spanSum_transport' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:124:0: 'ShiftSym.enumeration_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:125:0: 'ShiftSym.gaussBinom_le_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:126:0: 'ShiftSym.envelope_coeff_lt_two_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:127:0: 'ShiftSym.enumerationRHS_prime' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:128:0: 'ShiftSym.card_SS_ge_fix' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:129:0: 'ShiftSym.lowerBound_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:130:0: 'ShiftSym.card_filter_shiftSymmetric_IE' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:131:0: 'ShiftSym.relative_regroup' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:132:0: 'ShiftSym.relativeEnumeration_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:133:0: 'ShiftSym.mobiusCoeff_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:134:0: 'ShiftSym.card_shiftSymmetric_eq_tuple_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:135:0: 'ShiftSym.linCA_equivariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:136:0: 'ShiftSym.kernelEnumeration_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:137:0: 'ShiftSym.imageDomination_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:138:0: 'ShiftSym.sumRule_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:139:0: 'ShiftSym.parity_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:140:0: 'ShiftSym.fourClasses_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:141:0: 'ShiftSym.sandwich_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:142:0: 'ShiftSym.mismatch_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:143:0: 'ShiftSym.pow_apply_eq_sum_paths' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:144:0: 'ShiftSym.trace_pow_eq_sum_cycles' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:145:0: 'ShiftSym.trace_transfer_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:146:0: 'ShiftSym.cycleGenFun_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:147:0: 'ShiftSym.range_pullQ' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:148:0: 'ShiftSym.linCA_pullQ' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:149:0: 'ShiftSym.finrank_ker_inf_fixSub' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Shiftsym/Audit.lean:150:0: 'ShiftSym.kernelEnumeration_quotient' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8723/8942] Replayed Shiftsym.Paper.S01_Model
+info: Shiftsym/Paper/S01_Model.lean:651:0: (9, 8, 16)
+info: Shiftsym/Paper/S01_Model.lean:654:0: true
+info: Shiftsym/Paper/S01_Model.lean:655:0: true
+info: Shiftsym/Paper/S01_Model.lean:656:0: false
+info: Shiftsym/Paper/S01_Model.lean:657:0: true
+info: Shiftsym/Paper/S01_Model.lean:660:0: true
+info: Shiftsym/Paper/S01_Model.lean:661:0: true
+info: Shiftsym/Paper/S01_Model.lean:662:0: true
+info: Shiftsym/Paper/S01_Model.lean:663:0: false
+info: Shiftsym/Paper/S01_Model.lean:664:0: true
+info: Shiftsym/Paper/S01_Model.lean:667:0: true
+info: Shiftsym/Paper/S01_Model.lean:671:0: true
+info: Shiftsym/Paper/S01_Model.lean:681:0: false
+info: Shiftsym/Paper/S01_Model.lean:683:0: false
+info: Shiftsym/Paper/S01_Model.lean:685:0: true
+info: Shiftsym/Paper/S01_Model.lean:687:0: false
+info: Shiftsym/Paper/S01_Model.lean:690:0: true
+info: Shiftsym/Paper/S01_Model.lean:718:0: false
+info: Shiftsym/Paper/S01_Model.lean:720:0: false
+info: Shiftsym/Paper/S01_Model.lean:722:0: true
+info: Shiftsym/Paper/S01_Model.lean:724:0: false
+info: Shiftsym/Paper/S01_Model.lean:731:0: false
+info: Shiftsym/Paper/S01_Model.lean:734:0: true
+info: Shiftsym/Paper/S01_Model.lean:739:0: false
+info: Shiftsym/Paper/S01_Model.lean:741:0: true
+info: Shiftsym/Paper/S01_Model.lean:743:0: true
+info: Shiftsym/Paper/S01_Model.lean:745:0: false
+info: Shiftsym/Paper/S01_Model.lean:753:0: (130, 130)
+info: Shiftsym/Paper/S01_Model.lean:754:0: (7, 7)
+ℹ [8725/8942] Replayed Shiftsym.Paper.S03_MobiusCoefficients
+info: Shiftsym/Paper/S03_MobiusCoefficients.lean:510:0: [1, -7, 14, -8]
+info: Shiftsym/Paper/S03_MobiusCoefficients.lean:512:0: [1, 0, 0, 0, 0, 0]
+info: Shiftsym/Paper/S03_MobiusCoefficients.lean:516:0: [(1, 1), (121, 121), (1210, 1210), (1210, 1210), (121, 121), (1, 1)]
+ℹ [8726/8942] Replayed Shiftsym.Paper.S04_EnumerationCorollaries
+info: Shiftsym/Paper/S04_EnumerationCorollaries.lean:784:0: [2, 3, 5]
+info: Shiftsym/Paper/S04_EnumerationCorollaries.lean:786:0: [8, 26, 182, 72, 6398, 801064]
+info: Shiftsym/Paper/S04_EnumerationCorollaries.lean:789:0: true
+info: Shiftsym/Paper/S04_EnumerationCorollaries.lean:792:0: true
+info: Shiftsym/Paper/S04_EnumerationCorollaries.lean:794:0: true
+info: Shiftsym/Paper/S04_EnumerationCorollaries.lean:796:0: true
+info: Shiftsym/Paper/S04_EnumerationCorollaries.lean:798:0: true
+info: Shiftsym/Paper/S04_EnumerationCorollaries.lean:801:0: true
+info: Shiftsym/Paper/S04_EnumerationCorollaries.lean:808:0: true
+info: Shiftsym/Paper/S04_EnumerationCorollaries.lean:811:0: true
+info: Shiftsym/Paper/S04_EnumerationCorollaries.lean:824:0: true
+info: Shiftsym/Paper/S04_EnumerationCorollaries.lean:826:0: true
+info: Shiftsym/Paper/S04_EnumerationCorollaries.lean:835:0: true
+ℹ [8728/8942] Replayed Shiftsym.Paper.S06_BoundsProbability
+info: Shiftsym/Paper/S06_BoundsProbability.lean:747:0: 100
+info: Shiftsym/Paper/S06_BoundsProbability.lean:749:0: 26
+info: Shiftsym/Paper/S06_BoundsProbability.lean:753:0: 72
+info: Shiftsym/Paper/S06_BoundsProbability.lean:760:0: (6632, 6398)
+info: Shiftsym/Paper/S06_BoundsProbability.lean:761:0: (3812, 3072)
+info: Shiftsym/Paper/S06_BoundsProbability.lean:763:0: 112
+info: Shiftsym/Paper/S06_BoundsProbability.lean:765:0: 7
+info: Shiftsym/Paper/S06_BoundsProbability.lean:766:0: 7
+info: Shiftsym/Paper/S06_BoundsProbability.lean:768:0: (35, 35, 13, 13, 43, 43, 0)
+info: Shiftsym/Paper/S06_BoundsProbability.lean:771:0: (436, 436, 903974529, 903974529)
+ℹ [8730/8942] Replayed Shiftsym.Paper.S08_Detection
+info: Shiftsym/Paper/S08_Detection.lean:911:0: [true, true, true, true, true, true]
+info: Shiftsym/Paper/S08_Detection.lean:915:0: true
+info: Shiftsym/Paper/S08_Detection.lean:916:0: true
+info: Shiftsym/Paper/S08_Detection.lean:917:0: true
+info: Shiftsym/Paper/S08_Detection.lean:918:0: true
+info: Shiftsym/Paper/S08_Detection.lean:919:0: true
+info: Shiftsym/Paper/S08_Detection.lean:920:0: true
+info: Shiftsym/Paper/S08_Detection.lean:921:0: true
+info: Shiftsym/Paper/S08_Detection.lean:922:0: true
+info: Shiftsym/Paper/S08_Detection.lean:923:0: true
+info: Shiftsym/Paper/S08_Detection.lean:924:0: true
+info: Shiftsym/Paper/S08_Detection.lean:925:0: true
+info: Shiftsym/Paper/S08_Detection.lean:926:0: true
+info: Shiftsym/Paper/S08_Detection.lean:927:0: true
+info: Shiftsym/Paper/S08_Detection.lean:928:0: true
+info: Shiftsym/Paper/S08_Detection.lean:929:0: true
+info: Shiftsym/Paper/S08_Detection.lean:930:0: true
+info: Shiftsym/Paper/S08_Detection.lean:931:0: true
+info: Shiftsym/Paper/S08_Detection.lean:932:0: true
+info: Shiftsym/Paper/S08_Detection.lean:933:0: true
+info: Shiftsym/Paper/S08_Detection.lean:934:0: true
+info: Shiftsym/Paper/S08_Detection.lean:935:0: true
+info: Shiftsym/Paper/S08_Detection.lean:936:0: true
+info: Shiftsym/Paper/S08_Detection.lean:937:0: true
+ℹ [8731/8942] Replayed Shiftsym.Paper.S09_CrossoverLaws
+info: Shiftsym/Paper/S09_CrossoverLaws.lean:604:0: (801064, 262144)
+info: Shiftsym/Paper/S09_CrossoverLaws.lean:605:0: 8131588.917469
+info: Shiftsym/Paper/S09_CrossoverLaws.lean:607:0: [1.000000, 2.577883, 4.036478, 6.870791, 8.273124]
+ℹ [8733/8942] Replayed Shiftsym.Paper.S10_AppendixLemmas
+info: Shiftsym/Paper/S10_AppendixLemmas.lean:505:0: [2, 3, 5]
+info: Shiftsym/Paper/S10_AppendixLemmas.lean:506:0: 3
+info: Shiftsym/Paper/S10_AppendixLemmas.lean:507:0: [2, 3]
+info: Shiftsym/Paper/S10_AppendixLemmas.lean:508:0: 3
+info: Shiftsym/Paper/S10_AppendixLemmas.lean:512:0: [8, 26, 182, 72, 6398, 801064]
+info: Shiftsym/Paper/S10_AppendixLemmas.lean:517:0: (176, 4096, 8, 16, 192)
+info: Shiftsym/Paper/S10_AppendixLemmas.lean:521:0: true
+info: Shiftsym/Paper/S10_AppendixLemmas.lean:526:0: (true, true, true)
+info: Shiftsym/Paper/S10_AppendixLemmas.lean:528:0: (true, true, true, true)
+info: Shiftsym/Paper/S10_AppendixLemmas.lean:532:0: (true, true)
+info: Shiftsym/Paper/S10_AppendixLemmas.lean:535:0: (true, 13, 16)
+ℹ [8734/8942] Replayed Shiftsym.Paper.S11_Numerics
+info: Shiftsym/Paper/S11_Numerics.lean:1043:0: 26
+info: Shiftsym/Paper/S11_Numerics.lean:1044:0: 736
+info: Shiftsym/Paper/S11_Numerics.lean:1045:0: 801064
+info: Shiftsym/Paper/S11_Numerics.lean:1046:0: 182
+info: Shiftsym/Paper/S11_Numerics.lean:1047:0: (2, 4, 3, 9)
+info: Shiftsym/Paper/S11_Numerics.lean:1051:0: [1 / 3, 3 / 16, 5 / 96, 7 / 512]
+info: Shiftsym/Paper/S11_Numerics.lean:1054:0: 95
+info: Shiftsym/Paper/S11_Numerics.lean:1069:0: [true, true, true, true, true, true]
+⚠ [8739/8942] Replayed Shiftsym.Paper.Proofs.P04_EnumerationCorollaries_Formula
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Formula.lean:293:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Formula.lean:313:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Formula.lean:320:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Formula.lean:332:56: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Formula.lean:360:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Formula.lean:380:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Formula.lean:442:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Formula.lean:475:10: This simp argument is unused:
+  Finsupp.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hpq, Ne.symm hpq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8740/8942] Replayed Shiftsym.Paper.Proofs.P04_EnumerationCorollaries_Words
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Words.lean:67:51: This simp argument is unused:
+  Int.cast_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ArithmeticFunction.moebius_apply_one, one_mul, Nat.div_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Words.lean:107:18: This simp argument is unused:
+  ZMod.natCast_zmod_val
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [ofZ, toZ]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Words.lean:123:0: automatically included section variable(s) unused in theorem `ShiftSym.P04.lat1_eq`:
+  [NeZero n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Words.lean:208:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8741/8942] Replayed Shiftsym.Paper.Proofs.P04_EnumerationCorollaries_Lattice
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Lattice.lean:59:20: `Nat.factorization_prod_pow_eq_self` has been deprecated: Use `Nat.prod_factorization_pow_eq_self` instead
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Lattice.lean:108:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Lattice.lean:117:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8742/8942] Replayed Shiftsym.Paper.Proofs.P04_EnumerationCorollaries_Mobius
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Mobius.lean:62:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Mobius.lean:67:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Mobius.lean:74:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Mobius.lean:121:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Mobius.lean:125:4: 'push_cast' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Mobius.lean:152:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Mobius.lean:156:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Mobius.lean:202:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Mobius.lean:233:0: Definition `ShiftSym.P04.fintypeAddSubgroupPrimComp` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Mobius.lean:237:17: Definition `ShiftSym.P04.fintypeAddSubgroupPrimComp` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Mobius.lean:243:0: automatically included section variable(s) unused in theorem `ShiftSym.P04.map_proj`:
+  [NeZero n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Mobius.lean:258:0: automatically included section variable(s) unused in theorem `ShiftSym.P04.emb_inf`:
+  [NeZero n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Mobius.lean:375:0: automatically included section variable(s) unused in theorem `ShiftSym.P04.isElemAbelian_iff`:
+  [NeZero n]
+  [NeZero p]
+  [Fact (Nat.Prime p)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] [NeZero p] [Fact (Nat.Prime p)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Mobius.lean:378:0: automatically included section variable(s) unused in theorem `ShiftSym.P04.latTorsion_le_primComp`:
+  [NeZero n]
+  [NeZero p]
+  [Fact (Nat.Prime p)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] [NeZero p] [Fact (Nat.Prime p)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Mobius.lean:384:0: automatically included section variable(s) unused in theorem `ShiftSym.P04.inf_torsion_eq_bot_iff`:
+  [NeZero n]
+  [NeZero p]
+  [Fact (Nat.Prime p)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] [NeZero p] [Fact (Nat.Prime p)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Mobius.lean:414:0: automatically included section variable(s) unused in theorem `ShiftSym.P04.toMod_eq_bot_iff`:
+  [Fact (Nat.Prime p)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fact (Nat.Prime p)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8743/8942] Replayed Shiftsym.Paper.Proofs.P04_EnumerationCorollaries_Second
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Second.lean:26:0: automatically included section variable(s) unused in theorem `ShiftSym.P04.primComp_inf_primComp`:
+  [NeZero n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Second.lean:34:0: automatically included section variable(s) unused in theorem `ShiftSym.P04.proj_bot`:
+  [NeZero n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Second.lean:75:0: automatically included section variable(s) unused in theorem `ShiftSym.P04.sup_inf_eq`:
+  [NeZero n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Second.lean:98:23: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Second.lean:100:0: automatically included section variable(s) unused in theorem `ShiftSym.P04.split_sup`:
+  [NeZero n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Second.lean:105:0: automatically included section variable(s) unused in theorem `ShiftSym.P04.coprime_primeFactors_coe`:
+  [NeZero n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Second.lean:180:0: automatically included section variable(s) unused in theorem `ShiftSym.P04.card_tuples_of_rank`:
+  [NeZero n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Second.lean:228:0: automatically included section variable(s) unused in theorem `ShiftSym.P04.rank_sum_eq_rankVector_sum`:
+  [NeZero n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Second.lean:251:0: automatically included section variable(s) unused in theorem `ShiftSym.P04.prod_primeEquiv`:
+  [NeZero n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8744/8942] Replayed Shiftsym.Paper.Proofs.P04_EnumerationCorollaries
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries.lean:83:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries.lean:88:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries.lean:190:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries.lean:212:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries.lean:213:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries.lean:218:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Paper/Proofs/P04_EnumerationCorollaries.lean:219:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8755/8942] Replayed Shiftsym.Paper.Proofs.P08_Detection_Algo
+warning: Shiftsym/Paper/Proofs/P08_Detection_Algo.lean:45:32: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8760/8942] Replayed Shiftsym.Paper.Proofs.P11_Numerics_Dc
+warning: Shiftsym/Paper/Proofs/P11_Numerics_Dc.lean:15:34: Variable name `hX` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hX
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8768/8942] Replayed Shiftsym.Paper.Proofs.P11_Numerics_Real
+warning: Shiftsym/Paper/Proofs/P11_Numerics_Real.lean:147:30: Variable name `hx` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8771/8942] Replayed Shiftsym.Paper.Proofs.P11_Numerics
+warning: Shiftsym/Paper/Proofs/P11_Numerics.lean:1009:2: exponent 4651 exceeds the threshold 256, exponentiation operation was not evaluated, use `set_option exponentiation.threshold <num>` to set a new threshold
+⚠ [8773/8942] Replayed Shiftsym.AuditPaper
+warning: Shiftsym/AuditPaper.lean:81:18: `String.dropRight` has been deprecated: Use `String.dropEnd` instead
+
+Note: The updated constant has a different type:
+  String → ℕ → String.Slice
+instead of
+  String → ℕ → String
+info: Shiftsym/AuditPaper.lean:104:0: Phase H audit: group 01: 31 frozen statements, 0 failures
+Phase H audit: group 02: 20 frozen statements, 0 failures
+Phase H audit: group 03: 22 frozen statements, 0 failures
+Phase H audit: group 04: 48 frozen statements, 0 failures
+Phase H audit: group 05: 31 frozen statements, 0 failures
+Phase H audit: group 06: 41 frozen statements, 0 failures
+Phase H audit: group 07: 31 frozen statements, 0 failures
+Phase H audit: group 08: 25 frozen statements, 0 failures
+Phase H audit: group 09: 24 frozen statements, 0 failures
+Phase H audit: group 10: 33 frozen statements, 0 failures
+Phase H audit: group 11: 34 frozen statements, 0 failures
+Phase H audit: group 12: 5 frozen statements, 0 failures
+Phase H audit: 345 frozen paper statements checked
+ℹ [8775/8942] Replayed Shiftsym.Ext.SX1b_LinkernelSpectral
+info: Shiftsym/Ext/SX1b_LinkernelSpectral.lean:712:0: {2, 3, 6}
+info: Shiftsym/Ext/SX1b_LinkernelSpectral.lean:713:0: {1, 1, 2}
+info: Shiftsym/Ext/SX1b_LinkernelSpectral.lean:714:0: 6
+info: Shiftsym/Ext/SX1b_LinkernelSpectral.lean:715:0: 6
+ℹ [8777/8942] Replayed Shiftsym.Ext.SX2a_AutocorrPerShift
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:875:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:876:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:877:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:878:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:879:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:880:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:881:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:882:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:883:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:886:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:902:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:903:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:904:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:905:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:906:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:907:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:921:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:922:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:923:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:924:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:926:0: 1
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:934:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:935:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:936:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:957:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:958:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:959:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:960:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:961:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:962:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:999:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:1000:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:1001:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:1002:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:1053:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:1054:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:1055:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:1056:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:1057:0: true
+info: Shiftsym/Ext/SX2a_AutocorrPerShift.lean:1072:0: true
+ℹ [8778/8942] Replayed Shiftsym.Ext.SX2b_AutocorrTail
+info: Shiftsym/Ext/SX2b_AutocorrTail.lean:1642:0: [4, 12, 16]
+info: Shiftsym/Ext/SX2b_AutocorrTail.lean:1647:0: [1, 12, 6, 4, 3, 12, 2, 12, 3, 4, 6, 12]
+info: Shiftsym/Ext/SX2b_AutocorrTail.lean:1651:0: [(2, 1), (3, 1), (4, 1), (6, 1), (12, 2)]
+info: Shiftsym/Ext/SX2b_AutocorrTail.lean:1653:0: 6
+info: Shiftsym/Ext/SX2b_AutocorrTail.lean:1661:0: [true, true, true, true, true, true, true, true, true, true, true, true, true]
+info: Shiftsym/Ext/SX2b_AutocorrTail.lean:1680:0: [(true, true, true), (true, true, true), (true, true, true), (true, true, true), (true, true, true), (true, true, true),
+  (true, true, true)]
+info: Shiftsym/Ext/SX2b_AutocorrTail.lean:1691:0: (8, 10, 14)
+info: Shiftsym/Ext/SX2b_AutocorrTail.lean:1701:0: (2, 2)
+ℹ [8779/8942] Replayed Shiftsym.Ext.SX2c_AutocorrUpper
+info: Shiftsym/Ext/SX2c_AutocorrUpper.lean:1839:0: [0, 0, 0]
+info: Shiftsym/Ext/SX2c_AutocorrUpper.lean:1841:0: (2, some 2)
+info: Shiftsym/Ext/SX2c_AutocorrUpper.lean:1843:0: some 2
+info: Shiftsym/Ext/SX2c_AutocorrUpper.lean:1845:0: some 2
+info: Shiftsym/Ext/SX2c_AutocorrUpper.lean:1848:0: ([-1, -1, -1, -1, -1, -1], some 4)
+info: Shiftsym/Ext/SX2c_AutocorrUpper.lean:1853:0: [[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]
+info: Shiftsym/Ext/SX2c_AutocorrUpper.lean:1860:0: ([0, 0, 0, -8, 0, 0, 0], some 4)
+info: Shiftsym/Ext/SX2c_AutocorrUpper.lean:1865:0: ([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], some 8)
+info: Shiftsym/Ext/SX2c_AutocorrUpper.lean:1871:0: 308
+info: Shiftsym/Ext/SX2c_AutocorrUpper.lean:1873:0: 7348
+info: Shiftsym/Ext/SX2c_AutocorrUpper.lean:1880:0: 0.449303
+info: Shiftsym/Ext/SX2c_AutocorrUpper.lean:1885:0: -6
+info: Shiftsym/Ext/SX2c_AutocorrUpper.lean:1888:0: (7, 7, true)
+info: Shiftsym/Ext/SX2c_AutocorrUpper.lean:1889:0: {3}
+info: Shiftsym/Ext/SX2c_AutocorrUpper.lean:1892:0: 1
+info: Shiftsym/Ext/SX2c_AutocorrUpper.lean:1895:0: [(15, {7}), (15, {7}), (15, {7}), (15, {7}), (15, {7}), (15, {7})]
+info: Shiftsym/Ext/SX2c_AutocorrUpper.lean:1901:0: (12, 12)
+⚠ [8780/8942] Replayed Shiftsym.Ext.Proofs.PX1a_LinkernelEnum_Socle
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Socle.lean:188:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Socle.lean:193:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Socle.lean:214:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8781/8942] Replayed Shiftsym.Ext.Proofs.PX1a_LinkernelEnum_Count
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Count.lean:27:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Count.lean:95:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Count.lean:99:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Count.lean:131:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Count.lean:139:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Count.lean:286:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Count.lean:492:0: automatically included section variable(s) unused in theorem `ShiftSym.X1a.finrank_config`:
+  [Fintype F]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Count.lean:495:0: automatically included section variable(s) unused in theorem `ShiftSym.X1a.finrank_fixSub`:
+  [Fintype F]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Count.lean:500:0: automatically included section variable(s) unused in theorem `ShiftSym.X1a.isLinSubshift_ker`:
+  [Fintype F]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Count.lean:556:0: automatically included section variable(s) unused in theorem `ShiftSym.X1a.kappa_le`:
+  [Fintype F]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Count.lean:578:0: automatically included section variable(s) unused in theorem `ShiftSym.X1a.fixSub_anti`:
+  [Fintype F]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Count.lean:581:0: automatically included section variable(s) unused in theorem `ShiftSym.X1a.fixSub_sup`:
+  [Fintype F]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Count.lean:636:0: automatically included section variable(s) unused in theorem `ShiftSym.X1a.sum_pullQ`:
+  [Fintype F]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Count.lean:679:0: automatically included section variable(s) unused in theorem `ShiftSym.X1a.finrank_ker_scaledSum`:
+  [Fintype F]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8782/8942] Replayed Shiftsym.Ext.Proofs.PX1a_LinkernelEnum_Algebra
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Algebra.lean:84:0: automatically included section variable(s) unused in theorem `ShiftSym.X1a.toR_coeff`:
+  [AddCommGroup G]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [AddCommGroup G] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Algebra.lean:144:0: automatically included section variable(s) unused in theorem `ShiftSym.X1a.frobB_isRefl`:
+  [Fintype G]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype G] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Algebra.lean:150:0: automatically included section variable(s) unused in theorem `ShiftSym.X1a.ann_restrict_eq_orth`:
+  [Fintype G]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype G] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Algebra.lean:162:0: automatically included section variable(s) unused in theorem `ShiftSym.X1a.orth_top_eq_bot`:
+  [Fintype G]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype G] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Algebra.lean:202:0: automatically included section variable(s) unused in theorem `ShiftSym.X1a.coeff_single_one_mul`:
+  [Fintype G]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype G] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Algebra.lean:226:0: automatically included section variable(s) unused in theorem `ShiftSym.X1a.mem_ann_IprimeH_iff`:
+  [Fintype G]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype G] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Algebra.lean:517:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Algebra.lean:801:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8783/8942] Replayed Shiftsym.Ext.Proofs.PX1a_LinkernelEnum_GL
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_GL.lean:58:0: automatically included section variable(s) unused in theorem `ShiftSym.X1a.cast_mod_mul'`:
+  [NeZero n]
+  [NeZero p]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] [NeZero p] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_GL.lean:117:0: automatically included section variable(s) unused in theorem `ShiftSym.X1a.exists_crt_entry`:
+  [NeZero n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_GL.lean:152:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_GL.lean:177:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8784/8942] Replayed Shiftsym.Ext.Proofs.PX1a_LinkernelEnum_Periodic
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Periodic.lean:56:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Periodic.lean:85:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1a_LinkernelEnum_Periodic.lean:142:0: automatically included section variable(s) unused in theorem `ShiftSym.X1a.sum_lift`:
+  [Fintype F]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype F] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8786/8942] Replayed Shiftsym.Ext.Proofs.PX1b_LinkernelSpectral_Char
+warning: Shiftsym/Ext/Proofs/PX1b_LinkernelSpectral_Char.lean:451:40: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8787/8942] Replayed Shiftsym.Ext.Proofs.PX1b_LinkernelSpectral_Spec
+warning: Shiftsym/Ext/Proofs/PX1b_LinkernelSpectral_Spec.lean:71:82: Variable name `s` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _s
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Shiftsym/Ext/Proofs/PX1b_LinkernelSpectral_Spec.lean:71:84: Variable name `t` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _t
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Shiftsym/Ext/Proofs/PX1b_LinkernelSpectral_Spec.lean:119:29: Variable name `h` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _h
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8789/8942] Replayed Shiftsym.Ext.Proofs.PX1b_LinkernelSpectral_Count
+warning: Shiftsym/Ext/Proofs/PX1b_LinkernelSpectral_Count.lean:257:23: Variable name `h` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _h
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8791/8942] Replayed Shiftsym.Ext.Proofs.PX1b_LinkernelSpectral_T4
+warning: Shiftsym/Ext/Proofs/PX1b_LinkernelSpectral_T4.lean:86:41: Variable name `hm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Shiftsym/Ext/Proofs/PX1b_LinkernelSpectral_T4.lean:261:12: This simp argument is unused:
+  ZMod.natCast_zmod_val
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [e1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8793/8942] Replayed Shiftsym.Ext.Proofs.PX1c_LinkernelDomination_Basic
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Basic.lean:20:0: automatically included section variable(s) unused in theorem `ShiftSym.X1c.card_config_eq`:
+  [Field F]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Field F] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Basic.lean:71:0: automatically included section variable(s) unused in theorem `ShiftSym.X1c.card_pow_pos`:
+  [NeZero n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Basic.lean:87:0: automatically included section variable(s) unused in theorem `ShiftSym.X1c.pSet_submodule`:
+  [NeZero n]
+  [Fintype F]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] [Fintype F] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Basic.lean:92:0: automatically included section variable(s) unused in theorem `ShiftSym.X1c.pUnif_eq`:
+  [NeZero n]
+  [Field F]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] [Field F] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8794/8942] Replayed Shiftsym.Ext.Proofs.PX1c_LinkernelDomination_T5a
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_T5a.lean:36:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_T5a.lean:37:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_T5a.lean:38:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_T5a.lean:40:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_T5a.lean:214:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8795/8942] Replayed Shiftsym.Ext.Proofs.PX1c_LinkernelDomination_Rules
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Rules.lean:64:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Rules.lean:148:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Rules.lean:245:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8796/8942] Replayed Shiftsym.Ext.Proofs.PX1c_LinkernelDomination_R150
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_R150.lean:158:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_R150.lean:175:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8797/8942] Replayed Shiftsym.Ext.Proofs.PX1c_LinkernelDomination_Mobius
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Mobius.lean:168:2: 'push_cast' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8799/8942] Replayed Shiftsym.Ext.Proofs.PX1c_LinkernelDomination_PID
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_PID.lean:276:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_PID.lean:304:55: This simp argument is unused:
+  Function.comp_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [shift_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_PID.lean:309:28: This simp argument is unused:
+  Function.comp_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [shift_apply] at this
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_PID.lean:325:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8800/8942] Replayed Shiftsym.Ext.Proofs.PX1c_LinkernelDomination_Coinv
+info: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Coinv.lean:73:4: Try this:
+  [apply] abel_nf
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Coinv.lean:164:6: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Coinv.lean:408:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Coinv.lean:453:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Coinv.lean:454:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8801/8942] Replayed Shiftsym.Ext.Proofs.PX1c_LinkernelDomination_Chars
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Chars.lean:52:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Chars.lean:57:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Chars.lean:70:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Chars.lean:81:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Chars.lean:117:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Chars.lean:159:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8802/8942] Replayed Shiftsym.Ext.Proofs.PX1c_LinkernelDomination_Fourier
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Fourier.lean:64:23: Variable name `hζ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hζ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Fourier.lean:179:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Fourier.lean:181:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Fourier.lean:182:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Fourier.lean:184:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Fourier.lean:206:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Fourier.lean:223:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8804/8942] Replayed Shiftsym.Ext.Proofs.PX1c_LinkernelDomination_SpecA
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_SpecA.lean:145:30: This simp argument is unused:
+  neg_neg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Equiv.neg_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_SpecA.lean:266:32: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_SpecA.lean:363:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_SpecA.lean:372:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8805/8942] Replayed Shiftsym.Ext.Proofs.PX1c_LinkernelDomination_SpecB
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_SpecB.lean:141:20: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_SpecB.lean:307:41: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_SpecB.lean:339:19: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8806/8942] Replayed Shiftsym.Ext.Proofs.PX1c_LinkernelDomination_SpecC
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_SpecC.lean:100:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_SpecC.lean:101:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_SpecC.lean:102:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_SpecC.lean:103:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8807/8942] Replayed Shiftsym.Ext.Proofs.PX1c_LinkernelDomination_Led
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Led.lean:165:56: This simp argument is unused:
+  Matrix.head_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.cons_val_one, Matrix.cons_val_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8808/8942] Replayed Shiftsym.Ext.Proofs.PX1c_LinkernelDomination_LedVals
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_LedVals.lean:107:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_LedVals.lean:109:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_LedVals.lean:111:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_LedVals.lean:113:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_LedVals.lean:115:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_LedVals.lean:117:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_LedVals.lean:119:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_LedVals.lean:192:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8810/8942] Replayed Shiftsym.Ext.Proofs.PX1c_LinkernelDomination_Z24
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Z24.lean:203:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8816/8942] Replayed Shiftsym.Ext.Proofs.PX1c_LinkernelDomination_Prin
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Prin.lean:162:41: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8837/8942] Replayed Shiftsym.Ext.Proofs.PX1c_LinkernelDomination_F4
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_F4.lean:28:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_F4.lean:33:6: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_F4.lean:108:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_F4.lean:108:28: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_F4.lean:109:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_F4.lean:109:28: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_F4.lean:110:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_F4.lean:110:35: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_F4.lean:108:6: 'exact absurd h hω1b' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_F4.lean:108:28: 'exact absurd h.symm hω1b' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_F4.lean:109:6: 'exact absurd h hω1c' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_F4.lean:109:28: 'exact absurd h.symm hω1c' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_F4.lean:110:6: 'exact absurd h one_ne_zero' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_F4.lean:110:35: 'exact absurd h.symm one_ne_zero' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8902/8942] Replayed Shiftsym.Ext.Proofs.PX1c_LinkernelDomination_Q21F
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Q21F.lean:46:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Q21F.lean:51:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Q21F.lean:57:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8905/8942] Replayed Shiftsym.Ext.Proofs.PX1c_LinkernelDomination_Q22F
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Q22F.lean:61:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Q22F.lean:66:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Q22F.lean:72:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Q22F.lean:79:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8908/8942] Replayed Shiftsym.Ext.Proofs.PX1c_LinkernelDomination_Q31F
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Q31F.lean:39:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Shiftsym/Ext/Proofs/PX1c_LinkernelDomination_Q31F.lean:42:53: Variable name `hF` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hF
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8918/8942] Replayed Shiftsym.Ext.Proofs.PX2b_AutocorrTail_Orbit
+warning: Shiftsym/Ext/Proofs/PX2b_AutocorrTail_Orbit.lean:72:0: automatically included section variable(s) unused in theorem `ShiftSym.X2b.orbitMap_injective`:
+  [NeZero n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Ext/Proofs/PX2b_AutocorrTail_Orbit.lean:102:0: automatically included section variable(s) unused in theorem `ShiftSym.X2b.orbitMap_succ`:
+  [NeZero n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8919/8942] Replayed Shiftsym.Ext.Proofs.PX2b_AutocorrTail_Classes
+warning: Shiftsym/Ext/Proofs/PX2b_AutocorrTail_Classes.lean:22:0: automatically included section variable(s) unused in theorem `ShiftSym.X2b.pair_eq_iff`:
+  [NeZero n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Shiftsym/Ext/Proofs/PX2b_AutocorrTail_Classes.lean:44:0: automatically included section variable(s) unused in theorem `ShiftSym.X2b.card_pair_le`:
+  [NeZero n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8922/8942] Replayed Shiftsym.Ext.Proofs.PX2b_AutocorrTail_Gap
+warning: Shiftsym/Ext/Proofs/PX2b_AutocorrTail_Gap.lean:98:0: automatically included section variable(s) unused in theorem `ShiftSym.X2b.coord_val`:
+  [NeZero n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8924/8942] Replayed Shiftsym.Ext.Proofs.PX2c_AutocorrUpper_Basic
+warning: Shiftsym/Ext/Proofs/PX2c_AutocorrUpper_Basic.lean:312:24: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Shiftsym/Ext/Proofs/PX2c_AutocorrUpper_Basic.lean:312:37: Variable name `hd` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hd
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8925/8942] Replayed Shiftsym.Ext.Proofs.PX2c_AutocorrUpper_QC
+warning: Shiftsym/Ext/Proofs/PX2c_AutocorrUpper_QC.lean:175:26: Variable name `hp2` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp2
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Shiftsym/Ext/Proofs/PX2c_AutocorrUpper_QC.lean:274:46: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Shiftsym/Ext/Proofs/PX2c_AutocorrUpper_QC.lean:294:37: Variable name `hd` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hd
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8926/8942] Replayed Shiftsym.Ext.Proofs.PX2c_AutocorrUpper_Comp
+warning: Shiftsym/Ext/Proofs/PX2c_AutocorrUpper_Comp.lean:313:27: Variable name `hd` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hd
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Shiftsym/Ext/Proofs/PX2c_AutocorrUpper_Comp.lean:313:40: Variable name `h4` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _h4
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8927/8942] Replayed Shiftsym.Ext.Proofs.PX2c_AutocorrUpper_T4
+warning: Shiftsym/Ext/Proofs/PX2c_AutocorrUpper_T4.lean:611:44: Variable name `hd` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hd
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Shiftsym/Ext/Proofs/PX2c_AutocorrUpper_T4.lean:628:27: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Shiftsym/Ext/Proofs/PX2c_AutocorrUpper_T4.lean:628:40: Variable name `hd` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hd
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Shiftsym/Ext/Proofs/PX2c_AutocorrUpper_T4.lean:1068:61: Variable name `hv` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hv
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8928/8942] Replayed Shiftsym.Ext.Proofs.PX2c_AutocorrUpper_Mult
+warning: Shiftsym/Ext/Proofs/PX2c_AutocorrUpper_Mult.lean:298:13: This simp argument is unused:
+  coeff_mapRingHom
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [coeff_zero, Finsupp.zero_apply] at this
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8931/8942] Replayed Shiftsym.Ext.Proofs.PX2c_AutocorrUpper_Gauss
+warning: Shiftsym/Ext/Proofs/PX2c_AutocorrUpper_Gauss.lean:738:60: Variable name `hm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8937/8942] Replayed Shiftsym.Ext.Proofs.PX2c_AutocorrUpper_CLT
+warning: Shiftsym/Ext/Proofs/PX2c_AutocorrUpper_CLT.lean:752:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8938/8942] Replayed Shiftsym.Ext.Proofs.PX2c_AutocorrUpper_WinSharp
+warning: Shiftsym/Ext/Proofs/PX2c_AutocorrUpper_WinSharp.lean:74:30: Variable name `hx` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Shiftsym/Ext/Proofs/PX2c_AutocorrUpper_WinSharp.lean:1131:27: Variable name `hq0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hq0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8940/8942] Replayed Shiftsym.AuditExt
+warning: Shiftsym/AuditExt.lean:207:18: `String.dropRight` has been deprecated: Use `String.dropEnd` instead
+
+Note: The updated constant has a different type:
+  String → ℕ → String.Slice
+instead of
+  String → ℕ → String
+info: Shiftsym/AuditExt.lean:234:0: Phase H ext audit: group 1a: 72 frozen statements, 72 proved, 0 stated-not-proved, 0 failures
+Phase H ext audit: group 1b: 45 frozen statements, 45 proved, 0 stated-not-proved, 0 failures
+Phase H ext audit: group 1c: 74 frozen statements, 74 proved, 0 stated-not-proved, 0 failures
+Phase H ext audit: group 2a: 44 frozen statements, 44 proved, 0 stated-not-proved, 0 failures
+Phase H ext audit: group 2b: 74 frozen statements, 74 proved, 0 stated-not-proved, 0 failures
+Phase H ext audit: group 2c: 92 frozen statements, 80 proved, 12 stated-not-proved, 0 failures
+Phase H ext audit: 401 frozen extension statements, 389 proved, 12 stated-not-proved (listed)
+Build completed successfully (8942 jobs).

@@ -1,0 +1,21 @@
+{
+  "result": "PASS",
+  "head": "dde222d",
+  "fingerprints_checked": 189,
+  "items": 27,
+  "mappings": 529,
+  "tex_anchors_and_rectangles_reproduced": 577,
+  "pages": 28,
+  "glyph_boxes_reproduced": 68243,
+  "word_layout_identical": true,
+  "aux_labels_identical": true,
+  "all_item_hashes_reproduced": true,
+  "stale_verdicts": [
+    "thm:abelian"
+  ],
+  "unjudged": [],
+  "warnings": [
+    "lem_fix.json:statement:ii.hyp: no TeX anchor (kind hypothesis)"
+  ],
+  "temporary_build_directory": "/tmp/v9-viewer-recheck-8ri_1nou"
+}

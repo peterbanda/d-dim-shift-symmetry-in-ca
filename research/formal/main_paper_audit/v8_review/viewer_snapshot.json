@@ -1,0 +1,67 @@
+{
+  "built": "2026-10-22T21:40:48-07:00",
+  "git_head": "f1d041a10032f4e8772c37848862b8a26d3daf4e",
+  "items": 24,
+  "pages": 21,
+  "source_hashes": {
+    "paper_tex": {
+      "recorded": "ff8d56104ee1c07aa46a535961517f819e5e44217e726f3b24f6cc6fa911e289",
+      "current": "72bd954993ea17ecca32c7897dd697c8758de488291ad4e8ec6fecffaf766096",
+      "matches": false
+    },
+    "paper_pdf": {
+      "recorded": "fa91c65d6d8ab8d986734c5490ae438fb4a970e126e6639f3aa4e7bd315a67df",
+      "current": "3d5eb36ae65f9fea49b69abe172975e8549eda16bdc6da1835dee47cdf82d593",
+      "matches": false
+    }
+  },
+  "examples": [
+    {
+      "id": "lem:order",
+      "number": "3.1",
+      "tex_lines": [
+        272,
+        278
+      ],
+      "hash": "cd6108084ce675817e052323162c187836545469c7e85baa6d15a537fb51453b"
+    },
+    {
+      "id": "lem:fix",
+      "number": "3.2",
+      "tex_lines": [
+        288,
+        295
+      ],
+      "hash": "6f3143bcbe07fd2762c051b441880b600045ef96f4aa348acb42b5a154cce9a7"
+    },
+    {
+      "id": "lem:mobius",
+      "number": "4.1",
+      "tex_lines": [
+        358,
+        374
+      ],
+      "hash": "1226d07976dffafb0a8ba627b8906d419648b3fdf1e22e89b7a490cf188c0d8e"
+    },
+    {
+      "id": "thm:main-enum",
+      "number": "4.3",
+      "tex_lines": [
+        403,
+        412
+      ],
+      "hash": "255700b60ec3795065dab5d42f0b3113f79692bc6412dd80e3f03f8ebb3640c9"
+    },
+    {
+      "id": "cor:insolv",
+      "number": "8.2",
+      "tex_lines": [
+        790,
+        804
+      ],
+      "hash": "ef26d864fb4e9f4915f1ec719cb621236ab99c011796710fd5b12d2bdd2f4796"
+    }
+  ],
+  "has_new_mobius2_item": false,
+  "includes_symbreak_lean_file": false
+}

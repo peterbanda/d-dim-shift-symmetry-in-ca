@@ -1,0 +1,19 @@
+@RequiresSymmetryBreaking : {n d σ : ℕ} → P07.Task n d σ → Prop
+def ShiftSym.P07.RequiresSymmetryBreaking : {n d σ : ℕ} → P07.Task n d σ → Prop :=
+fun {n d σ} T => ∃ x ∈ T.admissible, ∀ y ∈ T.accept x, ¬stab x ≤ stab y
+def ShiftSym.P07.insolvSymBreakStatement : Prop :=
+∀ (n d σ : ℕ),
+  2 ≤ n →
+    1 ≤ d →
+      2 ≤ σ →
+        1 < n ^ d →
+          ∀ (T : P07.Task n d σ),
+            RequiresSymmetryBreaking T → ∀ (Φ : Config n d (Fin σ) → Config n d (Fin σ)), Equivariant Φ → ¬Solves Φ T
+def ShiftSym.P07.insolvFullStatement : Prop :=
+insolvStatement ∧ insolvSymBreakStatement
+'FidelityA.symBreak_implies_general' depends on axioms: [propext, Quot.sound]
+'FidelityA.symBreak_implies_CA' depends on axioms: [propext, Quot.sound]
+'FidelityA.linesTask_RSB' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FidelityA.linesTask_not_RSBone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FidelityA.stripe_RSB_not_RLS' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FidelityA.symBreak_aux_states' depends on axioms: [propext, Quot.sound]

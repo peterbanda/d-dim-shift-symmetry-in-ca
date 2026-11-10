@@ -1,0 +1,626 @@
+{
+ "label": "cor:prob",
+ "statement": {
+  "summary": "Corollary 7.1 is frozen as the conjunction `probUnifCorollaryStatement` of seven Props: `probSandwichStatement` (both real inequalities), `decayIdentityStatement` (P = σ^{−cN}), `decayIntervalStatement` = `decayLowerUniformStatement` (uniform ε–M form of c ≥ 1/2 − o(1)) ∧ `decayUpperStatement` (c ≤ 1 − 1/p₁), `decayLowerExplicitStatement` (c ≥ 1/2 − log_σ K/N), `singleSubgroupStatement`, `probSingleLowerStatement` (P ≥ σ^{N/p₁−N}), and `probSingleLowerIsRateLowerStatement` (the parenthetical as a per-instance ↔). P^unif is `probUnif = |S|/σ^{n^d}` in ℝ and c is `decayRate`.",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P06.probUnifCorollaryStatement",
+    "role": "statement (whole)"
+   },
+   {
+    "decl": "ShiftSym.P06.probSandwichStatement",
+    "role": "statement (sandwich)"
+   },
+   {
+    "decl": "ShiftSym.P06.decayIdentityStatement",
+    "role": "statement ('decays as σ^{−cN}')"
+   },
+   {
+    "decl": "ShiftSym.P06.decayIntervalStatement",
+    "role": "statement (c ∈ [1/2 − o(1), 1 − 1/p₁])"
+   },
+   {
+    "decl": "ShiftSym.P06.decayLowerUniformStatement",
+    "role": "statement (lower end, o(1))"
+   },
+   {
+    "decl": "ShiftSym.P06.decayUpperStatement",
+    "role": "statement (upper end)"
+   },
+   {
+    "decl": "ShiftSym.P06.decayLowerExplicitStatement",
+    "role": "statement (lower end, explicit)"
+   },
+   {
+    "decl": "ShiftSym.P06.singleSubgroupStatement",
+    "role": "statement (single-subgroup inclusion)"
+   },
+   {
+    "decl": "ShiftSym.P06.probSingleLowerStatement",
+    "role": "statement (P ≥ σ^{N/p₁−N})"
+   },
+   {
+    "decl": "ShiftSym.P06.probSingleLowerIsRateLowerStatement",
+    "role": "statement ('also the lower bound of Prop. 10.1')"
+   },
+   {
+    "decl": "ShiftSym.probUnif",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P06.decayRate",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.lowerEnvelope",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P06.closedPrefactor",
+    "role": "definition"
+   }
+  ],
+  "deltas": [
+   "Standing hypotheses n ≥ 2, d ≥ 1, σ ≥ 2 (Definition 2.1) are explicit antecedents of every part; the corollary itself states none.",
+   "P^unif is defined as the real number |S_{n^d}|/σ^{n^d} (`probUnif`); the uniform distribution is not modelled as a measure.",
+   "F_d(n,σ) is `lowerEnvelope` (q-Pascal binomials at q = n, an integer, cast to ℝ); equal to the paper's product-formula F_d by `envelopeIntegralStatement`.",
+   "σ^{−n^d}, σ^{−n^d/2}, σ^{N/p₁−N}, σ^{−cN} are real powers (`Real.rpow`) of σ > 0; log₂ = `Real.logb 2`, log_σ = `Real.logb σ`.",
+   "p₁ = `Nat.minFac n`.",
+   "'decays as σ^{−cN}' is the exact identity P = σ^{−cN} (true by the definition of c, given P > 0).",
+   "'c ≥ 1/2 − o(1) in any regime with N → ∞' is the uniform statement ∀ε>0 ∃M ∀(n,d,σ) with n^d ≥ M: c ≥ 1/2 − ε (implies every regime; uniform also in σ).",
+   "The attribution 'the lower end is Theorem 6.3(ii)' is frozen as its consequence c ≥ 1/2 − log_σ(2^d−1+2 log₂ n)/N.",
+   "The single-subgroup Prop adds the count |Fix(C)| = σ^{N/p₁} as a conjunct (implicit in 'which gives').",
+   "'(this is also the lower bound of Proposition 10.1)' is read as the per-instance equivalence of P ≥ σ^{N/p₁−N} with σ^{N/p₁} ≤ |S_{n^d}|."
+  ],
+  "maps": [
+   {
+    "id": "whole",
+    "kind": "lean-only",
+    "label": "Corollary 7.1 = conjunction of seven Props",
+    "tex": [],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.probUnifCorollaryStatement",
+      "text": "probSandwichStatement ∧ decayIdentityStatement ∧ decayIntervalStatement ∧ decayLowerExplicitStatement ∧ singleSubgroupStatement ∧ probSingleLowerStatement ∧ probSingleLowerIsRateLowerStatement"
+     }
+    ],
+    "note": "The corollary's sentence is split into seven Props: the sandwich; 'decays as σ^{−cN}'; the interval for c (lower and upper ends); the explicit lower end; the single-subgroup inclusion; P ≥ σ^{N/p₁−N}; and the parenthetical 'this is also the lower bound of Proposition 10.1'."
+   },
+   {
+    "id": "hyp",
+    "kind": "hypothesis",
+    "label": "standing n ≥ 2, d ≥ 1, σ ≥ 2",
+    "tex": [
+     {
+      "text": "Fix integers $n\\ge2$, $d\\ge1$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     },
+     {
+      "text": "$\\sigma=|\\Sigma|\\ge2$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.probSandwichStatement",
+      "text": "2 ≤ n → 1 ≤ d → 2 ≤ σ"
+     },
+     {
+      "decl": "ShiftSym.P06.decayUpperStatement",
+      "text": "2 ≤ n → 1 ≤ d → 2 ≤ σ"
+     },
+     {
+      "decl": "ShiftSym.P06.singleSubgroupStatement",
+      "text": "2 ≤ n → 1 ≤ d → 2 ≤ σ"
+     }
+    ],
+    "note": "The corollary states no hypotheses. Lean takes the standing ones from Definition 2.1 (σ ≥ 2, as in Theorems 6.1 and 6.3, which both ends rely on) as explicit antecedents of every part."
+   },
+   {
+    "id": "unif",
+    "kind": "representation",
+    "label": "uniform draw from Σ^{n^d} ⇒ P^unif = |S|/σ^{n^d}",
+    "tex": [
+     {
+      "text": "For a configuration drawn uniformly from $\\Sigma^{n^d}$,"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.probUnif"
+     }
+    ],
+    "note": "Lean does not model the uniform distribution as a measure. It takes the paper's own formula P^unif = |S_{n^d}|/σ^{n^d} as the definition. (By contrast, Corollary 7.2 builds an explicit PMF.)"
+   },
+   {
+    "id": "P.def",
+    "kind": "definition",
+    "label": "P^unif_{n^d} = |S_{n^d}|/σ^{n^d}",
+    "tex": [
+     {
+      "text": "$P^{\\mathrm{unif}}_{n^d}=|S_{n^d}|/\\sigma^{n^d}$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.probUnif",
+      "text": "(numSS n d σ : ℝ) / (σ : ℝ) ^ (n ^ d)"
+     },
+     {
+      "decl": "ShiftSym.numSS",
+      "text": "Nat.card {s : Config n d (Fin σ) // IsShiftSymmetric s}"
+     }
+    ],
+    "note": "A real number. The alphabet is `Fin σ`, |S| = `numSS`, and σ^{n^d} is a natural-number power cast to ℝ."
+   },
+   {
+    "id": "sw",
+    "kind": "same",
+    "label": "F_d σ^{−n^d} ≤ P^unif ≤ (2^d−1+2 log₂ n) σ^{−n^d/2}",
+    "tex": [
+     {
+      "text": "F_d(n,\\sigma)\\,\\sigma^{-n^d} \\;\\le\\; P^{\\mathrm{unif}}_{n^d} \\;\\le\\; \\bigl(2^d-1+2\\log_2 n\\bigr)\\,\\sigma^{-n^d/2}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.probSandwichStatement",
+      "text": "(lowerEnvelope n d σ : ℝ) * (σ : ℝ) ^ (-((n ^ d : ℕ) : ℝ)) ≤ probUnif n d σ ∧ probUnif n d σ ≤ closedPrefactor n d * (σ : ℝ) ^ (-(((n ^ d : ℕ) : ℝ) / 2))"
+     }
+    ],
+    "note": "The chained inequality is a conjunction of two real inequalities."
+   },
+   {
+    "id": "sw.lo",
+    "kind": "same",
+    "label": "lower: F_d(n,σ) σ^{−n^d} ≤ P^unif",
+    "tex": [
+     {
+      "text": "F_d(n,\\sigma)\\,\\sigma^{-n^d} \\;\\le\\; P^{\\mathrm{unif}}_{n^d}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.probSandwichStatement",
+      "text": "(lowerEnvelope n d σ : ℝ) * (σ : ℝ) ^ (-((n ^ d : ℕ) : ℝ)) ≤ probUnif n d σ"
+     }
+    ],
+    "note": "Theorem 6.1 divided by σ^{n^d}."
+   },
+   {
+    "id": "sw.F",
+    "kind": "definition",
+    "label": "F_d(n,σ)",
+    "tex": [
+     {
+      "text": "F_d(n,\\sigma)",
+      "occ": 1
+     },
+     {
+      "text": "F_d(n,\\sigma)\\;:=\\; \\sum_{r=1}^{d}(-1)^{r+1}\\,n^{\\binom r2}\\gaussbinom dr_n\\, \\sigma^{\\,n^{d-r}}",
+      "scope": {
+       "lines": [
+        768,
+        778
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.probSandwichStatement",
+      "text": "(lowerEnvelope n d σ : ℝ)"
+     },
+     {
+      "decl": "ShiftSym.lowerEnvelope",
+      "text": "∑ r ∈ Finset.Icc 1 dd, (-1 : ℤ) ^ (r + 1) * (rdCoeff n r dd : ℤ) * (σ : ℤ) ^ (n ^ (dd - r))"
+     },
+     {
+      "decl": "ShiftSym.P06.envelopeIntegralStatement",
+      "text": "paperEnvelope n d σ = (lowerEnvelope n d σ : ℚ)"
+     }
+    ],
+    "note": "F_d is the frozen `lowerEnvelope` (an integer, cast ℤ → ℝ). It uses `rdCoeff n r d = n^{C(r,2)}·gaussBinom n d r`. Its identity with the paper's product-formula F_d is the separately proved `envelopeIntegralStatement`."
+   },
+   {
+    "id": "sw.s1",
+    "kind": "representation",
+    "label": "σ^{−n^d}",
+    "tex": [
+     {
+      "text": "\\sigma^{-n^d}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.probSandwichStatement",
+      "text": "(σ : ℝ) ^ (-((n ^ d : ℕ) : ℝ))"
+     }
+    ],
+    "note": "Real power (`Real.rpow`) of σ > 0 with exponent −N."
+   },
+   {
+    "id": "sw.P1",
+    "kind": "definition",
+    "label": "P^unif_{n^d} (in the sandwich)",
+    "tex": [
+     {
+      "text": "P^{\\mathrm{unif}}_{n^d}",
+      "occ": 2
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.probSandwichStatement",
+      "text": "probUnif n d σ",
+      "occ": 1
+     }
+    ],
+    "note": "`probUnif n d σ`, defined above as |S|/σ^{n^d}."
+   },
+   {
+    "id": "sw.hi",
+    "kind": "same",
+    "label": "upper: P^unif ≤ (2^d−1+2 log₂ n) σ^{−n^d/2}",
+    "tex": [
+     {
+      "text": "\\;\\le\\; \\bigl(2^d-1+2\\log_2 n\\bigr)\\,\\sigma^{-n^d/2}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.probSandwichStatement",
+      "text": "probUnif n d σ ≤ closedPrefactor n d * (σ : ℝ) ^ (-(((n ^ d : ℕ) : ℝ) / 2))"
+     }
+    ],
+    "note": "Theorem 6.3(ii) divided by σ^{n^d}."
+   },
+   {
+    "id": "sw.K",
+    "kind": "definition",
+    "label": "2^d − 1 + 2 log₂ n",
+    "tex": [
+     {
+      "text": "2^d-1+2\\log_2 n"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.probSandwichStatement",
+      "text": "closedPrefactor n d"
+     },
+     {
+      "decl": "ShiftSym.P06.closedPrefactor",
+      "text": "(2 : ℝ) ^ d - 1 + 2 * Real.logb 2 n"
+     }
+    ],
+    "note": "Same real prefactor as in Theorem 6.3(ii); log₂ = `Real.logb 2`."
+   },
+   {
+    "id": "sw.s2",
+    "kind": "representation",
+    "label": "σ^{−n^d/2}",
+    "tex": [
+     {
+      "text": "\\sigma^{-n^d/2}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.probSandwichStatement",
+      "text": "(σ : ℝ) ^ (-(((n ^ d : ℕ) : ℝ) / 2))"
+     }
+    ],
+    "note": "Real power with the real exponent −N/2, which is not an integer for odd N."
+   },
+   {
+    "id": "decay",
+    "kind": "representation",
+    "label": "'decays as σ^{−cN}' (an exact identity)",
+    "tex": [
+     {
+      "text": "So $P^{\\mathrm{unif}}_{n^d}$ decays as $\\sigma^{-cN}$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.decayIdentityStatement",
+      "text": "probUnif n d σ = (σ : ℝ) ^ (-(decayRate n d σ * ((n ^ d : ℕ) : ℝ)))"
+     }
+    ],
+    "note": "Lean reads 'decays as σ^{−cN}' as the exact identity P = σ^{−cN} for the c defined next. Given that definition this is a tautology, apart from P > 0, which is proved (`probUnif_pos`). The substance is the interval for c."
+   },
+   {
+    "id": "N",
+    "kind": "definition",
+    "label": "N = n^d",
+    "tex": [
+     {
+      "text": "$N=n^d$",
+      "occ": 1
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.decayRate",
+      "text": "((n ^ d : ℕ) : ℝ)"
+     }
+    ],
+    "note": "N is written out as n^d, cast to ℝ."
+   },
+   {
+    "id": "c",
+    "kind": "definition",
+    "label": "c = log_σ(1/P^unif)/N",
+    "tex": [
+     {
+      "text": "c=\\log_\\sigma(1/P^{\\mathrm{unif}}_{n^d})/N"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.decayRate",
+      "text": "Real.logb σ (1 / probUnif n d σ) / ((n ^ d : ℕ) : ℝ)"
+     }
+    ],
+    "note": "`decayRate n d σ`; log_σ = `Real.logb σ`. Since P > 0 is proved, the junk values of `1/0` and of the log of a non-positive number never occur."
+   },
+   {
+    "id": "interval",
+    "kind": "same",
+    "label": "c ∈ [1/2 − o(1), 1 − 1/p₁]",
+    "tex": [
+     {
+      "text": "c=\\log_\\sigma(1/P^{\\mathrm{unif}}_{n^d})/N\\in [\\tfrac12-o(1),\\,1-\\tfrac1{p_1}]"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.decayIntervalStatement",
+      "text": "decayLowerUniformStatement ∧ decayUpperStatement"
+     }
+    ],
+    "note": "Interval membership = lower end ∧ upper end."
+   },
+   {
+    "id": "o1",
+    "kind": "representation",
+    "label": "lower end 1/2 − o(1): uniform ε–M form",
+    "tex": [
+     {
+      "text": "\\tfrac12-o(1)"
+     },
+     {
+      "text": "Here $o(1)$ refers to any regime with $N=n^d\\to\\infty$."
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.decayLowerUniformStatement",
+      "text": "∀ ε : ℝ, 0 < ε → ∃ M : ℕ, ∀ n d σ : ℕ, 2 ≤ n → 1 ≤ d → 2 ≤ σ → M ≤ n ^ d → 1 / 2 - ε ≤ decayRate n d σ"
+     }
+    ],
+    "note": "∀ε > 0 ∃M: c ≥ 1/2 − ε for ALL (n, d, σ) with N = n^d ≥ M. This is uniform in n, d and σ jointly, so it implies the limit along every regime with N → ∞, as the paper says. It is at least as strong as the paper's wording, in particular uniform in σ."
+   },
+   {
+    "id": "o1.M",
+    "kind": "representation",
+    "label": "regime N = n^d → ∞",
+    "tex": [
+     {
+      "text": "$N=n^d\\to\\infty$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.decayLowerUniformStatement",
+      "text": "M ≤ n ^ d"
+     }
+    ],
+    "note": "'N → ∞' is the guard N ≥ M with M depending only on ε."
+   },
+   {
+    "id": "upper",
+    "kind": "same",
+    "label": "upper end c ≤ 1 − 1/p₁",
+    "tex": [
+     {
+      "text": "1-\\tfrac1{p_1}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.decayUpperStatement",
+      "text": "decayRate n d σ ≤ 1 - 1 / (n.minFac : ℝ)"
+     }
+    ],
+    "note": "Exact, with no error term, in ℝ."
+   },
+   {
+    "id": "p1",
+    "kind": "definition",
+    "label": "p₁ = smallest prime factor of n",
+    "tex": [
+     {
+      "text": "where $p_1$ is the smallest prime factor of $n$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.decayUpperStatement",
+      "text": "n.minFac"
+     }
+    ],
+    "note": "`Nat.minFac n` is the least prime factor for n ≥ 2."
+   },
+   {
+    "id": "lowerend",
+    "kind": "representation",
+    "label": "'The lower end is given by Theorem 6.3(ii)'",
+    "tex": [
+     {
+      "text": "The lower end is given by Theorem~\\ref{thm:upper-bound}(ii)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.decayLowerExplicitStatement",
+      "text": "1 / 2 - Real.logb σ (closedPrefactor n d) / ((n ^ d : ℕ) : ℝ) ≤ decayRate n d σ"
+     }
+    ],
+    "note": "The attribution is a claim about the proof. Lean freezes its mathematical content, c ≥ 1/2 − log_σ(2^d−1+2 log₂ n)/N (what Theorem 6.3(ii) gives after taking log_σ), and its certificate indeed uses `upperClosed_proved`. The subtracted term is the o(1)."
+   },
+   {
+    "id": "single",
+    "kind": "same",
+    "label": "Fix(C) ⊆ S_{n^d} for one order-p₁ cyclic C",
+    "tex": [
+     {
+      "text": "the single-subgroup inclusion $\\Fix(C)\\subseteq S_{n^d}$ for one order-$p_1$ cyclic subgroup $C$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.singleSubgroupStatement",
+      "text": "∃ C : AddSubgroup (Lat n d), IsAddCyclic C ∧ Nat.card C = n.minFac ∧ fixedBy (Fin σ) C ⊆ {s | IsShiftSymmetric s} ∧ Nat.card (fixedBy (Fin σ) C) = σ ^ (n ^ d / n.minFac)"
+     }
+    ],
+    "note": "An existential: there is a subgroup C that is cyclic, of order p₁, and satisfies Fix(C) ⊆ S, together with the count."
+   },
+   {
+    "id": "single.C",
+    "kind": "same",
+    "label": "one order-p₁ cyclic subgroup C",
+    "tex": [
+     {
+      "text": "one order-$p_1$ cyclic subgroup $C$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.singleSubgroupStatement",
+      "text": "IsAddCyclic C",
+      "occ": 2
+     },
+     {
+      "decl": "ShiftSym.P06.singleSubgroupStatement",
+      "text": "Nat.card C = n.minFac"
+     }
+    ],
+    "note": "'Cyclic' is `IsAddCyclic C` (redundant for prime order, kept to be literal); the order is `Nat.card C`."
+   },
+   {
+    "id": "single.inc",
+    "kind": "definition",
+    "label": "Fix(C) ⊆ S_{n^d}",
+    "tex": [
+     {
+      "text": "$\\Fix(C)\\subseteq S_{n^d}$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.singleSubgroupStatement",
+      "text": "fixedBy (Fin σ) C ⊆ {s | IsShiftSymmetric s}"
+     },
+     {
+      "decl": "ShiftSym.fixedBy",
+      "text": "{s | ∀ h ∈ H, shift h s = s}"
+     }
+    ],
+    "note": "Fix(C) = `fixedBy`, and S_{n^d} = the set of `IsShiftSymmetric` configurations."
+   },
+   {
+    "id": "single.cnt",
+    "kind": "lean-only",
+    "label": "|Fix(C)| = σ^{N/p₁} (implicit in 'which gives')",
+    "tex": [],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.singleSubgroupStatement",
+      "text": "Nat.card (fixedBy (Fin σ) C) = σ ^ (n ^ d / n.minFac)"
+     }
+    ],
+    "note": "The paper uses this count (Lemma 3.1(i)) silently to go from the inclusion to the probability bound. Lean freezes it as an extra conjunct, with exact ℕ-division (p₁ | n | n^d)."
+   },
+   {
+    "id": "Pge",
+    "kind": "same",
+    "label": "P^unif ≥ σ^{N/p₁ − N}",
+    "tex": [
+     {
+      "text": "which gives $P^{\\mathrm{unif}}_{n^d}\\ge\\sigma^{N/p_1-N}$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.probSingleLowerStatement",
+      "text": "(σ : ℝ) ^ (((n ^ d : ℕ) : ℝ) / (n.minFac : ℝ) - ((n ^ d : ℕ) : ℝ)) ≤ probUnif n d σ"
+     }
+    ],
+    "note": "Real inequality."
+   },
+   {
+    "id": "Pge.exp",
+    "kind": "representation",
+    "label": "σ^{N/p₁ − N}",
+    "tex": [
+     {
+      "text": "\\sigma^{N/p_1-N}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.probSingleLowerStatement",
+      "text": "(σ : ℝ) ^ (((n ^ d : ℕ) : ℝ) / (n.minFac : ℝ) - ((n ^ d : ℕ) : ℝ))"
+     }
+    ],
+    "note": "Real power whose exponent N/p₁ − N is computed in ℝ (an integer, since p₁ | N)."
+   },
+   {
+    "id": "rate",
+    "kind": "representation",
+    "label": "'(this is also the lower bound of Proposition 10.1)'",
+    "tex": [
+     {
+      "text": "this is also the lower bound of Proposition~\\ref{prop:rate}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.probSingleLowerIsRateLowerStatement",
+      "text": "(σ : ℝ) ^ (((n ^ d : ℕ) : ℝ) / (n.minFac : ℝ) - ((n ^ d : ℕ) : ℝ)) ≤ probUnif n d σ ↔ σ ^ (n ^ d / n.minFac) ≤ numSS n d σ"
+     }
+    ],
+    "note": "'Is also' is read as: for each (n, d, σ), P ≥ σ^{N/p₁−N} holds iff σ^{N/p₁} ≤ |S_{n^d}| (the body of Proposition 10.1's lower bound, restated in ℕ). This is a reading choice; the other reading (the same argument proves Prop. 10.1's lower bound) is a claim about proofs and is not frozen."
+   },
+   {
+    "id": "alph",
+    "kind": "representation",
+    "label": "Σ^{n^d} with Σ = Fin σ",
+    "tex": [
+     {
+      "text": "\\Sigma^{n^d}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.numSS",
+      "text": "Config n d (Fin σ)"
+     }
+    ],
+    "note": "Only |Σ| = σ enters."
+   }
+  ]
+ }
+}

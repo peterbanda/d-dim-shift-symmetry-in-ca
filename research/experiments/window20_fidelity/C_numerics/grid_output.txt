@@ -1,0 +1,17 @@
+primes: 302 (3..1999), sigmas: (2, 3, 5, 10, 100, 1000000)
+(p,d) pairs: 210109, grid points (p,sigma,d): 1260654
+(a) disagreements  window(i): 0  window(ii): 0  hyp(i): 0  hyp(ii): 0
+    examples: []
+    Lean-side numeric near-ties (|margin| < 1e-60) on window antecedents: [(3, 21, 'win_ii', '0.0')] (resolved exactly: dc(3) = 1 since 2-2/3 = 1+1/3)
+    min |window margin| over p >= 5: 6.81739e-6
+    min relative |hypothesis margin|: 0.0229561
+    max rel. diff phi (Lean rpow vs exact integer): 2.17189e-69
+(b) branch (i) exercised at 1114494 points (primes with nonempty branch: 292, smallest p = 37), violations: 0
+    branch (ii) exercised at 74298 points (all 302 primes), violations: 0
+    violation examples: []
+    tightest constant on grid: (i) needs C > 3.03648 (p=7), (ii) needs C > 1.0 (p=3)
+time 27.9s
+
+real	0m28.196s
+user	0m0.328s
+sys	0m0.060s

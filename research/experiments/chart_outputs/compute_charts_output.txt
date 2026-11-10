@@ -1,0 +1,134 @@
+============================================================
+VERIFICATION against Banda et al. (2019)
+============================================================
+  n=2, d=2: |S|=8 (expected 8) ✓  P=5.000000e-01
+  n=3, d=2: |S|=26 (expected 26) ✓  P=5.078125e-02
+  n=5, d=2: |S|=182 (expected 182) ✓  P=5.424023e-06
+  n=10, d=2: |S|=3377699659692376  P=2.6645e-15 (paper: ~2.7e-15)
+  n=2, d=3: |S|=72 (expected 72)  ✓
+  n=3, d=3: |S|=6398 (expected 6398)  ✓
+
+Gaussian binomial spot checks:
+  All Gaussian binomial checks passed ✓
+  All r_d coefficient checks (d=2) passed ✓
+  All r_d coefficient checks (d=3) passed ✓
+
+Computing Chart 1: Prime dips (d=2) ...
+  n=10: log10(P) = -14.57
+  n=20: log10(P) = -59.73
+  n=30: log10(P) = -134.99
+  n=40: log10(P) = -240.35
+  n=50: log10(P) = -375.81
+  n=60: log10(P) = -541.38
+  n=70: log10(P) = -737.05
+  n=80: log10(P) = -962.82
+  n=90: log10(P) = -1218.69
+  n=100: log10(P) = -1504.67
+  Saved: charts/chart1_probability_d2.png
+Computing Chart 3: Count |S| (d=2) ...
+  Saved: charts/chart3_count_d2.png
+Computing Chart 2: Dimension comparison ...
+  d=2, n=2: log10(P) = -0.30
+  d=2, n=3: log10(P) = -1.29
+  d=2, n=4: log10(P) = -1.95
+  d=2, n=5: log10(P) = -5.27
+  d=2, n=6: log10(P) = -4.93
+  d=2, n=7: log10(P) = -11.75
+  d=2, n=8: log10(P) = -9.16
+  d=2, n=9: log10(P) = -15.65
+  d=2, n=10: log10(P) = -14.57
+  d=2, n=11: log10(P) = -32.03
+  d=2, n=12: log10(P) = -21.20
+  d=2, n=13: log10(P) = -45.81
+  d=2, n=14: log10(P) = -29.02
+  d=2, n=15: log10(P) = -44.55
+  d=2, n=16: log10(P) = -38.05
+  d=2, n=17: log10(P) = -80.62
+  d=2, n=18: log10(P) = -48.29
+  d=2, n=19: log10(P) = -101.65
+  d=2, n=20: log10(P) = -59.73
+  d=2, n=21: log10(P) = -87.90
+  d=2, n=22: log10(P) = -72.37
+  d=2, n=23: log10(P) = -150.94
+  d=2, n=24: log10(P) = -86.22
+  d=2, n=25: log10(P) = -149.74
+  d=2, n=26: log10(P) = -101.27
+  d=2, n=27: log10(P) = -145.70
+  d=2, n=28: log10(P) = -117.53
+  d=2, n=29: log10(P) = -242.96
+  d=2, n=30: log10(P) = -134.99
+  d=2, n=31: log10(P) = -278.45
+  d=2, n=32: log10(P) = -153.65
+  d=2, n=33: log10(P) = -217.95
+  d=2, n=34: log10(P) = -173.52
+  d=2, n=35: log10(P) = -294.23
+  d=2, n=36: log10(P) = -194.59
+  d=2, n=37: log10(P) = -399.39
+  d=2, n=38: log10(P) = -216.87
+  d=2, n=39: log10(P) = -304.64
+  d=2, n=40: log10(P) = -240.35
+  d=2, n=41: log10(P) = -492.07
+  d=2, n=42: log10(P) = -265.03
+  d=2, n=43: log10(P) = -542.02
+  d=2, n=44: log10(P) = -290.92
+  d=2, n=45: log10(P) = -405.79
+  d=2, n=46: log10(P) = -318.01
+  d=2, n=47: log10(P) = -649.15
+  d=2, n=48: log10(P) = -346.31
+  d=2, n=49: log10(P) = -618.62
+  d=2, n=50: log10(P) = -375.81
+  d=3, n=2: log10(P) = -0.55
+  d=3, n=3: log10(P) = -4.32
+  d=3, n=4: log10(P) = -8.79
+  d=3, n=5: log10(P) = -28.61
+  d=3, n=6: log10(P) = -31.67
+  d=3, n=7: log10(P) = -86.75
+  d=3, n=8: log10(P) = -76.22
+  d=3, n=9: log10(P) = -145.19
+  d=3, n=10: log10(P) = -149.67
+  d=3, n=11: log10(P) = -362.12
+  d=3, n=12: log10(P) = -259.24
+  d=3, n=13: log10(P) = -608.23
+  d=3, n=14: log10(P) = -412.17
+  d=3, n=15: log10(P) = -676.20
+  d=3, n=16: log10(P) = -615.66
+  d=3, n=17: log10(P) = -1389.48
+  d=3, n=18: log10(P) = -876.96
+  d=3, n=19: log10(P) = -1953.51
+  d=3, n=20: log10(P) = -1203.27
+  d=4, n=2: log10(P) = -1.33
+  d=4, n=3: log10(P) = -14.65
+  d=4, n=4: log10(P) = -37.36
+  d=4, n=5: log10(P) = -148.32
+  d=4, n=6: log10(P) = -193.89
+  d=4, n=7: log10(P) = -616.92
+  d=4, n=8: log10(P) = -615.33
+  d=4, n=9: log10(P) = -1315.10
+  d=4, n=10: log10(P) = -1503.97
+  Saved: charts/chart2_dimension_comparison.png
+Computing Chart 4: Dimension scaling ...
+  n=2, d=1: log10(P) = -0.30
+  n=2, d=2: log10(P) = -0.30
+  n=2, d=3: log10(P) = -0.55
+  n=2, d=4: log10(P) = -1.33
+  n=2, d=5: log10(P) = -3.34
+  n=2, d=6: log10(P) = -7.83
+  n=2, d=7: log10(P) = -17.16
+  n=2, d=8: log10(P) = -36.13
+  n=2, d=9: log10(P) = -74.36
+  n=2, d=10: log10(P) = -151.12
+  n=3, d=1: log10(P) = -0.60
+  n=3, d=2: log10(P) = -1.29
+  n=3, d=3: log10(P) = -4.32
+  n=3, d=4: log10(P) = -14.65
+  n=3, d=5: log10(P) = -46.68
+  n=3, d=6: log10(P) = -143.74
+  n=3, d=7: log10(P) = -435.86
+  n=5, d=1: log10(P) = -1.20
+  n=5, d=2: log10(P) = -5.27
+  n=5, d=3: log10(P) = -28.61
+  n=5, d=4: log10(P) = -148.32
+  n=5, d=5: log10(P) = -749.68
+  Saved: charts/chart4_dimension_scaling.png
+
+All charts generated successfully.

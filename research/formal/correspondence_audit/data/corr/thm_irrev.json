@@ -1,0 +1,369 @@
+{
+ "label": "thm:irrev",
+ "statement": {
+  "summary": "Theorem 8.1 is frozen as three independent Props, one per clause: `irrevStabStatement` (Stab(s) ≤ Stab(Φ s)), `irrevVecStatement` (s ∈ S(v) → Φ s ∈ S(v) for v ≠ 0) and `irrevSetStatement` (Φ '' S ⊆ S); `irrevStatement` is their conjunction. Φ ranges over every map Config → Config with `Equivariant Φ`, the translation-equivariance of Definition 2.4.",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P07.irrevStabStatement",
+    "role": "statement (stabilizer form)"
+   },
+   {
+    "decl": "ShiftSym.P07.irrevVecStatement",
+    "role": "statement (per-vector form)"
+   },
+   {
+    "decl": "ShiftSym.P07.irrevSetStatement",
+    "role": "statement (set form)"
+   },
+   {
+    "decl": "ShiftSym.P07.irrevStatement",
+    "role": "statement (whole)"
+   },
+   {
+    "decl": "ShiftSym.Equivariant",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.stab",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P07.SV",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P07.SS",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.IsShiftSymmetric",
+    "role": "definition"
+   }
+  ],
+  "deltas": [
+   "Alphabet Σ is `Fin σ`; the claim is invariant under relabelling the alphabet.",
+   "Standing hypotheses n ≥ 2, d ≥ 1, σ ≥ 2 (Definition 2.1) are carried as explicit antecedents; the conclusions do not use them.",
+   "'Translation-equivariant (Definition 2.4)' is the `Equivariant` predicate on an arbitrary global map, not the offset form `caMap`; every offset CA is equivariant (`caMap_equivariant`), so this is the more general reading.",
+   "Stab(Φ(s)) ⊇ Stab(s) is written `stab s ≤ stab (Φ s)` (order of the subgroup lattice).",
+   "Φ(S_{n^d}) is the set image `Φ '' SS n d σ`.",
+   "The 'in particular' consequences are frozen as separate conjuncts, not derived inside the statement."
+  ],
+  "maps": [
+   {
+    "id": "hypΦ",
+    "kind": "hypothesis",
+    "label": "Φ translation-equivariant",
+    "tex": [
+     {
+      "text": "Let $\\Phi$ be translation-equivariant"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.irrevStabStatement",
+      "text": "∀ Φ : Config n d (Fin σ) → Config n d (Fin σ), Equivariant Φ →"
+     }
+    ],
+    "note": "Φ is an arbitrary global map with the equivariance property; the same binder occurs in all three Props."
+   },
+   {
+    "id": "defEq",
+    "kind": "definition",
+    "label": "Φ(τ_v s) = τ_v Φ(s)",
+    "tex": [
+     {
+      "text": "$\\Phi(\\tau_\\vv\\ssb)=\\tau_\\vv\\Phi(\\ssb)$",
+      "scope": {
+       "lines": [
+        304,
+        317
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.Equivariant",
+      "text": "∀ (v : Lat n d) (s : Config n d A), Φ (shift v s) = shift v (Φ s)"
+     }
+    ],
+    "note": "Definition 2.4's equivariance, verbatim, for all v."
+   },
+   {
+    "id": "defShift",
+    "kind": "definition",
+    "label": "τ_v s (u) = s(u+v)",
+    "tex": [
+     {
+      "text": "$(\\tau_\\vv\\ssb)(\\uu)=\\ssb(\\uu+\\vv)$",
+      "scope": {
+       "lines": [
+        291,
+        291
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.shift",
+      "text": "fun u => s (u + v)"
+     }
+    ],
+    "note": "Same sign convention as the paper."
+   },
+   {
+    "id": "stab",
+    "kind": "same",
+    "label": "Stab(Φ(s)) ⊇ Stab(s)",
+    "tex": [
+     {
+      "text": "$\\Stab(\\Phi(\\ssb))\\supseteq\\Stab(\\ssb)$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.irrevStabStatement",
+      "text": "stab s ≤ stab (Φ s)"
+     }
+    ],
+    "note": "⊇ read right-to-left as ≤ in the lattice of additive subgroups (which is set inclusion of carriers)."
+   },
+   {
+    "id": "stab.lhs",
+    "kind": "same",
+    "label": "Stab(Φ(s))",
+    "tex": [
+     {
+      "text": "\\Stab(\\Phi(\\ssb))"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.irrevStabStatement",
+      "text": "stab (Φ s)"
+     }
+    ],
+    "note": "Stabilizer of the image configuration."
+   },
+   {
+    "id": "stab.rhs",
+    "kind": "definition",
+    "label": "Stab(s)",
+    "tex": [
+     {
+      "text": "\\supseteq\\Stab(\\ssb)"
+     },
+     {
+      "text": "$\\Stab(\\ssb)=\\{\\vv\\in\\A:\\tau_\\vv\\ssb=\\ssb\\}$",
+      "scope": {
+       "lines": [
+        292,
+        292
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.irrevStabStatement",
+      "text": "stab s",
+      "occ": 1
+     },
+     {
+      "decl": "ShiftSym.stab",
+      "text": "carrier := {v | shift v s = s}"
+     }
+    ],
+    "note": "Stab(s) is the subgroup with carrier {v | τ_v s = s} (`stab`, Definitions.lean). (The TeX anchor includes the ⊇ to keep the line break of the official PDF.)"
+   },
+   {
+    "id": "forall_s",
+    "kind": "same",
+    "label": "for every configuration s",
+    "tex": [
+     {
+      "text": "for every configuration $\\ssb$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.irrevStabStatement",
+      "text": "∀ s : Config n d (Fin σ), stab s"
+     }
+    ],
+    "note": "Configurations are functions Lat n d → Fin σ."
+   },
+   {
+    "id": "vec",
+    "kind": "same",
+    "label": "s ∈ S(v) ⇒ Φ(s) ∈ S(v)",
+    "tex": [
+     {
+      "text": "$\\ssb\\in S_{n^d}(\\vv)$ implies $\\Phi(\\ssb)\\in S_{n^d}(\\vv)$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.irrevVecStatement",
+      "text": "s ∈ SV v → Φ s ∈ SV v"
+     }
+    ],
+    "note": "Per-vector form; the paper's 'in particular' is not a hypothesis — the Lean conjunct is stated (and proved) on its own."
+   },
+   {
+    "id": "vec.v",
+    "kind": "hypothesis",
+    "label": "v ≠ 0 (domain of S(v))",
+    "tex": [
+     {
+      "text": "For ${\\mathbf 0} \\neq \\vv \\in \\A$, we define",
+      "scope": {
+       "lines": [
+        295,
+        295
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.irrevVecStatement",
+      "text": "∀ v : Lat n d, v ≠ 0 →"
+     }
+    ],
+    "note": "Definition 2.3 defines S_{n^d}(v) only for v ≠ 0; Lean carries v ≠ 0 explicitly (the implication would hold for v = 0 too)."
+   },
+   {
+    "id": "vec.SV",
+    "kind": "definition",
+    "label": "S_{n^d}(v) = {s : τ_v s = s}",
+    "tex": [
+     {
+      "text": "S_{n^d}(\\vv)=\\{\\ssb:\\tau_\\vv\\ssb=\\ssb\\}",
+      "scope": {
+       "lines": [
+        295,
+        302
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.SV",
+      "text": "{s | shift v s = s}"
+     }
+    ],
+    "note": "The first expression of Definition 2.3; its identification with Fix(⟨v⟩) is not used here."
+   },
+   {
+    "id": "set",
+    "kind": "representation",
+    "label": "Φ(S_{n^d}) ⊆ S_{n^d}",
+    "tex": [
+     {
+      "text": "$\\Phi(S_{n^d})\\subseteq S_{n^d}$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.irrevSetStatement",
+      "text": "Φ '' SS n d σ ⊆ SS n d σ"
+     }
+    ],
+    "note": "Φ(S) is the set image `Φ '' S`."
+   },
+   {
+    "id": "set.S",
+    "kind": "definition",
+    "label": "S_{n^d} = ⋃_{v≠0} S_{n^d}(v)",
+    "tex": [
+     {
+      "text": "\\bigcup_{\\mathbf 0\\neq\\vv\\in\\A} S_{n^d}(\\vv)",
+      "scope": {
+       "lines": [
+        295,
+        302
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.SS",
+      "text": "{s | IsShiftSymmetric s}"
+     },
+     {
+      "decl": "ShiftSym.IsShiftSymmetric",
+      "text": "∃ v : Lat n d, v ≠ 0 ∧ shift v s = s"
+     }
+    ],
+    "note": "Membership in SS is ∃ v ≠ 0 with τ_v s = s, literally membership in the union."
+   },
+   {
+    "id": "whole",
+    "kind": "representation",
+    "label": "the three clauses as one statement",
+    "tex": [
+     {
+      "text": "in particular"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.irrevStatement",
+      "text": "irrevStabStatement ∧ irrevVecStatement ∧ irrevSetStatement"
+     }
+    ],
+    "note": "Lean freezes the main claim and both 'in particular' consequences as independent conjuncts."
+   },
+   {
+    "id": "hyp",
+    "kind": "hypothesis",
+    "label": "standing hypotheses n ≥ 2, d ≥ 1, σ ≥ 2",
+    "tex": [
+     {
+      "text": "Fix integers $n\\ge2$, $d\\ge1$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.irrevStabStatement",
+      "text": "2 ≤ n → 1 ≤ d → 2 ≤ σ →"
+     }
+    ],
+    "note": "From Definition 2.1; carried explicitly although the conclusion needs none of them (non-counting statement, so σ ≥ 2)."
+   },
+   {
+    "id": "alph",
+    "kind": "representation",
+    "label": "alphabet Σ = Fin σ",
+    "tex": [
+     {
+      "text": "a finite alphabet $\\Sigma$ with $\\sigma=|\\Sigma|\\ge2$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.irrevStabStatement",
+      "text": "Φ : Config n d (Fin σ) → Config n d (Fin σ)"
+     }
+    ],
+    "note": "Only |Σ| matters; the core lemma `stab_le_stab_apply` is proved for an arbitrary alphabet type A."
+   }
+  ]
+ }
+}

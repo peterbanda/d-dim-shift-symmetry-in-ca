@@ -1,0 +1,46 @@
+{
+  "result": "PASS",
+  "head": "baea4fa182aa30ebca8b5a54119701c1c02a2a97",
+  "fingerprints_checked": 173,
+  "items": 25,
+  "mappings": 476,
+  "tex_anchors_and_rectangles_reproduced": 519,
+  "pages": 23,
+  "glyph_boxes_reproduced": 51954,
+  "word_layout_identical": true,
+  "aux_labels_identical": true,
+  "all_item_hashes_reproduced": true,
+  "stale_verdicts": [
+    "lem:fix",
+    "lem:order",
+    "lem:torsion",
+    "lem:completeness",
+    "lem:joins",
+    "lem:mobius",
+    "thm:main-enum",
+    "cor:prime",
+    "thm:kactive",
+    "thm:lower-bound",
+    "thm:upper-bound",
+    "cor:prob",
+    "cor:dens",
+    "thm:irrev",
+    "cor:insolv",
+    "prop:rank",
+    "thm:detect-worst",
+    "prop:detect-avg",
+    "prop:rate",
+    "prop:inversion",
+    "lem:dtorus",
+    "lem:chain",
+    "lem:base"
+  ],
+  "unjudged": [
+    "lem:mobius2",
+    "lem:coef"
+  ],
+  "warnings": [
+    "lem_fix.json:statement:ii.hyp: no TeX anchor (kind hypothesis)"
+  ],
+  "temporary_build_directory": "/tmp/v8-viewer-recheck-6xhh5yme"
+}

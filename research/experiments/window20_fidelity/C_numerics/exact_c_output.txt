@@ -1,0 +1,40 @@
+p=37 d=1 sigma=2: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=17 (phi(d)*log2(s)=17.0); sizes 40/57 bits; 0.0s
+p=37 d=1 sigma=3: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=27 (phi(d)*log2(s)=26.944363); sizes 62/89 bits; 0.0s
+p=37 d=2 sigma=2: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=606 (phi(d)*log2(s)=610.0); sizes 1487/2093 bits; 0.0s
+p=37 d=2 sigma=3: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=963 (phi(d)*log2(s)=966.82713); sizes 2353/3316 bits; 0.0s
+p=37 d=3 sigma=2: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=21840 (phi(d)*log2(s)=21848.0); sizes 56252/78092 bits; 0.0s
+p=37 d=3 sigma=3: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=34620 (phi(d)*log2(s)=34628.261); sizes 89151/123771 bits; 0.0s
+p=37 d=4 sigma=2: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=780928 (phi(d)*log2(s)=780940.0); sizes 2135805/2916733 bits; 0.0s
+p=37 d=4 sigma=3: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=1237748 (phi(d)*log2(s)=1237760.6); sizes 3385162/4622910 bits; 0.7s
+p=41 d=1 sigma=2: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=19 (phi(d)*log2(s)=19.0); sizes 44/63 bits; 0.0s
+p=41 d=1 sigma=3: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=30 (phi(d)*log2(s)=30.114288); sizes 69/99 bits; 0.0s
+p=41 d=2 sigma=2: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=754 (phi(d)*log2(s)=758.0); sizes 1811/2565 bits; 0.0s
+p=41 d=2 sigma=3: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=1197 (phi(d)*log2(s)=1201.4016); sizes 2867/4064 bits; 0.0s
+p=41 d=3 sigma=2: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=30188 (phi(d)*log2(s)=30196.0); sizes 75780/105968 bits; 0.0s
+p=41 d=3 sigma=3: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=47852 (phi(d)*log2(s)=47859.528); sizes 120102/167954 bits; 0.0s
+p=41 d=4 sigma=2: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=1200979 (phi(d)*log2(s)=1200992.0); sizes 3180634/4381613 bits; 0.0s
+p=41 d=4 sigma=3: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=1903515 (phi(d)*log2(s)=1903527.3); sizes 5041175/6944690 bits; 1.5s
+p=43 d=1 sigma=2: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=20 (phi(d)*log2(s)=20.0); sizes 46/66 bits; 0.0s
+p=43 d=1 sigma=3: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=32 (phi(d)*log2(s)=31.69925); sizes 72/104 bits; 0.0s
+p=43 d=2 sigma=2: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=834 (phi(d)*log2(s)=838.0); sizes 1985/2819 bits; 0.0s
+p=43 d=2 sigma=3: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=1324 (phi(d)*log2(s)=1328.1986); sizes 3143/4467 bits; 0.0s
+p=43 d=3 sigma=2: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=35058 (phi(d)*log2(s)=35066.0); sizes 87044/122102 bits; 0.0s
+p=43 d=3 sigma=3: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=55571 (phi(d)*log2(s)=55578.295); sizes 137955/193526 bits; 0.0s
+p=43 d=4 sigma=2: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=1465233 (phi(d)*log2(s)=1465246.0); sizes 3827620/5292853 bits; 0.0s
+p=43 d=4 sigma=3: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=2322348 (phi(d)*log2(s)=2322360.0); sizes 6066624/8388972 bits; 1.9s
+p=47 d=1 sigma=2: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=22 (phi(d)*log2(s)=22.0); sizes 50/72 bits; 0.0s
+p=47 d=1 sigma=3: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=35 (phi(d)*log2(s)=34.869175); sizes 78/113 bits; 0.0s
+p=47 d=2 sigma=2: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=1006 (phi(d)*log2(s)=1010.0); sizes 2357/3363 bits; 0.0s
+p=47 d=2 sigma=3: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=1597 (phi(d)*log2(s)=1600.8121); sizes 3732/5329 bits; 0.0s
+p=47 d=3 sigma=2: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=46309 (phi(d)*log2(s)=46318.0); sizes 112813/159122 bits; 0.0s
+p=47 d=3 sigma=3: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=73404 (phi(d)*log2(s)=73412.293); sizes 178797/252201 bits; 0.0s
+p=47 d=4 sigma=2: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=2121637 (phi(d)*log2(s)=2121650.0); sizes 5412256/7533893 bits; 0.0s
+p=47 d=4 sigma=3: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=3362723 (phi(d)*log2(s)=3362735.7); sizes 8578213/11940936 bits; 3.6s
+p=41 d=5 sigma=2: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=47684807 (phi(d)*log2(s)=47684824.0); sizes 133517015/181201822 bits; 0.4s
+p=43 d=5 sigma=2: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=61131513 (phi(d)*log2(s)=61131530.0); sizes 168335047/229466560 bits; 0.1s
+p=47 d=5 sigma=2: |S_p^d|*s^((p+1)^d) < |S_(p+1)^d|*s^(p^d): True; bitlen(rhs)-bitlen(lhs)=97063324 (phi(d)*log2(s)=97063342.0); sizes 259683672/356746996 bits; 0.1s
+(c) exact composite-branch checks: 35 true, 0 false, of 35
+
+real	0m8.371s
+user	0m8.296s
+sys	0m0.059s

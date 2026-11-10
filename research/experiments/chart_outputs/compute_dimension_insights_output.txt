@@ -1,0 +1,11 @@
+log-space evaluator matches exact integers on 8 cases
+chart12 done
+chart13 done
+chart14 done
+chart15 done; inversion dimensions:
+  p=3: measured d_c = 1.00, predicted = 1.00, p*ln2 = 2.08
+  p=5: measured d_c = 2.10, predicted = 2.58, p*ln2 = 3.47
+  p=7: measured d_c = 4.00, predicted = 4.04, p*ln2 = 4.85
+  p=11: measured d_c = 6.37, predicted = 6.87, p*ln2 = 7.62
+  p=13: measured d_c = 8.03, predicted = 8.27, p*ln2 = 9.01
+chart16 done

@@ -1,0 +1,6 @@
+mpmath backend: python
+paper-vs-Lean enumeration polynomials compared: 816, mismatches: 0
+numSS brute vs Lean enumerationRHS: 18 cases, mismatches: 0
+Lean enumerationRHS reference values: True
+time 2.0s
+timing: 100 d-values x 6 sigma (Lean side) 0.07s

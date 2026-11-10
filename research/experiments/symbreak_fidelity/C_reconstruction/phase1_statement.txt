@@ -1,0 +1,50 @@
+Phase-1 statement (written from the paper alone, before opening S07_Dynamics_SymmetryBreaking.lean)
+
+Reading. A task T on the torus A = (Z/n)^d over alphabet Sigma is
+  - a set Adm of admissible input configurations, and
+  - for each admissible x, a set Req(x) of acceptable output configurations
+    (a relation; a "function task" is the special case |Req(x)| = 1).
+Phi solves T  :<=>  for every x in Adm there is k >= 0 with Phi^k(x) in Req(x)
+  (weakest solving notion: time may depend on the input, k = 0 allowed,
+   no requirement to stay there; every stronger notion -- fixed time,
+   fixed point, eventually-always -- implies this one).
+y breaks a symmetry of x  :<=>  exists v in Stab(x) with v notin Stab(y)
+                          <=>  not (Stab(x) subset Stab(y)).
+T's required output breaks a symmetry of some admissible input  :<=>
+  exists x in Adm, forall y in Req(x), not (Stab(x) subset Stab(y))
+  (v may depend on y; "required" = every acceptable output).
+Unsolvable by translation-equivariant CA  :<=>  no equivariant Phi solves T.
+
+Lean-style statement:
+
+  structure Task (n d σ) where
+    adm : Set (Config n d σ)
+    req : Config n d σ → Set (Config n d σ)
+
+  def Solves (Φ : Config → Config) (T : Task) : Prop :=
+    ∀ x ∈ T.adm, ∃ k : ℕ, Φ^[k] x ∈ T.req x
+
+  def RequiresSymBreak (T : Task) : Prop :=
+    ∃ x ∈ T.adm, ∀ y ∈ T.req x, ¬ (stab x ≤ stab y)
+    -- equivalently ∀ y ∈ T.req x, ∃ v, shift v x = x ∧ shift v y ≠ y
+
+  theorem insolv_symbreak (n d σ : ℕ) (T : Task n d σ)
+      (hT : RequiresSymBreak T) (Φ) (hΦ : Equivariant Φ) : ¬ Solves Φ T
+
+  No side conditions needed (σ ≥ 2, N > 1, n ≥ 2, d ≥ 1 are irrelevant here:
+  the witness input x is supplied by the hypothesis; if Stab x = {0} the
+  hypothesis is unsatisfiable, so it forces x ∈ S automatically).
+
+Alternative readings considered:
+  (R1) literal first sentence of Cor 8.2 ("leave S"): ∃ x ∈ Adm ∩ S,
+       ∀ y ∈ Req x, y ∉ S.  Strictly weaker hypothesis class (implies R0).
+  (R2) fixed-symmetry reading: ∃ x ∈ Adm, ∃ v ∈ Stab x, ∀ y ∈ Req x,
+       v ∉ Stab y.  Implies R0; strictly narrower when |Req x| ≥ 2.
+  (R3) "some acceptable output breaks a symmetry" (∃ y instead of ∀ y): FALSE
+       (take Req x = everything).
+  (R4) solving notions: fixed k / eventually-always / fixed point -> all
+       stronger than ∃ k, so the ∃ k version of the theorem implies them.
+  Most general true reading: R0 with the ∃ k solving notion; it is sharp:
+  for each x the set {Φ^k x : Φ equivariant, k ≥ 0} equals
+  {y : Stab x ⊆ Stab y} (brute-force confirmed), so no weaker per-input
+  hypothesis can work.

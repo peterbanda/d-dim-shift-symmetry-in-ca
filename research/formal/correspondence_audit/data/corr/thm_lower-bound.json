@@ -1,0 +1,475 @@
+{
+ "label": "thm:lower-bound",
+ "statement": {
+  "summary": "Theorem 6.1 is the core frozen Prop `ShiftSym.lowerBoundStatement n dd σ` (Statement.lean, frozen in Phase E): under 2 ≤ n, 1 ≤ dd, 2 ≤ σ, `lowerEnvelope n dd σ ≤ |S|` (in ℤ) and `lowerEnvelope n dd σ = |S| ↔ n.Prime`. It is not restated in Phase H; S06 adds the bridge from the paper's product-formula F_d to `lowerEnvelope`, and S10/S06 contain restatements of its halves (`primeEqualityStatement`, `strictCompositeStatement`, `primesMeetEnvelopeStatement`).",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.lowerBoundStatement",
+    "role": "statement"
+   },
+   {
+    "decl": "ShiftSym.lowerEnvelope",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.rdCoeff",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.gaussBinom",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.IsShiftSymmetric",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P06.envelopeIntegralStatement",
+    "role": "bridge (product formula ↔ q-Pascal)"
+   }
+  ],
+  "deltas": [
+   "Alphabet Σ is `Fin σ` (only |Σ| enters).",
+   "|S_{n^d}| is `Nat.card` of the subtype of shift-symmetric configurations, cast to ℤ; F_d and the comparison live in ℤ.",
+   "Gaussian binomials use the q-Pascal recurrence `gaussBinom`, evaluated at q = n; agreement with the paper's product formula at every integer q ≥ 2 is certified separately (`P06.gaussProdEq_proved`, `P06.envelopeIntegral_proved`).",
+   "n^{d−r} uses ℕ-subtraction `dd - r`, exact on 1 ≤ r ≤ d.",
+   "σ ≥ 2 is kept (not relaxed to σ ≥ 1): the equality clause is false at σ = 1."
+  ],
+  "maps": [
+   {
+    "id": "whole",
+    "kind": "same",
+    "label": "Theorem 6.1: F_d ≤ |S|, equality iff n prime",
+    "tex": [
+     {
+      "text": "|S_{n^d}| \\;\\ge\\; F_d(n,\\sigma)"
+     },
+     {
+      "text": "with equality if and only if $n$ is prime"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.lowerBoundStatement"
+     }
+    ],
+    "note": "The frozen Prop is the conjunction of the inequality and the equality-iff-prime clause, under the three hypotheses as antecedents. It was frozen in Statement.lean before the proof (Phase E)."
+   },
+   {
+    "id": "hyp",
+    "kind": "hypothesis",
+    "label": "n ≥ 2, d ≥ 1, σ ≥ 2",
+    "tex": [
+     {
+      "text": "For all integers $n\\ge2$, $d\\ge1$, $\\sigma\\ge2$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.lowerBoundStatement",
+      "text": "2 ≤ n → 1 ≤ dd → 2 ≤ σ"
+     }
+    ],
+    "note": "Stated in the theorem itself (matching the standing hypotheses of Definition 2.1). The dimension variable is called `dd` in Lean."
+   },
+   {
+    "id": "hyp.sigma",
+    "kind": "hypothesis",
+    "label": "σ ≥ 2 (not σ ≥ 1)",
+    "tex": [
+     {
+      "text": "$\\sigma\\ge2$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.lowerBoundStatement",
+      "text": "2 ≤ σ"
+     }
+    ],
+    "note": "Not a counting statement in the sense of Definition 2.1: the equality clause fails at σ = 1 (e.g. d = 1: F_1 = 1 = |S_n| for every n), so σ ≥ 2 is required and kept."
+   },
+   {
+    "id": "hyp.std",
+    "kind": "hypothesis",
+    "label": "standing setting of Definition 2.1",
+    "tex": [
+     {
+      "text": "Fix integers $n\\ge2$, $d\\ge1$ and a finite alphabet $\\Sigma$ with\n$\\sigma=|\\Sigma|\\ge2$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.lowerBoundStatement",
+      "text": "2 ≤ n → 1 ≤ dd → 2 ≤ σ"
+     }
+    ],
+    "note": "The theorem's hypotheses coincide with the standing ones; the alphabet is fixed as `Fin σ` (only |Σ| enters)."
+   },
+   {
+    "id": "ineq",
+    "kind": "representation",
+    "label": "|S_{n^d}| ≥ F_d(n,σ)",
+    "tex": [
+     {
+      "text": "|S_{n^d}| \\;\\ge\\; F_d(n,\\sigma)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.lowerBoundStatement",
+      "text": "lowerEnvelope n dd σ\n        ≤ (Nat.card {s : Config n dd (Fin σ) // IsShiftSymmetric s} : ℤ)"
+     }
+    ],
+    "note": "Written as F_d ≤ |S| in ℤ: the envelope is an alternating sum, so the comparison is made in ℤ with the count cast from ℕ."
+   },
+   {
+    "id": "lhs",
+    "kind": "representation",
+    "label": "|S_{n^d}|",
+    "tex": [
+     {
+      "text": "|S_{n^d}|"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.lowerBoundStatement",
+      "text": "(Nat.card {s : Config n dd (Fin σ) // IsShiftSymmetric s} : ℤ)",
+      "occ": 1
+     }
+    ],
+    "note": "|S_{n^d}| is `Nat.card` of the subtype of shift-symmetric configurations over the alphabet `Fin σ`, cast to ℤ."
+   },
+   {
+    "id": "lhs.def",
+    "kind": "definition",
+    "label": "S_{n^d} = ⋃_{v≠0} S_{n^d}(v)",
+    "tex": [
+     {
+      "text": "S_{n^d} \\;=\\; \\bigcup_{\\mathbf 0\\neq\\vv\\in\\A} S_{n^d}(\\vv)\n    \\;=\\; \\{\\ssb : \\Stab(\\ssb)\\neq\\{\\mathbf 0\\}\\}",
+      "scope": {
+       "lines": [
+        295,
+        302
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.lowerBoundStatement",
+      "text": "IsShiftSymmetric s",
+      "occ": 1
+     },
+     {
+      "decl": "ShiftSym.IsShiftSymmetric",
+      "text": "∃ v : Lat n d, v ≠ 0 ∧ shift v s = s"
+     }
+    ],
+    "note": "s ∈ S_{n^d} iff some nonzero translation fixes s; `IsShiftSymmetric` says exactly that (∃ v ≠ 0, shift v s = s)."
+   },
+   {
+    "id": "lhs.config",
+    "kind": "definition",
+    "label": "configurations s : 𝒜 → Σ on 𝒜 = (ℤ/nℤ)^d",
+    "tex": [
+     {
+      "text": "A {\\bf configuration} is any function $\\ssb:\\A\\to\\Sigma$",
+      "scope": {
+       "lines": [
+        286,
+        286
+       ]
+      }
+     },
+     {
+      "text": "$\\A=(\\ZZ/n\\ZZ)^d$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.lowerBoundStatement",
+      "text": "Config n dd (Fin σ)",
+      "occ": 1
+     },
+     {
+      "decl": "ShiftSym.Config",
+      "text": "Lat n d → A"
+     },
+     {
+      "decl": "ShiftSym.Lat",
+      "text": "Fin d → ZMod n"
+     }
+    ],
+    "note": "𝒜 = `Lat n d = Fin d → ZMod n`; configurations are functions `Lat n d → Fin σ`."
+   },
+   {
+    "id": "lhs.shift",
+    "kind": "definition",
+    "label": "translation (τ_v s)(u) = s(u+v)",
+    "tex": [
+     {
+      "text": "$(\\tau_\\vv\\ssb)(\\uu)=\\ssb(\\uu+\\vv)$",
+      "scope": {
+       "lines": [
+        291,
+        291
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.shift",
+      "text": "fun u => s (u + v)"
+     }
+    ],
+    "note": "Same convention (u + v, not u − v)."
+   },
+   {
+    "id": "rhs",
+    "kind": "same",
+    "label": "F_d(n,σ)",
+    "tex": [
+     {
+      "text": "F_d(n,\\sigma)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.lowerBoundStatement",
+      "text": "lowerEnvelope n dd σ",
+      "occ": 1
+     }
+    ],
+    "note": "F_d(n,σ) is the project definition `lowerEnvelope n dd σ` (an integer)."
+   },
+   {
+    "id": "rhs.def",
+    "kind": "definition",
+    "label": "F_d := Σ_{r=1}^d (−1)^{r+1} n^{C(r,2)} [d r]_n σ^{n^{d−r}}",
+    "tex": [
+     {
+      "text": "\\sum_{r=1}^{d}(-1)^{r+1}\\,n^{\\binom r2}\\gaussbinom dr_n\\,\n    \\sigma^{\\,n^{d-r}}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.lowerEnvelope",
+      "text": "∑ r ∈ Finset.Icc 1 dd,\n    (-1 : ℤ) ^ (r + 1) * (rdCoeff n r dd : ℤ) * (σ : ℤ) ^ (n ^ (dd - r))"
+     }
+    ],
+    "note": "Term-by-term the same sum, in ℤ; the coefficient n^{C(r,2)}[d r]_n is packaged as `rdCoeff n r dd`."
+   },
+   {
+    "id": "rhs.idx",
+    "kind": "same",
+    "label": "r = 1,…,d",
+    "tex": [
+     {
+      "text": "\\sum_{r=1}^{d}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.lowerEnvelope",
+      "text": "Finset.Icc 1 dd"
+     }
+    ],
+    "note": "Index set [1, d]."
+   },
+   {
+    "id": "rhs.sign",
+    "kind": "same",
+    "label": "(−1)^{r+1}",
+    "tex": [
+     {
+      "text": "(-1)^{r+1}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.lowerEnvelope",
+      "text": "(-1 : ℤ) ^ (r + 1)"
+     }
+    ],
+    "note": "Sign in ℤ."
+   },
+   {
+    "id": "rhs.coef",
+    "kind": "representation",
+    "label": "n^{C(r,2)} [d r]_n = r_d(n, r)",
+    "tex": [
+     {
+      "text": "n^{\\binom r2}\\gaussbinom dr_n"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.lowerEnvelope",
+      "text": "(rdCoeff n r dd : ℤ)"
+     },
+     {
+      "decl": "ShiftSym.rdCoeff",
+      "text": "q ^ (v.choose 2) * gaussBinom q dd v"
+     }
+    ],
+    "note": "`rdCoeff q v d = q^{C(v,2)} · gaussBinom q d v`, evaluated at the (possibly composite) q = n; a natural number cast to ℤ."
+   },
+   {
+    "id": "rhs.pow",
+    "kind": "same",
+    "label": "n^{C(r,2)}",
+    "tex": [
+     {
+      "text": "n^{\\binom r2}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.rdCoeff",
+      "text": "q ^ (v.choose 2)"
+     }
+    ],
+    "note": "C(r,2) is `Nat.choose r 2`; q := n, v := r."
+   },
+   {
+    "id": "rhs.gauss",
+    "kind": "representation",
+    "label": "[d r]_n (Gaussian binomial at q = n)",
+    "tex": [
+     {
+      "text": "\\gaussbinom dr_n"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.rdCoeff",
+      "text": "gaussBinom q dd v"
+     },
+     {
+      "decl": "ShiftSym.gaussBinom"
+     }
+    ],
+    "note": "Lean's Gaussian binomial is defined by the q-Pascal recurrence, the paper's by the product formula; see the next map for the bridge."
+   },
+   {
+    "id": "rhs.gauss.def",
+    "kind": "representation",
+    "label": "product formula = q-Pascal recurrence (bridge)",
+    "tex": [
+     {
+      "text": "\\gaussbinom dr_p=\\prod_{i=0}^{r-1}\n\\frac{p^{d-i}-1}{p^{i+1}-1}",
+      "scope": {
+       "lines": [
+        354,
+        355
+       ]
+      }
+     },
+     {
+      "text": "we will evaluate Gaussian binomials at the (possibly\ncomposite) integer argument $q=n$",
+      "scope": {
+       "lines": [
+        766,
+        767
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.gaussProdEqStatement",
+      "text": "gaussProd q d r = (gaussBinom q d r : ℚ)"
+     },
+     {
+      "decl": "ShiftSym.P06.envelopeIntegralStatement",
+      "text": "paperEnvelope n d σ = (lowerEnvelope n d σ : ℚ)"
+     }
+    ],
+    "note": "Not part of the frozen statement, but certified in Phase H (`gaussProdEq_proved`, `envelopeIntegral_proved`): at every integer q ≥ 2 the two definitions agree, and the paper's F_d written with the product formula (`paperEnvelope`, in ℚ) equals `lowerEnvelope`."
+   },
+   {
+    "id": "rhs.exp",
+    "kind": "representation",
+    "label": "σ^{n^{d−r}}",
+    "tex": [
+     {
+      "text": "\\sigma^{\\,n^{d-r}}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.lowerEnvelope",
+      "text": "(σ : ℤ) ^ (n ^ (dd - r))"
+     }
+    ],
+    "note": "Integer power in ℤ."
+   },
+   {
+    "id": "rhs.exp.sub",
+    "kind": "representation",
+    "label": "n^{d−r} (ℕ-subtraction)",
+    "tex": [
+     {
+      "text": "n^{d-r}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.lowerEnvelope",
+      "text": "n ^ (dd - r)"
+     }
+    ],
+    "note": "`dd - r` is truncated ℕ-subtraction; exact on the summation range r ≤ d."
+   },
+   {
+    "id": "eq",
+    "kind": "same",
+    "label": "equality iff n prime",
+    "tex": [
+     {
+      "text": "with equality if and only if $n$ is prime"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.lowerBoundStatement",
+      "text": "lowerEnvelope n dd σ\n          = (Nat.card {s : Config n dd (Fin σ) // IsShiftSymmetric s} : ℤ)\n        ↔ n.Prime"
+     }
+    ],
+    "note": "Both directions: F_d = |S| ⇔ n prime (under the same hypotheses)."
+   },
+   {
+    "id": "eq.prime",
+    "kind": "same",
+    "label": "n is prime",
+    "tex": [
+     {
+      "text": "$n$ is prime"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.lowerBoundStatement",
+      "text": "n.Prime"
+     }
+    ],
+    "note": "mathlib's `Nat.Prime`."
+   }
+  ]
+ }
+}

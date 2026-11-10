@@ -1,0 +1,558 @@
+{
+ "label": "thm:main-enum",
+ "statement": {
+  "summary": "Theorem 4.4 is certified by two Props: the original frozen `ShiftSym.enumerationStatement` (Statement.lean; |S| = `enumerationRHS`, the sum re-indexed by the divisors h ≠ 1 of rad(n)^d) and the Phase-H bridge `P04.rankVectorReindexStatement` (the paper's rank-vector right side `mainFormulaRHS` equals `enumerationRHS`). Phase H did NOT re-freeze eq. (2) as a single Prop; its verbatim form is the composite (helper P04.numSS_eq_mainFormulaRHS). The sentence 'All exponents are integers' is `P04.exponentsIntegerStatement`, and the ℕ-division used in the exponents is justified by `P04.exponentEncodingStatement`.",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.enumerationStatement",
+    "role": "statement (divisor-indexed, frozen pre-Phase H)"
+   },
+   {
+    "decl": "ShiftSym.P04.rankVectorReindexStatement",
+    "role": "statement (bridge rank vectors ↔ divisors)"
+   },
+   {
+    "decl": "ShiftSym.P04.exponentsIntegerStatement",
+    "role": "statement (last sentence: integrality)"
+   },
+   {
+    "decl": "ShiftSym.P04.exponentEncodingStatement",
+    "role": "encoding lemma (ℕ-division exact)"
+   },
+   {
+    "decl": "ShiftSym.P04.mainFormulaRHS",
+    "role": "definition (paper's right side)"
+   },
+   {
+    "decl": "ShiftSym.enumerationRHS",
+    "role": "definition (divisor-indexed right side)"
+   },
+   {
+    "decl": "ShiftSym.coeffOf",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.rdCoeff",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.rad",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.bigOmega",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P04.primeSeq",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P04.rankVectors",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.IsShiftSymmetric",
+    "role": "definition"
+   }
+  ],
+  "deltas": [
+   "Alphabet Σ = `Fin σ`; |S_{n^d}| = `Nat.card` of the subtype of shift-symmetric configurations, cast to ℤ.",
+   "The certified main Prop is divisor-indexed: Σ_{v ∈ {0..d}^k, v ≠ 0} ↔ Σ_{h ∈ divisors(rad(n)^d), h ≠ 1} via h = ∏ p_i^{v_i}; (−1)^{1+|v|} ∏ r_d(p_i,v_i) ↔ `coeffOf d h` (|v| = Ω(h), v_i = v_{p_i}(h), product over the prime factors of h); n^d ∏ p_i^{−v_i} ↔ `n ^ d / h`. The bridge to the paper's indexing is the separately proved `rankVectorReindexStatement`.",
+   "Exponents are ℕ-quotients n^d / ∏ p_i^{v_i}; exactness is proved (`exponentEncodingStatement`, `dvd_pow_of_mem_divisors_rad`).",
+   "p_1 < ⋯ < p_k = `primeSeq n` (0-based i : Fin k, k = n.primeFactors.card); rank vectors are functions Fin k → ℕ.",
+   "r_d(p,v) = `rdCoeff p v d` with the q-Pascal `gaussBinom` (fidelity to the product formula: P01.gaussBinomProductFidelityStatement).",
+   "Integrality sentence: computed in ℚ with zpow; quantified over all v ∈ {0..d}^k including v = 0 (harmless strengthening)."
+  ],
+  "maps": [
+   {
+    "id": "whole",
+    "kind": "representation",
+    "label": "eq. (2): |S_{n^d}| = Σ_v (−1)^{1+|v|} ∏ r_d(p_i,v_i) σ^{n^d ∏ p_i^{−v_i}}",
+    "tex": [
+     {
+      "text": "|S_{n^d}| \\;=\\; \\sum_{\\substack{\\vv=(v_1,\\dots,v_k)\\in\n    \\{0,\\dots,d\\}^k\\\\ \\vv\\neq\\mathbf 0}}\n    (-1)^{1+|\\vv|}\\,\\prod_{i=1}^{k} r_d(p_i, v_i)\\;\n    \\sigma^{\\,n^d\\prod_i p_i^{-v_i}}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.enumerationStatement",
+      "text": "(Nat.card {s : Config n dd (Fin σ) // IsShiftSymmetric s} : ℤ)\n      = enumerationRHS n dd σ"
+     },
+     {
+      "decl": "ShiftSym.P04.rankVectorReindexStatement",
+      "text": "mainFormulaRHS n d σ = enumerationRHS n d σ"
+     }
+    ],
+    "note": "The certified theorem (`enumerationStatement`, frozen before Phase H) states the count = the DIVISOR-indexed `enumerationRHS`. The paper's rank-vector form is `mainFormulaRHS`; `rankVectorReindexStatement` (Phase H bridge) says the two right sides are equal. Eq. (2) verbatim is the composite of the two Props (in Lean: P04.numSS_eq_mainFormulaRHS, a helper, not a frozen Prop). The equation is in ℤ (the count is cast from ℕ because the right side has signs)."
+   },
+   {
+    "id": "hyp.n",
+    "kind": "hypothesis",
+    "label": "n ≥ 2",
+    "tex": [
+     {
+      "text": "$n\\ge2$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.enumerationStatement",
+      "text": "2 ≤ n"
+     }
+    ],
+    "note": "Verbatim antecedent."
+   },
+   {
+    "id": "hyp.d",
+    "kind": "hypothesis",
+    "label": "d ≥ 1",
+    "tex": [
+     {
+      "text": "$d\\ge1$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.enumerationStatement",
+      "text": "1 ≤ dd"
+     }
+    ],
+    "note": "Verbatim antecedent (the dimension is named `dd` in Statement.lean)."
+   },
+   {
+    "id": "hyp.s",
+    "kind": "hypothesis",
+    "label": "σ ≥ 1",
+    "tex": [
+     {
+      "text": "$\\sigma\\ge1$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.enumerationStatement",
+      "text": "1 ≤ σ"
+     }
+    ],
+    "note": "Verbatim antecedent; σ = 1 is included as the paper allows for counting statements."
+   },
+   {
+    "id": "alphabet",
+    "kind": "representation",
+    "label": "alphabet Σ with |Σ| = σ ↦ Fin σ",
+    "tex": [
+     {
+      "text": "a finite alphabet $\\Sigma$ with\n$\\sigma=|\\Sigma|\\ge2$ (for counting statements, $\\sigma=1$ is also allowed)",
+      "scope": {
+       "lines": [
+        283,
+        284
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.enumerationStatement",
+      "text": "(Fin σ)"
+     }
+    ],
+    "note": "Only |Σ| enters; the alphabet is fixed to Fin σ."
+   },
+   {
+    "id": "lhs",
+    "kind": "definition",
+    "label": "|S_{n^d}|",
+    "tex": [
+     {
+      "text": "|S_{n^d}|",
+      "occ": 1
+     },
+     {
+      "text": "S_{n^d} \\;=\\; \\bigcup_{\\mathbf 0\\neq\\vv\\in\\A} S_{n^d}(\\vv)",
+      "scope": {
+       "lines": [
+        295,
+        302
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.enumerationStatement",
+      "text": "Nat.card {s : Config n dd (Fin σ) // IsShiftSymmetric s}"
+     },
+     {
+      "decl": "ShiftSym.IsShiftSymmetric",
+      "text": "∃ v : Lat n d, v ≠ 0 ∧ shift v s = s"
+     }
+    ],
+    "note": "S_{n^d} = configurations fixed by some nonzero translation (`IsShiftSymmetric`); |·| = `Nat.card` of the subtype (the same expression as `numSS`). 𝒜 = `Lat n d = Fin d → ZMod n`."
+   },
+   {
+    "id": "rhs",
+    "kind": "same",
+    "label": "right side in the paper's rank-vector indexing",
+    "tex": [
+     {
+      "text": "\\sum_{\\substack{\\vv=(v_1,\\dots,v_k)\\in\n    \\{0,\\dots,d\\}^k\\\\ \\vv\\neq\\mathbf 0}}\n    (-1)^{1+|\\vv|}\\,\\prod_{i=1}^{k} r_d(p_i, v_i)\\;\n    \\sigma^{\\,n^d\\prod_i p_i^{-v_i}}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.mainFormulaRHS",
+      "text": "∑ v ∈ rankVectors n d,\n    (-1 : ℤ) ^ (1 + ∑ i, v i) * (∏ i, (rdCoeff (primeSeq n i) (v i) d : ℤ)) *\n      (σ : ℤ) ^ (n ^ d / ∏ i, primeSeq n i ^ v i)"
+     }
+    ],
+    "note": "`mainFormulaRHS` (Paper/S04) transcribes the paper's sum term by term."
+   },
+   {
+    "id": "primes",
+    "kind": "definition",
+    "label": "n = ∏ p_i^{α_i}, p_1 < ⋯ < p_k, k = ω(n)",
+    "tex": [
+     {
+      "text": "$n=\\prod_{i=1}^{k}p_i^{\\alpha_i}$, with $p_1<\\dots<p_k$ prime",
+      "scope": {
+       "lines": [
+        354,
+        354
+       ]
+      }
+     },
+     {
+      "text": "the number of distinct prime factors of $n$ is $k=\\omega(n)$",
+      "scope": {
+       "lines": [
+        354,
+        354
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.primeSeq",
+      "text": "n.primeFactors.orderEmbOfFin rfl i"
+     },
+     {
+      "decl": "ShiftSym.P04.primeSeq",
+      "text": "Fin n.primeFactors.card → ℕ"
+     }
+    ],
+    "note": "k = `n.primeFactors.card`; p_i = the i-th smallest prime factor (0-based index i : Fin k)."
+   },
+   {
+    "id": "idx",
+    "kind": "representation",
+    "label": "v = (v_1,…,v_k) ∈ {0,…,d}^k",
+    "tex": [
+     {
+      "text": "\\vv=(v_1,\\dots,v_k)\\in \\{0,\\dots,d\\}^k"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.allRankVectors",
+      "text": "Fintype.piFinset fun _ => Finset.range (d + 1)"
+     }
+    ],
+    "note": "Rank vectors are functions Fin k → ℕ with values in range (d+1)."
+   },
+   {
+    "id": "v0",
+    "kind": "same",
+    "label": "v ≠ 0",
+    "tex": [
+     {
+      "text": "\\vv\\neq\\mathbf 0",
+      "occ": 1
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.rankVectors",
+      "text": "(allRankVectors n d).filter fun v => v ≠ 0"
+     }
+    ],
+    "note": "v ≠ 0 as a function."
+   },
+   {
+    "id": "sign",
+    "kind": "same",
+    "label": "(−1)^{1+|v|}",
+    "tex": [
+     {
+      "text": "(-1)^{1+|\\vv|}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.mainFormulaRHS",
+      "text": "(-1 : ℤ) ^ (1 + ∑ i, v i)"
+     }
+    ],
+    "note": "Sign in ℤ."
+   },
+   {
+    "id": "absv",
+    "kind": "same",
+    "label": "|v| = Σ_i v_i",
+    "tex": [
+     {
+      "text": "$|\\vv|=\\sum_i v_i$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.mainFormulaRHS",
+      "text": "∑ i, v i"
+     }
+    ],
+    "note": "Sum over i : Fin k."
+   },
+   {
+    "id": "prod",
+    "kind": "same",
+    "label": "∏_{i=1}^k r_d(p_i, v_i)",
+    "tex": [
+     {
+      "text": "\\prod_{i=1}^{k} r_d(p_i, v_i)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.mainFormulaRHS",
+      "text": "(∏ i, (rdCoeff (primeSeq n i) (v i) d : ℤ))"
+     }
+    ],
+    "note": "Note the argument order `rdCoeff p v d` for r_d(p,v); cast ℕ → ℤ."
+   },
+   {
+    "id": "rd",
+    "kind": "definition",
+    "label": "r_d(p,v) = p^{C(v,2)} [d v]_p",
+    "tex": [
+     {
+      "text": "r_d(p_i, v_i)"
+     },
+     {
+      "text": "r_d(p,v)=p^{\\binom v2}\\gaussbinom dv_p",
+      "scope": {
+       "lines": [
+        513,
+        516
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.rdCoeff",
+      "text": "q ^ (v.choose 2) * gaussBinom q dd v"
+     },
+     {
+      "decl": "ShiftSym.gaussBinom",
+      "text": "| dd + 1, r + 1 => gaussBinom q dd r + q ^ (r + 1) * gaussBinom q dd (r + 1)"
+     },
+     {
+      "decl": "ShiftSym.P01.gaussBinomProductFidelityStatement"
+     }
+    ],
+    "note": "Gaussian binomial by the q-Pascal recurrence; its agreement with the paper's product formula (§3) is the separately proved fidelity Prop of group 01."
+   },
+   {
+    "id": "exp",
+    "kind": "representation",
+    "label": "σ^{n^d ∏_i p_i^{−v_i}}",
+    "tex": [
+     {
+      "text": "\\sigma^{\\,n^d\\prod_i p_i^{-v_i}}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.mainFormulaRHS",
+      "text": "(σ : ℤ) ^ (n ^ d / ∏ i, primeSeq n i ^ v i)"
+     }
+    ],
+    "note": "The exponent is the ℕ-quotient n^d / ∏ p_i^{v_i}."
+   },
+   {
+    "id": "exp.in",
+    "kind": "representation",
+    "label": "n^d ∏_i p_i^{−v_i} as ℕ-division (exact)",
+    "tex": [
+     {
+      "text": "n^d\\prod_i p_i^{-v_i}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.mainFormulaRHS",
+      "text": "n ^ d / ∏ i, primeSeq n i ^ v i"
+     },
+     {
+      "decl": "ShiftSym.P04.exponentEncodingStatement",
+      "text": "(((n ^ d / ∏ i, primeSeq n i ^ v i : ℕ)) : ℚ)\n      = (n : ℚ) ^ d * ∏ i, ((primeSeq n i : ℚ) ^ (-(v i : ℤ)))"
+     }
+    ],
+    "note": "`exponentEncodingStatement` (not a paper sentence) proves that the ℕ-quotient equals the rational number n^d ∏ p_i^{−v_i} for every v ∈ {0..d}^k, so no truncation occurs."
+   },
+   {
+    "id": "div.whole",
+    "kind": "representation",
+    "label": "divisor reindexing: Σ_v ↔ Σ_{h | rad(n)^d, h ≠ 1}",
+    "tex": [
+     {
+      "text": "\\sum_{\\substack{\\vv=(v_1,\\dots,v_k)\\in\n    \\{0,\\dots,d\\}^k\\\\ \\vv\\neq\\mathbf 0}}\n    (-1)^{1+|\\vv|}\\,\\prod_{i=1}^{k} r_d(p_i, v_i)\\;\n    \\sigma^{\\,n^d\\prod_i p_i^{-v_i}}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.enumerationRHS",
+      "text": "∑ h ∈ ((rad n) ^ dd).divisors.erase 1,\n    coeffOf dd h * (σ : ℤ) ^ (n ^ dd / h)"
+     },
+     {
+      "decl": "ShiftSym.P04.rankVectorReindexStatement",
+      "text": "∀ n d σ : ℕ, mainFormulaRHS n d σ = enumerationRHS n d σ"
+     }
+    ],
+    "note": "Bijection v ↦ h = ∏ p_i^{v_i}: v ∈ {0..d}^k ⟺ h | rad(n)^d, and v = 0 ⟺ h = 1. The bridge is stated for all n, d, σ (both sides are 0 in the degenerate cases) and proved (P04.sum_rankVectors_eq)."
+   },
+   {
+    "id": "div.idx",
+    "kind": "representation",
+    "label": "{v ∈ {0..d}^k, v ≠ 0} ↔ divisors of rad(n)^d except 1",
+    "tex": [
+     {
+      "text": "\\vv=(v_1,\\dots,v_k)\\in \\{0,\\dots,d\\}^k\\\\ \\vv\\neq\\mathbf 0"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.enumerationRHS",
+      "text": "((rad n) ^ dd).divisors.erase 1"
+     },
+     {
+      "decl": "ShiftSym.rad",
+      "text": "∏ p ∈ n.primeFactors, p"
+     }
+    ],
+    "note": "h | rad(n)^d iff every exponent v_p(h) ≤ d and h has only prime factors of n; erasing 1 removes v = 0."
+   },
+   {
+    "id": "div.coef",
+    "kind": "representation",
+    "label": "(−1)^{1+|v|} ∏ r_d(p_i,v_i) ↔ coeffOf d h",
+    "tex": [
+     {
+      "text": "(-1)^{1+|\\vv|}\\,\\prod_{i=1}^{k} r_d(p_i, v_i)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.enumerationRHS",
+      "text": "coeffOf dd h"
+     },
+     {
+      "decl": "ShiftSym.coeffOf",
+      "text": "(-1 : ℤ) ^ (1 + bigOmega h) *\n    ∏ p ∈ h.primeFactors, (rdCoeff p (h.factorization p) dd : ℤ)"
+     }
+    ],
+    "note": "v_i is recovered as h.factorization p_i; the product runs over the prime factors of h only (primes with v_i = 0 contribute r_d(p,0) = 1, so nothing is lost: P04.coeffOf_phi)."
+   },
+   {
+    "id": "div.absv",
+    "kind": "representation",
+    "label": "|v| ↔ Ω(h)",
+    "tex": [
+     {
+      "text": "(-1)^{1+|\\vv|}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.coeffOf",
+      "text": "(-1 : ℤ) ^ (1 + bigOmega h)"
+     },
+     {
+      "decl": "ShiftSym.bigOmega",
+      "text": "h.factorization.sum fun _ e => e"
+     }
+    ],
+    "note": "|v| = Σ v_i = Ω(h), the number of prime factors of h with multiplicity."
+   },
+   {
+    "id": "div.exp",
+    "kind": "representation",
+    "label": "n^d ∏ p_i^{−v_i} ↔ n^d / h",
+    "tex": [
+     {
+      "text": "\\sigma^{\\,n^d\\prod_i p_i^{-v_i}}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.enumerationRHS",
+      "text": "(σ : ℤ) ^ (n ^ dd / h)"
+     }
+    ],
+    "note": "ℕ-division by h = ∏ p_i^{v_i}; exact because every such h divides n^d (`dvd_pow_of_mem_divisors_rad`)."
+   },
+   {
+    "id": "int",
+    "kind": "same",
+    "label": "All exponents are integers",
+    "tex": [
+     {
+      "text": "All exponents are integers."
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.exponentsIntegerStatement",
+      "text": "∃ m : ℕ, (n : ℚ) ^ d * ∏ i, ((primeSeq n i : ℚ) ^ (-(v i : ℤ))) = (m : ℚ)"
+     }
+    ],
+    "note": "Exponent computed literally in ℚ with integer powers p_i^{−v_i}; 'integer' is ∃ m : ℕ (it is positive)."
+   },
+   {
+    "id": "int.v",
+    "kind": "generalization",
+    "label": "for every v ∈ {0..d}^k (also v = 0)",
+    "tex": [
+     {
+      "text": "All exponents"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.exponentsIntegerStatement",
+      "text": "∀ v ∈ allRankVectors n d,"
+     }
+    ],
+    "note": "Harmless strengthening by the trivially integral case v = 0 (exponent n^d)."
+   },
+   {
+    "id": "int.hyp",
+    "kind": "hypothesis",
+    "label": "n ≥ 2, d ≥ 1 for the integrality sentence",
+    "tex": [
+     {
+      "text": "For all $n\\ge2$, $d\\ge1$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P04.exponentsIntegerStatement",
+      "text": "2 ≤ n → 1 ≤ d →"
+     }
+    ],
+    "note": "σ does not occur in the exponents and is not quantified."
+   }
+  ]
+ }
+}

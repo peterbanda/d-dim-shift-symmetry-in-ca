@@ -1,0 +1,17 @@
+Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Lattice.lean:59:20: warning: `Nat.factorization_prod_pow_eq_self` has been deprecated: Use `Nat.prod_factorization_pow_eq_self` instead
+Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Lattice.lean:108:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Shiftsym/Paper/Proofs/P04_EnumerationCorollaries_Lattice.lean:117:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`

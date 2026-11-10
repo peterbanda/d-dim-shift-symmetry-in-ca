@@ -1,0 +1,420 @@
+== 0. Closed form sanity anchors (Theorem 4.7, sigma = 2) ==
+  |S_(2, 2)| = 8  (reference 8)  OK
+  |S_(3, 3)| = 26  (reference 26)  OK
+  |S_(5, 5)| = 182  (reference 182)  OK
+  |S_(2, 2, 2)| = 72  (reference 72)  OK
+  |S_(3, 3, 3)| = 6398  (reference 6398)  OK
+  |S_(6, 6)| = 801064  (reference 801064)  OK
+
+Grids: all ordered tuples with n_i >= 2 and N <= 16: 42 grids; q in (2, 3)
+
+== 1. Brute force (definition level) vs closed form, Theorem 1, Theorem 2 ==
+        grid          N          q    A_words     A_neck     closed       neck       Thm1    Thm1p13        Lyn       Thm2     LynLit       expl
+           2          2          2          2          1          1          3          3      =Thm1          1          1          1         ok
+           2          2          3          6          3          3          6          6      =Thm1          3          3          3         ok
+           3          3          2          6          2          2          4          4          6          2          2          0         ok
+           3          3          3         24          8          8         11         11         19          8          8          2         ok
+           4          4          2         12          3          3          6          6       19/2          3          3          0         ok
+           4          4          3         72         18         18         24         24       87/2         18         18          3         ok
+         2x2          4          2          8          2          2          7          7      =Thm1          3          3          3         ok
+         2x2          4          3         60         15         15         27         27      =Thm1         18         18         18         ok
+           5          5          2         30          6          6          8          8         26          6          6          0         ok
+           5          5          3        240         48         48         51         51        195         48         48          0         ok
+           6          6          2         54          9          9         14         14         25          9          9          0         ok
+           6          6          3        696        116        116        130        130        254        116        116          3         ok
+         2x3          6          2         54          9          9         14         14         25          9          9          4         ok
+         2x3          6          3        696        116        116        130        130        254        116        116         83         ok
+         3x2          6          2         54          9          9         14         14         25          9          9          4         ok
+         3x2          6          3        696        116        116        130        130        254        116        116         83         ok
+           7          7          2        126         18         18         20         20        110         18         18          0         ok
+           7          7          3       2184        312        312        315        315       1875        312        312          0         ok
+           8          8          2        240         30         30         36         36      531/4         30         30          0         ok
+           8          8          3       6480        810        810        834        834    13209/4        810        810          3         ok
+         2x4          8          2        216         27         27         40         40         73         30         30         10         ok
+         2x4          8          3       6336        792        792        855        855       1683        810        810        510         ok
+         4x2          8          2        216         27         27         40         40         73         30         30         10         ok
+         4x2          8          3       6336        792        792        855        855       1683        810        810        510         ok
+       2x2x2          8          2        184         23         23         46         46      =Thm1         32         32         32         ok
+       2x2x2          8          3       6096        762        762        891        891      =Thm1        825        825        825         ok
+           9          9          2        504         56         56         60         60     1030/3         56         56          0         ok
+           9          9          3      19656       2184       2184       2195       2195    39385/3       2184       2184          0         ok
+         3x3          9          2        486         54         54         64         64        232         58         58         32         ok
+         3x3          9          3      19584       2176       2176       2211       2211       8763       2192       2192       1794         ok
+          10         10          2        990         99         99        108        108        423         99         99          0         ok
+          10         10          3      58800       5880       5880       5934       5934      23718       5880       5880          0         ok
+         2x5         10          2        990         99         99        108        108        423         99         99         12         ok
+         2x5         10          3      58800       5880       5880       5934       5934      23718       5880       5880       3024         ok
+         5x2         10          2        990         99         99        108        108        423         99         99         12         ok
+         5x2         10          3      58800       5880       5880       5934       5934      23718       5880       5880       3024         ok
+          11         11          2       2046        186        186        188        188       1862        186        186          0         ok
+          11         11          3     177144      16104      16104      16107      16107     161043      16104      16104          6         ok
+          12         12          2       4020        335        335        352        352     2761/2        335        335          0         ok
+          12         12          3     530640      44220      44220      44368      44368   354575/2      44220      44220          6         ok
+         2x6         12          2       3912        326        326        362        362        717        335        335         36         ok
+         2x6         12          3     529248      44104      44104      44487      44487      88947      44220      44220      20074         ok
+         3x4         12          2       4020        335        335        352        352     2761/2        335        335        178         ok
+         3x4         12          3     530640      44220      44220      44368      44368   354575/2      44220      44220      37019         ok
+         4x3         12          2       4020        335        335        352        352     2761/2        335        335        178         ok
+         4x3         12          3     530640      44220      44220      44368      44368   354575/2      44220      44220      37019         ok
+         6x2         12          2       3912        326        326        362        362        717        335        335         36         ok
+         6x2         12          3     529248      44104      44104      44487      44487      88947      44220      44220      20074         ok
+       2x2x3         12          2       3912        326        326        362        362        717        335        335        278         ok
+       2x2x3         12          3     529248      44104      44104      44487      44487      88947      44220      44220      42618         ok
+       2x3x2         12          2       3912        326        326        362        362        717        335        335        278         ok
+       2x3x2         12          3     529248      44104      44104      44487      44487      88947      44220      44220      42618         ok
+       3x2x2         12          2       3912        326        326        362        362        717        335        335        278         ok
+       3x2x2         12          3     529248      44104      44104      44487      44487      88947      44220      44220      42618         ok
+          13         13          2       8190        630        630        632        632       7562        630        630          0         ok
+          13         13          3    1594320     122640     122640     122643     122643    1471683     122640     122640          6         ok
+          14         14          2      16254       1161       1161       1182       1182       7077       1161       1161          0         ok
+          14         14          3    4780776     341484     341484     341802     341802    2050782     341484     341484          -           
+         2x7         14          2      16254       1161       1161       1182       1182       7077       1161       1161         60         ok
+         2x7         14          3    4780776     341484     341484     341802     341802    2050782     341484     341484          -           
+         7x2         14          2      16254       1161       1161       1182       1182       7077       1161       1161         60         ok
+         7x2         14          3    4780776     341484     341484     341802     341802    2050782     341484     341484          -           
+          15         15          2      32730       2182       2182       2192       2192      17486       2182       2182          0         ok
+          15         15          3   14348640     956576     956576     956635     956635    7652819     956576     956576          -           
+         3x5         15          2      32730       2182       2182       2192       2192      17486       2182       2182        984         ok
+         3x5         15          3   14348640     956576     956576     956635     956635    7652819     956576     956576          -           
+         5x3         15          2      32730       2182       2182       2192       2192      17486       2182       2182        984         ok
+         5x3         15          3   14348640     956576     956576     956635     956635    7652819     956576     956576          -           
+          16         16          2      65280       4080       4080       4116       4116   262675/8       4080       4080          0         ok
+          16         16          3   43040160    2690010    2690010    2690844    2690844 172200093/8    2690010    2690010          -           
+         2x8         16          2      64800       4050       4050       4150       4150    33029/2       4080       4080        157         ok
+         2x8         16          3   43027200    2689200    2689200    2691675    2691675   10764972    2690010    2690010          -           
+         4x4         16          2      64800       4050       4050       4156       4156      16471       4083       4083       2600         ok
+         4x4         16          3   43027200    2689200    2689200    2691711    2691711   10763766    2690028    2690028          -           
+         8x2         16          2      64800       4050       4050       4150       4150    33029/2       4080       4080        157         ok
+         8x2         16          3   43027200    2689200    2689200    2691675    2691675   10764972    2690010    2690010          -           
+       2x2x4         16          2      63936       3996       3996       4216       4216       8356       4107       4107       3184         ok
+       2x2x4         16          3   43001856    2687616    2687616    2693331    2693331    5384961    2690802    2690802          -           
+       2x4x2         16          2      63936       3996       3996       4216       4216       8356       4107       4107       3184         ok
+       2x4x2         16          3   43001856    2687616    2687616    2693331    2693331    5384961    2690802    2690802          -           
+       4x2x2         16          2      63936       3996       3996       4216       4216       8356       4107       4107       3184         ok
+       4x2x2         16          3   43001856    2687616    2687616    2693331    2693331    5384961    2690802    2690802          -           
+     2x2x2x2         16          2      62464       3904       3904       4336       4336      =Thm1       4184       4184       4184         ok
+     2x2x2x2         16          3   42953088    2684568    2684568    2696571    2696571      =Thm1    2693148    2693148          -           
+  [all 84 (grid,q) pairs: brute A_neck == closed form, Theorem 1 == brute necklaces, Theorem 2 == brute Lyndon (cyclic Def. 4)]
+  [elapsed 373.7s]
+
+== 2. Theorem 3 under every reading (720 readings) ==
+  pairs tested: 84;  readings that match ALL pairs: 0
+  best number of matches (necklace reading): 66/84
+  best number of matches against atranslational WORDS (p.7 wording): 0/84
+  readings giving an ill-founded recursion on some grid: 120
+  top readings (sup/lower/upper/l1base/H/G/ev : matches, first failure (grid,q) value vs true):
+    d-1/l>=1/l<n_d/A/text/forall-exists/oracle                  66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/A/text/forall-exists/rec-L                   66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/A/text/forall-exists/rec-T3                  66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/A/text/order/oracle                          66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/A/text/order/rec-L                           66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/A/text/order/rec-T3                          66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/A/text-prod/forall-exists/oracle             66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/A/text-prod/forall-exists/rec-L              66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/A/text-prod/forall-exists/rec-T3             66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/A/text-prod/order/oracle                     66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/A/text-prod/order/rec-L                      66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/A/text-prod/order/rec-T3                     66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/L/text/forall-exists/oracle                  66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/L/text/forall-exists/rec-L                   66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/L/text/forall-exists/rec-T3                  66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/L/text/order/oracle                          66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/L/text/order/rec-L                           66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/L/text/order/rec-T3                          66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/L/text-prod/forall-exists/oracle             66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/L/text-prod/forall-exists/rec-L              66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/L/text-prod/forall-exists/rec-T3             66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/L/text-prod/order/oracle                     66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/L/text-prod/order/rec-L                      66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_d/L/text-prod/order/rec-T3                     66/84  first fail ((2, 4), 2): 28 vs 27
+    d-1/l>=1/l<n_i/A/text/forall-exists/oracle                  66/84  first fail ((2, 4), 2): 28 vs 27
+  literal reading d-1/l>1/l<n_d/A/formula-prod/forall-exists/oracle: 30/84, first fail (((4,), 2), 2, 3)
+  (grid,q) pairs on which EVERY one of the 720 readings fails: 13
+    2x2x2/q3, 2x2x3/q2, 2x2x3/q3, 2x8/q3, 4x4/q3, 2x2x4/q2, 2x2x4/q3, 2x4x2/q2, 2x4x2/q3, 4x2x2/q2, 4x2x2/q3, 2x2x2x2/q2, 2x2x2x2/q3
+  restricted to the 240 'oracle' readings (exact values for the smaller |A|,
+  so that only the top-level identity is tested), pairs failing under EVERY reading: 17
+    2x4/q2, 2x4/q3, 2x2x2/q3, 2x2x3/q2, 2x2x3/q3, 2x8/q2, 2x8/q3, 4x4/q2, 4x4/q3, 2x2x4/q2, 2x2x4/q3, 2x4x2/q2, 2x4x2/q3, 4x2x2/q2, 4x2x2/q3, 2x2x2x2/q2, 2x2x2x2/q3
+  (with recursive evaluation some of these are 'repaired' by compensating errors in the
+   recursively computed smaller |A|, e.g. 2x4/q2 with 2x2 evaluated to 3 instead of 2.)
+  d = 1: 30 pairs, best reading matches 30
+  d = 2: 38 pairs, best reading matches 32
+  d = 3: 14 pairs, best reading matches 4
+  d = 4: 2 pairs, best reading matches 0
+  note: G readings 'forall-exists' and 'order' agree on all grids used here; they differ
+  e.g. |G(1,(2,3,6))| = 0 ('forall-exists') vs 2 ('order').
+
+  Best-scoring reading used below: d-1/l>=1/l<n_d/A/text/forall-exists/oracle
+
+== 3. Full comparison table: true atranslational necklaces vs Theorem 3 ==
+  columns: true = brute force = closed form; T3lit = literal reading; T3best = best reading;
+           #ok = number of the 720 readings that give the true value
+      grid   N  q  L(Thm2)   true A   A words    T3lit   T3best  #ok
+         2   2  2        1        1         2        1        1  560
+         2   2  3        3        3         6        3        3  560
+         3   3  2        2        2         6        2        2  560
+         3   3  3        8        8        24        8        8  560
+         4   4  2        3        3        12        2        3  480
+         4   4  3       18       18        72       15       18  560
+       2x2   4  2        3        2         8        3        2  354
+       2x2   4  3       18       15        60       18       15  354
+         5   5  2        6        6        30        6        6  560
+         5   5  3       48       48       240       48       48  560
+         6   6  2        9        9        54        6        9  480
+         6   6  3      116      116       696      105      116  480
+       2x3   6  2        9        9        54        9        9  480
+       2x3   6  3      116      116       696      116      116  520
+       3x2   6  2        9        9        54        9        9  520
+       3x2   6  3      116      116       696      116      116  480
+         7   7  2       18       18       126       18       18  560
+         7   7  3      312      312      2184      312      312  560
+         8   8  2       30       30       240       27       30  480
+         8   8  3      810      810      6480      792      810  480
+       2x4   8  2       30       27       216       28       28  152
+       2x4   8  3      810      792      6336      795      795  192
+       4x2   8  2       30       27       216       30       27  310
+       4x2   8  3      810      792      6336      810      792  340
+     2x2x2   8  2       32       23       184       32       22   18
+     2x2x2   8  3      825      762      6096      825      750    0
+         9   9  2       56       56       504       54       56  560
+         9   9  3     2184     2184     19656     2176     2184  480
+       3x3   9  2       58       54       486       58       54  372
+       3x3   9  3     2192     2176     19584     2192     2176  282
+        10  10  2       99       99       990       92       99  480
+        10  10  3     5880     5880     58800     5829     5880  480
+       2x5  10  2       99       99       990       99       99  480
+       2x5  10  3     5880     5880     58800     5880     5880  520
+       5x2  10  2       99       99       990       99       99  480
+       5x2  10  3     5880     5880     58800     5880     5880  480
+        11  11  2      186      186      2046      186      186  560
+        11  11  3    16104    16104    177144    16104    16104  560
+        12  12  2      335      335      4020      324      335  480
+        12  12  3    44220    44220    530640    44089    44220  480
+       2x6  12  2      335      326      3912      324      326  384
+       2x6  12  3    44220    44104    529248    44089    44104  288
+       3x4  12  2      335      335      4020      326      335  360
+       3x4  12  3    44220    44220    530640    44104    44220  360
+       4x3  12  2      335      335      4020      335      335  400
+       4x3  12  3    44220    44220    530640    44220    44220  400
+       6x2  12  2      335      326      3912      335      326  202
+       6x2  12  3    44220    44104    529248    44220    44104  202
+     2x2x3  12  2      335      326      3912      335      335    0
+     2x2x3  12  3    44220    44104    529248    44220    44220    0
+     2x3x2  12  2      335      326      3912      335      326  176
+     2x3x2  12  3    44220    44104    529248    44220    44104  196
+     3x2x2  12  2      335      326      3912      335      326  192
+     3x2x2  12  3    44220    44104    529248    44220    44104  168
+        13  13  2      630      630      8190      630      630  560
+        13  13  3   122640   122640   1594320   122640   122640  560
+        14  14  2     1161     1161     16254     1142     1161  480
+        14  14  3   341484   341484   4780776   341169   341484  480
+       2x7  14  2     1161     1161     16254     1161     1161  480
+       2x7  14  3   341484   341484   4780776   341484   341484  520
+       7x2  14  2     1161     1161     16254     1161     1161  480
+       7x2  14  3   341484   341484   4780776   341484   341484  480
+        15  15  2     2182     2182     32730     2174     2182  480
+        15  15  3   956576   956576  14348640   956520   956576  480
+       3x5  15  2     2182     2182     32730     2182     2182  520
+       3x5  15  3   956576   956576  14348640   956576   956576  480
+       5x3  15  2     2182     2182     32730     2182     2182  480
+       5x3  15  3   956576   956576  14348640   956576   956576  480
+        16  16  2     4080     4080     65280     4050     4080  480
+        16  16  3  2690010  2690010  43040160  2689200  2690010  480
+       2x8  16  2     4080     4050     64800     4053     4053    6
+       2x8  16  3  2690010  2689200  43027200  2689218  2689218    0
+       4x4  16  2     4083     4050     64800     3948     4056    8
+       4x4  16  3  2690028  2689200  43027200  2686068  2689236    0
+       8x2  16  2     4080     4050     64800     4080     4050  310
+       8x2  16  3  2690010  2689200  43027200  2690010  2689200  310
+     2x2x4  16  2     4107     3996     63936     4084     4038    0
+     2x2x4  16  3  2690802  2687616  43001856  2690040  2688516    0
+     2x4x2  16  2     4107     3996     63936     4107     4026    0
+     2x4x2  16  3  2690802  2687616  43001856  2690802  2688426    0
+     4x2x2  16  2     4107     3996     63936     4107     3972    0
+     4x2x2  16  3  2690802  2687616  43001856  2690802  2686842    0
+   2x2x2x2  16  2     4184     3904     62464     4184     3379    0
+   2x2x2x2  16  3  2693148  2684568  42953088  2693148  2666478    0
+
+== 4. Exact replacement of Lemma 3, checked stabilizer by stabilizer ==
+  |L| - |A| = sum over H != 0 meeting no axis of |A(G/H)|  (necklaces with Stab = H)
+  verified on all 84 (grid,q) pairs, and for every single stabilizer H
+  (words with Stab(w) = H, brute force) = (N/|H|) * |A(G/H)| (closed form on G/H).
+
+== 5. Where Theorem 3 goes wrong: printed (i,l) terms vs true contributions ==
+  The paper's (i,l) summand is meant to count translational Lyndon necklaces whose
+  translational period has size (n_1..n_{i-1}, l, 1..1) (proof of Lemma 3, p.16).
+  True contributions are listed by stabilizer H, with its period box a(H), the
+  quotient G/H, and |A(G/H)| versus the paper's base count |A^{box}| on the
+  untwisted torus Z_{a_1} x ... x Z_{a_d}.
+
+  grid (2, 2), q = 2: L = 3, true A = 2, true |L \ A| = 1
+    H = <11> |H|=2 box a(H)=(2, 1) G/H=Z2: |A(G/H)|=1 necklaces; untwisted |A^box|=1; paper form (i,l)=(2, 1)
+    reading d-1/l>1/l<n_d/A/formula-prod/forall-exists/oracle: value 3  [no non-zero summand]
+    reading i-1/l>=1/l<n_i/A/text/forall-exists/oracle: value 2  [(i=1,l=1): coef 1 * |A^(1,)|=2 * H=0 = 0; (i=2,l=1): coef 1 * |A^(2, 1)|=1 * H=1 = 1]
+    reading d-1/l>=1/l<n_d/A/text/forall-exists/oracle: value 2  [(i=1,l=1): coef 1 * |A^(2, 1)|=1 * H=0 = 0; (i=2,l=1): coef 1 * |A^(2, 1)|=1 * H=1 = 1]
+
+  grid (2, 4), q = 2: L = 30, true A = 27, true |L \ A| = 3
+    H = <12> |H|=2 box a(H)=(2, 2) G/H=Z4: |A(G/H)|=3 necklaces; untwisted |A^box|=2; paper form (i,l)=(2, 2)
+    reading d-1/l>1/l<n_d/A/formula-prod/forall-exists/oracle: value 28  [(i=2,l=2): coef 1 * |A^(2, 2)|=2 * H=1 = 2]
+    reading i-1/l>=1/l<n_i/A/text/forall-exists/oracle: value 28  [(i=1,l=1): coef 1 * |A^(1,)|=2 * H=0 = 0; (i=2,l=2): coef 1 * |A^(2, 2)|=2 * H=1 = 2]
+    reading d-1/l>=1/l<n_d/A/text/forall-exists/oracle: value 28  [(i=1,l=1): coef 1 * |A^(2, 1)|=1 * H=0 = 0; (i=2,l=2): coef 1 * |A^(2, 2)|=2 * H=1 = 2]
+
+  grid (4, 2), q = 2: L = 30, true A = 27, true |L \ A| = 3
+    H = <21> |H|=2 box a(H)=(4, 1) G/H=Z4: |A(G/H)|=3 necklaces; untwisted |A^box|=3; paper form (i,l)=(2, 1)
+    reading d-1/l>1/l<n_d/A/formula-prod/forall-exists/oracle: value 30  [no non-zero summand]
+    reading i-1/l>=1/l<n_i/A/text/forall-exists/oracle: value 27  [(i=1,l=2): coef 1 * |A^(2,)|=1 * H=0 = 0; (i=2,l=1): coef 1 * |A^(4, 1)|=3 * H=1 = 3]
+    reading d-1/l>=1/l<n_d/A/text/forall-exists/oracle: value 27  [(i=2,l=1): coef 1 * |A^(4, 1)|=3 * H=1 = 3]
+
+  grid (2, 2, 2), q = 2: L = 32, true A = 23, true |L \ A| = 9
+    H = <011> |H|=2 box a(H)=(2, 2, 1) G/H=Z2xZ2: |A(G/H)|=2 necklaces; untwisted |A^box|=2; paper form (i,l)=(3, 1)
+    H = <101> |H|=2 box a(H)=(2, 2, 1) G/H=Z2xZ2: |A(G/H)|=2 necklaces; untwisted |A^box|=2; paper form (i,l)=(3, 1)
+    H = <110> |H|=2 box a(H)=(2, 1, 2) G/H=Z2xZ2: |A(G/H)|=2 necklaces; untwisted |A^box|=2; paper form (i,l)=None
+    H = <111> |H|=2 box a(H)=(2, 2, 1) G/H=Z2xZ2: |A(G/H)|=2 necklaces; untwisted |A^box|=2; paper form (i,l)=(3, 1)
+    H = <011 101 110> |H|=4 box a(H)=(2, 1, 1) G/H=Z2: |A(G/H)|=1 necklaces; untwisted |A^box|=1; paper form (i,l)=(2, 1)
+    reading d-1/l>1/l<n_d/A/formula-prod/forall-exists/oracle: value 32  [no non-zero summand]
+    reading i-1/l>=1/l<n_i/A/text/forall-exists/oracle: value 24  [(i=1,l=1): coef 1 * |A^(1,)|=2 * H=0 = 0; (i=2,l=1): coef 1 * |A^(2, 1)|=1 * H=2 = 2; (i=3,l=1): coef 1 * |A^(2, 2, 1)|=2 * H=3 = 6]
+    reading d-1/l>=1/l<n_d/A/text/forall-exists/oracle: value 22  [(i=1,l=1): coef 1 * |A^(2, 2, 1)|=2 * H=0 = 0; (i=2,l=1): coef 1 * |A^(2, 2, 1)|=2 * H=2 = 4; (i=3,l=1): coef 1 * |A^(2, 2, 1)|=2 * H=3 = 6]
+
+  grid (3, 3), q = 2: L = 58, true A = 54, true |L \ A| = 4
+    H = <11 22> |H|=3 box a(H)=(3, 1) G/H=Z3: |A(G/H)|=2 necklaces; untwisted |A^box|=2; paper form (i,l)=(2, 1)
+    H = <12 21> |H|=3 box a(H)=(3, 1) G/H=Z3: |A(G/H)|=2 necklaces; untwisted |A^box|=2; paper form (i,l)=(2, 1)
+    reading d-1/l>1/l<n_d/A/formula-prod/forall-exists/oracle: value 58  [no non-zero summand]
+    reading i-1/l>=1/l<n_i/A/text/forall-exists/oracle: value 54  [(i=1,l=1): coef 1 * |A^(1,)|=2 * H=0 = 0; (i=2,l=1): coef 1 * |A^(3, 1)|=2 * H=2 = 4]
+    reading d-1/l>=1/l<n_d/A/text/forall-exists/oracle: value 54  [(i=1,l=1): coef 1 * |A^(3, 1)|=2 * H=0 = 0; (i=2,l=1): coef 1 * |A^(3, 1)|=2 * H=2 = 4]
+
+  grid (2, 8), q = 2: L = 4080, true A = 4050, true |L \ A| = 30
+    H = <14> |H|=2 box a(H)=(2, 4) G/H=Z8: |A(G/H)|=30 necklaces; untwisted |A^box|=27; paper form (i,l)=(2, 4)
+    reading d-1/l>1/l<n_d/A/formula-prod/forall-exists/oracle: value 4053  [(i=2,l=4): coef 1 * |A^(2, 4)|=27 * H=1 = 27]
+    reading i-1/l>=1/l<n_i/A/text/forall-exists/oracle: value 4053  [(i=1,l=1): coef 1 * |A^(1,)|=2 * H=0 = 0; (i=2,l=4): coef 1 * |A^(2, 4)|=27 * H=1 = 27]
+    reading d-1/l>=1/l<n_d/A/text/forall-exists/oracle: value 4053  [(i=1,l=1): coef 1 * |A^(2, 1)|=1 * H=0 = 0; (i=2,l=4): coef 1 * |A^(2, 4)|=27 * H=1 = 27]
+
+  grid (4, 4), q = 2: L = 4083, true A = 4050, true |L \ A| = 33
+    H = <22> |H|=2 box a(H)=(4, 2) G/H=Z2xZ4: |A(G/H)|=27 necklaces; untwisted |A^box|=27; paper form (i,l)=(2, 2)
+    H = <11 22 33> |H|=4 box a(H)=(4, 1) G/H=Z4: |A(G/H)|=3 necklaces; untwisted |A^box|=3; paper form (i,l)=(2, 1)
+    H = <13 22 31> |H|=4 box a(H)=(4, 1) G/H=Z4: |A(G/H)|=3 necklaces; untwisted |A^box|=3; paper form (i,l)=(2, 1)
+    reading d-1/l>1/l<n_d/A/formula-prod/forall-exists/oracle: value 3948  [(i=1,l=2): coef 1 * |A^(4, 2)|=27 * H=4 = 108; (i=2,l=2): coef 1 * |A^(4, 2)|=27 * H=1 = 27]
+    reading i-1/l>=1/l<n_i/A/text/forall-exists/oracle: value 4056  [(i=1,l=2): coef 1 * |A^(2,)|=1 * H=0 = 0; (i=2,l=2): coef 1 * |A^(4, 2)|=27 * H=1 = 27]
+    reading d-1/l>=1/l<n_d/A/text/forall-exists/oracle: value 4056  [(i=1,l=2): coef 1 * |A^(4, 2)|=27 * H=0 = 0; (i=2,l=2): coef 1 * |A^(4, 2)|=27 * H=1 = 27]
+
+  grid (2, 2, 4), q = 2: L = 4107, true A = 3996, true |L \ A| = 111
+    H = <012> |H|=2 box a(H)=(2, 2, 2) G/H=Z2xZ4: |A(G/H)|=27 necklaces; untwisted |A^box|=23; paper form (i,l)=(3, 2)
+    H = <102> |H|=2 box a(H)=(2, 2, 2) G/H=Z2xZ4: |A(G/H)|=27 necklaces; untwisted |A^box|=23; paper form (i,l)=(3, 2)
+    H = <110> |H|=2 box a(H)=(2, 1, 4) G/H=Z2xZ4: |A(G/H)|=27 necklaces; untwisted |A^box|=27; paper form (i,l)=None
+    H = <112> |H|=2 box a(H)=(2, 2, 2) G/H=Z2xZ4: |A(G/H)|=27 necklaces; untwisted |A^box|=23; paper form (i,l)=(3, 2)
+    H = <012 102 110> |H|=4 box a(H)=(2, 1, 2) G/H=Z4: |A(G/H)|=3 necklaces; untwisted |A^box|=2; paper form (i,l)=None
+    reading d-1/l>1/l<n_d/A/formula-prod/forall-exists/oracle: value 4084  [(i=3,l=2): coef 1 * |A^(2, 2, 2)|=23 * H=1 = 23]
+    reading i-1/l>=1/l<n_i/A/text/forall-exists/oracle: value 4038  [(i=1,l=1): coef 1 * |A^(1,)|=2 * H=0 = 0; (i=2,l=1): coef 1 * |A^(2, 1)|=1 * H=0 = 0; (i=3,l=2): coef 1 * |A^(2, 2, 2)|=23 * H=3 = 69]
+    reading d-1/l>=1/l<n_d/A/text/forall-exists/oracle: value 4038  [(i=1,l=1): coef 1 * |A^(2, 2, 1)|=2 * H=0 = 0; (i=2,l=1): coef 1 * |A^(2, 2, 1)|=2 * H=0 = 0; (i=3,l=2): coef 1 * |A^(2, 2, 2)|=23 * H=3 = 69]
+
+  grid (2, 2, 2, 2), q = 2: L = 4184, true A = 3904, true |L \ A| = 280
+    H = <0011> |H|=2 box a(H)=(2, 2, 2, 1) G/H=Z2xZ2xZ2: |A(G/H)|=23 necklaces; untwisted |A^box|=23; paper form (i,l)=(4, 1)
+    H = <0101> |H|=2 box a(H)=(2, 2, 2, 1) G/H=Z2xZ2xZ2: |A(G/H)|=23 necklaces; untwisted |A^box|=23; paper form (i,l)=(4, 1)
+    H = <0110> |H|=2 box a(H)=(2, 2, 1, 2) G/H=Z2xZ2xZ2: |A(G/H)|=23 necklaces; untwisted |A^box|=23; paper form (i,l)=None
+    H = <0111> |H|=2 box a(H)=(2, 2, 2, 1) G/H=Z2xZ2xZ2: |A(G/H)|=23 necklaces; untwisted |A^box|=23; paper form (i,l)=(4, 1)
+    H = <1001> |H|=2 box a(H)=(2, 2, 2, 1) G/H=Z2xZ2xZ2: |A(G/H)|=23 necklaces; untwisted |A^box|=23; paper form (i,l)=(4, 1)
+    H = <1010> |H|=2 box a(H)=(2, 2, 1, 2) G/H=Z2xZ2xZ2: |A(G/H)|=23 necklaces; untwisted |A^box|=23; paper form (i,l)=None
+    H = <1011> |H|=2 box a(H)=(2, 2, 2, 1) G/H=Z2xZ2xZ2: |A(G/H)|=23 necklaces; untwisted |A^box|=23; paper form (i,l)=(4, 1)
+    H = <1100> |H|=2 box a(H)=(2, 1, 2, 2) G/H=Z2xZ2xZ2: |A(G/H)|=23 necklaces; untwisted |A^box|=23; paper form (i,l)=None
+    H = <1101> |H|=2 box a(H)=(2, 2, 2, 1) G/H=Z2xZ2xZ2: |A(G/H)|=23 necklaces; untwisted |A^box|=23; paper form (i,l)=(4, 1)
+    H = <1110> |H|=2 box a(H)=(2, 2, 1, 2) G/H=Z2xZ2xZ2: |A(G/H)|=23 necklaces; untwisted |A^box|=23; paper form (i,l)=None
+    H = <1111> |H|=2 box a(H)=(2, 2, 2, 1) G/H=Z2xZ2xZ2: |A(G/H)|=23 necklaces; untwisted |A^box|=23; paper form (i,l)=(4, 1)
+    H = <0011 0101 0110> |H|=4 box a(H)=(2, 2, 1, 1) G/H=Z2xZ2: |A(G/H)|=2 necklaces; untwisted |A^box|=2; paper form (i,l)=(3, 1)
+    H = <0011 1001 1010> |H|=4 box a(H)=(2, 2, 1, 1) G/H=Z2xZ2: |A(G/H)|=2 necklaces; untwisted |A^box|=2; paper form (i,l)=(3, 1)
+    H = <0011 1100 1111> |H|=4 box a(H)=(2, 1, 2, 1) G/H=Z2xZ2: |A(G/H)|=2 necklaces; untwisted |A^box|=2; paper form (i,l)=None
+    H = <0011 1101 1110> |H|=4 box a(H)=(2, 2, 1, 1) G/H=Z2xZ2: |A(G/H)|=2 necklaces; untwisted |A^box|=2; paper form (i,l)=(3, 1)
+    H = <0101 1001 1100> |H|=4 box a(H)=(2, 1, 2, 1) G/H=Z2xZ2: |A(G/H)|=2 necklaces; untwisted |A^box|=2; paper form (i,l)=None
+    H = <0101 1010 1111> |H|=4 box a(H)=(2, 2, 1, 1) G/H=Z2xZ2: |A(G/H)|=2 necklaces; untwisted |A^box|=2; paper form (i,l)=(3, 1)
+    H = <0101 1011 1110> |H|=4 box a(H)=(2, 2, 1, 1) G/H=Z2xZ2: |A(G/H)|=2 necklaces; untwisted |A^box|=2; paper form (i,l)=(3, 1)
+    H = <0110 1001 1111> |H|=4 box a(H)=(2, 2, 1, 1) G/H=Z2xZ2: |A(G/H)|=2 necklaces; untwisted |A^box|=2; paper form (i,l)=(3, 1)
+    H = <0110 1010 1100> |H|=4 box a(H)=(2, 1, 1, 2) G/H=Z2xZ2: |A(G/H)|=2 necklaces; untwisted |A^box|=2; paper form (i,l)=None
+    H = <0110 1011 1101> |H|=4 box a(H)=(2, 2, 1, 1) G/H=Z2xZ2: |A(G/H)|=2 necklaces; untwisted |A^box|=2; paper form (i,l)=(3, 1)
+    H = <0111 1001 1110> |H|=4 box a(H)=(2, 2, 1, 1) G/H=Z2xZ2: |A(G/H)|=2 necklaces; untwisted |A^box|=2; paper form (i,l)=(3, 1)
+    H = <0111 1010 1101> |H|=4 box a(H)=(2, 2, 1, 1) G/H=Z2xZ2: |A(G/H)|=2 necklaces; untwisted |A^box|=2; paper form (i,l)=(3, 1)
+    H = <0111 1011 1100> |H|=4 box a(H)=(2, 1, 2, 1) G/H=Z2xZ2: |A(G/H)|=2 necklaces; untwisted |A^box|=2; paper form (i,l)=None
+    H = <0011 0101 0110 1001 1010 1100 1111> |H|=8 box a(H)=(2, 1, 1, 1) G/H=Z2: |A(G/H)|=1 necklaces; untwisted |A^box|=1; paper form (i,l)=(2, 1)
+    reading d-1/l>1/l<n_d/A/formula-prod/forall-exists/oracle: value 4184  [no non-zero summand]
+    reading i-1/l>=1/l<n_i/A/text/forall-exists/oracle: value 3977  [(i=1,l=1): coef 1 * |A^(1,)|=2 * H=0 = 0; (i=2,l=1): coef 1 * |A^(2, 1)|=1 * H=10 = 10; (i=3,l=1): coef 1 * |A^(2, 2, 1)|=2 * H=18 = 36; (i=4,l=1): coef 1 * |A^(2, 2, 2, 1)|=23 * H=7 = 161]
+    reading d-1/l>=1/l<n_d/A/text/forall-exists/oracle: value 3379  [(i=1,l=1): coef 1 * |A^(2, 2, 2, 1)|=23 * H=0 = 0; (i=2,l=1): coef 1 * |A^(2, 2, 2, 1)|=23 * H=10 = 230; (i=3,l=1): coef 1 * |A^(2, 2, 2, 1)|=23 * H=18 = 414; (i=4,l=1): coef 1 * |A^(2, 2, 2, 1)|=23 * H=7 = 161]
+
+== 5b. Attribution, most favourable reading d-1/l>=1/l<n_d/A/text/forall-exists/oracle ==
+  per (i,l): paper summand vs TRUE number of translational Lyndon necklaces whose
+  stabilizer has period box (n_1..n_{i-1}, l, 1..1); 'other' = boxes not of that form.
+       2x4 q2: value 28 vs true 27; (2,2): 2 vs 3 *
+       2x4 q3: value 795 vs true 792; (2,2): 15 vs 18 *
+     2x2x2 q2: value 22 vs true 23; (2,1): 4 vs 1 *; (3,1): 6 vs 6; other boxes: 0 vs 2 *
+     2x2x2 q3: value 750 vs true 762; (2,1): 30 vs 3 *; (3,1): 45 vs 45; other boxes: 0 vs 15 *
+     2x2x3 q2: value 335 vs true 326; other boxes: 0 vs 9 *
+     2x2x3 q3: value 44220 vs true 44104; other boxes: 0 vs 116 *
+       2x8 q2: value 4053 vs true 4050; (2,4): 27 vs 30 *
+       2x8 q3: value 2689218 vs true 2689200; (2,4): 792 vs 810 *
+       4x4 q2: value 4056 vs true 4050; (2,1): 0 vs 6 *; (2,2): 27 vs 27
+       4x4 q3: value 2689236 vs true 2689200; (2,1): 0 vs 36 *; (2,2): 792 vs 792
+     2x2x4 q2: value 4038 vs true 3996; (3,2): 69 vs 81 *; other boxes: 0 vs 30 *
+     2x2x4 q3: value 2688516 vs true 2687616; (3,2): 2286 vs 2376 *; other boxes: 0 vs 810 *
+     2x4x2 q2: value 4026 vs true 3996; (2,2): 0 vs 3 *; (3,1): 81 vs 81; other boxes: 0 vs 27 *
+     2x4x2 q3: value 2688426 vs true 2687616; (2,2): 0 vs 18 *; (3,1): 2376 vs 2376; other boxes: 0 vs 792 *
+     4x2x2 q2: value 3972 vs true 3996; (2,1): 54 vs 3 *; (3,1): 81 vs 81; other boxes: 0 vs 27 *
+     4x2x2 q3: value 2686842 vs true 2687616; (2,1): 1584 vs 18 *; (3,1): 2376 vs 2376; other boxes: 0 vs 792 *
+   2x2x2x2 q2: value 3379 vs true 3904; (2,1): 230 vs 1 *; (3,1): 414 vs 18 *; (4,1): 161 vs 161; other boxes: 0 vs 100 *
+   2x2x2x2 q3: value 2666478 vs true 2684568; (2,1): 7620 vs 3 *; (3,1): 13716 vs 135 *; (4,1): 5334 vs 5334; other boxes: 0 vs 3108 *
+
+== 5b. Attribution, proof-faithful reading i-1/l>=1/l<n_i/A/text/forall-exists/oracle ==
+  per (i,l): paper summand vs TRUE number of translational Lyndon necklaces whose
+  stabilizer has period box (n_1..n_{i-1}, l, 1..1); 'other' = boxes not of that form.
+       2x4 q2: value 28 vs true 27; (2,2): 2 vs 3 *
+       2x4 q3: value 795 vs true 792; (2,2): 15 vs 18 *
+     2x2x2 q2: value 24 vs true 23; (2,1): 2 vs 1 *; (3,1): 6 vs 6; other boxes: 0 vs 2 *
+     2x2x2 q3: value 774 vs true 762; (2,1): 6 vs 3 *; (3,1): 45 vs 45; other boxes: 0 vs 15 *
+     2x2x3 q2: value 335 vs true 326; other boxes: 0 vs 9 *
+     2x2x3 q3: value 44220 vs true 44104; other boxes: 0 vs 116 *
+       2x8 q2: value 4053 vs true 4050; (2,4): 27 vs 30 *
+       2x8 q3: value 2689218 vs true 2689200; (2,4): 792 vs 810 *
+       4x4 q2: value 4056 vs true 4050; (2,1): 0 vs 6 *; (2,2): 27 vs 27
+       4x4 q3: value 2689236 vs true 2689200; (2,1): 0 vs 36 *; (2,2): 792 vs 792
+     2x2x4 q2: value 4038 vs true 3996; (3,2): 69 vs 81 *; other boxes: 0 vs 30 *
+     2x2x4 q3: value 2688516 vs true 2687616; (3,2): 2286 vs 2376 *; other boxes: 0 vs 810 *
+     2x4x2 q2: value 4020 vs true 3996; (2,2): 6 vs 3 *; (3,1): 81 vs 81; other boxes: 0 vs 27 *
+     2x4x2 q3: value 2688381 vs true 2687616; (2,2): 45 vs 18 *; (3,1): 2376 vs 2376; other boxes: 0 vs 792 *
+     4x2x2 q2: value 4020 vs true 3996; (2,1): 6 vs 3 *; (3,1): 81 vs 81; other boxes: 0 vs 27 *
+     4x2x2 q3: value 2688390 vs true 2687616; (2,1): 36 vs 18 *; (3,1): 2376 vs 2376; other boxes: 0 vs 792 *
+   2x2x2x2 q2: value 3977 vs true 3904; (2,1): 10 vs 1 *; (3,1): 36 vs 18 *; (4,1): 161 vs 161; other boxes: 0 vs 100 *
+   2x2x2x2 q3: value 2687514 vs true 2684568; (2,1): 30 vs 3 *; (3,1): 270 vs 135 *; (4,1): 5334 vs 5334; other boxes: 0 vs 3108 *
+
+== 6. Explicit witness on the 2 x 4 grid (q = 2) ==
+  w = slices ['ab', 'ba', 'ba', 'ab'] (slice y = (w(0,y), w(1,y))); Stab(w) = [(0, 0), (1, 2)]
+  its translational period u = slices ['ab', 'ba'] on Z2 x Z2 has Stab(u) = [(0, 0), (1, 1)]
+  -> w is a translational Lyndon word (no axis period, Stab = <(1,2)>), but its period
+     u is NOT atranslational, so w is not counted by the (i,l) = (2,2) term
+     (-mu(2)) |A^{(2,2)}| H = 1*2*1 = 2; the true count for this stabilizer is
+     |A(Z2xZ4/<(1,2)>)| = |A(Z4)| = 3.
+
+== 7. Witness for the Moebius factor: 4 x 4 grid (q = 2) ==
+  w(x,y) = u(x+y), u = aaab: slices ['aaab', 'aaba', 'abaa', 'baaa']
+  Stab(w) = [(0, 0), (3, 1), (2, 2), (1, 3)]  (order 4, period box (4,1), G/H = Z4, Lyndon)
+  Such necklaces (two stabilizers <(1,1)>, <(1,3)>, 3 necklaces each for q = 2) belong to
+  the summand (i,l) = (2,1), whose printed coefficient is -mu(n_2/l) = -mu(4) = 0.
+
+== 8. Witnesses on the 2 x 2 x 2 grid (q = 2) ==
+  base 'ab' -> checkerboard c (dims 1-2), then c : <c>_h with h = (1, 0): Stab = [(0, 0, 0), (1, 1, 0), (1, 0, 1), (0, 1, 1)], canonical = abbabaab
+  base 'ab' -> checkerboard c (dims 1-2), then c : <c>_h with h = (0, 1): Stab = [(0, 0, 0), (1, 1, 0), (1, 0, 1), (0, 1, 1)], canonical = abbabaab
+  base 'ab' -> checkerboard c (dims 1-2), then c : <c>_h with h = (1, 1): Stab = [(0, 0, 0), (1, 1, 0), (0, 0, 1), (1, 1, 1)], canonical = abbaabba
+  h = (1,1) gives a word with an axis period (excluded by I(2,1,n) = 1); h = (1,0) and
+  h = (0,1) give the SAME word, yet H(2,1,(2,2,2),3) = |G(1,n)| - I = 3 - 1 = 2 counts it
+  twice (h and h + (1,1) coincide because (1,1) fixes the checkerboard).
+  w = [checkerboard ; constant a] (slices along dim 3): Stab = [(0, 0, 0), (1, 1, 0)];
+  its period box is (2,1,2), not of the form (n_1..n_{i-1}, l, 1..1): no summand of
+  Theorem 3 is designed to count it (2 such necklaces for q = 2).
+
+== 9. Defect classes with minimal witnesses (q = 2) ==
+  D1 l = 1 excluded by '1 < l'             grid    2x2: Thm 3 = 3, true = 2   [d-1/l>1/l<n_d/A/formula-prod/forall-exists/oracle]
+  D1 (fixed by l>=1)                       grid    2x2: Thm 3 = 2, true = 2   [d-1/l>=1/l<n_d/A/text/forall-exists/oracle]
+  D5 H display (=1 at i=d) vs p.15 text    grid    2x3: Thm 3 = 8, true = 9   [d-1/l>=1/l<n_d/A/formula/forall-exists/oracle]
+  D5 (text H)                              grid    2x3: Thm 3 = 9, true = 9   [d-1/l>=1/l<n_d/A/text/forall-exists/oracle]
+  D5 also in 1-D: H display, d = 1         grid      4: Thm 3 = 2, true = 3   [d-1/l>1/l<n_d/A/formula-prod/forall-exists/oracle]
+  D2 untwisted base (Z4 vs Z2^2)           grid    2x4: Thm 3 = 28, true = 27   [d-1/l>=1/l<n_d/A/text/forall-exists/oracle]
+  D2 untwisted base (Z8 vs Z2xZ4)          grid    2x8: Thm 3 = 4053, true = 4050   [d-1/l>=1/l<n_d/A/text/forall-exists/oracle]
+  D4 Moebius factor -mu(4) = 0             grid    4x4: Thm 3 = 4056, true = 4050   [d-1/l>=1/l<n_d/A/text/forall-exists/oracle]
+  D3 box (2,1,3) outside the ansatz        grid  2x2x3: Thm 3 = 335, true = 326   [d-1/l>=1/l<n_d/A/text/forall-exists/oracle]
+  D3 box (2,1,3), proof-faithful           grid  2x2x3: Thm 3 = 335, true = 326   [i-1/l>=1/l<n_i/A/text/forall-exists/oracle]
+  D3'+D3 overcount in H, box (2,1,2)       grid  2x2x2: Thm 3 = 24, true = 23   [i-1/l>=1/l<n_i/A/text/forall-exists/oracle]
+
+[total elapsed 374.8s]

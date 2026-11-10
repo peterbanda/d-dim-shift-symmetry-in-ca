@@ -1,0 +1,498 @@
+{
+ "label": "prop:detect-avg",
+ "statement": {
+  "summary": "Proposition 9.2 is split into five Props conjoined in `propDetectAvgStatement`: (i) `detectAvgOrbitsStatement` — the exact uniform average of the number of orbits visited by the stand-alone test of ⟨w⟩ (any p | n prime, any generator w of order p, any traversal order, both readings) is (1 − Q^m)/(1 − Q); (ii) `detectAvgReadsStatement` — the uniform average of `detect`'s reads is ≤ Σ_{p|n} [d 1]_p p/(1 − σ^{1−p}); (iii) `detectAvgBoundLeStatement` — the middle inequality; (iv) `detectAvgBigOStatement` — the O-claim as ∃ C uniform in n, d; (v) `detectAvgReadsBigOStatement` — the composed bound with one constant. The expectation is the explicit average `expectUnif` over all σ^{n^d} configurations.",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P08.detectAvgOrbitsStatement",
+    "role": "statement (i) exact orbit expectation"
+   },
+   {
+    "decl": "ShiftSym.P08.detectAvgReadsStatement",
+    "role": "statement (ii) expected reads bound"
+   },
+   {
+    "decl": "ShiftSym.P08.detectAvgBoundLeStatement",
+    "role": "statement (iii) middle inequality"
+   },
+   {
+    "decl": "ShiftSym.P08.detectAvgBigOStatement",
+    "role": "statement (iv) O-claim"
+   },
+   {
+    "decl": "ShiftSym.P08.detectAvgReadsBigOStatement",
+    "role": "statement (v) composed O-bound"
+   },
+   {
+    "decl": "ShiftSym.P08.propDetectAvgStatement",
+    "role": "statement (whole)"
+   },
+   {
+    "decl": "ShiftSym.P08.expectUnif",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P08.subgroupTest",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P08.detect",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P08.IsSchedule",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.gaussBinom",
+    "role": "definition"
+   }
+  ],
+  "deltas": [
+   "Expectation under the uniform distribution = `expectUnif f = (Σ_s f s) / |Fin σ^{Lat n d}|`, in ℝ.",
+   "Q = σ^{1−p} is the integer power `(σ : ℝ) ^ ((1 : ℤ) − p)` (no truncation); 1 − Q ≠ 0 since σ, p ≥ 2.",
+   "m = N/p is ℕ-division `n ^ d / p`, exact because p | n | n^d.",
+   "'The test of a single order-p subgroup, run on its own' = `subgroupTest stopEarly s ord p w` with its second component (orbits visited, the failing orbit included).",
+   "The subgroup is given by any generator w with `addOrderOf w = p` (every order-p subgroup with every choice of generator).",
+   "'The full algorithm' = `detect` over any schedule, any per-subgroup traversal orders, both readings (see Theorem 9.1's mapping for the algorithm model).",
+   "Σ_{p|n} ranges over `n.primeFactors`.",
+   "'= O(Σ_{p|n} p^d)' is the one-sided Landau bound with one constant C uniform in n and d (d is part of the input); (v) also uniform in σ.",
+   "Standing hypotheses n ≥ 2, d ≥ 1, σ ≥ 2 explicit; `[NeZero n]` only supplies the Fintype instance."
+  ],
+  "maps": [
+   {
+    "id": "unif",
+    "kind": "representation",
+    "label": "s uniform on Σ^{n^d}",
+    "tex": [
+     {
+      "text": "For $\\ssb$ uniform on $\\Sigma^{n^d}$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.expectUnif",
+      "text": "(∑ s : Config n d (Fin σ), (f s : ℝ)) / (Fintype.card (Config n d (Fin σ)) : ℝ)"
+     }
+    ],
+    "note": "Expectation = the plain average over all configurations; no measure theory."
+   },
+   {
+    "id": "single",
+    "kind": "representation",
+    "label": "the test of a single order-p subgroup, run on its own",
+    "tex": [
+     {
+      "text": "the test of any single order-$p$ subgroup, run on its own"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectAvgOrbitsStatement",
+      "text": "∀ p : ℕ, p.Prime → p ∣ n → ∀ w : Lat n d, addOrderOf w = p →"
+     },
+     {
+      "decl": "ShiftSym.P08.detectAvgOrbitsStatement",
+      "text": "(subgroupTest stopEarly s ord p w).2.1",
+      "occ": 2
+     }
+    ],
+    "note": "Stand-alone test of ⟨w⟩ for every prime p | n and every generator w of order p, with nothing visited at the start."
+   },
+   {
+    "id": "i",
+    "kind": "same",
+    "label": "(i) expected orbits visited = (1 − Q^m)/(1 − Q)",
+    "tex": [
+     {
+      "text": "visits in expectation exactly $\\frac{1-Q^{m}}{1-Q}$ orbits"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectAvgOrbitsStatement",
+      "text": "expectUnif (fun s : Config n d (Fin σ) => (subgroupTest stopEarly s ord p w).2.1)\n        = (1 - ((σ : ℝ) ^ ((1 : ℤ) - (p : ℤ))) ^ (n ^ d / p))\n            / (1 - (σ : ℝ) ^ ((1 : ℤ) - (p : ℤ)))"
+     }
+    ],
+    "note": "An equality in ℝ, for every traversal order and both readings."
+   },
+   {
+    "id": "i.orbits",
+    "kind": "definition",
+    "label": "number of orbits visited",
+    "tex": [
+     {
+      "text": "orbits",
+      "occ": 1
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.subgroupTestAux",
+      "text": "(t.1, t.2.1 + 1, t.2.2 + r.2)"
+     },
+     {
+      "decl": "ShiftSym.P08.subgroupTestAux",
+      "text": "else (false, 1, r.2)"
+     }
+    ],
+    "note": "Middle component of the test's result: +1 per walked orbit, the failing orbit included; skipped (visited) cells cost nothing."
+   },
+   {
+    "id": "i.frac",
+    "kind": "same",
+    "label": "(1 − Q^m)/(1 − Q)",
+    "tex": [
+     {
+      "text": "$\\frac{1-Q^{m}}{1-Q}$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectAvgOrbitsStatement",
+      "text": "(1 - ((σ : ℝ) ^ ((1 : ℤ) - (p : ℤ))) ^ (n ^ d / p))\n            / (1 - (σ : ℝ) ^ ((1 : ℤ) - (p : ℤ)))"
+     }
+    ],
+    "note": "Real division; denominator nonzero under σ, p ≥ 2."
+   },
+   {
+    "id": "i.Q",
+    "kind": "representation",
+    "label": "Q = σ^{1−p}",
+    "tex": [
+     {
+      "text": "$Q=\\sigma^{1-p}$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectAvgOrbitsStatement",
+      "text": "(σ : ℝ) ^ ((1 : ℤ) - (p : ℤ))",
+      "occ": 1
+     }
+    ],
+    "note": "Q is inlined; integer power in ℝ."
+   },
+   {
+    "id": "i.m",
+    "kind": "representation",
+    "label": "m = N/p",
+    "tex": [
+     {
+      "text": "$m=N/p$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectAvgOrbitsStatement",
+      "text": "n ^ d / p",
+      "occ": 2
+     }
+    ],
+    "note": "ℕ-division, exact since p | n and d ≥ 1."
+   },
+   {
+    "id": "i.ord",
+    "kind": "hypothesis",
+    "label": "any traversal order, both readings",
+    "tex": [
+     {
+      "text": "visits in expectation exactly"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectAvgOrbitsStatement",
+      "text": "∀ ord : List (Lat n d), IsTraversalOrder ord → ∀ stopEarly : Bool,"
+     }
+    ],
+    "note": "The paper leaves these implicit; the exact formula holds for all of them (the number of orbits visited does not depend on the reading)."
+   },
+   {
+    "id": "ii",
+    "kind": "same",
+    "label": "(ii) expected total reads ≤ Σ_{p|n} [d 1]_p p/(1 − σ^{1−p})",
+    "tex": [
+     {
+      "text": "Consequently, the\nexpected total number of cells read by the full algorithm is at most"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectAvgReadsStatement",
+      "text": "expectUnif (fun s : Config n d (Fin σ) => (detect stopEarly s ord sched).2)\n        ≤ ∑ p ∈ n.primeFactors,\n            (gaussBinom p d 1 : ℝ) * ((p : ℝ) / (1 - (σ : ℝ) ^ ((1 : ℤ) - (p : ℤ))))"
+     }
+    ],
+    "note": "Average of `detect`'s read count over all configurations; for every schedule, family of orders and reading."
+   },
+   {
+    "id": "ii.alg",
+    "kind": "hypothesis",
+    "label": "the full algorithm: any schedule, orders, reading",
+    "tex": [
+     {
+      "text": "the full algorithm"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectAvgReadsStatement",
+      "text": "∀ sched : List (ℕ × Lat n d), IsSchedule sched →\n    ∀ ord : ℕ × Lat n d → List (Lat n d), (∀ e ∈ sched, IsTraversalOrder (ord e)) →\n    ∀ stopEarly : Bool,"
+     },
+     {
+      "decl": "ShiftSym.P08.detect",
+      "text": "if t.1 then (true, t.2.2)"
+     }
+    ],
+    "note": "The full algorithm stops at the first passing subgroup; its inputs are quantified universally (algorithm model as in Theorem 9.1)."
+   },
+   {
+    "id": "ii.sum",
+    "kind": "same",
+    "label": "Σ_{p|n} [d 1]_p · p/(1 − σ^{1−p})",
+    "tex": [
+     {
+      "text": "\\sum_{p\\mid n}\\gaussbinom d1_p\\;\\frac{p}{1-\\sigma^{1-p}}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectAvgReadsStatement",
+      "text": "∑ p ∈ n.primeFactors,\n            (gaussBinom p d 1 : ℝ) * ((p : ℝ) / (1 - (σ : ℝ) ^ ((1 : ℤ) - (p : ℤ))))"
+     }
+    ],
+    "note": "Sum over the prime factors of n; juxtaposition is multiplication in ℝ."
+   },
+   {
+    "id": "ii.idx",
+    "kind": "representation",
+    "label": "Σ over p | n",
+    "tex": [
+     {
+      "text": "\\sum_{p\\mid n}",
+      "occ": 1
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectAvgReadsStatement",
+      "text": "∑ p ∈ n.primeFactors",
+      "occ": 1
+     }
+    ],
+    "note": "Primes dividing n = `n.primeFactors` (n ≥ 2)."
+   },
+   {
+    "id": "ii.gb",
+    "kind": "definition",
+    "label": "[d 1]_p",
+    "tex": [
+     {
+      "text": "\\gaussbinom d1_p",
+      "occ": 1
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectAvgReadsStatement",
+      "text": "gaussBinom p d 1"
+     },
+     {
+      "decl": "ShiftSym.gaussBinom",
+      "text": "| dd + 1, r + 1 => gaussBinom q dd r + q ^ (r + 1) * gaussBinom q dd (r + 1)"
+     }
+    ],
+    "note": "Gaussian binomial by the q-Pascal recurrence (Statement.lean), cast to ℝ; it counts the order-p subgroups."
+   },
+   {
+    "id": "ii.frac",
+    "kind": "representation",
+    "label": "p/(1 − σ^{1−p})",
+    "tex": [
+     {
+      "text": "\\frac{p}{1-\\sigma^{1-p}}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectAvgReadsStatement",
+      "text": "((p : ℝ) / (1 - (σ : ℝ) ^ ((1 : ℤ) - (p : ℤ))))"
+     }
+    ],
+    "note": "Real division, σ^{1−p} as an integer power."
+   },
+   {
+    "id": "iii",
+    "kind": "same",
+    "label": "(iii) Σ [d 1]_p p/(1 − σ^{1−p}) ≤ 2 Σ p [d 1]_p",
+    "tex": [
+     {
+      "text": "\\sum_{p\\mid n}\\gaussbinom d1_p\\;\\frac{p}{1-\\sigma^{1-p}} \\;\\le\\; 2\\sum_{p\\mid n}p\\,\\gaussbinom d1_p"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectAvgBoundLeStatement",
+      "text": "∑ p ∈ n.primeFactors,\n        (gaussBinom p d 1 : ℝ) * ((p : ℝ) / (1 - (σ : ℝ) ^ ((1 : ℤ) - (p : ℤ))))\n      ≤ 2 * ∑ p ∈ n.primeFactors, (p : ℝ) * (gaussBinom p d 1 : ℝ)"
+     }
+    ],
+    "note": "The middle inequality of the display, frozen on its own (σ ≥ 2)."
+   },
+   {
+    "id": "iii.rhs",
+    "kind": "same",
+    "label": "2 Σ_{p|n} p [d 1]_p",
+    "tex": [
+     {
+      "text": "2\\sum_{p\\mid n}p\\,\\gaussbinom d1_p"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectAvgBoundLeStatement",
+      "text": "2 * ∑ p ∈ n.primeFactors, (p : ℝ) * (gaussBinom p d 1 : ℝ)"
+     }
+    ],
+    "note": "In ℝ."
+   },
+   {
+    "id": "iv",
+    "kind": "representation",
+    "label": "(iv) = O(Σ_{p|n} p^d)",
+    "tex": [
+     {
+      "text": "O\\Bigl(\\sum_{p\\mid n}p^{\\,d}\\Bigr)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectAvgBigOStatement",
+      "text": "∃ C : ℝ, ∀ n d : ℕ, 2 ≤ n → 1 ≤ d →\n    2 * ∑ p ∈ n.primeFactors, (p : ℝ) * (gaussBinom p d 1 : ℝ)\n      ≤ C * ∑ p ∈ n.primeFactors, (p : ℝ) ^ d"
+     }
+    ],
+    "note": "'=O(·)' read as a one-sided bound with ONE constant for all n ≥ 2 and d ≥ 1 (d is part of the input)."
+   },
+   {
+    "id": "iv.sum",
+    "kind": "same",
+    "label": "Σ_{p|n} p^d",
+    "tex": [
+     {
+      "text": "\\sum_{p\\mid n}p^{\\,d}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectAvgBigOStatement",
+      "text": "∑ p ∈ n.primeFactors, (p : ℝ) ^ d"
+     }
+    ],
+    "note": "Natural power in ℝ."
+   },
+   {
+    "id": "v",
+    "kind": "representation",
+    "label": "(v) composed: expected reads = O(Σ_{p|n} p^d)",
+    "tex": [
+     {
+      "text": "\\sum_{p\\mid n}\\gaussbinom d1_p\\;\\frac{p}{1-\\sigma^{1-p}} \\;\\le\\; 2\\sum_{p\\mid n}p\\,\\gaussbinom d1_p \\;=\\;O\\Bigl(\\sum_{p\\mid n}p^{\\,d}\\Bigr)."
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectAvgReadsBigOStatement",
+      "text": "expectUnif (fun s : Config n d (Fin σ) => (detect stopEarly s ord sched).2)\n        ≤ C * ∑ p ∈ n.primeFactors, (p : ℝ) ^ d"
+     }
+    ],
+    "note": "The display read end to end: one C uniform in n, d, σ and all algorithm inputs. Not a separate paper claim, but what the chain asserts."
+   },
+   {
+    "id": "hyp",
+    "kind": "hypothesis",
+    "label": "standing hypotheses n ≥ 2, d ≥ 1, σ ≥ 2",
+    "tex": [
+     {
+      "text": "Fix integers $n\\ge2$, $d\\ge1$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectAvgOrbitsStatement",
+      "text": "2 ≤ n → 1 ≤ d → 2 ≤ σ →"
+     }
+    ],
+    "note": "From Definition 2.1; σ ≥ 2 and p ≥ 2 keep Q < 1."
+   },
+   {
+    "id": "alph",
+    "kind": "representation",
+    "label": "alphabet Σ = Fin σ",
+    "tex": [
+     {
+      "text": "a finite alphabet $\\Sigma$ with $\\sigma=|\\Sigma|\\ge2$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detectAvgOrbitsStatement",
+      "text": "Config n d (Fin σ)",
+      "occ": 1
+     }
+    ],
+    "note": "Uniform over Fin σ-valued configurations; only σ matters."
+   },
+   {
+    "id": "whole",
+    "kind": "representation",
+    "label": "Proposition 9.2 as one Prop",
+    "tex": [
+     {
+      "text": "For $\\ssb$ uniform on $\\Sigma^{n^d}$, the test of any single order-$p$ subgroup, run on its own, visits in expectation exactly $\\frac{1-Q^{m}}{1-Q}$ orbits, with $Q=\\sigma^{1-p}$ and $m=N/p$. Consequently, the expected total number of cells read by the full algorithm is at most"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.propDetectAvgStatement",
+      "text": "detectAvgOrbitsStatement n d σ ∧ detectAvgReadsStatement n d σ ∧\n    detectAvgBoundLeStatement n d σ ∧ detectAvgBigOStatement ∧\n    detectAvgReadsBigOStatement"
+     }
+    ],
+    "note": "Parts (i)–(v)."
+   },
+   {
+    "id": "a.alg",
+    "kind": "definition",
+    "label": "the algorithm of §9 = `detect`",
+    "tex": [
+     {
+      "text": "\\textbf{Algorithm.} For each prime $p\\mid n$ and each of the $\\gaussbinom d1_p$ order-$p$ cyclic subgroups $C=\\langle\\ww\\rangle$ (enumerated via one representative line each, Lemma~\\ref{lem:torsion}): traverse the cells in a fixed order (which may depend on the subgroup); for each yet-unvisited cell, walk its $C$-orbit ($p$ cells) checking equality; abort the subgroup at the first failing orbit. Report ``symmetric'' at the first subgroup all of whose orbits pass; report ``asymmetric'' if all subgroups fail.",
+      "scope": {
+       "lines": [
+        1032,
+        1064
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P08.detect",
+      "text": "| e :: rest =>\n      let t := subgroupTest stopEarly s (ord e) e.1 e.2\n      if t.1 then (true, t.2.2)\n      else\n        let r := detect stopEarly s ord rest\n        (r.1, t.2.2 + r.2)"
+     }
+    ],
+    "note": "`detect stopEarly s ord sched` runs the subgroup tests in schedule order and returns (verdict, total cells read). It is a Lean function, so the read count is computed, not postulated."
+   }
+  ]
+ }
+}

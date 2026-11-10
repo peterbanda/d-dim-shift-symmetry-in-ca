@@ -1,0 +1,506 @@
+{
+ "label": "prop:rate",
+ "statement": {
+  "summary": "Proposition 10.1 is frozen as nine Props whose conjunction is `rateLawStatement`: the two inequalities of the first display (`rateLowerStatement` in ℕ, `rateUpperStatement` in ℝ), the decay-rate sandwich (`rateGapStatement`), the vanishing of the gap bound and the limit c(n,d) → 1 − 1/p_1 (`Filter.Tendsto` along d : ℕ → ∞ for fixed n, σ), and four readings of the universality-class sentence (common limit for equal p_1; even n → 1/2; prime p → 1 − 1/p; 1/2 extremal; liminf ≥ 1/2).",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P09.rateLawStatement",
+    "role": "statement (whole)"
+   },
+   {
+    "decl": "ShiftSym.P09.rateLowerStatement",
+    "role": "statement (lower bound)"
+   },
+   {
+    "decl": "ShiftSym.P09.rateUpperStatement",
+    "role": "statement (upper bound)"
+   },
+   {
+    "decl": "ShiftSym.P09.rateGapStatement",
+    "role": "statement (sandwich)"
+   },
+   {
+    "decl": "ShiftSym.P09.rateGapBoundTendstoStatement",
+    "role": "statement (gap bound → 0)"
+   },
+   {
+    "decl": "ShiftSym.P09.rateLimitStatement",
+    "role": "statement (limit)"
+   },
+   {
+    "decl": "ShiftSym.P09.rateUniversalityStatement",
+    "role": "statement (universality)"
+   },
+   {
+    "decl": "ShiftSym.P09.rateEvenClassStatement",
+    "role": "statement (even class)"
+   },
+   {
+    "decl": "ShiftSym.P09.ratePrimeClassStatement",
+    "role": "statement (prime class)"
+   },
+   {
+    "decl": "ShiftSym.P09.rateExtremalClassStatement",
+    "role": "statement (extremal class)"
+   },
+   {
+    "decl": "ShiftSym.P09.rateFloorStatement",
+    "role": "statement (floor)"
+   },
+   {
+    "decl": "ShiftSym.P09.decayRate",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P09.p1",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.numSS",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.probUnif",
+    "role": "definition"
+   }
+  ],
+  "deltas": [
+   "Alphabet Σ is `Fin σ`; |S_{n^d}| = `numSS n d σ`, P^unif = `probUnif n d σ` (ℝ).",
+   "p_1(n) = `Nat.minFac n`; N/p_1 = `n ^ d / minFac n` is ℕ-division, exact since p_1 ∣ n^d for d ≥ 1 (`p1_dvd_pow`).",
+   "log_b x = `Real.logb b x`; all log arguments are > 0 and bases are 2 or σ ≥ 2 under the hypotheses, so mathlib's log conventions never fire.",
+   "n^{d−1} uses ℕ-subtraction `d - 1`, exact since 1 ≤ d (the limit statements quantify d only inside `Tendsto`, where small d is irrelevant).",
+   "Limits 'as d → ∞' are `Filter.Tendsto (fun d : ℕ => …) atTop (𝓝 L)` with n and σ fixed outside (pointwise in n, σ; the paper claims nothing uniform).",
+   "c(n,d) carries σ explicitly: `decayRate n d σ`.",
+   "The universality-class sentence is split into four Props (common limit for equal p_1, even class, prime class, extremal 1/2) plus the floor parenthetical as liminf ≥ 1/2 in ε–D form."
+  ],
+  "maps": [
+   {
+    "id": "whole",
+    "kind": "same",
+    "label": "Proposition 10.1 = conjunction of nine Props",
+    "tex": [
+     {
+      "text": "Let $p_1=p_1(n)$ be the smallest prime factor of $n$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.rateLawStatement",
+      "text": "rateBoundsStatement ∧ rateGapStatement ∧ rateGapBoundTendstoStatement ∧\n    rateLimitStatement ∧ rateUniversalityStatement ∧ rateEvenClassStatement ∧\n    ratePrimeClassStatement ∧ rateExtremalClassStatement ∧ rateFloorStatement"
+     }
+    ],
+    "note": "The proposition is split into its sentences: two-sided bound, sandwich, vanishing gap bound, limit, and four readings of the universality-class sentence plus the 'floor' parenthetical. The auxiliary proof-chain Prop `rateProofPrefactorStatement` is NOT part of it."
+   },
+   {
+    "id": "p1",
+    "kind": "representation",
+    "label": "p_1(n) = smallest prime factor",
+    "tex": [
+     {
+      "text": "$p_1=p_1(n)$ be the smallest prime factor of $n$"
+     },
+     {
+      "text": "$p_1<\\dots<p_k$ prime",
+      "scope": {
+       "lines": [
+        354,
+        354
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.p1"
+     }
+    ],
+    "note": "mathlib `Nat.minFac n` is the least prime factor for n ≠ 1; every statement assumes 2 ≤ n, so it is prime."
+   },
+   {
+    "id": "N",
+    "kind": "representation",
+    "label": "N = n^d",
+    "tex": [
+     {
+      "text": "$N=n^d$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.rateLowerStatement",
+      "text": "n ^ d / p1 n"
+     }
+    ],
+    "note": "N is never a separate name in Lean; it is written out as `n ^ d` (ℕ) or `(n : ℝ) ^ d` (ℝ)."
+   },
+   {
+    "id": "hyp",
+    "kind": "hypothesis",
+    "label": "for all n ≥ 2, d ≥ 1, σ ≥ 2",
+    "tex": [
+     {
+      "text": "For all $n\\ge2$, $d\\ge1$, $\\sigma\\ge2$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.rateLowerStatement",
+      "text": "∀ n d σ : ℕ, 2 ≤ n → 1 ≤ d → 2 ≤ σ →"
+     }
+    ],
+    "note": "Same quantifiers in `rateLowerStatement`, `rateUpperStatement`, `rateGapStatement`. The limit statements drop `1 ≤ d` (only large d matter) and quantify `∀ n σ` before the limit in d."
+   },
+   {
+    "id": "bounds",
+    "kind": "same",
+    "label": "σ^{N/p_1} ≤ |S| ≤ 2 log₂(n) n^{d−1} σ^{N/p_1}",
+    "tex": [
+     {
+      "text": "\\sigma^{N/p_1}\\;\\le\\;|S_{n^d}|\\;\\le\\; 2\\log_2(n)\\,n^{d-1}\\,\\sigma^{N/p_1}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.rateBoundsStatement",
+      "text": "rateLowerStatement ∧ rateUpperStatement"
+     }
+    ],
+    "note": "The displayed chain is split into its two inequalities."
+   },
+   {
+    "id": "lower",
+    "kind": "same",
+    "label": "lower bound σ^{N/p_1} ≤ |S_{n^d}|",
+    "tex": [
+     {
+      "text": "\\sigma^{N/p_1}\\;\\le\\;|S_{n^d}|"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.rateLowerStatement",
+      "text": "σ ^ (n ^ d / p1 n) ≤ numSS n d σ"
+     }
+    ],
+    "note": "Stated in ℕ (both sides are natural numbers)."
+   },
+   {
+    "id": "S",
+    "kind": "definition",
+    "label": "|S_{n^d}|",
+    "tex": [
+     {
+      "text": "|S_{n^d}|",
+      "occ": 1
+     },
+     {
+      "text": "S_{n^d} \\;=\\; \\bigcup_{\\mathbf 0\\neq\\vv\\in\\A} S_{n^d}(\\vv)\n\\;=\\; \\{\\ssb : \\Stab(\\ssb)\\neq\\{\\mathbf 0\\}\\}",
+      "scope": {
+       "lines": [
+        295,
+        302
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.rateLowerStatement",
+      "text": "numSS n d σ",
+      "occ": 2
+     },
+     {
+      "decl": "ShiftSym.numSS",
+      "text": "Nat.card {s : Config n d (Fin σ) // IsShiftSymmetric s}"
+     },
+     {
+      "decl": "ShiftSym.IsShiftSymmetric",
+      "text": "∃ v : Lat n d, v ≠ 0 ∧ shift v s = s"
+     }
+    ],
+    "note": "`numSS n d σ` = cardinality of the configurations over `Fin σ` fixed by some nonzero translation (Definition 2.3)."
+   },
+   {
+    "id": "exp",
+    "kind": "representation",
+    "label": "exponent N/p_1 (ℕ-division)",
+    "tex": [
+     {
+      "text": "N/p_1",
+      "occ": 1
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.rateLowerStatement",
+      "text": "n ^ d / p1 n"
+     }
+    ],
+    "note": "ℕ-division; exact because p_1 ∣ n ∣ n^d for d ≥ 1 (proved representation check `p1_dvd_pow`; the proof casts it to the real quotient via `cast_E`)."
+   },
+   {
+    "id": "upper",
+    "kind": "same",
+    "label": "upper bound |S| ≤ 2 log₂(n) n^{d−1} σ^{N/p_1}",
+    "tex": [
+     {
+      "text": "|S_{n^d}|\\;\\le\\; 2\\log_2(n)\\,n^{d-1}\\,\\sigma^{N/p_1}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.rateUpperStatement",
+      "text": "(numSS n d σ : ℝ) ≤\n      2 * Real.logb 2 (n : ℝ) * (n : ℝ) ^ (d - 1) * (σ : ℝ) ^ (n ^ d / p1 n)"
+     }
+    ],
+    "note": "Stated in ℝ (2 log₂ n is irrational in general); |S| cast to ℝ."
+   },
+   {
+    "id": "upper.pref",
+    "kind": "representation",
+    "label": "prefactor 2 log₂(n) n^{d−1}",
+    "tex": [
+     {
+      "text": "2\\log_2(n)\\,n^{d-1}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.rateUpperStatement",
+      "text": "2 * Real.logb 2 (n : ℝ) * (n : ℝ) ^ (d - 1)"
+     }
+    ],
+    "note": "log₂ = `Real.logb 2` (argument n ≥ 2 > 0); n^{d−1} uses ℕ-subtraction `d - 1`, exact since 1 ≤ d."
+   },
+   {
+    "id": "upper.rhs",
+    "kind": "representation",
+    "label": "σ^{N/p_1} on the right",
+    "tex": [
+     {
+      "text": "\\sigma^{N/p_1}",
+      "occ": 2
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.rateUpperStatement",
+      "text": "(σ : ℝ) ^ (n ^ d / p1 n)"
+     }
+    ],
+    "note": "Real base, natural exponent `n ^ d / p1 n` (exact ℕ-division)."
+   },
+   {
+    "id": "c",
+    "kind": "definition",
+    "label": "c(n,d) := −log_σ P^unif_{n^d} / N",
+    "tex": [
+     {
+      "text": "$c(n,d):=-\\log_\\sigma P^{\\mathrm{unif}}_{n^d}/N$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.decayRate",
+      "text": "-Real.logb (σ : ℝ) (probUnif n d σ) / (n : ℝ) ^ d"
+     }
+    ],
+    "note": "The paper suppresses σ; Lean has `decayRate n d σ`. P^unif > 0 under the hypotheses, so `Real.logb`'s conventions at 0 never fire."
+   },
+   {
+    "id": "Punif",
+    "kind": "definition",
+    "label": "P^unif_{n^d} = |S|/σ^{n^d}",
+    "tex": [
+     {
+      "text": "$P^{\\mathrm{unif}}_{n^d}=|S_{n^d}|/\\sigma^{n^d}$",
+      "scope": {
+       "lines": [
+        882,
+        885
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.probUnif",
+      "text": "(numSS n d σ : ℝ) / (σ : ℝ) ^ (n ^ d)"
+     }
+    ],
+    "note": "Shared definition from Corollary 7.1, real division."
+   },
+   {
+    "id": "gap",
+    "kind": "same",
+    "label": "0 ≤ (1 − 1/p_1) − c(n,d) ≤ log_σ(2n^{d−1}log₂n)/N",
+    "tex": [
+     {
+      "text": "0\\;\\le\\;\\Bigl(1-\\frac1{p_1}\\Bigr)-c(n,d)\\;\\le\\;\n    \\frac{\\log_\\sigma\\bigl(2\\,n^{d-1}\\log_2 n\\bigr)}{N}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.rateGapStatement",
+      "text": "0 ≤ (1 - 1 / (p1 n : ℝ)) - decayRate n d σ ∧\n      (1 - 1 / (p1 n : ℝ)) - decayRate n d σ ≤\n        Real.logb (σ : ℝ) (2 * (n : ℝ) ^ (d - 1) * Real.logb 2 (n : ℝ)) / (n : ℝ) ^ d"
+     }
+    ],
+    "note": "Chain split into a conjunction of two inequalities, same quantifiers n ≥ 2, d ≥ 1, σ ≥ 2."
+   },
+   {
+    "id": "gap.mid",
+    "kind": "representation",
+    "label": "(1 − 1/p_1) − c(n,d)",
+    "tex": [
+     {
+      "text": "\\Bigl(1-\\frac1{p_1}\\Bigr)-c(n,d)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.rateGapStatement",
+      "text": "(1 - 1 / (p1 n : ℝ)) - decayRate n d σ",
+      "occ": 1
+     }
+    ],
+    "note": "1/p_1 is real division (p_1 ≥ 2)."
+   },
+   {
+    "id": "gap.ub",
+    "kind": "representation",
+    "label": "log_σ(2 n^{d−1} log₂ n)/N",
+    "tex": [
+     {
+      "text": "\\frac{\\log_\\sigma\\bigl(2\\,n^{d-1}\\log_2 n\\bigr)}{N}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.rateGapStatement",
+      "text": "Real.logb (σ : ℝ) (2 * (n : ℝ) ^ (d - 1) * Real.logb 2 (n : ℝ)) / (n : ℝ) ^ d"
+     }
+    ],
+    "note": "Argument ≥ 2 > 0 (log₂ n ≥ 1), base σ ≥ 2; N = (n:ℝ)^d > 0. Factor order as in the paper."
+   },
+   {
+    "id": "tendsto0",
+    "kind": "representation",
+    "label": "gap bound → 0 as d → ∞",
+    "tex": [
+     {
+      "text": "\\frac{\\log_\\sigma\\bigl(2\\,n^{d-1}\\log_2 n\\bigr)}{N}\n    \\;\\xrightarrow[d\\to\\infty]{}\\;0"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.rateGapBoundTendstoStatement",
+      "text": "∀ n σ : ℕ, 2 ≤ n → 2 ≤ σ →\n    Tendsto\n      (fun d : ℕ =>\n        Real.logb (σ : ℝ) (2 * (n : ℝ) ^ (d - 1) * Real.logb 2 (n : ℝ)) / (n : ℝ) ^ d)\n      atTop (𝓝 0)"
+     }
+    ],
+    "note": "`Filter.Tendsto` along d : ℕ → ∞ (atTop) for each FIXED n ≥ 2, σ ≥ 2 (quantifiers outside the limit; no uniformity in n or σ is claimed, nor by the paper). Values at d = 0 (where d − 1 truncates) do not affect the limit."
+   },
+   {
+    "id": "limit",
+    "kind": "representation",
+    "label": "c(n,d) → 1 − 1/p_1(n)",
+    "tex": [
+     {
+      "text": "so $c(n,d)\\to1-1/p_1(n)$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.rateLimitStatement",
+      "text": "∀ n σ : ℕ, 2 ≤ n → 2 ≤ σ →\n    Tendsto (fun d : ℕ => decayRate n d σ) atTop (𝓝 (1 - 1 / (p1 n : ℝ)))"
+     }
+    ],
+    "note": "Limit in d (the variable of the preceding arrow), for fixed n ≥ 2 and σ ≥ 2; `Tendsto … atTop (𝓝 L)`."
+   },
+   {
+    "id": "univ",
+    "kind": "representation",
+    "label": "universality classes determined solely by p_1",
+    "tex": [
+     {
+      "text": "Asymptotically in $d$, lattice sides fall into\n\\emph{universality classes} determined solely by their smallest prime\nfactor"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.rateUniversalityStatement",
+      "text": "∀ n m σ : ℕ, 2 ≤ n → 2 ≤ m → 2 ≤ σ → p1 n = p1 m →\n    ∃ L : ℝ, Tendsto (fun d : ℕ => decayRate n d σ) atTop (𝓝 L) ∧\n      Tendsto (fun d : ℕ => decayRate m d σ) atTop (𝓝 L)"
+     }
+    ],
+    "note": "Formalized as: equal p_1 ⇒ a common limit exists. Only this direction ('determined solely by') is frozen; that different p_1 give different classes follows from `rateLimitStatement` and is not a separate Prop."
+   },
+   {
+    "id": "even",
+    "kind": "representation",
+    "label": "even n on the class c = 1/2",
+    "tex": [
+     {
+      "text": "with even $n$ on the extremal class $c=1/2$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.rateEvenClassStatement",
+      "text": "∀ n σ : ℕ, 2 ≤ n → Even n → 2 ≤ σ →\n    Tendsto (fun d : ℕ => decayRate n d σ) atTop (𝓝 (1 / 2))"
+     }
+    ],
+    "note": "'On the class' = the limit is 1/2 (c(n,d) < 1/2 occurs at finite d, e.g. c(2,2) = 1/4 at σ = 2, so only the limit reading is true)."
+   },
+   {
+    "id": "extremal",
+    "kind": "representation",
+    "label": "1/2 is the extremal class value",
+    "tex": [
+     {
+      "text": "the extremal class $c=1/2$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.rateExtremalClassStatement",
+      "text": "(1 / 2 : ℝ) ≤ 1 - 1 / (p1 n : ℝ) ∧ (1 - 1 / (p1 n : ℝ) = 1 / 2 ↔ Even n)"
+     }
+    ],
+    "note": "'Extremal' = least among all class values 1 − 1/p_1(n), attained exactly at even n (pure real arithmetic in minFac)."
+   },
+   {
+    "id": "floor",
+    "kind": "representation",
+    "label": "the floor permitted by Theorem 6.3",
+    "tex": [
+     {
+      "text": "the floor permitted"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.rateFloorStatement",
+      "text": "∀ ε : ℝ, 0 < ε → ∃ D : ℕ, ∀ d : ℕ, D ≤ d → 1 / 2 - ε ≤ decayRate n d σ"
+     }
+    ],
+    "note": "Read as liminf_{d→∞} c(n,d) ≥ 1/2, in ε–D form, for fixed n ≥ 2, σ ≥ 2. A finite-d floor would be false (c(2,2) = 1/4). The attribution 'permitted by Theorem 6.3' is not formalized: the Lean proof derives the floor from the limit and `rateExtremalClassStatement`, not from Theorem 6.3."
+   },
+   {
+    "id": "prime",
+    "kind": "same",
+    "label": "primes p on c = 1 − 1/p",
+    "tex": [
+     {
+      "text": "and primes $p$ on $c=1-1/p$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.ratePrimeClassStatement",
+      "text": "∀ p σ : ℕ, p.Prime → 2 ≤ σ →\n    Tendsto (fun d : ℕ => decayRate p d σ) atTop (𝓝 (1 - 1 / (p : ℝ)))"
+     }
+    ],
+    "note": "Limit as d → ∞ for each prime p and fixed σ ≥ 2."
+   }
+  ]
+ }
+}

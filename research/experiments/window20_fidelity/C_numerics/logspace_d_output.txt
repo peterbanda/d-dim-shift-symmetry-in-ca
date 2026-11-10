@@ -1,0 +1,16 @@
+self-test (interval contains exact log_s P, small tori): 185 contained, 0 not, 7 bound-invalid skipped
+(d) prime branch d >= dc(p)+20: 74298 points, prime advantage proved at 74298, undecided 0, contradicted 0
+    smallest proved margin |log_s(P_(p+1)^d / P_p^d)| on branch (ii): 2.1920497e+12
+    composite branch (bonus, log space) d <= dc(p)-20: 1114494 points, composite advantage proved at 1114493, undecided 1, contradicted 0; undecided points: [('i-undecided', 41, 1, 2)]
+    smallest proved margin on branch (i): 16.999735
+    contradictions: []
+    sample p=3 d=21 sigma=2: log_s P_(p+1)^d - log_s P_p^d = X + r with X = phi(d) exact (-2192049686750, sign -), r in [-11.2842132, -11.2842132]
+    sample p=5 d=23 sigma=2: log_s P_(p+1)^d - log_s P_p^d = X + r with X = phi(d) exact (-385328368362738908, sign -), r in [-28.40434635, -28.40434635]
+    sample p=7 d=25 sigma=2: log_s P_(p+1)^d - log_s P_p^d = X + r with X = phi(d) exact (-17739978543195182368378, sign -), r in [-42.59891059, -42.59891059]
+    sample p=37 d=45 sigma=2: log_s P_(p+1)^d - log_s P_p^d = X + r with X = phi(d) exact (234 bits, sign -), r in [-184.2554765, -184.2554765]
+    sample p=1999 d=1405 sigma=2: log_s P_(p+1)^d - log_s P_p^d = X + r with X = phi(d) exact (15400 bits, sign -), r in [-13989.94883, -13989.94883]
+time 32.9s
+
+real	0m33.168s
+user	0m0.461s
+sys	0m0.126s

@@ -1,0 +1,599 @@
+{
+ "label": "lem:dtorus",
+ "statement": {
+  "summary": "Lemma A.1 is frozen as two Props: the sandwich 0 ≤ q^m(p^{-j}) ≤ σ^{N_j} is `lemA1SandwichStatement`, the union bound at j = 1 is `lemA1UnionBoundStatement`; `lemA1Statement` is their conjunction. q^m(c) is the literal real-valued truncation `qTrunc` (real power `Real.rpow` with exponent c·n^d·∏ p_i^{-v_i}), p = p_{m+1} is `primeAt n m` (0-indexed increasing list of prime factors), N_j is the real number `Nj n d p j = n^d/p^j`. The title's 'union interpretation' (q^m(p^{−j}) counts the configurations of T_j fixed by some order-p_i subgroup) is a step of the proof, frozen as the auxiliary `unionInterpretationStatement`; it is not part of the lemma's statement.",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P10.lemA1SandwichStatement",
+    "role": "statement (sandwich)"
+   },
+   {
+    "decl": "ShiftSym.P10.lemA1UnionBoundStatement",
+    "role": "statement (union bound)"
+   },
+   {
+    "decl": "ShiftSym.P10.lemA1Statement",
+    "role": "statement (whole)"
+   },
+   {
+    "decl": "ShiftSym.P10.qTrunc",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P10.primeAt",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P10.kOf",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P10.Nj",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.rdCoeff",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.gaussBinom",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P10.gaussBinomEqProdStatement",
+    "role": "bridge (q-Pascal = product formula)"
+   }
+  ],
+  "deltas": [
+   "p_1 < … < p_k is `primeAt n 0 < … < primeAt n (k-1)` (0-indexed); the appendix's p := p_{m+1} is `primeAt n m`; Σ_{i ≤ m} is Σ_{i ∈ range m}.",
+   "q^m(c) is `qTrunc n d σ m c : ℝ`, with v ∈ {0,…,d}^m as `v : Fin m → Fin (d+1)`, the power of σ as `Real.rpow` with real exponent c·n^d·∏ p_i^{-v_i} (zpow), no rounding.",
+   "p^{-j} is the real zpow `(primeAt n m : ℝ) ^ (-(j : ℤ))`; N_j = n^d/p^j is real division (`Nj`), σ^{N_j} and σ^{N_1/p_i} are `Real.rpow`.",
+   "r_d(p,v) = `rdCoeff p v d` and [d 1]_{p_i} = `gaussBinom p_i d 1` use the q-Pascal recurrence; equality with the paper's product formula is the separately certified bridge `gaussBinomEqProdStatement`.",
+   "Standing hypotheses n ≥ 2, d ≥ 1, σ ≥ 2 of the appendix are explicit antecedents (n ≥ 2, d ≥ 1 are implied by 1 ≤ m < k, 1 ≤ j ≤ d anyway)."
+  ],
+  "maps": [
+   {
+    "id": "whole",
+    "kind": "same",
+    "label": "Lemma A.1 = sandwich ∧ union bound",
+    "tex": [
+     {
+      "text": "Let $1\\le m<k$ and $1\\le j\\le d$. Then"
+     },
+     {
+      "text": "0\\;\\le\\;q^m(p^{-j})\\;\\le\\;\\sigma^{N_j},\n  \\qquad\\text{and}\\qquad\n  q^m(p^{-1})\\;\\le\\;\\sum_{i\\le m}\\gaussbinom d1_{p_i}\\,\\sigma^{N_1/p_i}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA1Statement",
+      "text": "lemA1SandwichStatement ∧ lemA1UnionBoundStatement"
+     }
+    ],
+    "note": "The hypotheses and both displayed claims; the sandwich and the union bound are frozen separately and conjoined."
+   },
+   {
+    "id": "hyp.m",
+    "kind": "hypothesis",
+    "label": "1 ≤ m < k",
+    "tex": [
+     {
+      "text": "$1\\le m<k$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA1SandwichStatement",
+      "text": "1 ≤ m → m < kOf n",
+      "occ": 1
+     },
+     {
+      "decl": "ShiftSym.P10.lemA1UnionBoundStatement",
+      "text": "1 ≤ m → m < kOf n"
+     }
+    ],
+    "note": "Same range in both parts; k = ω(n) is `kOf n`."
+   },
+   {
+    "id": "hyp.j",
+    "kind": "hypothesis",
+    "label": "1 ≤ j ≤ d",
+    "tex": [
+     {
+      "text": "$1\\le j\\le d$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA1SandwichStatement",
+      "text": "1 ≤ j → j ≤ d"
+     }
+    ],
+    "note": "Only the sandwich has j; the union bound is the j = 1 case, so it has no j binder."
+   },
+   {
+    "id": "hyp.std",
+    "kind": "hypothesis",
+    "label": "standing n ≥ 2, d ≥ 1, σ ≥ 2",
+    "tex": [
+     {
+      "text": "Fix integers $n\\ge2$, $d\\ge1$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     },
+     {
+      "text": "$\\sigma=|\\Sigma|\\ge2$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA1SandwichStatement",
+      "text": "2 ≤ n → 1 ≤ d → 2 ≤ σ"
+     },
+     {
+      "decl": "ShiftSym.P10.lemA1UnionBoundStatement",
+      "text": "2 ≤ n → 1 ≤ d → 2 ≤ σ"
+     }
+    ],
+    "note": "Not restated by the lemma: n ≥ 2, d ≥ 1 are the standing hypotheses of Definition 2.1, and the lemma sits in the proof of Theorem 6.1 (σ ≥ 2). In the sandwich, n ≥ 2 and d ≥ 1 also follow from 1 ≤ m < k and 1 ≤ j ≤ d; the union bound has no j and keeps d ≥ 1 explicitly. Per the Lean docstring both inequalities also hold for σ = 1 (checked), so σ ≥ 2 loses nothing."
+   },
+   {
+    "id": "def.k",
+    "kind": "definition",
+    "label": "k = ω(n)",
+    "tex": [
+     {
+      "text": "$k=\\omega(n)$",
+      "scope": {
+       "lines": [
+        354,
+        354
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.kOf",
+      "text": "n.primeFactors.card"
+     }
+    ],
+    "note": "Number of distinct prime factors."
+   },
+   {
+    "id": "def.pi",
+    "kind": "representation",
+    "label": "p_1 < ⋯ < p_k (0-indexed)",
+    "tex": [
+     {
+      "text": "$p_1<\\dots<p_k$ prime",
+      "scope": {
+       "lines": [
+        354,
+        354
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.primeAt",
+      "text": "(n.primeFactors.sort (· ≤ ·)).getD i 0"
+     }
+    ],
+    "note": "`primeAt n i` is the (i+1)-st smallest prime factor; the default 0 is never reached under i < k."
+   },
+   {
+    "id": "def.p",
+    "kind": "representation",
+    "label": "p := p_{m+1}",
+    "tex": [
+     {
+      "text": "$p:=p_{m+1}$",
+      "scope": {
+       "lines": [
+        1718,
+        1726
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA1SandwichStatement",
+      "text": "(primeAt n m : ℝ)",
+      "occ": 1
+     }
+    ],
+    "note": "0-indexing: p_{m+1} = `primeAt n m`; it is inlined everywhere in the Lean statements."
+   },
+   {
+    "id": "def.qm",
+    "kind": "definition",
+    "label": "q^m(c) (truncation, scaled exponents)",
+    "tex": [
+     {
+      "text": "q^m(c)\\;=\\;\\sum_{\\substack{\\vv\\in\\{0,\\dots,d\\}^m\\\\\\vv\\neq0}}\n  (-1)^{1+|\\vv|}\\prod_{i=1}^m r_d(p_i,v_i)\\,\n  \\sigma^{\\,cN\\prod_i p_i^{-v_i}}",
+      "scope": {
+       "lines": [
+        1718,
+        1726
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.qTrunc",
+      "text": "∑ v ∈ (Finset.univ : Finset (Fin m → Fin (d + 1))).erase 0,\n    (-1 : ℝ) ^ (1 + ∑ i : Fin m, ((v i : Fin (d + 1)) : ℕ)) *\n      (∏ i : Fin m, (rdCoeff (primeAt n i) ((v i : Fin (d + 1)) : ℕ) d : ℝ)) *\n      (σ : ℝ) ^ (c * (n : ℝ) ^ d *\n        ∏ i : Fin m, (primeAt n i : ℝ) ^ (-(((v i : Fin (d + 1)) : ℕ) : ℤ)))"
+     }
+    ],
+    "note": "Literal transcription of the defining display, real-valued."
+   },
+   {
+    "id": "def.qm.idx",
+    "kind": "representation",
+    "label": "v ∈ {0,…,d}^m, v ≠ 0",
+    "tex": [
+     {
+      "text": "\\vv\\in\\{0,\\dots,d\\}^m\\\\\\vv\\neq0",
+      "scope": {
+       "lines": [
+        1718,
+        1726
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.qTrunc",
+      "text": "(Finset.univ : Finset (Fin m → Fin (d + 1))).erase 0"
+     }
+    ],
+    "note": "Vectors as functions `Fin m → Fin (d+1)`; the zero vector is erased. Component i is the paper's v_{i+1}."
+   },
+   {
+    "id": "def.qm.sign",
+    "kind": "same",
+    "label": "(−1)^{1+|v|}",
+    "tex": [
+     {
+      "text": "(-1)^{1+|\\vv|}",
+      "scope": {
+       "lines": [
+        1718,
+        1726
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.qTrunc",
+      "text": "(-1 : ℝ) ^ (1 + ∑ i : Fin m, ((v i : Fin (d + 1)) : ℕ))"
+     }
+    ],
+    "note": "|v| = Σ v_i."
+   },
+   {
+    "id": "def.qm.coef",
+    "kind": "representation",
+    "label": "∏ r_d(p_i, v_i)",
+    "tex": [
+     {
+      "text": "\\prod_{i=1}^m r_d(p_i,v_i)",
+      "scope": {
+       "lines": [
+        1718,
+        1726
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.qTrunc",
+      "text": "∏ i : Fin m, (rdCoeff (primeAt n i) ((v i : Fin (d + 1)) : ℕ) d : ℝ)"
+     }
+    ],
+    "note": "r_d(p,v) is `rdCoeff p v d` (ℕ), cast to ℝ."
+   },
+   {
+    "id": "def.rd",
+    "kind": "definition",
+    "label": "r_d(p,v) = p^{C(v,2)}[d v]_p",
+    "tex": [
+     {
+      "text": "r_d(p,v)=p^{\\binom v2}\\gaussbinom dv_p",
+      "scope": {
+       "lines": [
+        513,
+        516
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.rdCoeff",
+      "text": "q ^ (v.choose 2) * gaussBinom q dd v"
+     }
+    ],
+    "note": "Project definition (Statement.lean)."
+   },
+   {
+    "id": "def.gauss",
+    "kind": "representation",
+    "label": "Gaussian binomial: product formula vs q-Pascal",
+    "tex": [
+     {
+      "text": "\\gaussbinom dr_p=\\prod_{i=0}^{r-1}\n\\frac{p^{d-i}-1}{p^{i+1}-1}",
+      "scope": {
+       "lines": [
+        354,
+        355
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.gaussBinom",
+      "text": "| dd + 1, r + 1 => gaussBinom q dd r + q ^ (r + 1) * gaussBinom q dd (r + 1)"
+     },
+     {
+      "decl": "ShiftSym.P10.gaussBinomEqProdStatement",
+      "text": "(gaussBinom q d r : ℝ) = gaussProd (q : ℝ) d r"
+     }
+    ],
+    "note": "Lean defines [d r]_q by the q-Pascal recurrence; the bridge (certified) shows it equals the paper's product formula for every integer q ≥ 2."
+   },
+   {
+    "id": "def.qm.exp",
+    "kind": "representation",
+    "label": "σ^{cN∏ p_i^{-v_i}}",
+    "tex": [
+     {
+      "text": "\\sigma^{\\,cN\\prod_i p_i^{-v_i}}",
+      "scope": {
+       "lines": [
+        1718,
+        1726
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.qTrunc",
+      "text": "(σ : ℝ) ^ (c * (n : ℝ) ^ d *\n        ∏ i : Fin m, (primeAt n i : ℝ) ^ (-(((v i : Fin (d + 1)) : ℕ) : ℤ)))"
+     }
+    ],
+    "note": "Real power with real exponent; N = n^d written out. Integrality of the exponent at c = p^{-j} is the separate claim `exponentIntegralityStatement` (proof of Lemma A.1)."
+   },
+   {
+    "id": "sw",
+    "kind": "same",
+    "label": "0 ≤ q^m(p^{-j}) ≤ σ^{N_j}",
+    "tex": [
+     {
+      "text": "0\\;\\le\\;q^m(p^{-j})\\;\\le\\;\\sigma^{N_j}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA1SandwichStatement",
+      "text": "0 ≤ qTrunc n d σ m ((primeAt n m : ℝ) ^ (-(j : ℤ))) ∧\n      qTrunc n d σ m ((primeAt n m : ℝ) ^ (-(j : ℤ))) ≤ (σ : ℝ) ^ (Nj n d (primeAt n m) j)"
+     }
+    ],
+    "note": "The chained inequality as a conjunction of two inequalities in ℝ."
+   },
+   {
+    "id": "sw.lo",
+    "kind": "same",
+    "label": "0 ≤ q^m(p^{-j})",
+    "tex": [
+     {
+      "text": "0\\;\\le\\;q^m(p^{-j})"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA1SandwichStatement",
+      "text": "0 ≤ qTrunc n d σ m ((primeAt n m : ℝ) ^ (-(j : ℤ)))"
+     }
+    ],
+    "note": "Nonnegativity."
+   },
+   {
+    "id": "sw.q",
+    "kind": "representation",
+    "label": "q^m(p^{-j})",
+    "tex": [
+     {
+      "text": "q^m(p^{-j})"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA1SandwichStatement",
+      "text": "qTrunc n d σ m ((primeAt n m : ℝ) ^ (-(j : ℤ)))",
+      "occ": 1
+     }
+    ],
+    "note": "q^m evaluated at the scale c = p^{-j}."
+   },
+   {
+    "id": "sw.c",
+    "kind": "representation",
+    "label": "c = p^{-j}",
+    "tex": [
+     {
+      "text": "p^{-j}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA1SandwichStatement",
+      "text": "(primeAt n m : ℝ) ^ (-(j : ℤ))",
+      "occ": 1
+     }
+    ],
+    "note": "Integer power (zpow) in ℝ."
+   },
+   {
+    "id": "sw.hi",
+    "kind": "same",
+    "label": "q^m(p^{-j}) ≤ σ^{N_j}",
+    "tex": [
+     {
+      "text": "q^m(p^{-j})\\;\\le\\;\\sigma^{N_j}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA1SandwichStatement",
+      "text": "qTrunc n d σ m ((primeAt n m : ℝ) ^ (-(j : ℤ))) ≤ (σ : ℝ) ^ (Nj n d (primeAt n m) j)"
+     }
+    ],
+    "note": "The trivial bound."
+   },
+   {
+    "id": "sw.rhs",
+    "kind": "representation",
+    "label": "σ^{N_j}",
+    "tex": [
+     {
+      "text": "\\sigma^{N_j}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA1SandwichStatement",
+      "text": "(σ : ℝ) ^ (Nj n d (primeAt n m) j)"
+     }
+    ],
+    "note": "`Real.rpow` with the real exponent N_j; it is an integer (p^j ∣ n^d), see the proof."
+   },
+   {
+    "id": "def.Nj",
+    "kind": "definition",
+    "label": "N_j := n^d/p^j",
+    "tex": [
+     {
+      "text": "$N_j:=n^d/p^j$",
+      "scope": {
+       "lines": [
+        1718,
+        1726
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.Nj",
+      "text": "(n : ℝ) ^ d / (p : ℝ) ^ j"
+     }
+    ],
+    "note": "Real division, no truncation."
+   },
+   {
+    "id": "ub",
+    "kind": "same",
+    "label": "q^m(p^{-1}) ≤ Σ_{i≤m} [d 1]_{p_i} σ^{N_1/p_i}",
+    "tex": [
+     {
+      "text": "q^m(p^{-1})\\;\\le\\;\\sum_{i\\le m}\\gaussbinom d1_{p_i}\\,\\sigma^{N_1/p_i}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA1UnionBoundStatement",
+      "text": "qTrunc n d σ m ((primeAt n m : ℝ) ^ (-(1 : ℤ))) ≤\n      ∑ i ∈ Finset.range m,\n        (gaussBinom (primeAt n i) d 1 : ℝ) * (σ : ℝ) ^ (Nj n d (primeAt n m) 1 / (primeAt n i : ℝ))"
+     }
+    ],
+    "note": "Inequality in ℝ."
+   },
+   {
+    "id": "ub.lhs",
+    "kind": "representation",
+    "label": "q^m(p^{-1})",
+    "tex": [
+     {
+      "text": "q^m(p^{-1})"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA1UnionBoundStatement",
+      "text": "qTrunc n d σ m ((primeAt n m : ℝ) ^ (-(1 : ℤ)))"
+     }
+    ],
+    "note": "p^{-1} as zpow (−1)."
+   },
+   {
+    "id": "ub.sum",
+    "kind": "representation",
+    "label": "Σ_{i ≤ m}",
+    "tex": [
+     {
+      "text": "\\sum_{i\\le m}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA1UnionBoundStatement",
+      "text": "∑ i ∈ Finset.range m,"
+     }
+    ],
+    "note": "1-indexed i ≤ m ↔ 0-indexed i ∈ range m (`primeAt n i` = p_{i+1})."
+   },
+   {
+    "id": "ub.gb",
+    "kind": "representation",
+    "label": "[d 1]_{p_i}",
+    "tex": [
+     {
+      "text": "\\gaussbinom d1_{p_i}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA1UnionBoundStatement",
+      "text": "(gaussBinom (primeAt n i) d 1 : ℝ)"
+     }
+    ],
+    "note": "q-Pascal Gaussian binomial (= product formula by the bridge), cast to ℝ."
+   },
+   {
+    "id": "ub.pow",
+    "kind": "representation",
+    "label": "σ^{N_1/p_i}",
+    "tex": [
+     {
+      "text": "\\sigma^{N_1/p_i}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA1UnionBoundStatement",
+      "text": "(σ : ℝ) ^ (Nj n d (primeAt n m) 1 / (primeAt n i : ℝ))"
+     }
+    ],
+    "note": "Real power, real exponent N_1/p_i."
+   }
+  ]
+ }
+}

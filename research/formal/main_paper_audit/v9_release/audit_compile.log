@@ -1,0 +1,136 @@
+@ShiftSym.stab_le_stab_apply : ∀ {n d : ℕ} {A : Type u_1} {Φ : ShiftSym.Config n d A → ShiftSym.Config n d A},
+  ShiftSym.Equivariant Φ → ∀ (s : ShiftSym.Config n d A), ShiftSym.stab s ≤ ShiftSym.stab (Φ s)
+@ShiftSym.isShiftSymmetric_apply : ∀ {n d : ℕ} {A : Type u_1} {Φ : ShiftSym.Config n d A → ShiftSym.Config n d A},
+  ShiftSym.Equivariant Φ → ∀ {s : ShiftSym.Config n d A}, ShiftSym.IsShiftSymmetric s → ShiftSym.IsShiftSymmetric (Φ s)
+@ShiftSym.stab_inf_mono : ∀ {n d : ℕ} {A : Type u_1} {Φ : ShiftSym.Config n d A → ShiftSym.Config n d A},
+  ShiftSym.Equivariant Φ →
+    ∀ (s : ShiftSym.Config n d A) (T : AddSubgroup (ShiftSym.Lat n d)), ShiftSym.stab s ⊓ T ≤ ShiftSym.stab (Φ s) ⊓ T
+@ShiftSym.caMap_equivariant : ∀ {n d : ℕ} {A : Type u_1} {b : ℕ} (offs : Fin b → ShiftSym.Lat n d)
+  (φ : (Fin b → A) → A), ShiftSym.Equivariant (ShiftSym.caMap offs φ)
+@ShiftSym.card_fixedBy : ∀ {n d : ℕ} {A : Type u_1} [Finite A] [NeZero n] (H : AddSubgroup (ShiftSym.Lat n d)),
+  Nat.card ↑(ShiftSym.fixedBy A H) = Nat.card A ^ H.index
+@ShiftSym.card_fixedBy_div : ∀ {n d : ℕ} {A : Type u_1} [Finite A] [NeZero n] (H : AddSubgroup (ShiftSym.Lat n d)),
+  Nat.card ↑(ShiftSym.fixedBy A H) = Nat.card A ^ (n ^ d / Nat.card ↥H)
+@ShiftSym.isShiftSymmetric_iff_prime_order : ∀ {n d : ℕ} {A : Type u_1} [NeZero n] (s : ShiftSym.Config n d A),
+  ShiftSym.IsShiftSymmetric s ↔ ∃ v, Nat.Prime (addOrderOf v) ∧ addOrderOf v ∣ n ∧ ShiftSym.shift v s = s
+@ShiftSym.isShiftSymmetric_iterate : ∀ {n d : ℕ} {A : Type u_1} {Φ : ShiftSym.Config n d A → ShiftSym.Config n d A},
+  ShiftSym.Equivariant Φ →
+    ∀ {s : ShiftSym.Config n d A}, ShiftSym.IsShiftSymmetric s → ∀ (k : ℕ), ShiftSym.IsShiftSymmetric (Φ^[k] s)
+@ShiftSym.iterate_ne_of_not_isShiftSymmetric : ∀ {n d : ℕ} {A : Type u_1}
+  {Φ : ShiftSym.Config n d A → ShiftSym.Config n d A},
+  ShiftSym.Equivariant Φ →
+    ∀ {s t : ShiftSym.Config n d A}, ShiftSym.IsShiftSymmetric s → ¬ShiftSym.IsShiftSymmetric t → ∀ (k : ℕ), Φ^[k] s ≠ t
+@ShiftSym.dvd_pow_of_mem_divisors_rad : ∀ {n dd h : ℕ}, h ∈ (ShiftSym.rad n ^ dd).divisors → h ∣ n ^ dd
+@ShiftSym.latTorsionEquiv : {n d p : ℕ} →
+  [NeZero n] → [NeZero p] → p ∣ n → ↥(ShiftSym.latTorsion n d p) ≃+ (Fin d → ZMod p)
+@ShiftSym.card_latTorsion : ∀ {n d p : ℕ} [NeZero n] [NeZero p], p ∣ n → Nat.card ↥(ShiftSym.latTorsion n d p) = p ^ d
+@ShiftSym.card_addOrderOf_eq_prime : ∀ {n d p : ℕ} [NeZero n] [NeZero p],
+  Nat.Prime p → p ∣ n → Nat.card { v // addOrderOf v = p } = p ^ d - 1
+@ShiftSym.latPrimarySplit : {n d : ℕ} →
+  n ≠ 0 → ShiftSym.Lat n d ≃+ ((p : ↥n.primeFactors) → ShiftSym.Lat (↑p ^ n.factorization ↑p) d)
+@ShiftSym.card_orderP_subgroups : ∀ {n d p : ℕ} [NeZero n],
+  Nat.Prime p → p ∣ n → Nat.card { C // Nat.card ↥C = p } = ShiftSym.gaussBinom p d 1
+ShiftSym.gaussBinom_geom : ∀ (a d : ℕ), a * ShiftSym.gaussBinom (a + 1) d 1 + 1 = (a + 1) ^ d
+@ShiftSym.gaussBinom_mul_prod : ∀ {q : ℕ},
+  1 ≤ q → ∀ {d r : ℕ}, r ≤ d → ShiftSym.gaussBinom q d r * ∏ i, (q ^ r - q ^ ↑i) = ∏ i, (q ^ d - q ^ ↑i)
+@ShiftSym.card_submodule_finrank : ∀ {p d r : ℕ},
+  Nat.Prime p → r ≤ d → Nat.card { W // Module.finrank (ZMod p) ↥W = r } = ShiftSym.gaussBinom p d r
+ShiftSym.gaussBinom_alt_sum : ∀ (q R : ℕ),
+  ∑ r ∈ Finset.range (R + 1), (-1) ^ r * ↑q ^ r.choose 2 * ↑(ShiftSym.gaussBinom q R r) = if R = 0 then 1 else 0
+@ShiftSym.spanSum_eq_mobius : ∀ {K : Type u_1} {V : Type u_2} [inst : Field K] [inst_1 : Fintype K]
+  [inst_2 : AddCommGroup V] [inst_3 : Module K V] [Finite V] [inst_5 : Fintype (Submodule K V)] (W : Submodule K V),
+  ShiftSym.spanSum W = (-1) ^ Module.finrank K ↥W * ↑(Fintype.card K) ^ (Module.finrank K ↥W).choose 2
+@ShiftSym.sum_spanSum_le : ∀ {K : Type u_1} {V : Type u_2} [inst : Field K] [Fintype K] [inst_2 : AddCommGroup V]
+  [inst_3 : Module K V] [Finite V] [inst_5 : Fintype (Submodule K V)] (W : Submodule K V),
+  ∑ U with U ≤ W, ShiftSym.spanSum U = if W = ⊥ then 1 else 0
+@ShiftSym.spanSum_rank_classified : ∀ {K : Type u_1} {V : Type u_2} [inst : Field K] [inst_1 : Fintype K]
+  [inst_2 : AddCommGroup V] [inst_3 : Module K V] [Finite V] [inst_5 : Fintype (Submodule K V)] {r : ℕ},
+  r ≤ Module.finrank K V →
+    ∑ W with Module.finrank K ↥W = r, ShiftSym.spanSum W =
+      (-1) ^ r * ↑(Fintype.card K) ^ r.choose 2 * ↑(ShiftSym.gaussBinom (Fintype.card K) (Module.finrank K V) r)
+@ShiftSym.card_shiftSymmetric_IE : ∀ {n d : ℕ} (σ : ℕ) [inst : NeZero n],
+  ↑{s | ShiftSym.IsShiftSymmetric s}.card = ∑ t, (-1) ^ ((↑t).card + 1) * ↑σ ^ (n ^ d / Nat.card ↥((↑t).sup id))
+@ShiftSym.isShiftSymmetric_iff_mem_biUnion : ∀ {n d : ℕ} (σ : ℕ) [inst : NeZero n] (s : ShiftSym.Config n d (Fin σ)),
+  ShiftSym.IsShiftSymmetric s ↔ s ∈ (ShiftSym.primeOrderSubs n d).biUnion fun C => ShiftSym.fixedByF σ C
+@ShiftSym.latTorsion_inf_coprime : ∀ {n d a b : ℕ},
+  a.Coprime b → ShiftSym.latTorsion n d a ⊓ ShiftSym.latTorsion n d b = ⊥
+@ShiftSym.card_univ_sup_of_torsion : ∀ {n d : ℕ} {ι : Type u_1} [inst : Fintype ι] (m : ι → ℕ)
+  (L : ι → AddSubgroup (ShiftSym.Lat n d)),
+  (∀ (i : ι), L i ≤ ShiftSym.latTorsion n d (m i)) →
+    Pairwise (Function.onFun Nat.Coprime m) → Nat.card ↥(Finset.univ.sup L) = ∏ i, Nat.card ↥(L i)
+@ShiftSym.toMod_ofMod : ∀ {n d p : ℕ} [inst : NeZero n] [inst_1 : NeZero p] (hpn : p ∣ n)
+  (U : Submodule (ZMod p) (Fin d → ZMod p)), ShiftSym.toMod hpn (ShiftSym.ofMod hpn U) = U
+@ShiftSym.ofMod_toMod : ∀ {n d p : ℕ} [inst : NeZero n] [inst_1 : NeZero p] (hpn : p ∣ n)
+  {H : AddSubgroup (ShiftSym.Lat n d)}, H ≤ ShiftSym.latTorsion n d p → ShiftSym.ofMod hpn (ShiftSym.toMod hpn H) = H
+@ShiftSym.card_ofMod : ∀ {n d p : ℕ} [inst : NeZero n] [inst_1 : NeZero p] (hpn : p ∣ n)
+  (U : Submodule (ZMod p) (Fin d → ZMod p)), Nat.card ↥(ShiftSym.ofMod hpn U) = Nat.card ↥U
+@ShiftSym.spanSum_transport : ∀ {n d p : ℕ} [inst : NeZero n] [inst_1 : Fact (Nat.Prime p)] (hpn : p ∣ n)
+  (U : Submodule (ZMod p) (Fin d → ZMod p)),
+  ∑ t ∈ (ShiftSym.linesP n d p).powerset with t.sup id = ShiftSym.ofMod hpn U, (-1) ^ t.card = ShiftSym.spanSum U
+ShiftSym.enumeration_proved : ∀ (n dd σ : ℕ), ShiftSym.enumerationStatement n dd σ
+@ShiftSym.gaussBinom_le_pow : ∀ {q : ℕ}, 1 ≤ q → ∀ (d r : ℕ), ShiftSym.gaussBinom q d r ≤ 2 ^ d * q ^ (r * (d - r))
+@ShiftSym.envelope_coeff_lt_two_pow : ∀ {n d : ℕ},
+  4 ≤ n → 1 ≤ d → ShiftSym.gaussBinom n d 1 + (d - 2) * 2 ^ d * n ^ d.choose 2 < 2 ^ n ^ (d - 1)
+@ShiftSym.enumerationRHS_prime : ∀ {p : ℕ},
+  Nat.Prime p → ∀ (d σ : ℕ), ShiftSym.enumerationRHS p d σ = ShiftSym.lowerEnvelope p d σ
+@ShiftSym.card_SS_ge_fix : ∀ {n d : ℕ} (σ : ℕ) [inst : NeZero n] {p : ℕ},
+  Nat.Prime p → p ∣ n → 1 ≤ d → σ ^ (n ^ d / p) ≤ {s | ShiftSym.IsShiftSymmetric s}.card
+ShiftSym.lowerBound_proved : ∀ (n dd σ : ℕ), ShiftSym.lowerBoundStatement n dd σ
+ShiftSym.enumerationStatement : ℕ → ℕ → ℕ → Prop
+ShiftSym.lowerBoundStatement : ℕ → ℕ → ℕ → Prop
+@ShiftSym.card_filter_shiftSymmetric_IE : ∀ {n d : ℕ} {A : Type u_1} [inst : Fintype A] [inst_1 : NeZero n]
+  (X : Finset (ShiftSym.Config n d A)),
+  ↑(Finset.filter ShiftSym.IsShiftSymmetric X).card =
+    ∑ t, (-1) ^ ((↑t).card + 1) * ↑(X ∩ ShiftSym.fixedByA A ((↑t).sup id)).card
+@ShiftSym.relative_regroup : ∀ {n d : ℕ} [inst : NeZero n] (w : AddSubgroup (ShiftSym.Lat n d) → ℤ),
+  ∑ t, (-1) ^ ((↑t).card + 1) * w ((↑t).sup id) = ∑ U, ShiftSym.mobiusCoeff U * w (ShiftSym.socSub U) + w ⊥
+@ShiftSym.relativeEnumeration_proved : ∀ {n d : ℕ} {A : Type u_1} [inst : Fintype A] [inst_1 : NeZero n]
+  (X : Finset (ShiftSym.Config n d A)), ShiftSym.relativeEnumerationStatement n d A X
+@ShiftSym.mobiusCoeff_eq : ∀ {n d : ℕ} (U : ShiftSym.ModTuple n d),
+  ShiftSym.mobiusCoeff U =
+    (-1) ^ (1 + ∑ p, Module.finrank (ZMod ↑p) ↥(U p)) * ∏ p, ↑↑p ^ (Module.finrank (ZMod ↑p) ↥(U p)).choose 2
+@ShiftSym.card_shiftSymmetric_eq_tuple_sum : ∀ {n d : ℕ} [inst : NeZero n] (σ : ℕ),
+  ↑{s | ShiftSym.IsShiftSymmetric s}.card =
+    ∑ U, ShiftSym.mobiusCoeff U * ↑σ ^ (n ^ d / Nat.card ↥(ShiftSym.socSub U)) + ↑σ ^ n ^ d
+ShiftSym.relativeEnumerationStatement : (n d : ℕ) →
+  [NeZero n] → (A : Type u_1) → [Fintype A] → Finset (ShiftSym.Config n d A) → Prop
+ShiftSym.kernelEnumerationStatement : (n d : ℕ) →
+  [NeZero n] → (F : Type u_1) → [Field F] → [Fintype F] → (ShiftSym.Lat n d → F) → Prop
+ShiftSym.imageDominationStatement : (n d : ℕ) →
+  [NeZero n] → (F : Type u_1) → [Field F] → [Fintype F] → (ShiftSym.Lat n d → F) → Prop
+'ShiftSym.stab_le_stab_apply' depends on axioms: [propext, Quot.sound]
+'ShiftSym.isShiftSymmetric_apply' depends on axioms: [propext, Quot.sound]
+'ShiftSym.stab_inf_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.caMap_equivariant' depends on axioms: [propext, Quot.sound]
+'ShiftSym.card_fixedBy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.card_fixedBy_div' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.isShiftSymmetric_iff_prime_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.isShiftSymmetric_iterate' depends on axioms: [propext, Quot.sound]
+'ShiftSym.iterate_ne_of_not_isShiftSymmetric' depends on axioms: [propext, Quot.sound]
+'ShiftSym.dvd_pow_of_mem_divisors_rad' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.card_latTorsion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.card_addOrderOf_eq_prime' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.latPrimarySplit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.card_latPrimarySplit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.card_orderP_subgroups' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.sub_one_mul_gaussBinom' depends on axioms: [propext, Quot.sound]
+'ShiftSym.gaussBinom_mul_prod' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.card_submodule_finrank' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.gaussBinom_alt_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.spanSum_eq_mobius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.spanSum_rank_classified' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.card_shiftSymmetric_IE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.latTorsion_inf_coprime' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.card_univ_sup_of_torsion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.spanSum_transport' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.enumeration_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.gaussBinom_le_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.envelope_coeff_lt_two_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.enumerationRHS_prime' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.card_SS_ge_fix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.lowerBound_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.card_filter_shiftSymmetric_IE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.relative_regroup' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.relativeEnumeration_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.mobiusCoeff_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftSym.card_shiftSymmetric_eq_tuple_sum' depends on axioms: [propext, Classical.choice, Quot.sound]

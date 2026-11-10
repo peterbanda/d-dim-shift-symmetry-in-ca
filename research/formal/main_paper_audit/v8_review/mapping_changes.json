@@ -1,0 +1,96 @@
+[
+  {
+    "file": "lem_mobius.json",
+    "removed_maps": [
+      "cr",
+      "cr.idx",
+      "cr.lhs",
+      "cr.range",
+      "cr.rhs",
+      "gauss",
+      "rk"
+    ],
+    "added_maps": [],
+    "noneditorial_changes": [
+      {
+        "map": "hyp.d",
+        "field": "lean",
+        "old": [
+          {
+            "decl": "ShiftSym.P03.lemMobiusFEqMuStatement",
+            "text": "1 \u2264 d \u2192"
+          },
+          {
+            "decl": "ShiftSym.P03.lemMobiusMuClosedFormStatement",
+            "text": "1 \u2264 d \u2192"
+          },
+          {
+            "decl": "ShiftSym.P03.lemMobiusCrStatement",
+            "text": "1 \u2264 d \u2192"
+          }
+        ],
+        "new": [
+          {
+            "decl": "ShiftSym.P03.lemMobiusFEqMuStatement",
+            "text": "1 \u2264 d \u2192"
+          },
+          {
+            "decl": "ShiftSym.P03.lemMobiusMuClosedFormStatement",
+            "text": "1 \u2264 d \u2192"
+          }
+        ]
+      },
+      {
+        "map": "whole",
+        "field": "lean",
+        "old": [
+          {
+            "decl": "ShiftSym.P03.lemMobiusStatement",
+            "text": "lemMobiusFEqMuStatement \u2227 lemMobiusMuClosedFormStatement \u2227 lemMobiusCrStatement"
+          }
+        ],
+        "new": [
+          {
+            "decl": "ShiftSym.P03.lemMobiusFEqMuStatement"
+          },
+          {
+            "decl": "ShiftSym.P03.lemMobiusMuClosedFormStatement"
+          }
+        ]
+      },
+      {
+        "map": "hyp.p",
+        "field": "lean",
+        "old": [
+          {
+            "decl": "ShiftSym.P03.lemMobiusFEqMuStatement",
+            "text": "(hp : p.Prime)"
+          },
+          {
+            "decl": "ShiftSym.P03.lemMobiusMuClosedFormStatement",
+            "text": "(hp : p.Prime)"
+          },
+          {
+            "decl": "ShiftSym.P03.lemMobiusCrStatement",
+            "text": "(hp : p.Prime)"
+          }
+        ],
+        "new": [
+          {
+            "decl": "ShiftSym.P03.lemMobiusFEqMuStatement",
+            "text": "(hp : p.Prime)"
+          },
+          {
+            "decl": "ShiftSym.P03.lemMobiusMuClosedFormStatement",
+            "text": "(hp : p.Prime)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "lem_mobius2.json",
+    "new": true,
+    "maps": 9
+  }
+]

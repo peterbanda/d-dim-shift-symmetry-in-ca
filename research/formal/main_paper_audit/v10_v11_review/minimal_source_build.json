@@ -1,0 +1,33 @@
+{
+  "files": [
+    "shift_symmetry_d_dimensions.tex",
+    "charts/chart17_example_configs.pdf",
+    "charts/chart14_pattern_flip.png",
+    "charts/chart13_decay_rate_classes.png",
+    "charts/chart15_inversion_dimension.png"
+  ],
+  "file_sha256": {
+    "shift_symmetry_d_dimensions.tex": "051879945717a5d56f93c5107204c57184ff45df56390901ddcffc370e8fd1b1",
+    "charts/chart17_example_configs.pdf": "dcb9f5578a4ed8bc2b2c3a353e8ee5022af733dccd8810167229c0775a716943",
+    "charts/chart14_pattern_flip.png": "73856cfb2d8506e590762a0f6691a062f66d19017a7fc7fdbd7c755b40492665",
+    "charts/chart13_decay_rate_classes.png": "7223d6c0b4c96f6d32b1d8d741ab8ad2c0f29067eb3c3a690801a7ec212a31a7",
+    "charts/chart15_inversion_dimension.png": "66311403cafe4ea1991566b6cf52cf9fae5c72e12d170d94351294538a000a94"
+  },
+  "pages": 28,
+  "word_layout_identical_to_updated_paper": true,
+  "undefined_references": false,
+  "type3_fonts": false,
+  "warnings": [
+    "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+    "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+    "Underfull \\hbox (badness 3568) in paragraph at lines 1555--1555",
+    "Underfull \\hbox (badness 10000) in paragraph at lines 1557--1559",
+    "Underfull \\hbox (badness 1622) in paragraph at lines 1560--1560",
+    "Underfull \\hbox (badness 2119) in paragraph at lines 1564--1566",
+    "Underfull \\hbox (badness 1052) in paragraph at lines 1567--1567",
+    "Underfull \\hbox (badness 3780) in paragraph at lines 1570--1572",
+    "Overfull \\hbox (0.69986pt too wide) in paragraph at lines 1784--1786",
+    "Underfull \\hbox (badness 3601) in paragraph at lines 2042--2045"
+  ],
+  "temporary_directory": "/tmp/v11-minimal-source-9_lps8hv"
+}

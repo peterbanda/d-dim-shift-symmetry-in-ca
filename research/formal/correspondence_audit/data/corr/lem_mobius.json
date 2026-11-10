@@ -1,0 +1,312 @@
+{
+ "label": "lem:mobius",
+ "statement": {
+  "summary": "Lemma 4.1 is frozen as two Props in Paper/S03_MobiusCoefficients.lean: `lemMobiusFEqMuStatement` (f(V) = μ(0,V), with μ mathlib's incidence-algebra Möbius function on the subspace lattice of 𝔽_p^d) and `lemMobiusMuClosedFormStatement` (μ(0,V) = (−1)^r p^C(r,2)). Up to paper v7 the lemma also contained eq. (cr), which v8 states as Lemma 4.2 (lem_mobius2.json); the frozen conjunction `lemMobiusStatement` joins all three. lines(V) and span J are literal project definitions in the same file.",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P03.lemMobiusFEqMuStatement",
+    "role": "statement (f = μ)"
+   },
+   {
+    "decl": "ShiftSym.P03.lemMobiusMuClosedFormStatement",
+    "role": "statement (μ = closed form)"
+   },
+   {
+    "decl": "ShiftSym.P03.signedSpanCount",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P03.lines",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P03.spanJ",
+    "role": "definition"
+   }
+  ],
+  "deltas": [
+   "𝔽_p^d = `Fin d → ZMod p`; subspace = `Submodule (ZMod p) _`; dimension = `Module.finrank (ZMod p)`; the zero subspace 0 = ⊥.",
+   "μ = mathlib's `IncidenceAlgebra.mu ℤ` on the whole lattice `Submodule (ZMod p) (Fin d → ZMod p)` (scoped Fintype/LocallyFiniteOrder instances; the latter is a Subsingleton, so the choice is immaterial).",
+   "The chain f(V) = μ(0,V) = (−1)^r p^C(r,2) is two separate Props with identical hypotheses; dim V = r is kept verbatim in the first even though it is unused there.",
+   "span J = `Submodule.span` of the union of the lines in J; rk J = finrank (span J) (the paper defines rk J in Lemma 3.3 for order-p subgroups of 𝒜; the evident meaning is used for lines of 𝔽_p^d).",
+   "p prime and d ≥ 1 as in the paper (NeZero p derived from primality)."
+  ],
+  "maps": [
+   {
+    "id": "whole",
+    "kind": "same",
+    "label": "Lemma 4.1 = (f = μ) ∧ (μ = closed form)",
+    "tex": [
+     {
+      "text": "f(V)\\;:=\\!\\!\\sum_{\\substack{J\\subseteq\\mathrm{lines}(V)\\\\\n  \\operatorname{span}J=V}}\\!\\!(-1)^{|J|}"
+     },
+     {
+      "text": "f(V)\\;=\\;\\mu(0,V)\\;=\\;(-1)^r p^{\\binom r2}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.lemMobiusFEqMuStatement"
+     },
+     {
+      "decl": "ShiftSym.P03.lemMobiusMuClosedFormStatement"
+     }
+    ],
+    "note": "The displayed chain f(V) = μ(0,V) = (−1)^r p^C(r,2) is split into its two equalities (two Props, same hypotheses). The frozen `lemMobiusStatement` (frozen against v3.1, when eq. (cr) was part of this lemma) is their conjunction with Lemma 4.2's `lemMobiusCrStatement`."
+   },
+   {
+    "id": "hyp.p",
+    "kind": "hypothesis",
+    "label": "p prime",
+    "tex": [
+     {
+      "text": "Let $p$ be prime"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.lemMobiusFEqMuStatement",
+      "text": "(hp : p.Prime)"
+     },
+     {
+      "decl": "ShiftSym.P03.lemMobiusMuClosedFormStatement",
+      "text": "(hp : p.Prime)"
+     }
+    ],
+    "note": "Prime p in both Props. `NeZero p` (needed for the finiteness instances) is derived from hp by `haveI`, so it adds no hypothesis."
+   },
+   {
+    "id": "hyp.d",
+    "kind": "hypothesis",
+    "label": "d ≥ 1",
+    "tex": [
+     {
+      "text": "$d\\ge1$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.lemMobiusFEqMuStatement",
+      "text": "1 ≤ d →"
+     },
+     {
+      "decl": "ShiftSym.P03.lemMobiusMuClosedFormStatement",
+      "text": "1 ≤ d →"
+     }
+    ],
+    "note": "Kept verbatim although not needed (the claims hold for d = 0 too)."
+   },
+   {
+    "id": "Fpd",
+    "kind": "representation",
+    "label": "𝔽_p^d",
+    "tex": [
+     {
+      "text": "$V\\le\\FF_p^d$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.lemMobiusFEqMuStatement",
+      "text": "Submodule (ZMod p) (Fin d → ZMod p)",
+      "occ": 1
+     }
+    ],
+    "note": "𝔽_p^d is `Fin d → ZMod p` (ZMod p is the field 𝔽_p for prime p); a subspace V ≤ 𝔽_p^d is a `Submodule (ZMod p) _`."
+   },
+   {
+    "id": "V",
+    "kind": "same",
+    "label": "V ≤ 𝔽_p^d a subspace of dimension r",
+    "tex": [
+     {
+      "text": "$V\\le\\FF_p^d$ a subspace of dimension $r$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.lemMobiusFEqMuStatement",
+      "text": "∀ (V : Submodule (ZMod p) (Fin d → ZMod p)) (r : ℕ),\n      finrank (ZMod p) V = r →"
+     },
+     {
+      "decl": "ShiftSym.P03.lemMobiusMuClosedFormStatement",
+      "text": "∀ (V : Submodule (ZMod p) (Fin d → ZMod p)) (r : ℕ),\n      finrank (ZMod p) V = r →"
+     }
+    ],
+    "note": "dimension = `Module.finrank (ZMod p)`. In the first Prop (f = μ) the hypothesis dim V = r is kept verbatim but unused."
+   },
+   {
+    "id": "lines",
+    "kind": "definition",
+    "label": "lines(V): the 1-dimensional subspaces of V",
+    "tex": [
+     {
+      "text": "$\\mathrm{lines}(V)$ its set of $1$-dimensional subspaces"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.lines",
+      "text": "Finset.univ.filter fun L => finrank (ZMod p) L = 1 ∧ L ≤ V"
+     }
+    ],
+    "note": "Literal: the subspaces L of 𝔽_p^d with dim L = 1 and L ≤ V, as a finset."
+   },
+   {
+    "id": "feq",
+    "kind": "same",
+    "label": "f(V) = μ(0,V)",
+    "tex": [
+     {
+      "text": "f(V)\\;=\\;\\mu(0,V)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.lemMobiusFEqMuStatement",
+      "text": "signedSpanCount V\n          = IncidenceAlgebra.mu ℤ (⊥ : Submodule (ZMod p) (Fin d → ZMod p)) V"
+     }
+    ],
+    "note": "Equality in ℤ."
+   },
+   {
+    "id": "f",
+    "kind": "definition",
+    "label": "f(V) := Σ_{J ⊆ lines(V), span J = V} (−1)^{|J|}",
+    "tex": [
+     {
+      "text": "\\sum_{\\substack{J\\subseteq\\mathrm{lines}(V)\\\\\n  \\operatorname{span}J=V}}\\!\\!(-1)^{|J|}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.lemMobiusFEqMuStatement",
+      "text": "signedSpanCount V"
+     },
+     {
+      "decl": "ShiftSym.P03.signedSpanCount",
+      "text": "∑ J ∈ (lines V).powerset.filter (fun J => spanJ J = V), (-1 : ℤ) ^ J.card"
+     }
+    ],
+    "note": "`signedSpanCount` is the paper's f, literally: a sum in ℤ over the subsets of the finset lines(V) whose span is V."
+   },
+   {
+    "id": "f.idx",
+    "kind": "same",
+    "label": "J ⊆ lines(V)",
+    "tex": [
+     {
+      "text": "J\\subseteq\\mathrm{lines}(V)",
+      "occ": 1
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.signedSpanCount",
+      "text": "(lines V).powerset"
+     }
+    ],
+    "note": "Subsets of lines(V) = its powerset."
+   },
+   {
+    "id": "span",
+    "kind": "definition",
+    "label": "span J = V",
+    "tex": [
+     {
+      "text": "\\operatorname{span}J=V"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.signedSpanCount",
+      "text": "spanJ J = V"
+     },
+     {
+      "decl": "ShiftSym.P03.spanJ",
+      "text": "Submodule.span (ZMod p) (⋃ L ∈ J, (L : Set (Fin d → ZMod p)))"
+     }
+    ],
+    "note": "span J is the `Submodule.span` of the union of the carriers of the lines in J (the proof shows it equals the lattice join `J.sup id`, P03.spanJ_eq_sup)."
+   },
+   {
+    "id": "sign",
+    "kind": "same",
+    "label": "(−1)^{|J|}",
+    "tex": [
+     {
+      "text": "(-1)^{|J|}",
+      "occ": 1
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.signedSpanCount",
+      "text": "(-1 : ℤ) ^ J.card"
+     }
+    ],
+    "note": "|J| = `Finset.card`, computed in ℤ."
+   },
+   {
+    "id": "mu",
+    "kind": "definition",
+    "label": "μ(0,V): Möbius function of the subspace lattice",
+    "tex": [
+     {
+      "text": "\\mu(0,V)",
+      "occ": 1
+     },
+     {
+      "text": "where $\\mu$ is the M\\\"obius function of the subspace lattice"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.lemMobiusFEqMuStatement",
+      "text": "IncidenceAlgebra.mu ℤ (⊥ : Submodule (ZMod p) (Fin d → ZMod p)) V"
+     },
+     {
+      "decl": "ShiftSym.P03.instLocallyFiniteOrderSubspace",
+      "text": "LocallyFiniteOrder.ofFiniteIcc fun _ _ => Set.toFinite _"
+     }
+    ],
+    "note": "μ is mathlib's incidence-algebra Möbius function (μ(a,a)=1, μ(a,b) = −Σ_{a≤x<b} μ(a,x)) on the whole subspace lattice of 𝔽_p^d, with 0 = ⊥; the interval [0,V] is the same as in the lattice of V. The scoped LocallyFiniteOrder instance is immaterial (it is a Subsingleton). The Stanley citation (Ex. 3.10.2) is not used: the value is proved."
+   },
+   {
+    "id": "muc",
+    "kind": "same",
+    "label": "μ(0,V) = (−1)^r p^{C(r,2)}",
+    "tex": [
+     {
+      "text": "\\mu(0,V)\\;=\\;(-1)^r p^{\\binom r2}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.lemMobiusMuClosedFormStatement",
+      "text": "IncidenceAlgebra.mu ℤ (⊥ : Submodule (ZMod p) (Fin d → ZMod p)) V\n          = (-1 : ℤ) ^ r * (p : ℤ) ^ (r.choose 2)"
+     }
+    ],
+    "note": "Second equality of the chain, as its own Prop with the same hypotheses (dim V = r is used here)."
+   },
+   {
+    "id": "muc.rhs",
+    "kind": "same",
+    "label": "(−1)^r p^{C(r,2)}",
+    "tex": [
+     {
+      "text": "(-1)^r p^{\\binom r2}",
+      "occ": 1
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P03.lemMobiusMuClosedFormStatement",
+      "text": "(-1 : ℤ) ^ r * (p : ℤ) ^ (r.choose 2)"
+     }
+    ],
+    "note": "C(r,2) = `r.choose 2` (0 for r < 2); evaluated in ℤ."
+   }
+  ]
+ }
+}

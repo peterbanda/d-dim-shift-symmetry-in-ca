@@ -1,0 +1,447 @@
+[
+  {
+    "module": "Shiftsym.Definitions",
+    "exit": 0,
+    "seconds": 11.79
+  },
+  {
+    "module": "Shiftsym.Lemmas.Completeness",
+    "exit": 0,
+    "seconds": 5.25
+  },
+  {
+    "module": "Shiftsym.Lemmas.Dynamics",
+    "exit": 0,
+    "seconds": 5.24
+  },
+  {
+    "module": "Shiftsym.Lemmas.Crt",
+    "exit": 0,
+    "seconds": 5.27
+  },
+  {
+    "module": "Shiftsym.Lemmas.FixedCount",
+    "exit": 0,
+    "seconds": 5.56
+  },
+  {
+    "module": "Shiftsym.Paper.S08_Detection_Reads",
+    "exit": 0,
+    "seconds": 4.85
+  },
+  {
+    "module": "Shiftsym.Statement",
+    "exit": 0,
+    "seconds": 4.96
+  },
+  {
+    "module": "Shiftsym.Lemmas.Torsion",
+    "exit": 0,
+    "seconds": 5.97
+  },
+  {
+    "module": "Shiftsym.Experiments",
+    "exit": 0,
+    "seconds": 4.22
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P08_Detection_Reads",
+    "exit": 0,
+    "seconds": 4.78
+  },
+  {
+    "module": "Shiftsym.Lemmas.Lines",
+    "exit": 0,
+    "seconds": 4.61
+  },
+  {
+    "module": "Shiftsym.Lemmas.GaussCount",
+    "exit": 0,
+    "seconds": 5.69
+  },
+  {
+    "module": "Shiftsym.Lemmas.Primary",
+    "exit": 0,
+    "seconds": 4.8
+  },
+  {
+    "module": "Shiftsym.Lemmas.PrimeCase",
+    "exit": 0,
+    "seconds": 4.46
+  },
+  {
+    "module": "Shiftsym.Lemmas.Ineq",
+    "exit": 0,
+    "seconds": 5.15
+  },
+  {
+    "module": "Shiftsym.Lemmas.Assembly",
+    "exit": 0,
+    "seconds": 5.5
+  },
+  {
+    "module": "Shiftsym.Paper.Common",
+    "exit": 0,
+    "seconds": 3.8
+  },
+  {
+    "module": "Shiftsym.Lemmas.MobiusSum",
+    "exit": 0,
+    "seconds": 5.23
+  },
+  {
+    "module": "Shiftsym.Paper.S13_AbelianGroups",
+    "exit": 0,
+    "seconds": 3.96
+  },
+  {
+    "module": "Shiftsym.Paper.S02_LatticeLemmas",
+    "exit": 0,
+    "seconds": 5.36
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P13_AbelianGroups_Core",
+    "exit": 0,
+    "seconds": 5.94
+  },
+  {
+    "module": "Shiftsym.Lemmas.Bridge",
+    "exit": 0,
+    "seconds": 7.21
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P13_AbelianGroups_Rect",
+    "exit": 0,
+    "seconds": 4.83
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P13_AbelianGroups_Regroup",
+    "exit": 0,
+    "seconds": 5.26
+  },
+  {
+    "module": "Shiftsym.Lemmas.Evaluate",
+    "exit": 0,
+    "seconds": 5.93
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P02_LatticeLemmas",
+    "exit": 0,
+    "seconds": 5.84
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P13_AbelianGroups_Eval",
+    "exit": 0,
+    "seconds": 5.1
+  },
+  {
+    "module": "Shiftsym.Lemmas.LowerBound",
+    "exit": 0,
+    "seconds": 5.2
+  },
+  {
+    "module": "Shiftsym.Paper.S03_MobiusCoefficients",
+    "exit": 0,
+    "seconds": 5.12
+  },
+  {
+    "module": "Shiftsym.Paper.S04_EnumerationCorollaries",
+    "exit": 0,
+    "seconds": 5.91
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P03_MobiusCoefficients",
+    "exit": 0,
+    "seconds": 5.37
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P04_EnumerationCorollaries_Formula",
+    "exit": 0,
+    "seconds": 5.28
+  },
+  {
+    "module": "Shiftsym.Paper.S06_BoundsProbability",
+    "exit": 0,
+    "seconds": 4.86
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P04_EnumerationCorollaries_Lattice",
+    "exit": 0,
+    "seconds": 4.52
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P04_EnumerationCorollaries_Words",
+    "exit": 0,
+    "seconds": 4.82
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P04_EnumerationCorollaries_Mobius",
+    "exit": 0,
+    "seconds": 5.73
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P06_BoundsProbability_Count",
+    "exit": 0,
+    "seconds": 6.59
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P04_EnumerationCorollaries_Second",
+    "exit": 0,
+    "seconds": 5.04
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P06_BoundsProbability_Gauss",
+    "exit": 0,
+    "seconds": 5.2
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P04_EnumerationCorollaries",
+    "exit": 0,
+    "seconds": 4.61
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P06_BoundsProbability_Real",
+    "exit": 0,
+    "seconds": 5.71
+  },
+  {
+    "module": "Shiftsym.Paper.S07_Dynamics",
+    "exit": 0,
+    "seconds": 6.09
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P06_BoundsProbability",
+    "exit": 0,
+    "seconds": 5.91
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P07_Dynamics_Caption",
+    "exit": 0,
+    "seconds": 5.95
+  },
+  {
+    "module": "Shiftsym.Paper.S07_Dynamics_SymmetryBreaking",
+    "exit": 0,
+    "seconds": 3.85
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P07_Dynamics",
+    "exit": 0,
+    "seconds": 4.98
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P07_Dynamics_SymmetryBreaking",
+    "exit": 0,
+    "seconds": 4.67
+  },
+  {
+    "module": "Shiftsym.Paper.S09_CrossoverLaws",
+    "exit": 0,
+    "seconds": 5.12
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P09_CrossoverLaws_Bounds",
+    "exit": 0,
+    "seconds": 5.62
+  },
+  {
+    "module": "Shiftsym.Paper.S08_Detection",
+    "exit": 0,
+    "seconds": 27.55
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P08_Detection_Algo",
+    "exit": 0,
+    "seconds": 6.55
+  },
+  {
+    "module": "Shiftsym.Paper.S05_KActive",
+    "exit": 0,
+    "seconds": 80.93
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P09_CrossoverLaws",
+    "exit": 0,
+    "seconds": 21.73
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P05_KActive_B2019",
+    "exit": 0,
+    "seconds": 5.56
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P05_KActive_Fix",
+    "exit": 0,
+    "seconds": 5.63
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P08_Detection_Smooth",
+    "exit": 0,
+    "seconds": 12.48
+  },
+  {
+    "module": "Shiftsym.Paper.S09_CrossoverLaws_Window20",
+    "exit": 0,
+    "seconds": 4.29
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P13_AbelianGroups_Count",
+    "exit": 0,
+    "seconds": 4.7
+  },
+  {
+    "module": "Shiftsym.Paper.S10_AppendixLemmas",
+    "exit": 0,
+    "seconds": 5.92
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P08_Detection",
+    "exit": 0,
+    "seconds": 7.27
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P13_AbelianGroups",
+    "exit": 0,
+    "seconds": 4.5
+  },
+  {
+    "module": "Shiftsym.Paper.S11_Numerics",
+    "exit": 0,
+    "seconds": 5.32
+  },
+  {
+    "module": "Shiftsym.Paper.S12_Necklaces",
+    "exit": 0,
+    "seconds": 4.43
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P13_AbelianGroups_MonoAlg",
+    "exit": 0,
+    "seconds": 5.21
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P11_Numerics_Bounds",
+    "exit": 0,
+    "seconds": 6.12
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P12_Necklaces",
+    "exit": 0,
+    "seconds": 5.08
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P11_Numerics_Real",
+    "exit": 0,
+    "seconds": 5.96
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P13_AbelianGroups_Mono",
+    "exit": 0,
+    "seconds": 5.82
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P11_Numerics_Dc",
+    "exit": 0,
+    "seconds": 16.14
+  },
+  {
+    "module": "Shiftsym.Paper.S13_AbelianGroups_Torsion",
+    "exit": 0,
+    "seconds": 4.55
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P11_Numerics_Deepens",
+    "exit": 0,
+    "seconds": 9.68
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P09_CrossoverLaws_Window20",
+    "exit": 0,
+    "seconds": 5.77
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P13_AbelianGroups_Torsion",
+    "exit": 0,
+    "seconds": 5.01
+  },
+  {
+    "module": "Shiftsym.StatementE1",
+    "exit": 0,
+    "seconds": 4.19
+  },
+  {
+    "module": "Shiftsym.Lemmas.Relative",
+    "exit": 0,
+    "seconds": 5.17
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P11_Numerics_Meas",
+    "exit": 0,
+    "seconds": 9.87
+  },
+  {
+    "module": "Shiftsym.Audit",
+    "exit": 0,
+    "seconds": 4.56
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P10_AppendixLemmas_Basic",
+    "exit": 0,
+    "seconds": 5.5
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P05_KActive_Rank",
+    "exit": 0,
+    "seconds": 7.13
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P10_AppendixLemmas_Analytic",
+    "exit": 0,
+    "seconds": 7.67
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P05_KActive",
+    "exit": 0,
+    "seconds": 6.68
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P10_AppendixLemmas_Core",
+    "exit": 0,
+    "seconds": 5.87
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P10_AppendixLemmas_Torus",
+    "exit": 0,
+    "seconds": 6.39
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P10_AppendixLemmas",
+    "exit": 0,
+    "seconds": 5.84
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P11_Numerics",
+    "exit": 0,
+    "seconds": 28.25
+  },
+  {
+    "module": "Shiftsym.Paper.S01_Model",
+    "exit": 0,
+    "seconds": 205.04
+  },
+  {
+    "module": "Shiftsym.Paper.Proofs.P01_Model",
+    "exit": 0,
+    "seconds": 4.88
+  },
+  {
+    "module": "Shiftsym.AuditPaper",
+    "exit": 0,
+    "seconds": 11.96
+  },
+  {
+    "module": "Shiftsym",
+    "exit": 0,
+    "seconds": 3.85
+  }
+]

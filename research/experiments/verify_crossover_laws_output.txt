@@ -1,0 +1,11 @@
+python 3.10.12 on Linux-6.8.0-124-generic-x86_64-with-glibc2.35
+
+[1] Proposition A sandwich (exact)
+    sigma^(N/p1) <= |S| <= 2 log2(n) n^(d-1) sigma^(N/p1) on 147x2 cases: OK
+
+[2] Proposition B inversion conditions vs actual signs
+    no contradiction of (i)/(ii); log signs agree with exact signs: OK
+    P(3) = P(4) at d=1 exactly, sigma <= 5 (boundary of the inversion): OK
+
+======================================================================
+RESULT: all corroborated

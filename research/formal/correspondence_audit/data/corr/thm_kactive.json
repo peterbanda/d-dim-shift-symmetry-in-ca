@@ -1,0 +1,722 @@
+{
+ "label": "thm:kactive",
+ "statement": {
+  "summary": "Theorem 5.1 is frozen as the single Prop `kActiveStatement`: for n ≥ 2, d ≥ 1, σ ≥ 1, k ≤ n^d and every state a : Fin σ, the integer cast of `numKActive n d σ a k` (= |S^a_{n^d,k}|) equals `kActiveRHS n d σ k`. The right-hand side is the sum of `kActiveSummand` over the nonzero rank vectors; the §5 binomial convention (annihilation of the whole summand unless k/h(v) is an integer in {0,…,N/h(v)}) is encoded as an `if … then … else 0` guard inside `kActiveSummand`, and the guard is proved equivalent to the paper's rational condition (`guard_iff`).",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P05.kActiveStatement",
+    "role": "statement"
+   },
+   {
+    "decl": "ShiftSym.P05.kActiveRHS",
+    "role": "definition (right-hand side)"
+   },
+   {
+    "decl": "ShiftSym.P05.kActiveSummand",
+    "role": "definition (summand, incl. §5 convention)"
+   },
+   {
+    "decl": "ShiftSym.P05.numKActive",
+    "role": "definition (|S^a_{n^d,k}|)"
+   },
+   {
+    "decl": "ShiftSym.P05.cellsInState",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P05.rankVectors",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P05.hVec",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P05.absVec",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.rdCoeff",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.gaussBinom",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.IsShiftSymmetric",
+    "role": "definition"
+   }
+  ],
+  "deltas": [
+   "Alphabet Σ is `Fin σ` (only |Σ| = σ enters); the fixed state a is universally quantified after σ (the paper fixes a before the theorem); the right-hand side does not depend on a, as in the paper.",
+   "|S^a_{n^d,k}| is `numKActive` = `Nat.card` of the subtype of shift-symmetric configurations with `cellsInState s a = k`; the equation is stated in ℤ (the right-hand side is a signed sum).",
+   "Rank vectors are functions `n.primeFactors → ℕ` with values in {0,…,d} (`Fintype.piFinset … Finset.range (d + 1)`): coordinates are labelled by the prime p itself rather than by its index i in p_1 < ⋯ < p_{ω(n)}; v ≠ 0 is `.erase 0`.",
+   "r_d(p,v) is `rdCoeff p v d = p^{C(v,2)} · gaussBinom p d v`; `gaussBinom` is the q-Pascal recurrence, linked to the paper's product formula by the separately frozen and proved `ShiftSym.P01.gaussBinomProductFidelityStatement`.",
+   "§5 convention: the summand is `if h(v) ∣ k ∧ k/h(v) ≤ N/h(v) then … else 0` with ℕ-division; `guard_iff` proves this guard is exactly 'k/h(v) is an integer in {0,…,N/h(v)}' with rational quotients. Under k ≤ N the second conjunct is automatic once h(v) ∣ k.",
+   "N/h(v), k/h(v), (N−k)/h(v) are ℕ-divisions, exact: h(v) ∣ n^d (`hVec_dvd_pow`), h(v) ∣ k by the guard, and n^d − k is untruncated because k ≤ n^d is a hypothesis.",
+   "σ − 1 is computed in ℤ (no truncated subtraction); 0^0 = 1 is Lean's `pow_zero` (the paper's convention, relevant only at σ = 1, k = N).",
+   "The annihilation rule is applied only to binom(N/h(v), k/h(v)); the binom(v_i,2) inside r_d is the ordinary `Nat.choose` — exactly the v5 paper wording ('all other binomial coefficients are the ordinary ones'). The Lean docstrings still record a PAPER ISSUE about the scope of the convention as worded in v3.1 ('Here and below'); that wording has since been replaced in the paper by the restricted one, so the issue is resolved in v5."
+  ],
+  "maps": [
+   {
+    "id": "whole",
+    "kind": "same",
+    "label": "|S^a_{n^d,k}| = Σ_{v≠0} (−1)^{1+|v|} ∏ r_d(p_i,v_i) C(N/h, k/h) (σ−1)^{(N−k)/h}",
+    "tex": [
+     {
+      "text": "|S^a_{n^d,k}| \\;=\\; \\sum_{\\substack{\\vv\\in\\{0,\\dots,d\\}^{\\omega(n)}\\\\\n  \\vv\\neq\\mathbf 0}} (-1)^{1+|\\vv|}\\,\\prod_{i=1}^{\\omega(n)} r_d(p_i,v_i)\\;\n  \\binom{\\,N/h(\\vv)\\,}{\\,k/h(\\vv)\\,}\\,\n  (\\sigma-1)^{\\,(N-k)/h(\\vv)}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.kActiveStatement",
+      "text": "(numKActive n d σ a k : ℤ) = kActiveRHS n d σ k"
+     }
+    ],
+    "note": "Equality in ℤ of the cast count and the frozen right-hand side."
+   },
+   {
+    "id": "hyp",
+    "kind": "hypothesis",
+    "label": "n ≥ 2, d ≥ 1, σ ≥ 1, 0 ≤ k ≤ N",
+    "tex": [
+     {
+      "text": "For all integers $n\\ge2$, $d, \\sigma\\ge1$, and $0\\le k\\le N=n^d$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.kActiveStatement",
+      "text": "2 ≤ n → 1 ≤ d → 1 ≤ σ → k ≤ n ^ d"
+     }
+    ],
+    "note": "Same four hypotheses, as antecedents; 0 ≤ k is automatic for k : ℕ."
+   },
+   {
+    "id": "hyp.n",
+    "kind": "hypothesis",
+    "label": "n ≥ 2",
+    "tex": [
+     {
+      "text": "$n\\ge2$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.kActiveStatement",
+      "text": "2 ≤ n",
+      "occ": 2
+     }
+    ],
+    "note": "Makes the lattice finite and nontrivial (Definition 2.1's standing hypothesis)."
+   },
+   {
+    "id": "hyp.d",
+    "kind": "hypothesis",
+    "label": "d ≥ 1",
+    "tex": [
+     {
+      "text": "$d, \\sigma\\ge1$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.kActiveStatement",
+      "text": "1 ≤ d",
+      "occ": 2
+     }
+    ],
+    "note": "The paper writes d, σ ≥ 1 together. Kept as in the paper; the proof does not use it (see the proof block)."
+   },
+   {
+    "id": "hyp.sigma",
+    "kind": "hypothesis",
+    "label": "σ ≥ 1 (counting statement)",
+    "tex": [
+     {
+      "text": "$d, \\sigma\\ge1$"
+     },
+     {
+      "text": "(for counting statements, $\\sigma=1$ is also allowed)",
+      "scope": {
+       "lines": [
+        284,
+        284
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.kActiveStatement",
+      "text": "1 ≤ σ",
+      "occ": 2
+     }
+    ],
+    "note": "Definition 2.1 allows σ = 1 for counting statements; with σ = 1 the type `Fin σ` is inhabited, so a : Fin σ exists."
+   },
+   {
+    "id": "hyp.k",
+    "kind": "representation",
+    "label": "0 ≤ k ≤ N = n^d",
+    "tex": [
+     {
+      "text": "$0\\le k\\le N=n^d$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.kActiveStatement",
+      "text": "k ≤ n ^ d"
+     }
+    ],
+    "note": "N is written out as n ^ d throughout; k : ℕ gives 0 ≤ k for free. This hypothesis also makes the ℕ-subtraction n ^ d − k in the exponent exact."
+   },
+   {
+    "id": "state",
+    "kind": "representation",
+    "label": "a fixed state a ∈ Σ, Σ = Fin σ",
+    "tex": [
+     {
+      "text": "fix any state $a\\in\\Sigma$",
+      "scope": {
+       "lines": [
+        707,
+        707
+       ]
+      }
+     },
+     {
+      "text": "a finite alphabet $\\Sigma$ with\n$\\sigma=|\\Sigma|\\ge2$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.kActiveStatement",
+      "text": "∀ a : Fin σ",
+      "occ": 2
+     }
+    ],
+    "note": "The paper fixes a ∈ Σ in the section preamble; Lean quantifies over every a : Fin σ (equivalent: the theorem holds for each fixed a, and any alphabet of size σ is a relabeling of Fin σ)."
+   },
+   {
+    "id": "lhs",
+    "kind": "representation",
+    "label": "|S^a_{n^d,k}|",
+    "tex": [
+     {
+      "text": "|S^a_{n^d,k}|"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.kActiveStatement",
+      "text": "(numKActive n d σ a k : ℤ)"
+     }
+    ],
+    "note": "Natural-number cardinality cast to ℤ."
+   },
+   {
+    "id": "lhs.def",
+    "kind": "definition",
+    "label": "S^a_{n^d,k} = shift-symmetric configurations with exactly k cells in state a",
+    "tex": [
+     {
+      "text": "let $S^a_{n^d,k}$ be the set of\nshift-symmetric configurations with exactly $k$ cells in state $a$",
+      "scope": {
+       "lines": [
+        707,
+        708
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.numKActive",
+      "text": "Nat.card {s : Config n d (Fin σ) // IsShiftSymmetric s ∧ cellsInState s a = k}"
+     }
+    ],
+    "note": "`Nat.card` of the subtype of configurations Lat n d → Fin σ satisfying both conditions; genuine cardinality since the type is finite for n ≥ 1."
+   },
+   {
+    "id": "lhs.ss",
+    "kind": "definition",
+    "label": "shift-symmetric: Stab(s) ≠ {0}",
+    "tex": [
+     {
+      "text": "\\{\\ssb : \\Stab(\\ssb)\\neq\\{\\mathbf 0\\}\\}",
+      "scope": {
+       "lines": [
+        295,
+        301
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.numKActive",
+      "text": "IsShiftSymmetric s"
+     },
+     {
+      "decl": "ShiftSym.IsShiftSymmetric",
+      "text": "∃ v : Lat n d, v ≠ 0 ∧ shift v s = s"
+     }
+    ],
+    "note": "Definition 2.3: some nonzero translation fixes s (equivalently its stabilizer is nontrivial); `shift v s u = s (u + v)` is τ_v."
+   },
+   {
+    "id": "lhs.cells",
+    "kind": "definition",
+    "label": "exactly k cells in state a",
+    "tex": [
+     {
+      "text": "exactly $k$ cells in state $a$",
+      "scope": {
+       "lines": [
+        707,
+        708
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.numKActive",
+      "text": "cellsInState s a = k"
+     },
+     {
+      "decl": "ShiftSym.P05.cellsInState",
+      "text": "Nat.card {u : Lat n d // s u = a}"
+     }
+    ],
+    "note": "#{u ∈ ℤ_n^d : s(u) = a} = k."
+   },
+   {
+    "id": "rhs",
+    "kind": "same",
+    "label": "Σ over v ∈ {0,…,d}^{ω(n)}, v ≠ 0",
+    "tex": [
+     {
+      "text": "\\sum_{\\substack{\\vv\\in\\{0,\\dots,d\\}^{\\omega(n)}\\\\\n  \\vv\\neq\\mathbf 0}} (-1)^{1+|\\vv|}\\,\\prod_{i=1}^{\\omega(n)} r_d(p_i,v_i)\\;\n  \\binom{\\,N/h(\\vv)\\,}{\\,k/h(\\vv)\\,}\\,\n  (\\sigma-1)^{\\,(N-k)/h(\\vv)}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.kActiveStatement",
+      "text": "kActiveRHS n d σ k",
+      "occ": 2
+     },
+     {
+      "decl": "ShiftSym.P05.kActiveRHS",
+      "text": "∑ v ∈ (rankVectors n d).erase 0, kActiveSummand n d σ k v"
+     }
+    ],
+    "note": "The right-hand side is a finite sum over the nonzero rank vectors of the summand `kActiveSummand`."
+   },
+   {
+    "id": "rhs.index",
+    "kind": "representation",
+    "label": "index set {0,…,d}^{ω(n)} ∖ {0}",
+    "tex": [
+     {
+      "text": "\\vv\\in\\{0,\\dots,d\\}^{\\omega(n)}",
+      "occ": 2
+     },
+     {
+      "text": "\\vv\\neq\\mathbf 0"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.kActiveRHS",
+      "text": "(rankVectors n d).erase 0"
+     },
+     {
+      "decl": "ShiftSym.P05.rankVectors",
+      "text": "Fintype.piFinset fun _ => Finset.range (d + 1)"
+     }
+    ],
+    "note": "{0,…,d} = `Finset.range (d + 1)`; the product set over the coordinates is `Fintype.piFinset`; v ≠ 0 removes the zero function (`.erase 0`)."
+   },
+   {
+    "id": "rhs.coords",
+    "kind": "representation",
+    "label": "one coordinate per distinct prime factor p_1 < ⋯ < p_{ω(n)}",
+    "tex": [
+     {
+      "text": "the rank vectors here run over $\\vv\\in\\{0,\\dots,d\\}^{\\omega(n)}$,\nwith one coordinate per distinct prime factor"
+     },
+     {
+      "text": "$n=\\prod_{i=1}^{k}p_i^{\\alpha_i}$, with $p_1<\\dots<p_k$ prime",
+      "scope": {
+       "lines": [
+        354,
+        354
+       ]
+      }
+     },
+     {
+      "text": "the number of distinct prime factors of $n$ is $k=\\omega(n)$",
+      "scope": {
+       "lines": [
+        354,
+        354
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.rankVectors",
+      "text": "Finset (n.primeFactors → ℕ)"
+     }
+    ],
+    "note": "Coordinates are indexed by the prime p ∈ n.primeFactors itself instead of by its position i in the increasing list; a bijection, and every summand only uses ∏_i and Σ_i, so it is symmetric under relabelling. (The §3 letter k = ω(n) is renamed here because k is the active-cell count.)"
+   },
+   {
+    "id": "summand",
+    "kind": "same",
+    "label": "the summand at v",
+    "tex": [
+     {
+      "text": "(-1)^{1+|\\vv|}\\,\\prod_{i=1}^{\\omega(n)} r_d(p_i,v_i)\\;\n  \\binom{\\,N/h(\\vv)\\,}{\\,k/h(\\vv)\\,}\\,\n  (\\sigma-1)^{\\,(N-k)/h(\\vv)}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.kActiveSummand",
+      "text": "(-1 : ℤ) ^ (1 + absVec v) * (∏ p : n.primeFactors, (rdCoeff p (v p) d : ℤ))\n      * ((n ^ d / hVec v).choose (k / hVec v) : ℤ)\n      * ((σ : ℤ) - 1) ^ ((n ^ d - k) / hVec v)"
+     }
+    ],
+    "note": "The then-branch of `kActiveSummand`: sign × coefficient product × binomial × power, in ℤ, in the paper's order."
+   },
+   {
+    "id": "sign",
+    "kind": "same",
+    "label": "(−1)^{1+|v|}",
+    "tex": [
+     {
+      "text": "(-1)^{1+|\\vv|}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.kActiveSummand",
+      "text": "(-1 : ℤ) ^ (1 + absVec v)"
+     }
+    ],
+    "note": "Integer power of −1."
+   },
+   {
+    "id": "absv",
+    "kind": "definition",
+    "label": "|v| = Σ_i v_i",
+    "tex": [
+     {
+      "text": "$|\\vv|=\\sum_i v_i$",
+      "scope": {
+       "lines": [
+        529,
+        529
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.absVec",
+      "text": "∑ p : n.primeFactors, v p"
+     }
+    ],
+    "note": "Defined in Theorem 4.4 and reused here; the sum runs over the primes (= coordinates)."
+   },
+   {
+    "id": "prod",
+    "kind": "same",
+    "label": "∏_{i=1}^{ω(n)} r_d(p_i, v_i)",
+    "tex": [
+     {
+      "text": "\\prod_{i=1}^{\\omega(n)} r_d(p_i,v_i)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.kActiveSummand",
+      "text": "∏ p : n.primeFactors, (rdCoeff p (v p) d : ℤ)"
+     }
+    ],
+    "note": "Product over the distinct primes of n; r_d(p_i,v_i) is `rdCoeff p (v p) d` (argument order q, v, d), cast to ℤ."
+   },
+   {
+    "id": "rd",
+    "kind": "definition",
+    "label": "r_d(p,v) = p^{C(v,2)} [d v]_p",
+    "tex": [
+     {
+      "text": "r_d(p,v)=p^{\\binom v2}\\gaussbinom dv_p",
+      "scope": {
+       "lines": [
+        513,
+        516
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.rdCoeff",
+      "text": "q ^ (v.choose 2) * gaussBinom q dd v"
+     }
+    ],
+    "note": "Same formula; r_d(p,0) = 1 holds since C(0,2) = 0 and gaussBinom q dd 0 = 1."
+   },
+   {
+    "id": "rd.choose",
+    "kind": "representation",
+    "label": "binom(v,2) is the ordinary binomial (not under the §5 convention)",
+    "tex": [
+     {
+      "text": "all other binomial coefficients are the ordinary ones",
+      "scope": {
+       "lines": [
+        716,
+        716
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.rdCoeff",
+      "text": "v.choose 2"
+     }
+    ],
+    "note": "The binomial inside r_d is `Nat.choose` and never annihilates the summand (C(0,2) = C(1,2) = 0 just gives p^0 = 1), matching the v5 wording that restricts the convention to binom(N/h, k/h)."
+   },
+   {
+    "id": "gauss",
+    "kind": "representation",
+    "label": "Gaussian binomial [d r]_p",
+    "tex": [
+     {
+      "text": "$\\gaussbinom dr_p=\\prod_{i=0}^{r-1}\n\\frac{p^{d-i}-1}{p^{i+1}-1}$",
+      "scope": {
+       "lines": [
+        354,
+        355
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.gaussBinom"
+     },
+     {
+      "decl": "ShiftSym.P01.gaussBinomProductFidelityStatement",
+      "text": "(∏ i ∈ Finset.range r, (((p : ℚ) ^ (d - i) - 1) / ((p : ℚ) ^ (i + 1) - 1))) =\n      (gaussBinom p d r : ℚ)"
+     }
+    ],
+    "note": "Lean defines the Gaussian binomial by the q-Pascal recurrence; agreement with the paper's product formula (for primes p, d ≥ 1, r ≤ d) is a separately frozen and proved fidelity statement of group 01."
+   },
+   {
+    "id": "h",
+    "kind": "definition",
+    "label": "h(v) = ∏_i p_i^{v_i}",
+    "tex": [
+     {
+      "text": "h(\\vv)=\\prod_i p_i^{v_i}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.hVec",
+      "text": "∏ p : n.primeFactors, (p : ℕ) ^ v p"
+     }
+    ],
+    "note": "Product over the distinct primes of n, in ℕ."
+   },
+   {
+    "id": "binom",
+    "kind": "representation",
+    "label": "C(N/h(v), k/h(v))",
+    "tex": [
+     {
+      "text": "\\binom{\\,N/h(\\vv)\\,}{\\,k/h(\\vv)\\,}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.kActiveSummand",
+      "text": "((n ^ d / hVec v).choose (k / hVec v) : ℤ)"
+     }
+    ],
+    "note": "Ordinary `Nat.choose` of two ℕ-quotients, evaluated only in the then-branch of the convention guard (where both quotients are exact), cast to ℤ."
+   },
+   {
+    "id": "binom.top",
+    "kind": "representation",
+    "label": "N/h(v)",
+    "tex": [
+     {
+      "text": "N/h(\\vv)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.kActiveSummand",
+      "text": "n ^ d / hVec v",
+      "occ": 2
+     }
+    ],
+    "note": "ℕ-division, exact because h(v) ∣ n^d for every rank vector (`hVec_dvd_pow`, proved; the paper's 'Integrality' remark in the proof of Theorem 4.4)."
+   },
+   {
+    "id": "binom.bot",
+    "kind": "representation",
+    "label": "k/h(v)",
+    "tex": [
+     {
+      "text": "k/h(\\vv)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.kActiveSummand",
+      "text": "k / hVec v",
+      "occ": 2
+     }
+    ],
+    "note": "ℕ-division, exact in the then-branch since the guard contains h(v) ∣ k."
+   },
+   {
+    "id": "pow",
+    "kind": "representation",
+    "label": "(σ−1)^{(N−k)/h(v)}, with 0^0 := 1",
+    "tex": [
+     {
+      "text": "(\\sigma-1)^{\\,(N-k)/h(\\vv)}"
+     },
+     {
+      "text": "$0^0:=1$ (relevant only at $\\sigma=1$, $k=N$)",
+      "scope": {
+       "lines": [
+        717,
+        717
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.kActiveSummand",
+      "text": "((σ : ℤ) - 1) ^ ((n ^ d - k) / hVec v)"
+     }
+    ],
+    "note": "Monoid power in ℤ with exponent in ℕ; Lean's `pow_zero` gives 0^0 = 1, which is the paper's convention (the claim that it matters only at σ = 1, k = N is frozen separately as `zeroPowRelevanceStatement`)."
+   },
+   {
+    "id": "pow.base",
+    "kind": "representation",
+    "label": "σ − 1 in ℤ",
+    "tex": [
+     {
+      "text": "\\sigma-1"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.kActiveSummand",
+      "text": "(σ : ℤ) - 1"
+     }
+    ],
+    "note": "Computed in ℤ, so no truncated ℕ-subtraction (it is 0 exactly at σ = 1)."
+   },
+   {
+    "id": "pow.exp",
+    "kind": "representation",
+    "label": "(N−k)/h(v)",
+    "tex": [
+     {
+      "text": "(N-k)/h(\\vv)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.kActiveSummand",
+      "text": "(n ^ d - k) / hVec v"
+     }
+    ],
+    "note": "ℕ-subtraction is exact because k ≤ n^d (hypothesis); the ℕ-division is exact in the then-branch because h(v) divides both n^d and k."
+   },
+   {
+    "id": "conv",
+    "kind": "representation",
+    "label": "§5 convention: C(N/h,k/h) := 0 unless k/h ∈ {0,…,N/h} ∩ ℤ, annihilating the whole summand",
+    "tex": [
+     {
+      "text": "$h=h(\\vv)$ in Theorem",
+      "scope": {
+       "lines": [
+        709,
+        711
+       ]
+      }
+     },
+     {
+      "text": "$\\binom{N/h}{k/h}:=0$ whenever\n$k/h$ is not an integer in $\\{0,\\dots,N/h\\}$, and such a vanishing\nbinomial annihilates its\nwhole summand",
+      "scope": {
+       "lines": [
+        712,
+        715
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.kActiveSummand",
+      "text": "hVec v ∣ k ∧ k / hVec v ≤ n ^ d / hVec v"
+     },
+     {
+      "decl": "ShiftSym.P05.kActiveSummand",
+      "text": "else 0"
+     }
+    ],
+    "note": "The whole summand (sign, coefficients, binomial and power) is replaced by 0 when the guard fails, so the fractional exponent is never evaluated. Given h(v) ∣ k and k ≤ N, the second conjunct is automatic; it is kept to mirror 'in {0,…,N/h}'."
+   },
+   {
+    "id": "conv.faithful",
+    "kind": "representation",
+    "label": "guard ⇔ 'k/h(v) is an integer in {0,…,N/h(v)}' (rational quotients)",
+    "tex": [
+     {
+      "text": "$k/h$ is not an integer in $\\{0,\\dots,N/h\\}$",
+      "scope": {
+       "lines": [
+        712,
+        715
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P05.BinomNonvanishing",
+      "text": "∃ j : ℕ, (j : ℚ) = (k : ℚ) / (h : ℚ) ∧ (j : ℚ) ≤ (N : ℚ) / (h : ℚ)"
+     }
+    ],
+    "note": "Proved infrastructure lemma (not a paper claim) showing that the ℕ-encoded guard says exactly what the paper's convention says, with the quotients read literally in ℚ."
+   }
+  ]
+ }
+}

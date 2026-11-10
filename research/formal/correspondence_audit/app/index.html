@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Correspondence Audit</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="/app/app.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+</head>
+<body>
+<header id="top">
+  <div class="brand">Paper ↔ Lean audit</div>
+  <div class="nav">
+    <button id="prev" title="Previous item (k)">‹</button>
+    <select id="itemsel" title="Jump to item"></select>
+    <button id="next" title="Next item (j)">›</button>
+  </div>
+  <div id="progress" class="progress"></div>
+  <div class="tools">
+    <button id="crop" title="Clip page margins (m)">Crop margins</button>
+    <button id="zoomout" title="Zoom out (−)">−</button>
+    <span id="zoomlvl">100%</span>
+    <button id="zoomin" title="Zoom in (+)">+</button>
+    <button id="helpbtn" title="Keyboard shortcuts (?)">?</button>
+    <button id="finish" class="primary" title="Write the audit report">Finish audit</button>
+  </div>
+</header>
+<main id="main">
+  <section id="left"><div id="pdf"></div></section>
+  <div id="divider" title="Drag to resize"></div>
+  <section id="right">
+    <div id="rightscroll">
+      <div id="itemhead"></div>
+      <div id="cards"></div>
+    </div>
+    <div id="inspector">
+      <div id="insp-grip" title="Drag to resize"></div>
+      <div id="insp-body"><div class="muted">Click a highlighted region in the PDF, a mapping, or any Lean token to inspect it. Click the same token again to widen the selection to its enclosing expression.</div></div>
+    </div>
+  </section>
+</main>
+<svg id="arrows" aria-hidden="true">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/>
+    </marker>
+  </defs>
+  <g id="arrowg"></g>
+</svg>
+<div id="modal" hidden><div class="modal-card"><div id="modal-body"></div><div class="modal-actions"><button id="modal-close">Close</button></div></div></div>
+<div id="toast" hidden></div>
+<script type="module" src="/app/app.js"></script>
+</body>
+</html>

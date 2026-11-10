@@ -1,0 +1,73 @@
+[
+  {
+    "name": "build",
+    "command": [
+      "lake",
+      "build",
+      "Shiftsym.AuditPaper"
+    ],
+    "exit": 0,
+    "seconds": 8.54
+  },
+  {
+    "name": "paper_audit",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Shiftsym/AuditPaper.lean"
+    ],
+    "exit": 0,
+    "seconds": 29.6
+  },
+  {
+    "name": "fingerprints",
+    "command": [
+      "python3",
+      "research/formal/check_frozen.py"
+    ],
+    "exit": 0,
+    "seconds": 0.04
+  },
+  {
+    "name": "placeholders",
+    "command": [
+      "python3",
+      "research/formal/check_placeholders.py"
+    ],
+    "exit": 0,
+    "seconds": 1.07
+  },
+  {
+    "name": "correspondence",
+    "command": [
+      "python3",
+      "research/formal/correspondence_audit/tools/build.py",
+      "--check"
+    ],
+    "exit": 0,
+    "seconds": 1.07
+  },
+  {
+    "name": "dependencies",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "../frozen_deps.lean"
+    ],
+    "exit": 0,
+    "seconds": 6.9
+  },
+  {
+    "name": "main_replay",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "../main_paper_audit/v8_review/MainReplay.lean"
+    ],
+    "exit": 0,
+    "seconds": 31.73
+  }
+]

@@ -1,0 +1,10927 @@
+{
+  "source": "arXiv:2108.01990v2",
+  "table": [
+    {
+      "grid": [
+        2
+      ],
+      "q": 2,
+      "L": 1,
+      "A_neck": 1,
+      "A_words": 2,
+      "T3_literal": 1,
+      "T3_best": 1,
+      "n_readings_ok": 560
+    },
+    {
+      "grid": [
+        2
+      ],
+      "q": 3,
+      "L": 3,
+      "A_neck": 3,
+      "A_words": 6,
+      "T3_literal": 3,
+      "T3_best": 3,
+      "n_readings_ok": 560
+    },
+    {
+      "grid": [
+        3
+      ],
+      "q": 2,
+      "L": 2,
+      "A_neck": 2,
+      "A_words": 6,
+      "T3_literal": 2,
+      "T3_best": 2,
+      "n_readings_ok": 560
+    },
+    {
+      "grid": [
+        3
+      ],
+      "q": 3,
+      "L": 8,
+      "A_neck": 8,
+      "A_words": 24,
+      "T3_literal": 8,
+      "T3_best": 8,
+      "n_readings_ok": 560
+    },
+    {
+      "grid": [
+        4
+      ],
+      "q": 2,
+      "L": 3,
+      "A_neck": 3,
+      "A_words": 12,
+      "T3_literal": 2,
+      "T3_best": 3,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        4
+      ],
+      "q": 3,
+      "L": 18,
+      "A_neck": 18,
+      "A_words": 72,
+      "T3_literal": 15,
+      "T3_best": 18,
+      "n_readings_ok": 560
+    },
+    {
+      "grid": [
+        2,
+        2
+      ],
+      "q": 2,
+      "L": 3,
+      "A_neck": 2,
+      "A_words": 8,
+      "T3_literal": 3,
+      "T3_best": 2,
+      "n_readings_ok": 354
+    },
+    {
+      "grid": [
+        2,
+        2
+      ],
+      "q": 3,
+      "L": 18,
+      "A_neck": 15,
+      "A_words": 60,
+      "T3_literal": 18,
+      "T3_best": 15,
+      "n_readings_ok": 354
+    },
+    {
+      "grid": [
+        5
+      ],
+      "q": 2,
+      "L": 6,
+      "A_neck": 6,
+      "A_words": 30,
+      "T3_literal": 6,
+      "T3_best": 6,
+      "n_readings_ok": 560
+    },
+    {
+      "grid": [
+        5
+      ],
+      "q": 3,
+      "L": 48,
+      "A_neck": 48,
+      "A_words": 240,
+      "T3_literal": 48,
+      "T3_best": 48,
+      "n_readings_ok": 560
+    },
+    {
+      "grid": [
+        6
+      ],
+      "q": 2,
+      "L": 9,
+      "A_neck": 9,
+      "A_words": 54,
+      "T3_literal": 6,
+      "T3_best": 9,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        6
+      ],
+      "q": 3,
+      "L": 116,
+      "A_neck": 116,
+      "A_words": 696,
+      "T3_literal": 105,
+      "T3_best": 116,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        2,
+        3
+      ],
+      "q": 2,
+      "L": 9,
+      "A_neck": 9,
+      "A_words": 54,
+      "T3_literal": 9,
+      "T3_best": 9,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        2,
+        3
+      ],
+      "q": 3,
+      "L": 116,
+      "A_neck": 116,
+      "A_words": 696,
+      "T3_literal": 116,
+      "T3_best": 116,
+      "n_readings_ok": 520
+    },
+    {
+      "grid": [
+        3,
+        2
+      ],
+      "q": 2,
+      "L": 9,
+      "A_neck": 9,
+      "A_words": 54,
+      "T3_literal": 9,
+      "T3_best": 9,
+      "n_readings_ok": 520
+    },
+    {
+      "grid": [
+        3,
+        2
+      ],
+      "q": 3,
+      "L": 116,
+      "A_neck": 116,
+      "A_words": 696,
+      "T3_literal": 116,
+      "T3_best": 116,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        7
+      ],
+      "q": 2,
+      "L": 18,
+      "A_neck": 18,
+      "A_words": 126,
+      "T3_literal": 18,
+      "T3_best": 18,
+      "n_readings_ok": 560
+    },
+    {
+      "grid": [
+        7
+      ],
+      "q": 3,
+      "L": 312,
+      "A_neck": 312,
+      "A_words": 2184,
+      "T3_literal": 312,
+      "T3_best": 312,
+      "n_readings_ok": 560
+    },
+    {
+      "grid": [
+        8
+      ],
+      "q": 2,
+      "L": 30,
+      "A_neck": 30,
+      "A_words": 240,
+      "T3_literal": 27,
+      "T3_best": 30,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        8
+      ],
+      "q": 3,
+      "L": 810,
+      "A_neck": 810,
+      "A_words": 6480,
+      "T3_literal": 792,
+      "T3_best": 810,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        2,
+        4
+      ],
+      "q": 2,
+      "L": 30,
+      "A_neck": 27,
+      "A_words": 216,
+      "T3_literal": 28,
+      "T3_best": 28,
+      "n_readings_ok": 152
+    },
+    {
+      "grid": [
+        2,
+        4
+      ],
+      "q": 3,
+      "L": 810,
+      "A_neck": 792,
+      "A_words": 6336,
+      "T3_literal": 795,
+      "T3_best": 795,
+      "n_readings_ok": 192
+    },
+    {
+      "grid": [
+        4,
+        2
+      ],
+      "q": 2,
+      "L": 30,
+      "A_neck": 27,
+      "A_words": 216,
+      "T3_literal": 30,
+      "T3_best": 27,
+      "n_readings_ok": 310
+    },
+    {
+      "grid": [
+        4,
+        2
+      ],
+      "q": 3,
+      "L": 810,
+      "A_neck": 792,
+      "A_words": 6336,
+      "T3_literal": 810,
+      "T3_best": 792,
+      "n_readings_ok": 340
+    },
+    {
+      "grid": [
+        2,
+        2,
+        2
+      ],
+      "q": 2,
+      "L": 32,
+      "A_neck": 23,
+      "A_words": 184,
+      "T3_literal": 32,
+      "T3_best": 22,
+      "n_readings_ok": 18
+    },
+    {
+      "grid": [
+        2,
+        2,
+        2
+      ],
+      "q": 3,
+      "L": 825,
+      "A_neck": 762,
+      "A_words": 6096,
+      "T3_literal": 825,
+      "T3_best": 750,
+      "n_readings_ok": 0
+    },
+    {
+      "grid": [
+        9
+      ],
+      "q": 2,
+      "L": 56,
+      "A_neck": 56,
+      "A_words": 504,
+      "T3_literal": 54,
+      "T3_best": 56,
+      "n_readings_ok": 560
+    },
+    {
+      "grid": [
+        9
+      ],
+      "q": 3,
+      "L": 2184,
+      "A_neck": 2184,
+      "A_words": 19656,
+      "T3_literal": 2176,
+      "T3_best": 2184,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        3,
+        3
+      ],
+      "q": 2,
+      "L": 58,
+      "A_neck": 54,
+      "A_words": 486,
+      "T3_literal": 58,
+      "T3_best": 54,
+      "n_readings_ok": 372
+    },
+    {
+      "grid": [
+        3,
+        3
+      ],
+      "q": 3,
+      "L": 2192,
+      "A_neck": 2176,
+      "A_words": 19584,
+      "T3_literal": 2192,
+      "T3_best": 2176,
+      "n_readings_ok": 282
+    },
+    {
+      "grid": [
+        10
+      ],
+      "q": 2,
+      "L": 99,
+      "A_neck": 99,
+      "A_words": 990,
+      "T3_literal": 92,
+      "T3_best": 99,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        10
+      ],
+      "q": 3,
+      "L": 5880,
+      "A_neck": 5880,
+      "A_words": 58800,
+      "T3_literal": 5829,
+      "T3_best": 5880,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        2,
+        5
+      ],
+      "q": 2,
+      "L": 99,
+      "A_neck": 99,
+      "A_words": 990,
+      "T3_literal": 99,
+      "T3_best": 99,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        2,
+        5
+      ],
+      "q": 3,
+      "L": 5880,
+      "A_neck": 5880,
+      "A_words": 58800,
+      "T3_literal": 5880,
+      "T3_best": 5880,
+      "n_readings_ok": 520
+    },
+    {
+      "grid": [
+        5,
+        2
+      ],
+      "q": 2,
+      "L": 99,
+      "A_neck": 99,
+      "A_words": 990,
+      "T3_literal": 99,
+      "T3_best": 99,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        5,
+        2
+      ],
+      "q": 3,
+      "L": 5880,
+      "A_neck": 5880,
+      "A_words": 58800,
+      "T3_literal": 5880,
+      "T3_best": 5880,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        11
+      ],
+      "q": 2,
+      "L": 186,
+      "A_neck": 186,
+      "A_words": 2046,
+      "T3_literal": 186,
+      "T3_best": 186,
+      "n_readings_ok": 560
+    },
+    {
+      "grid": [
+        11
+      ],
+      "q": 3,
+      "L": 16104,
+      "A_neck": 16104,
+      "A_words": 177144,
+      "T3_literal": 16104,
+      "T3_best": 16104,
+      "n_readings_ok": 560
+    },
+    {
+      "grid": [
+        12
+      ],
+      "q": 2,
+      "L": 335,
+      "A_neck": 335,
+      "A_words": 4020,
+      "T3_literal": 324,
+      "T3_best": 335,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        12
+      ],
+      "q": 3,
+      "L": 44220,
+      "A_neck": 44220,
+      "A_words": 530640,
+      "T3_literal": 44089,
+      "T3_best": 44220,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        2,
+        6
+      ],
+      "q": 2,
+      "L": 335,
+      "A_neck": 326,
+      "A_words": 3912,
+      "T3_literal": 324,
+      "T3_best": 326,
+      "n_readings_ok": 384
+    },
+    {
+      "grid": [
+        2,
+        6
+      ],
+      "q": 3,
+      "L": 44220,
+      "A_neck": 44104,
+      "A_words": 529248,
+      "T3_literal": 44089,
+      "T3_best": 44104,
+      "n_readings_ok": 288
+    },
+    {
+      "grid": [
+        3,
+        4
+      ],
+      "q": 2,
+      "L": 335,
+      "A_neck": 335,
+      "A_words": 4020,
+      "T3_literal": 326,
+      "T3_best": 335,
+      "n_readings_ok": 360
+    },
+    {
+      "grid": [
+        3,
+        4
+      ],
+      "q": 3,
+      "L": 44220,
+      "A_neck": 44220,
+      "A_words": 530640,
+      "T3_literal": 44104,
+      "T3_best": 44220,
+      "n_readings_ok": 360
+    },
+    {
+      "grid": [
+        4,
+        3
+      ],
+      "q": 2,
+      "L": 335,
+      "A_neck": 335,
+      "A_words": 4020,
+      "T3_literal": 335,
+      "T3_best": 335,
+      "n_readings_ok": 400
+    },
+    {
+      "grid": [
+        4,
+        3
+      ],
+      "q": 3,
+      "L": 44220,
+      "A_neck": 44220,
+      "A_words": 530640,
+      "T3_literal": 44220,
+      "T3_best": 44220,
+      "n_readings_ok": 400
+    },
+    {
+      "grid": [
+        6,
+        2
+      ],
+      "q": 2,
+      "L": 335,
+      "A_neck": 326,
+      "A_words": 3912,
+      "T3_literal": 335,
+      "T3_best": 326,
+      "n_readings_ok": 202
+    },
+    {
+      "grid": [
+        6,
+        2
+      ],
+      "q": 3,
+      "L": 44220,
+      "A_neck": 44104,
+      "A_words": 529248,
+      "T3_literal": 44220,
+      "T3_best": 44104,
+      "n_readings_ok": 202
+    },
+    {
+      "grid": [
+        2,
+        2,
+        3
+      ],
+      "q": 2,
+      "L": 335,
+      "A_neck": 326,
+      "A_words": 3912,
+      "T3_literal": 335,
+      "T3_best": 335,
+      "n_readings_ok": 0
+    },
+    {
+      "grid": [
+        2,
+        2,
+        3
+      ],
+      "q": 3,
+      "L": 44220,
+      "A_neck": 44104,
+      "A_words": 529248,
+      "T3_literal": 44220,
+      "T3_best": 44220,
+      "n_readings_ok": 0
+    },
+    {
+      "grid": [
+        2,
+        3,
+        2
+      ],
+      "q": 2,
+      "L": 335,
+      "A_neck": 326,
+      "A_words": 3912,
+      "T3_literal": 335,
+      "T3_best": 326,
+      "n_readings_ok": 176
+    },
+    {
+      "grid": [
+        2,
+        3,
+        2
+      ],
+      "q": 3,
+      "L": 44220,
+      "A_neck": 44104,
+      "A_words": 529248,
+      "T3_literal": 44220,
+      "T3_best": 44104,
+      "n_readings_ok": 196
+    },
+    {
+      "grid": [
+        3,
+        2,
+        2
+      ],
+      "q": 2,
+      "L": 335,
+      "A_neck": 326,
+      "A_words": 3912,
+      "T3_literal": 335,
+      "T3_best": 326,
+      "n_readings_ok": 192
+    },
+    {
+      "grid": [
+        3,
+        2,
+        2
+      ],
+      "q": 3,
+      "L": 44220,
+      "A_neck": 44104,
+      "A_words": 529248,
+      "T3_literal": 44220,
+      "T3_best": 44104,
+      "n_readings_ok": 168
+    },
+    {
+      "grid": [
+        13
+      ],
+      "q": 2,
+      "L": 630,
+      "A_neck": 630,
+      "A_words": 8190,
+      "T3_literal": 630,
+      "T3_best": 630,
+      "n_readings_ok": 560
+    },
+    {
+      "grid": [
+        13
+      ],
+      "q": 3,
+      "L": 122640,
+      "A_neck": 122640,
+      "A_words": 1594320,
+      "T3_literal": 122640,
+      "T3_best": 122640,
+      "n_readings_ok": 560
+    },
+    {
+      "grid": [
+        14
+      ],
+      "q": 2,
+      "L": 1161,
+      "A_neck": 1161,
+      "A_words": 16254,
+      "T3_literal": 1142,
+      "T3_best": 1161,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        14
+      ],
+      "q": 3,
+      "L": 341484,
+      "A_neck": 341484,
+      "A_words": 4780776,
+      "T3_literal": 341169,
+      "T3_best": 341484,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        2,
+        7
+      ],
+      "q": 2,
+      "L": 1161,
+      "A_neck": 1161,
+      "A_words": 16254,
+      "T3_literal": 1161,
+      "T3_best": 1161,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        2,
+        7
+      ],
+      "q": 3,
+      "L": 341484,
+      "A_neck": 341484,
+      "A_words": 4780776,
+      "T3_literal": 341484,
+      "T3_best": 341484,
+      "n_readings_ok": 520
+    },
+    {
+      "grid": [
+        7,
+        2
+      ],
+      "q": 2,
+      "L": 1161,
+      "A_neck": 1161,
+      "A_words": 16254,
+      "T3_literal": 1161,
+      "T3_best": 1161,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        7,
+        2
+      ],
+      "q": 3,
+      "L": 341484,
+      "A_neck": 341484,
+      "A_words": 4780776,
+      "T3_literal": 341484,
+      "T3_best": 341484,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        15
+      ],
+      "q": 2,
+      "L": 2182,
+      "A_neck": 2182,
+      "A_words": 32730,
+      "T3_literal": 2174,
+      "T3_best": 2182,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        15
+      ],
+      "q": 3,
+      "L": 956576,
+      "A_neck": 956576,
+      "A_words": 14348640,
+      "T3_literal": 956520,
+      "T3_best": 956576,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        3,
+        5
+      ],
+      "q": 2,
+      "L": 2182,
+      "A_neck": 2182,
+      "A_words": 32730,
+      "T3_literal": 2182,
+      "T3_best": 2182,
+      "n_readings_ok": 520
+    },
+    {
+      "grid": [
+        3,
+        5
+      ],
+      "q": 3,
+      "L": 956576,
+      "A_neck": 956576,
+      "A_words": 14348640,
+      "T3_literal": 956576,
+      "T3_best": 956576,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        5,
+        3
+      ],
+      "q": 2,
+      "L": 2182,
+      "A_neck": 2182,
+      "A_words": 32730,
+      "T3_literal": 2182,
+      "T3_best": 2182,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        5,
+        3
+      ],
+      "q": 3,
+      "L": 956576,
+      "A_neck": 956576,
+      "A_words": 14348640,
+      "T3_literal": 956576,
+      "T3_best": 956576,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        16
+      ],
+      "q": 2,
+      "L": 4080,
+      "A_neck": 4080,
+      "A_words": 65280,
+      "T3_literal": 4050,
+      "T3_best": 4080,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        16
+      ],
+      "q": 3,
+      "L": 2690010,
+      "A_neck": 2690010,
+      "A_words": 43040160,
+      "T3_literal": 2689200,
+      "T3_best": 2690010,
+      "n_readings_ok": 480
+    },
+    {
+      "grid": [
+        2,
+        8
+      ],
+      "q": 2,
+      "L": 4080,
+      "A_neck": 4050,
+      "A_words": 64800,
+      "T3_literal": 4053,
+      "T3_best": 4053,
+      "n_readings_ok": 6
+    },
+    {
+      "grid": [
+        2,
+        8
+      ],
+      "q": 3,
+      "L": 2690010,
+      "A_neck": 2689200,
+      "A_words": 43027200,
+      "T3_literal": 2689218,
+      "T3_best": 2689218,
+      "n_readings_ok": 0
+    },
+    {
+      "grid": [
+        4,
+        4
+      ],
+      "q": 2,
+      "L": 4083,
+      "A_neck": 4050,
+      "A_words": 64800,
+      "T3_literal": 3948,
+      "T3_best": 4056,
+      "n_readings_ok": 8
+    },
+    {
+      "grid": [
+        4,
+        4
+      ],
+      "q": 3,
+      "L": 2690028,
+      "A_neck": 2689200,
+      "A_words": 43027200,
+      "T3_literal": 2686068,
+      "T3_best": 2689236,
+      "n_readings_ok": 0
+    },
+    {
+      "grid": [
+        8,
+        2
+      ],
+      "q": 2,
+      "L": 4080,
+      "A_neck": 4050,
+      "A_words": 64800,
+      "T3_literal": 4080,
+      "T3_best": 4050,
+      "n_readings_ok": 310
+    },
+    {
+      "grid": [
+        8,
+        2
+      ],
+      "q": 3,
+      "L": 2690010,
+      "A_neck": 2689200,
+      "A_words": 43027200,
+      "T3_literal": 2690010,
+      "T3_best": 2689200,
+      "n_readings_ok": 310
+    },
+    {
+      "grid": [
+        2,
+        2,
+        4
+      ],
+      "q": 2,
+      "L": 4107,
+      "A_neck": 3996,
+      "A_words": 63936,
+      "T3_literal": 4084,
+      "T3_best": 4038,
+      "n_readings_ok": 0
+    },
+    {
+      "grid": [
+        2,
+        2,
+        4
+      ],
+      "q": 3,
+      "L": 2690802,
+      "A_neck": 2687616,
+      "A_words": 43001856,
+      "T3_literal": 2690040,
+      "T3_best": 2688516,
+      "n_readings_ok": 0
+    },
+    {
+      "grid": [
+        2,
+        4,
+        2
+      ],
+      "q": 2,
+      "L": 4107,
+      "A_neck": 3996,
+      "A_words": 63936,
+      "T3_literal": 4107,
+      "T3_best": 4026,
+      "n_readings_ok": 0
+    },
+    {
+      "grid": [
+        2,
+        4,
+        2
+      ],
+      "q": 3,
+      "L": 2690802,
+      "A_neck": 2687616,
+      "A_words": 43001856,
+      "T3_literal": 2690802,
+      "T3_best": 2688426,
+      "n_readings_ok": 0
+    },
+    {
+      "grid": [
+        4,
+        2,
+        2
+      ],
+      "q": 2,
+      "L": 4107,
+      "A_neck": 3996,
+      "A_words": 63936,
+      "T3_literal": 4107,
+      "T3_best": 3972,
+      "n_readings_ok": 0
+    },
+    {
+      "grid": [
+        4,
+        2,
+        2
+      ],
+      "q": 3,
+      "L": 2690802,
+      "A_neck": 2687616,
+      "A_words": 43001856,
+      "T3_literal": 2690802,
+      "T3_best": 2686842,
+      "n_readings_ok": 0
+    },
+    {
+      "grid": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "q": 2,
+      "L": 4184,
+      "A_neck": 3904,
+      "A_words": 62464,
+      "T3_literal": 4184,
+      "T3_best": 3379,
+      "n_readings_ok": 0
+    },
+    {
+      "grid": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "q": 3,
+      "L": 2693148,
+      "A_neck": 2684568,
+      "A_words": 42953088,
+      "T3_literal": 2693148,
+      "T3_best": 2666478,
+      "n_readings_ok": 0
+    }
+  ],
+  "readings": [
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula-prod/forall-exists/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula-prod/forall-exists/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula-prod/forall-exists/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula-prod/exists/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula-prod/exists/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula-prod/exists/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula-prod/order/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula-prod/order/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula-prod/order/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula-prod/nonzero/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula-prod/nonzero/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula-prod/nonzero/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula-prod/power/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula-prod/power/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula-prod/power/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula/forall-exists/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula/forall-exists/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula/forall-exists/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula/exists/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula/exists/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula/exists/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula/order/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula/order/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula/order/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula/nonzero/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula/nonzero/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula/nonzero/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula/power/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula/power/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/formula/power/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text/forall-exists/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text/forall-exists/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text/forall-exists/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text/exists/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text/exists/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text/exists/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text/order/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text/order/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text/order/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text/nonzero/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text/nonzero/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text/nonzero/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text/power/oracle",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text/power/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text/power/rec-T3",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text-prod/forall-exists/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text-prod/forall-exists/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text-prod/forall-exists/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text-prod/exists/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text-prod/exists/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text-prod/exists/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text-prod/order/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text-prod/order/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text-prod/order/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text-prod/nonzero/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text-prod/nonzero/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text-prod/nonzero/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text-prod/power/oracle",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text-prod/power/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_d/A/text-prod/power/rec-T3",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula-prod/forall-exists/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula-prod/forall-exists/rec-L",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula-prod/forall-exists/rec-T3",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula-prod/exists/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula-prod/exists/rec-L",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula-prod/exists/rec-T3",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula-prod/order/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula-prod/order/rec-L",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula-prod/order/rec-T3",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula-prod/nonzero/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula-prod/nonzero/rec-L",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula-prod/nonzero/rec-T3",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula-prod/power/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula-prod/power/rec-L",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula-prod/power/rec-T3",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula/forall-exists/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula/forall-exists/rec-L",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula/forall-exists/rec-T3",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula/exists/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula/exists/rec-L",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula/exists/rec-T3",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula/order/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula/order/rec-L",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula/order/rec-T3",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula/nonzero/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula/nonzero/rec-L",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula/nonzero/rec-T3",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula/power/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula/power/rec-L",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/formula/power/rec-T3",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text/forall-exists/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text/forall-exists/rec-L",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text/forall-exists/rec-T3",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text/exists/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text/exists/rec-L",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text/exists/rec-T3",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text/order/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text/order/rec-L",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text/order/rec-T3",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text/nonzero/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text/nonzero/rec-L",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text/nonzero/rec-T3",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text/power/oracle",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text/power/rec-L",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text/power/rec-T3",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text-prod/forall-exists/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text-prod/forall-exists/rec-L",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text-prod/forall-exists/rec-T3",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text-prod/exists/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text-prod/exists/rec-L",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text-prod/exists/rec-T3",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text-prod/order/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text-prod/order/rec-L",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text-prod/order/rec-T3",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text-prod/nonzero/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text-prod/nonzero/rec-L",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text-prod/nonzero/rec-T3",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text-prod/power/oracle",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text-prod/power/rec-L",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>1/l<n_i/A/text-prod/power/rec-T3",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula-prod/forall-exists/oracle",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula-prod/forall-exists/rec-L",
+      "matches": 39,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula-prod/forall-exists/rec-T3",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula-prod/exists/oracle",
+      "matches": 8,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula-prod/exists/rec-L",
+      "matches": 39,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula-prod/exists/rec-T3",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula-prod/order/oracle",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula-prod/order/rec-L",
+      "matches": 39,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula-prod/order/rec-T3",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula-prod/nonzero/oracle",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula-prod/nonzero/rec-L",
+      "matches": 39,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula-prod/nonzero/rec-T3",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula-prod/power/oracle",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula-prod/power/rec-L",
+      "matches": 38,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula-prod/power/rec-T3",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula/forall-exists/oracle",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula/forall-exists/rec-L",
+      "matches": 39,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula/forall-exists/rec-T3",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula/exists/oracle",
+      "matches": 8,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula/exists/rec-L",
+      "matches": 39,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula/exists/rec-T3",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula/order/oracle",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula/order/rec-L",
+      "matches": 39,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula/order/rec-T3",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula/nonzero/oracle",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula/nonzero/rec-L",
+      "matches": 39,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula/nonzero/rec-T3",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula/power/oracle",
+      "matches": 8,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula/power/rec-L",
+      "matches": 38,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/formula/power/rec-T3",
+      "matches": 11,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text/forall-exists/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text/forall-exists/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text/forall-exists/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text/exists/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text/exists/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text/exists/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text/order/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text/order/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text/order/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text/nonzero/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text/nonzero/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text/nonzero/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text/power/oracle",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text/power/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text/power/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text-prod/forall-exists/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text-prod/forall-exists/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text-prod/forall-exists/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text-prod/exists/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text-prod/exists/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text-prod/exists/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text-prod/order/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text-prod/order/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text-prod/order/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text-prod/nonzero/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text-prod/nonzero/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text-prod/nonzero/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text-prod/power/oracle",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text-prod/power/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/A/text-prod/power/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula-prod/forall-exists/oracle",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula-prod/forall-exists/rec-L",
+      "matches": 41,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula-prod/forall-exists/rec-T3",
+      "matches": 13,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula-prod/exists/oracle",
+      "matches": 8,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula-prod/exists/rec-L",
+      "matches": 39,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula-prod/exists/rec-T3",
+      "matches": 11,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula-prod/order/oracle",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula-prod/order/rec-L",
+      "matches": 41,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula-prod/order/rec-T3",
+      "matches": 13,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula-prod/nonzero/oracle",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula-prod/nonzero/rec-L",
+      "matches": 41,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula-prod/nonzero/rec-T3",
+      "matches": 13,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula-prod/power/oracle",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula-prod/power/rec-L",
+      "matches": 40,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula-prod/power/rec-T3",
+      "matches": 12,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula/forall-exists/oracle",
+      "matches": 11,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula/forall-exists/rec-L",
+      "matches": 42,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula/forall-exists/rec-T3",
+      "matches": 14,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula/exists/oracle",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula/exists/rec-L",
+      "matches": 40,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula/exists/rec-T3",
+      "matches": 12,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula/order/oracle",
+      "matches": 11,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula/order/rec-L",
+      "matches": 42,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula/order/rec-T3",
+      "matches": 14,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula/nonzero/oracle",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula/nonzero/rec-L",
+      "matches": 41,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula/nonzero/rec-T3",
+      "matches": 13,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula/power/oracle",
+      "matches": 8,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula/power/rec-L",
+      "matches": 40,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/formula/power/rec-T3",
+      "matches": 12,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text/forall-exists/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text/forall-exists/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text/forall-exists/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text/exists/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text/exists/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text/exists/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text/order/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text/order/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text/order/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text/nonzero/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text/nonzero/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text/nonzero/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text/power/oracle",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text/power/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text/power/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text-prod/forall-exists/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text-prod/forall-exists/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text-prod/forall-exists/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text-prod/exists/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text-prod/exists/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text-prod/exists/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text-prod/order/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text-prod/order/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text-prod/order/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text-prod/nonzero/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text-prod/nonzero/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text-prod/nonzero/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text-prod/power/oracle",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text-prod/power/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_d/L/text-prod/power/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula-prod/forall-exists/oracle",
+      "matches": 6,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula-prod/forall-exists/rec-L",
+      "matches": 35,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula-prod/forall-exists/rec-T3",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula-prod/exists/oracle",
+      "matches": 4,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula-prod/exists/rec-L",
+      "matches": 35,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula-prod/exists/rec-T3",
+      "matches": 8,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula-prod/order/oracle",
+      "matches": 6,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula-prod/order/rec-L",
+      "matches": 35,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula-prod/order/rec-T3",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula-prod/nonzero/oracle",
+      "matches": 6,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula-prod/nonzero/rec-L",
+      "matches": 35,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula-prod/nonzero/rec-T3",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula-prod/power/oracle",
+      "matches": 6,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula-prod/power/rec-L",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula-prod/power/rec-T3",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula/forall-exists/oracle",
+      "matches": 6,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula/forall-exists/rec-L",
+      "matches": 35,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula/forall-exists/rec-T3",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula/exists/oracle",
+      "matches": 4,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula/exists/rec-L",
+      "matches": 35,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula/exists/rec-T3",
+      "matches": 8,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula/order/oracle",
+      "matches": 6,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula/order/rec-L",
+      "matches": 35,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula/order/rec-T3",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula/nonzero/oracle",
+      "matches": 6,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula/nonzero/rec-L",
+      "matches": 35,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula/nonzero/rec-T3",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula/power/oracle",
+      "matches": 4,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula/power/rec-L",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/formula/power/rec-T3",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text/forall-exists/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text/forall-exists/rec-L",
+      "matches": 58,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text/forall-exists/rec-T3",
+      "matches": 58,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text/exists/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text/exists/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text/exists/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text/order/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text/order/rec-L",
+      "matches": 58,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text/order/rec-T3",
+      "matches": 58,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text/nonzero/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text/nonzero/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text/nonzero/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text/power/oracle",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text/power/rec-L",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text/power/rec-T3",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text-prod/forall-exists/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text-prod/forall-exists/rec-L",
+      "matches": 58,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text-prod/forall-exists/rec-T3",
+      "matches": 58,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text-prod/exists/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text-prod/exists/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text-prod/exists/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text-prod/order/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text-prod/order/rec-L",
+      "matches": 58,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text-prod/order/rec-T3",
+      "matches": 58,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text-prod/nonzero/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text-prod/nonzero/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text-prod/nonzero/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text-prod/power/oracle",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text-prod/power/rec-L",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/A/text-prod/power/rec-T3",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula-prod/forall-exists/oracle",
+      "matches": 6,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula-prod/forall-exists/rec-L",
+      "matches": 37,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula-prod/forall-exists/rec-T3",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula-prod/exists/oracle",
+      "matches": 4,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula-prod/exists/rec-L",
+      "matches": 35,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula-prod/exists/rec-T3",
+      "matches": 7,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula-prod/order/oracle",
+      "matches": 6,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula-prod/order/rec-L",
+      "matches": 37,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula-prod/order/rec-T3",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula-prod/nonzero/oracle",
+      "matches": 6,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula-prod/nonzero/rec-L",
+      "matches": 37,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula-prod/nonzero/rec-T3",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula-prod/power/oracle",
+      "matches": 6,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula-prod/power/rec-L",
+      "matches": 34,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula-prod/power/rec-T3",
+      "matches": 6,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula/forall-exists/oracle",
+      "matches": 7,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula/forall-exists/rec-L",
+      "matches": 38,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula/forall-exists/rec-T3",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula/exists/oracle",
+      "matches": 5,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula/exists/rec-L",
+      "matches": 36,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula/exists/rec-T3",
+      "matches": 8,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula/order/oracle",
+      "matches": 7,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula/order/rec-L",
+      "matches": 38,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula/order/rec-T3",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula/nonzero/oracle",
+      "matches": 6,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula/nonzero/rec-L",
+      "matches": 37,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula/nonzero/rec-T3",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula/power/oracle",
+      "matches": 4,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula/power/rec-L",
+      "matches": 34,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/formula/power/rec-T3",
+      "matches": 6,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text/forall-exists/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text/forall-exists/rec-L",
+      "matches": 58,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text/forall-exists/rec-T3",
+      "matches": 58,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text/exists/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text/exists/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text/exists/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text/order/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text/order/rec-L",
+      "matches": 58,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text/order/rec-T3",
+      "matches": 58,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text/nonzero/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text/nonzero/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text/nonzero/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text/power/oracle",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text/power/rec-L",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text/power/rec-T3",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text-prod/forall-exists/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text-prod/forall-exists/rec-L",
+      "matches": 58,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text-prod/forall-exists/rec-T3",
+      "matches": 58,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text-prod/exists/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text-prod/exists/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text-prod/exists/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text-prod/order/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text-prod/order/rec-L",
+      "matches": 58,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text-prod/order/rec-T3",
+      "matches": 58,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text-prod/nonzero/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text-prod/nonzero/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text-prod/nonzero/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text-prod/power/oracle",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text-prod/power/rec-L",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "d-1/l>=1/l<n_i/L/text-prod/power/rec-T3",
+      "matches": 48,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula-prod/forall-exists/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula-prod/forall-exists/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula-prod/forall-exists/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula-prod/exists/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula-prod/exists/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula-prod/exists/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula-prod/order/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula-prod/order/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula-prod/order/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula-prod/nonzero/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula-prod/nonzero/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula-prod/nonzero/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula-prod/power/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula-prod/power/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula-prod/power/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula/forall-exists/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula/forall-exists/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula/forall-exists/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula/exists/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula/exists/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula/exists/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula/order/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula/order/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula/order/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula/nonzero/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula/nonzero/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula/nonzero/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula/power/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula/power/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/formula/power/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text/forall-exists/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text/forall-exists/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text/forall-exists/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text/exists/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text/exists/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text/exists/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text/order/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text/order/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text/order/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text/nonzero/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text/nonzero/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text/nonzero/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text/power/oracle",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text/power/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text/power/rec-T3",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text-prod/forall-exists/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text-prod/forall-exists/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text-prod/forall-exists/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text-prod/exists/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text-prod/exists/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text-prod/exists/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text-prod/order/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text-prod/order/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text-prod/order/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text-prod/nonzero/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text-prod/nonzero/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text-prod/nonzero/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text-prod/power/oracle",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text-prod/power/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_d/A/text-prod/power/rec-T3",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula-prod/forall-exists/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula-prod/forall-exists/rec-L",
+      "matches": 51,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula-prod/forall-exists/rec-T3",
+      "matches": 33,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula-prod/exists/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula-prod/exists/rec-L",
+      "matches": 51,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula-prod/exists/rec-T3",
+      "matches": 33,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula-prod/order/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula-prod/order/rec-L",
+      "matches": 51,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula-prod/order/rec-T3",
+      "matches": 33,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula-prod/nonzero/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula-prod/nonzero/rec-L",
+      "matches": 51,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula-prod/nonzero/rec-T3",
+      "matches": 33,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula-prod/power/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula-prod/power/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula-prod/power/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula/forall-exists/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula/forall-exists/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula/forall-exists/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula/exists/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula/exists/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula/exists/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula/order/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula/order/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula/order/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula/nonzero/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula/nonzero/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula/nonzero/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula/power/oracle",
+      "matches": 30,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula/power/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/formula/power/rec-T3",
+      "matches": 32,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          4
+        ],
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text/forall-exists/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text/forall-exists/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text/forall-exists/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text/exists/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text/exists/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text/exists/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text/order/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text/order/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text/order/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text/nonzero/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text/nonzero/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text/nonzero/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text/power/oracle",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text/power/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text/power/rec-T3",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text-prod/forall-exists/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text-prod/forall-exists/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text-prod/forall-exists/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text-prod/exists/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text-prod/exists/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text-prod/exists/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text-prod/order/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text-prod/order/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text-prod/order/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text-prod/nonzero/oracle",
+      "matches": 52,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text-prod/nonzero/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text-prod/nonzero/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text-prod/power/oracle",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text-prod/power/rec-L",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>1/l<n_i/A/text-prod/power/rec-T3",
+      "matches": 50,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula-prod/forall-exists/oracle",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula-prod/forall-exists/rec-L",
+      "matches": 40,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula-prod/forall-exists/rec-T3",
+      "matches": 12,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula-prod/exists/oracle",
+      "matches": 7,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula-prod/exists/rec-L",
+      "matches": 38,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula-prod/exists/rec-T3",
+      "matches": 11,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula-prod/order/oracle",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula-prod/order/rec-L",
+      "matches": 40,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula-prod/order/rec-T3",
+      "matches": 12,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula-prod/nonzero/oracle",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula-prod/nonzero/rec-L",
+      "matches": 40,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula-prod/nonzero/rec-T3",
+      "matches": 12,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula-prod/power/oracle",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula-prod/power/rec-L",
+      "matches": 40,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula-prod/power/rec-T3",
+      "matches": 13,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula/forall-exists/oracle",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula/forall-exists/rec-L",
+      "matches": 40,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula/forall-exists/rec-T3",
+      "matches": 12,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula/exists/oracle",
+      "matches": 7,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula/exists/rec-L",
+      "matches": 38,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula/exists/rec-T3",
+      "matches": 11,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula/order/oracle",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula/order/rec-L",
+      "matches": 40,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula/order/rec-T3",
+      "matches": 12,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula/nonzero/oracle",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula/nonzero/rec-L",
+      "matches": 38,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula/nonzero/rec-T3",
+      "matches": 11,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula/power/oracle",
+      "matches": 8,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula/power/rec-L",
+      "matches": 37,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        4,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/formula/power/rec-T3",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text/forall-exists/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text/forall-exists/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text/forall-exists/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text/exists/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text/exists/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text/exists/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text/order/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text/order/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text/order/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text/nonzero/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text/nonzero/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text/nonzero/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text/power/oracle",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text/power/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text/power/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text-prod/forall-exists/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text-prod/forall-exists/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text-prod/forall-exists/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text-prod/exists/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text-prod/exists/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text-prod/exists/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text-prod/order/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text-prod/order/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text-prod/order/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text-prod/nonzero/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text-prod/nonzero/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text-prod/nonzero/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text-prod/power/oracle",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text-prod/power/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/A/text-prod/power/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula-prod/forall-exists/oracle",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula-prod/forall-exists/rec-L",
+      "matches": 40,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula-prod/forall-exists/rec-T3",
+      "matches": 12,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula-prod/exists/oracle",
+      "matches": 7,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula-prod/exists/rec-L",
+      "matches": 38,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula-prod/exists/rec-T3",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula-prod/order/oracle",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula-prod/order/rec-L",
+      "matches": 40,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula-prod/order/rec-T3",
+      "matches": 12,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula-prod/nonzero/oracle",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula-prod/nonzero/rec-L",
+      "matches": 40,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula-prod/nonzero/rec-T3",
+      "matches": 12,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula-prod/power/oracle",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula-prod/power/rec-L",
+      "matches": 40,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula-prod/power/rec-T3",
+      "matches": 12,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula/forall-exists/oracle",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula/forall-exists/rec-L",
+      "matches": 40,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula/forall-exists/rec-T3",
+      "matches": 12,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula/exists/oracle",
+      "matches": 7,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula/exists/rec-L",
+      "matches": 38,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula/exists/rec-T3",
+      "matches": 10,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula/order/oracle",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula/order/rec-L",
+      "matches": 40,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula/order/rec-T3",
+      "matches": 12,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula/nonzero/oracle",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula/nonzero/rec-L",
+      "matches": 40,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula/nonzero/rec-T3",
+      "matches": 12,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula/power/oracle",
+      "matches": 8,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula/power/rec-L",
+      "matches": 39,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        4,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/formula/power/rec-T3",
+      "matches": 11,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text/forall-exists/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text/forall-exists/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text/forall-exists/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text/exists/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text/exists/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text/exists/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text/order/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text/order/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text/order/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text/nonzero/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text/nonzero/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text/nonzero/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text/power/oracle",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text/power/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text/power/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text-prod/forall-exists/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text-prod/forall-exists/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text-prod/forall-exists/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text-prod/exists/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text-prod/exists/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text-prod/exists/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text-prod/order/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text-prod/order/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text-prod/order/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text-prod/nonzero/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text-prod/nonzero/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text-prod/nonzero/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text-prod/power/oracle",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text-prod/power/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_d/L/text-prod/power/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula-prod/forall-exists/oracle",
+      "matches": 5,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula-prod/forall-exists/rec-L",
+      "matches": 36,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula-prod/forall-exists/rec-T3",
+      "matches": 17,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula-prod/exists/oracle",
+      "matches": 3,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula-prod/exists/rec-L",
+      "matches": 34,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula-prod/exists/rec-T3",
+      "matches": 16,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula-prod/order/oracle",
+      "matches": 5,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula-prod/order/rec-L",
+      "matches": 36,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula-prod/order/rec-T3",
+      "matches": 17,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula-prod/nonzero/oracle",
+      "matches": 5,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula-prod/nonzero/rec-L",
+      "matches": 36,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula-prod/nonzero/rec-T3",
+      "matches": 17,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula-prod/power/oracle",
+      "matches": 5,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula-prod/power/rec-L",
+      "matches": 36,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula-prod/power/rec-T3",
+      "matches": 16,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula/forall-exists/oracle",
+      "matches": 5,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula/forall-exists/rec-L",
+      "matches": 36,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula/forall-exists/rec-T3",
+      "matches": 17,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula/exists/oracle",
+      "matches": 3,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula/exists/rec-L",
+      "matches": 34,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula/exists/rec-T3",
+      "matches": 16,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula/order/oracle",
+      "matches": 5,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula/order/rec-L",
+      "matches": 36,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula/order/rec-T3",
+      "matches": 17,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula/nonzero/oracle",
+      "matches": 5,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula/nonzero/rec-L",
+      "matches": 34,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula/nonzero/rec-T3",
+      "matches": 16,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula/power/oracle",
+      "matches": 4,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula/power/rec-L",
+      "matches": 33,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        4,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/formula/power/rec-T3",
+      "matches": 13,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text/forall-exists/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text/forall-exists/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text/forall-exists/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text/exists/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text/exists/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text/exists/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text/order/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text/order/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text/order/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text/nonzero/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text/nonzero/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text/nonzero/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text/power/oracle",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text/power/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text/power/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text-prod/forall-exists/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text-prod/forall-exists/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text-prod/forall-exists/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text-prod/exists/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text-prod/exists/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text-prod/exists/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text-prod/order/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text-prod/order/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text-prod/order/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text-prod/nonzero/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text-prod/nonzero/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text-prod/nonzero/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text-prod/power/oracle",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text-prod/power/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/A/text-prod/power/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula-prod/forall-exists/oracle",
+      "matches": 5,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula-prod/forall-exists/rec-L",
+      "matches": 36,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula-prod/forall-exists/rec-T3",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula-prod/exists/oracle",
+      "matches": 3,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula-prod/exists/rec-L",
+      "matches": 34,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula-prod/exists/rec-T3",
+      "matches": 7,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula-prod/order/oracle",
+      "matches": 5,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula-prod/order/rec-L",
+      "matches": 36,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula-prod/order/rec-T3",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula-prod/nonzero/oracle",
+      "matches": 5,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula-prod/nonzero/rec-L",
+      "matches": 36,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula-prod/nonzero/rec-T3",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula-prod/power/oracle",
+      "matches": 5,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula-prod/power/rec-L",
+      "matches": 36,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula-prod/power/rec-T3",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula/forall-exists/oracle",
+      "matches": 5,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula/forall-exists/rec-L",
+      "matches": 36,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula/forall-exists/rec-T3",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula/exists/oracle",
+      "matches": 3,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula/exists/rec-L",
+      "matches": 34,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula/exists/rec-T3",
+      "matches": 7,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula/order/oracle",
+      "matches": 5,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula/order/rec-L",
+      "matches": 36,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula/order/rec-T3",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula/nonzero/oracle",
+      "matches": 5,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula/nonzero/rec-L",
+      "matches": 36,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          3
+        ],
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula/nonzero/rec-T3",
+      "matches": 9,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula/power/oracle",
+      "matches": 4,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula/power/rec-L",
+      "matches": 35,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        4,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/formula/power/rec-T3",
+      "matches": 8,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2
+        ],
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text/forall-exists/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text/forall-exists/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text/forall-exists/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text/exists/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text/exists/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text/exists/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text/order/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text/order/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text/order/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text/nonzero/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text/nonzero/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text/nonzero/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text/power/oracle",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text/power/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text/power/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text-prod/forall-exists/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text-prod/forall-exists/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text-prod/forall-exists/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text-prod/exists/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text-prod/exists/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text-prod/exists/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text-prod/order/oracle",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text-prod/order/rec-L",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text-prod/order/rec-T3",
+      "matches": 66,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text-prod/nonzero/oracle",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text-prod/nonzero/rec-L",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text-prod/nonzero/rec-T3",
+      "matches": 62,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          4
+        ],
+        2,
+        28,
+        27
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text-prod/power/oracle",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text-prod/power/rec-L",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "reading": "i-1/l>=1/l<n_i/L/text-prod/power/rec-T3",
+      "matches": 54,
+      "matches_words": 0,
+      "first_fail": [
+        [
+          2,
+          2
+        ],
+        2,
+        3,
+        2
+      ]
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+START Shiftsym.Definitions
+{'module': 'Shiftsym.Definitions', 'exit': 0, 'seconds': 11.79}
+START Shiftsym.Lemmas.Completeness
+START Shiftsym.Lemmas.Crt
+START Shiftsym.Lemmas.Dynamics
+START Shiftsym.Lemmas.FixedCount
+{'module': 'Shiftsym.Lemmas.Completeness', 'exit': 0, 'seconds': 5.25}
+{'module': 'Shiftsym.Lemmas.Dynamics', 'exit': 0, 'seconds': 5.24}
+START Shiftsym.Lemmas.Torsion
+START Shiftsym.Paper.S08_Detection_Reads
+{'module': 'Shiftsym.Lemmas.Crt', 'exit': 0, 'seconds': 5.27}
+START Shiftsym.Statement
+{'module': 'Shiftsym.Lemmas.FixedCount', 'exit': 0, 'seconds': 5.56}
+{'module': 'Shiftsym.Paper.S08_Detection_Reads', 'exit': 0, 'seconds': 4.85}
+START Shiftsym.Paper.Proofs.P08_Detection_Reads
+{'module': 'Shiftsym.Statement', 'exit': 0, 'seconds': 4.96}
+START Shiftsym.Experiments
+START Shiftsym.Lemmas.GaussCount
+{'module': 'Shiftsym.Lemmas.Torsion', 'exit': 0, 'seconds': 5.97}
+START Shiftsym.Lemmas.Lines
+{'module': 'Shiftsym.Experiments', 'exit': 0, 'seconds': 4.22}
+START Shiftsym.Lemmas.Primary
+{'module': 'Shiftsym.Paper.Proofs.P08_Detection_Reads', 'exit': 0, 'seconds': 4.78}
+START Shiftsym.Lemmas.PrimeCase
+{'module': 'Shiftsym.Lemmas.Lines', 'exit': 0, 'seconds': 4.61}
+START Shiftsym.Lemmas.Assembly
+{'module': 'Shiftsym.Lemmas.GaussCount', 'exit': 0, 'seconds': 5.69}
+START Shiftsym.Lemmas.Ineq
+{'module': 'Shiftsym.Lemmas.Primary', 'exit': 0, 'seconds': 4.8}
+START Shiftsym.Lemmas.MobiusSum
+{'module': 'Shiftsym.Lemmas.PrimeCase', 'exit': 0, 'seconds': 4.46}
+START Shiftsym.Paper.Common
+{'module': 'Shiftsym.Lemmas.Ineq', 'exit': 0, 'seconds': 5.15}
+START Shiftsym.Paper.S13_AbelianGroups
+{'module': 'Shiftsym.Lemmas.Assembly', 'exit': 0, 'seconds': 5.5}
+{'module': 'Shiftsym.Paper.Common', 'exit': 0, 'seconds': 3.8}
+START Shiftsym.Paper.S01_Model
+START Shiftsym.Paper.S02_LatticeLemmas
+{'module': 'Shiftsym.Lemmas.MobiusSum', 'exit': 0, 'seconds': 5.23}
+START Shiftsym.Lemmas.Bridge
+{'module': 'Shiftsym.Paper.S13_AbelianGroups', 'exit': 0, 'seconds': 3.96}
+START Shiftsym.Paper.Proofs.P13_AbelianGroups_Core
+{'module': 'Shiftsym.Paper.S02_LatticeLemmas', 'exit': 0, 'seconds': 5.36}
+START Shiftsym.Paper.Proofs.P13_AbelianGroups_Rect
+{'module': 'Shiftsym.Paper.Proofs.P13_AbelianGroups_Core', 'exit': 0, 'seconds': 5.94}
+START Shiftsym.Paper.Proofs.P13_AbelianGroups_Regroup
+{'module': 'Shiftsym.Lemmas.Bridge', 'exit': 0, 'seconds': 7.21}
+START Shiftsym.Lemmas.Evaluate
+{'module': 'Shiftsym.Paper.Proofs.P13_AbelianGroups_Rect', 'exit': 0, 'seconds': 4.83}
+START Shiftsym.Paper.Proofs.P02_LatticeLemmas
+{'module': 'Shiftsym.Paper.Proofs.P13_AbelianGroups_Regroup', 'exit': 0, 'seconds': 5.26}
+START Shiftsym.Paper.Proofs.P13_AbelianGroups_Eval
+{'module': 'Shiftsym.Lemmas.Evaluate', 'exit': 0, 'seconds': 5.93}
+START Shiftsym.Lemmas.LowerBound
+{'module': 'Shiftsym.Paper.Proofs.P02_LatticeLemmas', 'exit': 0, 'seconds': 5.84}
+START Shiftsym.Paper.S03_MobiusCoefficients
+{'module': 'Shiftsym.Paper.Proofs.P13_AbelianGroups_Eval', 'exit': 0, 'seconds': 5.1}
+START Shiftsym.Paper.S04_EnumerationCorollaries
+{'module': 'Shiftsym.Lemmas.LowerBound', 'exit': 0, 'seconds': 5.2}
+START Shiftsym.Paper.S05_KActive
+{'module': 'Shiftsym.Paper.S03_MobiusCoefficients', 'exit': 0, 'seconds': 5.12}
+START Shiftsym.Paper.Proofs.P03_MobiusCoefficients
+{'module': 'Shiftsym.Paper.S04_EnumerationCorollaries', 'exit': 0, 'seconds': 5.91}
+START Shiftsym.Paper.Proofs.P04_EnumerationCorollaries_Formula
+{'module': 'Shiftsym.Paper.Proofs.P03_MobiusCoefficients', 'exit': 0, 'seconds': 5.37}
+START Shiftsym.Paper.S06_BoundsProbability
+{'module': 'Shiftsym.Paper.Proofs.P04_EnumerationCorollaries_Formula', 'exit': 0, 'seconds': 5.28}
+START Shiftsym.Paper.Proofs.P04_EnumerationCorollaries_Lattice
+{'module': 'Shiftsym.Paper.S06_BoundsProbability', 'exit': 0, 'seconds': 4.86}
+START Shiftsym.Paper.Proofs.P04_EnumerationCorollaries_Words
+{'module': 'Shiftsym.Paper.Proofs.P04_EnumerationCorollaries_Lattice', 'exit': 0, 'seconds': 4.52}
+START Shiftsym.Paper.Proofs.P04_EnumerationCorollaries_Mobius
+{'module': 'Shiftsym.Paper.Proofs.P04_EnumerationCorollaries_Words', 'exit': 0, 'seconds': 4.82}
+START Shiftsym.Paper.Proofs.P06_BoundsProbability_Count
+{'module': 'Shiftsym.Paper.Proofs.P04_EnumerationCorollaries_Mobius', 'exit': 0, 'seconds': 5.73}
+START Shiftsym.Paper.Proofs.P04_EnumerationCorollaries_Second
+{'module': 'Shiftsym.Paper.Proofs.P06_BoundsProbability_Count', 'exit': 0, 'seconds': 6.59}
+START Shiftsym.Paper.Proofs.P06_BoundsProbability_Gauss
+{'module': 'Shiftsym.Paper.Proofs.P04_EnumerationCorollaries_Second', 'exit': 0, 'seconds': 5.04}
+START Shiftsym.Paper.Proofs.P04_EnumerationCorollaries
+{'module': 'Shiftsym.Paper.Proofs.P06_BoundsProbability_Gauss', 'exit': 0, 'seconds': 5.2}
+START Shiftsym.Paper.Proofs.P06_BoundsProbability_Real
+{'module': 'Shiftsym.Paper.Proofs.P04_EnumerationCorollaries', 'exit': 0, 'seconds': 4.61}
+START Shiftsym.Paper.S07_Dynamics
+{'module': 'Shiftsym.Paper.Proofs.P06_BoundsProbability_Real', 'exit': 0, 'seconds': 5.71}
+START Shiftsym.Paper.Proofs.P06_BoundsProbability
+{'module': 'Shiftsym.Paper.S07_Dynamics', 'exit': 0, 'seconds': 6.09}
+START Shiftsym.Paper.Proofs.P07_Dynamics_Caption
+{'module': 'Shiftsym.Paper.Proofs.P06_BoundsProbability', 'exit': 0, 'seconds': 5.91}
+START Shiftsym.Paper.S07_Dynamics_SymmetryBreaking
+{'module': 'Shiftsym.Paper.Proofs.P07_Dynamics_Caption', 'exit': 0, 'seconds': 5.95}
+START Shiftsym.Paper.Proofs.P07_Dynamics
+{'module': 'Shiftsym.Paper.S07_Dynamics_SymmetryBreaking', 'exit': 0, 'seconds': 3.85}
+START Shiftsym.Paper.S08_Detection
+{'module': 'Shiftsym.Paper.Proofs.P07_Dynamics', 'exit': 0, 'seconds': 4.98}
+START Shiftsym.Paper.Proofs.P07_Dynamics_SymmetryBreaking
+{'module': 'Shiftsym.Paper.Proofs.P07_Dynamics_SymmetryBreaking', 'exit': 0, 'seconds': 4.67}
+START Shiftsym.Paper.S09_CrossoverLaws
+{'module': 'Shiftsym.Paper.S09_CrossoverLaws', 'exit': 0, 'seconds': 5.12}
+START Shiftsym.Paper.Proofs.P09_CrossoverLaws_Bounds
+{'module': 'Shiftsym.Paper.Proofs.P09_CrossoverLaws_Bounds', 'exit': 0, 'seconds': 5.62}
+START Shiftsym.Paper.Proofs.P09_CrossoverLaws
+{'module': 'Shiftsym.Paper.S08_Detection', 'exit': 0, 'seconds': 27.55}
+START Shiftsym.Paper.Proofs.P08_Detection_Algo
+{'module': 'Shiftsym.Paper.Proofs.P08_Detection_Algo', 'exit': 0, 'seconds': 6.55}
+START Shiftsym.Paper.Proofs.P08_Detection_Smooth
+{'module': 'Shiftsym.Paper.S05_KActive', 'exit': 0, 'seconds': 80.93}
+START Shiftsym.Paper.Proofs.P05_KActive_B2019
+{'module': 'Shiftsym.Paper.Proofs.P09_CrossoverLaws', 'exit': 0, 'seconds': 21.73}
+START Shiftsym.Paper.Proofs.P05_KActive_Fix
+{'module': 'Shiftsym.Paper.Proofs.P05_KActive_B2019', 'exit': 0, 'seconds': 5.56}
+START Shiftsym.Paper.S09_CrossoverLaws_Window20
+{'module': 'Shiftsym.Paper.Proofs.P05_KActive_Fix', 'exit': 0, 'seconds': 5.63}
+START Shiftsym.Paper.Proofs.P13_AbelianGroups_Count
+{'module': 'Shiftsym.Paper.Proofs.P08_Detection_Smooth', 'exit': 0, 'seconds': 12.48}
+START Shiftsym.Paper.Proofs.P08_Detection
+{'module': 'Shiftsym.Paper.S09_CrossoverLaws_Window20', 'exit': 0, 'seconds': 4.29}
+START Shiftsym.Paper.S10_AppendixLemmas
+{'module': 'Shiftsym.Paper.Proofs.P13_AbelianGroups_Count', 'exit': 0, 'seconds': 4.7}
+START Shiftsym.Paper.Proofs.P13_AbelianGroups
+{'module': 'Shiftsym.Paper.S10_AppendixLemmas', 'exit': 0, 'seconds': 5.92}
+START Shiftsym.Paper.S11_Numerics
+{'module': 'Shiftsym.Paper.Proofs.P08_Detection', 'exit': 0, 'seconds': 7.27}
+START Shiftsym.Paper.S12_Necklaces
+{'module': 'Shiftsym.Paper.Proofs.P13_AbelianGroups', 'exit': 0, 'seconds': 4.5}
+START Shiftsym.Paper.Proofs.P13_AbelianGroups_MonoAlg
+{'module': 'Shiftsym.Paper.S11_Numerics', 'exit': 0, 'seconds': 5.32}
+START Shiftsym.Paper.Proofs.P11_Numerics_Bounds
+{'module': 'Shiftsym.Paper.S12_Necklaces', 'exit': 0, 'seconds': 4.43}
+START Shiftsym.Paper.Proofs.P11_Numerics_Dc
+{'module': 'Shiftsym.Paper.Proofs.P13_AbelianGroups_MonoAlg', 'exit': 0, 'seconds': 5.21}
+START Shiftsym.Paper.Proofs.P12_Necklaces
+{'module': 'Shiftsym.Paper.Proofs.P11_Numerics_Bounds', 'exit': 0, 'seconds': 6.12}
+START Shiftsym.Paper.Proofs.P11_Numerics_Real
+{'module': 'Shiftsym.Paper.Proofs.P12_Necklaces', 'exit': 0, 'seconds': 5.08}
+START Shiftsym.Paper.Proofs.P13_AbelianGroups_Mono
+{'module': 'Shiftsym.Paper.Proofs.P11_Numerics_Real', 'exit': 0, 'seconds': 5.96}
+START Shiftsym.Paper.Proofs.P11_Numerics_Deepens
+{'module': 'Shiftsym.Paper.Proofs.P13_AbelianGroups_Mono', 'exit': 0, 'seconds': 5.82}
+START Shiftsym.Paper.S13_AbelianGroups_Torsion
+{'module': 'Shiftsym.Paper.Proofs.P11_Numerics_Dc', 'exit': 0, 'seconds': 16.14}
+START Shiftsym.Paper.Proofs.P09_CrossoverLaws_Window20
+{'module': 'Shiftsym.Paper.S13_AbelianGroups_Torsion', 'exit': 0, 'seconds': 4.55}
+START Shiftsym.Paper.Proofs.P13_AbelianGroups_Torsion
+{'module': 'Shiftsym.Paper.Proofs.P11_Numerics_Deepens', 'exit': 0, 'seconds': 9.68}
+START Shiftsym.Paper.Proofs.P11_Numerics_Meas
+{'module': 'Shiftsym.Paper.Proofs.P09_CrossoverLaws_Window20', 'exit': 0, 'seconds': 5.77}
+START Shiftsym.StatementE1
+{'module': 'Shiftsym.Paper.Proofs.P13_AbelianGroups_Torsion', 'exit': 0, 'seconds': 5.01}
+{'module': 'Shiftsym.StatementE1', 'exit': 0, 'seconds': 4.19}
+START Shiftsym.Lemmas.Relative
+{'module': 'Shiftsym.Lemmas.Relative', 'exit': 0, 'seconds': 5.17}
+START Shiftsym.Audit
+START Shiftsym.Paper.Proofs.P05_KActive_Rank
+{'module': 'Shiftsym.Paper.Proofs.P11_Numerics_Meas', 'exit': 0, 'seconds': 9.87}
+START Shiftsym.Paper.Proofs.P10_AppendixLemmas_Basic
+{'module': 'Shiftsym.Audit', 'exit': 0, 'seconds': 4.56}
+START Shiftsym.Paper.Proofs.P11_Numerics
+{'module': 'Shiftsym.Paper.Proofs.P10_AppendixLemmas_Basic', 'exit': 0, 'seconds': 5.5}
+START Shiftsym.Paper.Proofs.P10_AppendixLemmas_Analytic
+{'module': 'Shiftsym.Paper.Proofs.P05_KActive_Rank', 'exit': 0, 'seconds': 7.13}
+START Shiftsym.Paper.Proofs.P05_KActive
+{'module': 'Shiftsym.Paper.Proofs.P10_AppendixLemmas_Analytic', 'exit': 0, 'seconds': 7.67}
+START Shiftsym.Paper.Proofs.P10_AppendixLemmas_Core
+{'module': 'Shiftsym.Paper.Proofs.P05_KActive', 'exit': 0, 'seconds': 6.68}
+{'module': 'Shiftsym.Paper.Proofs.P10_AppendixLemmas_Core', 'exit': 0, 'seconds': 5.87}
+START Shiftsym.Paper.Proofs.P10_AppendixLemmas_Torus
+{'module': 'Shiftsym.Paper.Proofs.P10_AppendixLemmas_Torus', 'exit': 0, 'seconds': 6.39}
+START Shiftsym.Paper.Proofs.P10_AppendixLemmas
+{'module': 'Shiftsym.Paper.Proofs.P10_AppendixLemmas', 'exit': 0, 'seconds': 5.84}
+{'module': 'Shiftsym.Paper.Proofs.P11_Numerics', 'exit': 0, 'seconds': 28.25}
+{'module': 'Shiftsym.Paper.S01_Model', 'exit': 0, 'seconds': 205.04}
+START Shiftsym.Paper.Proofs.P01_Model
+{'module': 'Shiftsym.Paper.Proofs.P01_Model', 'exit': 0, 'seconds': 4.88}
+START Shiftsym.AuditPaper
+{'module': 'Shiftsym.AuditPaper', 'exit': 0, 'seconds': 11.96}
+START Shiftsym
+{'module': 'Shiftsym', 'exit': 0, 'seconds': 3.85}
+PASS paper_audit
+PASS dependencies
+PASS kernel_replay
+COMPLETE 89 source modules

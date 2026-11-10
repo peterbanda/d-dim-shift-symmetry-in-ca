@@ -1,0 +1,34 @@
+{
+  "package": "arxiv_source_v9_with_citations.zip",
+  "files": [
+    "shift_symmetry_d_dimensions.tex",
+    "charts/chart17_example_configs.pdf",
+    "charts/chart14_pattern_flip.png",
+    "charts/chart13_decay_rate_classes.png",
+    "charts/chart15_inversion_dimension.png"
+  ],
+  "file_sha256": {
+    "shift_symmetry_d_dimensions.tex": "21357f73e3032c947d580f7053108229e6db89366f8ea7d9bfa94ad60842a6b1",
+    "charts/chart17_example_configs.pdf": "dcb9f5578a4ed8bc2b2c3a353e8ee5022af733dccd8810167229c0775a716943",
+    "charts/chart14_pattern_flip.png": "73856cfb2d8506e590762a0f6691a062f66d19017a7fc7fdbd7c755b40492665",
+    "charts/chart13_decay_rate_classes.png": "7223d6c0b4c96f6d32b1d8d741ab8ad2c0f29067eb3c3a690801a7ec212a31a7",
+    "charts/chart15_inversion_dimension.png": "66311403cafe4ea1991566b6cf52cf9fae5c72e12d170d94351294538a000a94"
+  },
+  "zip_sha256": "7a7b9915014a2f21b2faa42ebb5b93ecc07caca6b5e66e6bdd02aa78c141a084",
+  "pages": 26,
+  "word_layout_identical_to_updated_paper": true,
+  "undefined_references": false,
+  "type3_fonts": false,
+  "warnings": [
+    "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+    "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+    "Underfull \\hbox (badness 3568) in paragraph at lines 1443--1443",
+    "Underfull \\hbox (badness 1622) in paragraph at lines 1447--1447",
+    "Underfull \\hbox (badness 2119) in paragraph at lines 1451--1453",
+    "Underfull \\hbox (badness 1052) in paragraph at lines 1454--1454",
+    "Underfull \\hbox (badness 3780) in paragraph at lines 1457--1459",
+    "Overfull \\hbox (0.69986pt too wide) in paragraph at lines 1656--1658",
+    "Underfull \\hbox (badness 3601) in paragraph at lines 1838--1841"
+  ],
+  "temporary_directory": "/tmp/v9-arxiv-final-c7hrsdl4"
+}

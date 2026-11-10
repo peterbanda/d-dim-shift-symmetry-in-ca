@@ -1,0 +1,253 @@
+% Erratum to Chaos 29, 063120 (2019), doi:10.1063/1.5089889 (arXiv:1703.09030v2).
+%
+% Class: REVTeX 4.2 is not installed on this machine (kpsewhich revtex4-2.cls
+% finds nothing), so this draft uses the article class in a two-column,
+% 10-pt Times layout that approximates the printed Chaos page.  For
+% submission, switch to the AIP template (e.g. on Overleaf):
+%   \documentclass[aip,cha,reprint]{revtex4-2}
+%   \author{...}\affiliation{...}\email{...}   (one \affiliation per author)
+% and drop geometry, mathptmx, authblk and the \maketitle block below.
+%
+% Every number and claim below is checked by verify_erratum.py in this
+% directory (output: verify_erratum_output.txt).
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=0.75in,columnsep=0.25in]{geometry}
+\usepackage{authblk}
+\usepackage{enumitem}
+\usepackage[super]{cite}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\onlinecite}[1]{\citen{#1}}
+
+\renewcommand\Authfont{\normalsize}
+\renewcommand\Affilfont{\small\itshape}
+\setlength{\affilsep}{0.4em}
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\sig}{|\Sigma|}
+\newcommand{\vv}{\mathbf v}
+\newtheorem{lemma}{Lemma}
+\renewcommand{\thelemma}{R\arabic{lemma}}
+\newenvironment{proofR}{\par\noindent\textit{Proof.}\ }{\hfill$\square$\par\medskip}
+
+\title{\Large\bfseries Erratum: ``Shift-symmetric configurations in
+two-dimensional cellular automata: Irreversibility, insolvability, and
+enumeration'' [Chaos 29, 063120 (2019)]}
+
+\author[1,a]{Peter Banda}
+\author[2]{John Caughman}
+\author[3]{Martin Cenek}
+\author[4]{Christof Teuscher}
+\affil[1]{Cequence}
+\affil[2]{Portland State University}
+% TODO confirm current affiliation (Cenek): affiliation of the 2019 paper
+\affil[3]{Shiley School of Engineering, University of Portland, Portland, Oregon 97203, USA}
+% TODO confirm current affiliation (Teuscher): affiliation of the 2019 paper
+\affil[4]{Department of Electrical and Computer Engineering, Portland State University, Portland, Oregon 97201, USA}
+\affil[a]{Author to whom correspondence should be addressed: \texttt{peter.banda@protonmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent In the original article,\cite{banda2019} Eqs.~(32) and~(33)
+contain a misprint, the range stated for the $k$-active-cell formulas is too
+narrow, the standing assumptions are left implicit, and the proofs of
+Lemmas~E.21, A.21, and~A.22 have gaps. We correct these points below.
+Equation and lemma numbers refer to Ref.~\onlinecite{banda2019}. As there,
+$n=\prod_{i=1}^{k}p_i^{\alpha_i}$ with $k=\omega(n)$; for
+$\vv\in\{0,1,2\}^m$ we write $|\vv|=v_1+\dots+v_m$, and
+``$\mathbf 0\lhd\vv\unlhd\mathbf 2$'' means $\vv\ne\mathbf 0$.
+
+\begin{enumerate}[leftmargin=*,label=\arabic*.,itemsep=0.5ex]
+
+\item \emph{Standing assumptions.} Ref.~\onlinecite{banda2019} states its
+results without restricting $n$ and $\sig$. They require $n\ge2$ and
+$\sig\ge2$ (the proofs use $\sig\ge2$) and, for $k$ active cells,
+$0\le k\le n^2$. Outside this range some statements fail for trivial
+reasons. For $n=1$
+there is no nonzero translation, so $|S_{1\times1}|=0$ and the lower bounds
+in Eqs.~(21), (23), and~(24) fail. For $\sig=1$ the only configuration is
+shift-symmetric; both sides of Eq.~(21) then equal $1$, so ``only if $n$ is
+a prime'' fails at every composite~$n$, and the lower bound in Eq.~(24)
+reads $n\le1$. Equation~(28) holds for $\sig\ge2$ and $0\le k\le n^2$.
+
+\item \emph{Eqs.~(32) and~(33) (Theorem~E.32 and Corollary~A.33).} The
+factors $r(i)$ must be built from the primes $r_i$ of $d=\gcd(k,n)$, not
+from the primes $p_i$ of $n$. The correct definition is
+\[
+  r(i)=\begin{cases}1 & \text{if } v_i=0,\\ r_i+1 & \text{if } v_i=1,\\
+  r_i & \text{if } v_i=2.\end{cases}
+\]
+As printed (primes in increasing order), Eqs.~(32) and~(33) give $36$ for
+$n=6$, $k=3$, $\sig=2$, whereas $|S^a_{6\times6,3}|=48$: each of the four
+subgroups of order~3 fixes $\binom{12}{1}=12$ configurations with three
+cells in state~$a$, and no configuration is fixed by two of them.
+Eqs.~(30) and~(31) give~$48$; they are correct as printed. The printed and
+the corrected formulas agree when $n$ is a prime or a prime power, and in
+general whenever $r_i=p_i$ for every $i\le\omega(d)$.
+
+\item \emph{Range of $k$ and a convention in Eqs.~(30)--(33).} In
+Lemmas~E.30 and~E.31 and Theorem~E.32, the hypothesis ``$k\le n$'' should
+read ``$0\le k\le n^2$'', the range over which Eq.~(34) sums; Eq.~(33)
+holds on the same range. In Eqs.~(30)--(33), $\binom{n^2/h}{k/h}$ (with
+$h=h(\mathbf u)$ or $h(\vv)$) is zero when $k/h$ is not an integer, and a
+vanishing binomial coefficient annihilates its whole summand, including the
+factor $(\sig-1)^{(n^2-k)/h}$ with a fractional exponent. For $\sig\ge2$,
+Eq.~(29) needs no such convention.
+
+\item \emph{Proof of Lemma~E.21.} The proof begins ``If $k=1$, i.e., $n$
+is a prime, the equality holds as shown in Corollary~E.20.'' But $k=\omega(n)=1$ also for prime powers
+$n=p^\alpha$, $\alpha\ge2$, where equality fails: for $n=4$ and $\sig=2$,
+$|S_{4\times4}|=736$, while the left side of Eq.~(21) is~$72$. The case
+split should read ``$n$ prime'' and ``$n$ composite''. For every composite
+$n$, including prime powers, $p_1\le n/2$ and $\sig^n\ge2^n\ge n+1$ give
+\begin{align*}
+  |S_{n\times n}|&\ge q^1_{n\times n}
+  =\sig^{n^2/p_1}(p_1{+}1)-\sig^{n^2/p_1^2}p_1\ge\sig^{n^2/p_1}\\
+  &\ge\sig^{2n}\ge(n{+}1)\sig^n>(n{+}1)\sig^n-n\sig,
+\end{align*}
+where $|S_{n\times n}|=q^k_{n\times n}\ge\dots\ge q^1_{n\times n}$ by
+Lemma~A.21 (see item~5). This also justifies the final strict inequality of
+the published proof, which is stated there without justification. Lemma~E.21,
+including ``equality if and only if $n$ is a prime'', therefore holds as
+stated.
+
+\item \emph{Proofs of Lemmas~A.21 and~A.22.} Both proofs use the
+decomposition $q^{m+1}_{n\times n}=x_0+x_1+x_2+y_1+y_2$ of
+Ref.~\onlinecite{banda2019}, with $p=p_{m+1}$, $A=n^2/p$,
+$x_1=-(p{+}1)\,q^m_{n\times n}(p^{-1})$, $x_2=p\,q^m_{n\times n}(p^{-2})$,
+$y_1=(p{+}1)\sig^{A}$, and $y_2=-p\sig^{A/p}$. The two inequality chains
+of these proofs have three defects.
+(a)~The last step of the chain in the proof of Lemma~A.21 needs
+$A/2\ge4\log_2 n+1$, which is false for $(n,m)=(6,1),(10,1),(14,1)$; the
+last step of the chain for Lemma~A.22 needs $\tfrac56A\ge4\log_2n$, which
+is false for $(n,m)=(6,1)$ (primes in increasing order; for any other order
+the failures occur only at these~$n$). (b)~The first inequality of the
+chain for Lemma~A.22 is wrong as printed: its right side drops the factors
+$p/(p{+}1)$ of $q^m_{n\times n}(p^{-2})$ and of $\sig^{A/p}$, which makes it
+larger than the left side by
+$(\sig^{A/p}-q^m_{n\times n}(p^{-2}))/(p{+}1)$. This is positive for
+every~$n$, because by Lemma~\ref{lem:union} $q^m_{n\times n}(p^{-2})$ counts
+some, but not all, of the $\sig^{A/p}$ configurations on $\ZZ_{n/p}^2$; for
+$n=6$ and $\sig=2$ the two sides are $4278$ and~$4280$. (c)~The proofs use
+without justification that $x_2\ge0$ (Lemma~A.21) and that
+$q^m_{n\times n}(p^{-1})\ge0$ and $q^m_{n\times n}(p^{-2})\ge0$
+(Lemma~A.22); Lemma~\ref{lem:union} proves both.
+
+The following three lemmas replace both chains entirely; they hold for every
+order of the primes. With them, Lemmas~A.21 and~A.22, and hence E.21 and
+E.22, hold as stated.
+
+\begin{lemma}\label{lem:union}
+Let $T=\ZZ_a\times\ZZ_b$ with $p_i\mid\gcd(a,b)$ for $i\le m$, and let
+$L_i$ be the set of subgroups of $T$ of order~$p_i$. For $H\le T$ let
+$\mathrm{Fix}(H)$ be the set of configurations on $T$ that are constant on
+the cosets of~$H$. Then
+\[
+  \Bigl|\bigcup_{i\le m}\,\bigcup_{C\in L_i}\mathrm{Fix}(C)\Bigr|
+  =\sum_{\mathbf 0\lhd\vv\unlhd\mathbf 2}(-1)^{1+|\vv|}\,
+  \sig^{ab/\prod_i p_i^{v_i}}\prod_{i=1}^m r(i),
+\]
+with $r(i)=1,\,p_i{+}1,\,p_i$ for $v_i=0,1,2$. For $c=p^{-1}$
+($T=\ZZ_n\times\ZZ_{n/p}$) and $c=p^{-2}$ ($T=\ZZ_{n/p}\times\ZZ_{n/p}$)
+the right side is $q^m_{n\times n}(c)$, and
+\begin{equation}\label{eq:sandwich}\tag{$\ast$}
+  0\le q^m_{n\times n}(c)\le\sum_{i\le m}(p_i{+}1)\sig^{n^2c/p_i}
+  \le\frac{2n}{p}\,\sig^{n^2c/2}.
+\end{equation}
+\end{lemma}
+
+\begin{proofR}
+Every $H\le T$ acts freely on $T$ by translation, so
+$|\mathrm{Fix}(H)|=\sig^{ab/|H|}$, and
+$\mathrm{Fix}(C_1)\cap\dots\cap\mathrm{Fix}(C_j)
+=\mathrm{Fix}(\langle C_1,\dots,C_j\rangle)$. Since $p_i\mid\gcd(a,b)$, the
+$p_i$-torsion of $T$ is $\ZZ_{p_i}^2$; hence $|L_i|=p_i+1$, two members
+of $L_i$ generate a subgroup of order $p_i^2$, and subgroups for distinct
+primes generate their direct product. So
+$|\langle\bigcup_iJ_i\rangle|=\prod_ip_i^{\min(|J_i|,2)}$ for
+$J_i\subseteq L_i$. Inclusion--exclusion over the nonempty
+$J=\bigcup_iJ_i$, grouped by $v_i=\min(|J_i|,2)$, gives the identity,
+because $\sum_{j\ge2}(-1)^j\binom{p_i+1}{j}=p_i$. For $c=p^{-1}$ and
+$c=p^{-2}$ we have $p_i\mid n/p$ for $i\le m$ and $ab=n^2c$. The bounds
+in~\eqref{eq:sandwich} are the union bound and
+$\sum_{i\le m}(p_i{+}1)\le2\sum_{i\le m}p_i\le2\prod_{i\le m}p_i\le2n/p$.
+\end{proofR}
+
+\begin{lemma}[replaces the chain for A.21]\label{lem:r2}
+If $\omega(n)\ge2$, $1\le m<\omega(n)$, and $\sig\ge2$, then
+$y_1+x_1+y_2\ge0$. Hence
+$q^{m+1}_{n\times n}=x_0+(y_1{+}x_1{+}y_2)+x_2\ge x_0=q^m_{n\times n}$,
+using $x_2\ge0$ from~\eqref{eq:sandwich}.
+\end{lemma}
+
+\begin{proofR}
+As $p_1\cdots p_m\ge2$ divides $n/p$, we have $p\le n/2$ and $A\ge2n$. By
+\eqref{eq:sandwich} with $c=p^{-1}$, and since
+$p\sig^{A/p}\le(p{+}1)\sig^{A/2}$,
+\[
+  y_1+x_1+y_2\ge(p{+}1)\,\sig^{A/2}\Bigl(\sig^{A/2}-\frac{2n}{p}-1\Bigr)\ge0,
+\]
+because $\sig^{A/2}\ge2^n\ge n+1\ge2n/p+1$.
+\end{proofR}
+
+\begin{lemma}[replaces the chain for A.22]\label{lem:r3}
+In the same setting, $x_1+x_2+y_2\le y_1$; hence
+$q^{m+1}_{n\times n}\le q^m_{n\times n}+2(p{+}1)\sig^{n^2/p}$, the
+recursion of the proof of Lemma~A.22.
+\end{lemma}
+
+\begin{proofR}
+By \eqref{eq:sandwich}, $x_1\le0$, and $y_2\le0$. By \eqref{eq:sandwich}
+with $c=p^{-2}$, $x_2\le2n\sig^{n^2/(2p^2)}$. Since
+$n^2/p-n^2/(2p^2)\ge\tfrac34A\ge\tfrac32n$ and $2n\le2^{3n/2}$, this gives
+$x_2\le(p{+}1)\sig^{n^2/p}=y_1$.
+\end{proofR}
+
+\item \emph{Lemma~A.23.} Corollary~A.24 applies Lemma~A.23 with $p$
+replaced by $p-1,p-2,\dots,3$, which need not be prime divisors of~$n$. The
+proof of Lemma~A.23 holds verbatim for every integer $2\le p\le n$, so
+Corollary~A.24 and Lemma~E.22 stand.
+
+\end{enumerate}
+
+\noindent\emph{Effect on the article.} No figure and no numerical value of
+Ref.~\onlinecite{banda2019} changes. Figures~6--8 and the values of
+$P^{\mathrm{unif}}_{n\times n}$ depend only on Eq.~(19), which is correct.
+The density-uniform probabilities agree with the corrected Eq.~(33): for
+$\sig=2$, $P^{\mathrm{dens}}_{45\times45}=9.87\times10^{-4}$ (``$0.001$'' in
+Sec.~IV\,A) and $P^{\mathrm{dens}}_{100\times100}=2.000\times10^{-4}$
+(``$2\times10^{-4}$'' in Sec.~VI), and the plotted curve of Fig.~9 agrees
+with the corrected formula to within $0.1\%$. With items~1--6,
+Eqs.~(21)--(24) and~(28)--(33) and Lemmas~E.21, E.22, and~A.21--A.24 hold
+as stated, with $r(i)$ in Eqs.~(32)--(33) as corrected in item~2. These
+corrections do not affect the conclusions of the article.
+
+All counts and inequalities quoted here were verified in exact integer
+arithmetic, including against exhaustive enumeration, and the corrected
+Eqs.~(30)--(33) and the statements of Lemmas~E.21 and~E.22 are
+machine-checked in Lean~4; scripts and proofs are in the repository of
+Ref.~\onlinecite{banda2026}.
+
+\begin{thebibliography}{2}
+\makeatletter\renewcommand\@biblabel[1]{$^{#1}$}\makeatother
+\bibitem{banda2019}
+P.~Banda, J.~Caughman, M.~Cenek, and C.~Teuscher, ``Shift-symmetric
+configurations in two-dimensional cellular automata: Irreversibility,
+insolvability, and enumeration,'' Chaos \textbf{29}, 063120 (2019).
+\href{https://doi.org/10.1063/1.5089889}{https://doi.org/10.1063/1.5089889}
+% TODO: replace by the arXiv identifier or journal reference once available,
+% and make the repository public before submission.
+\bibitem{banda2026}
+P.~Banda, J.~Caughman, and T.~Lehman, ``Shift-symmetric configurations in
+$d$-dimensional cellular automata: Enumeration, bounds, irreversibility, and
+detection'' (2026), repository
+\href{https://github.com/peterbanda/d-dim-shift-symmetry}{https://github.com/peterbanda/d-dim-shift-symmetry}.
+\end{thebibliography}
+
+\end{document}

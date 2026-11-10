@@ -1,0 +1,375 @@
+{
+ "label": "lem:base",
+ "statement": {
+  "summary": "Lemma A.4 is frozen as `ShiftSym.P10.lemA4BaseStatement` (S10_AppendixLemmas.lean, §5): for composite n (`IsComposite n` = n ≥ 2 ∧ ¬prime), σ ≥ 2, d ≥ 3, `(lowerEnvelope n d σ : ℝ) < qm n d σ 1`, where `qm n d σ 1 = qTrunc n d σ 1 1` is the literal real-valued truncation q^1 of the appendix preamble. Its sufficient conditions are frozen separately as AUXILIARY props (`lemA4ProvisoStatement`, `lemA4LogConditionStatement`).",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P10.lemA4BaseStatement",
+    "role": "statement"
+   },
+   {
+    "decl": "ShiftSym.P10.qTrunc",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P10.qm",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P10.IsComposite",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P10.primeAt",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.lowerEnvelope",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.rdCoeff",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.gaussBinom",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P10.gaussBinomEqProdStatement",
+    "role": "bridge (q-Pascal = product formula)"
+   }
+  ],
+  "deltas": [
+   "q^1 is real-valued (`qm`, `qTrunc`): powers of σ are `Real.rpow` with real exponent c·n^d·∏ p_i^{−v_i}; at c = 1 they are integers.",
+   "F_d is the integer `lowerEnvelope n d σ` cast to ℝ (q-Pascal Gaussian binomial; equal to the paper's product formula at every integer q ≥ 2 by the frozen bridge `gaussBinomEqProdStatement`, see map Fd.gauss).",
+   "‘Composite’ is `IsComposite n := 2 ≤ n ∧ ¬ n.Prime`, so prime powers (k = 1) are included.",
+   "Prime factors are 0-indexed: p_{i+1} = `primeAt n i`; v ∈ {0,…,d}^m is `Fin m → Fin (d+1)`."
+  ],
+  "maps": [
+   {
+    "id": "whole",
+    "kind": "same",
+    "label": "Lemma A.4: q^1 > F_d for composite n, σ ≥ 2, d ≥ 3",
+    "tex": [
+     {
+      "text": "For composite $n$, $\\sigma\\ge2$, $d\\ge3$: $q^1>F_d(n,\\sigma)$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA4BaseStatement",
+      "text": "∀ n d σ : ℕ, IsComposite n → 2 ≤ σ → 3 ≤ d → (lowerEnvelope n d σ : ℝ) < qm n d σ 1"
+     }
+    ],
+    "note": "Frozen Prop with the three hypotheses as antecedents and a strict inequality of reals."
+   },
+   {
+    "id": "ineq",
+    "kind": "representation",
+    "label": "q^1 > F_d(n,σ)",
+    "tex": [
+     {
+      "text": "$q^1>F_d(n,\\sigma)$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA4BaseStatement",
+      "text": "(lowerEnvelope n d σ : ℝ) < qm n d σ 1"
+     }
+    ],
+    "note": "Stated in ℝ because q^m(c) is defined with real exponents (`Real.rpow`); at c = 1 all exponents are integers."
+   },
+   {
+    "id": "comp",
+    "kind": "hypothesis",
+    "label": "n composite",
+    "tex": [
+     {
+      "text": "For composite $n$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA4BaseStatement",
+      "text": "IsComposite n"
+     },
+     {
+      "decl": "ShiftSym.P10.IsComposite",
+      "text": "2 ≤ n ∧ ¬ n.Prime"
+     }
+    ],
+    "note": "Composite = n ≥ 2 and not prime; includes the prime powers p^α, α ≥ 2 (k = 1). Also supplies the standing n ≥ 2."
+   },
+   {
+    "id": "sigma",
+    "kind": "hypothesis",
+    "label": "σ ≥ 2",
+    "tex": [
+     {
+      "text": "$\\sigma\\ge2$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA4BaseStatement",
+      "text": "2 ≤ σ"
+     }
+    ],
+    "note": "As stated."
+   },
+   {
+    "id": "d",
+    "kind": "hypothesis",
+    "label": "d ≥ 3",
+    "tex": [
+     {
+      "text": "$d\\ge3$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA4BaseStatement",
+      "text": "3 ≤ d"
+     }
+    ],
+    "note": "As stated (the standing d ≥ 1 follows)."
+   },
+   {
+    "id": "q1",
+    "kind": "representation",
+    "label": "q^1",
+    "tex": [
+     {
+      "text": "q^1"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA4BaseStatement",
+      "text": "qm n d σ 1",
+      "occ": 2
+     },
+     {
+      "decl": "ShiftSym.P10.qm",
+      "text": "qTrunc n d σ m 1"
+     }
+    ],
+    "note": "q^1 = q^1(1) with m = 1: only the smallest prime p_1 = `primeAt n 0` enters."
+   },
+   {
+    "id": "q1.def",
+    "kind": "definition",
+    "label": "q^m(c) and q^m := q^m(1)",
+    "tex": [
+     {
+      "text": "q^m(c)\\;=\\;\\sum_{\\substack{\\vv\\in\\{0,\\dots,d\\}^m\\\\\\vv\\neq0}}",
+      "scope": {
+       "lines": [
+        1718,
+        1732
+       ]
+      }
+     },
+     {
+      "text": "q^m:=q^m(1)",
+      "scope": {
+       "lines": [
+        1718,
+        1732
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.qTrunc",
+      "text": "∑ v ∈ (Finset.univ : Finset (Fin m → Fin (d + 1))).erase 0,\n    (-1 : ℝ) ^ (1 + ∑ i : Fin m, ((v i : Fin (d + 1)) : ℕ)) *\n      (∏ i : Fin m, (rdCoeff (primeAt n i) ((v i : Fin (d + 1)) : ℕ) d : ℝ)) *\n      (σ : ℝ) ^ (c * (n : ℝ) ^ d *\n        ∏ i : Fin m, (primeAt n i : ℝ) ^ (-(((v i : Fin (d + 1)) : ℕ) : ℤ)))"
+     },
+     {
+      "decl": "ShiftSym.P10.qm",
+      "text": "qTrunc n d σ m 1"
+     }
+    ],
+    "note": "The literal truncation of the enumeration formula to the first m primes (here m = 1), as a real-valued sum."
+   },
+   {
+    "id": "q1.idx",
+    "kind": "representation",
+    "label": "v ∈ {0,…,d}^m, v ≠ 0",
+    "tex": [
+     {
+      "text": "\\sum_{\\substack{\\vv\\in\\{0,\\dots,d\\}^m\\\\\\vv\\neq0}}",
+      "scope": {
+       "lines": [
+        1718,
+        1732
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.qTrunc",
+      "text": "(Finset.univ : Finset (Fin m → Fin (d + 1))).erase 0"
+     }
+    ],
+    "note": "Vectors v are functions `Fin m → Fin (d+1)` (component i is the paper's v_{i+1}); v ≠ 0 by erasing 0."
+   },
+   {
+    "id": "q1.sign",
+    "kind": "same",
+    "label": "(−1)^{1+|v|}",
+    "tex": [
+     {
+      "text": "(-1)^{1+|\\vv|}",
+      "scope": {
+       "lines": [
+        1718,
+        1732
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.qTrunc",
+      "text": "(-1 : ℝ) ^ (1 + ∑ i : Fin m, ((v i : Fin (d + 1)) : ℕ))"
+     }
+    ],
+    "note": "|v| = Σ v_i."
+   },
+   {
+    "id": "q1.coef",
+    "kind": "representation",
+    "label": "∏_i r_d(p_i, v_i)",
+    "tex": [
+     {
+      "text": "\\prod_{i=1}^m r_d(p_i,v_i)",
+      "scope": {
+       "lines": [
+        1718,
+        1732
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.qTrunc",
+      "text": "∏ i : Fin m, (rdCoeff (primeAt n i) ((v i : Fin (d + 1)) : ℕ) d : ℝ)"
+     },
+     {
+      "decl": "ShiftSym.P10.primeAt",
+      "text": "(n.primeFactors.sort (· ≤ ·)).getD i 0"
+     }
+    ],
+    "note": "p_{i+1} = `primeAt n i` (0-indexed sorted prime factors); r_d = `rdCoeff` (q-Pascal Gaussian binomial)."
+   },
+   {
+    "id": "q1.exp",
+    "kind": "representation",
+    "label": "σ^{cN ∏ p_i^{−v_i}}",
+    "tex": [
+     {
+      "text": "\\sigma^{\\,cN\\prod_i p_i^{-v_i}}",
+      "scope": {
+       "lines": [
+        1718,
+        1732
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.qTrunc",
+      "text": "(σ : ℝ) ^ (c * (n : ℝ) ^ d *\n        ∏ i : Fin m, (primeAt n i : ℝ) ^ (-(((v i : Fin (d + 1)) : ℕ) : ℤ)))"
+     }
+    ],
+    "note": "N = n^d written out; real exponent (`Real.rpow`), p_i^{−v_i} as `zpow`; no rounding."
+   },
+   {
+    "id": "Fd",
+    "kind": "representation",
+    "label": "F_d(n,σ)",
+    "tex": [
+     {
+      "text": "F_d(n,\\sigma)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA4BaseStatement",
+      "text": "(lowerEnvelope n d σ : ℝ)"
+     }
+    ],
+    "note": "The integer envelope of Theorem 6.1 cast to ℝ."
+   },
+   {
+    "id": "Fd.def",
+    "kind": "definition",
+    "label": "F_d as defined in Theorem 6.1",
+    "tex": [
+     {
+      "text": "\\sum_{r=1}^{d}(-1)^{r+1}\\,n^{\\binom r2}\\gaussbinom dr_n\\,\n    \\sigma^{\\,n^{d-r}}",
+      "scope": {
+       "lines": [
+        770,
+        778
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.lowerEnvelope",
+      "text": "∑ r ∈ Finset.Icc 1 dd,\n    (-1 : ℤ) ^ (r + 1) * (rdCoeff n r dd : ℤ) * (σ : ℤ) ^ (n ^ (dd - r))"
+     }
+    ],
+    "note": "Same `lowerEnvelope` as in the frozen Theorem 6.1 (q-Pascal Gaussian binomial at q = n)."
+   },
+   {
+    "id": "Fd.gauss",
+    "kind": "representation",
+    "label": "[d r]_n: product formula vs q-Pascal",
+    "tex": [
+     {
+      "text": "\\gaussbinom dr_n",
+      "scope": {
+       "lines": [
+        770,
+        778
+       ]
+      }
+     },
+     {
+      "text": "\\gaussbinom dr_p=\\prod_{i=0}^{r-1}\n\\frac{p^{d-i}-1}{p^{i+1}-1}",
+      "scope": {
+       "lines": [
+        354,
+        355
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.rdCoeff",
+      "text": "gaussBinom q dd v"
+     },
+     {
+      "decl": "ShiftSym.gaussBinom",
+      "text": "| dd + 1, r + 1 => gaussBinom q dd r + q ^ (r + 1) * gaussBinom q dd (r + 1)"
+     },
+     {
+      "decl": "ShiftSym.P10.gaussBinomEqProdStatement",
+      "text": "(gaussBinom q d r : ℝ) = gaussProd (q : ℝ) d r"
+     }
+    ],
+    "note": "F_d uses the Gaussian binomial at the composite argument q = n. Lean's `lowerEnvelope` uses the q-Pascal `gaussBinom` (through `rdCoeff`); the frozen bridge `gaussBinomEqProdStatement` (certified) shows it equals the paper's product formula for every integer q ≥ 2."
+   }
+  ]
+ }
+}

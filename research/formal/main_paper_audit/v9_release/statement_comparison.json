@@ -1,0 +1,43 @@
+{
+  "v8_base": "baea4fa",
+  "v9_head": "444c7af",
+  "all_25_hand_audited_statements_identical": true,
+  "all_numbered_environments_identical": 39,
+  "production_lean_unchanged": true,
+  "correspondence_changes_only_line_scopes": [
+    "lem_coef.json",
+    "thm_upper-bound.json",
+    "thm_main-enum.json",
+    "lem_chain.json",
+    "lem_order.json",
+    "lem_base.json",
+    "prop_rank.json",
+    "prop_detect-avg.json",
+    "cor_prime.json",
+    "lem_dtorus.json",
+    "cor_dens.json",
+    "lem_fix.json",
+    "cor_insolv.json",
+    "thm_lower-bound.json",
+    "lem_completeness.json",
+    "thm_kactive.json",
+    "lem_joins.json",
+    "lem_mobius2.json",
+    "thm_irrev.json",
+    "prop_inversion.json",
+    "prop_rate.json",
+    "thm_detect-worst.json",
+    "lem_torsion.json",
+    "cor_prob.json"
+  ],
+  "mapping_kinds": {
+    "same": 141,
+    "representation": 174,
+    "definition": 85,
+    "lean-only": 11,
+    "hypothesis": 57,
+    "generalization": 2,
+    "citation": 3,
+    "paper-only": 3
+  }
+}

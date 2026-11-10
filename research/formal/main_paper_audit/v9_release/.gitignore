@@ -1,0 +1,7 @@
+# Keep the independent verification logs with this review.
+!*.log
+!fresh_build_logs/
+!fresh_build_logs/*.log
+
+# No arXiv source zips in the repository (owner decision 2026-11-05).
+*.zip

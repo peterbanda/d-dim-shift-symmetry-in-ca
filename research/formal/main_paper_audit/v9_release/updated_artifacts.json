@@ -1,0 +1,29 @@
+{
+  "shift_symmetry_d_dimensions.tex": {
+    "sha256": "21357f73e3032c947d580f7053108229e6db89366f8ea7d9bfa94ad60842a6b1"
+  },
+  "shift_symmetry_d_dimensions.pdf": {
+    "sha256": "a40911ee5d55ae954a2f7b18c0535de99408a56f4a31e0c6701f264fca0bfc12",
+    "pages": 26
+  },
+  "shift_symmetry_d_dimensions_mobile.pdf": {
+    "sha256": "72083bbdd4dd0ef28b1f72e16ef1e62729da3cde8ca7cfc85cbd54be2b1767d3",
+    "pages": 54
+  },
+  "shift_symmetry_d_dimensions_v9_diff.pdf": {
+    "sha256": "ca21e232ce7517b6b9550595697de2b2679134c5fa9fd5cdc792bd1f9a577d57",
+    "pages": 26
+  },
+  "research/formal/correspondence_audit/data/audit_data.json": {
+    "sha256": "745cc1aaa1a915031d6f313be3dee5ba671de7382675c8a2d77cbceebaf0b629"
+  },
+  "research/formal/correspondence_audit/data/pdf_chars.json": {
+    "sha256": "a1c54a189b9e88a55da4278765ac383b4461a4d2aa7ec3eb556585175671f4a3"
+  },
+  "research/formal/correspondence_audit/data/paper.aux.json": {
+    "sha256": "05870a98f0b4f1cfda162b11fe2996e2726db386f99756610f76314d5dfd3a75"
+  },
+  "research/formal/correspondence_audit/logs/events.jsonl": {
+    "sha256": "a6000dc15574a94a17f6886dd0ee1d55c10c3f7c32df5856d7cddbf34e3f7680"
+  }
+}

@@ -1,0 +1,344 @@
+{
+ "label": "thm:upper-bound",
+ "statement": {
+  "summary": "Theorem 6.3 is frozen as two Props: (i) `upperUnionStatement`, an inequality in ℕ with the right side abbreviated `unionRHS` (sum over `n.primeFactors` of `gaussBinom p d 1 * σ^(n^d/p)`), and (ii) `upperClosedStatement`, an inequality in ℝ with the prefactor `closedPrefactor n d = 2^d − 1 + 2·logb 2 n` and the real power σ^(N/2). `upperBoundsStatement` is their conjunction.",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P06.upperUnionStatement",
+    "role": "statement (i)"
+   },
+   {
+    "decl": "ShiftSym.P06.upperClosedStatement",
+    "role": "statement (ii)"
+   },
+   {
+    "decl": "ShiftSym.P06.upperBoundsStatement",
+    "role": "statement (whole)"
+   },
+   {
+    "decl": "ShiftSym.P06.unionRHS",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P06.closedPrefactor",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.numSS",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.gaussBinom",
+    "role": "definition"
+   }
+  ],
+  "deltas": [
+   "Alphabet Σ is `Fin σ`; |S_{n^d}| is `numSS n d σ` (`Nat.card` of the shift-symmetric configurations).",
+   "`p ∣ n` in the sums ranges over the prime divisors `n.primeFactors`.",
+   "[d 1]_p is the q-Pascal `gaussBinom p d 1`, equal to the paper's product formula for p ≥ 2 by the separately frozen and proved `gaussProdEqStatement`.",
+   "(i): the exponent n^d/p is ℕ-division, exact since p | n^d; the inequality is in ℕ.",
+   "(ii): the inequality is in ℝ; log₂ = `Real.logb 2`; σ^{n^d/2} is the real power with real exponent N/2 (not ℕ-division, which would make the statement stronger than the paper's for odd N)."
+  ],
+  "maps": [
+   {
+    "id": "whole",
+    "kind": "same",
+    "label": "Theorem 6.3 = (i) ∧ (ii)",
+    "tex": [
+     {
+      "text": "(union form)"
+     },
+     {
+      "text": "(closed form)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.upperBoundsStatement",
+      "text": "upperUnionStatement ∧ upperClosedStatement"
+     }
+    ],
+    "note": "The theorem is the conjunction of the two frozen Props, one per enumerated item."
+   },
+   {
+    "id": "hyp",
+    "kind": "hypothesis",
+    "label": "n ≥ 2, d ≥ 1, σ ≥ 2",
+    "tex": [
+     {
+      "text": "For all integers $n\\ge2$, $d\\ge1$, $\\sigma\\ge2$:"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.upperUnionStatement",
+      "text": "2 ≤ n → 1 ≤ d → 2 ≤ σ"
+     },
+     {
+      "decl": "ShiftSym.P06.upperClosedStatement",
+      "text": "2 ≤ n → 1 ≤ d → 2 ≤ σ"
+     }
+    ],
+    "note": "Same hypotheses in both parts, verbatim. (The Lean proof of (i) uses only n ≥ 2: the union bound holds for every σ and d.)"
+   },
+   {
+    "id": "alph",
+    "kind": "representation",
+    "label": "alphabet Σ with |Σ| = σ",
+    "tex": [
+     {
+      "text": "a finite alphabet $\\Sigma$ with $\\sigma=|\\Sigma|\\ge2$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.numSS",
+      "text": "Config n d (Fin σ)"
+     }
+    ],
+    "note": "Σ is `Fin σ`; only |Σ| enters the count, so this is a relabeling."
+   },
+   {
+    "id": "i",
+    "kind": "representation",
+    "label": "(i) |S_{n^d}| ≤ Σ_{p|n} [d 1]_p σ^{n^d/p}",
+    "tex": [
+     {
+      "text": "|S_{n^d}| \\;\\le\\; \\sum_{p\\mid n}\\gaussbinom d1_p\\, \\sigma^{\\,n^d/p}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.upperUnionStatement",
+      "text": "numSS n d σ ≤ unionRHS n d σ"
+     }
+    ],
+    "note": "Inequality of natural numbers; the right side is the abbreviation `unionRHS`."
+   },
+   {
+    "id": "i.lhs",
+    "kind": "definition",
+    "label": "|S_{n^d}|",
+    "tex": [
+     {
+      "text": "|S_{n^d}|",
+      "occ": 1
+     },
+     {
+      "text": "\\{\\ssb : \\Stab(\\ssb)\\neq\\{\\mathbf 0\\}\\}",
+      "scope": {
+       "lines": [
+        295,
+        302
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.upperUnionStatement",
+      "text": "numSS n d σ",
+      "occ": 1
+     },
+     {
+      "decl": "ShiftSym.numSS",
+      "text": "Nat.card {s : Config n d (Fin σ) // IsShiftSymmetric s}"
+     },
+     {
+      "decl": "ShiftSym.IsShiftSymmetric",
+      "text": "∃ v : Lat n d, v ≠ 0 ∧ shift v s = s"
+     }
+    ],
+    "note": "|S_{n^d}| = `numSS`: `Nat.card` of the shift-symmetric configurations (some nonzero translation fixes s, i.e. Stab(s) ≠ {0})."
+   },
+   {
+    "id": "i.rhs",
+    "kind": "same",
+    "label": "Σ_{p|n} [d 1]_p σ^{n^d/p}",
+    "tex": [
+     {
+      "text": "\\sum_{p\\mid n}\\gaussbinom d1_p\\, \\sigma^{\\,n^d/p}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.upperUnionStatement",
+      "text": "unionRHS n d σ"
+     },
+     {
+      "decl": "ShiftSym.P06.unionRHS",
+      "text": "∑ p ∈ n.primeFactors, gaussBinom p d 1 * σ ^ (n ^ d / p)"
+     }
+    ],
+    "note": "The sum term by term; see the sub-maps for the index set, the binomial and the exponent."
+   },
+   {
+    "id": "i.sum",
+    "kind": "representation",
+    "label": "Σ over primes p | n",
+    "tex": [
+     {
+      "text": "\\sum_{p\\mid n}",
+      "occ": 1
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.unionRHS",
+      "text": "∑ p ∈ n.primeFactors,"
+     }
+    ],
+    "note": "`p ∣ n` in the paper ranges over prime divisors (it is the p of 𝓛_p); Lean sums over `n.primeFactors`."
+   },
+   {
+    "id": "i.gauss",
+    "kind": "representation",
+    "label": "[d 1]_p",
+    "tex": [
+     {
+      "text": "\\gaussbinom d1_p",
+      "occ": 1
+     },
+     {
+      "text": "\\gaussbinom dr_p=\\prod_{i=0}^{r-1} \\frac{p^{d-i}-1}{p^{i+1}-1}",
+      "scope": {
+       "lines": [
+        354,
+        355
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.unionRHS",
+      "text": "gaussBinom p d 1",
+      "occ": 2
+     },
+     {
+      "decl": "ShiftSym.gaussBinom"
+     },
+     {
+      "decl": "ShiftSym.P06.gaussProdEqStatement",
+      "text": "gaussProd q d r = (gaussBinom q d r : ℚ)"
+     }
+    ],
+    "note": "The paper defines [d r]_p by the product formula; Lean uses the q-Pascal recursion `gaussBinom`. They agree for q ≥ 2 (`gaussProdEqStatement`, proved separately as `gaussProdEq_proved`)."
+   },
+   {
+    "id": "i.exp",
+    "kind": "representation",
+    "label": "σ^{n^d/p}",
+    "tex": [
+     {
+      "text": "\\sigma^{\\,n^d/p}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.unionRHS",
+      "text": "σ ^ (n ^ d / p)"
+     }
+    ],
+    "note": "`n ^ d / p` is ℕ-division; it is exact because p | n | n^d (d ≥ 1), so no truncation."
+   },
+   {
+    "id": "ii",
+    "kind": "representation",
+    "label": "(ii) |S_{n^d}| ≤ (2^d − 1 + 2 log₂ n) σ^{n^d/2}",
+    "tex": [
+     {
+      "text": "|S_{n^d}| \\;\\le\\; \\bigl(2^d-1+2\\log_2 n\\bigr)\\, \\sigma^{\\,n^d/2}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.upperClosedStatement",
+      "text": "(numSS n d σ : ℝ) ≤ closedPrefactor n d * (σ : ℝ) ^ (((n ^ d : ℕ) : ℝ) / 2)"
+     }
+    ],
+    "note": "Inequality in ℝ (the prefactor contains a logarithm and the exponent can be a half-integer)."
+   },
+   {
+    "id": "ii.lhs",
+    "kind": "representation",
+    "label": "|S_{n^d}| cast to ℝ",
+    "tex": [
+     {
+      "text": "|S_{n^d}|",
+      "occ": 2
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.upperClosedStatement",
+      "text": "(numSS n d σ : ℝ)"
+     }
+    ],
+    "note": "Same count `numSS` as in (i), cast ℕ → ℝ (cast is exact)."
+   },
+   {
+    "id": "ii.pref",
+    "kind": "representation",
+    "label": "2^d − 1 + 2 log₂ n",
+    "tex": [
+     {
+      "text": "2^d-1+2\\log_2 n"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.upperClosedStatement",
+      "text": "closedPrefactor n d"
+     },
+     {
+      "decl": "ShiftSym.P06.closedPrefactor",
+      "text": "(2 : ℝ) ^ d - 1 + 2 * Real.logb 2 n"
+     }
+    ],
+    "note": "The prefactor is the real number `closedPrefactor n d`; 2^d − 1 is computed in ℝ (no truncated subtraction)."
+   },
+   {
+    "id": "ii.log",
+    "kind": "representation",
+    "label": "log₂ n",
+    "tex": [
+     {
+      "text": "\\log_2 n"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.closedPrefactor",
+      "text": "Real.logb 2 n",
+      "occ": 2
+     }
+    ],
+    "note": "log₂ is mathlib's `Real.logb 2` applied to the real cast of n (n ≥ 2, so the argument is positive)."
+   },
+   {
+    "id": "ii.exp",
+    "kind": "representation",
+    "label": "σ^{n^d/2} as a real power",
+    "tex": [
+     {
+      "text": "\\sigma^{\\,n^d/2}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P06.upperClosedStatement",
+      "text": "(σ : ℝ) ^ (((n ^ d : ℕ) : ℝ) / 2)"
+     }
+    ],
+    "note": "Real power (`Real.rpow`) with the real exponent N/2. For odd N, ℕ-division would truncate the exponent to (N−1)/2 and assert a STRONGER inequality than the paper; the real power is the literal reading."
+   }
+  ]
+ }
+}

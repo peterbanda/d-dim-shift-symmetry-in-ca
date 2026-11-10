@@ -1,0 +1,50 @@
+{
+  "build_dir": "/tmp/v9-citations-v_frqduu",
+  "texlive": "pdfTeX 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian)",
+  "warnings": {
+    "shift_symmetry_d_dimensions": [
+      "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+      "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+      "Underfull \\hbox (badness 3568) in paragraph at lines 1443--1443",
+      "Underfull \\hbox (badness 1622) in paragraph at lines 1447--1447",
+      "Underfull \\hbox (badness 2119) in paragraph at lines 1451--1453",
+      "Underfull \\hbox (badness 1052) in paragraph at lines 1454--1454",
+      "Underfull \\hbox (badness 3780) in paragraph at lines 1457--1459",
+      "Overfull \\hbox (0.69986pt too wide) in paragraph at lines 1656--1658",
+      "Underfull \\hbox (badness 3601) in paragraph at lines 1838--1841",
+      "Output written on /tmp/v9-citations-v_frqduu/shift_symmetry_d_dimensions.pdf (2"
+    ],
+    "shift_symmetry_d_dimensions_mobile": [
+      "Underfull \\hbox (badness 1158) in paragraph at lines 142--146",
+      "Underfull \\hbox (badness 1509) in paragraph at lines 347--352",
+      "Underfull \\hbox (badness 4765) in paragraph at lines 347--352",
+      "Underfull \\hbox (badness 2173) in paragraph at lines 347--352",
+      "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+      "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+      "Underfull \\hbox (badness 1173) in paragraph at lines 1017--1030",
+      "Underfull \\hbox (badness 2547) in paragraph at lines 1121--1130",
+      "Underfull \\hbox (badness 2922) in paragraph at lines 1121--1130",
+      "Underfull \\hbox (badness 1694) in paragraph at lines 1121--1130",
+      "Underfull \\hbox (badness 5622) in paragraph at lines 1121--1130",
+      "Underfull \\hbox (badness 3849) in paragraph at lines 1225--1239",
+      "Underfull \\hbox (badness 5403) in paragraph at lines 1225--1239",
+      "Underfull \\hbox (badness 1264) in paragraph at lines 1425--1430",
+      "Underfull \\hbox (badness 2237) in paragraph at lines 1425--1430",
+      "Underfull \\hbox (badness 5862) in paragraph at lines 1425--1430",
+      "Underfull \\hbox (badness 2261) in paragraph at lines 1443--1443",
+      "Underfull \\hbox (badness 1038) in paragraph at lines 1447--1447",
+      "Underfull \\hbox (badness 1776) in paragraph at lines 1451--1453",
+      "Underfull \\hbox (badness 10000) in paragraph at lines 1638--1648",
+      "Underfull \\hbox (badness 4441) in paragraph at lines 1769--1773",
+      "Underfull \\hbox (badness 1931) in paragraph at lines 1897--1901",
+      "Underfull \\hbox (badness 10000) in paragraph at lines 1897--1901",
+      "Output written on /tmp/v9-citations-v_frqduu/shift_symmetry_d_dimensions_mobile"
+    ]
+  },
+  "hashes": {
+    "shift_symmetry_d_dimensions.tex": "21357f73e3032c947d580f7053108229e6db89366f8ea7d9bfa94ad60842a6b1",
+    "shift_symmetry_d_dimensions.pdf": "a40911ee5d55ae954a2f7b18c0535de99408a56f4a31e0c6701f264fca0bfc12",
+    "shift_symmetry_d_dimensions_mobile.pdf": "72083bbdd4dd0ef28b1f72e16ef1e62729da3cde8ca7cfc85cbd54be2b1767d3",
+    "research/formal/correspondence_audit/data/audit_data.json": "745cc1aaa1a915031d6f313be3dee5ba671de7382675c8a2d77cbceebaf0b629"
+  }
+}

@@ -1,0 +1,376 @@
+{
+ "label": "prop:rank",
+ "statement": {
+  "summary": "Proposition 8.3 is frozen as five Props conjoined in `rankStatement`: the range claim of the definition (`rankRangeStatement`, rk_p ∈ {0,…,d}), one-step monotonicity for all primes p | n (`rankMonoStatement`), monotonicity along trajectories (`rankTrajStatement`), and two Lean-only well-definedness anchors of the definition of rk_p (`rankCardStatement`: |Stab(s) ∩ A[p]| = p^{rk_p(s)}; `rankIntrinsicStatement`: rk_p does not depend on the Lemma 3.3 isomorphism). The p-rank itself is the definition `rkP`: the F_p-dimension of the image of Stab(s) ∩ A[p] under the Lemma 3.3 isomorphism A[p] ≅ F_p^d.",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P07.rankRangeStatement",
+    "role": "statement (range)"
+   },
+   {
+    "decl": "ShiftSym.P07.rankMonoStatement",
+    "role": "statement (one-step monotonicity)"
+   },
+   {
+    "decl": "ShiftSym.P07.rankTrajStatement",
+    "role": "statement (along trajectories)"
+   },
+   {
+    "decl": "ShiftSym.P07.rankCardStatement",
+    "role": "statement (well-definedness anchor, Lean-only)"
+   },
+   {
+    "decl": "ShiftSym.P07.rankIntrinsicStatement",
+    "role": "statement (well-definedness anchor, Lean-only)"
+   },
+   {
+    "decl": "ShiftSym.P07.rankStatement",
+    "role": "statement (whole)"
+   },
+   {
+    "decl": "ShiftSym.P07.rkP",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.latTorsion",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.latTorsionEquiv",
+    "role": "definition"
+   }
+  ],
+  "deltas": [
+   "rk_p = `rkP`: `Module.finrank (ZMod p)` of the F_p-submodule (`AddSubgroup.toZModSubmodule`) that is the image of Stab(s) ∩ A[p] under `latTorsionEquiv` (the Lemma 3.3 isomorphism A[p] ≅ F_p^d) — 'via Lemma 3.3' taken literally.",
+   "Two extra Props pin the definition down independently of that isomorphism: |Stab(s) ∩ A[p]| = p^{rk_p(s)}, and rk_p = finrank of Stab(s) ∩ A[p] with its own ZMod p-module structure. They are not paper claims.",
+   "'Prime p | n' = hypotheses `p.Prime`, `p ∣ n`; the proofs `hn : 2 ≤ n` are named because `rkP` needs n ≠ 0 (`by omega`).",
+   "{0,…,d} = `Finset.Icc 0 d`.",
+   "'Non-decreasing along every trajectory' = `Monotone (k ↦ rk_p(Φ^[k] s))`; 'for all p | n simultaneously' = the prime is quantified after Φ and s are fixed.",
+   "Alphabet `Fin σ`; standing hypotheses n ≥ 2, d ≥ 1, σ ≥ 2 explicit."
+  ],
+  "maps": [
+   {
+    "id": "p",
+    "kind": "hypothesis",
+    "label": "a prime p | n",
+    "tex": [
+     {
+      "text": "For a prime $p\\mid n$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.rankRangeStatement",
+      "text": "∀ (p : ℕ) (hp : p.Prime) (hpn : p ∣ n) (s : Config n d (Fin σ)),"
+     }
+    ],
+    "note": "The prime and its divisibility are hypotheses; `rkP` takes their proofs as arguments."
+   },
+   {
+    "id": "def",
+    "kind": "definition",
+    "label": "rk_p(s) = dim_{F_p}(Stab(s) ∩ A[p])",
+    "tex": [
+     {
+      "text": "\\rk_p(\\ssb)=\\dim_{\\FF_p}\\bigl(\\Stab(\\ssb)\\cap\\A[p]\\bigr)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.rkP",
+      "text": "Module.finrank (ZMod p)\n    (AddSubgroup.toZModSubmodule p\n      (((stab s ⊓ latTorsion n d p).addSubgroupOf (latTorsion n d p)).map\n        (latTorsionEquiv hpn).toAddMonoidHom))"
+     }
+    ],
+    "note": "Dimension over ZMod p = F_p of the transported subgroup, viewed as an F_p-subspace of F_p^d."
+   },
+   {
+    "id": "def.dim",
+    "kind": "representation",
+    "label": "dim over F_p",
+    "tex": [
+     {
+      "text": "\\dim_{\\FF_p}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.rkP",
+      "text": "Module.finrank (ZMod p)"
+     }
+    ],
+    "note": "F_p is `ZMod p`; dimension is `Module.finrank`."
+   },
+   {
+    "id": "def.cap",
+    "kind": "same",
+    "label": "Stab(s) ∩ A[p]",
+    "tex": [
+     {
+      "text": "\\Stab(\\ssb)\\cap\\A[p]",
+      "occ": 1
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.rkP",
+      "text": "stab s ⊓ latTorsion n d p"
+     }
+    ],
+    "note": "Intersection of subgroups is the lattice meet ⊓."
+   },
+   {
+    "id": "def.Ap",
+    "kind": "definition",
+    "label": "A[p] = {x : px = 0}",
+    "tex": [
+     {
+      "text": "\\A[p]",
+      "occ": 1
+     },
+     {
+      "text": "$\\A[p]=\\{\\mathbf x:p\\mathbf x=\\mathbf 0\\}$",
+      "scope": {
+       "lines": [
+        396,
+        396
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.rkP",
+      "text": "latTorsion n d p",
+      "occ": 2
+     },
+     {
+      "decl": "ShiftSym.latTorsion",
+      "text": "carrier := {v | p • v = 0}"
+     }
+    ],
+    "note": "The p-torsion subgroup as defined in Lemma 3.3."
+   },
+   {
+    "id": "def.via",
+    "kind": "representation",
+    "label": "via Lemma 3.3: A[p] ≅ F_p^d",
+    "tex": [
+     {
+      "text": "(via Lemma~\\ref{lem:torsion})"
+     },
+     {
+      "text": "$\\mathbf x=\\tfrac np\\,\\mathbf y\\mapsto\\mathbf y\\bmod p$ is an isomorphism $\\A[p]\\cong\\FF_p^d$",
+      "scope": {
+       "lines": [
+        399,
+        400
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.rkP",
+      "text": "(latTorsionEquiv hpn).toAddMonoidHom"
+     },
+     {
+      "decl": "ShiftSym.P07.rkP",
+      "text": "AddSubgroup.toZModSubmodule p"
+     },
+     {
+      "decl": "ShiftSym.latTorsionEquiv",
+      "text": "latTorsion n d p ≃+ (Fin d → ZMod p)"
+     }
+    ],
+    "note": "The F_p-structure comes from transporting along the Lemma 3.3 additive isomorphism; an additive subgroup of F_p^d is an F_p-subspace."
+   },
+   {
+    "id": "def.card",
+    "kind": "lean-only",
+    "label": "anchor: |Stab(s) ∩ A[p]| = p^{rk_p(s)}",
+    "tex": [],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.rankCardStatement",
+      "text": "Nat.card (stab s ⊓ latTorsion n d p : AddSubgroup (Lat n d))\n        = p ^ rkP (by omega) hp hpn s"
+     }
+    ],
+    "note": "Not a paper claim: fixes rk_p by a quantity that does not mention the isomorphism (k ↦ p^k is injective)."
+   },
+   {
+    "id": "def.intr",
+    "kind": "lean-only",
+    "label": "anchor: rk_p is intrinsic",
+    "tex": [],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.rankIntrinsicStatement",
+      "text": "rkP (by omega) hp hpn s\n        = Module.finrank (ZMod p)\n            (stab s ⊓ latTorsion n d p : AddSubgroup (Lat n d))"
+     }
+    ],
+    "note": "Not a paper claim: the choice of isomorphism in 'via Lemma 3.3' does not matter."
+   },
+   {
+    "id": "range",
+    "kind": "same",
+    "label": "rk_p(s) ∈ {0,…,d}",
+    "tex": [
+     {
+      "text": "\\in\\{0,\\dots,d\\}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.rankRangeStatement",
+      "text": "rkP (by omega) hp hpn s ∈ Finset.Icc 0 d"
+     }
+    ],
+    "note": "The range claim embedded in the definition is frozen as its own Prop."
+   },
+   {
+    "id": "hypΦ",
+    "kind": "hypothesis",
+    "label": "any translation-equivariant Φ",
+    "tex": [
+     {
+      "text": "Under any translation-equivariant $\\Phi$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.rankMonoStatement",
+      "text": "∀ Φ : Config n d (Fin σ) → Config n d (Fin σ), Equivariant Φ →"
+     }
+    ],
+    "note": "Same reading of 'translation-equivariant' as in Theorem 8.1."
+   },
+   {
+    "id": "traj",
+    "kind": "representation",
+    "label": "non-decreasing along every trajectory",
+    "tex": [
+     {
+      "text": "every $p$-rank is non-decreasing along every trajectory"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.rankTrajStatement",
+      "text": "Monotone (fun k : ℕ => rkP (by omega) hp hpn (Φ^[k] s))"
+     }
+    ],
+    "note": "Trajectory = iterates Φ^[k] s; non-decreasing = `Monotone` in k (for every s and every prime p | n)."
+   },
+   {
+    "id": "mono",
+    "kind": "same",
+    "label": "rk_p(Φ(s)) ≥ rk_p(s)",
+    "tex": [
+     {
+      "text": "$\\rk_p(\\Phi(\\ssb))\\ge\\rk_p(\\ssb)$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.rankMonoStatement",
+      "text": "rkP (by omega) hp hpn s ≤ rkP (by omega) hp hpn (Φ s)"
+     }
+    ],
+    "note": "One-step form; ≥ written as ≤ with sides swapped."
+   },
+   {
+    "id": "mono.lhs",
+    "kind": "same",
+    "label": "rk_p(Φ(s))",
+    "tex": [
+     {
+      "text": "\\rk_p(\\Phi(\\ssb))"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.rankMonoStatement",
+      "text": "rkP (by omega) hp hpn (Φ s)"
+     }
+    ],
+    "note": "p-rank of the image."
+   },
+   {
+    "id": "mono.rhs",
+    "kind": "same",
+    "label": "rk_p(s)",
+    "tex": [
+     {
+      "text": "\\rk_p(\\ssb)",
+      "occ": 2
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.rankMonoStatement",
+      "text": "rkP (by omega) hp hpn s",
+      "occ": 1
+     }
+    ],
+    "note": "p-rank of the input."
+   },
+   {
+    "id": "simul",
+    "kind": "same",
+    "label": "for all p | n simultaneously",
+    "tex": [
+     {
+      "text": "for all $p\\mid n$ simultaneously"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.rankMonoStatement",
+      "text": "∀ s : Config n d (Fin σ), ∀ (p : ℕ) (hp : p.Prime) (hpn : p ∣ n),"
+     }
+    ],
+    "note": "Φ and s are fixed before the prime is chosen, so one trajectory is monotone in every p-rank at once."
+   },
+   {
+    "id": "hyp",
+    "kind": "hypothesis",
+    "label": "standing hypotheses n ≥ 2, d ≥ 1, σ ≥ 2",
+    "tex": [
+     {
+      "text": "Fix integers $n\\ge2$, $d\\ge1$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.rankMonoStatement",
+      "text": "∀ hn : 2 ≤ n, 1 ≤ d → 2 ≤ σ →"
+     }
+    ],
+    "note": "From Definition 2.1; `hn` is named because `rkP` needs n ≠ 0."
+   },
+   {
+    "id": "whole",
+    "kind": "representation",
+    "label": "Proposition 8.3 as one Prop",
+    "tex": [
+     {
+      "text": "Under any translation-equivariant $\\Phi$, every $p$-rank is non-decreasing along every trajectory"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P07.rankStatement",
+      "text": "rankCardStatement ∧ rankIntrinsicStatement ∧ rankRangeStatement ∧\n    rankMonoStatement ∧ rankTrajStatement"
+     }
+    ],
+    "note": "Includes the two Lean-only anchors of the definition besides the three paper claims."
+   }
+  ]
+ }
+}

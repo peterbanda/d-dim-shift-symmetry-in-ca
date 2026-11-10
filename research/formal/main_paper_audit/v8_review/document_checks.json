@@ -1,0 +1,84 @@
+{
+  "merge_exit": 0,
+  "merge_stderr": "",
+  "tex_builds": {
+    "v8": {
+      "exit_codes": [
+        0,
+        0,
+        0
+      ],
+      "warnings": [
+        "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+        "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+        "Overfull \\hbox (0.69986pt too wide) in paragraph at lines 1471--1473",
+        "Output written on /tmp/shift-v8-review/v8/shift_symmetry_d_dimensions.pdf (23 p"
+      ],
+      "shipped_text_exactly_matches_rebuilt": true
+    },
+    "v7": {
+      "exit_codes": [
+        0,
+        0,
+        0
+      ],
+      "warnings": [
+        "Overfull \\hbox (0.8275pt too wide) in paragraph at lines 273--278",
+        "Overfull \\hbox (40.01408pt too wide) in paragraph at lines 281--286",
+        "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+        "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+        "Overfull \\hbox (19.50725pt too wide) in paragraph at lines 776--780",
+        "Overfull \\hbox (0.69986pt too wide) in paragraph at lines 1394--1396",
+        "Output written on /tmp/shift-v8-review/v7/v7.pdf (21 pages, 1067922 bytes)."
+      ]
+    },
+    "mobile": {
+      "exit_codes": [
+        0,
+        0,
+        0
+      ],
+      "warnings": [
+        "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+        "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+        "Output written on /tmp/shift-v8-review/mobile/shift_symmetry_d_dimensions_mobil"
+      ],
+      "shipped_text_exactly_matches_rebuilt": true
+    }
+  },
+  "label_changes": {
+    "def:ca": [
+      "2.3",
+      "2.4"
+    ],
+    "rem:equivariance-needed": [
+      "2.4",
+      "2.5"
+    ],
+    "lem:order": [
+      "3.1",
+      "3.2"
+    ],
+    "lem:fix": [
+      "3.2",
+      "3.1"
+    ],
+    "thm:main-enum": [
+      "4.3",
+      "4.4"
+    ],
+    "cor:prime": [
+      "4.4",
+      "4.5"
+    ],
+    "rem:boundary": [
+      "4.5",
+      "4.6"
+    ]
+  },
+  "new_labels": {
+    "lem:mobius2": "4.2",
+    "def:coef": "4.3",
+    "tab:coef": "1"
+  }
+}

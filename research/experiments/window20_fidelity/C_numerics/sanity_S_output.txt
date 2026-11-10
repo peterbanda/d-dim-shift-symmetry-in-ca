@@ -1,0 +1,22 @@
+|S_2^2| (sigma=2) formula=8 ref=8 OK
+|S_3^2| (sigma=2) formula=26 ref=26 OK
+|S_5^2| (sigma=2) formula=182 ref=182 OK
+|S_2^3| (sigma=2) formula=72 ref=72 OK
+|S_3^3| (sigma=2) formula=6398 ref=6398 OK
+|S_6^2| (sigma=2) formula=801064 ref=801064 OK
+brute n=2 d=2 sigma=2: brute=8 formula=8 OK
+brute n=3 d=2 sigma=2: brute=26 formula=26 OK
+brute n=2 d=3 sigma=2: brute=72 formula=72 OK
+brute n=4 d=2 sigma=2: brute=736 formula=736 OK
+brute n=2 d=4 sigma=2: brute=3072 formula=3072 OK
+brute n=6 d=1 sigma=2: brute=10 formula=10 OK
+brute n=6 d=1 sigma=3: brute=33 formula=33 OK
+brute n=12 d=1 sigma=2: brute=76 formula=76 OK
+brute n=2 d=2 sigma=3: brute=21 formula=21 OK
+brute n=3 d=2 sigma=3: brute=99 formula=99 OK
+brute n=4 d=1 sigma=5: brute=25 formula=25 OK
+brute n=10 d=1 sigma=2: brute=34 formula=34 OK
+brute n=9 d=1 sigma=3: brute=27 formula=27 OK
+brute n=6 d=2 sigma=1: brute=1 formula=1 OK
+brute n=3 d=2 sigma=1: brute=1 formula=1 OK
+mismatches: 0 time 0.7s

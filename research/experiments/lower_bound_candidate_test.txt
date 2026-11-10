@@ -1,0 +1,1 @@
+tested 112 cases: violations=0, composite-equalities=0

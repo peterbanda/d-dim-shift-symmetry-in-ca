@@ -1,0 +1,15 @@
+{
+  "brute_triples": 52,
+  "configurations_enumerated": 377838,
+  "subgroup_triples": 27,
+  "bound_triples": 276,
+  "early_stop_binary_prime_expectations": {
+    "2": "2",
+    "3": "5/2",
+    "5": "23/8",
+    "7": "95/32",
+    "11": "1535/512",
+    "13": "6143/2048"
+  },
+  "status": "PASS"
+}

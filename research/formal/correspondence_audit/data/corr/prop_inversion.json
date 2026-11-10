@@ -1,0 +1,574 @@
+{
+ "label": "prop:inversion",
+ "statement": {
+  "summary": "Proposition 10.2 is frozen as `inversionLaw20Statement` (supplement of 2026-10-22, `S09_CrossoverLaws_Window20.lean`): the group-09 whole statement `inversionLawStatement` — (i) `inversionCompositeStatement`, (ii) `inversionPrimeStatement` (both with the extra antecedent d ≥ 1), `phiSignStatement` (φ as a function of real x via `Real.rpow`: unique zero d_c(p), sign on both sides), `dcAsymptoticStatement` (O(1) as explicit ∃C ∃P₀ over primes) and the window with ∃ C — together with the window with the paper's explicit constant 20 in criteria form (`inversionExplicitWindow20Statement`: the hypotheses of (i)/(ii) hold for d ≤ d_c − 20 resp. d ≥ d_c + 20) and in probability form (`inversionWindow20Statement`). The supplement was frozen after the helper theorems `window_i`/`window_ii` that prove it existed; S09_CrossoverLaws.lean itself is unchanged.",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P09.inversionLaw20Statement",
+    "role": "statement (whole, v5)"
+   },
+   {
+    "decl": "ShiftSym.P09.inversionLawStatement",
+    "role": "statement (group-09 whole, window with ∃ C)"
+   },
+   {
+    "decl": "ShiftSym.P09.inversionCompositeStatement",
+    "role": "statement (i)"
+   },
+   {
+    "decl": "ShiftSym.P09.inversionPrimeStatement",
+    "role": "statement (ii)"
+   },
+   {
+    "decl": "ShiftSym.P09.phiSignStatement",
+    "role": "statement (sign of φ, unique zero)"
+   },
+   {
+    "decl": "ShiftSym.P09.dcAsymptoticStatement",
+    "role": "statement (d_c = p ln 2 + O(1))"
+   },
+   {
+    "decl": "ShiftSym.P09.inversionExplicitWindow20Statement",
+    "role": "statement (window, criteria form, C = 20)"
+   },
+   {
+    "decl": "ShiftSym.P09.inversionWindow20Statement",
+    "role": "statement (window, probability form, C = 20)"
+   },
+   {
+    "decl": "ShiftSym.P09.inversionExplicitWindowStatement",
+    "role": "statement (window, criteria form, ∃ C; implied)"
+   },
+   {
+    "decl": "ShiftSym.P09.inversionWindowStatement",
+    "role": "statement (window, probability form, ∃ C; implied)"
+   },
+   {
+    "decl": "ShiftSym.P09.phi",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P09.dc",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.probUnif",
+    "role": "definition"
+   }
+  ],
+  "deltas": [
+   "d ≥ 1 is an explicit antecedent of (i), (ii) and the window Props (Definition 2.1; necessary, see map hyp.d).",
+   "φ is `phi p x` on all of ℝ with real powers `Real.rpow`; at d : ℕ it is the paper's expression (`phi_natCast`).",
+   "d_c(p) = `dc p` with ln = `Real.log`; log_b = `Real.logb b`; all arguments positive under p ≥ 3, σ ≥ 2.",
+   "p^{d−1}, (p+1)^{d−1} use ℕ-subtraction, exact since 1 ≤ d.",
+   "O(1) as p → ∞ is rendered as ∃ C ∃ P₀ ∀ prime p ≥ P₀, |d_c(p) − p ln 2| ≤ C (not mathlib's IsBigO; equivalent).",
+   "The window is frozen with the paper's explicit 20 in two forms (hypotheses of (i)/(ii) hold; the probability inequalities hold), in the supplement `S09_CrossoverLaws_Window20.lean` (2026-10-22, frozen after the helpers `window_i`/`window_ii` existed). The original group-09 forms with ∃ C remain inside `inversionLawStatement` and are implied (take C = 20).",
+   "'the two-dimensional composite advantage' is a name for the phenomenon; no d = 2 claim is formalized."
+  ],
+  "maps": [
+   {
+    "id": "whole",
+    "kind": "same",
+    "label": "Proposition 10.2 = conjunction of six Props",
+    "tex": [
+     {
+      "text": "Let $p\\ge3$ be prime, $\\sigma\\ge2$, and set\n$\\varphi(d)=(1-\\tfrac1p)\\,p^d-\\tfrac12(p+1)^d$. Then:\n\\begin{enumerate}[label=(\\roman*)]\n\\item if $\\varphi(d)>\\log_\\sigma\\bigl(2\\log_2(p)\\,p^{d-1}\\bigr)$, then\n$P^{\\mathrm{unif}}_{(p+1)^d}>P^{\\mathrm{unif}}_{p^d}$ (composite\nadvantage);\n\\item if $\\varphi(d)<-\\log_\\sigma\\bigl(2\\log_2(p{+}1)\\,(p{+}1)^{d-1}\\bigr)$,\nthen $P^{\\mathrm{unif}}_{(p+1)^d}<P^{\\mathrm{unif}}_{p^d}$ (prime\nadvantage).\n\\end{enumerate}\nThe function $\\varphi$, regarded as a function of real $d$, is positive\nbelow and negative above its unique zero"
+     },
+     {
+      "text": "d_c(p)\\;=\\;\\frac{\\ln\\bigl(2-\\tfrac2p\\bigr)}{\\ln\\bigl(1+\\tfrac1p\\bigr)}\n    \\;=\\;p\\ln2+O(1)\\qquad(p\\to\\infty),"
+     },
+     {
+      "text": "so the two-dimensional ``composite advantage'' inverts within an\nexplicitly bounded window around $d_c(p)$, a dimension that grows\n\\emph{linearly} in the prime: (i) applies to every integer $d\\ge1$ with\n$d\\le d_c(p)-20$, and (ii) to every integer $d\\ge d_c(p)+20$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.inversionLaw20Statement",
+      "text": "inversionLawStatement ∧ inversionExplicitWindow20Statement ∧ inversionWindow20Statement"
+     },
+     {
+      "decl": "ShiftSym.P09.inversionLawStatement",
+      "text": "inversionCompositeStatement ∧ inversionPrimeStatement ∧ phiSignStatement ∧\n    dcAsymptoticStatement ∧ inversionExplicitWindowStatement ∧ inversionWindowStatement"
+     }
+    ],
+    "note": "`inversionLaw20Statement` = the group-09 whole `inversionLawStatement` ((i), (ii), the sign pattern of φ, d_c = p ln 2 + O(1), the window with ∃ C) ∧ the window with the explicit constant 20 in criteria and probability form (supplement of 2026-10-22). The ∃ C conjuncts are implied by the explicit ones. The auxiliary `inversionProofLogRatioStatement` is not part of it."
+   },
+   {
+    "id": "hyp",
+    "kind": "hypothesis",
+    "label": "p ≥ 3 prime, σ ≥ 2",
+    "tex": [
+     {
+      "text": "Let $p\\ge3$ be prime, $\\sigma\\ge2$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.inversionCompositeStatement",
+      "text": "p.Prime → 3 ≤ p → 2 ≤ σ"
+     },
+     {
+      "decl": "ShiftSym.P09.inversionPrimeStatement",
+      "text": "p.Prime → 3 ≤ p → 2 ≤ σ"
+     },
+     {
+      "decl": "ShiftSym.P09.phiSignStatement",
+      "text": "p.Prime → 3 ≤ p"
+     },
+     {
+      "decl": "ShiftSym.P09.inversionExplicitWindowStatement",
+      "text": "p.Prime → 3 ≤ p → 2 ≤ σ"
+     },
+     {
+      "decl": "ShiftSym.P09.inversionWindowStatement",
+      "text": "p.Prime → 3 ≤ p → 2 ≤ σ"
+     },
+     {
+      "decl": "ShiftSym.P09.inversionExplicitWindow20Statement",
+      "text": "p.Prime → 3 ≤ p → 2 ≤ σ"
+     },
+     {
+      "decl": "ShiftSym.P09.inversionWindow20Statement",
+      "text": "p.Prime → 3 ≤ p → 2 ≤ σ"
+     }
+    ],
+    "note": "Antecedents of (i), (ii) and all four window Props. `phiSignStatement` drops σ ≥ 2 (φ and d_c do not involve σ); `dcAsymptoticStatement` quantifies over the primes p ≥ P₀ instead (its p → ∞)."
+   },
+   {
+    "id": "hyp.d",
+    "kind": "hypothesis",
+    "label": "d ≥ 1 (implicit in the paper)",
+    "tex": [
+     {
+      "text": "Fix integers $n\\ge2$, $d\\ge1$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.inversionCompositeStatement",
+      "text": "1 ≤ d",
+      "occ": 2
+     },
+     {
+      "decl": "ShiftSym.P09.inversionPrimeStatement",
+      "text": "1 ≤ d"
+     },
+     {
+      "decl": "ShiftSym.P09.inversionWindowStatement",
+      "text": "1 ≤ d"
+     },
+     {
+      "decl": "ShiftSym.P09.inversionWindow20Statement",
+      "text": "1 ≤ d"
+     }
+    ],
+    "note": "The paper leaves d ≥ 1 implicit in (i), (ii) and the window (d is a dimension, Definition 2.1); the criteria form of the window states it in the text (map crit.d). The antecedent is necessary: at d = 0 both lattices are a single point, so both probabilities are 0, while the hypothesis of (i) can hold. With the paper's p^{d−1} = p^{−1} this happens already at p = 3, σ = 2 (φ(0) = 1/6 > log₂(2 log₂(3)/3) ≈ 0.079); with Lean's truncated ℕ-subtraction d − 1 = 0 it needs a large alphabet, e.g. p = 3, σ ≥ 1015 or p = 5, σ ≥ 168."
+   },
+   {
+    "id": "phi",
+    "kind": "definition",
+    "label": "φ(d) = (1 − 1/p) p^d − ½ (p+1)^d",
+    "tex": [
+     {
+      "text": "$\\varphi(d)=(1-\\tfrac1p)\\,p^d-\\tfrac12(p+1)^d$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.phi",
+      "text": "(1 - 1 / (p : ℝ)) * (p : ℝ) ^ x - (1 / 2) * ((p : ℝ) + 1) ^ x"
+     }
+    ],
+    "note": "`phi p x` is defined for real x with `Real.rpow` (positive bases); at x = d : ℕ it equals the paper's expression with natural powers (`phi_natCast`, proved)."
+   },
+   {
+    "id": "i",
+    "kind": "same",
+    "label": "(i) φ(d) > log_σ(2 log₂(p) p^{d−1}) ⇒ P_{(p+1)^d} > P_{p^d}",
+    "tex": [
+     {
+      "text": "if $\\varphi(d)>\\log_\\sigma\\bigl(2\\log_2(p)\\,p^{d-1}\\bigr)$, then\n$P^{\\mathrm{unif}}_{(p+1)^d}>P^{\\mathrm{unif}}_{p^d}$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.inversionCompositeStatement",
+      "text": "Real.logb (σ : ℝ) (2 * Real.logb 2 (p : ℝ) * (p : ℝ) ^ (d - 1)) < phi p (d : ℝ) →\n      probUnif p d σ < probUnif (p + 1) d σ"
+     }
+    ],
+    "note": "Implication with the inequalities written in the < direction."
+   },
+   {
+    "id": "i.hyp",
+    "kind": "same",
+    "label": "φ(d) > log_σ(2 log₂(p) p^{d−1})",
+    "tex": [
+     {
+      "text": "\\varphi(d)>\\log_\\sigma\\bigl(2\\log_2(p)\\,p^{d-1}\\bigr)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.inversionCompositeStatement",
+      "text": "Real.logb (σ : ℝ) (2 * Real.logb 2 (p : ℝ) * (p : ℝ) ^ (d - 1)) < phi p (d : ℝ)"
+     }
+    ],
+    "note": "φ evaluated at the real point (d : ℝ)."
+   },
+   {
+    "id": "i.log",
+    "kind": "representation",
+    "label": "log_σ(2 log₂(p) p^{d−1})",
+    "tex": [
+     {
+      "text": "\\log_\\sigma\\bigl(2\\log_2(p)\\,p^{d-1}\\bigr)",
+      "occ": 1
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.inversionCompositeStatement",
+      "text": "Real.logb (σ : ℝ) (2 * Real.logb 2 (p : ℝ) * (p : ℝ) ^ (d - 1))"
+     }
+    ],
+    "note": "`Real.logb σ`, argument ≥ 2 log₂ 3 > 0; p^{d−1} with ℕ-subtraction, exact as 1 ≤ d."
+   },
+   {
+    "id": "i.concl",
+    "kind": "same",
+    "label": "P^unif_{(p+1)^d} > P^unif_{p^d}",
+    "tex": [
+     {
+      "text": "P^{\\mathrm{unif}}_{(p+1)^d}>P^{\\mathrm{unif}}_{p^d}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.inversionCompositeStatement",
+      "text": "probUnif p d σ < probUnif (p + 1) d σ"
+     }
+    ],
+    "note": "Same strict inequality, written with <."
+   },
+   {
+    "id": "Punif",
+    "kind": "definition",
+    "label": "P^unif_{m^d}",
+    "tex": [
+     {
+      "text": "$P^{\\mathrm{unif}}_{n^d}=|S_{n^d}|/\\sigma^{n^d}$",
+      "scope": {
+       "lines": [
+        882,
+        885
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.probUnif",
+      "text": "(numSS n d σ : ℝ) / (σ : ℝ) ^ (n ^ d)"
+     }
+    ],
+    "note": "Shared real-valued definition, used with n = p and n = p + 1."
+   },
+   {
+    "id": "ii",
+    "kind": "same",
+    "label": "(ii) φ(d) < −log_σ(2 log₂(p+1)(p+1)^{d−1}) ⇒ P_{(p+1)^d} < P_{p^d}",
+    "tex": [
+     {
+      "text": "if $\\varphi(d)<-\\log_\\sigma\\bigl(2\\log_2(p{+}1)\\,(p{+}1)^{d-1}\\bigr)$,\nthen $P^{\\mathrm{unif}}_{(p+1)^d}<P^{\\mathrm{unif}}_{p^d}$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.inversionPrimeStatement",
+      "text": "phi p (d : ℝ) <\n        -Real.logb (σ : ℝ) (2 * Real.logb 2 ((p : ℝ) + 1) * ((p : ℝ) + 1) ^ (d - 1)) →\n      probUnif (p + 1) d σ < probUnif p d σ"
+     }
+    ],
+    "note": "Same hypotheses p ≥ 3 prime, σ ≥ 2, plus d ≥ 1."
+   },
+   {
+    "id": "ii.hyp",
+    "kind": "same",
+    "label": "φ(d) < −log_σ(2 log₂(p+1)(p+1)^{d−1})",
+    "tex": [
+     {
+      "text": "\\varphi(d)<-\\log_\\sigma\\bigl(2\\log_2(p{+}1)\\,(p{+}1)^{d-1}\\bigr)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.inversionPrimeStatement",
+      "text": "phi p (d : ℝ) <\n        -Real.logb (σ : ℝ) (2 * Real.logb 2 ((p : ℝ) + 1) * ((p : ℝ) + 1) ^ (d - 1))"
+     }
+    ],
+    "note": "φ evaluated at the real point (d : ℝ); the minus sign is real negation."
+   },
+   {
+    "id": "ii.log",
+    "kind": "representation",
+    "label": "log_σ(2 log₂(p+1)(p+1)^{d−1})",
+    "tex": [
+     {
+      "text": "\\log_\\sigma\\bigl(2\\log_2(p{+}1)\\,(p{+}1)^{d-1}\\bigr)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.inversionPrimeStatement",
+      "text": "Real.logb (σ : ℝ) (2 * Real.logb 2 ((p : ℝ) + 1) * ((p : ℝ) + 1) ^ (d - 1))"
+     }
+    ],
+    "note": "p + 1 as the real `(p : ℝ) + 1`; argument ≥ 4 > 0, base σ ≥ 2."
+   },
+   {
+    "id": "ii.concl",
+    "kind": "same",
+    "label": "P^unif_{(p+1)^d} < P^unif_{p^d}",
+    "tex": [
+     {
+      "text": "P^{\\mathrm{unif}}_{(p+1)^d}<P^{\\mathrm{unif}}_{p^d}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.inversionPrimeStatement",
+      "text": "probUnif (p + 1) d σ < probUnif p d σ"
+     }
+    ],
+    "note": "Same strict inequality."
+   },
+   {
+    "id": "names",
+    "kind": "definition",
+    "label": "'composite advantage' / 'prime advantage'",
+    "tex": [
+     {
+      "text": "(composite\nadvantage)"
+     },
+     {
+      "text": "(prime\nadvantage)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.inversionWindow20Statement",
+      "text": "probUnif p d σ < probUnif (p + 1) d σ"
+     },
+     {
+      "decl": "ShiftSym.P09.inversionWindow20Statement",
+      "text": "probUnif (p + 1) d σ < probUnif p d σ"
+     }
+    ],
+    "note": "Names of the conclusions of (i) and (ii): composite advantage = P_{(p+1)^d} > P_{p^d} (`probUnif p d σ < probUnif (p + 1) d σ`), prime advantage = the reverse. The window sentence uses the first name; the Lean anchors are the two inequalities of the probability-form window Prop, below and above the window."
+   },
+   {
+    "id": "sign",
+    "kind": "same",
+    "label": "φ (real d) positive below, negative above its unique zero d_c(p)",
+    "tex": [
+     {
+      "text": "The function $\\varphi$, regarded as a function of real $d$, is positive\nbelow and negative above its unique zero"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.phiSignStatement",
+      "text": "(∀ x : ℝ, phi p x = 0 ↔ x = dc p) ∧\n      (∀ x : ℝ, x < dc p → 0 < phi p x) ∧\n      (∀ x : ℝ, dc p < x → phi p x < 0)"
+     }
+    ],
+    "note": "For every real x: φ(x) = 0 ↔ x = d_c(p) (the unique zero, and it is d_c), φ > 0 left of it, φ < 0 right of it. Hypotheses p prime, p ≥ 3; σ dropped (not involved)."
+   },
+   {
+    "id": "sign.zero",
+    "kind": "same",
+    "label": "unique zero",
+    "tex": [
+     {
+      "text": "its unique zero"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.phiSignStatement",
+      "text": "∀ x : ℝ, phi p x = 0 ↔ x = dc p"
+     }
+    ],
+    "note": "Existence and uniqueness in one iff, with the zero identified as `dc p`."
+   },
+   {
+    "id": "dc",
+    "kind": "definition",
+    "label": "d_c(p) = ln(2 − 2/p)/ln(1 + 1/p)",
+    "tex": [
+     {
+      "text": "d_c(p)\\;=\\;\\frac{\\ln\\bigl(2-\\tfrac2p\\bigr)}{\\ln\\bigl(1+\\tfrac1p\\bigr)}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.dc",
+      "text": "Real.log (2 - 2 / (p : ℝ)) / Real.log (1 + 1 / (p : ℝ))"
+     }
+    ],
+    "note": "ln = `Real.log`; for p ≥ 3 both arguments are positive and the denominator is > 0."
+   },
+   {
+    "id": "asym",
+    "kind": "representation",
+    "label": "d_c(p) = p ln 2 + O(1) (p → ∞)",
+    "tex": [
+     {
+      "text": "p\\ln2+O(1)\\qquad(p\\to\\infty)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.dcAsymptoticStatement",
+      "text": "∃ C : ℝ, ∃ P₀ : ℕ, ∀ p : ℕ, p.Prime → P₀ ≤ p → |dc p - p * Real.log 2| ≤ C"
+     }
+    ],
+    "note": "O(1) as p → ∞ through the primes, in explicit ∃C ∃P₀ form (not `Asymptotics.IsBigO`). Equivalent to the paper's claim. The proof in fact gives C = 2, P₀ = 2, i.e. a bound for every prime."
+   },
+   {
+    "id": "window",
+    "kind": "representation",
+    "label": "the 2D composite advantage inverts within a bounded window around d_c(p)",
+    "tex": [
+     {
+      "text": "so the two-dimensional ``composite advantage'' inverts within an\nexplicitly bounded window around $d_c(p)$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.inversionWindow20Statement",
+      "text": "((d : ℝ) ≤ dc p - 20 → probUnif p d σ < probUnif (p + 1) d σ) ∧\n      (dc p + 20 ≤ (d : ℝ) → probUnif (p + 1) d σ < probUnif p d σ)"
+     }
+    ],
+    "note": "Probability form with the explicit 20: composite advantage for d ≤ d_c − 20, prime advantage for d ≥ d_c + 20, so the inversion happens inside (d_c − 20, d_c + 20) ('inverts within an explicitly bounded window'). Uniform in p ≥ 3 and σ ≥ 2."
+   },
+   {
+    "id": "twoD",
+    "kind": "paper-only",
+    "label": "'the two-dimensional' composite advantage",
+    "tex": [
+     {
+      "text": "two-dimensional ``composite advantage''"
+     }
+    ],
+    "lean": [],
+    "note": "Names the phenomenon (Observation 10.5 / the 2019 paper); no claim about d = 2 is frozen here (at p = 3 there is no 2D composite advantage, consistent with the statement)."
+   },
+   {
+    "id": "linear",
+    "kind": "representation",
+    "label": "a dimension that grows linearly in the prime",
+    "tex": [
+     {
+      "text": "a dimension that grows\n\\emph{linearly} in the prime"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.dcAsymptoticStatement",
+      "text": "|dc p - p * Real.log 2| ≤ C"
+     }
+    ],
+    "note": "Refers to the location d_c(p), not the window width; covered by `dcAsymptoticStatement`."
+   },
+   {
+    "id": "crit",
+    "kind": "same",
+    "label": "(i) applies for d ≤ d_c(p) − 20, (ii) for d ≥ d_c(p) + 20",
+    "tex": [
+     {
+      "text": "(i) applies to every integer $d\\ge1$ with\n$d\\le d_c(p)-20$, and (ii) to every integer $d\\ge d_c(p)+20$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.inversionExplicitWindow20Statement",
+      "text": "((d : ℝ) ≤ dc p - 20 →\n        Real.logb (σ : ℝ) (2 * Real.logb 2 (p : ℝ) * (p : ℝ) ^ (d - 1)) < phi p (d : ℝ)) ∧\n      (dc p + 20 ≤ (d : ℝ) →\n        phi p (d : ℝ) <\n          -Real.logb (σ : ℝ) (2 * Real.logb 2 ((p : ℝ) + 1) * ((p : ℝ) + 1) ^ (d - 1)))"
+     }
+    ],
+    "note": "'(i) applies' = the hypothesis of (i) holds (criteria form); (i) then gives the composite advantage, and (ii) the prime advantage."
+   },
+   {
+    "id": "w20",
+    "kind": "same",
+    "label": "the constant 20",
+    "tex": [
+     {
+      "text": "$d\\le d_c(p)-20$"
+     },
+     {
+      "text": "$d\\ge d_c(p)+20$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.inversionExplicitWindow20Statement",
+      "text": "dc p - 20"
+     },
+     {
+      "decl": "ShiftSym.P09.inversionExplicitWindow20Statement",
+      "text": "dc p + 20"
+     },
+     {
+      "decl": "ShiftSym.P09.inversionWindow20Statement",
+      "text": "dc p - 20"
+     },
+     {
+      "decl": "ShiftSym.P09.inversionWindow20Statement",
+      "text": "dc p + 20"
+     }
+    ],
+    "note": "Frozen literally since the supplement of 2026-10-22: `dc p - 20` and `dc p + 20` in both window forms. Provenance: the 20 was added to the paper in v4 (PAPER_CORRECTIONS_PROPOSAL.md, entry 22) from the helper theorems `window_i`/`window_ii`, and frozen afterwards, so unlike the Phase H statements it was not frozen before its proof existed. The original group-09 window Props say only ∃ C (map wexists)."
+   },
+   {
+    "id": "wexists",
+    "kind": "lean-only",
+    "label": "the original window Props with ∃ C (implied)",
+    "tex": [],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.inversionExplicitWindowStatement",
+      "text": "∃ C : ℝ"
+     },
+     {
+      "decl": "ShiftSym.P09.inversionWindowStatement",
+      "text": "∃ C : ℝ"
+     }
+    ],
+    "note": "Group 09 was frozen against the v3.1 text ('an explicitly bounded window'), so its two window Props say ∃ C. They are kept unchanged inside `inversionLawStatement` and follow from the C = 20 forms (take C = 20). Not a separate paper claim."
+   },
+   {
+    "id": "crit.d",
+    "kind": "hypothesis",
+    "label": "every integer d ≥ 1",
+    "tex": [
+     {
+      "text": "every integer $d\\ge1$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P09.inversionExplicitWindow20Statement",
+      "text": "1 ≤ d",
+      "occ": 2
+     }
+    ],
+    "note": "d : ℕ cast to ℝ for the comparison with d_c(p) ± C."
+   }
+  ]
+ }
+}

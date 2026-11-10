@@ -1,0 +1,3 @@
+'MainPaperAudit.main_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainPaperAudit.translation_solves' depends on axioms: [propext, Quot.sound]
+'MainPaperAudit.equivariance_not_necessary_for_each_map' depends on axioms: [propext, Classical.choice, Quot.sound]

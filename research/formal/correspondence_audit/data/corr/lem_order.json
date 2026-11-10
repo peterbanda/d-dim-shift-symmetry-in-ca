@@ -1,0 +1,449 @@
+{
+ "label": "lem:order",
+ "statement": {
+  "summary": "Lemma 3.2 is frozen as three Props: `orderLcmStatement` (|⟨v⟩| = lcm_i n/gcd(l_i,n)), `orderGcdStatement` (|⟨v⟩| = n/gcd(l_1,…,l_d,n)) and `orderCountStatement` (the two counts of |S_{n^d}(v)|, plus the Lagrange divisibility |⟨v⟩| ∣ n^d as an explicit conjunct). The paper's chains a = b = c are rendered as a = b and a = c (common left side). The coordinates l_i are integer lifts of the residues v_i, quantified over every lift. `orderLemmaStatement` is the conjunction.",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P02.orderLcmStatement",
+    "role": "statement (first equality)"
+   },
+   {
+    "decl": "ShiftSym.P02.orderGcdStatement",
+    "role": "statement (second equality)"
+   },
+   {
+    "decl": "ShiftSym.P02.orderCountStatement",
+    "role": "statement (the count)"
+   },
+   {
+    "decl": "ShiftSym.P02.orderLemmaStatement",
+    "role": "statement (whole)"
+   },
+   {
+    "decl": "ShiftSym.P02.gcdAll",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.shift",
+    "role": "definition"
+   }
+  ],
+  "deltas": [
+   "⟨v⟩ = `AddSubgroup.zmultiples v`, |·| = `Nat.card`.",
+   "The coordinates l_i ∈ ℤ/nℤ are read as integers: every statement quantifies over EVERY integer lift `l : Fin d → ℤ` with `(l i : ZMod n) = v i` (gcd(l_i, n) depends only on l_i mod n).",
+   "gcd(l_i, n) = `Int.gcd (l i) n`; gcd(l_1,…,l_d,n) = `gcdAll l n` = `Nat.gcd (gcd_i |l_i|) n`; lcm_i = `Finset.univ.lcm` over `Fin d`.",
+   "All divisions (n/gcd, n^d/|⟨v⟩|) are ℕ-divisions; each is exact (gcd ∣ n; |⟨v⟩| ∣ n^d is an explicit extra conjunct). n^{d-1} uses truncated subtraction, exact since d ≥ 1.",
+   "The chains a = b = c are split as a = b ∧ a = c; for the count this is an equality of values, not of exponents (for σ = 1 the exponents are not determined).",
+   "Standing hypotheses n ≥ 2, d ≥ 1 (Definition 2.1); the count allows σ ≥ 1 (counting statement); alphabet Σ = `Fin σ`.",
+   "S_{n^d}(v) = `{s : Config n d (Fin σ) | shift v s = s}` (Definition 2.3's first form, not Fix(⟨v⟩))."
+  ],
+  "maps": [
+   {
+    "id": "v",
+    "kind": "same",
+    "label": "0 ≠ v ∈ 𝒜",
+    "tex": [
+     {
+      "text": "\\mathbf 0\\neq\\vv"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.orderLcmStatement",
+      "text": "∀ v : Lat n d, v ≠ 0 →"
+     },
+     {
+      "decl": "ShiftSym.P02.orderGcdStatement",
+      "text": "∀ v : Lat n d, v ≠ 0 →"
+     },
+     {
+      "decl": "ShiftSym.P02.orderCountStatement",
+      "text": "∀ v : Lat n d, v ≠ 0 →"
+     }
+    ],
+    "note": "𝒜 = (ℤ/nℤ)^d is `Lat n d := Fin d → ZMod n`. (The hypothesis v ≠ 0 is not used by the proofs: all three identities also hold at v = 0; keeping it is faithful.)"
+   },
+   {
+    "id": "lift",
+    "kind": "representation",
+    "label": "v = (l_1,…,l_d): integer coordinates",
+    "tex": [
+     {
+      "text": "\\vv=(l_1,\\dots,l_d)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.orderLcmStatement",
+      "text": "∀ l : Fin d → ℤ, (∀ i, ((l i : ℤ) : ZMod n) = v i) →"
+     },
+     {
+      "decl": "ShiftSym.P02.orderGcdStatement",
+      "text": "∀ l : Fin d → ℤ, (∀ i, ((l i : ℤ) : ZMod n) = v i) →"
+     },
+     {
+      "decl": "ShiftSym.P02.orderCountStatement",
+      "text": "∀ l : Fin d → ℤ, (∀ i, ((l i : ℤ) : ZMod n) = v i) →"
+     }
+    ],
+    "note": "The paper applies gcd to the coordinates of v; Lean quantifies over every integer lift l of v (the canonical lift (v i).val is one instance), so the statement is lift-independent and as strong as possible."
+   },
+   {
+    "id": "hyp",
+    "kind": "hypothesis",
+    "label": "standing hypotheses n ≥ 2, d ≥ 1",
+    "tex": [
+     {
+      "text": "Fix integers $n\\ge2$, $d\\ge1$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.orderLcmStatement",
+      "text": "2 ≤ n → 1 ≤ d"
+     },
+     {
+      "decl": "ShiftSym.P02.orderGcdStatement",
+      "text": "2 ≤ n → 1 ≤ d"
+     }
+    ],
+    "note": "From Definition 2.1; the two order identities do not involve σ, so no alphabet hypothesis appears."
+   },
+   {
+    "id": "hyp.count",
+    "kind": "hypothesis",
+    "label": "count: n ≥ 2, d ≥ 1, σ ≥ 1",
+    "tex": [
+     {
+      "text": "(for counting statements, $\\sigma=1$ is also allowed)",
+      "scope": {
+       "lines": [
+        284,
+        284
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.orderCountStatement",
+      "text": "2 ≤ n → 1 ≤ d → 1 ≤ σ"
+     }
+    ],
+    "note": "The count is a counting statement, so Definition 2.1 allows σ = 1."
+   },
+   {
+    "id": "alph",
+    "kind": "representation",
+    "label": "alphabet Σ with |Σ| = σ",
+    "tex": [
+     {
+      "text": "a finite alphabet $\\Sigma$ with $\\sigma=|\\Sigma|\\ge2$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.orderCountStatement",
+      "text": "Config n d (Fin σ)",
+      "occ": 2
+     }
+    ],
+    "note": "Σ = `Fin σ`; only |Σ| = σ enters the paper."
+   },
+   {
+    "id": "lcm",
+    "kind": "same",
+    "label": "|⟨v⟩| = lcm_i(n/gcd(l_i,n))",
+    "tex": [
+     {
+      "text": "|\\langle\\vv\\rangle| = \\lcm_i\\bigl(n/\\gcd(l_i,n)\\bigr)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.orderLcmStatement",
+      "text": "Nat.card (AddSubgroup.zmultiples v)\n        = Finset.univ.lcm (fun i => n / Int.gcd (l i) (n : ℤ))"
+     }
+    ],
+    "note": "First equality of the paper's chain; equality of natural numbers."
+   },
+   {
+    "id": "ord",
+    "kind": "definition",
+    "label": "|⟨v⟩| (order of the cyclic subgroup)",
+    "tex": [
+     {
+      "text": "|\\langle\\vv\\rangle|",
+      "occ": 1
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.orderLcmStatement",
+      "text": "Nat.card (AddSubgroup.zmultiples v)"
+     },
+     {
+      "decl": "ShiftSym.P02.orderGcdStatement",
+      "text": "Nat.card (AddSubgroup.zmultiples v)"
+     }
+    ],
+    "note": "⟨v⟩ is mathlib's `AddSubgroup.zmultiples v` (the subgroup {k•v : k ∈ ℤ}); |·| = `Nat.card`."
+   },
+   {
+    "id": "gen",
+    "kind": "definition",
+    "label": "⟨v⟩",
+    "tex": [
+     {
+      "text": "\\langle\\vv\\rangle",
+      "occ": 1
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.orderLcmStatement",
+      "text": "AddSubgroup.zmultiples v",
+      "occ": 2
+     }
+    ],
+    "note": "The cyclic subgroup generated by v."
+   },
+   {
+    "id": "lcm.rhs",
+    "kind": "representation",
+    "label": "lcm_i(n/gcd(l_i,n))",
+    "tex": [
+     {
+      "text": "\\lcm_i\\bigl(n/\\gcd(l_i,n)\\bigr)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.orderLcmStatement",
+      "text": "Finset.univ.lcm (fun i => n / Int.gcd (l i) (n : ℤ))"
+     }
+    ],
+    "note": "lcm over i ∈ Fin d as `Finset.univ.lcm` (nonempty since d ≥ 1)."
+   },
+   {
+    "id": "lcm.term",
+    "kind": "representation",
+    "label": "n/gcd(l_i,n)",
+    "tex": [
+     {
+      "text": "n/\\gcd(l_i,n)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.orderLcmStatement",
+      "text": "n / Int.gcd (l i) (n : ℤ)"
+     }
+    ],
+    "note": "`Int.gcd` of the integer lift and n (a natural number); ℕ-division, exact since gcd(l_i,n) ∣ n."
+   },
+   {
+    "id": "gcd",
+    "kind": "representation",
+    "label": "|⟨v⟩| = n/gcd(l_1,…,l_d,n)",
+    "tex": [
+     {
+      "text": "|\\langle\\vv\\rangle|",
+      "occ": 1
+     },
+     {
+      "text": "= n/\\gcd(l_1,\\dots,l_d,n)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.orderGcdStatement",
+      "text": "Nat.card (AddSubgroup.zmultiples v) = n / gcdAll l n"
+     }
+    ],
+    "note": "The paper's second equality is lcm = n/gcd; Lean states |⟨v⟩| = n/gcd (same left side as the first equality). Together with `orderLcmStatement` this is equivalent to the paper's chain."
+   },
+   {
+    "id": "gcd.rhs",
+    "kind": "representation",
+    "label": "n/gcd(l_1,…,l_d,n)",
+    "tex": [
+     {
+      "text": "= n/\\gcd(l_1,\\dots,l_d,n)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.orderGcdStatement",
+      "text": "n / gcdAll l n"
+     }
+    ],
+    "note": "ℕ-division, exact because gcdAll l n is a `Nat.gcd _ n`, hence divides n."
+   },
+   {
+    "id": "gcdAll",
+    "kind": "definition",
+    "label": "gcd(l_1,…,l_d,n)",
+    "tex": [
+     {
+      "text": "\\gcd(l_1,\\dots,l_d,n)",
+      "occ": 1
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.orderGcdStatement",
+      "text": "gcdAll l n",
+      "occ": 3
+     },
+     {
+      "decl": "ShiftSym.P02.gcdAll",
+      "text": "Nat.gcd (Finset.univ.gcd fun i => (l i).natAbs) n"
+     }
+    ],
+    "note": "gcd of the absolute values |l_i| and n: gcd over i ∈ Fin d, then with n."
+   },
+   {
+    "id": "cnt1",
+    "kind": "same",
+    "label": "|S_{n^d}(v)| = σ^{n^d/|⟨v⟩|}",
+    "tex": [
+     {
+      "text": "|S_{n^d}(\\vv)|=\\sigma^{\\,n^d/|\\langle\\vv\\rangle|}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.orderCountStatement",
+      "text": "Nat.card {s : Config n d (Fin σ) | shift v s = s}\n          = σ ^ (n ^ d / Nat.card (AddSubgroup.zmultiples v))"
+     }
+    ],
+    "note": "First equality of the count chain; equality of natural numbers."
+   },
+   {
+    "id": "Sv",
+    "kind": "definition",
+    "label": "|S_{n^d}(v)|",
+    "tex": [
+     {
+      "text": "|S_{n^d}(\\vv)|"
+     },
+     {
+      "text": "S_{n^d}(\\vv)=\\{\\ssb:\\tau_\\vv\\ssb=\\ssb\\}",
+      "scope": {
+       "lines": [
+        295,
+        302
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.orderCountStatement",
+      "text": "Nat.card {s : Config n d (Fin σ) | shift v s = s}",
+      "occ": 1
+     },
+     {
+      "decl": "ShiftSym.shift",
+      "text": "fun u => s (u + v)"
+     }
+    ],
+    "note": "S_{n^d}(v) = {s : τ_v s = s} (Definition 2.3), with τ_v = `shift v`, (shift v s)(u) = s(u+v) as in Definition 2.2; |·| = `Nat.card`."
+   },
+   {
+    "id": "exp1",
+    "kind": "representation",
+    "label": "exponent n^d/|⟨v⟩|",
+    "tex": [
+     {
+      "text": "n^d/|\\langle\\vv\\rangle|"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.orderCountStatement",
+      "text": "n ^ d / Nat.card (AddSubgroup.zmultiples v)"
+     }
+    ],
+    "note": "ℕ-division; exactness is the separate conjunct `|⟨v⟩| ∣ n^d`."
+   },
+   {
+    "id": "div",
+    "kind": "lean-only",
+    "label": "|⟨v⟩| divides n^d (Lagrange)",
+    "tex": [],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.orderCountStatement",
+      "text": "Nat.card (AddSubgroup.zmultiples v) ∣ n ^ d"
+     }
+    ],
+    "note": "Implicit in the paper (the exponent must be an integer); made explicit so the ℕ-division cannot truncate."
+   },
+   {
+    "id": "cnt2",
+    "kind": "representation",
+    "label": "|S_{n^d}(v)| = σ^{n^{d-1} gcd(l_1,…,l_d,n)}",
+    "tex": [
+     {
+      "text": "=\\sigma^{\\,n^{d-1}\\gcd(l_1,\\dots,l_d,n)}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.orderCountStatement",
+      "text": "Nat.card {s : Config n d (Fin σ) | shift v s = s}\n          = σ ^ (n ^ (d - 1) * gcdAll l n)"
+     }
+    ],
+    "note": "The paper's second equality σ^{n^d/|⟨v⟩|} = σ^{n^{d-1}gcd} is rendered with the common left side |S_{n^d}(v)| (values, not exponents)."
+   },
+   {
+    "id": "exp2",
+    "kind": "representation",
+    "label": "exponent n^{d-1}·gcd(l_1,…,l_d,n)",
+    "tex": [
+     {
+      "text": "n^{d-1}\\gcd(l_1,\\dots,l_d,n)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.orderCountStatement",
+      "text": "n ^ (d - 1) * gcdAll l n"
+     }
+    ],
+    "note": "Juxtaposition = ℕ-multiplication; gcd(l_1,…,l_d,n) = `gcdAll l n` as above."
+   },
+   {
+    "id": "nd1",
+    "kind": "representation",
+    "label": "n^{d-1}",
+    "tex": [
+     {
+      "text": "n^{d-1}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P02.orderCountStatement",
+      "text": "n ^ (d - 1)"
+     }
+    ],
+    "note": "Truncated ℕ-subtraction d − 1, exact because d ≥ 1."
+   }
+  ]
+ }
+}

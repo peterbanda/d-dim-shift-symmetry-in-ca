@@ -1,0 +1,134 @@
+{
+  "mobius": [
+    {
+      "p": 2,
+      "d": 1,
+      "lines": 1,
+      "subsets": 2,
+      "subspaces": 2,
+      "coefficients": [
+        1,
+        -1
+      ]
+    },
+    {
+      "p": 2,
+      "d": 2,
+      "lines": 3,
+      "subsets": 8,
+      "subspaces": 5,
+      "coefficients": [
+        1,
+        -3,
+        2
+      ]
+    },
+    {
+      "p": 2,
+      "d": 3,
+      "lines": 7,
+      "subsets": 128,
+      "subspaces": 16,
+      "coefficients": [
+        1,
+        -7,
+        14,
+        -8
+      ]
+    },
+    {
+      "p": 3,
+      "d": 1,
+      "lines": 1,
+      "subsets": 2,
+      "subspaces": 2,
+      "coefficients": [
+        1,
+        -1
+      ]
+    },
+    {
+      "p": 3,
+      "d": 2,
+      "lines": 4,
+      "subsets": 16,
+      "subspaces": 6,
+      "coefficients": [
+        1,
+        -4,
+        3
+      ]
+    },
+    {
+      "p": 3,
+      "d": 3,
+      "lines": 13,
+      "subsets": 8192,
+      "subspaces": 28,
+      "coefficients": [
+        1,
+        -13,
+        39,
+        -27
+      ]
+    },
+    {
+      "p": 5,
+      "d": 1,
+      "lines": 1,
+      "subsets": 2,
+      "subspaces": 2,
+      "coefficients": [
+        1,
+        -1
+      ]
+    },
+    {
+      "p": 5,
+      "d": 2,
+      "lines": 6,
+      "subsets": 64,
+      "subspaces": 8,
+      "coefficients": [
+        1,
+        -6,
+        5
+      ]
+    }
+  ],
+  "dynamics": [
+    {
+      "n": 2,
+      "d": 1,
+      "configurations": 4,
+      "rules": 16,
+      "one_step_checks": 64,
+      "trajectory_visits": 112
+    },
+    {
+      "n": 3,
+      "d": 1,
+      "configurations": 8,
+      "rules": 256,
+      "one_step_checks": 2048,
+      "trajectory_visits": 5304
+    },
+    {
+      "n": 4,
+      "d": 1,
+      "configurations": 16,
+      "rules": 65536,
+      "one_step_checks": 1048576,
+      "trajectory_visits": 3414016
+    },
+    {
+      "n": 2,
+      "d": 2,
+      "configurations": 16,
+      "rules": 65536,
+      "one_step_checks": 1048576,
+      "trajectory_visits": 2424832
+    }
+  ],
+  "status": "PASS"
+}

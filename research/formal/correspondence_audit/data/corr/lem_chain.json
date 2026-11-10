@@ -1,0 +1,262 @@
+{
+ "label": "lem:chain",
+ "statement": {
+  "summary": "Lemma A.3 is the single Prop `lemA3ChainStatement`: for composite n with k = ω(n) ≥ 2, d ≥ 1, σ ≥ 2 and 1 ≤ m < k, the real numbers satisfy q^m ≤ q^{m+1}, where q^m = `qm n d σ m` = `qTrunc n d σ m 1`.",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P10.lemA3ChainStatement",
+    "role": "statement"
+   },
+   {
+    "decl": "ShiftSym.P10.qm",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P10.qTrunc",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P10.IsComposite",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P10.kOf",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P10.primeAt",
+    "role": "definition"
+   }
+  ],
+  "deltas": [
+   "q^m is the real number `qm n d σ m := qTrunc n d σ m 1` (the literal truncation of the main formula to the first m primes; see lem:dtorus for qTrunc).",
+   "'Composite' is `IsComposite n := 2 ≤ n ∧ ¬ n.Prime`; the hypothesis is kept literally, although k ≥ 2 already implies it.",
+   "k = ω(n) is `kOf n = n.primeFactors.card`."
+  ],
+  "maps": [
+   {
+    "id": "whole",
+    "kind": "same",
+    "label": "Lemma A.3 as one Prop",
+    "tex": [
+     {
+      "text": "For composite $n$ with $k\\ge2$, $d\\ge1$, $\\sigma\\ge2$, and $1\\le m<k$:\n$q^m\\le q^{m+1}$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA3ChainStatement",
+      "text": "∀ n d σ m : ℕ, IsComposite n → 2 ≤ kOf n → 1 ≤ d → 2 ≤ σ → 1 ≤ m → m < kOf n →\n    qm n d σ m ≤ qm n d σ (m + 1)"
+     }
+    ],
+    "note": "The five hypotheses as antecedents, the conclusion as an inequality in ℝ."
+   },
+   {
+    "id": "claim",
+    "kind": "same",
+    "label": "q^m ≤ q^{m+1}",
+    "tex": [
+     {
+      "text": "$q^m\\le q^{m+1}$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA3ChainStatement",
+      "text": "qm n d σ m ≤ qm n d σ (m + 1)"
+     }
+    ],
+    "note": "Inequality in ℝ."
+   },
+   {
+    "id": "lhs",
+    "kind": "representation",
+    "label": "q^m",
+    "tex": [
+     {
+      "text": "q^m"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA3ChainStatement",
+      "text": "qm n d σ m",
+      "occ": 2
+     }
+    ],
+    "note": "q^m = q^m(1), real-valued."
+   },
+   {
+    "id": "rhs",
+    "kind": "representation",
+    "label": "q^{m+1}",
+    "tex": [
+     {
+      "text": "q^{m+1}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA3ChainStatement",
+      "text": "qm n d σ (m + 1)"
+     }
+    ],
+    "note": "Same definition with m+1 primes."
+   },
+   {
+    "id": "def.qm",
+    "kind": "definition",
+    "label": "q^m := q^m(1)",
+    "tex": [
+     {
+      "text": "q^m:=q^m(1)",
+      "scope": {
+       "lines": [
+        1718,
+        1726
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.qm",
+      "text": "qTrunc n d σ m 1"
+     }
+    ],
+    "note": "The scale c = 1 of the truncation q^m(c)."
+   },
+   {
+    "id": "def.qtrunc",
+    "kind": "definition",
+    "label": "q^m(c), the truncation",
+    "tex": [
+     {
+      "text": "$q^m(c)$ denotes the truncation of \\eqref{eq:main-formula} to\nthe first $m$ primes with exponents scaled by $c$",
+      "scope": {
+       "lines": [
+        1718,
+        1726
+       ]
+      }
+     },
+     {
+      "text": "$p_1<\\dots<p_k$ prime",
+      "scope": {
+       "lines": [
+        354,
+        354
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.qTrunc",
+      "text": "noncomputable def qTrunc (n d σ m : ℕ) (c : ℝ) : ℝ"
+     },
+     {
+      "decl": "ShiftSym.P10.primeAt",
+      "text": "(n.primeFactors.sort (· ≤ ·)).getD i 0"
+     }
+    ],
+    "note": "'The first m primes' are p_1 < … < p_m in increasing order: `primeAt n i` = p_{i+1}, the (i+1)-st smallest prime factor (0-indexed). Sub-term mapping of the defining display: see lem:dtorus (map def.qm)."
+   },
+   {
+    "id": "hyp.comp",
+    "kind": "hypothesis",
+    "label": "composite n",
+    "tex": [
+     {
+      "text": "For composite $n$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA3ChainStatement",
+      "text": "IsComposite n",
+      "occ": 2
+     },
+     {
+      "decl": "ShiftSym.P10.IsComposite",
+      "text": "2 ≤ n ∧ ¬ n.Prime"
+     }
+    ],
+    "note": "Composite = n ≥ 2 and not prime. Redundant given k ≥ 2, kept literally."
+   },
+   {
+    "id": "hyp.k",
+    "kind": "hypothesis",
+    "label": "k ≥ 2",
+    "tex": [
+     {
+      "text": "$k\\ge2$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA3ChainStatement",
+      "text": "2 ≤ kOf n",
+      "occ": 2
+     },
+     {
+      "decl": "ShiftSym.P10.kOf",
+      "text": "n.primeFactors.card"
+     }
+    ],
+    "note": "k = ω(n), the number of distinct prime factors."
+   },
+   {
+    "id": "hyp.d",
+    "kind": "hypothesis",
+    "label": "d ≥ 1",
+    "tex": [
+     {
+      "text": "$d\\ge1$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA3ChainStatement",
+      "text": "1 ≤ d"
+     }
+    ],
+    "note": "As stated."
+   },
+   {
+    "id": "hyp.s",
+    "kind": "hypothesis",
+    "label": "σ ≥ 2",
+    "tex": [
+     {
+      "text": "$\\sigma\\ge2$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA3ChainStatement",
+      "text": "2 ≤ σ"
+     }
+    ],
+    "note": "As stated."
+   },
+   {
+    "id": "hyp.m",
+    "kind": "hypothesis",
+    "label": "1 ≤ m < k",
+    "tex": [
+     {
+      "text": "$1\\le m<k$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA3ChainStatement",
+      "text": "1 ≤ m → m < kOf n"
+     }
+    ],
+    "note": "As stated."
+   }
+  ]
+ }
+}

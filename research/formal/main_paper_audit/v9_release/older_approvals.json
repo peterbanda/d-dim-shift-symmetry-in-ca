@@ -1,0 +1,9 @@
+{
+  "v6_approvals_with_unchanged_content": [
+    "prop:rank",
+    "thm:detect-worst",
+    "prop:inversion",
+    "lem:chain",
+    "lem:base"
+  ]
+}

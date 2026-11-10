@@ -1,0 +1,19 @@
+Shiftsym/AuditPaper.lean:84:18: warning: `String.dropRight` has been deprecated: Use `String.dropEnd` instead
+
+Note: The updated constant has a different type:
+  String → ℕ → String.Slice
+instead of
+  String → ℕ → String
+Phase H audit: group 01: 31 frozen statements, 0 failures
+Phase H audit: group 02: 20 frozen statements, 0 failures
+Phase H audit: group 03: 22 frozen statements, 0 failures
+Phase H audit: group 04: 48 frozen statements, 0 failures
+Phase H audit: group 05: 31 frozen statements, 0 failures
+Phase H audit: group 06: 41 frozen statements, 0 failures
+Phase H audit: group 07: 33 frozen statements, 0 failures
+Phase H audit: group 08: 25 frozen statements, 0 failures
+Phase H audit: group 09: 24 frozen statements, 0 failures
+Phase H audit: group 10: 33 frozen statements, 0 failures
+Phase H audit: group 11: 34 frozen statements, 0 failures
+Phase H audit: group 12: 5 frozen statements, 0 failures
+Phase H audit: 347 frozen paper statements checked

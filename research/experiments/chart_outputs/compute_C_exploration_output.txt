@@ -1,0 +1,38 @@
+Computing d* for 95 primes from 2 to 499
+
+  p=   2: d*(5%) = 4.877
+  p=   3: d*(5%) = 2.953
+  p=   5: d*(5%) = 2.004
+  p=   7: d*(5%) = 2.000
+  p=  11: d*(5%) = 2.000
+  p=  13: d*(5%) = 2.000
+  p=  17: d*(5%) = 2.000
+  p=  19: d*(5%) = 2.000
+  p=  23: d*(5%) = 2.000
+  p=  29: d*(5%) = 2.000
+  p=  31: d*(5%) = 2.000
+  p=  37: d*(5%) = 2.000
+  p=  41: d*(5%) = 2.000
+  p=  43: d*(5%) = 2.000
+  p=  47: d*(5%) = 2.000
+  p= 101: d*(5%) = 2.000
+  p= 151: d*(5%) = 2.000
+  p= 251: d*(5%) = 2.000
+  p= 401: d*(5%) = 2.000
+
+Generating Chart A: d* vs p ...
+  Threshold 0.1: C = 2.2060 +/- 0.3844
+  Threshold 0.05: C = 2.5333 +/- 0.2443
+  Threshold 0.01: C = 2.6541 +/- 0.2352
+  Saved: charts/chart8_dstar_vs_p.png
+
+Generating Chart B: Correction ratio heatmap ...
+  Saved: charts/chart9_ratio_heatmap.png
+
+Generating Chart C: Correction ratio for many primes ...
+  Saved: charts/chart10_correction_many_primes.png
+
+Generating Chart D: C extraction detail ...
+  Saved: charts/chart11_C_fit_detail.png
+
+All C-exploration charts generated.

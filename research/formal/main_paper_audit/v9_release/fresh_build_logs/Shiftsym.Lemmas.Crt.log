@@ -1,0 +1,23 @@
+Shiftsym/Lemmas/Crt.lean:18:8: warning: `Nat.factorization_prod_pow_eq_self` has been deprecated: Use `Nat.prod_factorization_pow_eq_self` instead
+Shiftsym/Lemmas/Crt.lean:53:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Shiftsym/Lemmas/Crt.lean:55:8: warning: This simp argument is unused:
+  Nat.card_pi
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Nat.card_zmod]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Shiftsym/Lemmas/Crt.lean:55:21: warning: This simp argument is unused:
+  Nat.card_zmod
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Nat.card_pi]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

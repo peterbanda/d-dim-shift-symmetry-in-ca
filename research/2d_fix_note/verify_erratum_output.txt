@@ -1,0 +1,124 @@
+verify_erratum.py -- erratum to Chaos 29, 063120 (2019)
+python 3.10.12 on Linux-6.8.0-138-generic-x86_64-with-glibc2.35
+script sha256 2ba6631efa2a48812c6be6e8007ba39ad3f3ba887443d7aefb903d040a47d960
+
+[A] |S_{nxn}| (Eq. 19): formula vs brute force vs explicit-subgroup IE
+    [OK] n=2 sigma=2: brute force 8 = Eq. (19) 8 (reference 8)
+    [OK] n=2 sigma=3: brute force 21 = Eq. (19) 21
+    [OK] n=3 sigma=2: brute force 26 = Eq. (19) 26 (reference 26)
+    [OK] n=3 sigma=3: brute force 99 = Eq. (19) 99
+    [OK] n=4 sigma=2: brute force 736 = Eq. (19) 736 (reference 736)
+    [OK] n=2: IE over 3 explicit prime-order subgroups = Eq. (19) at sigma=2,3,5
+    [OK] n=3: IE over 4 explicit prime-order subgroups = Eq. (19) at sigma=2,3,5
+    [OK] n=4: IE over 3 explicit prime-order subgroups = Eq. (19) at sigma=2,3,5
+    [OK] n=5: IE over 6 explicit prime-order subgroups = Eq. (19) at sigma=2,3,5
+    [OK] n=6: IE over 7 explicit prime-order subgroups = Eq. (19) at sigma=2,3,5
+    [OK] n=8: IE over 3 explicit prime-order subgroups = Eq. (19) at sigma=2,3,5
+    [OK] n=9: IE over 4 explicit prime-order subgroups = Eq. (19) at sigma=2,3,5
+    [OK] n=10: IE over 9 explicit prime-order subgroups = Eq. (19) at sigma=2,3,5
+    [OK] n=12: IE over 7 explicit prime-order subgroups = Eq. (19) at sigma=2,3,5
+    [OK] n=14: IE over 11 explicit prime-order subgroups = Eq. (19) at sigma=2,3,5
+    [OK] n=15: IE over 10 explicit prime-order subgroups = Eq. (19) at sigma=2,3,5
+    [OK] n=30: IE over 13 explicit prime-order subgroups = Eq. (19) at sigma=2,3,5
+    [OK] reference values |S_{5x5}|=182, |S_{6x6}|=801064 (sigma=2)
+      (0.8 s)
+
+[B] item 1: standing assumptions n>=2, |Sigma|>=2; degenerate exceptions
+    [OK] Eqs. (21)-(24): no failure with n>=2, sigma>=2 (n<=40, sigma<=4); 78 degenerate failures
+      Eq21 bound  fails at n=1: 4 cases
+      Eq21 iff    fails at sigma=1: 27 cases
+      Eq23        fails at n=1: 4 cases
+      Eq24 lower  fails at n=1: 4 cases
+      Eq24 lower  fails at sigma=1: 39 cases
+    [OK] n=1 (|S_1x1|=0): failing = ['Eq21 bound', 'Eq23', 'Eq24 lower']
+    [OK] sigma=1, n>=2: failing = ['Eq21 iff', 'Eq24 lower']; 'iff' fails exactly at the composite n
+    [OK] sigma=1: Eq. (19) gives |S|=1 (the single configuration) for 2<=n<=40
+    [OK] Eq. (28) and Lemma E.29 by brute force (n<=4): exact for 0<=k<=n^2, sigma>=2
+    [OK] Eq. (28) read for every k fails only at k>n^2 (9 cases, e.g. (2, 2, (0, 1), 6))
+    [OK] sigma=1: no configuration has k<n^2 cells in state a (Eq. (28) needs sigma>=2)
+      (0.6 s)
+
+[C] items 2-3: k-active counts, Eqs. (30)-(33)
+      brute force over all j-subsets of the 6x6 torus, j<=6 (7.0 s)
+      brute force sigma=3, k=32..36 (0.1 s)
+        k  brute  Eq30  Eq31  Eq32corr  Eq32printed  Eq33corr  Eq33printed  (sigma=2)
+        0      1     1     1         1            1         1            1
+        1      0     0     0         0            0         0            0
+        2     54    54    54        54           54        54           54
+        3     48    48    48        48           36        48           36
+        4    441   441   441       441          441       441          441
+        5      0     0     0         0            0         0            0
+        6   2640  2640  2640      2640         2640      2640         2640
+       30   2640  2640  2640      2640         2640      2640         2640
+       31      0     0     0         0            0         0            0
+       32    441   441   441       441          441       441          441
+       33     48    48    48        48           36        48           36
+       34     54    54    54        54           54        54           54
+       35      0     0     0         0            0         0            0
+       36      1     1     1         1            1         1            1
+    [OK] n=6, sigma=2, k in 0..6 and 30..36: brute force = Eq30 = Eq31 = corrected Eq32 = corrected Eq33 = IE
+    [OK] counterexample n=6, k=3, sigma=2: printed Eqs. (32),(33) give 36, true count 48
+    [OK] n=6, k=3: four subgroups of order 3, each fixing C(12,1)=12 such configurations; any two generate order 9 (fixes none); order-2 subgroups fix none
+      sigma=3: {32: (1800, 1800), 33: (96, 72), 34: (108, 108), 35: (0, 0), 36: (1, 1)} (brute, printed)
+    [OK] n=6, sigma=3, k in 32..36: brute force = Eq30 = Eq31 = corrected Eq32 = IE
+    [OK] n=6, k=33, sigma=3: true 96, printed 72 (k>n: range matters)
+      labelling p=(p1,p2)=(2, 3): printed Eq. (32) wrong at k in [3] (k<=6)
+      labelling p=(p1,p2)=(3, 2): printed Eq. (32) wrong at k in [2, 4] (k<=6)
+    [OK] every labelling of the primes of n=6 gives a wrong value at some k<=6
+    [OK] n=6: Eqs. (30),(31), corrected (32),(33) = subgroup IE for all 0<=k<=36, sigma=2,3; sum_k = |S|  [printed Eq. (32) wrong at 6 of 37 k, sigma=2]
+    [OK] n=10: Eqs. (30),(31), corrected (32),(33) = subgroup IE for all 0<=k<=100, sigma=2,3; sum_k = |S|  [printed Eq. (32) wrong at 10 of 101 k, sigma=2]
+    [OK] n=12: Eqs. (30),(31), corrected (32),(33) = subgroup IE for all 0<=k<=144, sigma=2,3; sum_k = |S|  [printed Eq. (32) wrong at 24 of 145 k, sigma=2]
+    [OK] n=14: Eqs. (30),(31), corrected (32),(33) = subgroup IE for all 0<=k<=196, sigma=2,3; sum_k = |S|  [printed Eq. (32) wrong at 14 of 197 k, sigma=2]
+    [OK] n=15: Eqs. (30),(31), corrected (32),(33) = subgroup IE for all 0<=k<=225, sigma=2,3; sum_k = |S|  [printed Eq. (32) wrong at 30 of 226 k, sigma=2]
+    [OK] n=30: Eqs. (30),(31), corrected (32),(33) = subgroup IE for all 0<=k<=900, sigma=2,3; sum_k = |S|  [printed Eq. (32) wrong at 270 of 901 k, sigma=2]
+    [OK] n prime or prime power (n<=32): printed Eq. (32) = corrected for all k, sigma=2,3
+      (7.7 s)
+
+[D] item 4: proof of Lemma E.21
+    [OK] prime powers n=p^a, a>=2, n<=400 (19 values), sigma=2,3,4: |S| > (n+1)s^n - ns (k=1 branch's 'equality' false)
+    [OK] n=4, sigma=2: |S|=736 (brute force in [A]) vs 72
+    [OK] all composite n<=400, every prime p|n, sigma=2,3,4 (2136 cases): |S| >= q^1 >= s^(n^2/p) >= s^(2n) >= (n+1)s^n > F, p <= n/2
+    [OK] Lemma E.21 statement: bound and equality-iff-prime, 2<=n<=300, sigma=2,3,4
+      (1.0 s)
+
+[E] item 5: Lemmas A.21/A.22 -- chains and repair
+    [OK] increasing primes, n<=5000: A.21 last step fails at [(6, 1), (10, 1), (14, 1)]; A.22 last step at [(6, 1)]
+    [OK] any ordering of the primes: failing n = [6, 10, 14] (A.21), [6] (A.22)
+    [OK] A = n^2/p >= 2n for every prime p of every multi-prime n <= 2000
+    [OK] A.22 chain, first step (y1-x1-x2-y2)/(p+1) >= s^A + q(1/p) - q(1/p^2) + s^(A/p) is FALSE in all 462 cases (multi-prime n<=200, all m, sigma=2,3); LHS-RHS = (q(1/p^2)-s^(A/p))/(p+1) < 0
+    [OK] n=6, |Sigma|=2: LHS = 4278, printed RHS = 4280
+      Lemma R1: q^m(c) = |union of Fix(C), C of order p_1..p_m| on Z_n x Z_(n/p) (c=1/p) and Z_(n/p)^2 (c=1/p^2)
+    [OK] Lemma R1 identity: 168 cases vs explicit-subgroup IE (|L_i| = p_i+1 asserted), 19 also vs brute force over all configurations
+    [OK] sandwich 0 <= q^m(c) <= sum(p_i+1)s^(n^2c/p_i) <= (2n/p)s^(n^2c/2), c=1/p and 1/p^2; sum p_i <= prod p_i <= n/p (1245 cases: multi-prime n<=300, all m, all prime orders for n<=100, sigma=2,3,5)
+    [OK] Lemma R2: A>=2n, s^(A/2) >= 2^n >= n+1 >= 2n/p+1, y1+x1+y2 >= (p+1)s^(A/2)(s^(A/2)-2n/p-1) >= 0 (same grid)
+    [OK] Lemma R3: x1<=0<=x2, y2<=0, x2 <= 2n s^(n^2/(2p^2)) <= y1, decomposition q^(m+1)=x0+x1+x2+y1+y2 <= x0+2y1 (same grid)
+    [OK] Lemma A.21 statement q^m <= q^(m+1) (same grid)
+    [OK] Lemma A.22 statement |S| <= 2 sum s^(n^2/p_i)(p_i+1), 2<=n<=300, sigma=2,3
+    [OK] Lemma E.22 statement |S| <= 6 log2(n) s^(n^2/2), 2<=n<=200, sigma=2,3,4 (certified lower bound for log2 n)
+    [OK] Lemma A.23 for every integer 2<=x<=n (not only prime divisors), n<=40, sigma=2,3
+      n=6, sigma=2: y1=16384 x1=-704 x2=24 y2=-48 y1+x1+y2=15632 y1-(x1+x2+y2)=17112
+      n=10, sigma=2: y1=6291456 x1=-18048 x2=40 y2=-80 y1+x1+y2=6273328 y1-(x1+x2+y2)=6309544
+      n=14, sigma=2: y1=2147483648 x1=-391168 x2=56 y2=-112 y1+x1+y2=2147092368 y1-(x1+x2+y2)=2147874872
+    [OK] n=6, sigma=2: y1+x1+y2=15632, x2=24, y1-(x1+x2+y2)=17112
+      (2.2 s)
+
+[F] main text of the 2019 paper: values that must not change
+    [OK] P^unif(2x2) = 1/2 (Sec. I: 0.5)
+    [OK] P^unif(10x10) = 2.664e-15... in [2.65, 2.75) x 10^-15 (Sec. I: 'around 2.7 x 10^-15')
+    [OK] log10 P^unif(100x100) = -1504.67 (Sec. VI: 'around 10^-1505')
+    [OK] Fig. 7: 26 binary shift-symmetric configurations on 3x3 (brute force)
+    [OK] Fig. 7 caption: |S| = 2^n(n+1) - 2n for prime n <= 100 (sigma=2)
+    [OK] P^dens(2x2) = 3/5 (first point of Fig. 9)
+      P^dens(45^2): corrected 9.87168e-4 ; printed Eq.(33) 9.87168e-4
+      P^dens(100^2): corrected 2.00040e-4 ; printed Eq.(33) 2.00040e-4
+    [OK] P^dens(45^2) = 9.871e-4 (Sec. IV A '0.001', Sec. I 'around 10^-3')
+    [OK] P^dens(100^2) = 2.000e-4 (Sec. VI '2 x 10^-4')
+    [OK] [F4] PDF is arXiv:1703.09030v2 (sha256 214bb551a7475a0a...)
+      [F4] Fig. 9 main: 99 plotted points n=2..100; max |log10 plotted - log10 corrected| = 0.0001 decades (at n=16; 1 pt = 0.0298 decades)
+      [F4] Fig. 9 inset: 9 plotted points n=2..10; max |log10 plotted - log10 corrected| = 0.0000 decades (at n=6; 1 pt = 0.0307 decades)
+    [OK] [F4] Fig. 9 (n=2..100 and inset n=2..10) agrees with the corrected formula within 0.0004 decades (0.1%)
+      (373.9 s)
+
+========================================================================
+66 checks, 0 failed; runtime 386.2 s
+RESULT: ALL PASSED

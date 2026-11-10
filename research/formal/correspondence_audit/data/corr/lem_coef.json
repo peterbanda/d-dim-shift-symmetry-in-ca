@@ -1,0 +1,339 @@
+{
+ "label": "lem:coef",
+ "statement": {
+  "summary": "Lemma A.2 is frozen as three Props for real q ≥ 2: `lemA2Part1Statement` ([d j]_q ≤ 4q^{j(d−j)}), `lemA2Part2Statement` ([d 1]_q ≤ 2q^{d−1}) and `lemA2Part3Statement` (Σ_{j=2}^d r_d(q,j) ≤ 4(d−1)q^D); `lemA2Statement` is their conjunction. The Gaussian binomial is the product formula `gaussProd` over ℝ, as the lemma says, not the q-Pascal `gaussBinom`. The sharper ℕ-estimate `gaussBinom_le_pow` ([d r]_q ≤ 2^d q^{r(d−r)}, Lemmas/Ineq.lean) belongs to the core proof of Theorem 6.1 and does not certify this lemma.",
+  "lean_decls": [
+   {
+    "decl": "ShiftSym.P10.lemA2Part1Statement",
+    "role": "statement (1)"
+   },
+   {
+    "decl": "ShiftSym.P10.lemA2Part2Statement",
+    "role": "statement (2)"
+   },
+   {
+    "decl": "ShiftSym.P10.lemA2Part3Statement",
+    "role": "statement (3)"
+   },
+   {
+    "decl": "ShiftSym.P10.lemA2Statement",
+    "role": "statement (whole)"
+   },
+   {
+    "decl": "ShiftSym.P10.gaussProd",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P10.rdReal",
+    "role": "definition"
+   },
+   {
+    "decl": "ShiftSym.P10.DD",
+    "role": "definition"
+   }
+  ],
+  "deltas": [
+   "[d j]_q is `gaussProd q d j = ∏_{i<j} (q^{d−i} − 1)/(q^{i+1} − 1)` over ℝ (ℕ-subtraction d − i exact for i < j ≤ d).",
+   "r_d(q,j) is `rdReal q d j = q^{C(j,2)} · gaussProd q d j`.",
+   "Unstated ranges made explicit: d ≥ 1 (standing) and, in (1), j ≤ d, so j(d−j) is exact ℕ-subtraction. (For j > d the product formula is 0, so the restriction loses nothing.)",
+   "Σ_{j=2}^d is Σ over `Finset.Icc 2 d` (empty for d = 1); 4(d−1) uses real subtraction; D = `DD d = d(d−1)/2` (exact ℕ-division)."
+  ],
+  "maps": [
+   {
+    "id": "whole",
+    "kind": "same",
+    "label": "three estimates",
+    "tex": [
+     {
+      "text": "Let $q\\ge2$ be real, with $\\gaussbinom dj_q$ and\n$r_d(q,j)=q^{\\binom j2}\\gaussbinom dj_q$ defined by the product formula.\nThen $\\gaussbinom dj_q\\le 4q^{\\,j(d-j)}$,\n$\\gaussbinom d1_q\\le 2q^{\\,d-1}$, and\n$\\sum_{j=2}^{d}r_d(q,j)\\le 4(d-1)\\,q^{D}$"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA2Statement",
+      "text": "lemA2Part1Statement ∧ lemA2Part2Statement ∧ lemA2Part3Statement"
+     }
+    ],
+    "note": "The hypothesis, the definitions and the three estimates; the estimates are frozen separately and conjoined."
+   },
+   {
+    "id": "hyp.q",
+    "kind": "same",
+    "label": "q ≥ 2 real",
+    "tex": [
+     {
+      "text": "Let $q\\ge2$ be real"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA2Part1Statement",
+      "text": "∀ (q : ℝ) (d j : ℕ), 2 ≤ q"
+     },
+     {
+      "decl": "ShiftSym.P10.lemA2Part2Statement",
+      "text": "∀ (q : ℝ) (d : ℕ), 2 ≤ q"
+     },
+     {
+      "decl": "ShiftSym.P10.lemA2Part3Statement",
+      "text": "∀ (q : ℝ) (d : ℕ), 2 ≤ q"
+     }
+    ],
+    "note": "q is a real number in all three parts."
+   },
+   {
+    "id": "hyp.d",
+    "kind": "hypothesis",
+    "label": "d ≥ 1 (standing), j ≤ d (implicit)",
+    "tex": [
+     {
+      "text": "Fix integers $n\\ge2$, $d\\ge1$",
+      "scope": {
+       "lines": [
+        282,
+        287
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA2Part1Statement",
+      "text": "1 ≤ d → j ≤ d"
+     },
+     {
+      "decl": "ShiftSym.P10.lemA2Part2Statement",
+      "text": "1 ≤ d"
+     },
+     {
+      "decl": "ShiftSym.P10.lemA2Part3Statement",
+      "text": "1 ≤ d"
+     }
+    ],
+    "note": "The lemma states no range for d and j. Lean takes the standing d ≥ 1 (Definition 2.1), which (3) needs: at d = 0 its right side 4(d−1)q^D = −4 is negative while the empty sum is 0. In (1) it adds j ≤ d, which loses nothing: for j > d the product formula contains the factor q^{d−d} − 1 = 0, so [d j]_q = 0."
+   },
+   {
+    "id": "def.gp",
+    "kind": "definition",
+    "label": "[d j]_q by the product formula",
+    "tex": [
+     {
+      "text": "\\gaussbinom dj_q",
+      "occ": 1
+     },
+     {
+      "text": "\\gaussbinom dr_p=\\prod_{i=0}^{r-1}\n\\frac{p^{d-i}-1}{p^{i+1}-1}",
+      "scope": {
+       "lines": [
+        354,
+        355
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.gaussProd",
+      "text": "∏ i ∈ Finset.range r, ((q ^ (d - i) - 1) / (q ^ (i + 1) - 1))"
+     }
+    ],
+    "note": "The §3 product formula with p replaced by the real q."
+   },
+   {
+    "id": "def.rd",
+    "kind": "definition",
+    "label": "r_d(q,j) = q^{C(j,2)}[d j]_q",
+    "tex": [
+     {
+      "text": "r_d(q,j)=q^{\\binom j2}\\gaussbinom dj_q"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.rdReal",
+      "text": "q ^ (j.choose 2) * gaussProd q d j"
+     }
+    ],
+    "note": "Real-argument version of `rdCoeff`."
+   },
+   {
+    "id": "def.pf",
+    "kind": "representation",
+    "label": "'defined by the product formula'",
+    "tex": [
+     {
+      "text": "defined by the product formula"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.gaussProd",
+      "text": "noncomputable def gaussProd (q : ℝ) (d r : ℕ) : ℝ"
+     }
+    ],
+    "note": "For non-integer q the q-Pascal `gaussBinom` (ℕ-valued) is unavailable, hence a separate ℝ definition. Applying the lemma to integer q needs the bridge `gaussBinomEqProdStatement`."
+   },
+   {
+    "id": "i1",
+    "kind": "same",
+    "label": "(1) [d j]_q ≤ 4q^{j(d−j)}",
+    "tex": [
+     {
+      "text": "\\gaussbinom dj_q\\le 4q^{\\,j(d-j)}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA2Part1Statement",
+      "text": "gaussProd q d j ≤ 4 * q ^ (j * (d - j))"
+     }
+    ],
+    "note": "Inequality in ℝ."
+   },
+   {
+    "id": "i1.lhs",
+    "kind": "same",
+    "label": "[d j]_q",
+    "tex": [
+     {
+      "text": "\\gaussbinom dj_q",
+      "occ": 3
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA2Part1Statement",
+      "text": "gaussProd q d j",
+      "occ": 2
+     }
+    ],
+    "note": "Product-formula Gaussian binomial."
+   },
+   {
+    "id": "i1.rhs",
+    "kind": "representation",
+    "label": "4q^{j(d−j)}",
+    "tex": [
+     {
+      "text": "4q^{\\,j(d-j)}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA2Part1Statement",
+      "text": "4 * q ^ (j * (d - j))"
+     }
+    ],
+    "note": "Natural-number exponent; d − j exact as j ≤ d."
+   },
+   {
+    "id": "i2",
+    "kind": "same",
+    "label": "(2) [d 1]_q ≤ 2q^{d−1}",
+    "tex": [
+     {
+      "text": "\\gaussbinom d1_q\\le 2q^{\\,d-1}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA2Part2Statement",
+      "text": "gaussProd q d 1 ≤ 2 * q ^ (d - 1)"
+     }
+    ],
+    "note": "Inequality in ℝ."
+   },
+   {
+    "id": "i2.rhs",
+    "kind": "representation",
+    "label": "2q^{d−1}",
+    "tex": [
+     {
+      "text": "2q^{\\,d-1}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA2Part2Statement",
+      "text": "2 * q ^ (d - 1)"
+     }
+    ],
+    "note": "d − 1 is ℕ-subtraction, exact under d ≥ 1."
+   },
+   {
+    "id": "i3",
+    "kind": "same",
+    "label": "(3) Σ_{j=2}^d r_d(q,j) ≤ 4(d−1)q^D",
+    "tex": [
+     {
+      "text": "\\sum_{j=2}^{d}r_d(q,j)\\le 4(d-1)\\,q^{D}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA2Part3Statement",
+      "text": "∑ j ∈ Finset.Icc 2 d, rdReal q d j ≤ 4 * ((d : ℝ) - 1) * q ^ DD d"
+     }
+    ],
+    "note": "Inequality in ℝ."
+   },
+   {
+    "id": "i3.lhs",
+    "kind": "representation",
+    "label": "Σ_{j=2}^d r_d(q,j)",
+    "tex": [
+     {
+      "text": "\\sum_{j=2}^{d}r_d(q,j)"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA2Part3Statement",
+      "text": "∑ j ∈ Finset.Icc 2 d, rdReal q d j"
+     }
+    ],
+    "note": "Sum over the interval [2, d] (empty for d = 1)."
+   },
+   {
+    "id": "i3.rhs",
+    "kind": "representation",
+    "label": "4(d−1)q^D",
+    "tex": [
+     {
+      "text": "4(d-1)\\,q^{D}"
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.lemA2Part3Statement",
+      "text": "4 * ((d : ℝ) - 1) * q ^ DD d"
+     }
+    ],
+    "note": "d − 1 in ℝ; D = `DD d`."
+   },
+   {
+    "id": "def.D",
+    "kind": "definition",
+    "label": "D := d(d−1)/2",
+    "tex": [
+     {
+      "text": "$D:=d(d-1)/2$",
+      "scope": {
+       "lines": [
+        1718,
+        1726
+       ]
+      }
+     }
+    ],
+    "lean": [
+     {
+      "decl": "ShiftSym.P10.DD",
+      "text": "d * (d - 1) / 2"
+     }
+    ],
+    "note": "ℕ-division, exact since d(d−1) is even (`DD_eq_choose`: DD d = C(d,2))."
+   }
+  ]
+ }
+}

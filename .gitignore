@@ -1,0 +1,14 @@
+# LaTeX build artifacts of the paper (repository root only; the logs and outputs
+# committed under research/ are records and stay tracked)
+/*.aux
+/*.log
+/*.out
+/*.toc
+/*.synctex.gz
+
+# Python
+__pycache__/
+*.pyc
+
+# Lean build artifacts (toolchain + mathlib cache, ~8 GB)
+research/formal/shiftsym/.lake/

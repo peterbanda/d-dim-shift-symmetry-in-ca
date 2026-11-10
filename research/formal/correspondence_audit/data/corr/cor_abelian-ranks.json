@@ -1,0 +1,507 @@
+{
+  "label": "cor:abelian-ranks",
+  "statement": {
+    "summary": "Corollary 4.8 is frozen as five Props of group 13 (Paper/S13_AbelianGroups.lean). (i): `onlyRanksStatement` (two finite abelian groups with the same order and the same p-rank at every prime have the same |S|; for every σ) and `cardTwoPrimeStatement` (the example). (ii): `monotoneStatement` (the identity |S_{G'}| − |S_G| = p^{d_p(G)} ac(G'') in ℤ and ac(G'') > 0, for every supplied G'' of order N/p with the ranks of G), `stepStrictStatement` (|S_G| < |S_{G'}| with no G'' supplied) and `cyclicMinStatement` (|S_{ℤ_N}| ≤ |S_G|: 'the fewest' read as attaining the minimum; that the cyclic group is the unique minimizer is NOT certified). ac is not a Lean definition; it is written out inside `monotoneStatement`. The proof (q-Pascal, existence of G'') is not audited.",
+    "lean_decls": [
+      {
+        "decl": "ShiftSym.P13.onlyRanksStatement",
+        "role": "statement (i)"
+      },
+      {
+        "decl": "ShiftSym.P13.cardTwoPrimeStatement",
+        "role": "statement (i), the example"
+      },
+      {
+        "decl": "ShiftSym.P13.monotoneStatement",
+        "role": "statement (ii): identity and ac(G'') > 0"
+      },
+      {
+        "decl": "ShiftSym.P13.stepStrictStatement",
+        "role": "statement (ii): strict increase, no G'' supplied"
+      },
+      {
+        "decl": "ShiftSym.P13.cyclicMinStatement",
+        "role": "statement (ii): the cyclic group has the fewest"
+      },
+      {
+        "decl": "ShiftSym.P13.pRank",
+        "role": "definition"
+      },
+      {
+        "decl": "ShiftSym.P13.IsShiftSymmetricG",
+        "role": "definition"
+      }
+    ],
+    "deltas": [
+      "Groups are types with `[AddCommGroup _] [Finite _]`, alphabet `Fin σ`, |S_G| = `Nat.card` of the `IsShiftSymmetricG` configurations, d_p(G) = `pRank G p` (see the item of Theorem 4.7).",
+      "σ ≥ 2 is kept in (ii) (`monotoneStatement`, `stepStrictStatement`, `cyclicMinStatement`); (i) (`onlyRanksStatement`) is stated for every σ; the example fixes σ = 2.",
+      "'depends on G only through N and its p-ranks' is read as: equal order and equal p-rank at every prime imply equal counts (equality in ℕ).",
+      "ac(H) = σ^{|H|} − |S_H| is not a Lean definition: it is written out in ℤ inside `monotoneStatement` (only ac(G'') occurs). That it counts the aperiodic configurations is not frozen.",
+      "G'' of order N/p is `Nat.card G'' * p = Nat.card G` (no ℕ-division); 'the ranks of G' are compared at every prime (S13 docstring Delta).",
+      "The strict increase is frozen twice: 0 < ac(G'') for a supplied G'' (`monotoneStatement`), and |S_G| < |S_{G'}| with no G'' supplied (`stepStrictStatement`; the existence of G'' is part of what is certified). The existence of G'' itself is not a frozen Prop.",
+      "'the cyclic group has the fewest': the cyclic group of order N = `Nat.card G` is `ZMod N`; read as |S_{ℤ_N}| ≤ |S_G| for every finite abelian G (attaining the minimum). Uniqueness of the minimizer is neither claimed by the text (S13 docstring reading) nor certified.",
+      "The example groups are `∀ i : Fin 2, ZMod (![2, 8] i)` and `∀ i : Fin 2, ZMod (![4, 4] i)` (the rectangular form); alphabet `Fin 2`."
+    ],
+    "maps": [
+      {
+        "id": "hyp.s",
+        "kind": "hypothesis",
+        "label": "σ ≥ 2 in (ii)",
+        "tex": [
+          {
+            "text": "$\\sigma\\ge2$"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.monotoneStatement",
+            "text": "2 ≤ σ"
+          },
+          {
+            "decl": "ShiftSym.P13.stepStrictStatement",
+            "text": "2 ≤ σ"
+          },
+          {
+            "decl": "ShiftSym.P13.cyclicMinStatement",
+            "text": "2 ≤ σ"
+          }
+        ],
+        "note": "Verbatim antecedent of the three Props of (ii). For σ = 1 the only configuration is constant, so ac(G'') = 0 whenever |G''| ≥ 2: the hypothesis is needed for the positivity."
+      },
+      {
+        "id": "i.s",
+        "kind": "generalization",
+        "label": "(i) holds for every σ",
+        "tex": [
+          {
+            "text": "Let $\\sigma\\ge2$"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.onlyRanksStatement",
+            "text": "(σ : ℕ) : Prop"
+          }
+        ],
+        "note": "`onlyRanksStatement` has no hypothesis on σ: it is stated for every σ (incl. 0, 1), more than the corollary claims."
+      },
+      {
+        "id": "ac",
+        "kind": "representation",
+        "label": "ac(G) = σ^{|G|} − |S_G|",
+        "tex": [
+          {
+            "text": "$\\mathrm{ac}(G)=\\sigma^{|G|}-|S_G|$"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.monotoneStatement",
+            "text": "((σ : ℤ) ^ Nat.card G'' - Nat.card {s : G'' → Fin σ // IsShiftSymmetricG s})"
+          }
+        ],
+        "note": "Not a Lean definition; written out in ℤ for G'', the only group whose ac occurs in the statement."
+      },
+      {
+        "id": "ac.name",
+        "kind": "paper-only",
+        "label": "'for the number of aperiodic configurations'",
+        "tex": [
+          {
+            "text": "for the number of\naperiodic configurations"
+          }
+        ],
+        "lean": [],
+        "note": "Naming (aperiodic = not shift-symmetric). That σ^{|G|} − |S_G| counts them is the complement count, elementary and not frozen; the Lean statements use only the expression."
+      },
+      {
+        "id": "i",
+        "kind": "representation",
+        "label": "(i) |S_G| depends on G only through N and the p-ranks",
+        "tex": [
+          {
+            "text": "$|S_G|$ depends on $G$ only through $N$ and its $p$-ranks"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.onlyRanksStatement",
+            "text": "Nat.card G = Nat.card H → (∀ p, p.Prime → pRank G p = pRank H p) →\n    Nat.card {s : G → Fin σ // IsShiftSymmetricG s}\n      = Nat.card {s : H → Fin σ // IsShiftSymmetricG s}"
+          }
+        ],
+        "note": "'Depends only through' is rendered as: for any two finite abelian groups G, H, equal order and equal p-ranks imply equal counts. Equality in ℕ."
+      },
+      {
+        "id": "i.G",
+        "kind": "same",
+        "label": "two groups G, H to compare",
+        "tex": [
+          {
+            "text": "depends on $G$"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.onlyRanksStatement",
+            "text": "(G H : Type*) [AddCommGroup G] [Finite G] [AddCommGroup H] [Finite H]"
+          }
+        ],
+        "note": "Two finite abelian groups (possibly in different universes)."
+      },
+      {
+        "id": "i.N",
+        "kind": "same",
+        "label": "through N: same order",
+        "tex": [
+          {
+            "text": "$N$",
+            "occ": 1
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.onlyRanksStatement",
+            "text": "Nat.card G = Nat.card H"
+          }
+        ],
+        "note": "N = |G|."
+      },
+      {
+        "id": "i.rk",
+        "kind": "same",
+        "label": "through its p-ranks: same p-rank at every prime",
+        "tex": [
+          {
+            "text": "its $p$-ranks"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.onlyRanksStatement",
+            "text": "(∀ p, p.Prime → pRank G p = pRank H p)"
+          }
+        ],
+        "note": "All primes; for p ∤ N both ranks are 0, so this is the same as comparing the ranks at p ∣ N."
+      },
+      {
+        "id": "ex",
+        "kind": "representation",
+        "label": "example: ℤ_2×ℤ_24 and ℤ_4×ℤ_12 both have 50 388 256 (σ = 2)",
+        "tex": [
+          {
+            "text": "$\\ZZ_2\\times\\ZZ_{24}$ and $\\ZZ_4\\times\\ZZ_{12}$ both have $50\\,388\\,256$\nshift-symmetric configurations for $\\sigma=2$"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.cardTwoPrimeStatement",
+            "text": "Nat.card {s : (∀ i : Fin 2, ZMod (![2, 24] i)) → Fin 2 // IsShiftSymmetricG s} = 50388256 ∧\n    Nat.card {s : (∀ i : Fin 2, ZMod (![4, 12] i)) → Fin 2 // IsShiftSymmetricG s} = 50388256"
+          }
+        ],
+        "note": "Both counts are certified. That the example illustrates (i) (both groups have N = 48, 2-rank 2 and 3-rank 1) follows from the frozen rectCardStatement and rectRankStatement and is not frozen again; non-isomorphism is not claimed."
+      },
+      {
+        "id": "ex.28",
+        "kind": "representation",
+        "label": "ℤ_2 × ℤ_24",
+        "tex": [
+          {
+            "text": "\\ZZ_2\\times\\ZZ_{24}"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.cardTwoPrimeStatement",
+            "text": "(∀ i : Fin 2, ZMod (![2, 24] i))"
+          }
+        ],
+        "note": "Rectangular form: the Π-type over Fin 2 with factors ZMod 2, ZMod 24."
+      },
+      {
+        "id": "ex.44",
+        "kind": "representation",
+        "label": "ℤ_4 × ℤ_12",
+        "tex": [
+          {
+            "text": "\\ZZ_4\\times\\ZZ_{12}"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.cardTwoPrimeStatement",
+            "text": "(∀ i : Fin 2, ZMod (![4, 12] i))"
+          }
+        ],
+        "note": "Rectangular form: factors ZMod 4, ZMod 12."
+      },
+      {
+        "id": "ex.s",
+        "kind": "representation",
+        "label": "σ = 2 ↦ alphabet Fin 2",
+        "tex": [
+          {
+            "text": "$\\sigma=2$"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.cardTwoPrimeStatement",
+            "text": "→ Fin 2 //",
+            "occ": 1
+          },
+          {
+            "decl": "ShiftSym.P13.cardTwoPrimeStatement",
+            "text": "→ Fin 2 //",
+            "occ": 2
+          }
+        ],
+        "note": "The alphabet `Fin 2` (codomain); not to be confused with the index type `Fin 2` of the two factors."
+      },
+      {
+        "id": "ii.G",
+        "kind": "same",
+        "label": "finite abelian groups G, G', G''",
+        "tex": [
+          {
+            "text": "abelian group $G''$"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.monotoneStatement",
+            "text": "(G G' G'' : Type*) [AddCommGroup G] [Finite G] [AddCommGroup G'] [Finite G']\n    [AddCommGroup G''] [Finite G'']"
+          },
+          {
+            "decl": "ShiftSym.P13.stepStrictStatement",
+            "text": "(G G' : Type*) [AddCommGroup G] [Finite G] [AddCommGroup G'] [Finite G']"
+          }
+        ],
+        "note": "G and G' are finite abelian groups as in the setting; G'' is finite since its order is N/p."
+      },
+      {
+        "id": "ii.order",
+        "kind": "hypothesis",
+        "label": "G' has the same order as G",
+        "tex": [
+          {
+            "text": "$G'$ has the same order as $G$"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.monotoneStatement",
+            "text": "Nat.card G' = Nat.card G"
+          },
+          {
+            "decl": "ShiftSym.P13.stepStrictStatement",
+            "text": "Nat.card G' = Nat.card G"
+          }
+        ],
+        "note": "Verbatim."
+      },
+      {
+        "id": "ii.step",
+        "kind": "hypothesis",
+        "label": "d_p(G') = d_p(G) + 1 for one prime p",
+        "tex": [
+          {
+            "text": "$d_p(G')=d_p(G)+1$ for one prime\n$p$"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.monotoneStatement",
+            "text": "p.Prime"
+          },
+          {
+            "decl": "ShiftSym.P13.monotoneStatement",
+            "text": "pRank G' p = pRank G p + 1"
+          },
+          {
+            "decl": "ShiftSym.P13.stepStrictStatement",
+            "text": "p.Prime"
+          },
+          {
+            "decl": "ShiftSym.P13.stepStrictStatement",
+            "text": "pRank G' p = pRank G p + 1"
+          }
+        ],
+        "note": "p is a parameter with `p.Prime`; d_p(·) = `pRank · p`."
+      },
+      {
+        "id": "ii.others",
+        "kind": "hypothesis",
+        "label": "the other ranks agree",
+        "tex": [
+          {
+            "text": "the other ranks agree"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.monotoneStatement",
+            "text": "(∀ q, q.Prime → q ≠ p → pRank G' q = pRank G q)"
+          },
+          {
+            "decl": "ShiftSym.P13.stepStrictStatement",
+            "text": "(∀ q, q.Prime → q ≠ p → pRank G' q = pRank G q)"
+          }
+        ],
+        "note": "At every prime q ≠ p."
+      },
+      {
+        "id": "ii.eq",
+        "kind": "same",
+        "label": "|S_{G'}| − |S_G| = p^{d_p(G)} ac(G'')",
+        "tex": [
+          {
+            "text": "|S_{G'}|-|S_G|=p^{d_p(G)}\\,\\mathrm{ac}(G'')"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.monotoneStatement",
+            "text": "(Nat.card {s : G' → Fin σ // IsShiftSymmetricG s} : ℤ)\n          - Nat.card {s : G → Fin σ // IsShiftSymmetricG s}\n        = (p : ℤ) ^ pRank G p *\n            ((σ : ℤ) ^ Nat.card G'' - Nat.card {s : G'' → Fin σ // IsShiftSymmetricG s})"
+          }
+        ],
+        "note": "Equation in ℤ; ac(G'') written out."
+      },
+      {
+        "id": "ii.pk",
+        "kind": "same",
+        "label": "p^{d_p(G)}",
+        "tex": [
+          {
+            "text": "p^{d_p(G)}"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.monotoneStatement",
+            "text": "(p : ℤ) ^ pRank G p"
+          }
+        ],
+        "note": "d_p(G) = `pRank G p`."
+      },
+      {
+        "id": "ii.pos",
+        "kind": "representation",
+        "label": "… > 0 ↔ 0 < ac(G'')",
+        "tex": [
+          {
+            "text": ">0"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.monotoneStatement",
+            "text": "0 < (σ : ℤ) ^ Nat.card G'' - Nat.card {s : G'' → Fin σ // IsShiftSymmetricG s}"
+          }
+        ],
+        "note": "The paper's chain says the common value p^{d_p(G)} ac(G'') is positive; Lean freezes 0 < ac(G''), equivalent since p^{d_p(G)} > 0."
+      },
+      {
+        "id": "ii.strict",
+        "kind": "same",
+        "label": "|S_{G'}| − |S_G| > 0 (no G'' needed)",
+        "tex": [
+          {
+            "text": "$|S_{G'}|-|S_G|=p^{d_p(G)}\\,\\mathrm{ac}(G'')>0$"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.stepStrictStatement",
+            "text": "Nat.card {s : G → Fin σ // IsShiftSymmetricG s}\n        < Nat.card {s : G' → Fin σ // IsShiftSymmetricG s}"
+          }
+        ],
+        "note": "The positivity of |S_{G'}| − |S_G| concerns G and G' alone; `stepStrictStatement` freezes it under the hypotheses of (ii) with no G'' supplied, so it does not become vacuous if no G'' existed (the existence is argued in the proof only)."
+      },
+      {
+        "id": "ii.G2",
+        "kind": "representation",
+        "label": "for any abelian group G'' of order N/p with the ranks of G",
+        "tex": [
+          {
+            "text": "for any abelian group $G''$ of\norder $N/p$ with the ranks of $G$"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.monotoneStatement",
+            "text": "Nat.card G'' * p = Nat.card G → (∀ q, q.Prime → pRank G'' q = pRank G q) →"
+          }
+        ],
+        "note": "'For any': G'' is a parameter of the Prop, universally quantified by its `_proved` theorem. Order N/p as |G''|·p = N (no ℕ-division); 'the ranks of G' at every prime, including p."
+      },
+      {
+        "id": "cyc",
+        "kind": "representation",
+        "label": "among abelian groups of order N, the cyclic group has the fewest",
+        "tex": [
+          {
+            "text": "among the abelian groups\nof order $N$, the cyclic group has the fewest shift-symmetric\nconfigurations"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.cyclicMinStatement",
+            "text": "Nat.card {s : ZMod (Nat.card G) → Fin σ // IsShiftSymmetricG s}\n      ≤ Nat.card {s : G → Fin σ // IsShiftSymmetricG s}"
+          }
+        ],
+        "note": "Read as attaining the minimum: |S_{ℤ_N}| ≤ |S_G| for every finite abelian G of order N. NOT certified: that the cyclic group is the unique minimizer (every non-cyclic group strictly more). It follows from `stepStrictStatement` plus the existence of a group with one rank lowered, which only the proof states. If you read 'the fewest' as strict, this mapping is weaker than the paper."
+      },
+      {
+        "id": "cyc.N",
+        "kind": "representation",
+        "label": "among the abelian groups of order N",
+        "tex": [
+          {
+            "text": "among the abelian groups\nof order $N$"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.cyclicMinStatement",
+            "text": "(G : Type*) [AddCommGroup G] [Finite G]"
+          }
+        ],
+        "note": "Every finite abelian G is compared with the cyclic group of its own order N = `Nat.card G`; this ranges over all abelian groups of every order N."
+      },
+      {
+        "id": "cyc.Z",
+        "kind": "representation",
+        "label": "the cyclic group of order N ↦ ZMod N",
+        "tex": [
+          {
+            "text": "the cyclic group"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.cyclicMinStatement",
+            "text": "ZMod (Nat.card G)"
+          }
+        ],
+        "note": "`ZMod N` with N = `Nat.card G` ≥ 1 is the cyclic group of order N."
+      },
+      {
+        "id": "cyc.le",
+        "kind": "representation",
+        "label": "has the fewest ↦ ≤",
+        "tex": [
+          {
+            "text": "has the fewest"
+          }
+        ],
+        "lean": [
+          {
+            "decl": "ShiftSym.P13.cyclicMinStatement",
+            "text": "≤ Nat.card {s : G → Fin σ // IsShiftSymmetricG s}"
+          }
+        ],
+        "note": "The ≤ (minimum) reading; see the map cyc."
+      }
+    ]
+  }
+}

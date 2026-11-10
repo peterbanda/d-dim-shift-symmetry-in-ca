@@ -1,0 +1,6 @@
+WARN  lem_fix.json:statement:ii.hyp: no TeX anchor (kind hypothesis)
+25 correspondence files, 476 mappings, 0 errors, 1 warnings (144 Lean anchors not exactly one info-tree node; --verbose lists them)
+compiling instrumented paper (3 pdflatex passes in docker) ...
+layout identical to the official PDF (all words at the same coordinates)
+paper line citations: 20 Lean files cite v3.1 (17 files), v6 (1 files), v5 (1 files), v4 (1 files); mapped onto the current paper (v9)
+wrote research/formal/correspondence_audit/data/audit_data.json: 25 items (25 with correspondences), 476 mappings

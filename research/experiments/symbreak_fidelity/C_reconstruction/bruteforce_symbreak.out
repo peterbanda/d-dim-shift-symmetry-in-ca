@@ -1,0 +1,33 @@
+Cor 8.2 symmetry-breaking clause: independent brute force (sigma = 2)
+seed 20261027
+
+sanity |S_Z2 x Z2| = 8 (reference 8)
+sanity |S_Z3 x Z3| = 26 (reference 26)
+sanity |S_Z2 x Z2 x Z2| = 72 (reference 72)
+
+{'torus': 'Z2', 'm': 2, 'configs': 4, 'pairs': 16, 'breaking': 4, 'breaking_sym': 0, 'breaking_asym': 4, 'orbit_viol': 0, 'orbit_sharp': True, 'allmaps': 16, 'iter_viol': 0, 'maxk': 3, 'reach_sharp': True, 'reverse_incl_failing_maps': 8}
+{'torus': 'Z3', 'm': 3, 'configs': 8, 'pairs': 64, 'breaking': 12, 'breaking_sym': 0, 'breaking_asym': 12, 'orbit_viol': 0, 'orbit_sharp': True, 'allmaps': 256, 'iter_viol': 0, 'maxk': 6, 'reach_sharp': True, 'reverse_incl_failing_maps': 112}
+{'torus': 'Z4', 'm': 4, 'configs': 16, 'pairs': 256, 'breaking': 52, 'breaking_sym': 4, 'breaking_asym': 48, 'orbit_viol': 0, 'orbit_sharp': True, 'allmaps': 65536, 'iter_viol': 0, 'maxk': 12, 'reach_sharp': True, 'reverse_incl_failing_maps': 51712}
+{'torus': 'Z2 x Z2', 'm': 4, 'configs': 16, 'pairs': 256, 'breaking': 100, 'breaking_sym': 36, 'breaking_asym': 64, 'orbit_viol': 0, 'orbit_sharp': True, 'allmaps': 65536, 'iter_viol': 0, 'maxk': 5, 'reach_sharp': True, 'reverse_incl_failing_maps': 63488}
+{'torus': 'Z5', 'm': 5, 'configs': 32, 'pairs': 1024, 'breaking': 60, 'breaking_sym': 0, 'breaking_asym': 60, 'orbit_viol': 0, 'orbit_sharp': True}
+{'torus': 'Z6', 'm': 6, 'configs': 64, 'pairs': 4096, 'breaking': 580, 'breaking_sym': 40, 'breaking_asym': 540, 'orbit_viol': 0, 'orbit_sharp': True, 'sampled_maps': 25384, 'sampled_iter_viol': 0, 'sampled_maxk': 49}
+{'torus': 'Z2 x Z2 x Z2', 'm': 8, 'configs': 256, 'pairs': 65536, 'breaking': 17476, 'breaking_sym': 4228, 'breaking_asym': 13248, 'orbit_viol': 0, 'orbit_sharp': True}
+{'torus': 'Z3 x Z3', 'm': 9, 'configs': 512, 'pairs': 262144, 'breaking': 13116, 'breaking_sym': 480, 'breaking_asym': 12636, 'orbit_viol': 0, 'orbit_sharp': True}
+{'torus': 'Z2 x Z4', 'm': 8, 'configs': 256, 'pairs': 65536, 'breaking': 9700, 'breaking_sym': 1060, 'breaking_asym': 8640, 'orbit_viol': 0, 'orbit_sharp': True}
+
+Z2 task-level (all 17^4 = 83521 (adm,req) tasks x all 16 maps): tasks with RequiresSymBreak = 40257 ; with RequiresLeavingS = 34680 ; SymBreak-but-not-LeavingS = 5577 (of which with all accept sets nonempty: 0 ) ; SymBreak tasks solved by some equivariant map = 0
+
+| torus | #configs | #equivariant maps checked | violations | #breaking pairs | #symmetric-but-breaking pairs |
+|---|---|---|---|---|---|
+| Z2 | 4 | all 16 (iterates k<=3) + one-step orbit-exhaustive | 0 | 4 | 0 |
+| Z3 | 8 | all 256 (iterates k<=6) + one-step orbit-exhaustive | 0 | 12 | 0 |
+| Z4 | 16 | all 65536 (iterates k<=12) + one-step orbit-exhaustive | 0 | 52 | 4 |
+| Z2 x Z2 | 16 | all 65536 (iterates k<=5) + one-step orbit-exhaustive | 0 | 100 | 36 |
+| Z5 | 32 | one-step orbit-exhaustive (all 2^32) | 0 | 60 | 0 |
+| Z6 | 64 | one-step orbit-exhaustive (all 2^64) + 25384 explicit maps iterated (k<=49) | 0 | 580 | 40 |
+| Z2 x Z2 x Z2 | 256 | one-step orbit-exhaustive (all 2^256) | 0 | 17476 | 4228 |
+| Z3 x Z3 | 512 | one-step orbit-exhaustive (all 2^512) | 0 | 13116 | 480 |
+| Z2 x Z4 | 256 | one-step orbit-exhaustive (all 2^256) | 0 | 9700 | 1060 |
+
+reachable set {Phi^k(x)} == {y : Stab x <= Stab y} for every x (sharpness): True
+CPU seconds: 9.6
