@@ -112,8 +112,8 @@
       "text": "q^m:=q^m(1)",
       "scope": {
        "lines": [
-        1713,
-        1721
+        1716,
+        1724
        ]
       }
      }
@@ -135,8 +135,8 @@
       "text": "$q^m(c)$ denotes the truncation of \\eqref{eq:main-formula} to\nthe first $m$ primes with exponents scaled by $c$",
       "scope": {
        "lines": [
-        1713,
-        1721
+        1716,
+        1724
        ]
       }
      },
