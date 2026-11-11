@@ -22,7 +22,7 @@ translation-equivariant dynamics can never destroy a symmetry, and gives a fast 
 content of every numbered statement is machine-checked in Lean 4**, and the correspondence between each theorem and its
 formal statement was audited by hand.
 
-This repository holds the paper (`shift_symmetry_d_dimensions.pdf`) and its supplementary material: the scripts behind
+This repository holds the paper ([`shift_symmetry_d_dimensions.pdf`](https://github.com/peterbanda/d-dim-shift-symmetry-in-ca/raw/main/shift_symmetry_d_dimensions.pdf)) and its supplementary material: the scripts behind
 every enumeration, scan, and figure, the Lean development, and the correspondence audit.
 
 ## Main results
