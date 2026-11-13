@@ -7,6 +7,7 @@ Peter Banda (Cequence) · John Caughman (Portland State University) · Tobi Lehm
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Lean 4](https://img.shields.io/badge/Lean_4-370_statements_machine--checked-blue.svg)](research/formal/shiftsym/)
 [![Paper](https://img.shields.io/badge/paper-PDF-red.svg)](shift_symmetry_d_dimensions.pdf)
+[![arXiv](https://img.shields.io/badge/arXiv-2611.15751-b31b1b.svg)](https://arxiv.org/abs/2611.15751)
 
 <p align="center">
   <img src="docs/figure1.png" width="100%" alt="Four example configurations: three on the 6×6 torus and one on the 4×4×4 torus, with their stabilizers">
@@ -24,6 +25,9 @@ formal statement was audited by hand.
 
 This repository holds the paper ([`shift_symmetry_d_dimensions.pdf`](https://github.com/peterbanda/d-dim-shift-symmetry-in-ca/raw/main/shift_symmetry_d_dimensions.pdf)) and its supplementary material: the scripts behind
 every enumeration, scan, and figure, the Lean development, and the correspondence audit.
+
+The paper is on arXiv: [arXiv:2611.15751](https://arxiv.org/abs/2611.15751) (v1, 11 November 2026; math.CO,
+cross-listed in math.DS). The PDF in this repository is the same version.
 
 ## Main results
 
@@ -172,28 +176,37 @@ development at <https://functorial.inc/>.
 ## Scope of this release
 
 The authors' working repository also contains follow-up research that is not part of this
-paper. It is omitted here, together with its Lean modules (`Shiftsym/Ext/`, `AuditExt.lean`,
-`StatementE2.lean`, `Lemmas/Linear.lean`, `Lemmas/Mismatch.lean`, and the template
-`Basic.lean`); `StatementE1.lean` stays, because the paper's proofs use its relative
-enumeration theorem. The release copy extracts only that interface and omits the unrelated linear-CA definitions and statements; its release fingerprint documents the extraction.
-Consequently these files differ from the working repository:
+paper (further papers with their own Lean packages, and experiments); it is omitted here. The
+Lean development `research/formal/shiftsym/` is the working repository's, file for file, except
+for the unused template `Basic.lean`; it includes `Shiftsym/StatementE1.lean` (the relative
+enumeration theorem), which the paper's proofs use. These files differ from the working repository:
 
-- `Shiftsym/StatementE1.lean` retains only the relative-enumeration definitions and statement;
-- `Shiftsym.lean` and `Shiftsym/Audit.lean` do not import or list the omitted declarations or modules;
-  `frozen_statements.sha256` lists no omitted file; `frozen_deps.lean` and `kernel_replay.lean`
-  do not import the extension audit;
 - the viewer data (`correspondence_audit/data/audit_data.json`) lists no omitted module and no
   absolute path of the working tree;
 - the run log, the statement-preservation table and the formalization plan carry a note where a
-  section about the omitted work was removed; in two review records
-  (`main_paper_audit/independent_review.md`, `pr1_window20/REVIEW.md`) links to absolute paths of
-  the working tree are rewritten as repository links.
+  section about the omitted work was removed; in the review records, links to absolute paths of
+  the working tree are rewritten as repository links, and files that are not exported are noted.
 
 Scientific records retain their verification results; internal editorial discussions and repository-access decisions are omitted from the release. Some of them, and some comments and frozen docstrings
 (which cannot change without invalidating their fingerprints), name files of the working
 repository that are not published here (`scratchpad/…`, `research/claims.yaml`,
 `research/proofs/…`, `problem.md`, `FOLLOW_UPS.md`, `research/paper_edits/…`). Commit
 identifiers in the records refer to the working repository.
+
+## How to cite
+
+```bibtex
+@misc{banda2026shiftsymmetric,
+  title         = {Shift-Symmetric Configurations in $d$-Dimensional Cellular Automata:
+                   Enumeration, Bounds, Irreversibility, and Detection},
+  author        = {Banda, Peter and Caughman, John and Lehman, Tobi},
+  year          = {2026},
+  eprint        = {2611.15751},
+  archivePrefix = {arXiv},
+  primaryClass  = {math.CO},
+  url           = {https://arxiv.org/abs/2611.15751}
+}
+```
 
 ## License
 
