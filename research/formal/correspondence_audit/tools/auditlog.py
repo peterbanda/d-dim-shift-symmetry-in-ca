@@ -7,7 +7,6 @@ mapping marks) and the report are pure functions of that file.
 
   auditlog.py report      write logs/audit_report_<UTC stamp>.{md,json} from the events
   auditlog.py state       print the replayed state as JSON
-  auditlog.py --instance DIR report|state    the same for another paper (tools/instance.py)
 """
 from __future__ import annotations
 
@@ -29,20 +28,6 @@ def set_log_dir(d: Path):
     global LOGS, EVENTS
     LOGS = d
     EVENTS = d / "events.jsonl"
-
-
-def set_instance(inst):
-    """Use the data and the log of an audit instance (tools/instance.py)."""
-    global DATA
-    DATA = inst.data / "audit_data.json"
-    set_log_dir(inst.logs)
-
-
-def lean_file(data: dict, f: str) -> Path:
-    """A Lean file of the bundle: in the package of its top-level module (instances with several
-    packages record them in `lean_roots`), else under `lean_root`."""
-    roots = data.get("lean_roots") or {}
-    return REPO / roots.get(f.split("/")[0], data["lean_root"]) / f
 
 
 def rel(p: Path) -> str:
@@ -193,7 +178,7 @@ def report() -> tuple[Path, Path, str]:
         "paper_tex": sha256(REPO / data["fingerprints"]["paper_tex"]["path"]),
     }
     lean_changed = [f for f, h in data["fingerprints"]["lean"].items()
-                    if sha256(lean_file(data, f)) != h]
+                    if sha256(REPO / data["lean_root"] / f) != h]
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     summary = {
         "generated": now_iso(), "git_head_at_build": data["git_head"], "data_built": data["built"],
@@ -283,11 +268,6 @@ def report() -> tuple[Path, Path, str]:
 
 
 if __name__ == "__main__":
-    sys.path.insert(0, str(HERE))
-    from instance import from_argv
-    _inst = from_argv()
-    if not _inst.is_default():
-        set_instance(_inst)
     cmd = sys.argv[1] if len(sys.argv) > 1 else "report"
     if cmd == "state":
         print(json.dumps(replay(read_events()), indent=1, ensure_ascii=False))

@@ -133,14 +133,10 @@ function closeItemLog() {
 
 // ------------------------------------------------------------------ Lean files
 const decoder = (s) => Array.from(s);
-// the Lake package of a Lean file: audits of a paper with several packages list them in
-// `lean_roots` (top-level module -> package directory); otherwise everything is under `lean_root`
-const leanRoot = (file) => (S.data.lean_roots || {})[file.split("/")[0]] || S.data.lean_root;
-const isProjectModule = (m) => !!m && Object.keys(S.data.lean_roots || { Shiftsym: 1 }).some((p) => m === p || m.startsWith(p + "."));
 async function loadLeanFile(file) {
   if (S.files.has(file)) return S.files.get(file);
   const p = (async () => {
-    const src = await (await fetch(`/repo/${leanRoot(file)}/${file}`)).text();
+    const src = await (await fetch(`/repo/${S.data.lean_root}/${file}`)).text();
     const lines = src.split("\n");
     const lineOff = [0, 0];
     let acc = 0;
@@ -270,7 +266,7 @@ function withCites(text, cuts, file, isRich) {
 // a constant's docstring (inspector), with the citation badges of its file (`here`: the file being
 // inspected, which the export names "<this file>")
 function docRich(ci, here) {
-  const file = ci.module === "<this file>" ? here : isProjectModule(ci.module) ? ci.module.replace(/\./g, "/") + ".lean" : null;
+  const file = ci.module === "<this file>" ? here : ci.module?.startsWith("Shiftsym") ? ci.module.replace(/\./g, "/") + ".lean" : null;
   return file ? withCites(ci.doc, findCites(ci.doc).map((c) => ({ at: c.end, a: c.a, b: c.b })), file, true) : rich(ci.doc);
 }
 function inspectCite(file, ci) {
@@ -537,7 +533,7 @@ function cardFor(d, F, removable = false) {
     const tk = e.target.closest(".tk");
     if (tk) onLeanClick(F, +tk.dataset.o, d);
   });
-  const abs = S.data.repo_abs ? `${S.data.repo_abs}/${leanRoot(d.file)}/${d.file}` : null;
+  const abs = S.data.repo_abs ? `${S.data.repo_abs}/${S.data.lean_root}/${d.file}` : null;
   return h("div", { class: "card", "data-file": d.file, "data-decl": d.decl },
     h("div", { class: "card-h" },
       h("span", { class: "role" }, d.role || ""),
@@ -580,7 +576,7 @@ function placeMapBadge(ln, m, k) {
   box.insertBefore(b, after || null);
 }
 function renderUses(files) {
-  // project constants (the instance's packages) referenced inside the statement declarations
+  // Shiftsym constants referenced inside the statement declarations
   const it = S.item;
   const seen = new Map();
   it.lean_decls.forEach((d, k) => {
@@ -588,7 +584,7 @@ function renderUses(files) {
     const a = F.lineOff[d.sl], b = F.lineOff[d.el + 1];
     for (const n of F.nodes) if (n.c && n.a >= a && n.b <= b && n.c !== d.decl) {
       const ci = F.consts[n.c];
-      if (ci && isProjectModule(ci.module) && !seen.has(n.c)) seen.set(n.c, { ci, F });
+      if (ci && ci.module && ci.module.startsWith("Shiftsym") && !seen.has(n.c)) seen.set(n.c, { ci, F });
     }
   });
   const box = $("#uses");
@@ -749,7 +745,7 @@ function inspectNode(F, node, m) {
         if (ci.doc) parts.push(h("div", { style: "white-space:pre-wrap;font-size:13px;margin-bottom:6px" }, docRich(ci, F.file)));
         const where = ci.range ? `${ci.module}:${ci.range.sl}` : ci.module;
         parts.push(h("div", { class: "muted", style: "font-size:12px" }, `defined in ${where}`, " ",
-          isProjectModule(ci.module) && ci.range ? h("button", { onclick: () => openDefinition(ci) }, "Open definition") : null));
+          ci.module && ci.module.startsWith("Shiftsym") && ci.range ? h("button", { onclick: () => openDefinition(ci) }, "Open definition") : null));
       }
     }
   } else {
@@ -1040,7 +1036,6 @@ async function finishAudit() {
 async function boot() {
   initChrome();
   S.data = await (await fetch("/data/audit_data.json")).json();
-  if (S.data.name) document.title = `Correspondence Audit — ${S.data.name}`;
   S.items = S.data.items;
   const st = await (await fetch("/api/state")).json();
   S.verdicts = st.verdicts; S.notes = st.notes; S.marks = st.marks;

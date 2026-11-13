@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """Local server for the paper <-> Lean correspondence audit.
 
-  python3 research/formal/correspondence_audit/serve.py [--port 8765] [--instance DIR]
+  python3 research/formal/correspondence_audit/serve.py [--port 8765]
 
-then open http://127.0.0.1:8765/ . Without --instance it serves the main paper's audit (data/, logs/);
-with --instance DIR the audit of another paper (DIR/audit_config.json, DIR/data, DIR/logs; tools/instance.py). Serves the UI, the built audit data,
+then open http://127.0.0.1:8765/ . Serves the UI, the built audit data,
 and read-only copies of the paper PDF and the Lean sources; appends every
 UI event to logs/events.jsonl. Binds to 127.0.0.1 only. Standard library only.
 """
@@ -22,15 +21,12 @@ AUDIT = Path(__file__).resolve().parent
 REPO = AUDIT.parents[2]
 sys.path.insert(0, str(AUDIT / "tools"))
 import auditlog  # noqa: E402
-from instance import from_argv  # noqa: E402
 
-INST = from_argv()
-DATA = INST.data
+LEAN_ROOT = REPO / "research/formal/shiftsym/Shiftsym"
 REPO_ALLOW = [
-    (INST.pdf, None),
-    (INST.tex, None),
-    # the Lean sources of the instance's packages (main paper: research/formal/shiftsym/Shiftsym)
-    *[(root / top, ".lean") for top, root in INST.lean_roots.items()],
+    (REPO / "shift_symmetry_d_dimensions.pdf", None),
+    (REPO / "shift_symmetry_d_dimensions.tex", None),
+    (LEAN_ROOT, ".lean"),
 ]
 
 
@@ -84,8 +80,8 @@ class Handler(BaseHTTPRequestHandler):
             if (AUDIT / "app") in p.parents:
                 return self.send_file(p)
         if path.startswith("/data/"):
-            p = (DATA / path[len("/data/"):]).resolve()
-            if DATA in p.parents and p.suffix == ".json":
+            p = (AUDIT / path.lstrip("/")).resolve()
+            if (AUDIT / "data") in p.parents and p.suffix == ".json":
                 return self.send_file(p)
         if path.startswith("/repo/"):
             p = allowed_repo_path(path[len("/repo/"):])
@@ -122,14 +118,12 @@ def main():
     ap.add_argument("--port", type=int, default=8765)
     ap.add_argument("--log-dir", type=Path, help="write events/reports here instead of logs/ (e.g. for a dry run)")
     args = ap.parse_args()
-    if not INST.is_default():
-        auditlog.set_instance(INST)
     if args.log_dir:
         auditlog.set_log_dir(args.log_dir.resolve())
-    if not (DATA / "audit_data.json").exists():
-        sys.exit(f"{DATA / 'audit_data.json'} missing — run tools/build.py first")
+    if not (AUDIT / "data" / "audit_data.json").exists():
+        sys.exit("data/audit_data.json missing — run tools/build.py first")
     srv = ThreadingHTTPServer(("127.0.0.1", args.port), Handler)
-    print(f"correspondence audit ({INST.name}): http://127.0.0.1:{args.port}/   (events -> {auditlog.EVENTS})", flush=True)
+    print(f"correspondence audit: http://127.0.0.1:{args.port}/   (events -> {auditlog.EVENTS})", flush=True)
     try:
         srv.serve_forever()
     except KeyboardInterrupt:
