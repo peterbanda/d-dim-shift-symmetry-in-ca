@@ -7,6 +7,7 @@ Peter Banda (Cequence) · John Caughman (Portland State University) · Tobi Lehm
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Lean 4](https://img.shields.io/badge/Lean_4-370_statements_machine--checked-blue.svg)](research/formal/shiftsym/)
 [![arXiv](https://img.shields.io/badge/arXiv-2611.15751-b31b1b.svg)](https://arxiv.org/abs/2611.15751)
+[![Paper PDF](https://img.shields.io/badge/paper-PDF-red.svg)](https://arxiv.org/pdf/2611.15751)
 
 <p align="center">
   <img src="docs/figure1.png" width="100%" alt="Four example configurations: three on the 6×6 torus and one on the 4×4×4 torus, with their stabilizers">
