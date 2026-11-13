@@ -30,6 +30,7 @@ Pipeline (all read-only on the paper and the Lean development):
 Usage (from anywhere):
   build.py --check [corr files...]   validate anchors only (fast, no TeX)
   build.py                           full build (needs docker)
+  build.py --instance DIR ...        another paper (DIR/audit_config.json; see tools/instance.py)
 """
 from __future__ import annotations
 
@@ -48,17 +49,21 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 AUDIT = HERE.parent
 REPO = AUDIT.parents[2]
-TEX = REPO / "shift_symmetry_d_dimensions.tex"
-PDF = REPO / "shift_symmetry_d_dimensions.pdf"
-LEAN_ROOT = REPO / "research/formal/shiftsym"
-DATA = AUDIT / "data"
+sys.path.insert(0, str(HERE))
+from instance import from_argv  # noqa: E402
+
+INST = from_argv()            # the main paper unless --instance DIR / CORR_AUDIT_INSTANCE
+TEX = INST.tex
+PDF = INST.pdf
+LEAN_ROOT = INST.lean_root
+DATA = INST.data
 CORR = DATA / "corr"
 LEAN_EXPORT = DATA / "lean"
 CHARS = DATA / "pdf_chars.json"
 OUT = DATA / "audit_data.json"
 IMAGE = "shiftsym-tex:jammy"
 
-THM_ENVS = ("theorem", "lemma", "proposition", "corollary")
+THM_ENVS = INST.envs          # default: theorem, lemma, proposition, corollary
 KINDS = {"same", "representation", "hypothesis", "generalization", "weaker", "paper-only",
          "lean-only", "citation", "definition"}
 NOTES: list[str] = []
@@ -338,7 +343,7 @@ class LeanIndex:
 
     def src(self, f: str) -> str:
         if f not in self.text:
-            self.text[f] = (LEAN_ROOT / f).read_text()
+            self.text[f] = INST.lean_path(f).read_text()
         return self.text[f]
 
     def lines(self, f: str) -> list[str]:
@@ -354,7 +359,7 @@ class LeanIndex:
             f, sl, el = d["file"], d["sl"], d["el"]
         else:
             f = a.get("file")
-            if not f or not (LEAN_ROOT / f).exists():
+            if not f or not INST.lean_path(f).exists():
                 return None, [f"Lean anchor needs 'decl' or an existing 'file' (got {f!r})"]
             sl, el = a.get("lines", [1, len(self.lines(f))])
         lines = self.lines(f)
@@ -536,12 +541,14 @@ def words(pdf: Path) -> list[str]:
 def compile_positions(instrumented: str, keep: Path | None = None) -> tuple[dict, dict]:
     tmp = Path(tempfile.mkdtemp(prefix="corr_audit_", dir=os.environ.get("TMPDIR")))
     try:
-        name = "shift_symmetry_d_dimensions"
+        name = TEX.stem
         (tmp / (name + ".tex")).write_text(instrumented)
-        (tmp / "charts").mkdir()
-        for fig in (REPO / "charts").iterdir():
-            if fig.suffix in (".png", ".pdf"):      # paper figures (chart17 is a PDF since v9)
-                shutil.copy(fig, tmp / "charts" / fig.name)
+        for spec in INST.figures:                   # paper figures (main paper: charts/*.png, charts/*.pdf)
+            dest = tmp / spec.get("dest", "")
+            dest.mkdir(parents=True, exist_ok=True)
+            for fig in sorted(REPO.glob(spec["glob"])):
+                if fig.resolve() != PDF.resolve():
+                    shutil.copy(fig, dest / fig.name)
         run_tex(tmp, name, 3)
         aux = load_aux(tmp / (name + ".aux"))
         pos = {}
@@ -640,7 +647,7 @@ CITE_RE = re.compile(r"\b(?:[Pp]aper\s+)?(?:[Ll]ines?|ll?\.)\s+(\d{1,4}(?:\s*[�
                      r"(?:\s*(?:,\s*and|,|and)\s*\d{1,4}(?:\s*[–—-]\s*\d{1,4})?)*)")
 CITE_ITEM_RE = re.compile(r"(\d{1,4})(?:\s*[–—-]\s*(\d{1,4}))?")
 CITE_QUOTE_RE = re.compile(r"[)\s,:;*]*\(?\s*[\"“]([^\"”]{8,120})")
-CITE_SCOPE = "Shiftsym/Paper/"   # files whose comments cite the paper (Ext/ cites THEOREMS.md)
+CITE_SCOPE = INST.cite_scope   # files whose comments cite the paper (main: Shiftsym/Paper/; None: no citations)
 
 
 def git(*args: str) -> str:
@@ -699,6 +706,8 @@ def paper_citations(cur_text: str, lean_files) -> tuple[dict, list[str]]:
     """
     cur_lines = cur_text.split("\n")
     cur = version_label(cur_text, "current")
+    if CITE_SCOPE is None:      # no Lean file of this instance cites lines of its paper
+        return {"current": cur, "versions": {}, "bases": {}, "text": {}}, []
     added: dict[str, str] = {}   # file (relative to LEAN_ROOT) -> commit that added it (newest add)
     sha = None
     for ln in git("log", "--diff-filter=A", "--format=@%H", "--name-only", "--",
@@ -728,7 +737,7 @@ def paper_citations(cur_text: str, lean_files) -> tuple[dict, list[str]]:
     # pass 2: the cited lines (their text for the UI), and a check of each file's version
     bases, texts, warnings = {}, {}, []
     for f, lab in file_label.items():
-        src = (LEAN_ROOT / f).read_text()
+        src = INST.lean_path(f).read_text()
         cites = [int(n) for c in CITE_RE.finditer(src) for n in re.findall(r"\d+", c.group(1))]
         if not cites:
             continue
@@ -849,12 +858,12 @@ def main():
     fp = {
         "paper_pdf": {"path": str(PDF.relative_to(REPO)), "sha256": sha256(PDF)},
         "paper_tex": {"path": str(TEX.relative_to(REPO)), "sha256": sha256(TEX)},
-        "lean": {f: sha256(LEAN_ROOT / f) for f in sorted(lean.files)},
+        "lean": {f: sha256(INST.lean_path(f)) for f in sorted(lean.files)},
         "corr": {p.name: sha256(p) for p in sorted(CORR.glob("*.json"))},
         "exports": {p.name: sha256(p) for p in sorted(LEAN_EXPORT.glob("*.json")) if not p.name.startswith("_")},
     }
     cites, cite_warnings = paper_citations(
-        tex.text, [str(p.relative_to(LEAN_ROOT)) for p in (LEAN_ROOT / CITE_SCOPE).rglob("*.lean")])
+        tex.text, [str(p.relative_to(LEAN_ROOT)) for p in (LEAN_ROOT / CITE_SCOPE).rglob("*.lean")] if CITE_SCOPE else [])
     for w in cite_warnings:
         print("WARN ", w)
     print(f"paper line citations: {len(cites['bases'])} Lean files cite "
@@ -882,6 +891,9 @@ def main():
         "paper_cites": cites,
         "fingerprints": fp,
     }
+    if not INST.is_default():   # the main paper's bundle keeps its original keys
+        data["name"] = INST.name
+        data["lean_roots"] = {k: str(v.relative_to(REPO)) for k, v in INST.lean_roots.items()}
     OUT.write_text(json.dumps(data, ensure_ascii=False))
     n_cov = sum(1 for it in out_items if it["has_corr"])
     print(f"wrote {OUT.relative_to(REPO)}: {len(out_items)} items ({n_cov} with correspondences), "

@@ -6,7 +6,6 @@ Peter Banda (Cequence) · John Caughman (Portland State University) · Tobi Lehm
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Lean 4](https://img.shields.io/badge/Lean_4-370_statements_machine--checked-blue.svg)](research/formal/shiftsym/)
-[![Paper](https://img.shields.io/badge/paper-PDF-red.svg)](shift_symmetry_d_dimensions.pdf)
 [![arXiv](https://img.shields.io/badge/arXiv-2611.15751-b31b1b.svg)](https://arxiv.org/abs/2611.15751)
 
 <p align="center">
@@ -23,11 +22,11 @@ translation-equivariant dynamics can never destroy a symmetry, and gives a fast 
 content of every numbered statement is machine-checked in Lean 4**, and the correspondence between each theorem and its
 formal statement was audited by hand.
 
-This repository holds the paper ([`shift_symmetry_d_dimensions.pdf`](https://github.com/peterbanda/d-dim-shift-symmetry-in-ca/raw/main/shift_symmetry_d_dimensions.pdf)) and its supplementary material: the scripts behind
+This repository holds the paper ([arXiv:2611.15751](https://arxiv.org/abs/2611.15751)) and its supplementary material: the scripts behind
 every enumeration, scan, and figure, the Lean development, and the correspondence audit.
 
-The paper is on arXiv: [arXiv:2611.15751](https://arxiv.org/abs/2611.15751) (v1, 11 November 2026; math.CO,
-cross-listed in math.DS). The PDF in this repository is the same version.
+The arXiv version is v1 of 11 November 2026 (math.CO, cross-listed in math.DS); the source and PDF here
+(`shift_symmetry_d_dimensions.tex`, `.pdf`) are the same version.
 
 ## Main results
 
